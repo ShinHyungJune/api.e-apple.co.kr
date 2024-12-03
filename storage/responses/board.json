@@ -1,0 +1,13 @@
+{
+    "data": {
+        "id": "기본키",
+        "name_ko": "게시판이름",
+        "can_create": "게시글 등록가능여부",
+        "category_items": [
+            {
+                "value": "기본키",
+                "text": "카테고리 이름"
+            }
+        ]
+    }
+}

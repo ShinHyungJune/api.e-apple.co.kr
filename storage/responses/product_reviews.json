@@ -1,0 +1,56 @@
+{
+    "data": [
+        {
+            "rating": "평점 (1~5)",
+            "review": "후기 내용",
+            "user": {
+                "email": "이메일"
+            },
+            "images": [
+                {
+                    "id": "기본키",
+                    "file_name": "파일이름",
+                    "original_url": "이미지 URL"
+                },
+                {
+                    "id": "기본키",
+                    "file_name": "파일이름",
+                    "original_url": "이미지 URL"
+                }
+            ],
+            "created_date": "생성일"
+        }
+    ],
+    "links": {
+        "first": "http:\/\/localhost:8000\/api\/products\/1\/reviews?page=1",
+        "last": "http:\/\/localhost:8000\/api\/products\/1\/reviews?page=1",
+        "prev": null,
+        "next": null
+    },
+    "meta": {
+        "current_page": 1,
+        "from": 1,
+        "last_page": 1,
+        "links": [
+            {
+                "url": null,
+                "label": "&laquo; 이전",
+                "active": false
+            },
+            {
+                "url": "http:\/\/localhost:8000\/api\/products\/1\/reviews?page=1",
+                "label": "1",
+                "active": true
+            },
+            {
+                "url": null,
+                "label": "다음 &raquo;",
+                "active": false
+            }
+        ],
+        "path": "http:\/\/localhost:8000\/api\/products\/1\/reviews",
+        "per_page": 30,
+        "to": 6,
+        "total": 6
+    }
+}

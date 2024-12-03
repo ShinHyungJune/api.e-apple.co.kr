@@ -1,0 +1,64 @@
+{
+    "data": [
+        {
+            "id": "기본키",
+            "board_id": "board 기본키",
+            "category_id": "카테고리 기본키",
+            "title": "제목",
+            "content": "내용",
+            "content_answer": "답변내용",
+            "is_notice": "공지사항 여부",
+            "is_notice_top": "상단 공지사항 여부",
+            "is_secret": "비밀글 여부",
+            "start_date": "시작일",
+            "end_date": "종료일",
+            "read_count": "조회수",
+            "comment_count": "답글숫",
+            "created_at": "등록일",
+            "updated_at": "수정일",
+            "can_view": "조회가능여부",
+            "can_update": "수정가능여부",
+            "can_delete": "삭제가능여부",
+            "user": {
+                "id": "기본키",
+                "name": "성명",
+                "email": "이메일",
+                "phone": "연락처",
+                "nickname": "닉네임"
+            },
+            "files": [
+                {
+                    "id": "기본키",
+                    "file_name": "파일이름",
+                    "original_url": "파일 URL",
+                    "mine_type": "파일 형식"
+                }
+            ],
+            "comments": [
+                {
+                    "content": "내용",
+                    "user": {
+                        "id": "기본키",
+                        "name": "성명",
+                        "email": "이메일",
+                        "phone": "연락처",
+                        "nickname": "닉네임"
+                    }
+                }
+            ]
+        }
+    ],
+    "links": {
+        "first": "http:\/\/localhost:8000\/api\/boards\/1?page=1",
+        "last": null,
+        "prev": null,
+        "next": null
+    },
+    "meta": {
+        "current_page": 1,
+        "from": 1,
+        "path": "http:\/\/localhost:8000\/api\/boards\/1",
+        "per_page": 15,
+        "to": 5
+    }
+}

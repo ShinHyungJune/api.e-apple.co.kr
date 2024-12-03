@@ -1,0 +1,24 @@
+{
+    "success": true,
+    "data": {
+        "rating": "평점 (1~5)",
+        "review": "후기 내용",
+        "user": {
+            "email": "이메일"
+        },
+        "images": [
+            {
+                "id": "기본키",
+                "file_name": "파일이름",
+                "original_url": "이미지 URL"
+            },
+            {
+                "id": "기본키",
+                "file_name": "파일이름",
+                "original_url": "이미지 URL"
+            }
+        ],
+        "created_date": "생성일"
+    },
+    "message": "성공적으로 처리되었습니다."
+}
