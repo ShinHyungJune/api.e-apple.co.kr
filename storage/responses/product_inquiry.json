@@ -1,0 +1,13 @@
+{
+    "success": true,
+    "data": {
+        "id": "기본키",
+        "is_visible": "공개 여부 (0: 비공개, 1: 공개)",
+        "answered_at": "답변일시",
+        "is_answered": "답변여부",
+        "title": "문의 제목",
+        "content": "문의 내용",
+        "answer": "관리자가 작성한 답변 내용"
+    },
+    "message": "성공적으로 처리되었습니다."
+}

@@ -3,6 +3,7 @@
 use App\Enums\ProductCategory;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\ProductController;
+use App\Http\Controllers\Api\ProductInquiryController;
 use App\Http\Controllers\Api\ProductReviewController;
 use Illuminate\Support\Facades\Route;
 
@@ -51,12 +52,12 @@ Route::group(['prefix' => 'products'], function () {
     });
 
     //상품문의
-    /*Route::group(['prefix' => '{id}/inquiries', 'controller' => ProductInquiryController::class], function () {
+    Route::group(['prefix' => '{id}/inquiries', 'controller' => ProductInquiryController::class], function () {
         Route::get('', 'index');
         Route::group(['middleware' => ['auth:api']], function () {
             Route::post('', 'store');
         });
-    });*/
+    });
 });
 
 /*Route::group(['prefix' => 'gifts', 'controller' => GiftController::class], function () {

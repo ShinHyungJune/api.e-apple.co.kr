@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('md_product_packages', function (Blueprint $table) {
-            $table->id();
+            $table->id()->comment('기본키');
             $table->string('title')->comment('패키지 제목');
             $table->text('description')->comment('패키지 내용');
             //$table->unsignedInteger('price')->comment('패키지 가격');
