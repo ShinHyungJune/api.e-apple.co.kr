@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Api;
 
 use App\Enums\ProductCategory;
+use App\Http\Resources\MdProductPackageResource;
 use App\Http\Resources\ProductResource;
+use App\Models\MdProductPackage;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -31,12 +33,13 @@ class ProductController extends ApiController
             $perPage = 20;
         }
 
+        //DB::enableQueryLog();
         $query = Product::query()
-            //->withCount(['reviews'])
+            ->withCount(['inquiries'])
             ->with(['reviews'])
             ->category($category)->search($filters)->latest();
-        //Log::info($query->toSql(), $query->getBindings());
         $items = $query->simplePaginate($perPage);
+        //Log::info(DB::getQueryLog());
 
         return ProductResource::collection($items);
     }
@@ -45,12 +48,12 @@ class ProductController extends ApiController
      * MD 추천 선물
      * @priority 1
      * @unauthenticated
-     * @responseFile storage/responses/products.json
+     * @responseFile storage/responses/md_product_packages.json
      */
-    public function mdSuggestionGifts()
+    public function mdPackages()
     {
-        $items = Product::where('is_md_suggestion_gift', true)->latest()->get();
-        return ProductResource::collection($items);
+        $items = MdProductPackage::with(['products'])->has('products')->latest()->get();
+        return MdProductPackageResource::collection($items);
     }
 
     /**
@@ -62,6 +65,7 @@ class ProductController extends ApiController
     public function show(Product $product)
     {
         $product->increment('view_count');
+        $product->load(['reviews','inquiries']);
         return $this->respondSuccessfully(ProductResource::make($product));
     }
 

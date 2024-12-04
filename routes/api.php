@@ -3,7 +3,6 @@
 use App\Enums\ProductCategory;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\ProductController;
-use App\Http\Controllers\Api\ProductinquiryController;
 use App\Http\Controllers\Api\ProductReviewController;
 use Illuminate\Support\Facades\Route;
 
@@ -38,7 +37,7 @@ Route::group(['controller' => AuthController::class], function () {
 //상품보기
 Route::group(['prefix' => 'products'], function () {
     Route::group(['controller' => ProductController::class], function () {
-        Route::get('md_suggestion_gift', 'mdSuggestionGifts');
+        Route::get('md_packages', 'mdPackages');
         Route::get('{category?}', 'index')->where('category', implode('|', ProductCategory::values()));
         Route::get('{product}', 'show');
     });
@@ -52,12 +51,12 @@ Route::group(['prefix' => 'products'], function () {
     });
 
     //상품문의
-    Route::group(['prefix' => '{id}/inquiries', 'controller' => ProductInquiryController::class], function () {
+    /*Route::group(['prefix' => '{id}/inquiries', 'controller' => ProductInquiryController::class], function () {
         Route::get('', 'index');
         Route::group(['middleware' => ['auth:api']], function () {
             Route::post('', 'store');
         });
-    });
+    });*/
 });
 
 /*Route::group(['prefix' => 'gifts', 'controller' => GiftController::class], function () {

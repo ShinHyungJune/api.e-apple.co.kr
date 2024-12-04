@@ -40,8 +40,9 @@ class ProductResource extends JsonResource
             ]),
 
             'is_new' => Carbon::parse($this->created_at)->greaterThanOrEqualTo(Carbon::now()->subDay()),
-            //'reviews_count' => $this->reviews_count,
-            'average_rating' => $this->reviews()->avg('rating'),
+            'average_rating' => $this->reviews->avg('rating'),
+            'reviews_count' => $this->reviews->count(),
+            'inquiries_count' => $this->whenLoaded('inquiries') ? $this->inquiries->count(): $this->inquiries_count,
 
             'categories' => $this->categories ? ProductCategoryResource::collection($this->categories) : null,
             'product_images' => $this->getMedia(Product::IMAGES) ? ProductImageResource::collection($this->getMedia(Product::IMAGES)) : null,
@@ -49,15 +50,16 @@ class ProductResource extends JsonResource
         ];
 
         //*
+        if (config('scribe.response_file')) {
+            $comments = [
+                'id' => '기본키',
+                'is_new' => '새로운상품 여부',
+                'average_rating' => '평균 평점',
+            ];
+            return getScribeResponseFile($return, 'products', $comments);
+        }
+        //*/
         return $return;
-        /*/
-        $comments = [
-            'id' => '기본키',
-            'is_new' => '새로운상품 여부',
-            'average_rating' => '평균 평점',
-            'eye_count' => '????',
-        ];
-        return getScribeResponseFile($return, 'products', $comments);
         //*/
     }
 }

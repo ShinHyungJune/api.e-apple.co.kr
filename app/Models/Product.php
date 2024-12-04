@@ -55,4 +55,16 @@ class Product extends Model implements HasMedia
         return $this->hasMany(ProductReview::class);
     }
 
+    public function inquiries()
+    {
+        return $this->hasMany(ProductInquiry::class);
+    }
+
+    /*public function mdPackages()
+    {
+        return $this->belongsToMany(MdProductPackage::class, 'product_package_product')
+            ->withPivot('quantity') // 중간 테이블의 추가 필드
+            ->withTimestamps();
+    }*/
+
 }

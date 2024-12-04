@@ -32,9 +32,11 @@ class UserResource extends JsonResource
         }
 
         //*/
+        if (config('scribe.response_file')) {
+            return getScribeResponseFile($return, 'users');
+        }
+        //*/
         return $return;
-        /*/
-        return getScribeResponseFile($return, 'users');
         //*/
     }
 }

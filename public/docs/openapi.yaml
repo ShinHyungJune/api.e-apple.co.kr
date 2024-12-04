@@ -7,7 +7,7 @@ servers:
   -
     url: 'http://localhost:8000'
 paths:
-  /api/products/md_suggestion_gift:
+  /api/products/md_packages:
     get:
       summary: 'MD 추천 선물'
       operationId: mD
@@ -23,250 +23,252 @@ paths:
                 example:
                   data:
                     -
-                      id: 기본키
-                      name: 상품명
-                      view_count: 조회수
-                      price: 가격
-                      original_price: '원래 가격'
-                      delivery_fee: '배송비 (기본값: 0)'
-                      shipping_origin: 출고지
-                      fruit_size: '과일 크기'
-                      sugar_content: 당도
-                      food_type: '식품의 유형'
-                      manufacturer_and_location: '생산자 및 소재지'
-                      importer: 수입자
-                      origin: 원산지
-                      ingredients_and_composition: '원재료 및 합량'
-                      storage_and_handling: 보관/취급방법
-                      manufacture_date: 제조연원일
-                      expiration_date: 유통기한
-                      gmo_desc: '유전자변형 농산물 여부'
-                      customer_service_contact: '소비자 상담 문의'
-                      is_new: '새로운상품 여부'
-                      average_rating: '평균 평점'
-                      categories: 카테고리
-                      product_images:
+                      id: 11
+                      title: '패키지 제목'
+                      description: '패키지 내용'
+                      products:
                         -
                           id: 기본키
-                          file_name: 파일이름
-                          original_url: '이미지 URL'
-                        -
-                          id: 기본키
-                          file_name: 파일이름
-                          original_url: '이미지 URL'
-                      product_desc_images:
-                        -
-                          id: 기본키
-                          file_name: 파일이름
-                          original_url: '이미지 URL'
-                        -
-                          id: 기본키
-                          file_name: 파일이름
-                          original_url: '이미지 URL'
-                  links:
-                    first: 'http://localhost:8000/api/products/best?page=1'
-                    last: null
-                    prev: null
-                    next: null
-                  meta:
-                    current_page: 1
-                    from: 1
-                    path: 'http://localhost:8000/api/products/best'
-                    per_page: 20
-                    to: 1
+                          name: 상품명
+                          view_count: 조회수
+                          price: 가격
+                          original_price: '원래 가격'
+                          delivery_fee: '배송비 (기본값: 0)'
+                          shipping_origin: 출고지
+                          fruit_size: '과일 크기'
+                          sugar_content: 당도
+                          food_type: '식품의 유형'
+                          manufacturer_and_location: '생산자 및 소재지'
+                          importer: 수입자
+                          origin: 원산지
+                          ingredients_and_composition: '원재료 및 합량'
+                          storage_and_handling: 보관/취급방법
+                          manufacture_date: 제조연원일
+                          expiration_date: 유통기한
+                          gmo_desc: '유전자변형 농산물 여부'
+                          customer_service_contact: '소비자 상담 문의'
+                          is_new: '새로운상품 여부'
+                          average_rating: '평균 평점'
+                          reviews_count: 0
+                          inquiries_count: 0
+                          categories: 카테고리
+                          product_images:
+                            -
+                              id: 기본키
+                              file_name: 파일이름
+                              original_url: '이미지 URL'
+                          product_desc_images:
+                            -
+                              id: 기본키
+                              file_name: 파일이름
+                              original_url: '이미지 URL'
                 properties:
                   data:
                     type: array
                     example:
                       -
-                        id: 기본키
-                        name: 상품명
-                        view_count: 조회수
-                        price: 가격
-                        original_price: '원래 가격'
-                        delivery_fee: '배송비 (기본값: 0)'
-                        shipping_origin: 출고지
-                        fruit_size: '과일 크기'
-                        sugar_content: 당도
-                        food_type: '식품의 유형'
-                        manufacturer_and_location: '생산자 및 소재지'
-                        importer: 수입자
-                        origin: 원산지
-                        ingredients_and_composition: '원재료 및 합량'
-                        storage_and_handling: 보관/취급방법
-                        manufacture_date: 제조연원일
-                        expiration_date: 유통기한
-                        gmo_desc: '유전자변형 농산물 여부'
-                        customer_service_contact: '소비자 상담 문의'
-                        is_new: '새로운상품 여부'
-                        average_rating: '평균 평점'
-                        categories: 카테고리
-                        product_images:
+                        id: 11
+                        title: '패키지 제목'
+                        description: '패키지 내용'
+                        products:
                           -
                             id: 기본키
-                            file_name: 파일이름
-                            original_url: '이미지 URL'
-                          -
-                            id: 기본키
-                            file_name: 파일이름
-                            original_url: '이미지 URL'
-                        product_desc_images:
-                          -
-                            id: 기본키
-                            file_name: 파일이름
-                            original_url: '이미지 URL'
-                          -
-                            id: 기본키
-                            file_name: 파일이름
-                            original_url: '이미지 URL'
+                            name: 상품명
+                            view_count: 조회수
+                            price: 가격
+                            original_price: '원래 가격'
+                            delivery_fee: '배송비 (기본값: 0)'
+                            shipping_origin: 출고지
+                            fruit_size: '과일 크기'
+                            sugar_content: 당도
+                            food_type: '식품의 유형'
+                            manufacturer_and_location: '생산자 및 소재지'
+                            importer: 수입자
+                            origin: 원산지
+                            ingredients_and_composition: '원재료 및 합량'
+                            storage_and_handling: 보관/취급방법
+                            manufacture_date: 제조연원일
+                            expiration_date: 유통기한
+                            gmo_desc: '유전자변형 농산물 여부'
+                            customer_service_contact: '소비자 상담 문의'
+                            is_new: '새로운상품 여부'
+                            average_rating: '평균 평점'
+                            reviews_count: 0
+                            inquiries_count: 0
+                            categories: 카테고리
+                            product_images:
+                              -
+                                id: 기본키
+                                file_name: 파일이름
+                                original_url: '이미지 URL'
+                            product_desc_images:
+                              -
+                                id: 기본키
+                                file_name: 파일이름
+                                original_url: '이미지 URL'
                     items:
                       type: object
                       properties:
                         id:
+                          type: integer
+                          example: 11
+                        title:
                           type: string
-                          example: 기본키
-                        name:
+                          example: '패키지 제목'
+                        description:
                           type: string
-                          example: 상품명
-                        view_count:
-                          type: string
-                          example: 조회수
-                        price:
-                          type: string
-                          example: 가격
-                        original_price:
-                          type: string
-                          example: '원래 가격'
-                        delivery_fee:
-                          type: string
-                          example: '배송비 (기본값: 0)'
-                        shipping_origin:
-                          type: string
-                          example: 출고지
-                        fruit_size:
-                          type: string
-                          example: '과일 크기'
-                        sugar_content:
-                          type: string
-                          example: 당도
-                        food_type:
-                          type: string
-                          example: '식품의 유형'
-                        manufacturer_and_location:
-                          type: string
-                          example: '생산자 및 소재지'
-                        importer:
-                          type: string
-                          example: 수입자
-                        origin:
-                          type: string
-                          example: 원산지
-                        ingredients_and_composition:
-                          type: string
-                          example: '원재료 및 합량'
-                        storage_and_handling:
-                          type: string
-                          example: 보관/취급방법
-                        manufacture_date:
-                          type: string
-                          example: 제조연원일
-                        expiration_date:
-                          type: string
-                          example: 유통기한
-                        gmo_desc:
-                          type: string
-                          example: '유전자변형 농산물 여부'
-                        customer_service_contact:
-                          type: string
-                          example: '소비자 상담 문의'
-                        is_new:
-                          type: string
-                          example: '새로운상품 여부'
-                        average_rating:
-                          type: string
-                          example: '평균 평점'
-                        categories:
-                          type: string
-                          example: 카테고리
-                        product_images:
+                          example: '패키지 내용'
+                        products:
                           type: array
                           example:
                             -
                               id: 기본키
-                              file_name: 파일이름
-                              original_url: '이미지 URL'
-                            -
-                              id: 기본키
-                              file_name: 파일이름
-                              original_url: '이미지 URL'
+                              name: 상품명
+                              view_count: 조회수
+                              price: 가격
+                              original_price: '원래 가격'
+                              delivery_fee: '배송비 (기본값: 0)'
+                              shipping_origin: 출고지
+                              fruit_size: '과일 크기'
+                              sugar_content: 당도
+                              food_type: '식품의 유형'
+                              manufacturer_and_location: '생산자 및 소재지'
+                              importer: 수입자
+                              origin: 원산지
+                              ingredients_and_composition: '원재료 및 합량'
+                              storage_and_handling: 보관/취급방법
+                              manufacture_date: 제조연원일
+                              expiration_date: 유통기한
+                              gmo_desc: '유전자변형 농산물 여부'
+                              customer_service_contact: '소비자 상담 문의'
+                              is_new: '새로운상품 여부'
+                              average_rating: '평균 평점'
+                              reviews_count: 0
+                              inquiries_count: 0
+                              categories: 카테고리
+                              product_images:
+                                -
+                                  id: 기본키
+                                  file_name: 파일이름
+                                  original_url: '이미지 URL'
+                              product_desc_images:
+                                -
+                                  id: 기본키
+                                  file_name: 파일이름
+                                  original_url: '이미지 URL'
                           items:
                             type: object
                             properties:
                               id:
                                 type: string
                                 example: 기본키
-                              file_name:
+                              name:
                                 type: string
-                                example: 파일이름
-                              original_url:
+                                example: 상품명
+                              view_count:
                                 type: string
-                                example: '이미지 URL'
-                        product_desc_images:
-                          type: array
-                          example:
-                            -
-                              id: 기본키
-                              file_name: 파일이름
-                              original_url: '이미지 URL'
-                            -
-                              id: 기본키
-                              file_name: 파일이름
-                              original_url: '이미지 URL'
-                          items:
-                            type: object
-                            properties:
-                              id:
+                                example: 조회수
+                              price:
                                 type: string
-                                example: 기본키
-                              file_name:
+                                example: 가격
+                              original_price:
                                 type: string
-                                example: 파일이름
-                              original_url:
+                                example: '원래 가격'
+                              delivery_fee:
                                 type: string
-                                example: '이미지 URL'
-                  links:
-                    type: object
-                    properties:
-                      first:
-                        type: string
-                        example: 'http://localhost:8000/api/products/best?page=1'
-                      last:
-                        type: string
-                        example: null
-                      prev:
-                        type: string
-                        example: null
-                      next:
-                        type: string
-                        example: null
-                  meta:
-                    type: object
-                    properties:
-                      current_page:
-                        type: integer
-                        example: 1
-                      from:
-                        type: integer
-                        example: 1
-                      path:
-                        type: string
-                        example: 'http://localhost:8000/api/products/best'
-                      per_page:
-                        type: integer
-                        example: 20
-                      to:
-                        type: integer
-                        example: 1
+                                example: '배송비 (기본값: 0)'
+                              shipping_origin:
+                                type: string
+                                example: 출고지
+                              fruit_size:
+                                type: string
+                                example: '과일 크기'
+                              sugar_content:
+                                type: string
+                                example: 당도
+                              food_type:
+                                type: string
+                                example: '식품의 유형'
+                              manufacturer_and_location:
+                                type: string
+                                example: '생산자 및 소재지'
+                              importer:
+                                type: string
+                                example: 수입자
+                              origin:
+                                type: string
+                                example: 원산지
+                              ingredients_and_composition:
+                                type: string
+                                example: '원재료 및 합량'
+                              storage_and_handling:
+                                type: string
+                                example: 보관/취급방법
+                              manufacture_date:
+                                type: string
+                                example: 제조연원일
+                              expiration_date:
+                                type: string
+                                example: 유통기한
+                              gmo_desc:
+                                type: string
+                                example: '유전자변형 농산물 여부'
+                              customer_service_contact:
+                                type: string
+                                example: '소비자 상담 문의'
+                              is_new:
+                                type: string
+                                example: '새로운상품 여부'
+                              average_rating:
+                                type: string
+                                example: '평균 평점'
+                              reviews_count:
+                                type: integer
+                                example: 0
+                              inquiries_count:
+                                type: integer
+                                example: 0
+                              categories:
+                                type: string
+                                example: 카테고리
+                              product_images:
+                                type: array
+                                example:
+                                  -
+                                    id: 기본키
+                                    file_name: 파일이름
+                                    original_url: '이미지 URL'
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                                      example: 기본키
+                                    file_name:
+                                      type: string
+                                      example: 파일이름
+                                    original_url:
+                                      type: string
+                                      example: '이미지 URL'
+                              product_desc_images:
+                                type: array
+                                example:
+                                  -
+                                    id: 기본키
+                                    file_name: 파일이름
+                                    original_url: '이미지 URL'
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                                      example: 기본키
+                                    file_name:
+                                      type: string
+                                      example: 파일이름
+                                    original_url:
+                                      type: string
+                                      example: '이미지 URL'
       tags:
         - Product(상품)
       security: []
@@ -1067,17 +1069,17 @@ paths:
                 product_id:
                   type: string
                   description: '<span class="point">참조 상품 ID</span>. The <code>id</code> of an existing record in the products table.'
-                  example: ipsam
+                  example: velit
                   nullable: false
                 rating:
                   type: integer
                   description: '<span class="point">평점 (1~5)</span>. value(은)는  최소 1 이상이어야 합니다. value (은)는 5를 초과할 수 없습니다.'
-                  example: 4
+                  example: 2
                   nullable: false
                 review:
                   type: string
                   description: '<span class="point">후기 내용</span>.'
-                  example: minima
+                  example: quia
                   nullable: false
                 images:
                   type: object
@@ -1157,7 +1159,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the board.'
-        example: provident
+        example: eum
         required: true
         schema:
           type: string
@@ -1445,7 +1447,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the board.'
-        example: maiores
+        example: odio
         required: true
         schema:
           type: string
@@ -1657,22 +1659,22 @@ paths:
                 board_id:
                   type: integer
                   description: '<span class="point">board 기본키</span>. The <code>id</code> of an existing record in the boards table.'
-                  example: 3
+                  example: 6
                   nullable: false
                 category_id:
                   type: integer
                   description: '<span class="point">카테고리 기본키</span>.'
-                  example: 1
+                  example: 2
                   nullable: true
                 title:
                   type: string
                   description: '<span class="point">제목</span>.'
-                  example: debitis
+                  example: voluptas
                   nullable: false
                 content:
                   type: string
                   description: '<span class="point">내용</span>.'
-                  example: temporibus
+                  example: voluptatem
                   nullable: false
                 files:
                   type: object
@@ -2152,12 +2154,12 @@ paths:
                 name:
                   type: string
                   description: '<span class="point">상품명</span>. Must not be greater than 255 characters.'
-                  example: radlyxk
+                  example: vfnmqojdyxocvxyzxnchpyu
                   nullable: false
                 description:
                   type: string
                   description: '<span class="point">상품설명</span>.'
-                  example: 'Fuga consectetur fugit aperiam non esse qui.'
+                  example: 'Ipsam et consequatur vitae suscipit.'
                   nullable: true
                 product_images:
                   type: array
@@ -2176,22 +2178,22 @@ paths:
                 price:
                   type: number
                   description: '<span class="point">가격</span>. value(은)는  최소 0 이상이어야 합니다.'
-                  example: 37
+                  example: 3
                   nullable: false
                 original_price:
                   type: number
                   description: '<span class="point">원래가격</span>. value(은)는  최소 0 이상이어야 합니다.'
-                  example: 57
+                  example: 64
                   nullable: true
                 delivery_fee:
                   type: number
                   description: '<span class="point">배송비</span>. value(은)는  최소 0 이상이어야 합니다.'
-                  example: 51
+                  example: 72
                   nullable: false
                 stock_quantity:
                   type: integer
                   description: '<span class="point">재고수량</span>. value(은)는  최소 0 이상이어야 합니다.'
-                  example: 23
+                  example: 37
                   nullable: false
                 categories:
                   type: object
@@ -2213,67 +2215,67 @@ paths:
                 food_type:
                   type: string
                   description: '<span class="point">식품의 유형</span>. Must not be greater than 100 characters.'
-                  example: s
+                  example: uvojcembazfsn
                   nullable: true
                 fruit_size:
                   type: string
                   description: '<span class="point">과일 크기</span>. Must not be greater than 50 characters.'
-                  example: mpqpf
+                  example: oftghpa
                   nullable: true
                 sugar_content:
                   type: string
                   description: '<span class="point">당도</span>. Must not be greater than 50 characters.'
-                  example: mem
+                  example: qu
                   nullable: true
                 shipping_origin:
                   type: string
                   description: '<span class="point">출고지</span>. Must not be greater than 255 characters.'
-                  example: cjiu
+                  example: zlvuxiidgxnzlwpqduwyxuro
                   nullable: true
                 manufacturer_and_location:
                   type: string
                   description: '<span class="point">생산자 및 소재지</span>. Must not be greater than 255 characters.'
-                  example: xbsdlvrfsiiqxp
+                  example: sjeosssnlmiflqzmefbqlra
                   nullable: true
                 importer:
                   type: string
                   description: '<span class="point">수입자</span>. Must not be greater than 255 characters.'
-                  example: jnyy
+                  example: qdbfdbbwaqzw
                   nullable: true
                 origin:
                   type: string
                   description: '<span class="point">원산지</span>. Must not be greater than 255 characters.'
-                  example: xojmkinbsmvjotzfxadluql
+                  example: etn
                   nullable: true
                 ingredients_and_composition:
                   type: string
                   description: '<span class="point">원재료 및 합량</span>.'
-                  example: harum
+                  example: ut
                   nullable: true
                 storage_and_handling:
                   type: string
                   description: '<span class="point">보관/취급방법</span>. Must not be greater than 255 characters.'
-                  example: e
+                  example: cwwlttrcuaqdomctzyxrl
                   nullable: true
                 manufacture_date:
                   type: string
                   description: '<span class="point">제조연원일</span>. Must be a valid date.'
-                  example: '2024-12-03T15:12:23'
+                  example: '2024-12-04T19:19:07'
                   nullable: true
                 expiration_date:
                   type: string
                   description: '<span class="point">유통기한</span>. Must be a valid date. value(은)는 <code>manufacture_date</code>보다 이후거나 같아야 합니다.'
-                  example: '2102-08-01'
+                  example: '2032-10-14'
                   nullable: true
                 gmo_desc:
                   type: string
                   description: '<span class="point">유전자변형 농산물여부</span>. Must not be greater than 255 characters.'
-                  example: robjjeiwjlnkdrk
+                  example: pihhorazbpmtszz
                   nullable: true
                 customer_service_contact:
                   type: string
                   description: '<span class="point">소비자상담문의</span>. Must not be greater than 255 characters.'
-                  example: ismezqfthtpxskkowrz
+                  example: jljk
                   nullable: true
               required:
                 - name
@@ -2299,12 +2301,12 @@ paths:
                 email:
                   type: string
                   description: '<span class="point">아이디</span>. value(은)는 이메일 형태여야 합니다. Must not be greater than 255 characters.'
-                  example: ihyatt@example.net
+                  example: nbayer@example.com
                   nullable: false
                 password:
                   type: string
                   description: '<span class="point">비밀번호</span>.'
-                  example: '-ky[=(;E-+07/B'
+                  example: U~biR_my
                   nullable: false
               required:
                 - email
@@ -2369,32 +2371,32 @@ paths:
                 email:
                   type: string
                   description: '<span class="point">이메일</span>. value(은)는 이메일 형태여야 합니다.'
-                  example: harley.gleason@example.org
+                  example: chand@example.com
                   nullable: false
                 password:
                   type: string
                   description: '<span class="point">비밀번호</span>.'
-                  example: est
+                  example: dolores
                   nullable: false
                 password_confirmation:
                   type: string
                   description: '<span class="point">비밀번호확인</span>.'
-                  example: omnis
+                  example: dolorem
                   nullable: false
                 name:
                   type: string
                   description: '<span class="point">성명</span>. Must not be greater than 255 characters.'
-                  example: hfpt
+                  example: dyxtsdijiurscluqtc
                   nullable: false
                 phone:
                   type: string
                   description: '<span class="point">연락처</span>. Must be between 10 and 11 digits.'
-                  example: '4239647527'
+                  example: '62440654785'
                   nullable: false
                 nickname:
                   type: string
                   description: '<span class="point">닉네임</span>. Must not be greater than 255 characters.'
-                  example: fvlimojpvqhx
+                  example: mdjqhnpppkbexbgmkt
                   nullable: true
               required:
                 - email

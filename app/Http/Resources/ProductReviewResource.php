@@ -23,10 +23,12 @@ class ProductReviewResource extends JsonResource
             'created_date' => $this->created_at->format('Y.m.d')
         ];
         //*
-        return $return;
+        if (config('scribe.response_file')) {
+            $comments = ['created_date' => '생성일'];
+            return getScribeResponseFile($return, 'product_reviews', $comments);
+        }
         /*/
-        $comments = ['created_date' => '생성일'];
-        return getScribeResponseFile($return, 'product_reviews', $comments);
+        return $return;
         //*/
     }
 
