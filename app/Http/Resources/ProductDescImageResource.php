@@ -21,7 +21,7 @@ class ProductDescImageResource extends JsonResource
             'original_url' => $this->original_url,
         ];
 
-        /*
+        //*
         return $return;
         /*/
         $comments = [
