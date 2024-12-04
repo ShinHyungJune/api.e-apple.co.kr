@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 require __DIR__.'/auth.php';*/
 
 Route::get('test', function () {
-    $result = DB::select(" SELECT COLUMN_NAME, COLUMN_COMMENT FROM information_schema.columns WHERE TABLE_SCHEMA = 'fruittree' AND TABLE_NAME = 'product_reviews' ");
+    $result = DB::select(" SELECT COLUMN_NAME, COLUMN_COMMENT FROM information_schema.columns WHERE TABLE_SCHEMA = 'fruittree' AND TABLE_NAME = 'product_inquiries' ");
     //dd($result);
     //bodyParameters
     //'name' => ['description' => '<span class="point">상품명</span>'],

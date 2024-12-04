@@ -33,13 +33,10 @@ class ProductReviewRequest extends FormRequest
     public function bodyParameters()
     {
         return [
-            'id' => ['description' => '<span class="point">기본키</span>'],
             'product_id' => ['description' => '<span class="point">참조 상품 ID</span>'],
             'user_id' => ['description' => '<span class="point">후기 작성 사용자 ID</span>'],
             'rating' => ['description' => '<span class="point">평점 (1~5)</span>'],
             'review' => ['description' => '<span class="point">후기 내용</span>'],
-            'created_at' => ['description' => '<span class="point">등록일</span>'],
-            'updated_at' => ['description' => '<span class="point">수정일</span>'],
         ];
     }
 

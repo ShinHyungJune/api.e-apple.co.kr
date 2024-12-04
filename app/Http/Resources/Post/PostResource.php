@@ -33,7 +33,7 @@ class PostResource extends JsonResource
             'comments' => PostCommentResource::collection($this->comments),
         ];
 
-        /*
+        //*
         return $return;
          /*/
         $comments = [

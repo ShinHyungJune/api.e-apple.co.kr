@@ -44,9 +44,10 @@ class PostController extends ApiController
         //$boardCategories = BoardCategory::select('name as text', 'id as value')->where('board_id', $board->id)->get();
         Gate::authorize('viewAny', [Post::class, $board->type]);
 
-        $searches = json_decode($request->search);
+        $filters = $request->only(['category_id']);
+
         //Media Library
-        $query = Post::with(['user', 'comments.user'/*, 'files'*/])->where('board_id', $board->id)->search($searches);
+        $query = Post::with(['user', 'comments.user'/*, 'files'*/])->where('board_id', $board->id)->search($filters);
         $items = $query->orderByRaw("FIELD(is_notice, true, false)")->latest()->simplePaginate($request->itemsPerPage);
         $items->map(fn($e) => $e->append(['can_view', 'can_update', 'can_delete'/*, 'image_url'*/]));
 

@@ -3,6 +3,7 @@
 use App\Enums\ProductCategory;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\ProductController;
+use App\Http\Controllers\Api\ProductinquiryController;
 use App\Http\Controllers\Api\ProductReviewController;
 use Illuminate\Support\Facades\Route;
 
@@ -44,6 +45,14 @@ Route::group(['prefix' => 'products'], function () {
 
     //상품리뷰
     Route::group(['prefix' => '{id}/reviews', 'controller' => ProductReviewController::class], function () {
+        Route::get('', 'index');
+        Route::group(['middleware' => ['auth:api']], function () {
+            Route::post('', 'store');
+        });
+    });
+
+    //상품문의
+    Route::group(['prefix' => '{id}/inquiries', 'controller' => ProductInquiryController::class], function () {
         Route::get('', 'index');
         Route::group(['middleware' => ['auth:api']], function () {
             Route::post('', 'store');
