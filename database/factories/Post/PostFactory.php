@@ -4,6 +4,7 @@ namespace Database\Factories\Post;
 
 use App\Models\Post\Board;
 use App\Models\Post\BoardCategory;
+use App\Models\Post\Post;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Carbon;
@@ -48,4 +49,21 @@ class PostFactory extends Factory
             'deleted_at' => null//$this->faker->optional()->dateTimeBetween('-1 months', 'now'),
         ];
     }
+
+    public function configure()
+    {
+        return $this->afterCreating(function (Post $item) {
+            $url = 'https://picsum.photos/510/300?random';
+            $imageUrls = [
+                asset('/images/samples/pexels-pixabay-161559.jpg'),
+                asset('/images/samples/pexels-mali-102104.jpg'),
+                asset('/images/samples/pexels-markusspiske-1343537.jpg')
+            ];
+            $url = collect($imageUrls)->random();
+
+            $item->addMediaFromUrl($url) // 예제 이미지 URL
+            ->toMediaCollection(Post::MEDIA_COLLECTION);
+        });
+    }
+
 }

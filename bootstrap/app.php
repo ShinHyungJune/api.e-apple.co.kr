@@ -21,6 +21,11 @@ return Application::configure(basePath: dirname(__DIR__))
             'admin' => \App\Http\Middleware\AdminMiddleware::class,
         ]);
 
+        //api csrf 제외
+        $middleware->validateCsrfTokens(except: [
+            'api/*',
+        ]);
+
         //
     })
     ->withExceptions(function (Exceptions $exceptions) {
