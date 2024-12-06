@@ -27,6 +27,5 @@ class MdProductPackageResource extends JsonResource
         //*/
         return $return;
         //*/
-
     }
 }

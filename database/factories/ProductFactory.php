@@ -50,7 +50,6 @@ class ProductFactory extends Factory
 
     public function configure()
     {
-
         return $this->afterCreating(function (Product $product) {
             $url = 'https://picsum.photos/510/300?random';
             $imageUrls = [

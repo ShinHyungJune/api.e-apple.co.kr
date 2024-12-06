@@ -17,13 +17,15 @@ class ProductReviewController extends ApiController
      * 목록
      * @priority 1
      * @queryParam type Example: photo, text
+     * @queryParam take Example: 10
      * @unauthenticated
      * @responseFile storage/responses/product_reviews.json
      */
     public function index(Request $request)
     {
-        $filters = $request->only(['type']);
-        $items = ProductReview::query()->search($filters)->latest()->paginate(30);
+        $filters = $request->only(['take', 'type']);
+
+        $items = ProductReview::query()->search($filters)->latest()->paginate($filters['take'] ?? 10);
         return ProductReviewResource::collection($items);
     }
 
