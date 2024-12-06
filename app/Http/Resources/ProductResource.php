@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Enums\ProductCategory;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -40,6 +41,7 @@ class ProductResource extends JsonResource
             ]),
 
             'is_new' => Carbon::parse($this->created_at)->greaterThanOrEqualTo(Carbon::now()->subDay()),
+            'is_best' => $this->categories ? in_array(ProductCategory::BEST->value, $this->categories) : false,
             'average_rating' => $this->reviews->avg('rating'),
             'reviews_count' => $this->reviews->count(),
             'inquiries_count' => $this->whenLoaded('inquiries') ? $this->inquiries->count(): $this->inquiries_count,
