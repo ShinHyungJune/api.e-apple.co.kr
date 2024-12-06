@@ -27,7 +27,7 @@ class ProductReviewResource extends JsonResource
             $comments = ['created_date' => '생성일'];
             return getScribeResponseFile($return, 'product_reviews', $comments);
         }
-        /*/
+        //*/
         return $return;
         //*/
     }
