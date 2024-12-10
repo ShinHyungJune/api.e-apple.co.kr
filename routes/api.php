@@ -3,6 +3,7 @@
 use App\Enums\ProductCategory;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\ProductController;
+use App\Http\Controllers\Api\VerifyNumberController;
 use Illuminate\Support\Facades\Route;
 
 /*Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
@@ -24,6 +25,12 @@ use Illuminate\Support\Facades\Route;
 Route::group(['controller' => AuthController::class], function () {
     Route::post('login', 'login');
     Route::post('register', 'store');
+
+    //번호인증
+    Route::group(['controller' => VerifyNumberController::class], function () {
+        Route::post('verify-numbers', 'store');
+        Route::put('verify-numbers', 'update');
+    });
 
     Route::group(['middleware' => 'auth:api'], function () {
         Route::post('logout', 'logout');

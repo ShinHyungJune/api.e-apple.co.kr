@@ -7,6 +7,7 @@ use App\Http\Requests\RegisterRequest;
 use App\Http\Resources\BannerResource;
 use App\Http\Resources\UserResource;
 use App\Models\User;
+use App\Models\VerifyNumber;
 
 class AuthController extends ApiController
 {
@@ -85,7 +86,11 @@ class AuthController extends ApiController
      */
     public function store(RegisterRequest $request)
     {
-        $user = tap(new User($request->validated()))->save();
+        $data = $request->validated();
+
+        VerifyNumber::check($data['phone']);
+
+        $user = tap(new User($data))->save();
         return $this->respondSuccessfully(UserResource::make($user));
     }
 

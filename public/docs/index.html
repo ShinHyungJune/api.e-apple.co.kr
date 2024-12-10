@@ -346,6 +346,49 @@
                                                             </div>
                                             </div>
                                     <div class="expandable">
+                        <div title="VerifyNumber(인증번호)" id="toc-item-verifynumber"
+                             class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-4 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none">
+                            <a href="#verifynumber"
+                               class="sl-flex-1 sl-items-center sl-truncate sl-mr-1.5 sl-p-0">VerifyNumber(인증번호)</a>
+                                                            <div class="sl-flex sl-items-center sl-text-xs expansion-chevrons">
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fas"
+                                         data-icon="chevron-right"
+                                         class="svg-inline--fa fa-chevron-right fa-fw sl-icon sl-text-muted"
+                                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                        <path fill="currentColor"
+                                              d="M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.63c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z"></path>
+                                    </svg>
+                                </div>
+                                                    </div>
+
+                                                    <div class="children" style="display: none;">
+                                                                    <div class="expandable">
+                                        <div class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-8 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none"
+                                             id="toc-item-verifynumber-POSTapi-verify-numbers">
+                                            <div class="sl-flex-1 sl-items-center sl-truncate sl-mr-1.5 sl-p-0" title="POST api/verify-numbers">
+                                                <a class="ElementsTableOfContentsItem sl-block sl-no-underline"
+                                                   href="#verifynumber-POSTapi-verify-numbers">
+                                                    POST api/verify-numbers
+                                                </a>
+                                            </div>
+                                                                                    </div>
+
+                                                                            </div>
+                                                                    <div class="expandable">
+                                        <div class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-8 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none"
+                                             id="toc-item-verifynumber-PUTapi-verify-numbers">
+                                            <div class="sl-flex-1 sl-items-center sl-truncate sl-mr-1.5 sl-p-0" title="PUT api/verify-numbers">
+                                                <a class="ElementsTableOfContentsItem sl-block sl-no-underline"
+                                                   href="#verifynumber-PUTapi-verify-numbers">
+                                                    PUT api/verify-numbers
+                                                </a>
+                                            </div>
+                                                                                    </div>
+
+                                                                            </div>
+                                                            </div>
+                                            </div>
+                                    <div class="expandable">
                         <div title="게시판(공지사항: 1, FAQ: 2 , 스토리: 3, 이벤트: 4)" id="toc-item-1-faq-2-3-4"
                              class="sl-flex sl-items-center sl-h-md sl-pr-4 sl-pl-4 sl-bg-canvas-100 hover:sl-bg-canvas-200 sl-cursor-pointer sl-select-none">
                             <a href="#1-faq-2-3-4"
@@ -1965,6 +2008,704 @@ fetch(url, {
     </div>
 </div>
 
+                <h1 id="verifynumber"
+        class="sl-text-5xl sl-leading-tight sl-font-prose sl-text-heading"
+    >
+        VerifyNumber(인증번호)
+    </h1>
+
+    
+
+                                <div class="sl-stack sl-stack--vertical sl-stack--8 HttpOperation sl-flex sl-flex-col sl-items-stretch sl-w-full">
+    <div class="sl-stack sl-stack--vertical sl-stack--5 sl-flex sl-flex-col sl-items-stretch">
+        <div class="sl-relative">
+            <div class="sl-stack sl-stack--horizontal sl-stack--5 sl-flex sl-flex-row sl-items-center">
+                <h2 class="sl-text-3xl sl-leading-tight sl-font-prose sl-text-heading sl-mt-5 sl-mb-1"
+                    id="verifynumber-POSTapi-verify-numbers">
+                    POST api/verify-numbers
+                </h2>
+            </div>
+        </div>
+
+        <div class="sl-relative">
+            <div title="http://localhost:8000/api/verify-numbers"
+                     class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
+                >
+                                            <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
+                             style="background-color: black;"
+                        >
+                            POST
+                        </div>
+                                        <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
+                        <div dir="rtl"
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost:8000</div>
+                        <div class="sl-flex-1 sl-font-semibold">/api/verify-numbers</div>
+                    </div>
+
+                                    </div>
+        </div>
+
+        
+    </div>
+    <div class="sl-flex">
+        <div data-testid="two-column-left" class="sl-flex-1 sl-w-0">
+            <div class="sl-stack sl-stack--vertical sl-stack--10 sl-flex sl-flex-col sl-items-stretch">
+                <div class="sl-stack sl-stack--vertical sl-stack--8 sl-flex sl-flex-col sl-items-stretch">
+                                            <div class="sl-stack sl-stack--vertical sl-stack--5 sl-flex sl-flex-col sl-items-stretch">
+                            <h3 class="sl-text-2xl sl-leading-snug sl-font-prose">
+                                Headers
+                            </h3>
+                            <div class="sl-text-sm">
+                                                                    <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
+    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
+    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
+        <div class="sl-flex sl-items-center sl-max-w-full">
+                                        <div class="sl-flex sl-items-baseline sl-text-base">
+                    <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
+                                    </div>
+                                    </div>
+                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
+                <span>Example:</span> <!-- <span> important for spacing -->
+                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
+                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
+                        application/json
+                    </div>
+                </div>
+            </div>
+            </div>
+</div>
+                                                                    <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
+    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
+    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
+        <div class="sl-flex sl-items-center sl-max-w-full">
+                                        <div class="sl-flex sl-items-baseline sl-text-base">
+                    <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
+                                    </div>
+                                    </div>
+                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
+                <span>Example:</span> <!-- <span> important for spacing -->
+                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
+                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
+                        application/json
+                    </div>
+                </div>
+            </div>
+            </div>
+</div>
+                                                            </div>
+                        </div>
+                    
+                    
+
+                    
+                                            <div class="sl-stack sl-stack--vertical sl-stack--6 sl-flex sl-flex-col sl-items-stretch">
+                            <h3 class="sl-text-2xl sl-leading-snug sl-font-prose">Body Parameters</h3>
+
+                                <div class="sl-text-sm">
+                                    <div class="expandable sl-text-sm sl-border-l sl-ml-px">
+        <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
+    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
+    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
+        <div class="sl-flex sl-items-center sl-max-w-full">
+                                        <div class="sl-flex sl-items-baseline sl-text-base">
+                    <div class="sl-font-mono sl-font-semibold sl-mr-2">phone</div>
+                                            <span class="sl-truncate sl-text-muted">string</span>
+                                    </div>
+                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                    <span class="sl-ml-2 sl-text-warning">required</span>
+                                    </div>
+                <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
+            <p>Must not be greater than 500 characters.</p>
+        </div>
+                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
+                <span>Example:</span> <!-- <span> important for spacing -->
+                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
+                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
+                        qi
+                    </div>
+                </div>
+            </div>
+            </div>
+</div>
+
+            </div>
+                            </div>
+                        </div>
+                    
+                                    </div>
+            </div>
+        </div>
+
+        <div data-testid="two-column-right" class="sl-relative sl-w-2/5 sl-ml-16" style="max-width: 500px;">
+            <div class="sl-stack sl-stack--vertical sl-stack--6 sl-flex sl-flex-col sl-items-stretch">
+
+                                    <div class="sl-inverted">
+    <div class="sl-overflow-y-hidden sl-rounded-lg">
+        <form class="TryItPanel sl-bg-canvas-100 sl-rounded-lg"
+              data-method="POST"
+              data-path="api/verify-numbers"
+              data-hasfiles="0"
+              data-hasjsonbody="1">
+            
+                            <div class="sl-panel sl-outline-none sl-w-full expandable">
+                    <div class="sl-panel__titlebar sl-flex sl-items-center sl-relative focus:sl-z-10 sl-text-base sl-leading-none sl-pr-4 sl-pl-3 sl-bg-canvas-200 sl-text-body sl-border-input focus:sl-border-primary sl-cursor-pointer sl-select-none"
+                         role="button">
+                        <div class="sl-flex sl-flex-1 sl-items-center sl-h-lg">
+                            <div class="sl-flex sl-items-center sl-mr-1.5 expansion-chevrons expansion-chevrons-solid expanded">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fas"
+                                     data-icon="caret-down"
+                                     class="svg-inline--fa fa-caret-down fa-fw sl-icon" role="img"
+                                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                    <path fill="currentColor"
+                                          d="M310.6 246.6l-127.1 128C176.4 380.9 168.2 384 160 384s-16.38-3.125-22.63-9.375l-127.1-128C.2244 237.5-2.516 223.7 2.438 211.8S19.07 192 32 192h255.1c12.94 0 24.62 7.781 29.58 19.75S319.8 237.5 310.6 246.6z"></path>
+                                </svg>
+                            </div>
+                            Headers
+                        </div>
+                    </div>
+                    <div class="sl-panel__content-wrapper sl-bg-canvas-100 children" role="region">
+                        <div class="ParameterGrid sl-p-4">
+                                                                                            <label aria-hidden="true"
+                                       for="header-POSTapi-verify-numbers-Content-Type">Content-Type</label>
+                                <span class="sl-mx-3">:</span>
+                                <div class="sl-flex sl-flex-1">
+                                    <div class="sl-input sl-flex-1 sl-relative">
+                                        <input aria-label="Content-Type" name="Content-Type"
+                                               id="header-POSTapi-verify-numbers-Content-Type"
+                                               value="application/json" data-component="header"
+                                               class="sl-relative sl-w-full sl-h-md sl-text-base sl-pr-2.5 sl-pl-2.5 sl-rounded sl-border-transparent hover:sl-border-input focus:sl-border-primary sl-border">
+                                    </div>
+                                </div>
+                                                                                            <label aria-hidden="true"
+                                       for="header-POSTapi-verify-numbers-Accept">Accept</label>
+                                <span class="sl-mx-3">:</span>
+                                <div class="sl-flex sl-flex-1">
+                                    <div class="sl-input sl-flex-1 sl-relative">
+                                        <input aria-label="Accept" name="Accept"
+                                               id="header-POSTapi-verify-numbers-Accept"
+                                               value="application/json" data-component="header"
+                                               class="sl-relative sl-w-full sl-h-md sl-text-base sl-pr-2.5 sl-pl-2.5 sl-rounded sl-border-transparent hover:sl-border-input focus:sl-border-primary sl-border">
+                                    </div>
+                                </div>
+                                                    </div>
+                    </div>
+                </div>
+            
+            
+            
+                            <div class="sl-panel sl-outline-none sl-w-full expandable">
+                    <div class="sl-panel__titlebar sl-flex sl-items-center sl-relative focus:sl-z-10 sl-text-base sl-leading-none sl-pr-4 sl-pl-3 sl-bg-canvas-200 sl-text-body sl-border-input focus:sl-border-primary sl-cursor-pointer sl-select-none"
+                         role="button">
+                        <div class="sl-flex sl-flex-1 sl-items-center sl-h-lg">
+                            <div class="sl-flex sl-items-center sl-mr-1.5 expansion-chevrons expansion-chevrons-solid expanded">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fas"
+                                     data-icon="caret-down"
+                                     class="svg-inline--fa fa-caret-down fa-fw sl-icon" role="img"
+                                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                    <path fill="currentColor"
+                                          d="M310.6 246.6l-127.1 128C176.4 380.9 168.2 384 160 384s-16.38-3.125-22.63-9.375l-127.1-128C.2244 237.5-2.516 223.7 2.438 211.8S19.07 192 32 192h255.1c12.94 0 24.62 7.781 29.58 19.75S319.8 237.5 310.6 246.6z"></path>
+                                </svg>
+                            </div>
+                            Body
+                        </div>
+                    </div>
+                    <div class="sl-panel__content-wrapper sl-bg-canvas-100 children" role="region">
+                                                    <div class="TextRequestBody sl-p-4">
+                                <div class="code-editor language-json"
+                                     id="json-body-POSTapi-verify-numbers"
+                                     style="font-family: var(--font-code); font-size: 12px; line-height: var(--lh-code);"
+                                >{
+    "phone": "qi"
+}</div>
+                            </div>
+                                            </div>
+                </div>
+            
+            <div class="SendButtonHolder sl-mt-4 sl-p-4 sl-pt-0">
+                <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-center">
+                    <button type="button" data-endpoint="POSTapi-verify-numbers"
+                            class="tryItOut-btn sl-button sl-h-sm sl-text-base sl-font-medium sl-px-1.5 sl-bg-primary hover:sl-bg-primary-dark active:sl-bg-primary-darker disabled:sl-bg-canvas-100 sl-text-on-primary disabled:sl-text-body sl-rounded sl-border-transparent sl-border disabled:sl-opacity-70"
+                    >
+                        Send Request 💥
+                    </button>
+                </div>
+            </div>
+
+            <div data-endpoint="POSTapi-verify-numbers"
+                 class="tryItOut-error expandable sl-panel sl-outline-none sl-w-full" hidden>
+                <div class="sl-panel__titlebar sl-flex sl-items-center sl-relative focus:sl-z-10 sl-text-base sl-leading-none sl-pr-4 sl-pl-3 sl-bg-canvas-200 sl-text-body sl-border-input focus:sl-border-primary sl-cursor-pointer sl-select-none"
+                     role="button">
+                    <div class="sl-flex sl-flex-1 sl-items-center sl-h-lg">
+                        <div class="sl-flex sl-items-center sl-mr-1.5 expansion-chevrons expansion-chevrons-solid expanded">
+                            <svg aria-hidden="true" focusable="false" data-prefix="fas"
+                                 data-icon="caret-down"
+                                 class="svg-inline--fa fa-caret-down fa-fw sl-icon" role="img"
+                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                <path fill="currentColor"
+                                      d="M310.6 246.6l-127.1 128C176.4 380.9 168.2 384 160 384s-16.38-3.125-22.63-9.375l-127.1-128C.2244 237.5-2.516 223.7 2.438 211.8S19.07 192 32 192h255.1c12.94 0 24.62 7.781 29.58 19.75S319.8 237.5 310.6 246.6z"></path>
+                            </svg>
+                        </div>
+                        Request failed with error
+                    </div>
+                </div>
+                <div class="sl-panel__content-wrapper sl-bg-canvas-100 children" role="region">
+                    <div class="sl-panel__content sl-p-4">
+                        <p class="sl-pb-2"><strong class="error-message"></strong></p>
+                        <p class="sl-pb-2">Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</p>
+                    </div>
+                </div>
+            </div>
+
+                <div data-endpoint="POSTapi-verify-numbers"
+                     class="tryItOut-response expandable sl-panel sl-outline-none sl-w-full" hidden>
+                    <div class="sl-panel__titlebar sl-flex sl-items-center sl-relative focus:sl-z-10 sl-text-base sl-leading-none sl-pr-4 sl-pl-3 sl-bg-canvas-200 sl-text-body sl-border-input focus:sl-border-primary sl-cursor-pointer sl-select-none"
+                         role="button">
+                        <div class="sl-flex sl-flex-1 sl-items-center sl-h-lg">
+                            <div class="sl-flex sl-items-center sl-mr-1.5 expansion-chevrons expansion-chevrons-solid expanded">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fas"
+                                     data-icon="caret-down"
+                                     class="svg-inline--fa fa-caret-down fa-fw sl-icon" role="img"
+                                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                    <path fill="currentColor"
+                                          d="M310.6 246.6l-127.1 128C176.4 380.9 168.2 384 160 384s-16.38-3.125-22.63-9.375l-127.1-128C.2244 237.5-2.516 223.7 2.438 211.8S19.07 192 32 192h255.1c12.94 0 24.62 7.781 29.58 19.75S319.8 237.5 310.6 246.6z"></path>
+                                </svg>
+                            </div>
+                            Received response
+                        </div>
+                    </div>
+                    <div class="sl-panel__content-wrapper sl-bg-canvas-100 children" role="region">
+                        <div class="sl-panel__content sl-p-4">
+                            <p class="sl-pb-2 response-status"></p>
+                            <pre><code class="sl-pb-2 response-content language-json"
+                                       data-empty-response-text="<Empty response>"
+                                       style="max-height: 300px;"></code></pre>
+                        </div>
+                    </div>
+                </div>
+        </form>
+    </div>
+</div>
+                
+                                            <div class="sl-panel sl-outline-none sl-w-full sl-rounded-lg">
+                            <div class="sl-panel__titlebar sl-flex sl-items-center sl-relative focus:sl-z-10 sl-text-base sl-leading-none sl-pr-3 sl-pl-4 sl-bg-canvas-200 sl-text-body sl-border-input focus:sl-border-primary sl-select-none">
+                                <div class="sl-flex sl-flex-1 sl-items-center sl-h-lg">
+                                    <div class="sl--ml-2">
+                                        Example request:
+                                        <select class="example-request-lang-toggle sl-text-base"
+                                                aria-label="Request Sample Language"
+                                                onchange="switchExampleLanguage(event.target.value);">
+                                                                                            <option>bash</option>
+                                                                                            <option>javascript</option>
+                                                                                    </select>
+                                    </div>
+                                </div>
+                            </div>
+                                                            <div class="sl-bg-canvas-100 example-request example-request-bash"
+                                     style="">
+                                    <div class="sl-px-0 sl-py-1">
+                                        <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
+                                            <pre><code class="language-bash">curl --request POST \
+    "http://localhost:8000/api/verify-numbers" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"phone\": \"qi\"
+}"
+</code></pre>                                        </div>
+                                    </div>
+                                </div>
+                                                            <div class="sl-bg-canvas-100 example-request example-request-javascript"
+                                     style="display: none;">
+                                    <div class="sl-px-0 sl-py-1">
+                                        <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
+                                            <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/verify-numbers"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "phone": "qi"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>                                        </div>
+                                    </div>
+                                </div>
+                                                    </div>
+                    
+                            </div>
+    </div>
+</div>
+
+                    <div class="sl-stack sl-stack--vertical sl-stack--8 HttpOperation sl-flex sl-flex-col sl-items-stretch sl-w-full">
+    <div class="sl-stack sl-stack--vertical sl-stack--5 sl-flex sl-flex-col sl-items-stretch">
+        <div class="sl-relative">
+            <div class="sl-stack sl-stack--horizontal sl-stack--5 sl-flex sl-flex-row sl-items-center">
+                <h2 class="sl-text-3xl sl-leading-tight sl-font-prose sl-text-heading sl-mt-5 sl-mb-1"
+                    id="verifynumber-PUTapi-verify-numbers">
+                    PUT api/verify-numbers
+                </h2>
+            </div>
+        </div>
+
+        <div class="sl-relative">
+            <div title="http://localhost:8000/api/verify-numbers"
+                     class="sl-stack sl-stack--horizontal sl-stack--3 sl-inline-flex sl-flex-row sl-items-center sl-max-w-full sl-font-mono sl-py-2 sl-pr-4 sl-bg-canvas-50 sl-rounded-lg"
+                >
+                                            <div class="sl-text-lg sl-font-semibold sl-px-2.5 sl-py-1 sl-text-on-primary sl-rounded-lg"
+                             style="background-color: darkblue;"
+                        >
+                            PUT
+                        </div>
+                                        <div class="sl-flex sl-overflow-x-hidden sl-text-lg sl-select-all">
+                        <div dir="rtl"
+                             class="sl-overflow-x-hidden sl-truncate sl-text-muted">http://localhost:8000</div>
+                        <div class="sl-flex-1 sl-font-semibold">/api/verify-numbers</div>
+                    </div>
+
+                                    </div>
+        </div>
+
+        
+    </div>
+    <div class="sl-flex">
+        <div data-testid="two-column-left" class="sl-flex-1 sl-w-0">
+            <div class="sl-stack sl-stack--vertical sl-stack--10 sl-flex sl-flex-col sl-items-stretch">
+                <div class="sl-stack sl-stack--vertical sl-stack--8 sl-flex sl-flex-col sl-items-stretch">
+                                            <div class="sl-stack sl-stack--vertical sl-stack--5 sl-flex sl-flex-col sl-items-stretch">
+                            <h3 class="sl-text-2xl sl-leading-snug sl-font-prose">
+                                Headers
+                            </h3>
+                            <div class="sl-text-sm">
+                                                                    <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
+    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
+    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
+        <div class="sl-flex sl-items-center sl-max-w-full">
+                                        <div class="sl-flex sl-items-baseline sl-text-base">
+                    <div class="sl-font-mono sl-font-semibold sl-mr-2">Content-Type</div>
+                                    </div>
+                                    </div>
+                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
+                <span>Example:</span> <!-- <span> important for spacing -->
+                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
+                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
+                        application/json
+                    </div>
+                </div>
+            </div>
+            </div>
+</div>
+                                                                    <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
+    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
+    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
+        <div class="sl-flex sl-items-center sl-max-w-full">
+                                        <div class="sl-flex sl-items-baseline sl-text-base">
+                    <div class="sl-font-mono sl-font-semibold sl-mr-2">Accept</div>
+                                    </div>
+                                    </div>
+                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
+                <span>Example:</span> <!-- <span> important for spacing -->
+                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
+                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
+                        application/json
+                    </div>
+                </div>
+            </div>
+            </div>
+</div>
+                                                            </div>
+                        </div>
+                    
+                    
+
+                    
+                                            <div class="sl-stack sl-stack--vertical sl-stack--6 sl-flex sl-flex-col sl-items-stretch">
+                            <h3 class="sl-text-2xl sl-leading-snug sl-font-prose">Body Parameters</h3>
+
+                                <div class="sl-text-sm">
+                                    <div class="expandable sl-text-sm sl-border-l sl-ml-px">
+        <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
+    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
+    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
+        <div class="sl-flex sl-items-center sl-max-w-full">
+                                        <div class="sl-flex sl-items-baseline sl-text-base">
+                    <div class="sl-font-mono sl-font-semibold sl-mr-2">phone</div>
+                                            <span class="sl-truncate sl-text-muted">string</span>
+                                    </div>
+                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                    <span class="sl-ml-2 sl-text-warning">required</span>
+                                    </div>
+                <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
+            <p>Must not be greater than 500 characters.</p>
+        </div>
+                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
+                <span>Example:</span> <!-- <span> important for spacing -->
+                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
+                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
+                        ziborratpckqgtdkfhaek
+                    </div>
+                </div>
+            </div>
+            </div>
+</div>
+
+            </div>
+    <div class="expandable sl-text-sm sl-border-l sl-ml-px">
+        <div class="sl-flex sl-relative sl-max-w-full sl-py-2 sl-pl-3">
+    <div class="sl-w-1 sl-mt-2 sl-mr-3 sl--ml-3 sl-border-t"></div>
+    <div class="sl-stack sl-stack--vertical sl-stack--1 sl-flex sl-flex-1 sl-flex-col sl-items-stretch sl-max-w-full sl-ml-2 ">
+        <div class="sl-flex sl-items-center sl-max-w-full">
+                                        <div class="sl-flex sl-items-baseline sl-text-base">
+                    <div class="sl-font-mono sl-font-semibold sl-mr-2">number</div>
+                                            <span class="sl-truncate sl-text-muted">string</span>
+                                    </div>
+                                    <div class="sl-flex-1 sl-h-px sl-mx-3"></div>
+                    <span class="sl-ml-2 sl-text-warning">required</span>
+                                    </div>
+                <div class="sl-prose sl-markdown-viewer" style="font-size: 12px;">
+            <p><span class='point'>인증번호</span>. Must not be greater than 500 characters.</p>
+        </div>
+                                            <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-baseline sl-text-muted">
+                <span>Example:</span> <!-- <span> important for spacing -->
+                <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
+                    <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
+                        xgsypjldmhuycyi
+                    </div>
+                </div>
+            </div>
+            </div>
+</div>
+
+            </div>
+                            </div>
+                        </div>
+                    
+                                    </div>
+            </div>
+        </div>
+
+        <div data-testid="two-column-right" class="sl-relative sl-w-2/5 sl-ml-16" style="max-width: 500px;">
+            <div class="sl-stack sl-stack--vertical sl-stack--6 sl-flex sl-flex-col sl-items-stretch">
+
+                                    <div class="sl-inverted">
+    <div class="sl-overflow-y-hidden sl-rounded-lg">
+        <form class="TryItPanel sl-bg-canvas-100 sl-rounded-lg"
+              data-method="PUT"
+              data-path="api/verify-numbers"
+              data-hasfiles="0"
+              data-hasjsonbody="1">
+            
+                            <div class="sl-panel sl-outline-none sl-w-full expandable">
+                    <div class="sl-panel__titlebar sl-flex sl-items-center sl-relative focus:sl-z-10 sl-text-base sl-leading-none sl-pr-4 sl-pl-3 sl-bg-canvas-200 sl-text-body sl-border-input focus:sl-border-primary sl-cursor-pointer sl-select-none"
+                         role="button">
+                        <div class="sl-flex sl-flex-1 sl-items-center sl-h-lg">
+                            <div class="sl-flex sl-items-center sl-mr-1.5 expansion-chevrons expansion-chevrons-solid expanded">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fas"
+                                     data-icon="caret-down"
+                                     class="svg-inline--fa fa-caret-down fa-fw sl-icon" role="img"
+                                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                    <path fill="currentColor"
+                                          d="M310.6 246.6l-127.1 128C176.4 380.9 168.2 384 160 384s-16.38-3.125-22.63-9.375l-127.1-128C.2244 237.5-2.516 223.7 2.438 211.8S19.07 192 32 192h255.1c12.94 0 24.62 7.781 29.58 19.75S319.8 237.5 310.6 246.6z"></path>
+                                </svg>
+                            </div>
+                            Headers
+                        </div>
+                    </div>
+                    <div class="sl-panel__content-wrapper sl-bg-canvas-100 children" role="region">
+                        <div class="ParameterGrid sl-p-4">
+                                                                                            <label aria-hidden="true"
+                                       for="header-PUTapi-verify-numbers-Content-Type">Content-Type</label>
+                                <span class="sl-mx-3">:</span>
+                                <div class="sl-flex sl-flex-1">
+                                    <div class="sl-input sl-flex-1 sl-relative">
+                                        <input aria-label="Content-Type" name="Content-Type"
+                                               id="header-PUTapi-verify-numbers-Content-Type"
+                                               value="application/json" data-component="header"
+                                               class="sl-relative sl-w-full sl-h-md sl-text-base sl-pr-2.5 sl-pl-2.5 sl-rounded sl-border-transparent hover:sl-border-input focus:sl-border-primary sl-border">
+                                    </div>
+                                </div>
+                                                                                            <label aria-hidden="true"
+                                       for="header-PUTapi-verify-numbers-Accept">Accept</label>
+                                <span class="sl-mx-3">:</span>
+                                <div class="sl-flex sl-flex-1">
+                                    <div class="sl-input sl-flex-1 sl-relative">
+                                        <input aria-label="Accept" name="Accept"
+                                               id="header-PUTapi-verify-numbers-Accept"
+                                               value="application/json" data-component="header"
+                                               class="sl-relative sl-w-full sl-h-md sl-text-base sl-pr-2.5 sl-pl-2.5 sl-rounded sl-border-transparent hover:sl-border-input focus:sl-border-primary sl-border">
+                                    </div>
+                                </div>
+                                                    </div>
+                    </div>
+                </div>
+            
+            
+            
+                            <div class="sl-panel sl-outline-none sl-w-full expandable">
+                    <div class="sl-panel__titlebar sl-flex sl-items-center sl-relative focus:sl-z-10 sl-text-base sl-leading-none sl-pr-4 sl-pl-3 sl-bg-canvas-200 sl-text-body sl-border-input focus:sl-border-primary sl-cursor-pointer sl-select-none"
+                         role="button">
+                        <div class="sl-flex sl-flex-1 sl-items-center sl-h-lg">
+                            <div class="sl-flex sl-items-center sl-mr-1.5 expansion-chevrons expansion-chevrons-solid expanded">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fas"
+                                     data-icon="caret-down"
+                                     class="svg-inline--fa fa-caret-down fa-fw sl-icon" role="img"
+                                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                    <path fill="currentColor"
+                                          d="M310.6 246.6l-127.1 128C176.4 380.9 168.2 384 160 384s-16.38-3.125-22.63-9.375l-127.1-128C.2244 237.5-2.516 223.7 2.438 211.8S19.07 192 32 192h255.1c12.94 0 24.62 7.781 29.58 19.75S319.8 237.5 310.6 246.6z"></path>
+                                </svg>
+                            </div>
+                            Body
+                        </div>
+                    </div>
+                    <div class="sl-panel__content-wrapper sl-bg-canvas-100 children" role="region">
+                                                    <div class="TextRequestBody sl-p-4">
+                                <div class="code-editor language-json"
+                                     id="json-body-PUTapi-verify-numbers"
+                                     style="font-family: var(--font-code); font-size: 12px; line-height: var(--lh-code);"
+                                >{
+    "phone": "ziborratpckqgtdkfhaek",
+    "number": "xgsypjldmhuycyi"
+}</div>
+                            </div>
+                                            </div>
+                </div>
+            
+            <div class="SendButtonHolder sl-mt-4 sl-p-4 sl-pt-0">
+                <div class="sl-stack sl-stack--horizontal sl-stack--2 sl-flex sl-flex-row sl-items-center">
+                    <button type="button" data-endpoint="PUTapi-verify-numbers"
+                            class="tryItOut-btn sl-button sl-h-sm sl-text-base sl-font-medium sl-px-1.5 sl-bg-primary hover:sl-bg-primary-dark active:sl-bg-primary-darker disabled:sl-bg-canvas-100 sl-text-on-primary disabled:sl-text-body sl-rounded sl-border-transparent sl-border disabled:sl-opacity-70"
+                    >
+                        Send Request 💥
+                    </button>
+                </div>
+            </div>
+
+            <div data-endpoint="PUTapi-verify-numbers"
+                 class="tryItOut-error expandable sl-panel sl-outline-none sl-w-full" hidden>
+                <div class="sl-panel__titlebar sl-flex sl-items-center sl-relative focus:sl-z-10 sl-text-base sl-leading-none sl-pr-4 sl-pl-3 sl-bg-canvas-200 sl-text-body sl-border-input focus:sl-border-primary sl-cursor-pointer sl-select-none"
+                     role="button">
+                    <div class="sl-flex sl-flex-1 sl-items-center sl-h-lg">
+                        <div class="sl-flex sl-items-center sl-mr-1.5 expansion-chevrons expansion-chevrons-solid expanded">
+                            <svg aria-hidden="true" focusable="false" data-prefix="fas"
+                                 data-icon="caret-down"
+                                 class="svg-inline--fa fa-caret-down fa-fw sl-icon" role="img"
+                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                <path fill="currentColor"
+                                      d="M310.6 246.6l-127.1 128C176.4 380.9 168.2 384 160 384s-16.38-3.125-22.63-9.375l-127.1-128C.2244 237.5-2.516 223.7 2.438 211.8S19.07 192 32 192h255.1c12.94 0 24.62 7.781 29.58 19.75S319.8 237.5 310.6 246.6z"></path>
+                            </svg>
+                        </div>
+                        Request failed with error
+                    </div>
+                </div>
+                <div class="sl-panel__content-wrapper sl-bg-canvas-100 children" role="region">
+                    <div class="sl-panel__content sl-p-4">
+                        <p class="sl-pb-2"><strong class="error-message"></strong></p>
+                        <p class="sl-pb-2">Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</p>
+                    </div>
+                </div>
+            </div>
+
+                <div data-endpoint="PUTapi-verify-numbers"
+                     class="tryItOut-response expandable sl-panel sl-outline-none sl-w-full" hidden>
+                    <div class="sl-panel__titlebar sl-flex sl-items-center sl-relative focus:sl-z-10 sl-text-base sl-leading-none sl-pr-4 sl-pl-3 sl-bg-canvas-200 sl-text-body sl-border-input focus:sl-border-primary sl-cursor-pointer sl-select-none"
+                         role="button">
+                        <div class="sl-flex sl-flex-1 sl-items-center sl-h-lg">
+                            <div class="sl-flex sl-items-center sl-mr-1.5 expansion-chevrons expansion-chevrons-solid expanded">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fas"
+                                     data-icon="caret-down"
+                                     class="svg-inline--fa fa-caret-down fa-fw sl-icon" role="img"
+                                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                    <path fill="currentColor"
+                                          d="M310.6 246.6l-127.1 128C176.4 380.9 168.2 384 160 384s-16.38-3.125-22.63-9.375l-127.1-128C.2244 237.5-2.516 223.7 2.438 211.8S19.07 192 32 192h255.1c12.94 0 24.62 7.781 29.58 19.75S319.8 237.5 310.6 246.6z"></path>
+                                </svg>
+                            </div>
+                            Received response
+                        </div>
+                    </div>
+                    <div class="sl-panel__content-wrapper sl-bg-canvas-100 children" role="region">
+                        <div class="sl-panel__content sl-p-4">
+                            <p class="sl-pb-2 response-status"></p>
+                            <pre><code class="sl-pb-2 response-content language-json"
+                                       data-empty-response-text="<Empty response>"
+                                       style="max-height: 300px;"></code></pre>
+                        </div>
+                    </div>
+                </div>
+        </form>
+    </div>
+</div>
+                
+                                            <div class="sl-panel sl-outline-none sl-w-full sl-rounded-lg">
+                            <div class="sl-panel__titlebar sl-flex sl-items-center sl-relative focus:sl-z-10 sl-text-base sl-leading-none sl-pr-3 sl-pl-4 sl-bg-canvas-200 sl-text-body sl-border-input focus:sl-border-primary sl-select-none">
+                                <div class="sl-flex sl-flex-1 sl-items-center sl-h-lg">
+                                    <div class="sl--ml-2">
+                                        Example request:
+                                        <select class="example-request-lang-toggle sl-text-base"
+                                                aria-label="Request Sample Language"
+                                                onchange="switchExampleLanguage(event.target.value);">
+                                                                                            <option>bash</option>
+                                                                                            <option>javascript</option>
+                                                                                    </select>
+                                    </div>
+                                </div>
+                            </div>
+                                                            <div class="sl-bg-canvas-100 example-request example-request-bash"
+                                     style="">
+                                    <div class="sl-px-0 sl-py-1">
+                                        <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
+                                            <pre><code class="language-bash">curl --request PUT \
+    "http://localhost:8000/api/verify-numbers" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"phone\": \"ziborratpckqgtdkfhaek\",
+    \"number\": \"xgsypjldmhuycyi\"
+}"
+</code></pre>                                        </div>
+                                    </div>
+                                </div>
+                                                            <div class="sl-bg-canvas-100 example-request example-request-javascript"
+                                     style="display: none;">
+                                    <div class="sl-px-0 sl-py-1">
+                                        <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
+                                            <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/verify-numbers"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "phone": "ziborratpckqgtdkfhaek",
+    "number": "xgsypjldmhuycyi"
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>                                        </div>
+                                    </div>
+                                </div>
+                                                    </div>
+                    
+                            </div>
+    </div>
+</div>
+
                 <h1 id="1-faq-2-3-4"
         class="sl-text-5xl sl-leading-tight sl-font-prose sl-text-heading"
     >
@@ -2074,7 +2815,7 @@ fetch(url, {
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        eum
+                        delectus
                     </div>
                 </div>
             </div>
@@ -2171,7 +2912,7 @@ fetch(url, {
                                         <input aria-label="id" name="id"
                                                id="urlparam-GETapi-boards--id--init-id"
                                                placeholder="The ID of the board."
-                                               value="eum" data-component="url"
+                                               value="delectus" data-component="url"
                                                class="sl-relative sl-w-full sl-h-md sl-text-base sl-pr-2.5 sl-pl-2.5 sl-rounded sl-border-transparent hover:sl-border-input focus:sl-border-primary sl-border">
                                     </div>
                                 </div>
@@ -2267,7 +3008,7 @@ You can check the Dev Tools console for debugging information.</p>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/boards/eum/init" \
+    --get "http://localhost:8000/api/boards/delectus/init" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>                                        </div>
                                     </div>
@@ -2277,7 +3018,7 @@ You can check the Dev Tools console for debugging information.</p>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/boards/eum/init"
+    "http://localhost:8000/api/boards/delectus/init"
 );
 
 const headers = {
@@ -2447,7 +3188,7 @@ fetch(url, {
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        omnis
+                        itaque
                     </div>
                 </div>
             </div>
@@ -2544,7 +3285,7 @@ fetch(url, {
                                         <input aria-label="id" name="id"
                                                id="urlparam-GETapi-boards--id--id"
                                                placeholder="The ID of the board."
-                                               value="omnis" data-component="url"
+                                               value="itaque" data-component="url"
                                                class="sl-relative sl-w-full sl-h-md sl-text-base sl-pr-2.5 sl-pl-2.5 sl-rounded sl-border-transparent hover:sl-border-input focus:sl-border-primary sl-border">
                                     </div>
                                 </div>
@@ -2640,7 +3381,7 @@ You can check the Dev Tools console for debugging information.</p>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/boards/omnis" \
+    --get "http://localhost:8000/api/boards/itaque" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>                                        </div>
                                     </div>
@@ -2650,7 +3391,7 @@ You can check the Dev Tools console for debugging information.</p>
                                     <div class="sl-px-0 sl-py-1">
                                         <div style="max-height: 400px;" class="sl-overflow-y-auto sl-rounded">
                                             <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/boards/omnis"
+    "http://localhost:8000/api/boards/itaque"
 );
 
 const headers = {
@@ -2875,7 +3616,7 @@ fetch(url, {
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        7
+                        2
                     </div>
                 </div>
             </div>
@@ -2900,7 +3641,7 @@ fetch(url, {
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        18
+                        11
                     </div>
                 </div>
             </div>
@@ -2927,7 +3668,7 @@ fetch(url, {
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        ut
+                        repellat
                     </div>
                 </div>
             </div>
@@ -2954,7 +3695,7 @@ fetch(url, {
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        eaque
+                        dolorem
                     </div>
                 </div>
             </div>
@@ -3113,10 +3854,10 @@ fetch(url, {
                                      id="json-body-POSTapi-posts"
                                      style="font-family: var(--font-code); font-size: 12px; line-height: var(--lh-code);"
                                 >{
-    "board_id": 7,
-    "category_id": 18,
-    "title": "ut",
-    "content": "eaque",
+    "board_id": 2,
+    "category_id": 11,
+    "title": "repellat",
+    "content": "dolorem",
     "files": null,
     "created_by": null,
     "start_date": null,
@@ -3216,10 +3957,10 @@ You can check the Dev Tools console for debugging information.</p>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"board_id\": 7,
-    \"category_id\": 18,
-    \"title\": \"ut\",
-    \"content\": \"eaque\"
+    \"board_id\": 2,
+    \"category_id\": 11,
+    \"title\": \"repellat\",
+    \"content\": \"dolorem\"
 }"
 </code></pre>                                        </div>
                                     </div>
@@ -3238,10 +3979,10 @@ const headers = {
 };
 
 let body = {
-    "board_id": 7,
-    "category_id": 18,
-    "title": "ut",
-    "content": "eaque"
+    "board_id": 2,
+    "category_id": 11,
+    "title": "repellat",
+    "content": "dolorem"
 };
 
 fetch(url, {
@@ -4358,7 +5099,7 @@ fetch(url, {
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        kadazhyuey
+                        fdnexpx
                     </div>
                 </div>
             </div>
@@ -4383,7 +5124,7 @@ fetch(url, {
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        Dolorum dicta libero voluptates minima aspernatur.
+                        Adipisci atque ipsam cum ratione sint vel.
                     </div>
                 </div>
             </div>
@@ -4447,7 +5188,7 @@ fetch(url, {
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        nwilxvdukt
+                        prkscilsqqoorbyhrxpaowckh
                     </div>
                 </div>
             </div>
@@ -4472,7 +5213,7 @@ fetch(url, {
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        73
+                        31
                     </div>
                 </div>
             </div>
@@ -4551,7 +5292,7 @@ fetch(url, {
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        30
+                        90
                     </div>
                 </div>
             </div>
@@ -4576,7 +5317,7 @@ fetch(url, {
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        29
+                        18
                     </div>
                 </div>
             </div>
@@ -4603,7 +5344,7 @@ fetch(url, {
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        15
+                        1
                     </div>
                 </div>
             </div>
@@ -4630,7 +5371,7 @@ fetch(url, {
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        83
+                        11
                     </div>
                 </div>
             </div>
@@ -4672,7 +5413,7 @@ fetch(url, {
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        false
+                        true
                     </div>
                 </div>
             </div>
@@ -4714,7 +5455,7 @@ fetch(url, {
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        vugyiocyqdjdlxtiwdqciqt
+                        yrujrohbjdtjxwjh
                     </div>
                 </div>
             </div>
@@ -4739,7 +5480,7 @@ fetch(url, {
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        icyddjyviwuds
+                        hsuylxbddkjcdeprk
                     </div>
                 </div>
             </div>
@@ -4764,7 +5505,7 @@ fetch(url, {
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        vpb
+                        zxjoiip
                     </div>
                 </div>
             </div>
@@ -4789,7 +5530,7 @@ fetch(url, {
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        x
+                        nrvqpzk
                     </div>
                 </div>
             </div>
@@ -4814,7 +5555,7 @@ fetch(url, {
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        zvjxdreskqgy
+                        gszqttvawoqcaifmfdn
                     </div>
                 </div>
             </div>
@@ -4839,7 +5580,7 @@ fetch(url, {
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        ltnwxypp
+                        wvsq
                     </div>
                 </div>
             </div>
@@ -4864,7 +5605,7 @@ fetch(url, {
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        cokhd
+                        eyoekgcpgykonmpkn
                     </div>
                 </div>
             </div>
@@ -4889,7 +5630,7 @@ fetch(url, {
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        eveniet
+                        consectetur
                     </div>
                 </div>
             </div>
@@ -4914,7 +5655,7 @@ fetch(url, {
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        ibdzc
+                        vlowfmgu
                     </div>
                 </div>
             </div>
@@ -4939,7 +5680,7 @@ fetch(url, {
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        2024-12-10T16:42:58
+                        2024-12-10T17:07:35
                     </div>
                 </div>
             </div>
@@ -4964,7 +5705,7 @@ fetch(url, {
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        2123-12-27
+                        2029-04-16
                     </div>
                 </div>
             </div>
@@ -4989,7 +5730,7 @@ fetch(url, {
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        czxuhoultytsqkulkvhp
+                        znnfseewwupovsgvctfxraf
                     </div>
                 </div>
             </div>
@@ -5014,7 +5755,7 @@ fetch(url, {
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        wsswtitsapxy
+                        gd
                     </div>
                 </div>
             </div>
@@ -5148,7 +5889,7 @@ fetch(url, {
                                                                                             <input aria-label="name" name="name"
                                                        id="bodyparam-POSTapi-admin-products-name"
                                                        placeholder="&lt;span class=&quot;point&quot;&gt;상품명&lt;/span&gt;. Must not be greater than 255 characters."
-                                                       value="kadazhyuey" data-component="body"
+                                                       value="fdnexpx" data-component="body"
                                                        class="sl-relative sl-w-full sl-h-md sl-text-base sl-pr-2.5 sl-pl-2.5 sl-rounded sl-border-transparent hover:sl-border-input focus:sl-border-primary sl-border"
                                                 >
                                                                                     </div>
@@ -5161,7 +5902,7 @@ fetch(url, {
                                                                                             <input aria-label="description" name="description"
                                                        id="bodyparam-POSTapi-admin-products-description"
                                                        placeholder="&lt;span class=&quot;point&quot;&gt;상품설명&lt;/span&gt;."
-                                                       value="Dolorum dicta libero voluptates minima aspernatur." data-component="body"
+                                                       value="Adipisci atque ipsam cum ratione sint vel." data-component="body"
                                                        class="sl-relative sl-w-full sl-h-md sl-text-base sl-pr-2.5 sl-pl-2.5 sl-rounded sl-border-transparent hover:sl-border-input focus:sl-border-primary sl-border"
                                                 >
                                                                                     </div>
@@ -5213,7 +5954,7 @@ fetch(url, {
                                                                                             <input aria-label="price" name="price"
                                                        id="bodyparam-POSTapi-admin-products-price"
                                                        placeholder="&lt;span class=&quot;point&quot;&gt;가격&lt;/span&gt;. value(은)는  최소 0 이상이어야 합니다."
-                                                       value="30" data-component="body"
+                                                       value="90" data-component="body"
                                                        class="sl-relative sl-w-full sl-h-md sl-text-base sl-pr-2.5 sl-pl-2.5 sl-rounded sl-border-transparent hover:sl-border-input focus:sl-border-primary sl-border"
                                                 >
                                                                                     </div>
@@ -5226,7 +5967,7 @@ fetch(url, {
                                                                                             <input aria-label="original_price" name="original_price"
                                                        id="bodyparam-POSTapi-admin-products-original_price"
                                                        placeholder="&lt;span class=&quot;point&quot;&gt;원래가격&lt;/span&gt;. value(은)는  최소 0 이상이어야 합니다."
-                                                       value="29" data-component="body"
+                                                       value="18" data-component="body"
                                                        class="sl-relative sl-w-full sl-h-md sl-text-base sl-pr-2.5 sl-pl-2.5 sl-rounded sl-border-transparent hover:sl-border-input focus:sl-border-primary sl-border"
                                                 >
                                                                                     </div>
@@ -5239,7 +5980,7 @@ fetch(url, {
                                                                                             <input aria-label="delivery_fee" name="delivery_fee"
                                                        id="bodyparam-POSTapi-admin-products-delivery_fee"
                                                        placeholder="&lt;span class=&quot;point&quot;&gt;배송비&lt;/span&gt;. value(은)는  최소 0 이상이어야 합니다."
-                                                       value="15" data-component="body"
+                                                       value="1" data-component="body"
                                                        class="sl-relative sl-w-full sl-h-md sl-text-base sl-pr-2.5 sl-pl-2.5 sl-rounded sl-border-transparent hover:sl-border-input focus:sl-border-primary sl-border"
                                                 >
                                                                                     </div>
@@ -5252,7 +5993,7 @@ fetch(url, {
                                                                                             <input aria-label="stock_quantity" name="stock_quantity"
                                                        id="bodyparam-POSTapi-admin-products-stock_quantity"
                                                        placeholder="&lt;span class=&quot;point&quot;&gt;재고수량&lt;/span&gt;. value(은)는  최소 0 이상이어야 합니다."
-                                                       value="83" data-component="body"
+                                                       value="11" data-component="body"
                                                        class="sl-relative sl-w-full sl-h-md sl-text-base sl-pr-2.5 sl-pl-2.5 sl-rounded sl-border-transparent hover:sl-border-input focus:sl-border-primary sl-border"
                                                 >
                                                                                     </div>
@@ -5265,7 +6006,7 @@ fetch(url, {
                                                                                             <input aria-label="is_md_suggestion_gift" name="is_md_suggestion_gift"
                                                        id="bodyparam-POSTapi-admin-products-is_md_suggestion_gift"
                                                        placeholder="&lt;span class=&quot;point&quot;&gt;MD 추천 선물&lt;/span&gt;."
-                                                       value="" data-component="body"
+                                                       value="1" data-component="body"
                                                        class="sl-relative sl-w-full sl-h-md sl-text-base sl-pr-2.5 sl-pl-2.5 sl-rounded sl-border-transparent hover:sl-border-input focus:sl-border-primary sl-border"
                                                 >
                                                                                     </div>
@@ -5278,7 +6019,7 @@ fetch(url, {
                                                                                             <input aria-label="food_type" name="food_type"
                                                        id="bodyparam-POSTapi-admin-products-food_type"
                                                        placeholder="&lt;span class=&quot;point&quot;&gt;식품의 유형&lt;/span&gt;. Must not be greater than 100 characters."
-                                                       value="vugyiocyqdjdlxtiwdqciqt" data-component="body"
+                                                       value="yrujrohbjdtjxwjh" data-component="body"
                                                        class="sl-relative sl-w-full sl-h-md sl-text-base sl-pr-2.5 sl-pl-2.5 sl-rounded sl-border-transparent hover:sl-border-input focus:sl-border-primary sl-border"
                                                 >
                                                                                     </div>
@@ -5291,7 +6032,7 @@ fetch(url, {
                                                                                             <input aria-label="fruit_size" name="fruit_size"
                                                        id="bodyparam-POSTapi-admin-products-fruit_size"
                                                        placeholder="&lt;span class=&quot;point&quot;&gt;과일 크기&lt;/span&gt;. Must not be greater than 50 characters."
-                                                       value="icyddjyviwuds" data-component="body"
+                                                       value="hsuylxbddkjcdeprk" data-component="body"
                                                        class="sl-relative sl-w-full sl-h-md sl-text-base sl-pr-2.5 sl-pl-2.5 sl-rounded sl-border-transparent hover:sl-border-input focus:sl-border-primary sl-border"
                                                 >
                                                                                     </div>
@@ -5304,7 +6045,7 @@ fetch(url, {
                                                                                             <input aria-label="sugar_content" name="sugar_content"
                                                        id="bodyparam-POSTapi-admin-products-sugar_content"
                                                        placeholder="&lt;span class=&quot;point&quot;&gt;당도&lt;/span&gt;. Must not be greater than 50 characters."
-                                                       value="vpb" data-component="body"
+                                                       value="zxjoiip" data-component="body"
                                                        class="sl-relative sl-w-full sl-h-md sl-text-base sl-pr-2.5 sl-pl-2.5 sl-rounded sl-border-transparent hover:sl-border-input focus:sl-border-primary sl-border"
                                                 >
                                                                                     </div>
@@ -5317,7 +6058,7 @@ fetch(url, {
                                                                                             <input aria-label="shipping_origin" name="shipping_origin"
                                                        id="bodyparam-POSTapi-admin-products-shipping_origin"
                                                        placeholder="&lt;span class=&quot;point&quot;&gt;출고지&lt;/span&gt;. Must not be greater than 255 characters."
-                                                       value="x" data-component="body"
+                                                       value="nrvqpzk" data-component="body"
                                                        class="sl-relative sl-w-full sl-h-md sl-text-base sl-pr-2.5 sl-pl-2.5 sl-rounded sl-border-transparent hover:sl-border-input focus:sl-border-primary sl-border"
                                                 >
                                                                                     </div>
@@ -5330,7 +6071,7 @@ fetch(url, {
                                                                                             <input aria-label="manufacturer_and_location" name="manufacturer_and_location"
                                                        id="bodyparam-POSTapi-admin-products-manufacturer_and_location"
                                                        placeholder="&lt;span class=&quot;point&quot;&gt;생산자 및 소재지&lt;/span&gt;. Must not be greater than 255 characters."
-                                                       value="zvjxdreskqgy" data-component="body"
+                                                       value="gszqttvawoqcaifmfdn" data-component="body"
                                                        class="sl-relative sl-w-full sl-h-md sl-text-base sl-pr-2.5 sl-pl-2.5 sl-rounded sl-border-transparent hover:sl-border-input focus:sl-border-primary sl-border"
                                                 >
                                                                                     </div>
@@ -5343,7 +6084,7 @@ fetch(url, {
                                                                                             <input aria-label="importer" name="importer"
                                                        id="bodyparam-POSTapi-admin-products-importer"
                                                        placeholder="&lt;span class=&quot;point&quot;&gt;수입자&lt;/span&gt;. Must not be greater than 255 characters."
-                                                       value="ltnwxypp" data-component="body"
+                                                       value="wvsq" data-component="body"
                                                        class="sl-relative sl-w-full sl-h-md sl-text-base sl-pr-2.5 sl-pl-2.5 sl-rounded sl-border-transparent hover:sl-border-input focus:sl-border-primary sl-border"
                                                 >
                                                                                     </div>
@@ -5356,7 +6097,7 @@ fetch(url, {
                                                                                             <input aria-label="origin" name="origin"
                                                        id="bodyparam-POSTapi-admin-products-origin"
                                                        placeholder="&lt;span class=&quot;point&quot;&gt;원산지&lt;/span&gt;. Must not be greater than 255 characters."
-                                                       value="cokhd" data-component="body"
+                                                       value="eyoekgcpgykonmpkn" data-component="body"
                                                        class="sl-relative sl-w-full sl-h-md sl-text-base sl-pr-2.5 sl-pl-2.5 sl-rounded sl-border-transparent hover:sl-border-input focus:sl-border-primary sl-border"
                                                 >
                                                                                     </div>
@@ -5369,7 +6110,7 @@ fetch(url, {
                                                                                             <input aria-label="ingredients_and_composition" name="ingredients_and_composition"
                                                        id="bodyparam-POSTapi-admin-products-ingredients_and_composition"
                                                        placeholder="&lt;span class=&quot;point&quot;&gt;원재료 및 합량&lt;/span&gt;."
-                                                       value="eveniet" data-component="body"
+                                                       value="consectetur" data-component="body"
                                                        class="sl-relative sl-w-full sl-h-md sl-text-base sl-pr-2.5 sl-pl-2.5 sl-rounded sl-border-transparent hover:sl-border-input focus:sl-border-primary sl-border"
                                                 >
                                                                                     </div>
@@ -5382,7 +6123,7 @@ fetch(url, {
                                                                                             <input aria-label="storage_and_handling" name="storage_and_handling"
                                                        id="bodyparam-POSTapi-admin-products-storage_and_handling"
                                                        placeholder="&lt;span class=&quot;point&quot;&gt;보관/취급방법&lt;/span&gt;. Must not be greater than 255 characters."
-                                                       value="ibdzc" data-component="body"
+                                                       value="vlowfmgu" data-component="body"
                                                        class="sl-relative sl-w-full sl-h-md sl-text-base sl-pr-2.5 sl-pl-2.5 sl-rounded sl-border-transparent hover:sl-border-input focus:sl-border-primary sl-border"
                                                 >
                                                                                     </div>
@@ -5395,7 +6136,7 @@ fetch(url, {
                                                                                             <input aria-label="manufacture_date" name="manufacture_date"
                                                        id="bodyparam-POSTapi-admin-products-manufacture_date"
                                                        placeholder="&lt;span class=&quot;point&quot;&gt;제조연원일&lt;/span&gt;. Must be a valid date."
-                                                       value="2024-12-10T16:42:58" data-component="body"
+                                                       value="2024-12-10T17:07:35" data-component="body"
                                                        class="sl-relative sl-w-full sl-h-md sl-text-base sl-pr-2.5 sl-pl-2.5 sl-rounded sl-border-transparent hover:sl-border-input focus:sl-border-primary sl-border"
                                                 >
                                                                                     </div>
@@ -5408,7 +6149,7 @@ fetch(url, {
                                                                                             <input aria-label="expiration_date" name="expiration_date"
                                                        id="bodyparam-POSTapi-admin-products-expiration_date"
                                                        placeholder="&lt;span class=&quot;point&quot;&gt;유통기한&lt;/span&gt;. Must be a valid date. value(은)는 &lt;code&gt;manufacture_date&lt;/code&gt;보다 이후거나 같아야 합니다."
-                                                       value="2123-12-27" data-component="body"
+                                                       value="2029-04-16" data-component="body"
                                                        class="sl-relative sl-w-full sl-h-md sl-text-base sl-pr-2.5 sl-pl-2.5 sl-rounded sl-border-transparent hover:sl-border-input focus:sl-border-primary sl-border"
                                                 >
                                                                                     </div>
@@ -5421,7 +6162,7 @@ fetch(url, {
                                                                                             <input aria-label="gmo_desc" name="gmo_desc"
                                                        id="bodyparam-POSTapi-admin-products-gmo_desc"
                                                        placeholder="&lt;span class=&quot;point&quot;&gt;유전자변형 농산물여부&lt;/span&gt;. Must not be greater than 255 characters."
-                                                       value="czxuhoultytsqkulkvhp" data-component="body"
+                                                       value="znnfseewwupovsgvctfxraf" data-component="body"
                                                        class="sl-relative sl-w-full sl-h-md sl-text-base sl-pr-2.5 sl-pl-2.5 sl-rounded sl-border-transparent hover:sl-border-input focus:sl-border-primary sl-border"
                                                 >
                                                                                     </div>
@@ -5434,7 +6175,7 @@ fetch(url, {
                                                                                             <input aria-label="customer_service_contact" name="customer_service_contact"
                                                        id="bodyparam-POSTapi-admin-products-customer_service_contact"
                                                        placeholder="&lt;span class=&quot;point&quot;&gt;소비자상담문의&lt;/span&gt;. Must not be greater than 255 characters."
-                                                       value="wsswtitsapxy" data-component="body"
+                                                       value="gd" data-component="body"
                                                        class="sl-relative sl-w-full sl-h-md sl-text-base sl-pr-2.5 sl-pl-2.5 sl-rounded sl-border-transparent hover:sl-border-input focus:sl-border-primary sl-border"
                                                 >
                                                                                     </div>
@@ -5533,30 +6274,30 @@ You can check the Dev Tools console for debugging information.</p>
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "name=kadazhyuey"\
-    --form "description=Dolorum dicta libero voluptates minima aspernatur."\
-    --form "price=30"\
-    --form "original_price=29"\
-    --form "delivery_fee=15"\
-    --form "stock_quantity=83"\
-    --form "is_md_suggestion_gift="\
-    --form "food_type=vugyiocyqdjdlxtiwdqciqt"\
-    --form "fruit_size=icyddjyviwuds"\
-    --form "sugar_content=vpb"\
-    --form "shipping_origin=x"\
-    --form "manufacturer_and_location=zvjxdreskqgy"\
-    --form "importer=ltnwxypp"\
-    --form "origin=cokhd"\
-    --form "ingredients_and_composition=eveniet"\
-    --form "storage_and_handling=ibdzc"\
-    --form "manufacture_date=2024-12-10T16:42:58"\
-    --form "expiration_date=2123-12-27"\
-    --form "gmo_desc=czxuhoultytsqkulkvhp"\
-    --form "customer_service_contact=wsswtitsapxy"\
-    --form "options[][name]=nwilxvdukt"\
-    --form "options[][price]=73"\
-    --form "product_images[]=@/private/var/folders/3w/x4z427n16x357ck36slf837m0000gn/T/phpgQHbU3" \
-    --form "product_desc_images[]=@/private/var/folders/3w/x4z427n16x357ck36slf837m0000gn/T/phpPcitFK" </code></pre>                                        </div>
+    --form "name=fdnexpx"\
+    --form "description=Adipisci atque ipsam cum ratione sint vel."\
+    --form "price=90"\
+    --form "original_price=18"\
+    --form "delivery_fee=1"\
+    --form "stock_quantity=11"\
+    --form "is_md_suggestion_gift=1"\
+    --form "food_type=yrujrohbjdtjxwjh"\
+    --form "fruit_size=hsuylxbddkjcdeprk"\
+    --form "sugar_content=zxjoiip"\
+    --form "shipping_origin=nrvqpzk"\
+    --form "manufacturer_and_location=gszqttvawoqcaifmfdn"\
+    --form "importer=wvsq"\
+    --form "origin=eyoekgcpgykonmpkn"\
+    --form "ingredients_and_composition=consectetur"\
+    --form "storage_and_handling=vlowfmgu"\
+    --form "manufacture_date=2024-12-10T17:07:35"\
+    --form "expiration_date=2029-04-16"\
+    --form "gmo_desc=znnfseewwupovsgvctfxraf"\
+    --form "customer_service_contact=gd"\
+    --form "options[][name]=prkscilsqqoorbyhrxpaowckh"\
+    --form "options[][price]=31"\
+    --form "product_images[]=@/private/var/folders/3w/x4z427n16x357ck36slf837m0000gn/T/phpScE6ps" \
+    --form "product_desc_images[]=@/private/var/folders/3w/x4z427n16x357ck36slf837m0000gn/T/phpSNLZxC" </code></pre>                                        </div>
                                     </div>
                                 </div>
                                                             <div class="sl-bg-canvas-100 example-request example-request-javascript"
@@ -5574,28 +6315,28 @@ const headers = {
 };
 
 const body = new FormData();
-body.append('name', 'kadazhyuey');
-body.append('description', 'Dolorum dicta libero voluptates minima aspernatur.');
-body.append('price', '30');
-body.append('original_price', '29');
-body.append('delivery_fee', '15');
-body.append('stock_quantity', '83');
-body.append('is_md_suggestion_gift', '');
-body.append('food_type', 'vugyiocyqdjdlxtiwdqciqt');
-body.append('fruit_size', 'icyddjyviwuds');
-body.append('sugar_content', 'vpb');
-body.append('shipping_origin', 'x');
-body.append('manufacturer_and_location', 'zvjxdreskqgy');
-body.append('importer', 'ltnwxypp');
-body.append('origin', 'cokhd');
-body.append('ingredients_and_composition', 'eveniet');
-body.append('storage_and_handling', 'ibdzc');
-body.append('manufacture_date', '2024-12-10T16:42:58');
-body.append('expiration_date', '2123-12-27');
-body.append('gmo_desc', 'czxuhoultytsqkulkvhp');
-body.append('customer_service_contact', 'wsswtitsapxy');
-body.append('options[][name]', 'nwilxvdukt');
-body.append('options[][price]', '73');
+body.append('name', 'fdnexpx');
+body.append('description', 'Adipisci atque ipsam cum ratione sint vel.');
+body.append('price', '90');
+body.append('original_price', '18');
+body.append('delivery_fee', '1');
+body.append('stock_quantity', '11');
+body.append('is_md_suggestion_gift', '1');
+body.append('food_type', 'yrujrohbjdtjxwjh');
+body.append('fruit_size', 'hsuylxbddkjcdeprk');
+body.append('sugar_content', 'zxjoiip');
+body.append('shipping_origin', 'nrvqpzk');
+body.append('manufacturer_and_location', 'gszqttvawoqcaifmfdn');
+body.append('importer', 'wvsq');
+body.append('origin', 'eyoekgcpgykonmpkn');
+body.append('ingredients_and_composition', 'consectetur');
+body.append('storage_and_handling', 'vlowfmgu');
+body.append('manufacture_date', '2024-12-10T17:07:35');
+body.append('expiration_date', '2029-04-16');
+body.append('gmo_desc', 'znnfseewwupovsgvctfxraf');
+body.append('customer_service_contact', 'gd');
+body.append('options[][name]', 'prkscilsqqoorbyhrxpaowckh');
+body.append('options[][price]', '31');
 body.append('product_images[]', document.querySelector('input[name="product_images[]"]').files[0]);
 body.append('product_desc_images[]', document.querySelector('input[name="product_desc_images[]"]').files[0]);
 
@@ -5829,7 +6570,7 @@ fetch(url, {
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        schamberger.grayce@example.com
+                        russel.ike@example.com
                     </div>
                 </div>
             </div>
@@ -5856,7 +6597,7 @@ fetch(url, {
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        a74enH;gcwwln7He
+                        N&#039;L|A$J|XtDeH6R
                     </div>
                 </div>
             </div>
@@ -5950,8 +6691,8 @@ fetch(url, {
                                      id="json-body-POSTapi-login"
                                      style="font-family: var(--font-code); font-size: 12px; line-height: var(--lh-code);"
                                 >{
-    "email": "schamberger.grayce@example.com",
-    "password": "a74enH;gcwwln7He"
+    "email": "russel.ike@example.com",
+    "password": "N'L|A$J|XtDeH6R"
 }</div>
                             </div>
                                             </div>
@@ -6047,8 +6788,8 @@ You can check the Dev Tools console for debugging information.</p>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"schamberger.grayce@example.com\",
-    \"password\": \"a74enH;gcwwln7He\"
+    \"email\": \"russel.ike@example.com\",
+    \"password\": \"N\'L|A$J|XtDeH6R\"
 }"
 </code></pre>                                        </div>
                                     </div>
@@ -6067,8 +6808,8 @@ const headers = {
 };
 
 let body = {
-    "email": "schamberger.grayce@example.com",
-    "password": "a74enH;gcwwln7He"
+    "email": "russel.ike@example.com",
+    "password": "N'L|A$J|XtDeH6R"
 };
 
 fetch(url, {
@@ -6189,7 +6930,7 @@ fetch(url, {
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        hadley30@example.com
+                        helene.greenholt@example.com
                     </div>
                 </div>
             </div>
@@ -6216,7 +6957,7 @@ fetch(url, {
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        omnis
+                        dolorum
                     </div>
                 </div>
             </div>
@@ -6243,7 +6984,7 @@ fetch(url, {
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        veniam
+                        sed
                     </div>
                 </div>
             </div>
@@ -6270,7 +7011,7 @@ fetch(url, {
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        pwolxfsvoeqcrvwrgwmlsx
+                        aaowo
                     </div>
                 </div>
             </div>
@@ -6297,7 +7038,7 @@ fetch(url, {
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        60339937212
+                        79509887814
                     </div>
                 </div>
             </div>
@@ -6322,7 +7063,7 @@ fetch(url, {
                 <span>Example:</span> <!-- <span> important for spacing -->
                 <div class="sl-flex sl-flex-1 sl-flex-wrap" style="gap: 4px;">
                     <div class="sl-max-w-full sl-break-all sl-px-1 sl-bg-canvas-tint sl-text-muted sl-rounded sl-border">
-                        croaiovmrxrui
+                        bgp
                     </div>
                 </div>
             </div>
@@ -6416,12 +7157,12 @@ fetch(url, {
                                      id="json-body-POSTapi-register"
                                      style="font-family: var(--font-code); font-size: 12px; line-height: var(--lh-code);"
                                 >{
-    "email": "hadley30@example.com",
-    "password": "omnis",
-    "password_confirmation": "veniam",
-    "name": "pwolxfsvoeqcrvwrgwmlsx",
-    "phone": "60339937212",
-    "nickname": "croaiovmrxrui"
+    "email": "helene.greenholt@example.com",
+    "password": "dolorum",
+    "password_confirmation": "sed",
+    "name": "aaowo",
+    "phone": "79509887814",
+    "nickname": "bgp"
 }</div>
                             </div>
                                             </div>
@@ -6517,12 +7258,12 @@ You can check the Dev Tools console for debugging information.</p>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"hadley30@example.com\",
-    \"password\": \"omnis\",
-    \"password_confirmation\": \"veniam\",
-    \"name\": \"pwolxfsvoeqcrvwrgwmlsx\",
-    \"phone\": \"60339937212\",
-    \"nickname\": \"croaiovmrxrui\"
+    \"email\": \"helene.greenholt@example.com\",
+    \"password\": \"dolorum\",
+    \"password_confirmation\": \"sed\",
+    \"name\": \"aaowo\",
+    \"phone\": \"79509887814\",
+    \"nickname\": \"bgp\"
 }"
 </code></pre>                                        </div>
                                     </div>
@@ -6541,12 +7282,12 @@ const headers = {
 };
 
 let body = {
-    "email": "hadley30@example.com",
-    "password": "omnis",
-    "password_confirmation": "veniam",
-    "name": "pwolxfsvoeqcrvwrgwmlsx",
-    "phone": "60339937212",
-    "nickname": "croaiovmrxrui"
+    "email": "helene.greenholt@example.com",
+    "password": "dolorum",
+    "password_confirmation": "sed",
+    "name": "aaowo",
+    "phone": "79509887814",
+    "nickname": "bgp"
 };
 
 fetch(url, {
