@@ -21,7 +21,7 @@ class ProductResource extends JsonResource
         $return = [
             //...parent::toArray($request);
             ...$this->only([
-                'id', 'name', 'view_count',
+                'id', 'name', 'description', 'view_count',
                 'price',
                 'original_price',
                 'delivery_fee',
