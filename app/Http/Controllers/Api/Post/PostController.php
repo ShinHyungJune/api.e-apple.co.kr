@@ -48,7 +48,7 @@ class PostController extends ApiController
 
         //Media Library
         $query = Post::with(['user', 'comments.user'/*, 'files'*/])->where('board_id', $board->id)->search($filters);
-        $items = $query->orderByRaw("FIELD(is_notice, true, false)")->latest()->simplePaginate($request->itemsPerPage);
+        $items = $query->orderByRaw("FIELD(is_notice, true, false)")->latest()->paginate($request->take ?? 10);
         $items->map(fn($e) => $e->append(['can_view', 'can_update', 'can_delete'/*, 'image_url'*/]));
 
         return PostResource::collection($items);

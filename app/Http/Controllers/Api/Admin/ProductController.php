@@ -20,7 +20,7 @@ class ProductController extends ApiController
      */
     public function index()
     {
-        $items = Product::query()->latest()->paginate(30);
+        $items = Product::query()->latest()->paginate($request->take ?? 30);
         return ProductResource::collection($items);
     }
 

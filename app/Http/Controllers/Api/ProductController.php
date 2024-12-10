@@ -28,9 +28,10 @@ class ProductController extends ApiController
     {
         $filters = $request->only(['min_price', 'max_price', 'tags']);
 
-        $perPage = 30;
         if ($category && ProductCategory::BEST->value === ProductCategory::from($category)->value) {
-            $perPage = 20;
+            $request->take = $request->take ?? 20;
+        } else {
+            $request->take = $request->take ?? 30;
         }
 
         //DB::enableQueryLog();
@@ -38,7 +39,7 @@ class ProductController extends ApiController
             ->withCount(['inquiries'])
             ->with(['reviews'])
             ->category($category)->search($filters)->latest();
-        $items = $query->simplePaginate($perPage);
+        $items = $query->paginate($request->take);
         //Log::info(DB::getQueryLog());
 
         return ProductResource::collection($items);
