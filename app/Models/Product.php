@@ -50,6 +50,11 @@ class Product extends Model implements HasMedia
         }
     }
 
+    public function options()
+    {
+        return $this->hasMany(ProductOption::class);
+    }
+
     public function reviews()
     {
         return $this->hasMany(ProductReview::class);

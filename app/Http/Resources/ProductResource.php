@@ -39,6 +39,7 @@ class ProductResource extends JsonResource
                 'gmo_desc',
                 'customer_service_contact'
             ]),
+            'options' => $this->options ? ProductOptionResource::collection($this->options) : null,
 
             'is_new' => Carbon::parse($this->created_at)->greaterThanOrEqualTo(Carbon::now()->subDay()),
             'is_best' => $this->categories ? in_array(ProductCategory::BEST->value, $this->categories) : false,

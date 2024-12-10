@@ -16,7 +16,7 @@ return new class extends Migration
 
             $table->string('name')->comment('상품명');
             $table->text('description')->nullable()->comment('상품설명');
-            $table->unsignedInteger('view_count')->comment('조회수');
+            $table->unsignedInteger('view_count')->default(0)->comment('조회수');
 
             $table->unsignedInteger('price')->comment('가격');
             $table->unsignedInteger('original_price')->nullable()->comment('원래 가격');

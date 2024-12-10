@@ -24,6 +24,12 @@ class ProductRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'max:255'], // 상품명: 필수, 문자열, 최대 255자
             'description' => ['nullable', 'string'], // 상품설명: 선택적, 문자열
+
+            'options' => ['nullable', 'array'],
+            'options.*.id' => ['nullable', 'array'],
+            'options.*.name' => ['nullable', 'string', 'max:255'],
+            'options.*.price' => ['nullable', 'numeric', 'min:0'],
+
             'product_images' => ['nullable', 'array'],
             'product_images.*' => ['nullable', 'file', 'mimes:jpg,png,pdf', 'max:2048'], // 각각의 파일에 대해 유효성 검사
             'product_desc_images' => ['nullable', 'array'],
@@ -61,6 +67,7 @@ class ProductRequest extends FormRequest
         return [
             'name' => ['description' => '<span class="point">상품명</span>'],
             'description' => ['description' => '<span class="point">상품설명</span>'],
+            'options' => ['description' => '<span class="point">상품 옵션</span>'],
             'product_images' => ['description' => '<span class="point">상품 이미지</span>'],
             'product_desc_images' => ['description' => '<span class="point">상품설명 이미지</span>'],
 

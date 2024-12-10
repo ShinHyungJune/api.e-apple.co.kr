@@ -3,8 +3,6 @@
 use App\Enums\ProductCategory;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\ProductController;
-use App\Http\Controllers\Api\ProductInquiryController;
-use App\Http\Controllers\Api\ProductReviewController;
 use Illuminate\Support\Facades\Route;
 
 /*Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
@@ -43,7 +41,7 @@ Route::group(['prefix' => 'products'], function () {
         Route::get('{product}', 'show');
     });
 
-    //상품리뷰
+    /*//상품리뷰
     Route::group(['prefix' => '{id}/reviews', 'controller' => ProductReviewController::class], function () {
         Route::get('', 'index');
         Route::group(['middleware' => ['auth:api']], function () {
@@ -57,7 +55,7 @@ Route::group(['prefix' => 'products'], function () {
         Route::group(['middleware' => ['auth:api']], function () {
             Route::post('', 'store');
         });
-    });
+    });*/
 });
 
 /*Route::group(['prefix' => 'gifts', 'controller' => GiftController::class], function () {
