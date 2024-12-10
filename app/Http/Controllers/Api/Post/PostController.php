@@ -79,33 +79,30 @@ class PostController extends ApiController
         return $this->respondSuccessfully(PostResource::make($post));
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    public function show($id)
+    /**
+     * 상세
+     * @priority 1
+     * @unauthenticated
+     * @responseFile storage/responses/post.json
+     */
+    public function show(Post $post)
     {
-        //TODO Media Library
-        $post = Post::with(['user', /*'files',*/ 'comments.user'])->findOrFail($id);
+        //$post = Post::with(['user', /*'files',*/ 'comments.user'])->findOrFail($id);
         Gate::authorize('view', $post);
         $post->increment('read_count');
-        //$post->append('images');
         return $this->respondSuccessfully(PostResource::make($post));
     }
+
+
+
+
+
+
+
+
+
+
+
 
     public function update(PostRequest $request, $id)
     {
