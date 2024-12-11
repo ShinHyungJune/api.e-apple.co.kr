@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources\Post;
 
+use App\Http\Resources\MediaResource;
 use App\Http\Resources\UserResource;
 use App\Models\Post\Post;
 use Illuminate\Http\Request;
@@ -29,7 +30,7 @@ class PostResource extends JsonResource
                 'can_view', 'can_update', 'can_delete'
             ]),
             'user' => UserResource::make($this->user),
-            'files' => $this->getMedia(Post::MEDIA_COLLECTION) ? PostFileResource::collection($this->getMedia(Post::MEDIA_COLLECTION)) : null,
+            'files' => $this->getMedia(Post::MEDIA_COLLECTION) ? MediaResource::collection($this->getMedia(Post::MEDIA_COLLECTION)) : null,
             'comments' => PostCommentResource::collection($this->comments),
         ];
 
