@@ -15,7 +15,7 @@ class Product extends Model implements HasMedia
     use HasFactory, InteractsWithMedia;
 
     const IMAGES =  'product_images';
-    const DESC_IMAGES =  'product_desc_images';
+    //const DESC_IMAGES =  'product_desc_images';
 
     protected $casts = [
         'categories' => 'array',

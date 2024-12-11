@@ -53,11 +53,11 @@ class ProductController extends ApiController
                 $product->addMedia($file)->toMediaCollection('product_images');
             }
         }
-        if ($request->file(Product::DESC_IMAGES)) {
+        /*if ($request->file(Product::DESC_IMAGES)) {
             foreach ($request->file(Product::DESC_IMAGES) as $file) {
                 $product->addMedia($file)->toMediaCollection(Product::DESC_IMAGES);
             }
-        }
+        }*/
 
         return $this->respondSuccessfully(ProductResource::make($product));
     }
@@ -78,11 +78,11 @@ class ProductController extends ApiController
                 $product->addMedia($file)->toMediaCollection('product_images');
             }
         }
-        if ($request->file(Product::DESC_IMAGES)) {
+        /*if ($request->file(Product::DESC_IMAGES)) {
             foreach ($request->file(Product::DESC_IMAGES) as $file) {
                 $product->addMedia($file)->toMediaCollection(Product::DESC_IMAGES);
             }
-        }
+        }*/
 
         return $this->respondSuccessfully(ProductResource::make($product));
     }

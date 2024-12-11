@@ -19,7 +19,8 @@ class ProductReviewResource extends JsonResource
         $return = [
             ...$this->only(['rating', 'review']),
             'user' => UserResource::make($this->user, true),
-            'images' => $this->getMedia(ProductReview::IMAGES) ? MediaResource::collection($this->getMedia(ProductReview::IMAGES)) : null,
+            'img' => $this->getMedia(ProductReview::IMAGES) ? MediaResource::make($this->getMedia(ProductReview::IMAGES)[0] ?? null) : null,
+            'imgs' => $this->getMedia(ProductReview::IMAGES) ? MediaResource::collection($this->getMedia(ProductReview::IMAGES)) : null,
             'created_date' => $this->created_at->format('Y.m.d')
         ];
         //*

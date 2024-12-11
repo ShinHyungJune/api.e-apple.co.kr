@@ -19,7 +19,8 @@ class MdProductPackageResource extends JsonResource
 
         $return = [
             ...$this->only(['id', 'title', 'description']),
-            'images' => $this->getMedia(MdProductPackage::IMAGES) ? MediaResource::collection($this->getMedia(MdProductPackage::IMAGES)) : null,
+            'img' => $this->getMedia(MdProductPackage::IMAGES) ? MediaResource::make($this->getMedia(MdProductPackage::IMAGES)[0] ?? null) : null,
+            'imgs' => $this->getMedia(MdProductPackage::IMAGES) ? MediaResource::collection($this->getMedia(MdProductPackage::IMAGES)) : null,
             'products' => ProductResource::collection($this->products),
         ];
         //*

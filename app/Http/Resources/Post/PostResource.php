@@ -30,6 +30,7 @@ class PostResource extends JsonResource
                 'can_view', 'can_update', 'can_delete'
             ]),
             'user' => UserResource::make($this->user),
+            'file' => $this->getMedia(Post::MEDIA_COLLECTION) ? MediaResource::make($this->getMedia(Post::MEDIA_COLLECTION)[0] ?? null) : null,
             'files' => $this->getMedia(Post::MEDIA_COLLECTION) ? MediaResource::collection($this->getMedia(Post::MEDIA_COLLECTION)) : null,
             'comments' => PostCommentResource::collection($this->comments),
         ];

@@ -32,8 +32,8 @@ class ProductRequest extends FormRequest
 
             'product_images' => ['nullable', 'array'],
             'product_images.*' => ['nullable', 'file', 'mimes:jpg,png,pdf', 'max:2048'], // 각각의 파일에 대해 유효성 검사
-            'product_desc_images' => ['nullable', 'array'],
-            'product_desc_images.*' => ['nullable', 'file', 'mimes:jpg,png,pdf', 'max:2048'], // 각각의 파일에 대해 유효성 검사
+            /*'product_desc_images' => ['nullable', 'array'],
+            'product_desc_images.*' => ['nullable', 'file', 'mimes:jpg,png,pdf', 'max:2048'], // 각각의 파일에 대해 유효성 검사*/
 
             'price' => ['required', 'numeric', 'min:0'], // 가격: 필수, 숫자, 0 이상
             'original_price' => ['nullable', 'numeric', 'min:0'], // 원래가격: 선택적, 숫자, 0 이상
@@ -69,7 +69,7 @@ class ProductRequest extends FormRequest
             'description' => ['description' => '<span class="point">상품설명</span>'],
             'options' => ['description' => '<span class="point">상품 옵션</span>'],
             'product_images' => ['description' => '<span class="point">상품 이미지</span>'],
-            'product_desc_images' => ['description' => '<span class="point">상품설명 이미지</span>'],
+            //'product_desc_images' => ['description' => '<span class="point">상품설명 이미지</span>'],
 
             'price' => ['description' => '<span class="point">가격</span>'],
             'original_price' => ['description' => '<span class="point">원래가격</span>'],

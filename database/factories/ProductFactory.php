@@ -61,8 +61,8 @@ class ProductFactory extends Factory
 
             $product->addMediaFromUrl($url) // 예제 이미지 URL
             ->toMediaCollection(Product::IMAGES);
-            $product->addMediaFromUrl($url) // 예제 이미지 URL
-            ->toMediaCollection(Product::DESC_IMAGES);
+            /*$product->addMediaFromUrl($url) // 예제 이미지 URL
+            ->toMediaCollection(Product::DESC_IMAGES);*/
 
             $product->options()->createMany(
                 [
