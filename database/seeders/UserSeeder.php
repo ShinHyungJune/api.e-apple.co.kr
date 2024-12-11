@@ -13,13 +13,13 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory()->updateOrCreate([
-            'email' => 'test',
-            'password' => Hash::make('test'),
-        ], [
-            'email' => 'test',
-            'password' => Hash::make('test'),
-        ]);
+        $user = User::where('email', 'test')->first();
+
+        if(!$user)
+            User::factory()->create([
+                'email' => 'test',
+                'password' => Hash::make('test'),
+            ]);
 
         User::factory()->count(50)->create(); // 50개의 레코드를 생성
     }
