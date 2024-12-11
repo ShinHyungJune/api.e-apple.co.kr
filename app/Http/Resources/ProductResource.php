@@ -48,8 +48,8 @@ class ProductResource extends JsonResource
             'inquiries_count' => $this->whenLoaded('inquiries') ? $this->inquiries->count(): $this->inquiries_count,
 
             'categories' => $this->categories ? ProductCategoryResource::collection($this->categories) : null,
-            'product_images' => $this->getMedia(Product::IMAGES) ? ProductImageResource::collection($this->getMedia(Product::IMAGES)) : null,
-            'product_desc_images' => $this->getMedia(Product::DESC_IMAGES) ? ProductDescImageResource::collection($this->getMedia(Product::DESC_IMAGES)) : null,
+            'product_images' => $this->getMedia(Product::IMAGES) ? MediaResource::collection($this->getMedia(Product::IMAGES)) : null,
+            'product_desc_images' => $this->getMedia(Product::DESC_IMAGES) ? MediaResource::collection($this->getMedia(Product::DESC_IMAGES)) : null,
         ];
 
         //*

@@ -5,7 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class MdProductPackageImageResource extends JsonResource
+class MediaResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -18,7 +18,7 @@ class MdProductPackageImageResource extends JsonResource
         $return = [
             'id' => $this->id,
             'name' => $this->file_name,
-            'url' => $this->original_url,
+            'url' => $this->getFullUrl(),
         ];
 
         //*
