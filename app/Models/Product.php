@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Spatie\Image\Enums\Fit;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class Product extends Model implements HasMedia
 {
@@ -51,7 +52,7 @@ class Product extends Model implements HasMedia
         }
     }
 
-    public function registerMediaConversions(\Spatie\MediaLibrary\MediaCollections\Models\Media|null $media = null): void
+    public function registerMediaConversions(Media|null $media = null): void
     {
         $this->addMediaConversion('preview')
             ->fit(Fit::Contain, 300, 300)
