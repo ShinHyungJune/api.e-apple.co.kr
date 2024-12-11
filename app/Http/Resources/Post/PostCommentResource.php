@@ -20,10 +20,12 @@ class PostCommentResource extends JsonResource
             ...$this->only(['content']),
             'user' => UserResource::make($this->user)
         ];
-        /*
+        //*
+        if (config('scribe.response_file')) {
+            return getScribeResponseFile($return, 'post_comments');
+        }
+        //*/
         return $return;
-        /*/
-       return getScribeResponseFile($return, 'post_comments');
-       //*/
+        //*/
     }
 }

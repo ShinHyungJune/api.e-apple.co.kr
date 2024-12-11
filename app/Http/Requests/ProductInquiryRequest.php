@@ -34,7 +34,7 @@ class ProductInquiryRequest extends FormRequest
     public function prepareForValidation()
     {
         $inputs = $this->input();
-        if ($inputs['answer']) {
+        if (!empty($inputs['answer'])) {
             $inputs['answered_at'] = now();
         }
         $this->merge($inputs);

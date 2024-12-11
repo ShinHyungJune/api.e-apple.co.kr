@@ -19,6 +19,7 @@ class ProductImageResource extends JsonResource
             'id' => $this->id,
             'file_name' => $this->file_name,
             'original_url' => $this->original_url,
+            'preview_url' => $this->preview_url,
         ];
 
         //*
@@ -27,6 +28,7 @@ class ProductImageResource extends JsonResource
                 'id' => '기본키',
                 'file_name' => '파일이름',
                 'original_url' => '이미지 URL',
+                'preview_url' => '썸네일 URL'
             ];
             return getScribeResponseFile($return, 'media', $comments);
         }

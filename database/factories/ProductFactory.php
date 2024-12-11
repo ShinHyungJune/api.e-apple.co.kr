@@ -63,6 +63,13 @@ class ProductFactory extends Factory
             ->toMediaCollection(Product::IMAGES);
             $product->addMediaFromUrl($url) // 예제 이미지 URL
             ->toMediaCollection(Product::DESC_IMAGES);
+
+            $product->options()->createMany(
+                [
+                    ['name' => $this->faker->words(10, true), 'price' => $this->faker->randomFloat(2, 1000, 50000)],
+                    ['name' => $this->faker->words(10, true), 'price' => $this->faker->randomFloat(2, 1000, 50000)]
+                ]
+            );
         });
     }
 }

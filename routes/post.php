@@ -10,8 +10,8 @@ Route::group(['prefix' => 'boards'], function () {
 
 Route::group(['prefix' => 'posts'], function () {
     Route::post('', [PostController::class, 'store']);
-    /*Route::get('{id}', [PostController::class, 'show']);
-    Route::put('{id}', [PostController::class, 'update']);
+    Route::get('{post}', [PostController::class, 'show']);
+    /*Route::put('{id}', [PostController::class, 'update']);
     Route::delete('{id}', [PostController::class, 'destroy']);*/
 
     /*Route::group(['prefix' => '{postId}/comments'], function () {

@@ -48,7 +48,7 @@ class PostController extends ApiController
 
         //Media Library
         $query = Post::with(['user', 'comments.user'/*, 'files'*/])->where('board_id', $board->id)->search($filters);
-        $items = $query->orderByRaw("FIELD(is_notice, true, false)")->latest()->simplePaginate($request->itemsPerPage);
+        $items = $query->orderByRaw("FIELD(is_notice, true, false)")->latest()->paginate($request->take ?? 10);
         $items->map(fn($e) => $e->append(['can_view', 'can_update', 'can_delete'/*, 'image_url'*/]));
 
         return PostResource::collection($items);
@@ -79,33 +79,30 @@ class PostController extends ApiController
         return $this->respondSuccessfully(PostResource::make($post));
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    public function show($id)
+    /**
+     * 상세
+     * @priority 1
+     * @unauthenticated
+     * @responseFile storage/responses/post.json
+     */
+    public function show(Post $post)
     {
-        //TODO Media Library
-        $post = Post::with(['user', /*'files',*/ 'comments.user'])->findOrFail($id);
+        //$post = Post::with(['user', /*'files',*/ 'comments.user'])->findOrFail($id);
         Gate::authorize('view', $post);
         $post->increment('read_count');
-        //$post->append('images');
         return $this->respondSuccessfully(PostResource::make($post));
     }
+
+
+
+
+
+
+
+
+
+
+
 
     public function update(PostRequest $request, $id)
     {
@@ -143,12 +140,11 @@ class PostController extends ApiController
             }
             $oFiles->delete();
 
-            if (auth()->user()->isAdmin()) {
+            /*if (auth()->user()->isAdmin()) {
                 foreach ($post->event_users as $eventUser) {
                     $post->destroyEventUser($eventUser);
                 }
-            }
-
+            }*/
 
             $post->delete($id);
         });

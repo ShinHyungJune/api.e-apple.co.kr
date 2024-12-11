@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\MdProductPackage;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -18,6 +19,7 @@ class MdProductPackageResource extends JsonResource
 
         $return = [
             ...$this->only(['id', 'title', 'description']),
+            'images' => $this->getMedia(MdProductPackage::IMAGES) ? MdProductPackageImageResource::collection($this->getMedia(MdProductPackage::IMAGES)) : null,
             'products' => ProductResource::collection($this->products),
         ];
         //*

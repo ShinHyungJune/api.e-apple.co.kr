@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\Admin;
 
 use App\Http\Controllers\Api\ApiController;
+use App\Http\Requests\ProductOptionsRequest;
 use App\Http\Requests\ProductRequest;
 use App\Http\Resources\ProductResource;
 use App\Models\Product;
@@ -20,7 +21,7 @@ class ProductController extends ApiController
      */
     public function index()
     {
-        $items = Product::query()->latest()->paginate(30);
+        $items = Product::query()->latest()->paginate($request->take ?? 30);
         return ProductResource::collection($items);
     }
 
@@ -43,7 +44,9 @@ class ProductController extends ApiController
     public function store(ProductRequest $request)
     {
         $data = $request->validated();
+
         $product = tap(new Product($data))->save();
+        $product->options()->createMany($data['options']);
 
         if ($request->file(Product::IMAGES)) {
             foreach ($request->file(Product::IMAGES) as $file) {

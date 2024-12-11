@@ -20,10 +20,12 @@ class BoardResource extends JsonResource
             'category_items' => BoardCategoryResource::collection($this->categoryItems),
         ];
         //*
+        if (config('scribe.response_file')) {
+            $comments = ['id' => '기본키', 'name_ko' => '게시판이름', 'can_create' => '게시글 등록가능여부'];
+            return getScribeResponseFile($return, 'boards', $comments);
+        }
+        //*/
         return $return;
-        /*/
-        $comments = ['id' => '기본키', 'name_ko' => '게시판이름', 'can_create' => '게시글 등록가능여부'];
-        return getScribeResponseFile($return, 'boards', $comments);
         //*/
 
     }

@@ -22,7 +22,7 @@ class ProductInquiryController extends ApiController
     public function index(Request $request)
     {
         $filters = $request->only(['type']);
-        $items = ProductInquiry::query()->search($filters)->latest()->paginate(30);
+        $items = ProductInquiry::query()->search($filters)->latest()->paginate($request->take ?? 30);
         return ProductInquiryResource::collection($items);
     }
 

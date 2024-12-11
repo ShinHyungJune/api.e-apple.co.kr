@@ -3,6 +3,7 @@
     "data": {
         "id": "기본키",
         "name": "상품명",
+        "description": "상품설명",
         "view_count": "조회수",
         "price": "가격",
         "original_price": "원래 가격",
@@ -20,8 +21,23 @@
         "expiration_date": "유통기한",
         "gmo_desc": "유전자변형 농산물 여부",
         "customer_service_contact": "소비자 상담 문의",
+        "options": [
+            {
+                "id": "기본키",
+                "name": "옵션명",
+                "price": "가격"
+            },
+            {
+                "id": "기본키",
+                "name": "옵션명",
+                "price": "가격"
+            }
+        ],
         "is_new": "새로운상품 여부",
+        "is_best": true,
         "average_rating": "평균 평점",
+        "reviews_count": 0,
+        "inquiries_count": 0,
         "categories": "카테고리",
         "product_images": [
             {

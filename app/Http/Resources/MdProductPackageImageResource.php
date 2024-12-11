@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Resources\Post;
+namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class PostFileResource extends JsonResource
+class MdProductPackageImageResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -15,14 +15,19 @@ class PostFileResource extends JsonResource
     public function toArray(Request $request): array
     {
         //return parent::toArray($request);
-        $return = $this->only('id', 'file_name', 'original_url', 'mime_type', 'preview_url');
+        $return = [
+            'id' => $this->id,
+            'file_name' => $this->file_name,
+            'original_url' => $this->original_url,
+            'preview_url' => $this->preview_url,
+        ];
+
         //*
         if (config('scribe.response_file')) {
             $comments = [
                 'id' => '기본키',
                 'file_name' => '파일이름',
-                'original_url' => '파일 URL',
-                'mime_type' => '파일 형식',
+                'original_url' => '이미지 URL',
                 'preview_url' => '썸네일 URL'
             ];
             return getScribeResponseFile($return, 'media', $comments);

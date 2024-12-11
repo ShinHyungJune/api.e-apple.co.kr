@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fb5daf474c77ff16ce8249b132c83c4a",
+    "content-hash": "ab54ec6a528ac04b96c75f0ed7d01b88",
     "packages": [
         {
             "name": "brick/math",
@@ -4015,6 +4015,64 @@
                 }
             ],
             "time": "2024-02-20T11:51:46+00:00"
+        },
+        {
+            "name": "solapi/sdk",
+            "version": "5.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/solapi/solapi-php.git",
+                "reference": "6b6275514ed39d9de4d0f52cf993051d2881c5b9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/solapi/solapi-php/zipball/6b6275514ed39d9de4d0f52cf993051d2881c5b9",
+                "reference": "6b6275514ed39d9de4d0f52cf993051d2881c5b9",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Nurigo\\Solapi\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nurigo CX Team",
+                    "email": "contact@nurigo.net"
+                },
+                {
+                    "name": "Subin Lee",
+                    "email": "chandar.sblee@gmail.com",
+                    "homepage": "https://subux.dev"
+                }
+            ],
+            "description": "SOLAPI SDK for PHP",
+            "homepage": "https://solapi.com",
+            "keywords": [
+                "alimtalk",
+                "friendtalk",
+                "lms",
+                "mms",
+                "nurigo",
+                "sdk",
+                "sms",
+                "solapi"
+            ],
+            "support": {
+                "issues": "https://github.com/solapi/solapi-php/issues",
+                "source": "https://github.com/solapi/solapi-php/tree/v5.0.5"
+            },
+            "time": "2024-04-26T01:36:25+00:00"
         },
         {
             "name": "spatie/data-transfer-object",
