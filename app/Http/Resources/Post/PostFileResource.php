@@ -15,17 +15,20 @@ class PostFileResource extends JsonResource
     public function toArray(Request $request): array
     {
         //return parent::toArray($request);
-        $return = $this->only('id', 'file_name', 'original_url', 'mine_type');
-        /*
+        $return = $this->only('id', 'file_name', 'original_url', 'mime_type', 'preview_url');
+        //*
+        if (config('scribe.response_file')) {
+            $comments = [
+                'id' => '기본키',
+                'file_name' => '파일이름',
+                'original_url' => '파일 URL',
+                'mime_type' => '파일 형식',
+                'preview_url' => '썸네일'
+            ];
+            return getScribeResponseFile($return, 'media', $comments);
+        }
+        //*/
         return $return;
-         /*/
-        $comments = [
-            'id' => '기본키',
-            'file_name' => '파일이름',
-            'original_url' => '파일 URL',
-            'mine_type' => '파일 형식',
-        ];
-        return getScribeResponseFile($return, 'media', $comments);
         //*/
     }
 }

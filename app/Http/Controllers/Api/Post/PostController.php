@@ -140,12 +140,11 @@ class PostController extends ApiController
             }
             $oFiles->delete();
 
-            if (auth()->user()->isAdmin()) {
+            /*if (auth()->user()->isAdmin()) {
                 foreach ($post->event_users as $eventUser) {
                     $post->destroyEventUser($eventUser);
                 }
-            }
-
+            }*/
 
             $post->delete($id);
         });

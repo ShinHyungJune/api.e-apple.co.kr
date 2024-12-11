@@ -7,8 +7,10 @@ use App\Policies\PostPolicy;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
+use Spatie\Image\Enums\Fit;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class Post extends Model implements HasMedia
 {
@@ -19,7 +21,6 @@ class Post extends Model implements HasMedia
     protected $guarded = ['id'];
 
     //protected $appends = ['mobile_title'/*,'content_html'*/];
-
 
     public function board()
     {
@@ -52,39 +53,16 @@ class Post extends Model implements HasMedia
         }*/
     }
 
-
-
-
-
-
-
-    /*public function files()
+    public function registerMediaConversions(Media|null $media = null): void
     {
-        return $this->hasMany(PostFile::class);
+        $this->addMediaConversion('preview')
+            ->fit(Fit::Contain, 435, 194)
+            ->nonQueued();
     }
 
-    public function getImageUrlAttribute()
-    {
-        foreach ($this->files as $v) {
-            $types = explode('/', $v->type);
-            if (isset($types[0]) && $types[0] === 'image') {
-                //return url($v->path);
-                return url('/api/posts/files/' . $v->id);
-            }
-        }
-    }
 
-    public function getImagesAttribute()
-    {
-        $results = [];
-        foreach ($this->files as $v) {
-            $types = explode('/', $v->type);
-            if (isset($types[0]) && $types[0] === 'image') {
-                $results[] = [...$v->toArray(), 'url' => url('/api/posts/files/' . $v->id)];
-            }
-        }
-        return $results;
-    }*/
+
+
 
     public function comments()
     {
@@ -127,11 +105,6 @@ class Post extends Model implements HasMedia
         $query->where('created_by', Auth::user()->id);
     }
 
-    public function scopeQna($query)
-    {
-        $query->where('board_id', Board::QNA_BOARD_ID);
-    }
-
     public function scopeIsPopup($query)
     {
         $query->where('is_popup', true);
@@ -155,20 +128,37 @@ class Post extends Model implements HasMedia
     }
 
 
-    public function event_users()
+
+
+
+
+
+    /*public function files()
     {
-        return $this->hasMany(PostEventUser::class);
+        return $this->hasMany(PostFile::class);
     }
 
-    public function destroyEventUser($eventUser)
+    public function getImageUrlAttribute()
     {
-        //차감 포인트 복구
-        User::findOrFail($eventUser->user_id)->depositPoint(PointTypes::ADMIN_DEPOSIT,
-            $this->id . '번 ' . PointTypes::EVENT_COST->getText() . '복구',
-            $this->event_cost_points ?? 0);
-
-        //이벤트 참가신청 삭제
-        $eventUser->delete();
+        foreach ($this->files as $v) {
+            $types = explode('/', $v->type);
+            if (isset($types[0]) && $types[0] === 'image') {
+                //return url($v->path);
+                return url('/api/posts/files/' . $v->id);
+            }
+        }
     }
+
+    public function getImagesAttribute()
+    {
+        $results = [];
+        foreach ($this->files as $v) {
+            $types = explode('/', $v->type);
+            if (isset($types[0]) && $types[0] === 'image') {
+                $results[] = [...$v->toArray(), 'url' => url('/api/posts/files/' . $v->id)];
+            }
+        }
+        return $results;
+    }*/
 
 }

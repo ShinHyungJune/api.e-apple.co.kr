@@ -20,10 +20,12 @@ class BoardCategoryResource extends JsonResource
             'text' => $this->name,
         ];
         //*
+        if (config('scribe.response_file')) {
+            $comments = ['value' => '기본키', 'text' => '카테고리 이름'];
+            return getScribeResponseFile($return, 'board_categories', $comments);
+        }
+        //*/
         return $return;
-        /*/
-        $comments = ['value' => '기본키', 'text' => '카테고리 이름'];
-        return getScribeResponseFile($return, 'board_categories', $comments);
         //*/
     }
 }

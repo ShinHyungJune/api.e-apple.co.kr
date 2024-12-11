@@ -34,17 +34,18 @@ class PostResource extends JsonResource
         ];
 
         //*
-        return $return;
-         /*/
-        $comments = [
-            'created_at' => '등록일', 'updated_at' => '수정일',
-            'can_view' => '조회가능여부', 'can_update' => '수정가능여부', 'can_delete' => '삭제가능여부',
-            //'user' => '작성자',
-            //'files' => '첨부파일',
-            //'comments' => '댓글목록'
-        ];
-        return getScribeResponseFile($return, 'posts', $comments);
+        if (config('scribe.response_file')) {
+            $comments = [
+                'created_at' => '등록일', 'updated_at' => '수정일',
+                'can_view' => '조회가능여부', 'can_update' => '수정가능여부', 'can_delete' => '삭제가능여부',
+                //'user' => '작성자',
+                //'files' => '첨부파일',
+                //'comments' => '댓글목록'
+            ];
+            return getScribeResponseFile($return, 'posts', $comments);
+        }
         //*/
-
+        return $return;
+        //*/
     }
 }
