@@ -34,6 +34,23 @@ class Banner extends Model implements HasMedia
         return null;
     }
 
+    // 파일 여러개 첨부 가능할 경우, 대표이미지를 뿌려줘야하는 경우
+    public function getImgAttribute()
+    {
+        if($this->hasMedia('imgs')) {
+            $media = $this->getMedia('imgs')[0];
+
+            return [
+                "id" => $media->id,
+                "name" => $media->file_name,
+                "url" => $media->getFullUrl()
+            ];
+        }
+
+        return null;
+    }
+
+
     // 파일 여러개 첨부 가능할 경우 예시
     public function getImgsAttribute()
     {
