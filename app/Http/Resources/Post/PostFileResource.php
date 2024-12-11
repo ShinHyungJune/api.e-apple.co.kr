@@ -23,7 +23,7 @@ class PostFileResource extends JsonResource
                 'file_name' => '파일이름',
                 'original_url' => '파일 URL',
                 'mime_type' => '파일 형식',
-                'preview_url' => '썸네일'
+                'preview_url' => '썸네일 URL'
             ];
             return getScribeResponseFile($return, 'media', $comments);
         }
