@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "39080de2-4e8b-4955-b0d1-b56644f7d66e",
+        "_postman_id": "91bcae14-c093-4a5c-b824-cd30ad7c0e6e",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -180,6 +180,210 @@
             ]
         },
         {
+            "name": "Product Inquiry(\uc0c1\ud488 \ubb38\uc758)",
+            "description": "",
+            "item": [
+                {
+                    "name": "\ubaa9\ub85d",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/products\/:id\/inquiries",
+                            "query": [
+                                {
+                                    "key": "type",
+                                    "value": "photo%2C+text",
+                                    "description": "",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/products\/:id\/inquiries?type=photo%2C+text",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the product."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"data\": [\n        {\n            \"id\": \"\uae30\ubcf8\ud0a4\",\n            \"is_visible\": \"\uacf5\uac1c \uc5ec\ubd80 (0: \ube44\uacf5\uac1c, 1: \uacf5\uac1c)\",\n            \"answered_at\": \"2024-12-04 15:33:27\",\n            \"is_answered\": \"\ub2f5\ubcc0 \uc5ec\ubd80\"\n        },\n        {\n            \"id\": \"\uae30\ubcf8\ud0a4\",\n            \"is_visible\": \"\uacf5\uac1c \uc5ec\ubd80 (0: \ube44\uacf5\uac1c, 1: \uacf5\uac1c)\",\n            \"answered_at\": \"2024-12-04 15:33:18\",\n            \"is_answered\": \"\ub2f5\ubcc0 \uc5ec\ubd80\",\n            \"title\": \"\ubb38\uc758 \uc81c\ubaa9\",\n            \"content\": \"\ubb38\uc758 \ub0b4\uc6a9\",\n            \"answer\": \"\uad00\ub9ac\uc790\uac00 \uc791\uc131\ud55c \ub2f5\ubcc0 \ub0b4\uc6a9\"\n        },\n    ],\n    \"links\": {\n        \"first\": \"http:\\\/\\\/localhost:8000\\\/api\\\/products\\\/1\\\/inquiries?page=1\",\n        \"last\": \"http:\\\/\\\/localhost:8000\\\/api\\\/products\\\/1\\\/inquiries?page=1\",\n        \"prev\": null,\n        \"next\": null\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 1,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; \uc774\uc804\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http:\\\/\\\/localhost:8000\\\/api\\\/products\\\/1\\\/inquiries?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"\ub2e4\uc74c &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"path\": \"http:\\\/\\\/localhost:8000\\\/api\\\/products\\\/1\\\/inquiries\",\n        \"per_page\": 30,\n        \"to\": 15,\n        \"total\": 15\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "\uc0dd\uc131",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/products\/:id\/inquiries",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/products\/:id\/inquiries",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the product."
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"product_id\":11,\"title\":\"xckjslphhgqe\",\"content\":\"omnis\",\"is_visible\":false,\"answer\":\"saepe\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"\uae30\ubcf8\ud0a4\",\n        \"is_visible\": \"\uacf5\uac1c \uc5ec\ubd80 (0: \ube44\uacf5\uac1c, 1: \uacf5\uac1c)\",\n        \"answered_at\": \"\ub2f5\ubcc0\uc77c\uc2dc\",\n        \"is_answered\": \"\ub2f5\ubcc0\uc5ec\ubd80\",\n        \"title\": \"\ubb38\uc758 \uc81c\ubaa9\",\n        \"content\": \"\ubb38\uc758 \ub0b4\uc6a9\",\n        \"answer\": \"\uad00\ub9ac\uc790\uac00 \uc791\uc131\ud55c \ub2f5\ubcc0 \ub0b4\uc6a9\"\n    },\n    \"message\": \"\uc131\uacf5\uc801\uc73c\ub85c \ucc98\ub9ac\ub418\uc5c8\uc2b5\ub2c8\ub2e4.\"\n}\n",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Product Review(\uc0c1\ud488 \ud6c4\uae30)",
+            "description": "",
+            "item": [
+                {
+                    "name": "\ubaa9\ub85d",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/products\/:id\/reviews",
+                            "query": [
+                                {
+                                    "key": "type",
+                                    "value": "photo%2C+text",
+                                    "description": "",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "take",
+                                    "value": "10",
+                                    "description": "",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/products\/:id\/reviews?type=photo%2C+text&take=10",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the product."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"data\": [\n        {\n            \"rating\": \"\ud3c9\uc810 (1~5)\",\n            \"review\": \"\ud6c4\uae30 \ub0b4\uc6a9\",\n            \"user\": {\n                \"email\": \"\uc774\uba54\uc77c\"\n            },\n            \"images\": [\n                {\n                    \"id\": \"\uae30\ubcf8\ud0a4\",\n                    \"file_name\": \"\ud30c\uc77c\uc774\ub984\",\n                    \"original_url\": \"\uc774\ubbf8\uc9c0 URL\"\n                },\n                {\n                    \"id\": \"\uae30\ubcf8\ud0a4\",\n                    \"file_name\": \"\ud30c\uc77c\uc774\ub984\",\n                    \"original_url\": \"\uc774\ubbf8\uc9c0 URL\"\n                }\n            ],\n            \"created_date\": \"\uc0dd\uc131\uc77c\"\n        }\n    ],\n    \"links\": {\n        \"first\": \"http:\\\/\\\/localhost:8000\\\/api\\\/products\\\/1\\\/reviews?page=1\",\n        \"last\": \"http:\\\/\\\/localhost:8000\\\/api\\\/products\\\/1\\\/reviews?page=1\",\n        \"prev\": null,\n        \"next\": null\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 1,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; \uc774\uc804\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http:\\\/\\\/localhost:8000\\\/api\\\/products\\\/1\\\/reviews?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"\ub2e4\uc74c &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"path\": \"http:\\\/\\\/localhost:8000\\\/api\\\/products\\\/1\\\/reviews\",\n        \"per_page\": 30,\n        \"to\": 6,\n        \"total\": 6\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "\uc0dd\uc131",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/products\/:id\/reviews",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/products\/:id\/reviews",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the product."
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"product_id\":\"dolorem\",\"rating\":1,\"review\":\"voluptatem\",\"images\":[]}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"success\": true,\n    \"data\": {\n        \"rating\": \"\ud3c9\uc810 (1~5)\",\n        \"review\": \"\ud6c4\uae30 \ub0b4\uc6a9\",\n        \"user\": {\n            \"email\": \"\uc774\uba54\uc77c\"\n        },\n        \"images\": [\n            {\n                \"id\": \"\uae30\ubcf8\ud0a4\",\n                \"file_name\": \"\ud30c\uc77c\uc774\ub984\",\n                \"original_url\": \"\uc774\ubbf8\uc9c0 URL\"\n            },\n            {\n                \"id\": \"\uae30\ubcf8\ud0a4\",\n                \"file_name\": \"\ud30c\uc77c\uc774\ub984\",\n                \"original_url\": \"\uc774\ubbf8\uc9c0 URL\"\n            }\n        ],\n        \"created_date\": \"\uc0dd\uc131\uc77c\"\n    },\n    \"message\": \"\uc131\uacf5\uc801\uc73c\ub85c \ucc98\ub9ac\ub418\uc5c8\uc2b5\ub2c8\ub2e4.\"\n}\n",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "name": "VerifyNumber(\uc778\uc99d\ubc88\ud638)",
             "description": "",
             "item": [
@@ -205,7 +409,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"phone\":\"qi\"}"
+                            "raw": "{\"phone\":\"do\"}"
                         },
                         "description": "",
                         "auth": {
@@ -236,7 +440,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"phone\":\"ziborratpckqgtdkfhaek\",\"number\":\"xgsypjldmhuycyi\"}"
+                            "raw": "{\"phone\":\"uk\",\"number\":\"lixvyshmzdezhddyazpflca\"}"
                         },
                         "description": "",
                         "auth": {
@@ -263,7 +467,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "delectus",
+                                    "value": "vel",
                                     "description": "The ID of the board."
                                 }
                             ]
@@ -306,7 +510,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "itaque",
+                                    "value": "aliquid",
                                     "description": "The ID of the board."
                                 }
                             ]
@@ -359,7 +563,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"board_id\":2,\"category_id\":11,\"title\":\"repellat\",\"content\":\"dolorem\"}"
+                            "raw": "{\"board_id\":20,\"category_id\":2,\"title\":\"molestiae\",\"content\":\"totam\"}"
                         },
                         "description": "",
                         "auth": {
@@ -485,37 +689,37 @@
                                     "formdata": [
                                         {
                                             "key": "name",
-                                            "value": "fdnexpx",
+                                            "value": "hzwibidnrecgc",
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc0c1\ud488\uba85<\/span>. Must not be greater than 255 characters."
                                         },
                                         {
                                             "key": "description",
-                                            "value": "Adipisci atque ipsam cum ratione sint vel.",
+                                            "value": "Quas nihil id eum voluptatibus doloribus est.",
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc0c1\ud488\uc124\uba85<\/span>."
                                         },
                                         {
                                             "key": "price",
-                                            "value": 90,
+                                            "value": 84,
                                             "type": "text",
                                             "description": "<span class=\"point\">\uac00\uaca9<\/span>. value(\uc740)\ub294  \ucd5c\uc18c 0 \uc774\uc0c1\uc774\uc5b4\uc57c \ud569\ub2c8\ub2e4."
                                         },
                                         {
                                             "key": "original_price",
-                                            "value": 18,
+                                            "value": 38,
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc6d0\ub798\uac00\uaca9<\/span>. value(\uc740)\ub294  \ucd5c\uc18c 0 \uc774\uc0c1\uc774\uc5b4\uc57c \ud569\ub2c8\ub2e4."
                                         },
                                         {
                                             "key": "delivery_fee",
-                                            "value": 1,
+                                            "value": 50,
                                             "type": "text",
                                             "description": "<span class=\"point\">\ubc30\uc1a1\ube44<\/span>. value(\uc740)\ub294  \ucd5c\uc18c 0 \uc774\uc0c1\uc774\uc5b4\uc57c \ud569\ub2c8\ub2e4."
                                         },
                                         {
                                             "key": "stock_quantity",
-                                            "value": 11,
+                                            "value": 51,
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc7ac\uace0\uc218\ub7c9<\/span>. value(\uc740)\ub294  \ucd5c\uc18c 0 \uc774\uc0c1\uc774\uc5b4\uc57c \ud569\ub2c8\ub2e4."
                                         },
@@ -527,101 +731,96 @@
                                         },
                                         {
                                             "key": "food_type",
-                                            "value": "yrujrohbjdtjxwjh",
+                                            "value": "hqqsxtmoe",
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc2dd\ud488\uc758 \uc720\ud615<\/span>. Must not be greater than 100 characters."
                                         },
                                         {
                                             "key": "fruit_size",
-                                            "value": "hsuylxbddkjcdeprk",
+                                            "value": "e",
                                             "type": "text",
                                             "description": "<span class=\"point\">\uacfc\uc77c \ud06c\uae30<\/span>. Must not be greater than 50 characters."
                                         },
                                         {
                                             "key": "sugar_content",
-                                            "value": "zxjoiip",
+                                            "value": "kewmfhdgpdzu",
                                             "type": "text",
                                             "description": "<span class=\"point\">\ub2f9\ub3c4<\/span>. Must not be greater than 50 characters."
                                         },
                                         {
                                             "key": "shipping_origin",
-                                            "value": "nrvqpzk",
+                                            "value": "tltdigekxpllqxhtc",
                                             "type": "text",
                                             "description": "<span class=\"point\">\ucd9c\uace0\uc9c0<\/span>. Must not be greater than 255 characters."
                                         },
                                         {
                                             "key": "manufacturer_and_location",
-                                            "value": "gszqttvawoqcaifmfdn",
+                                            "value": "pifyyjoedhdalnjim",
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc0dd\uc0b0\uc790 \ubc0f \uc18c\uc7ac\uc9c0<\/span>. Must not be greater than 255 characters."
                                         },
                                         {
                                             "key": "importer",
-                                            "value": "wvsq",
+                                            "value": "svifpdbhsaffbhkhbae",
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc218\uc785\uc790<\/span>. Must not be greater than 255 characters."
                                         },
                                         {
                                             "key": "origin",
-                                            "value": "eyoekgcpgykonmpkn",
+                                            "value": "lqogweqf",
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc6d0\uc0b0\uc9c0<\/span>. Must not be greater than 255 characters."
                                         },
                                         {
                                             "key": "ingredients_and_composition",
-                                            "value": "consectetur",
+                                            "value": "nam",
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc6d0\uc7ac\ub8cc \ubc0f \ud569\ub7c9<\/span>."
                                         },
                                         {
                                             "key": "storage_and_handling",
-                                            "value": "vlowfmgu",
+                                            "value": "pb",
                                             "type": "text",
                                             "description": "<span class=\"point\">\ubcf4\uad00\/\ucde8\uae09\ubc29\ubc95<\/span>. Must not be greater than 255 characters."
                                         },
                                         {
                                             "key": "manufacture_date",
-                                            "value": "2024-12-10T17:07:35",
+                                            "value": "2024-12-12T13:58:40",
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc81c\uc870\uc5f0\uc6d0\uc77c<\/span>. Must be a valid date."
                                         },
                                         {
                                             "key": "expiration_date",
-                                            "value": "2029-04-16",
+                                            "value": "2086-08-23",
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc720\ud1b5\uae30\ud55c<\/span>. Must be a valid date. value(\uc740)\ub294 <code>manufacture_date<\/code>\ubcf4\ub2e4 \uc774\ud6c4\uac70\ub098 \uac19\uc544\uc57c \ud569\ub2c8\ub2e4."
                                         },
                                         {
                                             "key": "gmo_desc",
-                                            "value": "znnfseewwupovsgvctfxraf",
+                                            "value": "sntzypurjkzzymmxrd",
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc720\uc804\uc790\ubcc0\ud615 \ub18d\uc0b0\ubb3c\uc5ec\ubd80<\/span>. Must not be greater than 255 characters."
                                         },
                                         {
                                             "key": "customer_service_contact",
-                                            "value": "gd",
+                                            "value": "vyniojmlqbfbjpoekuwlgvlqt",
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc18c\ube44\uc790\uc0c1\ub2f4\ubb38\uc758<\/span>. Must not be greater than 255 characters."
                                         },
                                         {
                                             "key": "options[0][name]",
-                                            "value": "prkscilsqqoorbyhrxpaowckh",
+                                            "value": "espohzqjjxpxjvqybaftpl",
                                             "type": "text",
                                             "description": ""
                                         },
                                         {
                                             "key": "options[0][price]",
-                                            "value": 31,
+                                            "value": 5,
                                             "type": "text",
                                             "description": ""
                                         },
                                         {
                                             "key": "product_images[]",
-                                            "src": [],
-                                            "type": "file"
-                                        },
-                                        {
-                                            "key": "product_desc_images[]",
                                             "src": [],
                                             "type": "file"
                                         }
@@ -668,7 +867,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"russel.ike@example.com\",\"password\":\"N'L|A$J|XtDeH6R\"}"
+                            "raw": "{\"email\":\"sister.oconner@example.net\",\"password\":\"j>}@AGy\"}"
                         },
                         "description": "",
                         "auth": {
@@ -699,7 +898,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"helene.greenholt@example.com\",\"password\":\"dolorum\",\"password_confirmation\":\"sed\",\"name\":\"aaowo\",\"phone\":\"79509887814\",\"nickname\":\"bgp\"}"
+                            "raw": "{\"email\":\"guy.terry@example.com\",\"password\":\"debitis\",\"password_confirmation\":\"nisi\",\"name\":\"sccucxryqxemrw\",\"phone\":\"3951453119\",\"nickname\":\"mihsuogroxrmoxkxfjufmryb\"}"
                         },
                         "description": "",
                         "auth": {
