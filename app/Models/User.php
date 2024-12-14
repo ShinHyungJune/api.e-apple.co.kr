@@ -80,4 +80,12 @@ class User extends Authenticatable implements JWTSubject
         return $this->hasMany(CartProductOption::class);
     }
 
+    public function coupons()
+    {
+        return $this->belongsToMany(Coupon::class, 'user_coupons')
+            ->withTimestamps()
+            ->withPivot('used_at'); // 중간 테이블의 추가 필드를 사용하려면
+    }
+
+
 }

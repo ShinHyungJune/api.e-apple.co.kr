@@ -35,8 +35,9 @@ class DatabaseSeeder extends Seeder
             PostSeeder::class,
             MdProductPackageSeeder::class,
             ProductInquirySeeder::class,
-            CartSeeder::class,*/
-            DeliveryAddressSeeder::class,
+            CartSeeder::class,
+            DeliveryAddressSeeder::class,*/
+            CouponSeeder::class,
         ]);
     }
 }
