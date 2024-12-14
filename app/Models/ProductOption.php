@@ -11,4 +11,9 @@ class ProductOption extends Model
 
     protected $guarded = ['id'];
     //
+
+    public function cartProductOptions()
+    {
+        return $this->hasMany(CartProductOption::class, 'product_option_id');
+    }
 }

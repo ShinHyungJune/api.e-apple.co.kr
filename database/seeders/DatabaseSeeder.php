@@ -2,14 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\MdProductPackage;
-use App\Models\Post\Board;
-use App\Models\Post\BoardCategory;
-use App\Models\Post\Post;
-use App\Models\Product;
-use App\Models\ProductInquiry;
-use App\Models\ProductReview;
-use App\Models\User;
 use Illuminate\Database\Seeder;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -43,6 +35,7 @@ class DatabaseSeeder extends Seeder
             PostSeeder::class,
             MdProductPackageSeeder::class,
             ProductInquirySeeder::class,
+            CartSeeder::class,
         ]);
     }
 }

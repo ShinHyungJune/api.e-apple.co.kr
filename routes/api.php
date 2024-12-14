@@ -2,6 +2,8 @@
 
 use App\Enums\ProductCategory;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\CartController;
+use App\Http\Controllers\Api\CartProductOptionController;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\ProductInquiryController;
 use App\Http\Controllers\Api\ProductReviewController;
@@ -66,6 +68,34 @@ Route::group(['prefix' => 'products'], function () {
         });
     });
 });
+
+//카트
+Route::group(['prefix' => 'carts', 'middleware' => ['auth:api']],
+    function () {
+        Route::group(['controller' => CartController::class], function () {
+            Route::get('', 'index');
+            Route::post('', 'store');
+            Route::delete('ids', 'destroys');
+            Route::delete('sold-out', 'destroySoldOut');
+            Route::delete('{id}', 'destroy');
+        });
+
+        Route::group(['prefix' => '{id}/options', 'controller' => CartProductOptionController::class],
+            function () {
+                Route::post('', 'store');
+                Route::put('{option}', 'update');
+                Route::delete('{option}', 'destroy');
+            });
+    });
+
+
+
+
+
+
+
+
+
 
 /*Route::group(['prefix' => 'gifts', 'controller' => GiftController::class], function () {
 });*/

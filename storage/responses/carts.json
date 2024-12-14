@@ -1,0 +1,115 @@
+{
+    "data": [
+        {
+            "id": "기본키",
+            "product": {
+                "id": "기본키",
+                "name": "상품명",
+                "description": "상품설명",
+                "view_count": "조회수",
+                "price": "가격",
+                "original_price": "원래 가격",
+                "delivery_fee": "배송비 (기본값: 0)",
+                "shipping_origin": "출고지",
+                "fruit_size": "과일 크기",
+                "sugar_content": "당도",
+                "food_type": "식품의 유형",
+                "manufacturer_and_location": "생산자 및 소재지",
+                "importer": "수입자",
+                "origin": "원산지",
+                "ingredients_and_composition": "원재료 및 합량",
+                "storage_and_handling": "보관\/취급방법",
+                "manufacture_date": "제조연원일",
+                "expiration_date": "유통기한",
+                "gmo_desc": "유전자변형 농산물 여부",
+                "customer_service_contact": "소비자 상담 문의",
+                "options": [
+                    {
+                        "id": "기본키",
+                        "name": "옵션명",
+                        "price": "가격"
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "옵션명",
+                        "price": "가격"
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "옵션명",
+                        "price": "가격"
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "옵션명",
+                        "price": "가격"
+                    }
+                ],
+                "is_new": "새로운상품 여부",
+                "is_best": true,
+                "average_rating": "평균 평점",
+                "reviews_count": 4,
+                "inquiries_count": 2,
+                "categories": "카테고리",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ]
+            },
+            "cart_product_options": [
+                {
+                    "id": "기본키",
+                    "price": "가격",
+                    "quantity": "수량",
+                    "name": "aut ad adipisci praesentium quia nam et quas consequatur voluptas"
+                },
+                {
+                    "id": "기본키",
+                    "price": "가격",
+                    "quantity": "수량",
+                    "name": "aliquid animi maiores numquam dolor veritatis repellat exercitationem repellat odit"
+                }
+            ]
+        }
+    ],
+    "links": {
+        "first": "http:\/\/localhost:8000\/api\/carts?page=1",
+        "last": "http:\/\/localhost:8000\/api\/carts?page=1",
+        "prev": null,
+        "next": null
+    },
+    "meta": {
+        "current_page": 1,
+        "from": 1,
+        "last_page": 1,
+        "links": [
+            {
+                "url": null,
+                "label": "&laquo; 이전",
+                "active": false
+            },
+            {
+                "url": "http:\/\/localhost:8000\/api\/carts?page=1",
+                "label": "1",
+                "active": true
+            },
+            {
+                "url": null,
+                "label": "다음 &raquo;",
+                "active": false
+            }
+        ],
+        "path": "http:\/\/localhost:8000\/api\/carts",
+        "per_page": 10,
+        "to": 3,
+        "total": 3
+    }
+}
