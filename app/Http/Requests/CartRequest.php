@@ -11,7 +11,7 @@ class CartRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return auth()->check();
+        return true;
     }
 
     /**
@@ -21,7 +21,13 @@ class CartRequest extends FormRequest
      */
     public function rules(): array
     {
+        $return = [];
+        if (!auth()->check()) {
+            $return = ['guest_id' => ['required', 'integer']];
+        }
+
         return [
+            ...$return,
             'product_id' => ['required', 'exists:products,id'],
             'product_options' => ['required', 'array'],
             'product_options.*.product_option_id' => ['required', 'integer'],
@@ -34,6 +40,7 @@ class CartRequest extends FormRequest
         return [
             'id' => ['description' => '<span class="point">기본키</span>'],
             'user_id' => ['description' => '<span class="point">사용자 외래키</span>'],
+            'guest_id' => ['description' => '<span class="point">비회원 아이디</span>'],
             'product_id' => ['description' => '<span class="point">상품 외래키</span>'],
         ];
     }

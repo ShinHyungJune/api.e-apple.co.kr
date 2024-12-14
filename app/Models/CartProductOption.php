@@ -18,9 +18,15 @@ class CartProductOption extends Model
         return $this->belongsTo(ProductOption::class);
     }
 
-    public function scopeMine(Builder $query)
+    public function scopeMine(Builder $query, $request)
     {
-        $query->where('user_id', auth()->id());
+        //$query->where('user_id', auth()->id());
+        if (auth()->check()) {
+            $query->where('user_id', auth()->id());
+        } else {
+            if (!($request->guest_id > 0)) abort(403, '비회원 아이디가 없습니다.');
+            $query->where('guest_id', $request->guest_id);
+        }
     }
 
 }

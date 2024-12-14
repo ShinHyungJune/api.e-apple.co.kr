@@ -11,7 +11,7 @@ class CartProductOptionRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return auth()->check();
+        return true;
     }
 
     /**
@@ -21,16 +21,17 @@ class CartProductOptionRequest extends FormRequest
      */
     public function rules(): array
     {
-
-        $return = [
-            'quantity' => ['required', 'integer', 'min:1'],
-        ];
+        $return = ['quantity' => ['required', 'integer', 'min:1']];
 
         if ($this->isMethod('post')) {
+            if (!auth()->check()) {
+                $return = [...$return, 'guest_id' => ['required', 'integer']];
+            } else {
+                $return = [...$return, 'user_id' => ['required', 'integer']];
+            }
             return [
-                'user_id' => ['required'],
+                ...$return,
                 'product_option_id' => ['required', 'exists:product_options,id'],
-                ...$return
             ];
         }
 
@@ -40,7 +41,9 @@ class CartProductOptionRequest extends FormRequest
 
     public function prepareForValidation()
     {
-        $this->merge(['user_id' => auth()->id()]);
+        if (auth()->check()) {
+            $this->merge(['user_id' => auth()->id()]);
+        }
     }
 
     public function bodyParameters(): array
@@ -49,6 +52,7 @@ class CartProductOptionRequest extends FormRequest
             'id' => ['description' => '<span class="point">기본키</span>'],
             'cart_id' => ['description' => '<span class="point">카트 외래키</span>'],
             'user_id' => ['description' => '<span class="point">사용자 외래키</span>'],
+            'guest_id' => ['description' => '<span class="point">비회원 아이디</span>'],
             'product_option_id' => ['description' => '<span class="point">상품 옵션 외래키</span>'],
             'price' => ['description' => '<span class="point">가격</span>'],
             'quantity' => ['description' => '<span class="point">수량</span>'],

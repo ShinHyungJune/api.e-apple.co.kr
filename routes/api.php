@@ -70,7 +70,7 @@ Route::group(['prefix' => 'products'], function () {
 });
 
 //카트
-Route::group(['prefix' => 'carts', 'middleware' => ['auth:api']],
+Route::group(['prefix' => 'carts', /*'middleware' => ['auth:api']*/],
     function () {
         Route::group(['controller' => CartController::class], function () {
             Route::get('', 'index');
