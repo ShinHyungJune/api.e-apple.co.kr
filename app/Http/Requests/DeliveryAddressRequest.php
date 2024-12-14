@@ -1,0 +1,55 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class DeliveryAddressRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     */
+    public function authorize(): bool
+    {
+        return auth()->check();
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
+     */
+    public function rules(): array
+    {
+        return [
+            'user_id' => ['required'],
+            'name' => ['required', 'string', 'max:255'],
+            'phone' => ['required', 'string', 'max:20'],
+            'postal_code' => ['required', 'string', 'max:10'],
+            'address' => ['required', 'string', 'max:255'],
+            'address_detail' => ['nullable', 'string', 'max:255'],
+            'delivery_request' => ['nullable', 'string'],
+            'is_default' => ['boolean'],
+        ];
+    }
+
+    public function prepareForValidation()
+    {
+        $this->merge(['user_id' => auth()->id()]);
+    }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'id' => ['description' => '<span class="point">기본키</span>'],
+            'name' => ['description' => '<span class="point">배송지명</span>'],
+            'phone' => ['description' => '<span class="point">연락처</span>'],
+            'postal_code' => ['description' => '<span class="point">우편번호</span>'],
+            'address' => ['description' => '<span class="point">주소</span>'],
+            'address_detail' => ['description' => '<span class="point">상세주소</span>'],
+            'delivery_request' => ['description' => '<span class="point">배송 요청 사항</span>'],
+            'is_default' => ['description' => '<span class="point">기본 배송지 여부</span>'],
+        ];
+    }
+
+}

@@ -4,6 +4,7 @@ use App\Enums\ProductCategory;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\CartController;
 use App\Http\Controllers\Api\CartProductOptionController;
+use App\Http\Controllers\Api\DeliveryAddressController;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\ProductInquiryController;
 use App\Http\Controllers\Api\ProductReviewController;
@@ -89,8 +90,14 @@ Route::group(['prefix' => 'carts', /*'middleware' => ['auth:api']*/],
     });
 
 
-
-
+//배송지
+Route::group(['prefix' => 'delivery_addresses', 'middleware' => ['auth:api'], 'controller' => DeliveryAddressController::class],
+    function () {
+        Route::get('', 'index');
+        Route::post('', 'store');
+        Route::put('{deliveryAddress}', 'update');
+        Route::delete('{deliveryAddress}', 'destroy');
+    });
 
 
 
