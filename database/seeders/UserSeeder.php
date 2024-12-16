@@ -13,11 +13,11 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        $user = User::where('email', 'test@naver.com')->first();
+        $user = User::where('email', 'test')->first();
 
         if(!$user)
             User::factory()->create([
-                'email' => 'test@naver.com',
+                'email' => 'test',
                 'password' => Hash::make('test'),
             ]);
 
