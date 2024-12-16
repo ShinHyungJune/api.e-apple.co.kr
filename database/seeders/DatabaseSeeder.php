@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
         DB::statement("SET foreign_key_checks=1");*/
 
         $this->call([
-            /*UserSeeder::class,
+            UserSeeder::class,
             ProductSeeder::class,
             ProductReviewSeeder::class,
             BoardSeeder::class,
@@ -36,7 +36,7 @@ class DatabaseSeeder extends Seeder
             MdProductPackageSeeder::class,
             ProductInquirySeeder::class,
             CartSeeder::class,
-            DeliveryAddressSeeder::class,*/
+            DeliveryAddressSeeder::class,
             CouponSeeder::class,
         ]);
     }
