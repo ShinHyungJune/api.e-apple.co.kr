@@ -13,12 +13,12 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        $user = User::where('email', 'test')->first();
+        $user = User::where('email', 'test@naver.com')->first();
 
         if(!$user)
             User::factory()->create([
-                'email' => 'test',
-                'password' => Hash::make('test'),
+                'email' => 'test@naver.com',
+                'password' => Hash::make('test@naver.com'),
             ]);
 
         User::factory()->count(50)->create(); // 50개의 레코드를 생성
