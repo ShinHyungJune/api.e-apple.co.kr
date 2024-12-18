@@ -1,0 +1,39 @@
+{
+    "success": true,
+    "data": {
+        "purchase_related_inquiry": "구매관련문의 ex) 배송문의, 주문문의, 취소문의, 교환문의, 환불문의, 입금문의",
+        "general_consultation_inquiry": "일반상담문의 ex) 회원정보, 결제문의, 상품문의, 쿠폰\/마일리지, 기타",
+        "content": "문의 내용",
+        "answer": "관리자 답변",
+        "answered_at": "답변 일시",
+        "is_answer": "답변여부",
+        "img": {
+            "id": "기본키",
+            "name": "파일이름",
+            "url": "이미지 URL"
+        },
+        "imgs": [
+            {
+                "id": "기본키",
+                "name": "파일이름",
+                "url": "이미지 URL"
+            },
+            {
+                "id": "기본키",
+                "name": "파일이름",
+                "url": "이미지 URL"
+            },
+            {
+                "id": "기본키",
+                "name": "파일이름",
+                "url": "이미지 URL"
+            },
+            {
+                "id": "기본키",
+                "name": "파일이름",
+                "url": "이미지 URL"
+            }
+        ]
+    },
+    "message": "성공적으로 처리되었습니다."
+}

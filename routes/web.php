@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Order;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
@@ -9,8 +11,10 @@ use Illuminate\Support\Facades\Route;
 
 require __DIR__.'/auth.php';*/
 
-Route::get('test', function () {
-    $result = DB::select(" SELECT COLUMN_NAME, COLUMN_COMMENT FROM information_schema.columns WHERE TABLE_SCHEMA = 'fruittree' AND TABLE_NAME = 'delivery_addresses' ");
+Route::get('body_parameters', function (Request $request) {
+    $table = $request->input('table');
+    $result = DB::select(" SELECT COLUMN_NAME, COLUMN_COMMENT FROM information_schema.columns
+        WHERE TABLE_SCHEMA = 'fruittree' AND TABLE_NAME = ? ", [$table]);
     //dd($result);
     //bodyParameters
     //'name' => ['description' => '<span class="point">상품명</span>'],
@@ -29,5 +33,12 @@ Route::get('test', function () {
     echo('<textarea style="width:100%;height:100%;">');
     print_r($bodyParameters);
     echo('</textarea>');
+});
 
+Route::get('payment_test', function () {
+    $order = Order::with(['orderProducts.productOption.product'])->findOrFail(10);
+    /*$order->orderProducts()->map(function ($e) {
+        $e->load('product');
+    });*/
+    return view('payment_test', compact('order'));
 });

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Coupon;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,7 +16,7 @@ return new class extends Migration
             $table->id()->comment('기본키');
             $table->string('name')->comment('쿠폰 이름');
 
-            $table->enum('type', ['amount', 'rate'])->comment('할인 타입 ex) amount: 할인액, rate: 할인율');
+            $table->enum('type', Coupon::TYPES)->comment('할인 타입 ex) amount: 할인액, rate: 할인율');
 
             $table->unsignedInteger('discount_amount')->nullable()->comment('할인 금액');
             $table->unsignedInteger('minimum_purchase_amount')->nullable()->comment('최소 결제액');

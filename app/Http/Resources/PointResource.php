@@ -5,7 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ProductOptionResource extends JsonResource
+class PointResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -15,10 +15,14 @@ class ProductOptionResource extends JsonResource
     public function toArray(Request $request): array
     {
         //return parent::toArray($request);
-        $return = $this->only('id', 'name', 'price', 'stock_quantity');
+        $return = [
+            ...$this->only(['id', /*'model_type', 'model_id',*/ 'deposit', 'withdrawal', 'balance', 'description', 'created_at']),
+        ];
+
         //*
         if (config('scribe.response_file')) {
-            return getScribeResponseFile($return, 'product_options');
+            $comments = [];
+            return getScribeResponseFile($return, 'points', $comments);
         }
         //*/
         return $return;

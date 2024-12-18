@@ -5,7 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ProductOptionResource extends JsonResource
+class OrderProductResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -15,13 +15,21 @@ class ProductOptionResource extends JsonResource
     public function toArray(Request $request): array
     {
         //return parent::toArray($request);
-        $return = $this->only('id', 'name', 'price', 'stock_quantity');
+        $return = [
+            ...$this->only(['quantity', 'price']),
+            'product' => ProductResource::make($this->whenLoaded('product')),
+            'productOption' => ProductOptionResource::make($this->productOption),
+        ];
+
         //*
         if (config('scribe.response_file')) {
-            return getScribeResponseFile($return, 'product_options');
+            $comments = [
+            ];
+            return getScribeResponseFile($return, 'order_products', $comments);
         }
         //*/
         return $return;
         //*/
+
     }
 }

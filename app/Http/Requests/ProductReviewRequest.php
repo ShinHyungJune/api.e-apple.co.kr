@@ -26,7 +26,7 @@ class ProductReviewRequest extends FormRequest
             //'user_id' => ['required', 'exists:users,id'],
             'rating' => ['required', 'integer', 'min:1', 'max:5'],
             'review' => ['required', 'string'],
-            'images' => ['required', 'array'],
+            'images' => ['nullable', 'array'],
         ];
     }
 

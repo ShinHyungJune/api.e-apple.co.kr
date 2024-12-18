@@ -23,12 +23,12 @@ class UserCouponController extends Controller
     {
         $totalOrderAmount = (int)$request->input('total_order_amount');
         $items = Coupon::query()
-            ->whereHas('users', function ($query) {
+            /*->whereHas('users', function ($query) {
                 $query->where('user_id', auth()->id()) //현재 로그인한 사용자와 연결된 쿠폰만 필터링
                 ->where('expired_at', '>=', now()) //만료되지 않은 쿠폰
-                ->whereNull('used_at') //사용하지 않은 쿠폰
-                ;
-            })
+                ->whereNull('used_at'); //사용하지 않은 쿠폰
+            })*/
+            ->whereHas('mineAvailables')
             ->where(function ($query) use ($totalOrderAmount) {
                 $query->where('type', Coupon::TYPE_RATE)
                     ->orWhere(function ($query) use ($totalOrderAmount) {

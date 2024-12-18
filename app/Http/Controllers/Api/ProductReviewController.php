@@ -46,6 +46,8 @@ class ProductReviewController extends ApiController
             }
         }
 
+        auth()->user()->depositPoint($productReview);
+
         return $this->respondSuccessfully(ProductReviewResource::make($productReview));
     }
 

@@ -6,6 +6,10 @@ use App\Http\Controllers\Api\CartController;
 use App\Http\Controllers\Api\CartProductOptionController;
 use App\Http\Controllers\Api\CouponController;
 use App\Http\Controllers\Api\DeliveryAddressController;
+use App\Http\Controllers\Api\ExchangeReturnController;
+use App\Http\Controllers\Api\InquiryController;
+use App\Http\Controllers\Api\OrderController;
+use App\Http\Controllers\Api\PointController;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\ProductInquiryController;
 use App\Http\Controllers\Api\ProductReviewController;
@@ -27,7 +31,6 @@ use Illuminate\Support\Facades\Route;
     dd(ProductCategory::from('best'));
 });*/
 
-
 //사용자인증
 Route::group(['controller' => AuthController::class], function () {
     Route::post('login', 'login');
@@ -45,7 +48,6 @@ Route::group(['controller' => AuthController::class], function () {
         //Route::get('refresh', 'refresh');
     });
 });
-
 
 //상품보기
 Route::group(['prefix' => 'products'], function () {
@@ -91,7 +93,6 @@ Route::group(['prefix' => 'carts', /*'middleware' => ['auth:api']*/],
             });
     });
 
-
 //배송지
 Route::group(['prefix' => 'delivery_addresses', 'middleware' => ['auth:api'], 'controller' => DeliveryAddressController::class],
     function () {
@@ -109,13 +110,43 @@ Route::group(['prefix' => 'coupons', 'controller' => CouponController::class],
         });
     });
 
-
 Route::group(['prefix' => 'user_coupons', 'middleware' => ['auth:api'], 'controller' => UserCouponController::class],
     function () {
         Route::get('', 'index');
     });
 
+//주문
+Route::group(['prefix' => 'orders', 'controller' => OrderController::class],
+    function () {
+        Route::get('', 'index');
+        Route::post('', 'store');
+        //Route::get('{order}', 'show');
+        Route::put('{id}', 'update');
+        Route::post('complete', 'complete');
+        Route::post('complete/webhook', 'complete');
+        Route::put('{id}/confirm', 'confirm');
 
+        //교환반품
+        Route::group(['prefix' => '{order}/exchange_returns', 'controller' => ExchangeReturnController::class],
+            function () {
+                Route::get('', 'index');
+                Route::post('', 'store');
+            });
+    });
+
+//1:1문의
+Route::group(['prefix' => 'inquiries', 'middleware' => ['auth:api'], 'controller' => InquiryController::class],
+    function () {
+        Route::get('', 'index');
+        Route::post('', 'store');
+        Route::delete('{inquiry}', 'destroy');
+    });
+
+//적립금
+Route::group(['prefix' => 'points', 'middleware' => ['auth:api'], 'controller' => PointController::class],
+    function () {
+        Route::get('', 'index');
+    });
 
 /*Route::group(['prefix' => 'gifts', 'controller' => GiftController::class], function () {
 });*/

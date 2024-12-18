@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\DB;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
 class User extends Authenticatable implements JWTSubject
@@ -87,5 +88,62 @@ class User extends Authenticatable implements JWTSubject
             ->withPivot('used_at'); // 중간 테이블의 추가 필드를 사용하려면
     }
 
+    public function availableCoupons()
+    {
+        return $this->belongsToMany(Coupon::class, 'user_coupons')
+            ->withTimestamps()
+            // 중간 테이블의 추가 필드를 사용하려면
+                ->withPivot(['id', 'used_at'])
+            // 중간 테이블 검색
+                ->wherePivot('used_at', null) // 사용하지 않은 쿠폰
+                ->wherePivot('expired_at', '>=', now()); // 만료되지 않은 쿠폰
+    }
+
+
+    public function pointTransactions()
+    {
+        return $this->hasMany(Point::class);
+    }
+
+    public function depositPoint($model)
+    {
+        return DB::transaction(function () use ($model) {
+            list($amount, $desc) = $model->getDepositPoints();
+            $balance = $this->points + $amount;
+            $this->pointTransactions()->create([
+                'model_type' => get_class($model),
+                'model_id' => $model->id,
+                'deposit' => $amount,
+                'description' => $desc,
+                'balance' => $balance,
+            ]);
+            $this->points = $balance;
+            return $this->save();
+        });
+    }
+
+    public function withdrawalPoint($model)
+    {
+        list($amount, $desc) = $model->getWithdrawalPoints();
+
+        if ($this->points < $amount) {
+            abort(403, '포인트가 부족합니다.');
+        }
+        $balance = $this->points - $amount;
+        $this->pointTransactions()->create([
+            'model_type' => get_class($model),
+            'model_id' => $model->id,
+            'withdrawal' => $amount,
+            'description' => $desc,
+            'balance' => $balance,
+        ]);
+        $this->points = $balance;
+        return $this->save();
+    }
+
+    public function inquiries(): HasMany
+    {
+        return $this->hasMany(Inquiry::class);
+    }
 
 }

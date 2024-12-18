@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('delivery_addresses', function (Blueprint $table) {
             $table->id()->comment('기본키');
             $table->foreignId('user_id')->nullable()->constrained()->onDelete('cascade')->comment('사용자 외래키');
+
             $table->string('name')->comment('배송지명');
             $table->string('phone', 20)->comment('연락처');
-
             $table->string('postal_code', 10)->comment('우편번호');
             $table->string('address')->comment('주소');
             $table->string('address_detail')->nullable()->comment('상세주소');

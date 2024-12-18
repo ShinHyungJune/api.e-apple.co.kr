@@ -66,8 +66,16 @@ class ProductFactory extends Factory
 
             $product->options()->createMany(
                 [
-                    ['name' => $this->faker->words(10, true), 'price' => $this->faker->randomFloat(2, 1000, 50000)],
-                    ['name' => $this->faker->words(10, true), 'price' => $this->faker->randomFloat(2, 1000, 50000)]
+                    [
+                        'name' => $this->faker->words(10, true),
+                        'price' => $this->faker->randomFloat(2, 1000, 50000),
+                        'stock_quantity' => $this->faker->numberBetween(0, 1000),
+                    ],
+                    [
+                        'name' => $this->faker->words(10, true),
+                        'price' => $this->faker->randomFloat(2, 1000, 50000),
+                        'stock_quantity' => $this->faker->numberBetween(0, 1000),
+                    ]
                 ]
             );
         });
