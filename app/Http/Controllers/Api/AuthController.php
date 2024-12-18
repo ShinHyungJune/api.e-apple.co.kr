@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Http\Resources\BannerResource;
+use App\Http\Resources\ProfileResource;
 use App\Http\Resources\UserResource;
 use App\Models\User;
 use App\Models\VerifyNumber;
@@ -38,12 +39,13 @@ class AuthController extends ApiController
      * 회원정보
      * @group 인증
      * @priority 1
-     * @responseFile storage/responses/user.json
+     * @responseFile storage/responses/profile.json
      */
     public function profile()
     {
         //return response()->json(auth()->user());
-        return $this->respondSuccessfully(UserResource::make(auth()->user()));
+        $user = auth()->user()->withCount('availableCoupons')->first();
+        return $this->respondSuccessfully(ProfileResource::make($user));
     }
 
     /**

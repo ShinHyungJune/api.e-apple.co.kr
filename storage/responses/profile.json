@@ -1,0 +1,14 @@
+{
+    "success": true,
+    "data": {
+        "id": "기본키",
+        "name": "성명",
+        "email": "이메일",
+        "phone": "연락처",
+        "nickname": "닉네임",
+        "points": "포인트 ",
+        "available_coupons_count": "사용 가능 쿠폰 개수",
+        "level": "등급"
+    },
+    "message": "성공적으로 처리되었습니다."
+}
