@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('delivery_issue')->nullable()->comment('배송문제 ex) 다른 상품이 배송됨, 배송된 장소에 박스가 분실됨, 다른 주소로 배송됨');
             $table->string('product_issue')->nullable()->comment('상품문제 ex) 상품의 구성품/부속품이 들어있지 않음, 상품이 설명과 다름, 상품이 파손되어 배송됨, 상품 결함/기능에 이상이 있음');
 
-            $table->string('description')->nullable()->comment('상세설명');
+            $table->text('description')->nullable()->comment('상세설명');
             $table->enum('status', ExchangeReturnStatus::values())->default(ExchangeReturnStatus::RECEIVED->value)->comment("처리상태");
             $table->text('admin_notes')->nullable()->comment('관리자 메모');
 

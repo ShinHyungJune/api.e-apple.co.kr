@@ -20,6 +20,7 @@ class DeliveryAddressFactory extends Factory
         return [
             'user_id' => User::inRandomOrder()->first()->id,       // 랜덤 사용자
             'name' => $this->faker->words(10, true),
+            'recipient_name' => fake()->name(),
             'phone' => $this->faker->numerify('010#######'),
             'postal_code' => $this->faker->postcode,
             'address' => $this->faker->address,

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Point;
 use Illuminate\Database\Seeder;
 
 class PointSeeder extends Seeder
@@ -11,6 +12,6 @@ class PointSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Point::factory(50)->create();
     }
 }

@@ -146,11 +146,11 @@ class Order extends Model
 
     public function getDepositPoints()
     {
-        if (auth()->check()) {
-            //TODO
-            $order_points_rate = 0;//auth()->user()->purchase_reward_points_rate;//주문 적립율
+        if (auth()->check())
+        {
+            $order_points_rate = auth()->user()->level->purchaseRewardPointsRate();//주문 적립율
             $amount = $order_points_rate * $this->payment_amount;//최종결제액
-            $desc = '';
+            $desc = '주문적립';
             return [$amount, $desc];
         }
         return null;

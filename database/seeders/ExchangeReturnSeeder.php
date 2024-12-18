@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\ExchangeReturn;
 use Illuminate\Database\Seeder;
 
 class ExchangeReturnSeeder extends Seeder
@@ -11,6 +12,6 @@ class ExchangeReturnSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        ExchangeReturn::factory(50)->create();
     }
 }

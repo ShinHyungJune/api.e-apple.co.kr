@@ -2,7 +2,16 @@
 
 namespace Database\Seeders;
 
+use App\Models\MdProductPackage;
+use App\Models\Post\Board;
+use App\Models\Post\BoardCategory;
+use App\Models\Post\Post;
+use App\Models\Product;
+use App\Models\ProductInquiry;
+use App\Models\ProductReview;
+use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
@@ -13,8 +22,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-
-        /*DB::statement("SET foreign_key_checks=0");
+        DB::statement("SET foreign_key_checks=0");
         User::truncate();
         Product::truncate();
         ProductReview::truncate();
@@ -24,7 +32,7 @@ class DatabaseSeeder extends Seeder
         MdProductPackage::truncate();
         ProductInquiry::truncate();
         DB::table("media")->truncate();
-        DB::statement("SET foreign_key_checks=1");*/
+        DB::statement("SET foreign_key_checks=1");
 
         $this->call([
             UserSeeder::class,
@@ -38,6 +46,10 @@ class DatabaseSeeder extends Seeder
             CartSeeder::class,
             DeliveryAddressSeeder::class,
             CouponSeeder::class,
+            OrderSeeder::class,
+            PointSeeder::class,
+            ExchangeReturnSeeder::class,
+            InquirySeeder::class,
         ]);
     }
 }

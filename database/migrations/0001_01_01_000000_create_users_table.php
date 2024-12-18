@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\UserLevel;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -17,9 +18,12 @@ return new class extends Migration
             $table->string('email')->unique()->comment('이메일');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->comment('비밀번호');
+            $table->rememberToken();
             $table->string('phone', 15)/*->unique()*/->comment('연락처');
             $table->string('nickname')->nullable()->comment('닉네임');
-            $table->rememberToken();
+            $table->unsignedInteger('points')->default(0)->comment('포인트 ');
+            $table->enum('level', UserLevel::values())->default(UserLevel::GENERAL->value)->comment('등급');
+            $table->boolean('is_admin')->default(false)->comment('관리자 여부 필드');
             $table->timestamps();
         });
 
