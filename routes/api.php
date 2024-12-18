@@ -98,6 +98,7 @@ Route::group(['prefix' => 'delivery_addresses', 'middleware' => ['auth:api'], 'c
     function () {
         Route::get('', 'index');
         Route::post('', 'store');
+        Route::get('{deliveryAddress}', 'show');
         Route::put('{deliveryAddress}', 'update');
         Route::delete('{deliveryAddress}', 'destroy');
     });

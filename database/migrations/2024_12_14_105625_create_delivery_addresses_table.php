@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->nullable()->constrained()->onDelete('cascade')->comment('사용자 외래키');
 
             $table->string('name')->comment('배송지명');
+            $table->string('recipient_name')->comment('배송받을 사람 이름');
             $table->string('phone', 20)->comment('연락처');
             $table->string('postal_code', 10)->comment('우편번호');
             $table->string('address')->comment('주소');

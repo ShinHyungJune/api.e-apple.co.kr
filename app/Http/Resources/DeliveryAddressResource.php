@@ -15,7 +15,7 @@ class DeliveryAddressResource extends JsonResource
     public function toArray(Request $request): array
     {
         //return parent::toArray($request);
-        $return = $this->only(['name', 'phone', 'postal_code', 'address', 'address_detail', 'delivery_request', 'is_default']);
+        $return = $this->only(['id', 'name', 'recipient_name', 'phone', 'postal_code', 'address', 'address_detail', 'delivery_request', 'is_default']);
         //*
         if (config('scribe.response_file')) {
             $comments = [];

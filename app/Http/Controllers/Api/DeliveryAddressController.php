@@ -37,6 +37,16 @@ class DeliveryAddressController extends ApiController
     }
 
     /**
+     * 상세
+     * @priority 1
+     * @responseFile storage/responses/delivery_address.json
+     */
+    public function show(DeliveryAddress $deliveryAddress)
+    {
+        return $this->respondSuccessfully(DeliveryAddressResource::make($deliveryAddress));
+    }
+
+    /**
      * 수정
      * @priority 1
      * @responseFile storage/responses/delivery_address.json

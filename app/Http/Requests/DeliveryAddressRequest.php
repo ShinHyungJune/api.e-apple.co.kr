@@ -24,6 +24,7 @@ class DeliveryAddressRequest extends FormRequest
         return [
             'user_id' => ['required'],
             'name' => ['required', 'string', 'max:255'],
+            'recipient_name' => ['required', 'string', 'max:255'],
             'phone' => ['required', 'string', 'max:20'],
             'postal_code' => ['required', 'string', 'max:10'],
             'address' => ['required', 'string', 'max:255'],
@@ -35,7 +36,13 @@ class DeliveryAddressRequest extends FormRequest
 
     public function prepareForValidation()
     {
-        $this->merge(['user_id' => auth()->id()]);
+        $inputs = $this->input();
+        foreach ($inputs as $key => $input) {
+            if ($input === 'null') $inputs[$key] = null;
+            if ($input === 'true') $inputs[$key] = true;
+            if ($input === 'false') $inputs[$key] = false;
+        }
+        $this->merge([...$inputs, 'user_id' => auth()->id()]);
     }
 
     public function bodyParameters(): array
@@ -43,6 +50,7 @@ class DeliveryAddressRequest extends FormRequest
         return [
             'id' => ['description' => '<span class="point">기본키</span>'],
             'name' => ['description' => '<span class="point">배송지명</span>'],
+            'recipient_name' => ['description' => '<span class="point">배송받을 사람 이름</span>'],
             'phone' => ['description' => '<span class="point">연락처</span>'],
             'postal_code' => ['description' => '<span class="point">우편번호</span>'],
             'address' => ['description' => '<span class="point">주소</span>'],
