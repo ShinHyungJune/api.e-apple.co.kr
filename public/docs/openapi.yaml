@@ -718,12 +718,12 @@ paths:
                 guest_id:
                   type: integer
                   description: '<span class="point">비회원 아이디</span>.'
-                  example: 6
+                  example: 19
                   nullable: false
                 product_id:
                   type: string
                   description: '<span class="point">상품 외래키</span>. The <code>id</code> of an existing record in the products table.'
-                  example: perferendis
+                  example: veritatis
                   nullable: false
                 product_options:
                   type: array
@@ -736,12 +736,12 @@ paths:
                       product_option_id:
                         type: integer
                         description: ''
-                        example: 7
+                        example: 17
                         nullable: false
                       quantity:
                         type: integer
                         description: 'value(은)는  최소 1 이상이어야 합니다.'
-                        example: 25
+                        example: 37
                         nullable: false
                     required:
                       - product_option_id
@@ -834,7 +834,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the cart.'
-        example: odit
+        example: quod
         required: true
         schema:
           type: string
@@ -1121,12 +1121,12 @@ paths:
                 guest_id:
                   type: integer
                   description: '<span class="point">비회원 아이디</span>.'
-                  example: 8
+                  example: 15
                   nullable: false
                 product_option_id:
                   type: string
                   description: '<span class="point">상품 옵션 외래키</span>. The <code>id</code> of an existing record in the product_options table.'
-                  example: dolorem
+                  example: quasi
                   nullable: false
               required:
                 - quantity
@@ -1138,7 +1138,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the cart.'
-        example: ut
+        example: rerum
         required: true
         schema:
           type: string
@@ -1172,7 +1172,7 @@ paths:
                 quantity:
                   type: integer
                   description: '<span class="point">수량</span>. value(은)는  최소 1 이상이어야 합니다.'
-                  example: 36
+                  example: 42
                   nullable: false
               required:
                 - quantity
@@ -1202,7 +1202,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the cart.'
-        example: earum
+        example: velit
         required: true
         schema:
           type: string
@@ -1210,7 +1210,7 @@ paths:
         in: path
         name: option
         description: 'The option.'
-        example: quis
+        example: aut
         required: true
         schema:
           type: string
@@ -1826,42 +1826,42 @@ paths:
                 user_id:
                   type: string
                   description: ''
-                  example: culpa
+                  example: sint
                   nullable: false
                 name:
                   type: string
                   description: '<span class="point">배송지명</span>. Must not be greater than 255 characters.'
-                  example: fjgr
+                  example: pequckwkauitcbqiap
                   nullable: false
                 recipient_name:
                   type: string
                   description: '<span class="point">배송받을 사람 이름</span>. Must not be greater than 255 characters.'
-                  example: dytb
+                  example: wqzecxoomy
                   nullable: false
                 phone:
                   type: string
                   description: '<span class="point">연락처</span>. Must not be greater than 20 characters.'
-                  example: oldijhjsklqh
+                  example: erpdwoawddvqzrfsaqr
                   nullable: false
                 postal_code:
                   type: string
                   description: '<span class="point">우편번호</span>. Must not be greater than 10 characters.'
-                  example: qrlc
+                  example: kva
                   nullable: false
                 address:
                   type: string
                   description: '<span class="point">주소</span>. Must not be greater than 255 characters.'
-                  example: ggdgpddnqcsnrjon
+                  example: xhjxuom
                   nullable: false
                 address_detail:
                   type: string
                   description: '<span class="point">상세주소</span>. Must not be greater than 255 characters.'
-                  example: gkq
+                  example: usmnenuzhdgtgkvluifaexuya
                   nullable: true
                 delivery_request:
                   type: string
                   description: '<span class="point">배송 요청 사항</span>.'
-                  example: asperiores
+                  example: tempore
                   nullable: true
                 is_default:
                   type: boolean
@@ -2014,42 +2014,42 @@ paths:
                 user_id:
                   type: string
                   description: ''
-                  example: delectus
+                  example: labore
                   nullable: false
                 name:
                   type: string
                   description: '<span class="point">배송지명</span>. Must not be greater than 255 characters.'
-                  example: umfvhkrkkgmj
+                  example: giefxuwhldhdxtavmdyhc
                   nullable: false
                 recipient_name:
                   type: string
                   description: '<span class="point">배송받을 사람 이름</span>. Must not be greater than 255 characters.'
-                  example: bylkhnhqcnhjfczkh
+                  example: qwpphlkscdljpmjuuxmwrpxf
                   nullable: false
                 phone:
                   type: string
                   description: '<span class="point">연락처</span>. Must not be greater than 20 characters.'
-                  example: yvxcbuwvu
+                  example: xrnytlwhvlowihp
                   nullable: false
                 postal_code:
                   type: string
                   description: '<span class="point">우편번호</span>. Must not be greater than 10 characters.'
-                  example: crxnbf
+                  example: j
                   nullable: false
                 address:
                   type: string
                   description: '<span class="point">주소</span>. Must not be greater than 255 characters.'
-                  example: xlstpntfivrixsqvh
+                  example: xpgomyrdnafavihdkjtssmc
                   nullable: false
                 address_detail:
                   type: string
                   description: '<span class="point">상세주소</span>. Must not be greater than 255 characters.'
-                  example: dswpttqrq
+                  example: xhjejechhdkrswieun
                   nullable: true
                 delivery_request:
                   type: string
                   description: '<span class="point">배송 요청 사항</span>.'
-                  example: aperiam
+                  example: enim
                   nullable: true
                 is_default:
                   type: boolean
@@ -2569,12 +2569,12 @@ paths:
                 change_of_mind:
                   type: string
                   description: '<span class="point">단순변심 ex) 상품이 마음에 들지 않음, 더 저렴한 상품을 발견함</span>.'
-                  example: nostrum
+                  example: modi
                   nullable: true
                 delivery_issue:
                   type: string
                   description: '<span class="point">배송문제 ex) 다른 상품이 배송됨, 배송된 장소에 박스가 분실됨, 다른 주소로 배송됨</span>.'
-                  example: at
+                  example: aut
                   nullable: true
                 product_issue:
                   type: string
@@ -2584,17 +2584,17 @@ paths:
                 description:
                   type: string
                   description: '<span class="point">상세설명</span>.'
-                  example: 'Molestias est amet ea eveniet.'
+                  example: 'Non rerum ex ipsam omnis voluptatem eveniet.'
                   nullable: true
                 status:
                   type: string
                   description: '<span class="point">처리상태</span>.'
-                  example: delectus
+                  example: odit
                   nullable: false
                 guest_id:
                   type: integer
                   description: '<span class="point">비회원 아이디</span>.'
-                  example: 6
+                  example: 8
                   nullable: false
               required:
                 - type
@@ -2606,7 +2606,7 @@ paths:
         in: path
         name: order
         description: 'The order.'
-        example: minus
+        example: et
         required: true
         schema:
           type: string
@@ -2969,17 +2969,17 @@ paths:
                 purchase_related_inquiry:
                   type: string
                   description: '<span class="point">구매관련문의 ex) 배송문의, 주문문의, 취소문의, 교환문의, 환불문의, 입금문의</span>.'
-                  example: porro
+                  example: vel
                   nullable: true
                 general_consultation_inquiry:
                   type: string
                   description: '<span class="point">일반상담문의 ex) 회원정보, 결제문의, 상품문의, 쿠폰/마일리지, 기타</span>.'
-                  example: magnam
+                  example: assumenda
                   nullable: true
                 content:
                   type: string
                   description: '<span class="point">문의 내용</span>.'
-                  example: esse
+                  example: deserunt
                   nullable: false
                 images:
                   type: object
@@ -3513,7 +3513,7 @@ paths:
                 status:
                   type: string
                   description: '<span class="point">주문 상태</span>.'
-                  example: cancellation_complete
+                  example: order_complete
                   nullable: false
                   enum:
                     - order_pending
@@ -3532,17 +3532,17 @@ paths:
                 guest_id:
                   type: integer
                   description: '<span class="point">비회원 아이디</span>.'
-                  example: 14
+                  example: 5
                   nullable: false
                 total_amount:
                   type: integer
                   description: '<span class="point">주문 총액</span>. value(은)는  최소 0 이상이어야 합니다.'
-                  example: 59
+                  example: 37
                   nullable: false
                 delivery_fee:
                   type: integer
                   description: '<span class="point">배송비</span>. value(은)는  최소 0 이상이어야 합니다.'
-                  example: 46
+                  example: 65
                   nullable: true
                 order_products:
                   type: array
@@ -3555,22 +3555,22 @@ paths:
                       product_id:
                         type: integer
                         description: '<span class="point">주문상품 아이디</span>.'
-                        example: 17
+                        example: 2
                         nullable: false
                       product_option_id:
                         type: integer
                         description: '<span class="point">주문상품 옵션 아이디</span>.'
-                        example: 1
+                        example: 13
                         nullable: false
                       quantity:
                         type: integer
                         description: '<span class="point">주문상품 수량</span>. value(은)는  최소 1 이상이어야 합니다.'
-                        example: 33
+                        example: 22
                         nullable: false
                       price:
                         type: integer
                         description: '<span class="point">주문상품 가격</span>. value(은)는  최소 1 이상이어야 합니다.'
-                        example: 77
+                        example: 13
                         nullable: false
                     required:
                       - product_id
@@ -3778,7 +3778,7 @@ paths:
                 status:
                   type: string
                   description: '<span class="point">주문 상태</span>.'
-                  example: payment_pending
+                  example: cancellation_requested
                   nullable: false
                   enum:
                     - order_pending
@@ -3797,82 +3797,82 @@ paths:
                 guest_id:
                   type: integer
                   description: '<span class="point">비회원 아이디</span>.'
-                  example: 18
+                  example: 19
                   nullable: false
                 buyer_name:
                   type: string
                   description: '<span class="point">주문자 이름</span>. Must not be greater than 255 characters.'
-                  example: ixqrvagzugwikaqxjztxugesx
+                  example: edmhjegwraodmggsxj
                   nullable: false
                 buyer_phone:
                   type: string
                   description: '<span class="point">주문자 연락처</span>. Must not be greater than 20 characters.'
-                  example: eocodxpqhjc
+                  example: sqpwenrmkxcb
                   nullable: false
                 buyer_email:
                   type: string
                   description: '<span class="point">주문자 이메일</span>. value(은)는 이메일 형태여야 합니다. Must not be greater than 255 characters.'
-                  example: rita.sanford@example.com
+                  example: schimmel.ervin@example.com
                   nullable: true
                 buyer_postal_code:
                   type: string
                   description: '<span class="point">주문자 우편번호</span>. Must not be greater than 10 characters.'
-                  example: vebojf
+                  example: ajwz
                   nullable: true
                 buyer_address:
                   type: string
                   description: '<span class="point">주문자 주소</span>. Must not be greater than 255 characters.'
-                  example: foeerkvoufxazcvnzrwpflmq
+                  example: ykpauinnpqncqpnzlqo
                   nullable: true
                 buyer_address_detail:
                   type: string
                   description: '<span class="point">주문자 상세주소</span>. Must not be greater than 255 characters.'
-                  example: rmkzrwhssjnkrsh
+                  example: gruaxtrieylkrwqkytrdbll
                   nullable: true
                 delivery_name:
                   type: string
                   description: '<span class="point">배송지명</span>. Must not be greater than 255 characters.'
-                  example: unqwfjrcimiambaxaflgm
+                  example: uxmiqrkxjpbhmzh
                   nullable: false
                 delivery_phone:
                   type: string
                   description: '<span class="point">배송지 연락처</span>. Must not be greater than 20 characters.'
-                  example: khl
+                  example: jhvciek
                   nullable: false
                 delivery_postal_code:
                   type: string
                   description: '<span class="point">배송지 우편번호</span>. Must not be greater than 10 characters.'
-                  example: xynzfn
+                  example: txpn
                   nullable: false
                 delivery_address:
                   type: string
                   description: '<span class="point">배송지 주소</span>. Must not be greater than 255 characters.'
-                  example: fefrhecrvhemsz
+                  example: jrnkhqzbnvplo
                   nullable: false
                 delivery_address_detail:
                   type: string
                   description: '<span class="point">배송지 상세주소</span>. Must not be greater than 255 characters.'
-                  example: vnhaumrrhditpolctvbkgtglq
+                  example: kevfcpkcxjfpyamy
                   nullable: true
                 delivery_request:
                   type: string
                   description: '<span class="point">배송 요청 사항</span>.'
-                  example: rerum
+                  example: hic
                   nullable: true
                 common_entrance_method:
                   type: string
                   description: '<span class="point">공동현관 출입방법</span>. Must not be greater than 255 characters.'
-                  example: trejiqcqhfhawbgsgr
+                  example: pibmjbgqyzvdkeus
                   nullable: true
                 total_amount:
                   type: integer
                   description: '<span class="point">주문 총액</span>. value(은)는  최소 0 이상이어야 합니다.'
-                  example: 35
+                  example: 72
                   nullable: false
                 delivery_fee:
                   type: integer
                   description: '<span class="point">배송비</span>. value(은)는  최소 0 이상이어야 합니다.'
-                  example: 21
+                  example: 60
                   nullable: true
                 user_coupon_id:
                   type: string
@@ -3882,27 +3882,27 @@ paths:
                 coupon_discount_amount:
                   type: integer
                   description: 'value(은)는  최소 0 이상이어야 합니다.'
-                  example: 39
+                  example: 72
                   nullable: true
                 use_points:
                   type: integer
                   description: '<span class="point">적립금 사용액</span>. value(은)는  최소 0 이상이어야 합니다.'
-                  example: 83
+                  example: 27
                   nullable: true
                 payment_amount:
                   type: integer
                   description: '<span class="point">최종결제액</span>. value(은)는  최소 0 이상이어야 합니다.'
-                  example: 23
+                  example: 1
                   nullable: false
                 merchant_uid:
                   type: string
                   description: '<span class="point">주문번호 (내부)</span>.'
-                  example: voluptas
+                  example: cumque
                   nullable: false
                 payment_pg:
                   type: string
                   description: '<span class="point">결제 pg ex) html5_inicis</span>.'
-                  example: eum
+                  example: sed
                   nullable: false
                 payment_method:
                   type: string
@@ -3932,7 +3932,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the order.'
-        example: corporis
+        example: nihil
         required: true
         schema:
           type: string
@@ -3955,12 +3955,12 @@ paths:
                 imp_uid:
                   type: string
                   description: 'Must not be greater than 50000 characters.'
-                  example: xyktdqqmvt
+                  example: hllkl
                   nullable: false
                 merchant_uid:
                   type: string
                   description: 'Must not be greater than 50000 characters.'
-                  example: dxmjdhofsqmocokydnevpgx
+                  example: lkna
                   nullable: false
               required:
                 - imp_uid
@@ -3985,12 +3985,12 @@ paths:
                 imp_uid:
                   type: string
                   description: 'Must not be greater than 50000 characters.'
-                  example: yywjedjlen
+                  example: rlqrwtq
                   nullable: false
                 merchant_uid:
                   type: string
                   description: 'Must not be greater than 50000 characters.'
-                  example: pgbg
+                  example: aqlqxjivuneofdkmmhux
                   nullable: false
               required:
                 - imp_uid
@@ -4187,7 +4187,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the order.'
-        example: eaque
+        example: aut
         required: true
         schema:
           type: string
@@ -5317,6 +5317,7 @@ paths:
                     -
                       id: 기본키
                       is_visible: '공개 여부 (0: 비공개, 1: 공개)'
+                      created_at: 등록일시
                       answered_at: 답변일시
                       is_answered: 답변여부
                       title: '문의 제목'
@@ -5325,6 +5326,7 @@ paths:
                     -
                       id: 기본키
                       is_visible: '공개 여부 (0: 비공개, 1: 공개)'
+                      created_at: 등록일시
                       answered_at: 답변일시
                       is_answered: 답변여부
                   links:
@@ -5380,6 +5382,7 @@ paths:
                       -
                         id: 기본키
                         is_visible: '공개 여부 (0: 비공개, 1: 공개)'
+                        created_at: 등록일시
                         answered_at: 답변일시
                         is_answered: 답변여부
                         title: '문의 제목'
@@ -5388,6 +5391,7 @@ paths:
                       -
                         id: 기본키
                         is_visible: '공개 여부 (0: 비공개, 1: 공개)'
+                        created_at: 등록일시
                         answered_at: 답변일시
                         is_answered: 답변여부
                     items:
@@ -5399,6 +5403,9 @@ paths:
                         is_visible:
                           type: string
                           example: '공개 여부 (0: 비공개, 1: 공개)'
+                        created_at:
+                          type: string
+                          example: 등록일시
                         answered_at:
                           type: string
                           example: 답변일시
@@ -5520,6 +5527,7 @@ paths:
                   data:
                     id: 기본키
                     is_visible: '공개 여부 (0: 비공개, 1: 공개)'
+                    created_at: 등록일시
                     answered_at: 답변일시
                     is_answered: 답변여부
                     title: '문의 제목'
@@ -5539,6 +5547,9 @@ paths:
                       is_visible:
                         type: string
                         example: '공개 여부 (0: 비공개, 1: 공개)'
+                      created_at:
+                        type: string
+                        example: 등록일시
                       answered_at:
                         type: string
                         example: 답변일시
@@ -5569,27 +5580,27 @@ paths:
                 product_id:
                   type: integer
                   description: '<span class="point">참조 상품 ID</span>. The <code>id</code> of an existing record in the products table.'
-                  example: 6
+                  example: 15
                   nullable: false
                 title:
                   type: string
                   description: '<span class="point">문의 제목</span>. Must not be greater than 255 characters.'
-                  example: bcbfdcthgm
+                  example: sxg
                   nullable: false
                 content:
                   type: string
                   description: '<span class="point">문의 내용</span>.'
-                  example: natus
+                  example: omnis
                   nullable: false
                 is_visible:
                   type: boolean
                   description: '<span class="point">공개 여부 (0: 비공개, 1: 공개)</span>.'
-                  example: true
+                  example: false
                   nullable: false
                 answer:
                   type: string
                   description: '<span class="point">관리자가 작성한 답변 내용</span>.'
-                  example: sint
+                  example: modi
                   nullable: true
                 answered_at:
                   type: string
@@ -5983,17 +5994,17 @@ paths:
                 product_id:
                   type: string
                   description: '<span class="point">참조 상품 ID</span>. The <code>id</code> of an existing record in the products table.'
-                  example: iusto
+                  example: ut
                   nullable: false
                 rating:
                   type: integer
                   description: '<span class="point">평점 (1~5)</span>. value(은)는  최소 1 이상이어야 합니다. value (은)는 5를 초과할 수 없습니다.'
-                  example: 2
+                  example: 3
                   nullable: false
                 review:
                   type: string
                   description: '<span class="point">후기 내용</span>.'
-                  example: labore
+                  example: possimus
                   nullable: false
                 images:
                   type: object
@@ -6033,7 +6044,7 @@ paths:
                 phone:
                   type: string
                   description: 'Must not be greater than 500 characters.'
-                  example: fwvbgnakzsizozzgui
+                  example: wclimphoykrsvpijeqqzj
                   nullable: false
               required:
                 - phone
@@ -6056,12 +6067,12 @@ paths:
                 phone:
                   type: string
                   description: 'Must not be greater than 500 characters.'
-                  example: idcrsrulll
+                  example: wuhrbocbg
                   nullable: false
                 number:
                   type: string
                   description: "<span class='point'>인증번호</span>. Must not be greater than 500 characters."
-                  example: zommn
+                  example: vrlhebfgqpderkvbmrpbifku
                   nullable: false
               required:
                 - phone
@@ -6125,7 +6136,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the board.'
-        example: repudiandae
+        example: eaque
         required: true
         schema:
           type: string
@@ -6413,7 +6424,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the board.'
-        example: qui
+        example: quo
         required: true
         schema:
           type: string
@@ -6625,22 +6636,22 @@ paths:
                 board_id:
                   type: integer
                   description: '<span class="point">board 기본키</span>. The <code>id</code> of an existing record in the boards table.'
-                  example: 15
+                  example: 9
                   nullable: false
                 category_id:
                   type: integer
                   description: '<span class="point">카테고리 기본키</span>.'
-                  example: 19
+                  example: 20
                   nullable: true
                 title:
                   type: string
                   description: '<span class="point">제목</span>.'
-                  example: ullam
+                  example: provident
                   nullable: false
                 content:
                   type: string
                   description: '<span class="point">내용</span>.'
-                  example: corporis
+                  example: id
                   nullable: false
                 files:
                   type: object
@@ -7493,12 +7504,12 @@ paths:
                 name:
                   type: string
                   description: '<span class="point">상품명</span>. Must not be greater than 255 characters.'
-                  example: hu
+                  example: jrvefyqrynwzldcvzmncll
                   nullable: false
                 description:
                   type: string
                   description: '<span class="point">상품설명</span>.'
-                  example: 'Suscipit perferendis eligendi qui porro quas.'
+                  example: 'Explicabo sit necessitatibus sed recusandae quis et ad et.'
                   nullable: true
                 options:
                   type: array
@@ -7517,12 +7528,12 @@ paths:
                       name:
                         type: string
                         description: 'Must not be greater than 255 characters.'
-                        example: zjtaipumlnjtochmkwikkvu
+                        example: kkncmmnvdmrkevvx
                         nullable: true
                       price:
                         type: number
                         description: 'value(은)는  최소 0 이상이어야 합니다.'
-                        example: 62
+                        example: 46
                         nullable: true
                 product_images:
                   type: array
@@ -7534,22 +7545,22 @@ paths:
                 price:
                   type: number
                   description: '<span class="point">가격</span>. value(은)는  최소 0 이상이어야 합니다.'
-                  example: 19
+                  example: 13
                   nullable: false
                 original_price:
                   type: number
                   description: '<span class="point">원래가격</span>. value(은)는  최소 0 이상이어야 합니다.'
-                  example: 63
+                  example: 64
                   nullable: true
                 delivery_fee:
                   type: number
                   description: '<span class="point">배송비</span>. value(은)는  최소 0 이상이어야 합니다.'
-                  example: 19
+                  example: 37
                   nullable: false
                 stock_quantity:
                   type: integer
                   description: '<span class="point">재고수량</span>. value(은)는  최소 0 이상이어야 합니다.'
-                  example: 75
+                  example: 50
                   nullable: false
                 categories:
                   type: object
@@ -7560,7 +7571,7 @@ paths:
                 is_md_suggestion_gift:
                   type: boolean
                   description: '<span class="point">MD 추천 선물</span>.'
-                  example: true
+                  example: false
                   nullable: true
                 tags:
                   type: object
@@ -7571,67 +7582,67 @@ paths:
                 food_type:
                   type: string
                   description: '<span class="point">식품의 유형</span>. Must not be greater than 100 characters.'
-                  example: zscvovxdzrh
+                  example: bcsrveozmtbm
                   nullable: true
                 fruit_size:
                   type: string
                   description: '<span class="point">과일 크기</span>. Must not be greater than 50 characters.'
-                  example: rinjthhusdfsjjljdr
+                  example: pmpustnzgulftjbk
                   nullable: true
                 sugar_content:
                   type: string
                   description: '<span class="point">당도</span>. Must not be greater than 50 characters.'
-                  example: dpvkeniuxmjcanscddpsdqit
+                  example: ponryhqoondbtnvpxyitf
                   nullable: true
                 shipping_origin:
                   type: string
                   description: '<span class="point">출고지</span>. Must not be greater than 255 characters.'
-                  example: qzwvnpkzeqf
+                  example: wkbsbh
                   nullable: true
                 manufacturer_and_location:
                   type: string
                   description: '<span class="point">생산자 및 소재지</span>. Must not be greater than 255 characters.'
-                  example: sziaztifoqj
+                  example: gftgrgtds
                   nullable: true
                 importer:
                   type: string
                   description: '<span class="point">수입자</span>. Must not be greater than 255 characters.'
-                  example: aepybqrn
+                  example: ncfrqtthyhaj
                   nullable: true
                 origin:
                   type: string
                   description: '<span class="point">원산지</span>. Must not be greater than 255 characters.'
-                  example: whgzgeesidyjtbo
+                  example: aeaxsculpvrpgzvbpjjdvr
                   nullable: true
                 ingredients_and_composition:
                   type: string
                   description: '<span class="point">원재료 및 합량</span>.'
-                  example: placeat
+                  example: consequuntur
                   nullable: true
                 storage_and_handling:
                   type: string
                   description: '<span class="point">보관/취급방법</span>. Must not be greater than 255 characters.'
-                  example: nkukrvmwlphnrazqnbflmeim
+                  example: modpolggyzgo
                   nullable: true
                 manufacture_date:
                   type: string
                   description: '<span class="point">제조연원일</span>. Must be a valid date.'
-                  example: '2024-12-18T21:36:35'
+                  example: '2024-12-18T21:40:49'
                   nullable: true
                 expiration_date:
                   type: string
                   description: '<span class="point">유통기한</span>. Must be a valid date. value(은)는 <code>manufacture_date</code>보다 이후거나 같아야 합니다.'
-                  example: '2068-02-29'
+                  example: '2042-04-28'
                   nullable: true
                 gmo_desc:
                   type: string
                   description: '<span class="point">유전자변형 농산물여부</span>. Must not be greater than 255 characters.'
-                  example: iogpraublrqt
+                  example: gappcpdwjbyjycfeyqflbn
                   nullable: true
                 customer_service_contact:
                   type: string
                   description: '<span class="point">소비자상담문의</span>. Must not be greater than 255 characters.'
-                  example: hcteuggufamqrtkdjp
+                  example: kbarqfvr
                   nullable: true
               required:
                 - name
@@ -7657,12 +7668,12 @@ paths:
                 email:
                   type: string
                   description: '<span class="point">아이디</span>. value(은)는 이메일 형태여야 합니다. Must not be greater than 255 characters.'
-                  example: cathrine15@example.net
+                  example: ypouros@example.org
                   nullable: false
                 password:
                   type: string
                   description: '<span class="point">비밀번호</span>.'
-                  example: EgA)%4<hk\oebE
+                  example: '3a|caBn?YYaz5'
                   nullable: false
               required:
                 - email
@@ -7727,32 +7738,32 @@ paths:
                 email:
                   type: string
                   description: '<span class="point">이메일</span>. value(은)는 이메일 형태여야 합니다.'
-                  example: jerdman@example.org
+                  example: stanton.jakob@example.com
                   nullable: false
                 password:
                   type: string
                   description: '<span class="point">비밀번호</span>.'
-                  example: harum
+                  example: quia
                   nullable: false
                 password_confirmation:
                   type: string
                   description: '<span class="point">비밀번호확인</span>.'
-                  example: magnam
+                  example: quos
                   nullable: false
                 name:
                   type: string
                   description: '<span class="point">성명</span>. Must not be greater than 255 characters.'
-                  example: lviwnpxqvf
+                  example: szeuneipjrgg
                   nullable: false
                 phone:
                   type: string
                   description: '<span class="point">연락처</span>. Must be between 10 and 11 digits.'
-                  example: '44273850999'
+                  example: '1312942949'
                   nullable: false
                 nickname:
                   type: string
                   description: '<span class="point">닉네임</span>. Must not be greater than 255 characters.'
-                  example: scfilonlqtytlfe
+                  example: dhlkxuvsytdnwawippzqqh
                   nullable: true
               required:
                 - email

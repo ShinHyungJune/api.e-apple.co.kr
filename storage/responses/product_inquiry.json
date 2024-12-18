@@ -3,6 +3,7 @@
     "data": {
         "id": "기본키",
         "is_visible": "공개 여부 (0: 비공개, 1: 공개)",
+        "created_at": "등록일시",
         "answered_at": "답변일시",
         "is_answered": "답변여부",
         "title": "문의 제목",

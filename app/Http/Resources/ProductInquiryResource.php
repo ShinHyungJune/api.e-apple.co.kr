@@ -17,7 +17,7 @@ class ProductInquiryResource extends JsonResource
         //return parent::toArray($request);
 
         $return = [
-            ...$this->only('id', 'is_visible', 'answered_at'),
+            ...$this->only('id', 'is_visible', 'created_at', 'answered_at'),
             'is_answered' => $this->answered_at ? true : false,
             //'product' => ProductResource::make($this->product),
         ];
