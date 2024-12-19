@@ -54,7 +54,7 @@ class CartProductOptionController extends ApiController
     public function destroy(Request $request, $cartId, $optionId)
     {
         //auth()->user()->cartProductOptions()->where('cart_id', $cartId)->findOrFail($optionId)->delete();
-        CartProductOption::mine($request)->where('cart_id', $cartId)->delete($optionId);
+        CartProductOption::mine($request)->where('cart_id', $cartId)->findOrFail($optionId)->delete();
         return $this->respondSuccessfully();
     }
 
