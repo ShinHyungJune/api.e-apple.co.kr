@@ -16,11 +16,13 @@ class InquiryController extends ApiController
     /**
      * 목록
      * @priority 1
+     * @queryParam is_answered 답변완료 Example: 1, 0
      * @responseFile storage/responses/inquiries.json
      */
     public function index(Request $request)
     {
-        $items = auth()->user()->inquiries()->latest()->paginate($request->get('take', 10));
+        $items = auth()->user()->inquiries()->search($request)
+            ->latest()->paginate($request->get('take', 10));
         return InquiryResource::collection($items);
     }
 

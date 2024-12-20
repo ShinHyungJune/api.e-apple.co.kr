@@ -17,7 +17,7 @@ class InquiryResource extends JsonResource
     {
         //return parent::toArray($request);
         $return = [
-            ...$this->only(['purchase_related_inquiry', 'general_consultation_inquiry', 'content',
+            ...$this->only(['id', 'purchase_related_inquiry', 'general_consultation_inquiry', 'content', 'created_at',
                 'answer', 'answered_at']),
             'is_answer' => !is_null($this->answered_at),
             'img' => $this->getMedia(Inquiry::IMAGES) ? MediaResource::make($this->getMedia(Inquiry::IMAGES)[0] ?? null) : null,
