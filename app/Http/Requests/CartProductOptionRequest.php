@@ -25,7 +25,7 @@ class CartProductOptionRequest extends FormRequest
 
         if ($this->isMethod('post')) {
             if (!auth()->check()) {
-                $return = [...$return, 'guest_id' => ['required', 'integer']];
+                $return = [...$return, 'guest_id' => ['required', 'string']];
             } else {
                 $return = [...$return, 'user_id' => ['required', 'integer']];
             }

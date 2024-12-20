@@ -18,7 +18,7 @@ class CartController extends ApiController
      * 목록
      * @priority 1
      * @unauthenticated
-     * @queryParam guest_id 비회원 아이디 Example: 1
+     * @queryParam guest_id 비회원 아이디 Example: guestId
      * @responseFile storage/responses/carts.json
      */
     public function index(Request $request)
@@ -69,7 +69,7 @@ class CartController extends ApiController
      * 삭제
      * @priority 1
      * @unauthenticated
-     * @queryParam guest_id 비회원 아이디 Example: 1
+     * @queryParam guest_id 비회원 아이디 Example: guestId
      */
     public function destroy(Request $request, $id)
     {
@@ -80,7 +80,7 @@ class CartController extends ApiController
     /**
      * 선택 삭제
      * @unauthenticated
-     * @queryParam guest_id 비회원 아이디 Example: 1
+     * @queryParam guest_id 비회원 아이디 Example: guestId
      * @priority 1
      */
     public function destroys(Request $request)
@@ -93,7 +93,7 @@ class CartController extends ApiController
     /**
      * 품절 삭제
      * @unauthenticated
-     * @queryParam guest_id 비회원 아이디 Example: 1
+     * @queryParam guest_id 비회원 아이디 Example: guestId
      * @priority 1
      */
     public function destroySoldOut(Request $request)

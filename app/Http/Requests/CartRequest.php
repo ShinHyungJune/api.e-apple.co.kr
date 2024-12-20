@@ -23,7 +23,7 @@ class CartRequest extends FormRequest
     {
         $return = [];
         if (!auth()->check()) {
-            $return = ['guest_id' => ['required', 'integer']];
+            $return = ['guest_id' => ['required', 'string']];
         }
 
         return [

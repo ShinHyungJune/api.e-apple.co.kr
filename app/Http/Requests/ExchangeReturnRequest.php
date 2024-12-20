@@ -35,7 +35,7 @@ class ExchangeReturnRequest extends FormRequest
         if (auth()->check()) {
             $return = [...$return, 'user_id' => ['required', 'exists:users,id']];
         } else {
-            $return = [...$return, 'guest_id' => ['required', 'integer']];
+            $return = [...$return, 'guest_id' => ['required', 'string']];
         }
 
         return $return;

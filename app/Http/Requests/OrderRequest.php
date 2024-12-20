@@ -28,7 +28,7 @@ class OrderRequest extends FormRequest
         if (auth()->check()) {
             $return['user_id'] = ['required', 'exists:users,id'];
         } else {
-            $return['guest_id'] = ['required', 'integer'];
+            $return['guest_id'] = ['required', 'string'];
         }
 
         if ($this->isMethod('POST')) {

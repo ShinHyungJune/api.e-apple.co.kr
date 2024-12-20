@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('exchange_returns', function (Blueprint $table) {
             $table->id()->comment('기본키');
             $table->foreignId('user_id')->index()->comment('사용자 외래키');
-            $table->unsignedBigInteger('guest_id')->nullable()->comment('비회원 아이디');
+            $table->string('guest_id')->nullable()->comment('비회원 아이디');
 
             $table->foreignId('order_id')->index()->comment('주문 기본키');
             $table->enum('type', ExchangeReturn::TYPES)->comment('요청 유형: exchange(교환) 또는 return(반품)');

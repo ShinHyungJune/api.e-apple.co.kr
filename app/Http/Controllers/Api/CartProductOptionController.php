@@ -34,7 +34,7 @@ class CartProductOptionController extends ApiController
     /**
      * 수량 변경
      * @unauthenticated
-     * @queryParam guest_id 비회원 아이디 Example: 1
+     * @queryParam guest_id 비회원 아이디 Example: guestId
      * @priority 1
      */
     public function update(CartProductOptionRequest $request, $cartId, $optionId)
@@ -48,7 +48,7 @@ class CartProductOptionController extends ApiController
     /**
      * 삭제
      * @unauthenticated
-     * @queryParam guest_id 비회원 아이디 Example: 1
+     * @queryParam guest_id 비회원 아이디 Example: guestId
      * @priority 1
      */
     public function destroy(Request $request, $cartId, $optionId)

@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id()->comment('기본키');
             $table->foreignId('user_id')/*->constrained()->onDelete('cascade')*/ ->nullable()->comment('사용자 외래키');
-            $table->unsignedBigInteger('guest_id')->nullable()->comment('비회원 아이디');
+            $table->string('guest_id')->nullable()->comment('비회원 아이디');
 
             $table->enum('status', OrderStatus::values())->default(OrderStatus::ORDER_COMPLETE->value)->comment('주문 상태');
             $table->timestamp('delivery_started_at')->nullable()->comment('배송 시작 일시');
