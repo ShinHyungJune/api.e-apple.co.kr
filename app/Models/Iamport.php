@@ -10,6 +10,8 @@ class Iamport extends Model
 {
     use HasFactory;
 
+    const PAYMENT_INTEGRATION = false;
+
     // 결제취소
     public static function cancel($accessToken, $imp_uid, $amount = 0, $message = "결제실패")
     {

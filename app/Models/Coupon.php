@@ -25,14 +25,13 @@ class Coupon extends Model
 
     public function mineAvailables()
     {
-        return $this->belongsToMany(User::class, 'user_coupons')
-            ->withTimestamps()
+        return $this->belongsToMany(User::class, 'user_coupons')->withTimestamps()
             // 중간 테이블의 추가 필드를 사용하려면
-                ->withPivot('used_at')
+            ->withPivot('used_at', 'id')
             // 중간 테이블 검색
-                ->wherePivot('user_id', auth()->id()) //현재 로그인한 사용자와 연결된 쿠폰만 필터링
-                ->wherePivot('expired_at', '>=', now()) //만료되지 않은 쿠폰
-                ->wherePivot('used_at', null); //사용하지 않은 쿠폰
+            ->wherePivot('user_id', auth()->id()) //현재 로그인한 사용자와 연결된 쿠폰만 필터링
+            ->wherePivot('expired_at', '>=', now()) //만료되지 않은 쿠폰
+            ->wherePivot('used_at', null); //사용하지 않은 쿠폰
 
     }
 

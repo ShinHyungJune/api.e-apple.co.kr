@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Facades\DB;
 
 class Order extends Model
 {
@@ -139,6 +140,12 @@ class Order extends Model
         $query->where('status', OrderStatus::DELIVERY_COMPLETE);//배송완료인 경우
     }
 
+    public function scopeDeliveryBefore(Builder $query)
+    {
+        $query->whereIn('status', OrderStatus::DELIVERY_BEFORES);//배송중 이전
+    }
+
+
     public function exchangeReturns(): HasMany
     {
         return $this->hasMany(ExchangeReturn::class);
@@ -159,6 +166,47 @@ class Order extends Model
     public function getWithdrawalPoints()
     {
         return [$this->use_points, '주문사용'];
+    }
+
+    public function complete($data, $coupon = null)
+    {
+        return DB::transaction(function () use ($data, $coupon) {
+            $this->update($data);
+
+            //쿠폰사용
+            if ($data['user_coupon_id'] > 0) {
+                $coupon->pivot->update(['order_id' => $this->id, 'used_at' => now()]);
+            }
+            //적립금 차감
+            if ($data['use_points'] > 0) {
+                auth()->user()->withdrawalPoint($this);
+            }
+            //재고처리 stock_quantity
+            $this->orderProducts->each(function ($e) {
+                $e->productOption()->decrement('stock_quantity', $e->quantity);
+            });
+
+            return $this;
+        });
+    }
+
+    public function cancel()
+    {
+        //쿠폰반납
+        if ($this->user_coupon_id > 0) {
+            $coupon = auth()->user()->coupons()->wherePivot('id', $this->user_coupon_id)->first();
+            $coupon->pivot->update(['order_id' => null, 'used_at' => null]);
+        }
+        //적립금 반환
+        if ($this->use_points > 0) {
+            auth()->user()->depositPoint($this);
+        }
+        //재고처리 stock_quantity
+        $this->orderProducts->each(function ($e) {
+            $e->productOption()->increment('stock_quantity', $e->quantity);
+        });
+
+        $this->update(['status' => OrderStatus::CANCELLATION_COMPLETE, 'cancellation_completed_at' => now()]);
     }
 
 }

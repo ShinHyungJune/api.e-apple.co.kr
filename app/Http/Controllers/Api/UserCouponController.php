@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\CouponResource;
+use App\Http\Resources\UserCouponResource;
 use App\Models\Coupon;
 use Illuminate\Http\Request;
 
@@ -17,18 +17,12 @@ class UserCouponController extends Controller
      * 사용 가능한 사용자 쿠폰 목록
      * @priority 1
      * @queryParam total_order_amount 총주문금액(상품가격) Example: 1000
-     * @responseFile storage/responses/coupons.json
+     * @responseFile storage/responses/user_coupons.json
      */
     public function index(Request $request)
     {
         $totalOrderAmount = (int)$request->input('total_order_amount');
-        $items = Coupon::query()
-            /*->whereHas('users', function ($query) {
-                $query->where('user_id', auth()->id()) //현재 로그인한 사용자와 연결된 쿠폰만 필터링
-                ->where('expired_at', '>=', now()) //만료되지 않은 쿠폰
-                ->whereNull('used_at'); //사용하지 않은 쿠폰
-            })*/
-            ->whereHas('mineAvailables')
+        $items = auth()->user()->availableCoupons()
             ->where(function ($query) use ($totalOrderAmount) {
                 $query->where('type', Coupon::TYPE_RATE)
                     ->orWhere(function ($query) use ($totalOrderAmount) {
@@ -39,6 +33,7 @@ class UserCouponController extends Controller
                     });
             })
             ->latest()->paginate($request->get('take', 10));
-        return CouponResource::collection($items);
+
+        return UserCouponResource::collection($items);
     }
 }

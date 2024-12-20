@@ -19,6 +19,11 @@ enum OrderStatus: string
     case EXCHANGE_REQUESTED	       =	'exchange_requested';
     case EXCHANGE_COMPLETE	       =	'exchange_complete';
 
+
+    const DELIVERY_BEFORES = [
+        self::ORDER_PENDING, self::ORDER_COMPLETE, self::PAYMENT_PENDING, self::PAYMENT_COMPLETE, self::DELIVERY_PREPARING
+    ];
+
     public function label(): string
     {
         return match ($this) {

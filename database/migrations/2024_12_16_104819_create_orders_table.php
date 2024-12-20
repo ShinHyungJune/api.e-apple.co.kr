@@ -21,6 +21,7 @@ return new class extends Migration
             $table->enum('status', OrderStatus::values())->default(OrderStatus::ORDER_COMPLETE->value)->comment('주문 상태');
             $table->timestamp('delivery_started_at')->nullable()->comment('배송 시작 일시');
             $table->timestamp('purchase_confirmed_at')->nullable()->comment('주문 확정 일시');
+            $table->timestamp('cancellation_completed_at')->nullable()->comment('주문 취소 일시');
 
 
             //주문자정보

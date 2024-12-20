@@ -83,24 +83,7 @@ class OrderController extends ApiController
         $coupon = (!auth()->check()) ? null : auth()->user()->availableCoupons()->wherePivot('id', $data['user_coupon_id'])->first();
         $order->checkOrderAmount($data, $coupon);
 
-        $order = DB::transaction(function () use ($order, $data, $coupon) {
-            $order->update($data);
-
-            //쿠폰사용
-            if ($data['user_coupon_id'] > 0) {
-                $coupon->pivot->update(['order_id' => $order->id, 'used_at' => now()]);
-            }
-            //적립금 차감
-            if ($data['use_points'] > 0) {
-                auth()->user()->withdrawalPoint($order);
-            }
-
-            //재고 처리 stock_quantity
-            $order->orderProducts->each(function ($e) {
-                $e->productOption()->decrement('stock_quantity', $e->quantity);
-            });
-            return $order;
-        });
+        $order->complete($data, $coupon);
 
         return $this->respondSuccessfully(OrderResource::make($order));
     }
@@ -122,22 +105,15 @@ class OrderController extends ApiController
         if (strpos($path, 'webhook') !== false)
             sleep(3); // 3초 대기 (중복방지)
 
-        /*if (config('app.env') === 'local') //FORTEST
-        {
+        if (!Iamport::PAYMENT_INTEGRATION) { //FORTEST
             $impOrder = Order::selectRaw("*, payment_amount AS amount")->where("merchant_uid", $request->merchant_uid)->first();
-        }
-        else*/
-        {
-            // 권한 얻기
-            $accessToken = Iamport::getAccessToken();
-
-            // 주문조회
-            $impOrder = Iamport::getOrder($accessToken, $request->imp_uid);
+        } else {
+            $accessToken = Iamport::getAccessToken(); // 권한 얻기
+            $impOrder = Iamport::getOrder($accessToken, $request->imp_uid); // 주문조회
         }
 
         $order = Order::where(function ($query) {
-            //if (config('app.env') !== 'local') //FORTEST
-            {
+            if (Iamport::PAYMENT_INTEGRATION) {
                 $query->where("status", OrderStatus::ORDER_COMPLETE)->orWhere("status", OrderStatus::PAYMENT_PENDING);
             }
         })->where("merchant_uid", $impOrder["merchant_uid"])->first();
@@ -173,8 +149,7 @@ class OrderController extends ApiController
                     break;
             }
             DB::commit();
-        }
-        catch (\Exception $e) {
+        } catch (\Exception $e) {
             // Iamport::cancel($accessToken, $request->imp_uid);
             $order->update(['status' => $e->getMessage()]);
             // $order->update(["state" => StateOrder::BEFORE_PAYMENT]);
@@ -190,34 +165,29 @@ class OrderController extends ApiController
         return $this->respondSuccessfully(OrderResource::make($order));
     }
 
-
-
-
-
-
-
     /** 취소
      * @group Order(주문)
      * @responseFile storage/responses/order.json
      */
-    public function cancel(Order $order)
+    public function cancel(Request $request, $id)
     {
-        if (!\App\Http\Controllers\Api\auth()->user())
-            return $this->respondForbidden();
+        $order = Order::mine($request)->/*deliveryBefore()->*/ findOrFail($id);
 
-        if ($order->user_id != \App\Http\Controllers\Api\auth()->id())
-            return $this->respondForbidden();
+        $order = DB::transaction(function () use ($order) {
+            if (Iamport::PAYMENT_INTEGRATION) {
+                $accessToken = Iamport::getAccessToken();
+                $result = Iamport::cancel($accessToken, $this->imp_uid);
+                if (!$result['response']) abort(403, $result['message']);
+            }
 
-        if (!$order->can_cancel)
-            return $this->respondForbidden('취소 불가능한 상태입니다.');
+            $order->cancel();
 
-        $result = $order->cancel();
-
-        if (!$result['success'])
-            return $this->respondForbidden($result['message']);
+            return $order;
+        });
 
         return $this->respondSuccessfully(OrderResource::make($order));
     }
+
 
     /** 회원용 상세
      * @group Order(주문)
@@ -233,6 +203,5 @@ class OrderController extends ApiController
 
         return $this->respondSuccessfully(OrderResource::make($order));
     }
-
 
 }

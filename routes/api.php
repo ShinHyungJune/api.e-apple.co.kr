@@ -126,6 +126,7 @@ Route::group(['prefix' => 'orders', 'controller' => OrderController::class],
         Route::post('complete', 'complete');
         Route::post('complete/webhook', 'complete');
         Route::put('{id}/confirm', 'confirm');
+        Route::put('{id}/cancel', 'cancel');
 
         //교환반품
         Route::group(['prefix' => '{order}/exchange_returns', 'controller' => ExchangeReturnController::class],
