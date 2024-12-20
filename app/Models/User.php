@@ -151,4 +151,9 @@ class User extends Authenticatable implements JWTSubject
         return $this->hasMany(Inquiry::class);
     }
 
+    public function deliveryAddresses(): HasMany
+    {
+        return $this->hasMany(DeliveryAddress::class);
+    }
+
 }

@@ -42,6 +42,7 @@ class DeliveryAddressRequest extends FormRequest
             if ($input === 'true') $inputs[$key] = true;
             if ($input === 'false') $inputs[$key] = false;
         }
+
         $this->merge([...$inputs, 'user_id' => auth()->id()]);
     }
 
