@@ -33,7 +33,7 @@ class DeliveryAddressController extends ApiController
     {
         $data = $request->validated();
         $item = tap(new DeliveryAddress($data))->save();
-        //$item->setDefault();
+        $item->setDefault();
         return $this->respondSuccessfully(DeliveryAddressResource::make($item));
     }
 
@@ -56,7 +56,7 @@ class DeliveryAddressController extends ApiController
     {
         $data = $request->validated();
         $item = tap($deliveryAddress)->update($data);
-        //$item->setDefault();
+        $item->setDefault();
         return $this->respondSuccessfully(DeliveryAddressResource::make($item));
     }
 
