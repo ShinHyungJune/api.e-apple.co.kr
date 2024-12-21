@@ -24,6 +24,7 @@ class ProductReviewFactory extends Factory
             'order_id' => $orderProduct->order_id,
             'order_product_id' => $orderProduct->id,
             'product_id' => $orderProduct->product_id,
+            'product_option_id' => $orderProduct->product_option_id,
             'rating' => $this->faker->numberBetween(1, 5),
             'review' => $this->faker->paragraph,
         ];
