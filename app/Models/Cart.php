@@ -34,4 +34,24 @@ class Cart extends Model
         }
     }
 
+    public function updateOrCreateProductOptions($data)
+    {
+        //$cartProductOptions = [];
+        foreach ($data['product_options'] as $productOption) {
+            $option = $this->product->options->findOrFail($productOption['product_option_id']);
+            /*$cartProductOptions[] = [
+                'user_id' => auth()->id() ?? null,
+                'guest_id' => $data['guest_id'] ?? null,
+                'product_option_id' => $option->id,
+                'price' => $option->price,
+                'quantity' => $productOption['quantity'],
+            ];*/
+            $cartProductOption = CartProductOption::updateOrCreate(
+                ['cart_id' => $this->id, 'product_option_id' => $option->id],
+                ['user_id' => auth()->id() ?? null, 'guest_id' => $data['guest_id'] ?? null, 'price' => $option->price]
+            );
+            $cartProductOption->increment('quantity', $productOption['quantity']);
+        }
+        //$cart->cartProductOptions()->createMany($cartProductOptions);
+    }
 }

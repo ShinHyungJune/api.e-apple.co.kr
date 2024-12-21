@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Enums\OrderStatus;
 use App\Http\Requests\ExchangeReturnRequest;
 use App\Http\Resources\ExchangeReturnResource;
 use App\Models\ExchangeReturn;
-use App\Models\Order;
+use App\Models\OrderProduct;
 use Illuminate\Http\Request;
 
 /**
@@ -32,12 +33,13 @@ class ExchangeReturnController extends ApiController
      * @unauthenticated
      * @responseFile storage/responses/exchange_return.json
      */
-    public function store(ExchangeReturnRequest $request, $id)
+    public function store(ExchangeReturnRequest $request)
     {
-        $order = Order::mine($request)->delivery()->findOrFail($id);
-
         $data = $request->validated();
-        $item = $order->exchangeReturns()->create($data)->load('order');
+
+        $orderProduct = OrderProduct::mine($request)->possibleExchangeReturnStatus()->findOrFail($data['order_product_id']);
+        $item = $orderProduct->exchangeReturns()->create($data);
+        $orderProduct->update(['status' => OrderStatus::EXCHANGE_REQUESTED]);
 
         return $this->respondSuccessfully(ExchangeReturnResource::make($item));
     }

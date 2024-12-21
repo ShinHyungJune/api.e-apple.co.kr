@@ -14,11 +14,15 @@ class PointController extends ApiController
     /**
      * 목록
      * @priority 1
+     * @queryParam type 구분 Example: deposit, withdrawal, expiration
      * @responseFile storage/responses/points.json
      */
     public function index(Request $request)
     {
-        $items = Point::mine()->latest()->paginate($request->get('take', 10));
+        //적립, 사용, 소멸
+        $filters = $request->only(['type']);
+
+        $items = Point::mine()->search($filters)->latest()->paginate($request->get('take', 10));
         return PointResource::collection($items);
     }
 }

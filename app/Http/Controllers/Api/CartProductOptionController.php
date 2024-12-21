@@ -15,6 +15,7 @@ class CartProductOptionController extends ApiController
 {
 
     /**
+     * @deprecated
      * 저장
      * @priority 1
      * @unauthenticated

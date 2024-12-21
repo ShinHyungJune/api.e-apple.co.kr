@@ -60,9 +60,6 @@ Route::group(['prefix' => 'products'], function () {
     //상품리뷰
     Route::group(['prefix' => '{id}/reviews', 'controller' => ProductReviewController::class], function () {
         Route::get('', 'index');
-        Route::group(['middleware' => ['auth:api']], function () {
-            Route::post('', 'store');
-        });
     });
 
     //상품문의
@@ -74,12 +71,25 @@ Route::group(['prefix' => 'products'], function () {
     });
 });
 
+
+//상품 리뷰
+Route::group(['prefix' => 'product_reviews', 'middleware' => ['auth:api'], 'controller' => ProductReviewController::class],
+    function () {
+        Route::get('mine', 'myProductReviews');
+        Route::get('available', 'myAvailableProductReviews');
+        Route::post('', 'store');
+        Route::put('{id}', 'update');
+        Route::delete('{id}', 'destroy');
+    });
+
+
 //카트
 Route::group(['prefix' => 'carts', /*'middleware' => ['auth:api']*/],
     function () {
         Route::group(['controller' => CartController::class], function () {
             Route::get('', 'index');
             Route::post('', 'store');
+            Route::put('{id}', 'update');//장바구니 상품 옵션 추가
             Route::delete('ids', 'destroys');
             Route::delete('sold-out', 'destroySoldOut');
             Route::delete('{id}', 'destroy');
@@ -87,7 +97,7 @@ Route::group(['prefix' => 'carts', /*'middleware' => ['auth:api']*/],
 
         Route::group(['prefix' => '{id}/options', 'controller' => CartProductOptionController::class],
             function () {
-                Route::post('', 'store');
+                //Route::post('', 'store'); @deprecated
                 Route::put('{option}', 'update');
                 Route::delete('{option}', 'destroy');
             });
@@ -121,20 +131,21 @@ Route::group(['prefix' => 'orders', 'controller' => OrderController::class],
     function () {
         Route::get('', 'index');
         Route::post('', 'store');
-        //Route::get('{order}', 'show');
+        Route::get('{order}', 'show');
         Route::put('{id}', 'update');
-        Route::post('complete', 'complete');
-        Route::post('complete/webhook', 'complete');
+        Route::post('complete', 'paymentComplete');
+        Route::post('complete/webhook', 'paymentComplete');
         Route::put('{id}/confirm', 'confirm');
         Route::put('{id}/cancel', 'cancel');
-
-        //교환반품
-        Route::group(['prefix' => '{order}/exchange_returns', 'controller' => ExchangeReturnController::class],
-            function () {
-                Route::get('', 'index');
-                Route::post('', 'store');
-            });
     });
+
+//주문상품 교환반품
+Route::group(['prefix' => 'exchange_returns', 'controller' => ExchangeReturnController::class],
+    function () {
+        Route::get('', 'index');
+        Route::post('', 'store');
+    });
+
 
 //1:1문의
 Route::group(['prefix' => 'inquiries', 'middleware' => ['auth:api'], 'controller' => InquiryController::class],
@@ -149,6 +160,8 @@ Route::group(['prefix' => 'points', 'middleware' => ['auth:api'], 'controller' =
     function () {
         Route::get('', 'index');
     });
+
+
 
 /*Route::group(['prefix' => 'gifts', 'controller' => GiftController::class], function () {
 });*/

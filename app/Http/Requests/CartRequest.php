@@ -22,8 +22,11 @@ class CartRequest extends FormRequest
     public function rules(): array
     {
         $return = [];
-        if (!auth()->check()) {
-            $return = ['guest_id' => ['required', 'string']];
+
+        if (auth()->check()) {
+            $return = [...$return, 'user_id' => ['required', 'exists:users,id']];
+        } else {
+            $return = [...$return, 'guest_id' => ['required', 'string']];
         }
 
         return [
@@ -33,6 +36,14 @@ class CartRequest extends FormRequest
             'product_options.*.product_option_id' => ['required', 'integer'],
             'product_options.*.quantity' => ['required', 'integer', 'min:1'],
         ];
+    }
+
+    public function prepareForValidation()
+    {
+        $this->merge([
+            'user_id' => auth()->id() ?? null,
+            'guest_id' => $inputs['guest_id'] ?? null,
+        ]);
     }
 
     public function bodyParameters(): array

@@ -7,7 +7,10 @@
         "phone": "연락처",
         "nickname": "닉네임",
         "points": "포인트 ",
-        "available_coupons_count": "사용 가능 쿠폰 개수",
+        "available_coupons_count": "사용 가능한 쿠폰 개수",
+        "available_product_reviews_count": "작성 가능한 상품 리뷰 개수",
+        "product_reviews_count": "내 상품 리뷰 개수",
+        "available_deposit_point": "적립 가능한 적립금 합계 = 등록가능한 리뷰수 * 리뷰 1개당 최대 적립금",
         "level": "등급"
     },
     "message": "성공적으로 처리되었습니다."

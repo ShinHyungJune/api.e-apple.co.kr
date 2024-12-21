@@ -37,12 +37,15 @@ class OrderController extends ApiController
      */
     public function confirm(Request $request, $id)
     {
-        $order = Order::mine($request)->delivery()->findOrFail($id);
+        $order = Order::mine($request)
+            ->delivery()
+            ->findOrFail($id);
         $order = DB::transaction(function () use ($order) {
             $order->update(['status' => OrderStatus::PURCHASE_CONFIRM->value, 'purchase_confirmed_at' => now()]);
+            $order->syncStatusOrderProducts();
 
             //적립금
-            if (auth()->check()) auth()->user()->depositPoint($order);
+            //if (auth()->check()) auth()->user()->depositPoint($order);
 
             return $order;
         });
@@ -92,7 +95,7 @@ class OrderController extends ApiController
      * 결제검증(OrderObserver 사용)
      * @unauthenticated
      */
-    public function complete(Request $request)
+    public function paymentComplete(Request $request)
     {
         $request->validate([
             'imp_uid' => ['required', 'string', 'max:50000'],
@@ -105,73 +108,73 @@ class OrderController extends ApiController
         if (strpos($path, 'webhook') !== false)
             sleep(3); // 3초 대기 (중복방지)
 
+        //결제내역 확인
         if (!Iamport::PAYMENT_INTEGRATION) { //FORTEST
-            $impOrder = Order::selectRaw("*, payment_amount AS amount")->where("merchant_uid", $request->merchant_uid)->first();
+            $impOrder = Order::selectRaw("*, payment_amount AS amount")->where("merchant_uid", $request->merchant_uid)->first()->toArray();
+            $impOrder['status'] = 'paid';//paid, ready
         } else {
             $accessToken = Iamport::getAccessToken(); // 권한 얻기
             $impOrder = Iamport::getOrder($accessToken, $request->imp_uid); // 주문조회
         }
+        if (empty($impOrder)) {
+            abort(404, '결제 내역이 없습니다.');
+        }
 
-        $order = Order::where(function ($query) {
+
+        //주문내역 확인
+        $order = Order::with('orderProducts')->where(function ($query) {
             if (Iamport::PAYMENT_INTEGRATION) {
                 $query->where("status", OrderStatus::ORDER_COMPLETE)->orWhere("status", OrderStatus::PAYMENT_PENDING);
             }
         })->where("merchant_uid", $impOrder["merchant_uid"])->first();
-
-
-        DB::beginTransaction();
-        try {
-            if (!$order) abort(404);
-            if ($order->payment_amount != $impOrder["amount"]) abort(403);
-
-            switch ($impOrder["status"]) {
-                case "ready": // 가상계좌 발급
-                    $vbankNum = $impOrder["vbank_num"];
-                    $vbankDate = Carbon::parse($impOrder["vbank_date"])->format("Y-m-d H:i");
-                    $vbankName = $impOrder["vbank_name"];
-
-                    // OrderObserver 사용
-                    $order->update([
-                        "imp_uid" => $request->imp_uid,
-                        "status" => OrderStatus::PAYMENT_PENDING,
-                        "vbank_num" => $vbankNum,
-                        "vbank_date" => $vbankDate,
-                        "vbank_name" => $vbankName
-                    ]);
-
-                    $result = ["success" => 1, "message" => "가상계좌 발급이 완료되었습니다."];
-
-                    break;
-                case "paid": // 결제완료
-                    // OrderObserver 사용
-                    $order->update(["imp_uid" => $request->imp_uid, "status" => OrderStatus::PAYMENT_COMPLETE]);
-                    $result = ["success" => 1, "message" => "결제가 완료되었습니다."];
-                    break;
-            }
-            DB::commit();
-        } catch (\Exception $e) {
-            // Iamport::cancel($accessToken, $request->imp_uid);
-            $order->update(['status' => $e->getMessage()]);
-            // $order->update(["state" => StateOrder::BEFORE_PAYMENT]);
-            $result = ["success" => 0, "message" => "결제를 실패하였습니다."];
-            DB::rollBack();
+        if (!$order) {
+            abort(404, '주문 내역이 없습니다.');
         }
 
-        /*$order = Order::where("merchant_uid", $request->merchant_uid)->first();
-        // 모바일 결제 redirect가 필요할 경우
-        if (strpos($request->path(), "mobile"))
-            return \App\Http\Controllers\Api\redirect(config("app.client_url") . "/orders/result?merchant_uid={$order->merchant_uid}&buyer_contact={$order->buyer_contact}&buyer_name={$order->buyer_name}");*/
+
+        //결제금액 확인
+        if ($order->payment_amount != $impOrder["amount"]) {
+            $message = '결제금액 오류 => ' . $order->payment_amount . ':' . $impOrder["amount"];
+            $order->update(['payment_fail_reason' => $message, 'status' => OrderStatus::PAYMENT_FAIL]);
+            $order->syncStatusOrderProducts();
+            abort(403, $message);
+        }
+
+        try {
+            DB::transaction(function () use ($request, $order, $impOrder) {
+                //throw new \Exception('TEST 오류 발생');
+
+                switch ($impOrder["status"]) {
+                    case "ready": // 가상계좌 발급
+                        $vbankDate = Carbon::parse($impOrder["vbank_date"])->format("Y-m-d H:i");
+                        // OrderObserver 사용
+                        $order->update(["imp_uid" => $request->imp_uid, "status" => OrderStatus::PAYMENT_PENDING,
+                            "vbank_num" => $impOrder["vbank_num"], "vbank_date" => $vbankDate, "vbank_name" => $impOrder["vbank_name"]]);
+                        $order->syncStatusOrderProducts();
+                        break;
+                    case "paid": // 결제완료
+                        // OrderObserver 사용
+                        $order->update(["imp_uid" => $request->imp_uid, "status" => OrderStatus::PAYMENT_COMPLETE, "payment_completed_at" => now()]);
+                        $order->syncStatusOrderProducts();
+                        break;
+                }
+            });
+        } catch (\Exception $e) {
+            $order->update(['payment_fail_reason' => $e->getMessage(), 'status' => OrderStatus::PAYMENT_FAIL]);
+            $order->syncStatusOrderProducts();
+            abort(500, $e->getMessage());
+        }
 
         return $this->respondSuccessfully(OrderResource::make($order));
     }
 
-    /** 취소
-     * @group Order(주문)
+    /**
+     * 취소 사용자
      * @responseFile storage/responses/order.json
      */
     public function cancel(Request $request, $id)
     {
-        $order = Order::mine($request)->/*deliveryBefore()->*/ findOrFail($id);
+        $order = Order::mine($request)->deliveryBefore()->findOrFail($id);
 
         $order = DB::transaction(function () use ($order) {
             if (Iamport::PAYMENT_INTEGRATION) {
@@ -193,13 +196,14 @@ class OrderController extends ApiController
      * @group Order(주문)
      * @responseFile storage/responses/order.json
      */
-    public function show(Order $order, Request $request)
+    public function show(Request $request, $id)
     {
         /*if (\App\Http\Controllers\Api\auth()->user() && $order->user_id != \App\Http\Controllers\Api\auth()->id())
             return $this->respondForbidden();
 
         if (!\App\Http\Controllers\Api\auth()->user() && $order->guest_id != $request->guest_id)
             return $this->respondForbidden();*/
+        $order = Order::with(['orderProducts'])->mine($request)->findOrFail($id);
 
         return $this->respondSuccessfully(OrderResource::make($order));
     }

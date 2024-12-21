@@ -67,7 +67,6 @@ class Order extends Model
 
     public function checkOrderAmount($data, $coupon = null)
     {
-
         self::checkOrderProducts($this->only('total_amount', 'orderProducts', 'delivery_fee'));
 
         /**
@@ -121,7 +120,6 @@ class Order extends Model
         }
     }
 
-
     public function scopePending(Builder $query)
     {
         $query->where('status', OrderStatus::ORDER_PENDING);//
@@ -129,6 +127,7 @@ class Order extends Model
 
     public function scopeDelivery(Builder $query)
     {
+        //if (config('env.app' === 'local')) return; //FORTEST
         $query->where('status', OrderStatus::DELIVERY);//배송완료인 경우
     }
 
@@ -145,11 +144,6 @@ class Order extends Model
         $query->whereIn('status', OrderStatus::DELIVERY_BEFORES);//배송중 이전
     }
 
-
-    public function exchangeReturns(): HasMany
-    {
-        return $this->hasMany(ExchangeReturn::class);
-    }
 
     public function getDepositPoints()
     {
@@ -172,6 +166,7 @@ class Order extends Model
     {
         return DB::transaction(function () use ($data, $coupon) {
             $this->update($data);
+            $this->syncStatusOrderProducts();
 
             //쿠폰사용
             if ($data['user_coupon_id'] > 0) {
@@ -190,6 +185,11 @@ class Order extends Model
         });
     }
 
+    public function syncStatusOrderProducts()
+    {
+        $this->orderProducts()->update(['status' => $this->status]);
+    }
+
     public function cancel()
     {
         //쿠폰반납
@@ -206,7 +206,8 @@ class Order extends Model
             $e->productOption()->increment('stock_quantity', $e->quantity);
         });
 
-        $this->update(['status' => OrderStatus::CANCELLATION_COMPLETE, 'cancellation_completed_at' => now()]);
+        $this->update(['status' => OrderStatus::CANCELLATION_COMPLETE, 'payment_canceled_at' => now()]);
+        $this->syncStatusOrderProducts();
     }
 
 }

@@ -44,7 +44,11 @@ class AuthController extends ApiController
     public function profile()
     {
         //return response()->json(auth()->user());
-        $user = auth()->user()->withCount('availableCoupons')->first();
+        $user = auth()->user()->withCount([
+            'availableCoupons',//사용 가능한 쿠폰 개수
+            'availableProductReviews',//작성 가능한 상품 리뷰 개수
+            'productReviews', //내 상품 리뷰 개수
+        ])->first();
         return $this->respondSuccessfully(ProfileResource::make($user));
     }
 

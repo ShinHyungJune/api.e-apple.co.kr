@@ -21,6 +21,7 @@ return new class extends Migration
             $table->unsignedInteger('withdrawal')->default(0)->comment('사용액');//출금
             $table->unsignedInteger('balance')->default(0)->comment('잔액');//잔액
             $table->text('description')->nullable()->comment('설명');
+            $table->timestamp('expired_at')->nullable()->comment('소멸일시');
             $table->timestamps();
             $table->softDeletes();
         });

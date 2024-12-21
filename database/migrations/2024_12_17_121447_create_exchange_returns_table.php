@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('guest_id')->nullable()->comment('비회원 아이디');
 
             $table->foreignId('order_id')->index()->comment('주문 기본키');
+            $table->foreignId('order_product_id')->index()->comment('주문 상품 기본키');
+            //$table->unique('order_id', 'order_product_id'); // 유니크 인덱스 이름 지정
             $table->enum('type', ExchangeReturn::TYPES)->comment('요청 유형: exchange(교환) 또는 return(반품)');
 
             $table->string('change_of_mind')->nullable()->comment('단순변심 ex) 상품이 마음에 들지 않음, 더 저렴한 상품을 발견함');

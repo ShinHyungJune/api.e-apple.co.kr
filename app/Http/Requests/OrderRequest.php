@@ -40,6 +40,8 @@ class OrderRequest extends FormRequest
                 'delivery_fee' => ['nullable', 'integer', 'min:0'],//배송비
 
                 'order_products' => ['required', 'array'],
+                'order_products.*.user_id' => ['required_with:user_id'],
+                'order_products.*.guest_id' => ['required_with:guest_id'],
                 'order_products.*.product_id' => ['required', 'integer'/*, 'exists:products,id'*/],
                 'order_products.*.product_option_id' => ['required', 'integer',
                     /* 상품 옵션이 있는지 확인
@@ -109,6 +111,7 @@ class OrderRequest extends FormRequest
         //$inputs = $this->input();
 
         $inputs = ['user_id' => auth()->id() ?? null, 'guest_id' => $this->guest_id ?? null];
+
         if ($this->isMethod('POST')) {
             $inputs['status'] = OrderStatus::ORDER_PENDING->value;
         }
@@ -117,6 +120,14 @@ class OrderRequest extends FormRequest
             $inputs['merchant_uid'] = 'ORD-' . str_pad($this->id, 8, '0', STR_PAD_LEFT);
             $inputs['payment_pg'] = IamportMethod::from($this->payment_method)->pg();
         }
+
+        $inputs['order_products'] = collect($this->order_products)->map(function ($e) use ($inputs) {
+            $e['status'] = $inputs['status'];
+            $e['user_id'] = auth()->id() ?? null;
+            $e['guest_id'] = $this->guest_id ?? null;
+            return $e;
+        })->toArray();
+
         $this->merge($inputs);
     }
 

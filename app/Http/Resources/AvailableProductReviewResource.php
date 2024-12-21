@@ -2,11 +2,11 @@
 
 namespace App\Http\Resources;
 
-use App\Enums\OrderStatus;
+use App\Models\ProductReview;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class OrderProductResource extends JsonResource
+class AvailableProductReviewResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -17,15 +17,16 @@ class OrderProductResource extends JsonResource
     {
         //return parent::toArray($request);
         $return = [
-            ...$this->only(['id', 'quantity', 'price']),
-            'stauts' => OrderStatus::from($this->status->value)->label(),
+            ...$this->only(['id', 'order_id', 'quantity', 'price']),
+            'd_day' => abs(floor(ProductReview::AVAILABLE_DAYS - $this->created_at->diffInDays(now()))),
             'product' => ProductResource::make($this->whenLoaded('product')),
-            'productOption' => ProductOptionResource::make($this->productOption),
+            'productOption' => ProductOptionResource::make($this->whenLoaded('productOption')),
         ];
 
         //*
         if (config('scribe.response_file')) {
             $comments = [
+                'd_day' => '리뷰작성 가능 일자'
             ];
             return getScribeResponseFile($return, 'order_products', $comments);
         }

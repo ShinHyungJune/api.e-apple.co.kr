@@ -21,13 +21,32 @@ class ProductReviewRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            'product_id' => ['required', 'exists:products,id'],
-            //'user_id' => ['required', 'exists:users,id'],
-            'rating' => ['required', 'integer', 'min:1', 'max:5'],
-            'review' => ['required', 'string'],
-            'images' => ['nullable', 'array'],
-        ];
+        if ($this->isMethod('POST')) {
+            return [
+                'order_id' => ['required'],
+                'order_product_id' => ['required'],
+                'product_id' => ['required'],
+                'product_option_id' => ['required', 'exists:product_options,id'],
+                'user_id' => ['required'/*, 'exists:users,id'*/],
+                'rating' => ['required', 'integer', 'min:1', 'max:5'],
+                'review' => ['required', 'string'],
+                'images' => ['nullable', 'array'],
+            ];
+        }
+
+        if ($this->isMethod('PUT')) {
+            return [
+                'rating' => ['required', 'integer', 'min:1', 'max:5'],
+                'review' => ['required', 'string'],
+                'images' => ['nullable', 'array'],
+                'files_remove_ids' => ['nullable', 'array'],
+            ];
+        }
+    }
+
+    public function prepareForValidation()
+    {
+        $this->merge(['user_id' => auth()->id()]);
     }
 
     public function bodyParameters()

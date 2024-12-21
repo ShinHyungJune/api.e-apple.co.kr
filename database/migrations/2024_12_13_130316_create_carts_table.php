@@ -29,7 +29,7 @@ return new class extends Migration
 
             $table->foreignId('product_option_id')->constrained()->onDelete('cascade')->comment('상품 옵션 외래키');
             $table->unsignedInteger('price')->comment('가격');
-            $table->unsignedInteger('quantity')->default(1)->comment('수량');
+            $table->unsignedInteger('quantity')->default(0)->comment('수량');
 
             $table->timestamps();
             $table->softDeletes();

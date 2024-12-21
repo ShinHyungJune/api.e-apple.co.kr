@@ -73,6 +73,9 @@ class OrderFactory extends Factory
             $item->orderProducts()->createMany(
                 [
                     [
+                        'status' => $item->status,
+                        'user_id' => $item->user_id,
+                        'guest_id' => $item->guest_id,
                         'product_id' => 1,
                         'product_option_id' => 1,
                         'quantity' => $this->faker->numberBetween(0, 10),

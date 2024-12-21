@@ -35,35 +35,36 @@ class CartController extends ApiController
      */
     public function store(CartRequest $request)
     {
-        $data = $request->validated();
-        //$product = Product::with(['options'])->findOrFail($data['product_id']);
-
-        $cart = DB::transaction(function () use ($data) {
-            if (auth()->check()) {
-                $cart = auth()->user()->carts()->create(['product_id' => $data['product_id']]);
-            } else {
-                $cart = tap(new Cart($data))->save();
-            }
+        $cart = DB::transaction(function () use ($request) {
+            $data = $request->validated();
+            $cart = Cart::mine($request)->updateOrCreate(['product_id' => $data['product_id']], $data);
             $cart->load('product.options');
-
-            $cartProductOptions = [];
-            foreach ($data['product_options'] as $productOption) {
-                $option = $cart->product->options->findOrFail($productOption['product_option_id']);
-                $cartProductOptions[] = [
-                    'user_id' => auth()->id() ?? null,
-                    'guest_id' => $data['guest_id'] ?? null,
-                    'product_option_id' => $option->id,
-                    'price' => $option->price,
-                    'quantity' => $productOption['quantity'],
-                ];
-            }
-            $cart->cartProductOptions()->createMany($cartProductOptions);
-
+            $cart->updateOrCreateProductOptions($data);
             return $cart->load('cartProductOptions.productOption');
         });
 
         return $this->respondSuccessfully(CartResource::make($cart));
     }
+
+
+    /**
+     * 수정(장바구니 상품 옵션 추가)
+     * @priority 1
+     * @unauthenticated
+     * @responseFile storage/responses/cart.json
+     */
+    public function update(CartRequest $request, $id)
+    {
+        $cart = DB::transaction(function () use ($request, $id) {
+            $data = $request->validated();
+            $cart = Cart::with(['product.options'])->mine($request)->findOrFail($id);
+            $cart->updateOrCreateProductOptions($data);
+            return $cart->load('cartProductOptions.productOption');
+        });
+
+        return $this->respondSuccessfully(CartResource::make($cart));
+    }
+
 
     /**
      * 삭제

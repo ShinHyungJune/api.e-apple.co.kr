@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Enums\OrderStatus;
 use App\Enums\UserLevel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -66,10 +67,27 @@ class User extends Authenticatable implements JWTSubject
         return [];
     }
 
+    /**
+     * 내 상품 리뷰
+     */
     public function productReviews(): HasMany
     {
         return $this->hasMany(ProductReview::class);
     }
+
+    /**
+     * 작성 가능한 상품 리뷰
+     */
+    public function availableProductReviews(): HasMany
+    {
+        return $this->hasMany(OrderProduct::class)
+            //구매확정
+            ->where('status', OrderStatus::PURCHASE_CONFIRM)
+            //구매후 30일 이내
+            ->where('created_at', '>=', now()->subDays(ProductReview::AVAILABLE_DAYS))
+            ->doesntHave('review');
+    }
+
 
     public function productInquiries(): HasMany
     {
@@ -93,6 +111,9 @@ class User extends Authenticatable implements JWTSubject
             ->withPivot('used_at'); // 중간 테이블의 추가 필드를 사용하려면
     }
 
+    /**
+     * 사용 가능한 쿠폰
+     */
     public function availableCoupons()
     {
         return $this->belongsToMany(Coupon::class, 'user_coupons')
@@ -103,6 +124,7 @@ class User extends Authenticatable implements JWTSubject
                 ->wherePivot('used_at', null) // 사용하지 않은 쿠폰
                 ->wherePivot('expired_at', '>=', now()); // 만료되지 않은 쿠폰
     }
+
 
 
     public function pointTransactions()

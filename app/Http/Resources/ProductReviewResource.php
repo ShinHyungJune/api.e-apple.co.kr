@@ -17,11 +17,14 @@ class ProductReviewResource extends JsonResource
     {
         //return parent::toArray($request);
         $return = [
-            ...$this->only(['rating', 'review']),
-            'user' => UserResource::make($this->user, true),
+            ...$this->only(['id', 'rating', 'review']),
+            'user' => UserResource::make($this->whenLoaded('user'), true),
             'img' => $this->getMedia(ProductReview::IMAGES) ? MediaResource::make($this->getMedia(ProductReview::IMAGES)[0] ?? null) : null,
             'imgs' => $this->getMedia(ProductReview::IMAGES) ? MediaResource::collection($this->getMedia(ProductReview::IMAGES)) : null,
-            'created_date' => $this->created_at->format('Y.m.d')
+            'created_date' => $this->created_at->format('Y.m.d'),
+            'product' => ProductResource::make($this->whenLoaded('product')),
+            'productOption' => ProductOptionResource::make($this->whenLoaded('productOption')),
+            'orderProduct' => OrderProductResource::make($this->whenLoaded('orderProduct')),
         ];
         //*
         if (config('scribe.response_file')) {

@@ -8,6 +8,7 @@ enum OrderStatus: string
     case ORDER_COMPLETE	           =	'order_complete';
     case PAYMENT_PENDING	       =	'payment_pending';
     case PAYMENT_COMPLETE	       =	'payment_complete';
+    case PAYMENT_FAIL	           =	'payment_fail';
     case DELIVERY_PREPARING	       =	'delivery_preparing';
     case DELIVERY	               =	'delivery';
     //case DELIVERY_COMPLETE	       =	'delivery_complete';
@@ -22,6 +23,7 @@ enum OrderStatus: string
 
     const DELIVERY_BEFORES = [
         self::ORDER_PENDING, self::ORDER_COMPLETE, self::PAYMENT_PENDING, self::PAYMENT_COMPLETE, self::DELIVERY_PREPARING
+        //주문접수, 주문완료, 결제대기중, 결제완료, 배송준비중
     ];
 
     public function label(): string
@@ -31,6 +33,7 @@ enum OrderStatus: string
             self::ORDER_COMPLETE => '주문완료',
             self::PAYMENT_PENDING => '결제대기중',
             self::PAYMENT_COMPLETE => '결제완료',
+            self::PAYMENT_FAIL => '결제실패',
             self::DELIVERY_PREPARING => '배송준비중',
             self::DELIVERY => '배송중',
             //self::DELIVERY_COMPLETE => '배송완료',

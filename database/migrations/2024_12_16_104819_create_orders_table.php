@@ -18,11 +18,11 @@ return new class extends Migration
             $table->foreignId('user_id')/*->constrained()->onDelete('cascade')*/ ->nullable()->comment('사용자 외래키');
             $table->string('guest_id')->nullable()->comment('비회원 아이디');
 
-            $table->enum('status', OrderStatus::values())->default(OrderStatus::ORDER_COMPLETE->value)->comment('주문 상태');
+            $table->enum('status', OrderStatus::values())->default(OrderStatus::ORDER_PENDING->value)->comment('주문 상태');
+            $table->timestamp('payment_completed_at')->nullable()->comment('결제 완료 일시');
             $table->timestamp('delivery_started_at')->nullable()->comment('배송 시작 일시');
-            $table->timestamp('purchase_confirmed_at')->nullable()->comment('주문 확정 일시');
-            $table->timestamp('cancellation_completed_at')->nullable()->comment('주문 취소 일시');
-
+            $table->timestamp('purchase_confirmed_at')->nullable()->comment('구매 확정 일시');
+            $table->timestamp('payment_canceled_at')->nullable()->comment('결제 취소 일시');
 
             //주문자정보
             $table->string("buyer_name")->nullable()->comment('주문자 이름');
@@ -77,8 +77,13 @@ return new class extends Migration
         });
 
         Schema::create('order_products', function (Blueprint $table) {
-            $table->id();
+            $table->id()->comment('기본키');
+            $table->enum('status', OrderStatus::values())->default(OrderStatus::ORDER_PENDING->value)->comment('주문 상태');
             $table->foreignId('order_id')->constrained()->onDelete('cascade')->comment('주문 외래키');
+
+            $table->foreignId('user_id')/*->constrained()->onDelete('cascade')*/ ->nullable()->comment('사용자 외래키');
+            $table->string('guest_id')->nullable()->comment('비회원 아이디');
+
             $table->foreignId('product_id')/*->constrained()->onDelete('cascade')*/->comment('상품 외래키');
             $table->foreignId('product_option_id')->comment('상품 옵션 외래키');
             $table->unsignedInteger('quantity')->default(1)->comment('상품 수량'); // 상품 수량

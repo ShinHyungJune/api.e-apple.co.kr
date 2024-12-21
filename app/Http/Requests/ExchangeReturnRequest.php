@@ -24,6 +24,8 @@ class ExchangeReturnRequest extends FormRequest
     public function rules(): array
     {
         $return = [
+            'order_id' => ['required'],
+            'order_product_id' => ['required'],
             'type' => ['required', 'in:' . implode(',', ExchangeReturn::TYPES)],
             'change_of_mind' => ['nullable', 'string'],
             'delivery_issue' => ['nullable', 'string'],

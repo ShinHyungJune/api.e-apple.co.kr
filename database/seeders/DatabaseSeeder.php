@@ -8,7 +8,6 @@ use App\Models\Post\BoardCategory;
 use App\Models\Post\Post;
 use App\Models\Product;
 use App\Models\ProductInquiry;
-use App\Models\ProductReview;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -25,7 +24,6 @@ class DatabaseSeeder extends Seeder
         DB::statement("SET foreign_key_checks=0");
         User::truncate();
         Product::truncate();
-        ProductReview::truncate();
         BoardCategory::truncate();
         Board::truncate();
         Post::truncate();
@@ -37,16 +35,17 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
             ProductSeeder::class,
-            ProductReviewSeeder::class,
             BoardSeeder::class,
             BoardCategorySeeder::class,
             PostSeeder::class,
             MdProductPackageSeeder::class,
             ProductInquirySeeder::class,
+
             CartSeeder::class,
             DeliveryAddressSeeder::class,
             CouponSeeder::class,
             OrderSeeder::class,
+            ProductReviewSeeder::class,
             PointSeeder::class,
             ExchangeReturnSeeder::class,
             InquirySeeder::class,

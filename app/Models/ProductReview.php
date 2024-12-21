@@ -22,7 +22,7 @@ class ProductReview extends Model implements HasMedia
     const TYPE_PHOTO = 'photo';
 
     const PHOTO_REVIEW_POINTS = 1500;
-
+    const AVAILABLE_DAYS = 30;//주문 후 30일 이내 리뷰작성 가능
 
 
     protected $guarded = ['id'];
@@ -38,6 +38,18 @@ class ProductReview extends Model implements HasMedia
         }
         return null;
     }
+
+    public function getWithdrawalPoints()
+    {
+        if ($this->type === self::TYPE_PHOTO) {
+            return [self::PHOTO_REVIEW_POINTS, '포토리뷰 삭제'];
+        }
+        if ($this->type === self::TYPE_TEXT) {
+            return [self::TEXT_REVIEW_POINTS, '리뷰 삭제'];
+        }
+    }
+
+
 
     public function scopeSearch(Builder $query, $filters)
     {
@@ -70,4 +82,23 @@ class ProductReview extends Model implements HasMedia
         return $this->has('media') ? self::TYPE_PHOTO : self::TYPE_TEXT;
     }
 
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
+
+    public function productOption()
+    {
+        return $this->belongsTo(ProductOption::class, 'product_option_id');
+    }
+
+    public function orderProduct()
+    {
+        return $this->belongsTo(OrderProduct::class, 'product_option_id');
+    }
+
+    public function scopeMine(Builder $query)
+    {
+        $query->where('user_id', auth()->id());
+    }
 }
