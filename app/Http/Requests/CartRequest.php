@@ -40,6 +40,7 @@ class CartRequest extends FormRequest
 
     public function prepareForValidation()
     {
+        $inputs = $this->input();
         $this->merge([
             'user_id' => auth()->id() ?? null,
             'guest_id' => $inputs['guest_id'] ?? null,
