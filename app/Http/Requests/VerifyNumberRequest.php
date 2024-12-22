@@ -46,7 +46,7 @@ class VerifyNumberRequest extends FormRequest
     public function bodyParameters()
     {
         return [
-            "contact" => [
+            "phone" => [
                 "description" => "<span class='point'>연락처</span>"
             ],
             "number" => [

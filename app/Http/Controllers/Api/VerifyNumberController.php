@@ -16,7 +16,7 @@ class VerifyNumberController extends ApiController
      */
     public function store(VerifyNumberRequest $request)
     {
-        $request['contact'] = str_replace("-", "",$request->contact);
+        $request['phone'] = str_replace("-", "",$request->phone);
 
         $countRecentTry = VerifyNumber::where('ip', $request->ip())
             ->where('created_at', ">=", Carbon::now()->subMinute())
@@ -26,14 +26,14 @@ class VerifyNumberController extends ApiController
             return $this->respondForbidden('1분 뒤에 재시도해주세요.');
 
         $verifyNumber = VerifyNumber::create([
-            'ids' => $request->contact,
+            'ids' => $request->phone,
             'number' => rand(100000,999999),
             'ip' => $request->ip(),
         ]);
 
         $sms = new SMS();
 
-        $sms->send("+82".$request->contact, "[인증번호]", "인증번호가 발송되었습니다. ".$verifyNumber->number."\n\n"."-".config("app.name")."-");
+        $sms->send("+82".$request->phone, "[인증번호]", "인증번호가 발송되었습니다. ".$verifyNumber->number."\n\n"."-".config("app.name")."-");
 
         return $this->respondSuccessfully();
     }
@@ -44,7 +44,7 @@ class VerifyNumberController extends ApiController
      */
     public function update(VerifyNumberRequest $request)
     {
-        $verifyNumber = VerifyNumber::where('ids', $request->contact)
+        $verifyNumber = VerifyNumber::where('ids', $request->phone)
             ->where('number', $request->number)
             ->first();
 
