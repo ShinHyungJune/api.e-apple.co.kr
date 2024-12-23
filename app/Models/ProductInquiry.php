@@ -19,9 +19,15 @@ class ProductInquiry extends Model
         return $this->belongsTo(Product::class);
     }
 
-    public function scopeSearch(Builder $query )
+    public function scopeSearch(Builder $query, $filters)
     {
-
+        if (isset($filters['is_answered'])) {
+            if ($filters['is_answered']) {
+                $query->whereNotNull('answered_at');
+            } else {
+                $query->whereNull('answered_at');
+            }
+        }
     }
 
 }

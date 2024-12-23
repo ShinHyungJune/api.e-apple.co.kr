@@ -15,13 +15,13 @@ class ProductInquiryController extends ApiController
     /**
      * 목록
      * @priority 1
-     * @queryParam type Example: photo, text
+     * @queryParam is_answered Example: 1, 0
      * @unauthenticated
      * @responseFile storage/responses/product_inquiries.json
      */
     public function index(Request $request)
     {
-        $filters = $request->only(['type']);
+        $filters = $request->only(['is_answered']);
         $items = ProductInquiry::query()->search($filters)->latest()->paginate($request->take ?? 30);
         return ProductInquiryResource::collection($items);
     }
