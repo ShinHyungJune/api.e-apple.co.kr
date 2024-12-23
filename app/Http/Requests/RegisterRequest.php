@@ -22,22 +22,32 @@ class RegisterRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            //'user_id' => ['required', 'string', 'max:255', 'unique:users'],
-            'email' => ['required', 'string', 'email', 'unique:users'],
-            //'password' => ['required', 'confirmed', Password::defaults()],
-            'password' => ['required', 'confirmed',
-                //Password::min(8)->mixedCase()->letters()->numbers()->symbols()->uncompromised()
-                Password::min(8)->letters()->numbers()->symbols()
-            ],
-            'password_confirmation' => ['required'],
-            'name' => ['required', 'string', 'max:255'],
-            'phone' => ['required', 'digits_between:10,11'/*, 'unique:member_profiles'*/],
-            'nickname' => ['nullable', 'string', 'max:255']
-            /*'is_agree_terms' => ['accepted'],
-            'is_agree_privacy' => ['accepted'],*/
-            //'code' => 'required|digits:6',
-        ];
+        if ($this->isMethod('POST')) {
+            $return = [
+                //'user_id' => ['required', 'string', 'max:255', 'unique:users'],
+                'email' => ['required', 'string', 'email', 'unique:users'],
+                //'password' => ['required', 'confirmed', Password::defaults()],
+                'password' => ['required', 'confirmed',
+                    //Password::min(8)->mixedCase()->letters()->numbers()->symbols()->uncompromised()
+                    Password::min(8)->letters()->numbers()->symbols()
+                ],
+                'password_confirmation' => ['required'],
+                'name' => ['required', 'string', 'max:255'],
+                'phone' => ['required', 'digits_between:10,11', 'unique:users'],
+                'nickname' => ['nullable', 'string', 'max:255']
+                /*'is_agree_terms' => ['accepted'],
+                'is_agree_privacy' => ['accepted'],*/
+                //'code' => 'required|digits:6',
+            ];
+        }
+
+        if ($this->isMethod('PUT')) {
+            $return = [
+            ];
+
+        }
+
+        return $return;
     }
 
     public function bodyParameters()

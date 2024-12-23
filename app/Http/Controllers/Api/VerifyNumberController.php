@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Requests\UserRequest;
 use App\Http\Requests\VerifyNumberRequest;
 use App\Models\SMS;
 use App\Models\VerifyNumber;
@@ -31,9 +30,10 @@ class VerifyNumberController extends ApiController
             'ip' => $request->ip(),
         ]);
 
-        $sms = new SMS();
-
-        $sms->send("+82".$request->phone, "[인증번호]", "인증번호가 발송되었습니다. ".$verifyNumber->number."\n\n"."-".config("app.name")."-");
+        if (config('app.env') !== 'local') {
+            $sms = new SMS();
+            $sms->send("+82" . $request->phone, "[인증번호]", "인증번호가 발송되었습니다. " . $verifyNumber->number . "\n\n" . "-" . config("app.name") . "-");
+        }
 
         return $this->respondSuccessfully();
     }

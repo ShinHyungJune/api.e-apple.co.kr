@@ -35,6 +35,9 @@ use Illuminate\Support\Facades\Route;
 Route::group(['controller' => AuthController::class], function () {
     Route::post('login', 'login');
     Route::post('register', 'store');
+    Route::post('find-id', 'findId');
+    Route::post('find-password', 'findPassword');
+    Route::post('reset-password', 'resetPassword');
 
     //번호인증
     Route::group(['controller' => VerifyNumberController::class], function () {
@@ -45,6 +48,11 @@ Route::group(['controller' => AuthController::class], function () {
     Route::group(['middleware' => 'auth:api'], function () {
         Route::post('logout', 'logout');
         Route::get('profile', 'profile');
+
+        Route::put('profile', 'update');
+        Route::put('password', 'updatePassword');
+        Route::delete('profile', 'destroy');
+
         //Route::get('refresh', 'refresh');
     });
 });

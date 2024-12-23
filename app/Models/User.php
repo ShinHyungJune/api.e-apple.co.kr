@@ -7,6 +7,7 @@ use App\Enums\OrderStatus;
 use App\Enums\UserLevel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\DB;
@@ -15,7 +16,7 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 class User extends Authenticatable implements JWTSubject
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -124,8 +125,6 @@ class User extends Authenticatable implements JWTSubject
                 ->wherePivot('used_at', null) // 사용하지 않은 쿠폰
                 ->wherePivot('expired_at', '>=', now()); // 만료되지 않은 쿠폰
     }
-
-
 
     public function pointTransactions()
     {

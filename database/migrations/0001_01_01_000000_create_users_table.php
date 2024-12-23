@@ -25,6 +25,7 @@ return new class extends Migration
             $table->enum('level', UserLevel::values())->default(UserLevel::GENERAL->value)->comment('등급');
             $table->boolean('is_admin')->default(false)->comment('관리자 여부 필드');
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
