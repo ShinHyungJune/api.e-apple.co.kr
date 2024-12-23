@@ -72,7 +72,7 @@ class PostController extends ApiController
             //Media Library
             //if ($files) PostFile::stores($post, $files);
             foreach ($files as $file) {
-                $post->addMedia($file)->toMediaCollection(Post::MEDIA_COLLECTION);
+                $post->addMedia($file['file'])->toMediaCollection(Post::MEDIA_COLLECTION);
             }
             return $post;
         });

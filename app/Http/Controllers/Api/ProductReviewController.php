@@ -66,7 +66,7 @@ class ProductReviewController extends ApiController
         //$productReview = auth()->user()->productReviews()->create($data);
         if ($request->file(ProductReview::IMAGES)) {
             foreach ($request->file(ProductReview::IMAGES) as $file) {
-                $productReview->addMedia($file)->toMediaCollection(ProductReview::IMAGES);
+                $productReview->addMedia($file['file'])->toMediaCollection(ProductReview::IMAGES);
             }
         }
 
@@ -93,7 +93,7 @@ class ProductReviewController extends ApiController
 
         if ($request->file(ProductReview::IMAGES)) {
             foreach ($request->file(ProductReview::IMAGES) as $file) {
-                $productReview->addMedia($file)->toMediaCollection(ProductReview::IMAGES);
+                $productReview->addMedia($file['file'])->toMediaCollection(ProductReview::IMAGES);
             }
         }
 

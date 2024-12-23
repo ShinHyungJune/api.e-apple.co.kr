@@ -50,12 +50,12 @@ class ProductController extends ApiController
 
         if ($request->file(Product::IMAGES)) {
             foreach ($request->file(Product::IMAGES) as $file) {
-                $product->addMedia($file)->toMediaCollection('product_images');
+                $product->addMedia($file['file'])->toMediaCollection('product_images');
             }
         }
         /*if ($request->file(Product::DESC_IMAGES)) {
             foreach ($request->file(Product::DESC_IMAGES) as $file) {
-                $product->addMedia($file)->toMediaCollection(Product::DESC_IMAGES);
+                $product->addMedia($file['file])->toMediaCollection(Product::DESC_IMAGES);
             }
         }*/
 
@@ -72,15 +72,14 @@ class ProductController extends ApiController
         $data = $request->validated();
         $product = ($product)->update($data);
 
-        //TODO media 파일삭제는???
         if ($request->file(Product::IMAGES)) {
             foreach ($request->file(Product::IMAGES) as $file) {
-                $product->addMedia($file)->toMediaCollection('product_images');
+                $product->addMedia($file['file'])->toMediaCollection('product_images');
             }
         }
         /*if ($request->file(Product::DESC_IMAGES)) {
             foreach ($request->file(Product::DESC_IMAGES) as $file) {
-                $product->addMedia($file)->toMediaCollection(Product::DESC_IMAGES);
+                $product->addMedia($file['file'])->toMediaCollection(Product::DESC_IMAGES);
             }
         }*/
 
