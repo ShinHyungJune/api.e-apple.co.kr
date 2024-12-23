@@ -38,7 +38,7 @@ class InquiryController extends ApiController
 
         if ($request->file(Inquiry::IMAGES)) {
             foreach ($request->file(Inquiry::IMAGES) as $file) {
-                $inquiry->addMedia($file)->toMediaCollection(Inquiry::IMAGES);
+                $inquiry->addMedia($file['file'])->toMediaCollection(Inquiry::IMAGES);
             }
         }
 
