@@ -86,13 +86,18 @@ Route::group(['prefix' => 'products'], function () {
 
 
 //상품 리뷰
-Route::group(['prefix' => 'product_reviews', 'middleware' => ['auth:api'], 'controller' => ProductReviewController::class],
+Route::group(['prefix' => 'product_reviews', 'controller' => ProductReviewController::class],
     function () {
-        Route::get('mine', 'myProductReviews');
-        Route::get('available', 'myAvailableProductReviews');
-        Route::post('', 'store');
-        Route::put('{id}', 'update');
-        Route::delete('{id}', 'destroy');
+        Route::group(['middleware' => ['auth:api']], function () {
+            Route::get('mine', 'myProductReviews');
+            Route::get('available', 'myAvailableProductReviews');
+            Route::post('', 'store');
+            Route::put('{id}', 'update');
+            Route::delete('{id}', 'destroy');
+        });
+
+        //상품 리뷰 상세
+        Route::get('{productReview}', 'show');
     });
 
 

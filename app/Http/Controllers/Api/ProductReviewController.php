@@ -75,6 +75,19 @@ class ProductReviewController extends ApiController
         return $this->respondSuccessfully(ProductReviewResource::make($productReview));
     }
 
+
+    /**
+     * 상세
+     * @priority 1
+     * @unauthenticated
+     * @responseFile storage/responses/product_review.json
+     */
+    public function show(Request $request, ProductReview $productReview)
+    {
+        return $this->respondSuccessfully(ProductReviewResource::make($productReview));
+    }
+
+
     /**
      * 수정
      * @priority 1
