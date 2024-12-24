@@ -61,4 +61,18 @@ class DeliveryAddressRequest extends FormRequest
         ];
     }
 
+    public function attributes(): array
+    {
+        return [
+            'name' => '배송지명',
+            'recipient_name' => '배송받을 사람 이름',
+            'phone' => '연락처',
+            'postal_code' => '우편번호',
+            'address' => '주소',
+            'address_detail' => '상세주소',
+            'delivery_request' => '배송 요청 사항',
+            'is_default' => '기본 배송지 여부',
+        ];
+    }
+
 }

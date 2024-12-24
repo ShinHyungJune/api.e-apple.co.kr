@@ -50,11 +50,16 @@ class AuthController extends ApiController
     public function profile()
     {
         //return response()->json(auth()->user());
-        $user = auth()->user()->withCount([
+        /*$user = auth()->user()->withCount([
             'availableCoupons',//사용 가능한 쿠폰 개수
             'availableProductReviews',//작성 가능한 상품 리뷰 개수
             'productReviews', //내 상품 리뷰 개수
-        ])->first();
+        ])->first();*/
+        $user = User::withCount([
+            'availableCoupons',//사용 가능한 쿠폰 개수
+            'availableProductReviews',//작성 가능한 상품 리뷰 개수
+            'productReviews', //내 상품 리뷰 개수
+        ])->findOrFail(auth()->id());
         return $this->respondSuccessfully(ProfileResource::make($user));
     }
 
@@ -128,7 +133,7 @@ class AuthController extends ApiController
     {
         $data = $request->validated();
         if (!Hash::check($data['current_password'], auth()->user()->password)) {
-            abort(401, '기존 비밀번호를 확인해 주세요.');
+            abort(422, '기존 비밀번호를 확인해 주세요.');
         }
         auth()->user()->update(['password' => Hash::make($data['password'])]);
 
@@ -178,7 +183,7 @@ class AuthController extends ApiController
 
         $verifyNumber = VerifyNumber::where('ids', $request->phone)->where('verified', true)->first();
         if (!$verifyNumber) {
-            abort(401, '연락처를 인증해주세요.');
+            abort(422, '연락처를 인증해주세요.');
         }
 
         $verifyNumber->delete();
@@ -201,7 +206,7 @@ class AuthController extends ApiController
 
         $verifyNumber = VerifyNumber::where('ids', $data['phone'])->where('verified', true)->first();
         if (!$verifyNumber) {
-            abort(401, '연락처를 인증해주세요.');
+            abort(422, '연락처를 인증해주세요.');
         }
         //$verifyNumber->delete();
 
@@ -225,7 +230,7 @@ class AuthController extends ApiController
 
         $verifyNumber = VerifyNumber::where('ids', $data['phone'])->where('verified', true)->first();
         if (!$verifyNumber) {
-            abort(401, '연락처를 인증해주세요.');
+            abort(422, '연락처를 인증해주세요.');
         }
         $verifyNumber->delete();
         $user->update(['password' => Hash::make($data['password'])]);
