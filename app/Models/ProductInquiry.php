@@ -20,6 +20,11 @@ class ProductInquiry extends Model
         return $this->belongsTo(Product::class);
     }
 
+    public function scopeMine(Builder $query)
+    {
+        $query->where('user_id', auth()->id());
+    }
+
     public function scopeSearch(Builder $query, $filters)
     {
         if (isset($filters['is_answered'])) {

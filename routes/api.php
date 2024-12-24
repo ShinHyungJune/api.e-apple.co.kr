@@ -74,6 +74,12 @@ Route::group(['prefix' => 'products'], function () {
         Route::get('', 'index');
         Route::group(['middleware' => ['auth:api']], function () {
             Route::post('', 'store');
+            Route::get('mine', 'mine');
+        });
+    });
+    Route::group(['prefix' => 'inquiries', 'controller' => ProductInquiryController::class], function () {
+        Route::group(['middleware' => ['auth:api']], function () {
+            Route::get('mine', 'mine');
         });
     });
 });

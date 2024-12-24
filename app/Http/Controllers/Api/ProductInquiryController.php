@@ -38,5 +38,18 @@ class ProductInquiryController extends ApiController
         return $this->respondSuccessfully(ProductInquiryResource::make($productInquiry));
     }
 
+    /**
+     * 나의 상품문의 목록
+     * @priority 1
+     * @queryParam is_answered Example: 1, 0
+     * @unauthenticated
+     * @responseFile storage/responses/product_inquiries.json
+     */
+    public function mine(Request $request)
+    {
+        $filters = $request->only(['is_answered']);
+        $items = ProductInquiry::with('product')->mine()->search($filters)->latest()->paginate($request->take ?? 30);
+        return ProductInquiryResource::collection($items);
+    }
 
 }
