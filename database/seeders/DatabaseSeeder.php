@@ -49,6 +49,7 @@ class DatabaseSeeder extends Seeder
             PointSeeder::class,
             ExchangeReturnSeeder::class,
             InquirySeeder::class,
+            TestUserDataSeeder::class,
         ]);
     }
 }

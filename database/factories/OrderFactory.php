@@ -21,6 +21,7 @@ class OrderFactory extends Factory
     public function definition(): array
     {
         $userId = User::inRandomOrder()->first()->id;
+
         return [
             'user_id' => $userId,
             'guest_id' => null,

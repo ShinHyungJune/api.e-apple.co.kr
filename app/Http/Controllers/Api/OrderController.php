@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Enums\OrderStatus;
+use App\Http\Requests\CartOrderRequest;
 use App\Http\Requests\OrderRequest;
 use App\Http\Resources\OrderResource;
+use App\Models\CartProductOption;
 use App\Models\Iamport;
 use App\Models\Order;
 use Illuminate\Http\Request;
@@ -54,7 +56,46 @@ class OrderController extends ApiController
     }
 
     /**
-     * 생성(상품확인): 주문 상품, 상품옵션, 수량
+     * 생성(장바구니 상품구매, 상품확인): 장바구니 ids
+     * @priority 1
+     * @unauthenticated
+     * @responseFile storage/responses/order.json
+     */
+    public function cartsStore(CartOrderRequest $request)
+    {
+        $data = $request->validated();
+        $data['status'] = OrderStatus::ORDER_PENDING->value;
+        $cartProductOptions = CartProductOption::with(['productOption'])->mine($request)->whereIn('cart_id', $data['cart_ids'])->get();
+
+        $data = [
+            ...$data,
+            'total_amount' => $cartProductOptions->sum(function ($cartProductOption) {
+                return $cartProductOption->price * $cartProductOption->quantity;
+            }),
+            'delivery_fee' => $cartProductOptions->pluck('product.delivery_fee')->filter()->max(),
+            'order_products' => $cartProductOptions->map(function ($cartProductOption) {
+                return [
+                    'product_id' => $cartProductOption->productOption->product_id,
+                    'product_option_id' => $cartProductOption->productOption->id,
+                    'quantity' => $cartProductOption->quantity,
+                    'price' => $cartProductOption->productOption->price,
+                ];
+            })->toArray(),
+        ];
+
+        Order::checkOrderProducts($data);
+
+        $order = DB::transaction(function () use ($data) {
+            $order = tap(new Order($data))->save();
+            $order->orderProducts()->createMany($data['order_products']);
+            return $order;
+        });
+
+        return $this->respondSuccessfully(OrderResource::make($order));
+    }
+
+    /**
+     * 생성(바로구매, 상품확인): 주문 상품, 상품옵션, 수량
      * @priority 1
      * @unauthenticated
      * @responseFile storage/responses/order.json
@@ -169,7 +210,7 @@ class OrderController extends ApiController
     }
 
     /**
-     * 취소 사용자
+     * 주문취소(사용자)
      * @responseFile storage/responses/order.json
      */
     public function cancel(Request $request, $id)
@@ -192,8 +233,8 @@ class OrderController extends ApiController
     }
 
 
-    /** 회원용 상세
-     * @group Order(주문)
+    /**
+     * 주문상세
      * @responseFile storage/responses/order.json
      */
     public function show(Request $request, $id)
@@ -204,6 +245,29 @@ class OrderController extends ApiController
         if (!\App\Http\Controllers\Api\auth()->user() && $order->guest_id != $request->guest_id)
             return $this->respondForbidden();*/
         $order = Order::with(['orderProducts'])->mine($request)->findOrFail($id);
+
+        return $this->respondSuccessfully(OrderResource::make($order));
+    }
+
+
+    /**
+     * 비회원 주문조회
+     * @responseFile storage/responses/order.json
+     */
+    public function showGuest(Request $request)
+    {
+        $request->validate([
+            'buyer_name' => ['required', 'string', 'max:255'],
+            'merchant_uid' => ['required', 'string', 'max:255'],
+        ]);
+
+        $order = Order::with(['orderProducts'])
+            ->whereNull('user_id')
+            ->where('buyer_name', $request->buyer_name)->where('merchant_uid', $request->merchant_uid)
+            ->first();
+        if (empty($order)) {
+            abort(404, '주문내역이 없습니다.');
+        }
 
         return $this->respondSuccessfully(OrderResource::make($order));
     }

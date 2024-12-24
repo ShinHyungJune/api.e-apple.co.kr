@@ -17,8 +17,9 @@ class PointResource extends JsonResource
     {
         //return parent::toArray($request);
         $return = [
-            ...$this->only(['id', 'model_type', 'model_id', 'deposit', 'withdrawal', 'balance', 'description', 'created_at', 'expired_at']),
+            ...$this->only(['id', 'pointable_type', 'pointable_id', 'deposit', 'withdrawal', 'balance', 'description', 'created_at', 'expired_at']),
             'expiration_date' => $this->created_at->addDays(Point::EXPIRATION_DAYS)->format('Y-m-d'),
+            'order_id' => $this->orderId,
         ];
 
         //*

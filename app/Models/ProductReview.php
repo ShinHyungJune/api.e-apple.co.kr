@@ -93,6 +93,11 @@ class ProductReview extends Model implements HasMedia
         return $this->belongsTo(ProductOption::class, 'product_option_id');
     }
 
+    public function order()
+    {
+        return $this->belongsTo(Order::class);
+    }
+
     public function orderProduct()
     {
         return $this->belongsTo(OrderProduct::class, 'product_option_id');
@@ -102,4 +107,5 @@ class ProductReview extends Model implements HasMedia
     {
         $query->where('user_id', auth()->id());
     }
+
 }

@@ -20,7 +20,7 @@ class ProductReviewFactory extends Factory
     {
         $orderProduct = OrderProduct::inRandomOrder()->whereNotNull('user_id')->first(); // 랜덤 상품
         return [
-            'user_id' => $orderProduct->user_id,       // 랜덤 사용자
+            'user_id' => $orderProduct->user_id,
             'order_id' => $orderProduct->order_id,
             'order_product_id' => $orderProduct->id,
             'product_id' => $orderProduct->product_id,

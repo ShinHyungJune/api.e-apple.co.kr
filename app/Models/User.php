@@ -7,6 +7,7 @@ use App\Enums\OrderStatus;
 use App\Enums\UserLevel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\DB;
@@ -15,7 +16,7 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 class User extends Authenticatable implements JWTSubject
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable/*, SoftDeletes*/;
+    use HasFactory, Notifiable, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -130,14 +131,14 @@ class User extends Authenticatable implements JWTSubject
         return $this->hasMany(Point::class);
     }
 
-    public function depositPoint($model)
+    public function depositPoint($pointable)
     {
-        return DB::transaction(function () use ($model) {
-            list($amount, $desc) = $model->getDepositPoints();
+        return DB::transaction(function () use ($pointable) {
+            list($amount, $desc) = $pointable->getDepositPoints();
             $balance = $this->points + $amount;
             $this->pointTransactions()->create([
-                'model_type' => get_class($model),
-                'model_id' => $model->id,
+                'pointable_type' => get_class($pointable),
+                'pointable_id' => $pointable->id,
                 'deposit' => $amount,
                 'description' => $desc,
                 'balance' => $balance,
@@ -147,17 +148,17 @@ class User extends Authenticatable implements JWTSubject
         });
     }
 
-    public function withdrawalPoint($model)
+    public function withdrawalPoint($pointable)
     {
-        list($amount, $desc) = $model->getWithdrawalPoints();
+        list($amount, $desc) = $pointable->getWithdrawalPoints();
 
         if ($this->points < $amount) {
             abort(403, '포인트가 부족합니다.');
         }
         $balance = $this->points - $amount;
         $this->pointTransactions()->create([
-            'model_type' => get_class($model),
-            'model_id' => $model->id,
+            'pointable_type' => get_class($pointable),
+            'pointable_id' => $pointable->id,
             'withdrawal' => $amount,
             'description' => $desc,
             'balance' => $balance,

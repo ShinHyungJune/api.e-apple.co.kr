@@ -22,7 +22,10 @@ class PointController extends ApiController
         //적립, 사용, 소멸
         $filters = $request->only(['type']);
 
-        $items = Point::mine()->search($filters)->latest()->paginate($request->get('take', 10));
+        $items = Point::with('pointable')->mine()->search($filters)->latest()->paginate($request->get('take', 10));
+        $items->map(function ($item) {
+            return $item->append('order_id');
+        });
         return PointResource::collection($items);
     }
 }

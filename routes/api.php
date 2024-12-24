@@ -138,12 +138,15 @@ Route::group(['prefix' => 'orders', 'controller' => OrderController::class],
     function () {
         Route::get('', 'index');
         Route::post('', 'store');
+        Route::post('carts', 'cartsStore');//장바구니 상품 구매
+        Route::get('guest', 'showGuest');
         Route::get('{order}', 'show');
         Route::put('{id}', 'update');
         Route::post('complete', 'paymentComplete');
         Route::post('complete/webhook', 'paymentComplete');
         Route::put('{id}/confirm', 'confirm');
         Route::put('{id}/cancel', 'cancel');
+
     });
 
 //주문상품 교환반품

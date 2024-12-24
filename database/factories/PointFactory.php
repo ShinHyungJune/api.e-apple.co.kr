@@ -24,8 +24,8 @@ class PointFactory extends Factory
         if (empty($model)) return [];
         return [
             'user_id' => $model->user_id,       // 랜덤 사용자
-            'model_type' => $modelType,
-            'model_id' => $model->id,
+            'pointable_type' => $modelType,
+            'pointable_id' => $model->id,
             'deposit' => $this->faker->numberBetween(0, 20000),
             'withdrawal' => 0,
             'balance' => $this->faker->numberBetween(0, 20000),

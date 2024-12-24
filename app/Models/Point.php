@@ -21,7 +21,16 @@ class Point extends Model
 
     const TYPES = [self::TYPE_DEPOSIT, self::TYPE_WITHDRAWAL, self::TYPE_EXPIRATION];
 
+
+    /**
+     * @deprecated
+     */
     public function model()
+    {
+        return $this->morphTo();
+    }
+
+    public function pointable()
     {
         return $this->morphTo();
     }
@@ -49,6 +58,16 @@ class Point extends Model
                 }
             }
         }
+    }
 
+    public function getOrderIdAttribute()
+    {
+        if ($this->pointable_type === Order::class) {
+            return $this->pointable->merchant_uid;
+        }
+
+        if ($this->pointable_type === ProductReview::class) {
+            return $this->pointable->order->merchant_uid;
+        }
     }
 }

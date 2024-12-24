@@ -32,6 +32,10 @@ class Order extends Model
         $productOptionIds = $orderProducts->pluck('product_option_id');
         $productOptions = ProductOption::with('product')->whereIn('id', $productOptionIds)->get();
 
+        if (empty($productOptions)) {
+            abort(422, '상품을 확인해주세요.');
+        }
+
         /**
          * 상품가격(total_amount) 및 상품재고 확인
          */
