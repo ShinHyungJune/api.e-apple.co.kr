@@ -100,7 +100,7 @@ class ProductReview extends Model implements HasMedia
 
     public function orderProduct()
     {
-        return $this->belongsTo(OrderProduct::class, 'product_option_id');
+        return $this->belongsTo(OrderProduct::class, 'order_product_id');
     }
 
     public function scopeMine(Builder $query)

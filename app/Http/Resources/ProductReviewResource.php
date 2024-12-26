@@ -23,7 +23,7 @@ class ProductReviewResource extends JsonResource
             'imgs' => $this->getMedia(ProductReview::IMAGES) ? MediaResource::collection($this->getMedia(ProductReview::IMAGES)) : null,
             'created_date' => $this->created_at->format('Y.m.d'),
             'product' => ProductResource::make($this->whenLoaded('product')),
-            'productOption' => ProductOptionResource::make($this->whenLoaded('productOption')),
+            //'productOption' => ProductOptionResource::make($this->whenLoaded('productOption')),
             'orderProduct' => OrderProductResource::make($this->whenLoaded('orderProduct')),
         ];
         //*
