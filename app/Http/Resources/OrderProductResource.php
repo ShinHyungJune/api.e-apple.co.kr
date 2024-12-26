@@ -18,7 +18,7 @@ class OrderProductResource extends JsonResource
         //return parent::toArray($request);
         $return = [
             ...$this->only(['id', 'quantity', 'price']),
-            'stauts' => OrderStatus::from($this->status->value)->label(),
+            'status' => OrderStatus::from($this->status->value)->label(),
             'product' => ProductResource::make($this->whenLoaded('product')),
             'productOption' => ProductOptionResource::make($this->productOption),
         ];

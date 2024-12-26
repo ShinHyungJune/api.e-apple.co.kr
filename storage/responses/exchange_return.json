@@ -37,7 +37,7 @@
             "purchase_confirmed_at": "주문 확정 일시",
             "status": "주문 상태"
         },
-        "stauts": "접수완료"
+        "status": "접수완료"
     },
     "message": "성공적으로 처리되었습니다."
 }

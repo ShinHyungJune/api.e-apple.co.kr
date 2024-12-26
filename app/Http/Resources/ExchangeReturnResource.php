@@ -19,7 +19,7 @@ class ExchangeReturnResource extends JsonResource
         $return = [
             ...$this->only(['id', 'type', 'change_of_mind', 'delivery_issue', 'product_issue', 'description']),
             'order' => OrderResource::make($this->whenLoaded('order')),
-            'stauts' => ExchangeReturnStatus::from($this->status)->label(),
+            'status' => ExchangeReturnStatus::from($this->status)->label(),
         ];
 
         //*
