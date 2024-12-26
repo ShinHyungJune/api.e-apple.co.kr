@@ -12,6 +12,6 @@ class ExchangeReturnSeeder extends Seeder
      */
     public function run(): void
     {
-        ExchangeReturn::factory(50)->create();
+        ExchangeReturn::factory(20)->create();
     }
 }

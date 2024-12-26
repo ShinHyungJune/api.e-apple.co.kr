@@ -20,6 +20,8 @@ class Product extends Model implements HasMedia
     protected $casts = [
         'categories' => 'array',
         'tags' => 'array',
+        'category_ids' => 'array',
+        'subcategory_ids' => 'array',
     ];
 
     protected $guarded = ['id'];
@@ -49,6 +51,23 @@ class Product extends Model implements HasMedia
                     $query->orWhereJsonContains('tags', $tag);
                 }
             });
+        }
+
+        if (!empty($filters['category_id'])) {
+            $query->whereJsonContains('category_ids', (int)$filters['category_id']);
+        }
+        if (!empty($filters['subcategory_id'])) {
+            $query->whereJsonContains('subcategory_ids', (int)$filters['subcategory_id']);
+        }
+    }
+
+    public function scopeSortBy(Builder $query, $orders)
+    {
+        if (!empty($orders['order_column']) && in_array($orders['order_column'], ['price', 'reviews_count', 'created_at'])
+            && !empty($orders['order_direction']) && in_array($orders['order_direction'], ['asc', 'desc'])) {
+            $query->orderBy($orders['order_column'], $orders['order_direction']);
+        } else {
+            $query->latest();
         }
     }
 

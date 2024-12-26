@@ -18,7 +18,7 @@ class CodeController extends Controller
      * @priority 1
      * @responseFile storage/responses/codes.json
      */
-    public function products(Request $request, $id = 1)
+    public function products(Request $request, $id = Code::PRODUCT_CATEGORY_ID)
     {
         $items = Code::getItems($id, false);
         return CodeResource::collection($items);

@@ -12,6 +12,6 @@ class CartSeeder extends Seeder
      */
     public function run(): void
     {
-        Cart::factory()->count(50)->create(); // 50개의 레코드를 생성
+        Cart::factory()->count(20)->create(); // 50개의 레코드를 생성
     }
 }

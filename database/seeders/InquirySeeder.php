@@ -12,6 +12,6 @@ class InquirySeeder extends Seeder
      */
     public function run(): void
     {
-        Inquiry::factory(50)->create();
+        Inquiry::factory(20)->create();
     }
 }

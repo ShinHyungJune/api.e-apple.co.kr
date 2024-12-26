@@ -12,6 +12,6 @@ class CouponSeeder extends Seeder
      */
     public function run(): void
     {
-        Coupon::factory(50)->create();
+        Coupon::factory(20)->create();
     }
 }

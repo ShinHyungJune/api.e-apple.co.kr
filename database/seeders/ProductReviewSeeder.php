@@ -12,6 +12,6 @@ class ProductReviewSeeder extends Seeder
      */
     public function run(): void
     {
-        ProductReview::factory()->count(50)->create(); // 50개의 레코드를 생성
+        ProductReview::factory()->count(20)->create(); // 50개의 레코드를 생성
     }
 }

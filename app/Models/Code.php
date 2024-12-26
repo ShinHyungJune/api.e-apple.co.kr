@@ -14,6 +14,8 @@ class Code extends Model
 
     protected $guarded = ['id'];
 
+    const PRODUCT_CATEGORY_ID = 1;
+
     public static function rebuild($parentId, $leftId)
     {
         $rightId = $leftId + 1;

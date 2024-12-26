@@ -12,6 +12,6 @@ class DeliveryAddressSeeder extends Seeder
      */
     public function run(): void
     {
-        DeliveryAddress::factory()->count(50)->create(); // 50개의 레코드를 생성
+        DeliveryAddress::factory()->count(20)->create(); // 50개의 레코드를 생성
     }
 }

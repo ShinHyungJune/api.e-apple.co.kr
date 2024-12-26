@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Enums\ProductCategory;
+use App\Models\Code;
 use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -18,6 +19,9 @@ class ProductFactory extends Factory
      */
     public function definition(): array
     {
+        $category = collect(Code::getItems(Code::PRODUCT_CATEGORY_ID, false))->random();
+        $subcategory = (empty($category['items'])) ? null : collect($category['items'])->random();
+
         return [
             'name' => $this->faker->words(10, true),
             'description' => $this->faker->paragraph,
@@ -45,6 +49,8 @@ class ProductFactory extends Factory
             'expiration_date' => $this->faker->dateTimeBetween('+1 months', '+2 years')->format('Y-m-d'),
             'gmo_desc' => $this->faker->boolean ? 'Contains GMO' : 'Non-GMO',
             'customer_service_contact' => $this->faker->phoneNumber,
+            'category_ids' => [$category['value']],
+            'subcategory_ids' => empty($subcategory['value']) ? null : [$subcategory['value']],
         ];
     }
 

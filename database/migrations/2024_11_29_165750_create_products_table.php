@@ -44,6 +44,9 @@ return new class extends Migration
             $table->string('gmo_desc')->nullable()->comment('유전자변형 농산물 여부');
             $table->string('customer_service_contact')->nullable()->comment('소비자 상담 문의');
 
+            $table->json('category_ids')->nullable()->comment('상품 카테고리');
+            $table->json('subcategory_ids')->nullable()->comment('상품 카테고리 하위');
+
             $table->timestamps(); // created_at, updated_at
             $table->softDeletes(); // deleted_at
         });
