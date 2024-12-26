@@ -57,7 +57,7 @@ class ProductFactory extends Factory
     public function configure()
     {
         return $this->afterCreating(function (Product $product) {
-            $url = 'https://picsum.photos/510/300?random';
+            //$url = 'https://picsum.photos/510/300?random';
             $imageUrls = [
                 asset('/images/samples/pexels-pixabay-161559.jpg'),
                 asset('/images/samples/pexels-mali-102104.jpg'),
