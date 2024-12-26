@@ -36,7 +36,7 @@ class AuthController extends ApiController
         $credentials = request(['email', 'password']);
 
         if (!$token = auth()->attempt($credentials)) {
-            return response()->json(['error' => 'Unauthorized'], 401);
+            return response()->json(['error' => '이메일 또는 비밀번호를 잘못 입력했습니다.'], 422);
         }
 
         return $this->respondWithToken($token);
