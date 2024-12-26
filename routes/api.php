@@ -4,6 +4,7 @@ use App\Enums\ProductCategory;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\CartController;
 use App\Http\Controllers\Api\CartProductOptionController;
+use App\Http\Controllers\Api\CodeController;
 use App\Http\Controllers\Api\CouponController;
 use App\Http\Controllers\Api\DeliveryAddressController;
 use App\Http\Controllers\Api\ExchangeReturnController;
@@ -190,6 +191,17 @@ Route::group(['prefix' => 'points', 'middleware' => ['auth:api'], 'controller' =
         Route::get('', 'index');
     });
 
+
+//상품 카테고리
+Route::group(['prefix' => 'categories', 'controller' => CodeController::class],
+    function () {
+        Route::group(['prefix' => 'products'],
+            function () {
+                Route::get('', 'products');
+                Route::get('{id}/subcategories', 'products');
+            });
+
+    });
 
 
 /*Route::group(['prefix' => 'gifts', 'controller' => GiftController::class], function () {

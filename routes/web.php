@@ -11,6 +11,12 @@ use Illuminate\Support\Facades\Route;
 
 require __DIR__.'/auth.php';*/
 
+// http://localhost:8000/codes/rebuild
+/*Route::get('codes/rebuild', function () {
+    Code::rebuild(0, 0);
+});*/
+
+
 Route::get('body_parameters', function (Request $request) {
     $table = $request->input('table');
     $result = DB::select(" SELECT COLUMN_NAME, COLUMN_COMMENT FROM information_schema.columns

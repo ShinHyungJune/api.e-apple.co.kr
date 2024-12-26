@@ -27,7 +27,7 @@ class OrderController extends ApiController
      */
     public function index(Request $request)
     {
-        $items = Order::with(['orderProducts'])->mine($request)->latest()->paginate($request->get('take', 10));
+        $items = Order::with(['orderProducts.product'])->mine($request)->latest()->paginate($request->get('take', 10));
         return OrderResource::collection($items);
     }
 

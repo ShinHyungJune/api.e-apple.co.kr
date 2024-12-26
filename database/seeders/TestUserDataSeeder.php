@@ -42,5 +42,10 @@ class TestUserDataSeeder extends Seeder
             ->state(['user_id' => $user->id, 'status' => OrderStatus::PURCHASE_CONFIRM])
             ->create();
 
+        //상태별로 데이터 입력
+        foreach (OrderStatus::values() as $status) {
+            Order::factory()->count(10)->state(['user_id' => $user->id, 'status' => $status])->create();
+        }
+
     }
 }

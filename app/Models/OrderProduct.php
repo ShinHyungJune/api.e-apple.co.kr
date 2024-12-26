@@ -48,7 +48,7 @@ class OrderProduct extends Model
     public function scopePossibleExchangeReturnStatus(Builder $query)
     {
         //if (config('env.app' === 'local')) return; //FORTEST
-        $query->where('status', OrderStatus::DELIVERY);//배송완료인 경우
+        $query->where('status', OrderStatus::DELIVERY);//배송중인 경우
     }
 
     public function exchangeReturns(): HasMany
