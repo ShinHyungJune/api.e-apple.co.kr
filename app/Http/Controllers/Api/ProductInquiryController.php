@@ -39,7 +39,7 @@ class ProductInquiryController extends ApiController
     }
 
     /**
-     * 나의 상품문의 목록
+     * 나의 상품문의 전체 목록
      * @priority 1
      * @queryParam is_answered Example: 1, 0
      * @unauthenticated
