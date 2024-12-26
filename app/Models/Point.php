@@ -67,7 +67,7 @@ class Point extends Model
         }
 
         if ($this->pointable_type === ProductReview::class) {
-            return $this->pointable->order->merchant_uid;
+            return $this->pointable?->order?->merchant_uid;
         }
     }
 }

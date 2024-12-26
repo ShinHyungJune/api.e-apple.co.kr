@@ -100,7 +100,7 @@ class ProductReviewController extends ApiController
         $productReview = ProductReview::mine()->findOrFail($id);
 
         if (!empty($data['files_remove_ids'])) {
-            Media::where([['pointable_type', get_class($productReview)], ['pointable_id', $productReview->id]])
+            Media::where([['model_type', get_class($productReview)], ['model_id', $productReview->id]])
                 ->whereIn('id', $data['files_remove_ids'])->delete();
         }
 
