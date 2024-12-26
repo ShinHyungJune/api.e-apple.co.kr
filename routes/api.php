@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\DeliveryAddressController;
 use App\Http\Controllers\Api\ExchangeReturnController;
 use App\Http\Controllers\Api\InquiryController;
 use App\Http\Controllers\Api\OrderController;
+use App\Http\Controllers\Api\OrderProductController;
 use App\Http\Controllers\Api\PointController;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\ProductInquiryController;
@@ -157,8 +158,15 @@ Route::group(['prefix' => 'orders', 'controller' => OrderController::class],
         Route::post('complete/webhook', 'paymentComplete');
         Route::put('{id}/confirm', 'confirm');
         Route::put('{id}/cancel', 'cancel');
-
     });
+
+//주문제품상세
+Route::group(['prefix' => 'order_products', 'controller' => OrderProductController::class],
+    function () {
+        Route::get('{id}', 'show');
+    });
+
+
 
 //주문상품 교환반품
 Route::group(['prefix' => 'exchange_returns', 'controller' => ExchangeReturnController::class],

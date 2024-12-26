@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "25ecc65c-9cba-4fe3-a3dd-c8cf0145bcaa",
+        "_postman_id": "bd10a4b1-8100-40f4-93d3-9c1549c8bf8b",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -83,7 +83,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"guest_id\":\"occaecati\",\"product_id\":\"accusantium\",\"product_options\":[{\"product_option_id\":12,\"quantity\":8}]}"
+                            "raw": "{\"guest_id\":\"autem\",\"product_id\":\"sequi\",\"product_options\":[{\"product_option_id\":6,\"quantity\":7}]}"
                         },
                         "description": "",
                         "auth": {
@@ -111,7 +111,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "saepe",
+                                    "value": "deserunt",
                                     "description": "The ID of the cart."
                                 }
                             ]
@@ -129,7 +129,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"guest_id\":\"rerum\",\"product_id\":\"atque\",\"product_options\":[{\"product_option_id\":7,\"quantity\":12}]}"
+                            "raw": "{\"guest_id\":\"incidunt\",\"product_id\":\"magni\",\"product_options\":[{\"product_option_id\":15,\"quantity\":15}]}"
                         },
                         "description": "",
                         "auth": {
@@ -237,7 +237,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "sit",
+                                    "value": "quo",
                                     "description": "The ID of the cart."
                                 }
                             ]
@@ -286,13 +286,13 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "quo",
+                                    "value": "ad",
                                     "description": "The ID of the cart."
                                 },
                                 {
                                     "id": "option",
                                     "key": "option",
-                                    "value": "nihil",
+                                    "value": "reiciendis",
                                     "description": "The option."
                                 }
                             ]
@@ -310,7 +310,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"quantity\":76}"
+                            "raw": "{\"quantity\":16}"
                         },
                         "description": "",
                         "auth": {
@@ -338,13 +338,13 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "aperiam",
+                                    "value": "ut",
                                     "description": "The ID of the cart."
                                 },
                                 {
                                     "id": "option",
                                     "key": "option",
-                                    "value": "accusamus",
+                                    "value": "ut",
                                     "description": "The option."
                                 }
                             ]
@@ -538,7 +538,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":\"id\",\"name\":\"ngnfccpb\",\"recipient_name\":\"mqmjeq\",\"phone\":\"qcskfcelao\",\"postal_code\":\"yqrhwgkq\",\"address\":\"wzzqltkl\",\"address_detail\":\"nlvddhixmzcglkckeufodlamn\",\"delivery_request\":\"in\",\"is_default\":false}"
+                            "raw": "{\"user_id\":\"qui\",\"name\":\"vxjeryrjngpyykydxsgnlmq\",\"recipient_name\":\"sjywpkqk\",\"phone\":\"xcdiv\",\"postal_code\":\"porjkhtiq\",\"address\":\"ohodzezgtszyspwgbqabi\",\"address_detail\":\"vzozmobmqrcqyt\",\"delivery_request\":\"beatae\",\"is_default\":true}"
                         },
                         "description": ""
                     },
@@ -621,7 +621,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":\"enim\",\"name\":\"mstxlrshcqjpsr\",\"recipient_name\":\"qzjhn\",\"phone\":\"caskulzzz\",\"postal_code\":\"jywpujyhbr\",\"address\":\"njgvfylypvsyjs\",\"address_detail\":\"dxukj\",\"delivery_request\":\"autem\",\"is_default\":true}"
+                            "raw": "{\"user_id\":\"nobis\",\"name\":\"ljgbcllnl\",\"recipient_name\":\"wefrbddbzeosnkabggezptco\",\"phone\":\"jrncamkcxevdj\",\"postal_code\":\"layoomkfy\",\"address\":\"exozildroqf\",\"address_detail\":\"otjzpvubz\",\"delivery_request\":\"occaecati\",\"is_default\":true}"
                         },
                         "description": ""
                     },
@@ -730,7 +730,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"order_id\":\"molestiae\",\"order_product_id\":\"suscipit\",\"type\":\"exchange\",\"change_of_mind\":\"ut\",\"delivery_issue\":\"reprehenderit\",\"product_issue\":\"labore\",\"description\":\"Rerum cupiditate sint blanditiis est suscipit dolor.\",\"status\":\"deleniti\",\"guest_id\":\"possimus\"}"
+                            "raw": "{\"order_id\":\"voluptates\",\"order_product_id\":\"at\",\"type\":\"return\",\"change_of_mind\":\"earum\",\"delivery_issue\":\"sapiente\",\"product_issue\":\"officia\",\"description\":\"Deleniti facilis culpa excepturi distinctio.\",\"status\":\"repudiandae\",\"guest_id\":\"quis\"}"
                         },
                         "description": "",
                         "auth": {
@@ -813,7 +813,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"type\":\"qui\",\"content\":\"enim\"}"
+                            "raw": "{\"type\":\"voluptatem\",\"content\":\"nulla\"}"
                         },
                         "description": ""
                     },
@@ -922,7 +922,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"status\":\"return_complete\",\"guest_id\":\"quaerat\",\"total_amount\":81,\"delivery_fee\":82,\"order_products\":[{\"product_id\":6,\"product_option_id\":2,\"quantity\":1,\"price\":76}]}"
+                            "raw": "{\"status\":\"payment_pending\",\"guest_id\":\"fuga\",\"total_amount\":80,\"delivery_fee\":89,\"order_products\":[{\"product_id\":13,\"product_option_id\":17,\"quantity\":37,\"price\":6}]}"
                         },
                         "description": "",
                         "auth": {
@@ -960,7 +960,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"cart_ids\":[],\"guest_id\":\"praesentium\"}"
+                            "raw": "{\"cart_ids\":[],\"guest_id\":\"quibusdam\"}"
                         },
                         "description": "",
                         "auth": {
@@ -998,9 +998,12 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"buyer_name\":\"blevsxmkmlmummtzvzyrnqsew\",\"merchant_uid\":\"hmvledkzpbuwpd\"}"
+                            "raw": "{\"buyer_name\":\"ldlc\",\"merchant_uid\":\"wmgxtrptvxjmisnuxmgodid\"}"
                         },
-                        "description": ""
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
                     },
                     "response": [
                         {
@@ -1023,7 +1026,7 @@
                                 {
                                     "id": "order",
                                     "key": "order",
-                                    "value": "accusantium",
+                                    "value": "a",
                                     "description": "The order."
                                 }
                             ]
@@ -1040,7 +1043,10 @@
                             }
                         ],
                         "body": null,
-                        "description": ""
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
                     },
                     "response": [
                         {
@@ -1063,7 +1069,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "dolor",
+                                    "value": "aliquid",
                                     "description": "The ID of the order."
                                 }
                             ]
@@ -1081,7 +1087,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"status\":\"return_complete\",\"guest_id\":\"quo\",\"buyer_name\":\"as\",\"buyer_phone\":\"ueeov\",\"buyer_email\":\"koss.willa@example.com\",\"buyer_postal_code\":\"kbw\",\"buyer_address\":\"y\",\"buyer_address_detail\":\"jznfwnlfgkolaasmr\",\"delivery_name\":\"vvzuldw\",\"delivery_phone\":\"bpjztlhgmekpdxqpy\",\"delivery_postal_code\":\"oztwxey\",\"delivery_address\":\"cpdn\",\"delivery_address_detail\":\"gjkryixpkzy\",\"delivery_request\":\"pariatur\",\"common_entrance_method\":\"fmymtexwvolaihjlx\",\"total_amount\":56,\"delivery_fee\":21,\"coupon_discount_amount\":17,\"use_points\":15,\"payment_amount\":44,\"merchant_uid\":\"et\",\"payment_pg\":\"dolores\",\"payment_method\":\"vbank\"}"
+                            "raw": "{\"status\":\"delivery_preparing\",\"guest_id\":\"repellat\",\"buyer_name\":\"ujafjjmtnjefc\",\"buyer_phone\":\"ajfzvwi\",\"buyer_email\":\"elsa19@example.org\",\"buyer_postal_code\":\"qvgcq\",\"buyer_address\":\"bkapekuovkey\",\"buyer_address_detail\":\"xbvuldkkcedfedercl\",\"delivery_name\":\"sixnkbthxxmxxmw\",\"delivery_phone\":\"cyw\",\"delivery_postal_code\":\"etovcaum\",\"delivery_address\":\"kmrrilwtarlqb\",\"delivery_address_detail\":\"ypdhjwseerqzgb\",\"delivery_request\":\"ullam\",\"common_entrance_method\":\"vdwnvipjsgpowmxpmdfenjkv\",\"total_amount\":7,\"delivery_fee\":21,\"coupon_discount_amount\":62,\"use_points\":0,\"payment_amount\":31,\"merchant_uid\":\"a\",\"payment_pg\":\"dolore\",\"payment_method\":\"card\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1119,7 +1125,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"imp_uid\":\"g\",\"merchant_uid\":\"joqsiqicj\"}"
+                            "raw": "{\"imp_uid\":\"fvuebxgd\",\"merchant_uid\":\"qcdivopmdjz\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1150,7 +1156,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"imp_uid\":\"ebf\",\"merchant_uid\":\"ymlihxjytjseujp\"}"
+                            "raw": "{\"imp_uid\":\"lwbnfkrvuewkxfybfokfhpk\",\"merchant_uid\":\"iebomrdpajmsow\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1171,7 +1177,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "doloremque",
+                                    "value": "autem",
                                     "description": "The ID of the order."
                                 }
                             ]
@@ -1214,7 +1220,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "ratione",
+                                    "value": "placeat",
                                     "description": "The ID of the order."
                                 }
                             ]
@@ -1238,6 +1244,49 @@
                             "header": [],
                             "code": 200,
                             "body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"\uae30\ubcf8\ud0a4\",\n        \"buyer_name\": \"\uc8fc\ubb38\uc790 \uc774\ub984\",\n        \"buyer_email\": \"\uc8fc\ubb38\uc790 \uc774\uba54\uc77c\",\n        \"buyer_phone\": \"\uc8fc\ubb38\uc790 \uc5f0\ub77d\ucc98\",\n        \"buyer_postal_code\": \"\uc8fc\ubb38\uc790 \uc6b0\ud3b8\ubc88\ud638\",\n        \"buyer_address\": \"\uc8fc\ubb38\uc790 \uc8fc\uc18c\",\n        \"buyer_address_detail\": \"\uc8fc\ubb38\uc790 \uc0c1\uc138\uc8fc\uc18c\",\n        \"delivery_name\": \"\ubc30\uc1a1\uc9c0\uba85\",\n        \"delivery_phone\": \"\ubc30\uc1a1\uc9c0 \uc5f0\ub77d\ucc98\",\n        \"delivery_postal_code\": \"\ubc30\uc1a1\uc9c0 \uc6b0\ud3b8\ubc88\ud638\",\n        \"delivery_address\": \"\ubc30\uc1a1\uc9c0 \uc8fc\uc18c\",\n        \"delivery_address_detail\": \"\ubc30\uc1a1\uc9c0 \uc0c1\uc138\uc8fc\uc18c\",\n        \"delivery_request\": \"\ubc30\uc1a1 \uc694\uccad \uc0ac\ud56d\",\n        \"common_entrance_method\": \"\uacf5\ub3d9\ud604\uad00 \ucd9c\uc785\ubc29\ubc95\",\n        \"total_amount\": \"\uc8fc\ubb38 \ucd1d\uc561\",\n        \"user_coupon_id\": \"\uc0ac\uc6a9\uc790 \ucfe0\ud3f0 \uae30\ubcf8\ud0a4\",\n        \"coupon_discount\": \"\ucfe0\ud3f0 \ud560\uc778\uc561\",\n        \"use_points\": \"\uc801\ub9bd\uae08 \uc0ac\uc6a9\uc561\",\n        \"delivery_fee\": \"\ubc30\uc1a1\ube44\",\n        \"payment_amount\": \"\ucd5c\uc885\uacb0\uc81c\uc561\",\n        \"imp_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\uc544\uc784\ud3ec\ud2b8)\",\n        \"merchant_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\ub0b4\ubd80)\",\n        \"payment_pg\": \"\uacb0\uc81c pg ex) html5_inicis\",\n        \"payment_method\": \"\uacb0\uc81c\uc218\ub2e8 ex) card, vbank\",\n        \"created_at\": \"2024-12-18T11:58:28.000000Z\",\n        \"delivery_started_at\": \"\ubc30\uc1a1 \uc2dc\uc791 \uc77c\uc2dc\",\n        \"purchase_confirmed_at\": \"\uc8fc\ubb38 \ud655\uc815 \uc77c\uc2dc\",\n        \"status\": \"\uc8fc\ubb38 \uc0c1\ud0dc\",\n        \"orderProducts\": [\n            {\n                \"quantity\": \"\uc0c1\ud488 \uc218\ub7c9\",\n                \"price\": \"\uc0c1\ud488 \uac00\uaca9\",\n                \"productOption\": {\n                    \"id\": \"\uae30\ubcf8\ud0a4\",\n                    \"name\": \"\uc635\uc158\uba85\",\n                    \"price\": \"\uac00\uaca9\",\n                    \"stock_quantity\": \"\uc7ac\uace0 \uc218\ub7c9\"\n                }\n            }\n        ]\n    },\n    \"message\": \"\uc131\uacf5\uc801\uc73c\ub85c \ucc98\ub9ac\ub418\uc5c8\uc2b5\ub2c8\ub2e4.\"\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "\uc8fc\ubb38\uc0c1\ud488\uc0c1\uc138",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/order_products\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/order_products\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "eum",
+                                    "description": "The ID of the order product."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"\uae30\ubcf8\ud0a4\",\n        \"quantity\": \"\uc0c1\ud488 \uc218\ub7c9\",\n        \"price\": \"\uc0c1\ud488 \uac00\uaca9\",\n        \"stauts\": \"\uad6c\ub9e4\ud655\uc815\",\n        \"product\": {\n            \"id\": \"\uae30\ubcf8\ud0a4\",\n            \"name\": \"\uc0c1\ud488\uba85\",\n            \"description\": \"\uc0c1\ud488\uc124\uba85\",\n            \"view_count\": \"\uc870\ud68c\uc218\",\n            \"price\": \"\uac00\uaca9\",\n            \"original_price\": \"\uc6d0\ub798 \uac00\uaca9\",\n            \"delivery_fee\": \"\ubc30\uc1a1\ube44 (\uae30\ubcf8\uac12: 0)\",\n            \"shipping_origin\": \"\ucd9c\uace0\uc9c0\",\n            \"fruit_size\": \"\uacfc\uc77c \ud06c\uae30\",\n            \"sugar_content\": \"\ub2f9\ub3c4\",\n            \"food_type\": \"\uc2dd\ud488\uc758 \uc720\ud615\",\n            \"manufacturer_and_location\": \"\uc0dd\uc0b0\uc790 \ubc0f \uc18c\uc7ac\uc9c0\",\n            \"importer\": \"\uc218\uc785\uc790\",\n            \"origin\": \"\uc6d0\uc0b0\uc9c0\",\n            \"ingredients_and_composition\": \"\uc6d0\uc7ac\ub8cc \ubc0f \ud569\ub7c9\",\n            \"storage_and_handling\": \"\ubcf4\uad00\\\/\ucde8\uae09\ubc29\ubc95\",\n            \"manufacture_date\": \"\uc81c\uc870\uc5f0\uc6d0\uc77c\",\n            \"expiration_date\": \"\uc720\ud1b5\uae30\ud55c\",\n            \"gmo_desc\": \"\uc720\uc804\uc790\ubcc0\ud615 \ub18d\uc0b0\ubb3c \uc5ec\ubd80\",\n            \"customer_service_contact\": \"\uc18c\ube44\uc790 \uc0c1\ub2f4 \ubb38\uc758\",\n            \"options\": [\n                {\n                    \"id\": \"\uae30\ubcf8\ud0a4\",\n                    \"name\": \"\uc635\uc158\uba85\",\n                    \"price\": \"\uac00\uaca9\",\n                    \"stock_quantity\": \"\uc7ac\uace0 \uc218\ub7c9\"\n                },\n                {\n                    \"id\": \"\uae30\ubcf8\ud0a4\",\n                    \"name\": \"\uc635\uc158\uba85\",\n                    \"price\": \"\uac00\uaca9\",\n                    \"stock_quantity\": \"\uc7ac\uace0 \uc218\ub7c9\"\n                }\n            ],\n            \"is_new\": \"\uc0c8\ub85c\uc6b4\uc0c1\ud488 \uc5ec\ubd80\",\n            \"is_best\": true,\n            \"average_rating\": \"\ud3c9\uade0 \ud3c9\uc810\",\n            \"reviews_count\": 61,\n            \"inquiries_count\": 0,\n            \"categories\": \"\uce74\ud14c\uace0\ub9ac\",\n            \"img\": {\n                \"id\": \"\uae30\ubcf8\ud0a4\",\n                \"name\": \"\ud30c\uc77c\uc774\ub984\",\n                \"url\": \"\uc774\ubbf8\uc9c0 URL\"\n            },\n            \"imgs\": [\n                {\n                    \"id\": \"\uae30\ubcf8\ud0a4\",\n                    \"name\": \"\ud30c\uc77c\uc774\ub984\",\n                    \"url\": \"\uc774\ubbf8\uc9c0 URL\"\n                }\n            ]\n        },\n        \"productOption\": {\n            \"id\": \"\uae30\ubcf8\ud0a4\",\n            \"name\": \"\uc635\uc158\uba85\",\n            \"price\": \"\uac00\uaca9\",\n            \"stock_quantity\": \"\uc7ac\uace0 \uc218\ub7c9\"\n        }\n    },\n    \"message\": \"\uc131\uacf5\uc801\uc73c\ub85c \ucc98\ub9ac\ub418\uc5c8\uc2b5\ub2c8\ub2e4.\"\n}\n",
                             "name": ""
                         }
                     ]
@@ -1537,7 +1586,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"product_id\":8,\"title\":\"mxnqzq\",\"content\":\"sunt\",\"is_visible\":false,\"answer\":\"et\"}"
+                            "raw": "{\"product_id\":4,\"title\":\"flhdsgrprqtciwwbrp\",\"content\":\"itaque\",\"is_visible\":true,\"answer\":\"et\"}"
                         },
                         "description": ""
                     },
@@ -1790,7 +1839,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"order_id\":\"est\",\"order_product_id\":\"magni\",\"product_id\":\"ratione\",\"product_option_id\":\"et\",\"user_id\":\"blanditiis\",\"rating\":1,\"review\":\"qui\"}"
+                            "raw": "{\"order_id\":\"dolore\",\"order_product_id\":\"dolores\",\"product_id\":\"est\",\"product_option_id\":\"consectetur\",\"user_id\":\"tenetur\",\"rating\":3,\"review\":\"magni\"}"
                         },
                         "description": ""
                     },
@@ -1815,7 +1864,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "consequatur",
+                                    "value": "eum",
                                     "description": "The ID of the product review."
                                 }
                             ]
@@ -1833,7 +1882,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"rating\":1,\"review\":\"nihil\"}"
+                            "raw": "{\"rating\":5,\"review\":\"dolores\"}"
                         },
                         "description": ""
                     },
@@ -1858,7 +1907,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "at",
+                                    "value": "eius",
                                     "description": "The ID of the product review."
                                 }
                             ]
@@ -1950,7 +1999,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"phone\":\"oxbrnzd\"}"
+                            "raw": "{\"phone\":\"xhzanlbuq\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1981,7 +2030,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"phone\":\"pozxahtoqcaaxtnkeaklyd\",\"number\":\"bgladsvppgcnoecdkmktz\"}"
+                            "raw": "{\"phone\":\"vqkododjmnvzhorru\",\"number\":\"sgcbgxkthas\"}"
                         },
                         "description": "",
                         "auth": {
@@ -2008,7 +2057,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "quia",
+                                    "value": "tempore",
                                     "description": "The ID of the board."
                                 }
                             ]
@@ -2051,7 +2100,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "nam",
+                                    "value": "dolor",
                                     "description": "The ID of the board."
                                 }
                             ]
@@ -2104,7 +2153,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"board_id\":8,\"category_id\":3,\"title\":\"explicabo\",\"content\":\"ut\"}"
+                            "raw": "{\"board_id\":10,\"category_id\":3,\"title\":\"eaque\",\"content\":\"et\"}"
                         },
                         "description": "",
                         "auth": {
@@ -2230,37 +2279,37 @@
                                     "formdata": [
                                         {
                                             "key": "name",
-                                            "value": "zbxuprrpcakgvkqrm",
+                                            "value": "esl",
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc0c1\ud488\uba85<\/span>. Must not be greater than 255 characters."
                                         },
                                         {
                                             "key": "description",
-                                            "value": "Et explicabo dolor et.",
+                                            "value": "Corporis et dolor velit.",
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc0c1\ud488\uc124\uba85<\/span>."
                                         },
                                         {
                                             "key": "price",
-                                            "value": 87,
+                                            "value": 57,
                                             "type": "text",
                                             "description": "<span class=\"point\">\uac00\uaca9<\/span>. value(\uc740)\ub294  \ucd5c\uc18c 0 \uc774\uc0c1\uc774\uc5b4\uc57c \ud569\ub2c8\ub2e4."
                                         },
                                         {
                                             "key": "original_price",
-                                            "value": 70,
+                                            "value": 8,
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc6d0\ub798\uac00\uaca9<\/span>. value(\uc740)\ub294  \ucd5c\uc18c 0 \uc774\uc0c1\uc774\uc5b4\uc57c \ud569\ub2c8\ub2e4."
                                         },
                                         {
                                             "key": "delivery_fee",
-                                            "value": 69,
+                                            "value": 28,
                                             "type": "text",
                                             "description": "<span class=\"point\">\ubc30\uc1a1\ube44<\/span>. value(\uc740)\ub294  \ucd5c\uc18c 0 \uc774\uc0c1\uc774\uc5b4\uc57c \ud569\ub2c8\ub2e4."
                                         },
                                         {
                                             "key": "stock_quantity",
-                                            "value": 39,
+                                            "value": 48,
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc7ac\uace0\uc218\ub7c9<\/span>. value(\uc740)\ub294  \ucd5c\uc18c 0 \uc774\uc0c1\uc774\uc5b4\uc57c \ud569\ub2c8\ub2e4."
                                         },
@@ -2272,91 +2321,91 @@
                                         },
                                         {
                                             "key": "food_type",
-                                            "value": "ihtcdlrvccgq",
+                                            "value": "ykjsupyxzgfzmuvlciww",
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc2dd\ud488\uc758 \uc720\ud615<\/span>. Must not be greater than 100 characters."
                                         },
                                         {
                                             "key": "fruit_size",
-                                            "value": "yh",
+                                            "value": "werpxgw",
                                             "type": "text",
                                             "description": "<span class=\"point\">\uacfc\uc77c \ud06c\uae30<\/span>. Must not be greater than 50 characters."
                                         },
                                         {
                                             "key": "sugar_content",
-                                            "value": "i",
+                                            "value": "tnppzadlrjtqadrqqcjtvmj",
                                             "type": "text",
                                             "description": "<span class=\"point\">\ub2f9\ub3c4<\/span>. Must not be greater than 50 characters."
                                         },
                                         {
                                             "key": "shipping_origin",
-                                            "value": "ryrssozfjphtuho",
+                                            "value": "xbbi",
                                             "type": "text",
                                             "description": "<span class=\"point\">\ucd9c\uace0\uc9c0<\/span>. Must not be greater than 255 characters."
                                         },
                                         {
                                             "key": "manufacturer_and_location",
-                                            "value": "skefhx",
+                                            "value": "pu",
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc0dd\uc0b0\uc790 \ubc0f \uc18c\uc7ac\uc9c0<\/span>. Must not be greater than 255 characters."
                                         },
                                         {
                                             "key": "importer",
-                                            "value": "zjuzpceplqtjeuyxox",
+                                            "value": "afespcozmuswpradv",
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc218\uc785\uc790<\/span>. Must not be greater than 255 characters."
                                         },
                                         {
                                             "key": "origin",
-                                            "value": "ceefnjppeexmnmtditsuzaw",
+                                            "value": "xwhbpdwxyfnnrmtklvxma",
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc6d0\uc0b0\uc9c0<\/span>. Must not be greater than 255 characters."
                                         },
                                         {
                                             "key": "ingredients_and_composition",
-                                            "value": "velit",
+                                            "value": "beatae",
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc6d0\uc7ac\ub8cc \ubc0f \ud569\ub7c9<\/span>."
                                         },
                                         {
                                             "key": "storage_and_handling",
-                                            "value": "bjnntpdhsywqykmip",
+                                            "value": "clhimoecgjqufonchmxmhtx",
                                             "type": "text",
                                             "description": "<span class=\"point\">\ubcf4\uad00\/\ucde8\uae09\ubc29\ubc95<\/span>. Must not be greater than 255 characters."
                                         },
                                         {
                                             "key": "manufacture_date",
-                                            "value": "2024-12-24T15:57:27",
+                                            "value": "2024-12-26T10:20:40",
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc81c\uc870\uc5f0\uc6d0\uc77c<\/span>. Must be a valid date."
                                         },
                                         {
                                             "key": "expiration_date",
-                                            "value": "2046-07-11",
+                                            "value": "2081-07-07",
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc720\ud1b5\uae30\ud55c<\/span>. Must be a valid date. value(\uc740)\ub294 <code>manufacture_date<\/code>\ubcf4\ub2e4 \uc774\ud6c4\uac70\ub098 \uac19\uc544\uc57c \ud569\ub2c8\ub2e4."
                                         },
                                         {
                                             "key": "gmo_desc",
-                                            "value": "sepxz",
+                                            "value": "arfft",
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc720\uc804\uc790\ubcc0\ud615 \ub18d\uc0b0\ubb3c\uc5ec\ubd80<\/span>. Must not be greater than 255 characters."
                                         },
                                         {
                                             "key": "customer_service_contact",
-                                            "value": "sqovhhqnwypzqd",
+                                            "value": "m",
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc18c\ube44\uc790\uc0c1\ub2f4\ubb38\uc758<\/span>. Must not be greater than 255 characters."
                                         },
                                         {
                                             "key": "options[0][name]",
-                                            "value": "rxc",
+                                            "value": "clcoqwtgyekeooguzjdawio",
                                             "type": "text",
                                             "description": ""
                                         },
                                         {
                                             "key": "options[0][price]",
-                                            "value": 68,
+                                            "value": 63,
                                             "type": "text",
                                             "description": ""
                                         },
@@ -2408,7 +2457,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"lonie.schneider@example.com\",\"password\":\"R1CN(T'1PIQ`.\"}"
+                            "raw": "{\"email\":\"cleveland.jones@example.com\",\"password\":\"n\\\\$\\\"!KnQEI\"}"
                         },
                         "description": "",
                         "auth": {
@@ -2439,7 +2488,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"gmuller@example.com\",\"password\":\"quas\",\"password_confirmation\":\"ad\",\"name\":\"ayj\",\"phone\":\"47621857835\",\"nickname\":\"tmgxi\"}"
+                            "raw": "{\"email\":\"palma06@example.org\",\"password\":\"optio\",\"password_confirmation\":\"nihil\",\"name\":\"n\",\"phone\":\"7902533312\",\"nickname\":\"rnpaurbnzndkrz\"}"
                         },
                         "description": "",
                         "auth": {
@@ -2477,7 +2526,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"phone\":\"8342787101\"}"
+                            "raw": "{\"phone\":\"85538460342\"}"
                         },
                         "description": "",
                         "auth": {
@@ -2508,7 +2557,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"shannon.streich@example.com\",\"phone\":\"95938378459\"}"
+                            "raw": "{\"email\":\"casper.rubye@example.com\",\"phone\":\"25353527820\"}"
                         },
                         "description": "",
                         "auth": {
@@ -2539,7 +2588,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"price.jacynthe@example.net\",\"phone\":\"3731176934\",\"password\":\"repellat\",\"password_confirmation\":\"autem\"}"
+                            "raw": "{\"email\":\"gnader@example.org\",\"phone\":\"70177093073\",\"password\":\"explicabo\",\"password_confirmation\":\"exercitationem\"}"
                         },
                         "description": "",
                         "auth": {
@@ -2627,7 +2676,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"current_password\":\"autem\",\"password\":\"et\",\"password_confirmation\":\"hic\"}"
+                            "raw": "{\"current_password\":\"dolores\",\"password\":\"iure\",\"password_confirmation\":\"est\"}"
                         },
                         "description": ""
                     },

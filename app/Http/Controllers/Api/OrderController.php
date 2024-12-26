@@ -235,6 +235,7 @@ class OrderController extends ApiController
 
     /**
      * 주문상세
+     * @unauthenticated
      * @responseFile storage/responses/order.json
      */
     public function show(Request $request, $id)
@@ -252,6 +253,7 @@ class OrderController extends ApiController
 
     /**
      * 비회원 주문조회
+     * @unauthenticated
      * @responseFile storage/responses/order.json
      */
     public function showGuest(Request $request)
