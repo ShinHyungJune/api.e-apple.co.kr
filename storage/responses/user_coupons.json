@@ -10,7 +10,8 @@
             "usage_limit_amount": "사용한도 금액",
             "valid_days": "발급일로부터 유효한 일수",
             "issued_until": "쿠폰 발급 종료 일시",
-            "user_coupon_id": "사용자가 발급받은 쿠폰아이디"
+            "user_coupon_id": "사용자가 발급받은 쿠폰아이디",
+            "expired_days": "쿠폰만료까지 남은 일수"
         }
     ],
     "links": {
@@ -42,7 +43,7 @@
         ],
         "path": "http:\/\/localhost:8000\/api\/user_coupons",
         "per_page": 10,
-        "to": 1,
-        "total": 1
+        "to": 3,
+        "total": 3
     }
 }

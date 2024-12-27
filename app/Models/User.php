@@ -121,7 +121,7 @@ class User extends Authenticatable implements JWTSubject
         return $this->belongsToMany(Coupon::class, 'user_coupons')
             ->withTimestamps()
             // 중간 테이블의 추가 필드를 사용하려면
-                ->withPivot(['id', 'used_at'])
+                ->withPivot(['id', 'used_at', 'expired_at'])
             // 중간 테이블 검색
                 ->wherePivot('used_at', null) // 사용하지 않은 쿠폰
                 ->wherePivot('expired_at', '>=', now()); // 만료되지 않은 쿠폰
