@@ -25,8 +25,8 @@
         "merchant_uid": "주문번호 (내부)",
         "payment_pg": "결제 pg ex) html5_inicis",
         "payment_method": "결제수단 ex) card, vbank",
-        "created_at": "2024-12-27T02:04:39.000000Z",
-        "updated_at": "2024-12-27T02:04:39.000000Z",
+        "created_at": "등록일자",
+        "updated_at": "수정일자",
         "delivery_started_at": "배송 시작 일시",
         "purchase_confirmed_at": "구매 확정 일시",
         "delivery_tracking_number": "주문배송번호",
@@ -36,6 +36,7 @@
                 "id": "기본키",
                 "quantity": "상품 수량",
                 "price": "상품 가격",
+                "updated_at": "수정일자",
                 "status": "주문 상태",
                 "productOption": {
                     "id": "기본키",

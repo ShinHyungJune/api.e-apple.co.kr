@@ -4,6 +4,7 @@
         "id": "기본키",
         "quantity": "상품 수량",
         "price": "상품 가격",
+        "updated_at": "수정일자",
         "status": "구매확정",
         "product": {
             "id": "기본키",
