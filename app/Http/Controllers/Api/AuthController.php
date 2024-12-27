@@ -118,9 +118,11 @@ class AuthController extends ApiController
     {
         $data = $request->validated();
 
-        VerifyNumber::check($data['phone']);
+        if (!empty($data['phone'])) {
+            VerifyNumber::check($data['phone']);
+        }
 
-        $user = tap(new User($data))->save();
+        $user = tap(auth()->user())->update($data);
         return $this->respondSuccessfully(UserResource::make($user));
     }
 

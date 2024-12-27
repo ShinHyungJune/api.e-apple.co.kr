@@ -5,7 +5,8 @@
         "name": "성명",
         "email": "이메일",
         "phone": "연락처",
-        "nickname": "닉네임"
+        "nickname": "닉네임",
+        "is_agree_promotion": "광고성 정보 수신 동의"
     },
     "message": "성공적으로 처리되었습니다."
 }

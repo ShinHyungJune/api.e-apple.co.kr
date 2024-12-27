@@ -59,6 +59,11 @@ class Product extends Model implements HasMedia
         if (!empty($filters['subcategory_id'])) {
             $query->whereJsonContains('subcategory_ids', (int)$filters['subcategory_id']);
         }
+
+        if (!empty($filters['keyword'])) {
+            $query->where('name', 'like', '%' . $filters['keyword'] . '%');
+        }
+
     }
 
     public function scopeSortBy(Builder $query, $orders)

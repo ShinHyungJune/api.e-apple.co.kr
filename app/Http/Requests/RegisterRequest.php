@@ -34,7 +34,8 @@ class RegisterRequest extends FormRequest
                 'password_confirmation' => ['required'],
                 'name' => ['required', 'string', 'max:255'],
                 'phone' => ['required', 'digits_between:10,11', 'unique:users'],
-                'nickname' => ['nullable', 'string', 'max:255']
+                'nickname' => ['nullable', 'string', 'max:255'],
+                'is_agree_promotion' => ['nullable', 'boolean'],
                 /*'is_agree_terms' => ['accepted'],
                 'is_agree_privacy' => ['accepted'],*/
                 //'code' => 'required|digits:6',
@@ -43,6 +44,12 @@ class RegisterRequest extends FormRequest
 
         if ($this->isMethod('PUT')) {
             $return = [
+                'id' => ['required', 'integer'/*, 'exists:users,id'*/],
+                'email' => ['required', 'string', 'email', 'unique:users,email,' . auth()->id()],
+                'name' => ['required', 'string', 'max:255'],
+                'phone' => ['nullable', 'digits_between:10,11', 'unique:users,phone,' . auth()->id()],
+                'nickname' => ['nullable', 'string', 'max:255'],
+                'is_agree_promotion' => ['nullable', 'boolean'],
             ];
 
         }
@@ -60,6 +67,7 @@ class RegisterRequest extends FormRequest
             'password_confirmation' => ['description' => '<span class="point">비밀번호확인</span>'],
             'phone' => ['description' => '<span class="point">연락처</span>'],
             'nickname' => ['description' => '<span class="point">닉네임</span>'],
+            'is_agree_promotion' => ['description' => '<span class="point">광고성 정보 수신 동의</span>'],
         ];
     }
 

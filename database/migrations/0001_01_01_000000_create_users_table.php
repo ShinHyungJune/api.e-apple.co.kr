@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('nickname')->nullable()->comment('닉네임');
             $table->unsignedInteger('points')->default(0)->comment('포인트 ');
             $table->enum('level', UserLevel::values())->default(UserLevel::GENERAL->value)->comment('등급');
+            $table->boolean('is_agree_promotion')->default(false)->comment('광고성 정보 수신 동의');
             $table->boolean('is_admin')->default(false)->comment('관리자 여부 필드');
             $table->timestamps();
             $table->softDeletes();

@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\CouponController;
 use App\Http\Controllers\Api\DeliveryAddressController;
 use App\Http\Controllers\Api\ExchangeReturnController;
 use App\Http\Controllers\Api\InquiryController;
+use App\Http\Controllers\Api\MainController;
 use App\Http\Controllers\Api\OrderController;
 use App\Http\Controllers\Api\OrderProductController;
 use App\Http\Controllers\Api\PointController;
@@ -33,6 +34,11 @@ use Illuminate\Support\Facades\Route;
     dd(ProductCategory::from('best'));
 });*/
 
+Route::group(['prefix' => 'main', 'controller' => MainController::class], function () {
+    Route::get('', 'index');
+});
+
+
 //사용자인증
 Route::group(['controller' => AuthController::class], function () {
     Route::post('login', 'login');
@@ -50,7 +56,7 @@ Route::group(['controller' => AuthController::class], function () {
     Route::group(['middleware' => 'auth:api'], function () {
         Route::post('logout', 'logout');
         Route::get('profile', 'profile');
-        //Route::put('profile', 'update');
+        Route::put('profile', 'update');
         Route::put('password', 'updatePassword');
         Route::delete('profile', 'destroy');
 
