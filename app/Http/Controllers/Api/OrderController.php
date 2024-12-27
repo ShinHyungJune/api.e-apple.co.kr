@@ -27,12 +27,15 @@ class OrderController extends ApiController
      */
     public function index(Request $request)
     {
-        $items = Order::with(['orderProducts.product'])->mine($request)->latest()->paginate($request->get('take', 10));
+        $items = Order::with(['orderProducts.product'])->mine($request)
+            ->afterPending()
+            ->latest()->paginate($request->get('take', 10));
         return OrderResource::collection($items);
     }
 
     /**
-     * 주문확정
+     * @deprecated orderProducts 별로 구매확정
+     * 구매확정
      * @priority 1
      * @unauthenticated
      * @responseFile storage/responses/order.json
@@ -47,7 +50,7 @@ class OrderController extends ApiController
             $order->syncStatusOrderProducts();
 
             //적립금
-            //if (auth()->check()) auth()->user()->depositPoint($order);
+            if (auth()->check()) auth()->user()->depositPoint($order);
 
             return $order;
         });

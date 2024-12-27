@@ -67,7 +67,7 @@ class Order extends Model
         /**
          * 배송비 확인
          */
-        if ($data['delivery_fee'] > 0) {
+        {
             $deliveryFee = $productOptions->pluck('product.delivery_fee')->filter()->max();
             if ($data['delivery_fee'] !== $deliveryFee) abort(422, '배송비를 확인해주세요.');
         }
@@ -132,7 +132,12 @@ class Order extends Model
 
     public function scopePending(Builder $query)
     {
-        $query->where('status', OrderStatus::ORDER_PENDING);//
+        $query->where('status', OrderStatus::ORDER_PENDING);
+    }
+
+    public function scopeAfterPending(Builder $query)
+    {
+        $query->whereNot('status', OrderStatus::ORDER_PENDING);
     }
 
     public function scopeDelivery(Builder $query)

@@ -15,7 +15,7 @@ class ProductOptionResource extends JsonResource
     public function toArray(Request $request): array
     {
         //return parent::toArray($request);
-        $return = $this->only('id', 'name', 'price', 'stock_quantity');
+        $return = $this->only('id', 'name', 'price', 'original_price', 'stock_quantity');
         //*
         if (config('scribe.response_file')) {
             return getScribeResponseFile($return, 'product_options');

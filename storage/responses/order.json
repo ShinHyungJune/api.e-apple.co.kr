@@ -42,6 +42,7 @@
                     "id": "기본키",
                     "name": "옵션명",
                     "price": "가격",
+                    "original_price": "원래 가격",
                     "stock_quantity": "재고 수량"
                 }
             }

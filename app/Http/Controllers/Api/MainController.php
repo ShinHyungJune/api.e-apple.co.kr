@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
+use App\Http\Resources\MainResource;
 
-class MainController extends Controller
+class MainController extends ApiController
 {
     public function index()
     {
@@ -20,6 +20,9 @@ class MainController extends Controller
             오늘의 후기
         */
 
+        $items = [];
+
+        return $this->respondSuccessfully(MainResource::make($items));
 
     }
 }

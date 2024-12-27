@@ -90,6 +90,7 @@ return new class extends Migration
             $table->foreignId('product_option_id')->comment('상품 옵션 외래키');
             $table->unsignedInteger('quantity')->default(1)->comment('상품 수량'); // 상품 수량
             $table->unsignedInteger('price')->comment('상품 가격');
+            $table->unsignedInteger('original_price')->nullable()->comment('원래 가격');
             $table->timestamps();
             $table->softDeletes();
         });

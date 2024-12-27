@@ -18,6 +18,7 @@ return new class extends Migration
                 ->comment('참조 상품 ID');
             $table->string('name')->comment('옵션명');
             $table->unsignedInteger('price')->comment('가격');
+            $table->unsignedInteger('original_price')->nullable()->comment('원래 가격');
             $table->unsignedInteger('stock_quantity')->comment('재고 수량');
             $table->timestamps();
         });

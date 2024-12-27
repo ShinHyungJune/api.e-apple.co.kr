@@ -15,6 +15,7 @@ class ProductSeeder extends Seeder
     {
         Product::factory()->count(20)->create(); // 50개의 레코드를 생성
 
+        Product::find(1)->update(['price' => 1000, 'delivery_fee' => 1000]);
         ProductOption::whereIn('id', [1, 2])->update(['price' => 1000, 'stock_quantity' => 1000]);
     }
 }

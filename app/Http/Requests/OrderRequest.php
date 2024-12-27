@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use App\Enums\IamportMethod;
 use App\Enums\OrderStatus;
+use App\Models\ProductOption;
 use Illuminate\Foundation\Http\FormRequest;
 
 class OrderRequest extends FormRequest
@@ -26,7 +27,7 @@ class OrderRequest extends FormRequest
         $return['status'] = ['required', 'in:' . implode(',', OrderStatus::values())]; // 주문상태
 
         if (auth()->check()) {
-            $return['user_id'] = ['required', 'exists:users,id'];
+            $return['user_id'] = ['required'/*, 'exists:users,id'*/];
         } else {
             $return['guest_id'] = ['required', 'string'];
         }
@@ -57,6 +58,7 @@ class OrderRequest extends FormRequest
                 ],
                 'order_products.*.quantity' => ['required', 'integer', 'min:1'],
                 'order_products.*.price' => ['required', 'integer', 'min:1'],
+                'order_products.*.original_price' => ['nullable', 'integer', 'min:1'],
             ];
         }
 
@@ -114,6 +116,29 @@ class OrderRequest extends FormRequest
 
         if ($this->isMethod('POST')) {
             $inputs['status'] = OrderStatus::ORDER_PENDING->value;
+
+            //원래가격 입력
+            $productOptionIds = array_column($this->order_products, 'product_option_id');
+            $productOptions = ProductOption::whereIn('id', $productOptionIds)->get()->keyBy('id');
+            foreach ($this->order_products as $k => $orderProduct) {
+                if (isset($productOptions[$orderProduct['product_option_id']])) {
+                    $inputs['order_products'][$k] = [
+                        ...$orderProduct,
+                        'status' => $inputs['status'],
+                        'user_id' => auth()->id() ?? null,
+                        'guest_id' => $this->guest_id ?? null,
+                        'original_price' => $productOptions[$orderProduct['product_option_id']]->original_price
+                    ];
+                } else {
+                    throw new \Illuminate\Database\Eloquent\ModelNotFoundException("ProductOption not found for ID: " . $orderProduct['product_option_id']);
+                }
+            }
+            /*$inputs['order_products'] = collect($this->order_products)->map(function ($e) use ($inputs) {
+                $e['status'] = $inputs['status'];
+                $e['user_id'] = auth()->id() ?? null;
+                $e['guest_id'] = $this->guest_id ?? null;
+                return $e;
+            })->toArray();*/
         }
         if ($this->isMethod('PUT')) {
             $inputs['status'] = OrderStatus::ORDER_COMPLETE->value;
@@ -121,12 +146,6 @@ class OrderRequest extends FormRequest
             $inputs['payment_pg'] = IamportMethod::from($this->payment_method)->pg();
         }
 
-        $inputs['order_products'] = collect($this->order_products)->map(function ($e) use ($inputs) {
-            $e['status'] = $inputs['status'];
-            $e['user_id'] = auth()->id() ?? null;
-            $e['guest_id'] = $this->guest_id ?? null;
-            return $e;
-        })->toArray();
 
         $this->merge($inputs);
     }

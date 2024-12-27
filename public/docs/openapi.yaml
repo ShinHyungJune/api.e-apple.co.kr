@@ -718,12 +718,12 @@ paths:
                 guest_id:
                   type: string
                   description: '<span class="point">비회원 아이디</span>.'
-                  example: impedit
+                  example: animi
                   nullable: false
                 product_id:
                   type: string
                   description: '<span class="point">상품 외래키</span>. The <code>id</code> of an existing record in the products table.'
-                  example: sit
+                  example: praesentium
                   nullable: false
                 product_options:
                   type: array
@@ -736,12 +736,12 @@ paths:
                       product_option_id:
                         type: integer
                         description: ''
-                        example: 7
+                        example: 10
                         nullable: false
                       quantity:
                         type: integer
                         description: 'value(은)는  최소 1 이상이어야 합니다.'
-                        example: 11
+                        example: 20
                         nullable: false
                     required:
                       - product_option_id
@@ -1029,12 +1029,12 @@ paths:
                 guest_id:
                   type: string
                   description: '<span class="point">비회원 아이디</span>.'
-                  example: soluta
+                  example: sit
                   nullable: false
                 product_id:
                   type: string
                   description: '<span class="point">상품 외래키</span>. The <code>id</code> of an existing record in the products table.'
-                  example: laudantium
+                  example: mollitia
                   nullable: false
                 product_options:
                   type: array
@@ -1047,12 +1047,12 @@ paths:
                       product_option_id:
                         type: integer
                         description: ''
-                        example: 1
+                        example: 7
                         nullable: false
                       quantity:
                         type: integer
                         description: 'value(은)는  최소 1 이상이어야 합니다.'
-                        example: 11
+                        example: 71
                         nullable: false
                     required:
                       - product_option_id
@@ -1087,7 +1087,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the cart.'
-        example: rem
+        example: aliquam
         required: true
         schema:
           type: string
@@ -1178,7 +1178,7 @@ paths:
                 quantity:
                   type: integer
                   description: '<span class="point">수량</span>. value(은)는  최소 1 이상이어야 합니다.'
-                  example: 48
+                  example: 70
                   nullable: false
               required:
                 - quantity
@@ -1208,7 +1208,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the cart.'
-        example: quaerat
+        example: quasi
         required: true
         schema:
           type: string
@@ -1216,7 +1216,7 @@ paths:
         in: path
         name: option
         description: 'The option.'
-        example: et
+        example: dicta
         required: true
         schema:
           type: string
@@ -2024,47 +2024,47 @@ paths:
                 user_id:
                   type: string
                   description: ''
-                  example: consectetur
+                  example: nesciunt
                   nullable: false
                 name:
                   type: string
                   description: '<span class="point">배송지명</span>. Must not be greater than 255 characters.'
-                  example: ngpfroyntnueu
+                  example: yvbmvostj
                   nullable: false
                 recipient_name:
                   type: string
                   description: '<span class="point">배송받을 사람 이름</span>. Must not be greater than 255 characters.'
-                  example: gmlunxpxjnib
+                  example: ryiieufat
                   nullable: false
                 phone:
                   type: string
                   description: '<span class="point">연락처</span>. Must not be greater than 20 characters.'
-                  example: olfbzfdhaxbalferzc
+                  example: dsaltxcul
                   nullable: false
                 postal_code:
                   type: string
                   description: '<span class="point">우편번호</span>. Must not be greater than 10 characters.'
-                  example: tohwmwam
+                  example: bm
                   nullable: false
                 address:
                   type: string
                   description: '<span class="point">주소</span>. Must not be greater than 255 characters.'
-                  example: zfrbzjszxxhcfj
+                  example: frysxipehyjqqpmmoedejandl
                   nullable: false
                 address_detail:
                   type: string
                   description: '<span class="point">상세주소</span>. Must not be greater than 255 characters.'
-                  example: qmxaisbllethxhkd
+                  example: yicemk
                   nullable: true
                 delivery_request:
                   type: string
                   description: '<span class="point">배송 요청 사항</span>.'
-                  example: quia
+                  example: quod
                   nullable: true
                 is_default:
                   type: boolean
                   description: '<span class="point">기본 배송지 여부</span>.'
-                  example: true
+                  example: false
                   nullable: false
               required:
                 - user_id
@@ -2212,42 +2212,42 @@ paths:
                 user_id:
                   type: string
                   description: ''
-                  example: minima
+                  example: assumenda
                   nullable: false
                 name:
                   type: string
                   description: '<span class="point">배송지명</span>. Must not be greater than 255 characters.'
-                  example: cwbfgl
+                  example: jb
                   nullable: false
                 recipient_name:
                   type: string
                   description: '<span class="point">배송받을 사람 이름</span>. Must not be greater than 255 characters.'
-                  example: duvcrudnkmfnpfthhk
+                  example: kzqvvuzwqcrlzyibz
                   nullable: false
                 phone:
                   type: string
                   description: '<span class="point">연락처</span>. Must not be greater than 20 characters.'
-                  example: eaphrxtxrmsshirts
+                  example: fsrjpelkvhfjkk
                   nullable: false
                 postal_code:
                   type: string
                   description: '<span class="point">우편번호</span>. Must not be greater than 10 characters.'
-                  example: ukkgfozxn
+                  example: cn
                   nullable: false
                 address:
                   type: string
                   description: '<span class="point">주소</span>. Must not be greater than 255 characters.'
-                  example: qbzxyutnqgfva
+                  example: jln
                   nullable: false
                 address_detail:
                   type: string
                   description: '<span class="point">상세주소</span>. Must not be greater than 255 characters.'
-                  example: vomotzqyeaxu
+                  example: qyenuuovanu
                   nullable: true
                 delivery_request:
                   type: string
                   description: '<span class="point">배송 요청 사항</span>.'
-                  example: animi
+                  example: ex
                   nullable: true
                 is_default:
                   type: boolean
@@ -2288,10 +2288,23 @@ paths:
         200:
           description: ''
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
-                example: ''
+                type: object
+                example:
+                  success: true
+                  data: []
+                  message: '성공적으로 처리되었습니다.'
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: array
+                    example: []
+                  message:
+                    type: string
+                    example: '성공적으로 처리되었습니다.'
       tags:
         - Endpoints
   /api/exchange_returns:
@@ -2775,17 +2788,17 @@ paths:
                 order_id:
                   type: string
                   description: '<span class="point">주문 기본키</span>.'
-                  example: eum
+                  example: ullam
                   nullable: false
                 order_product_id:
                   type: string
                   description: ''
-                  example: veniam
+                  example: voluptatum
                   nullable: false
                 type:
                   type: string
                   description: '<span class="point">요청 유형: exchange(교환) 또는 return(반품)</span>.'
-                  example: exchange
+                  example: return
                   nullable: false
                   enum:
                     - exchange
@@ -2793,32 +2806,32 @@ paths:
                 change_of_mind:
                   type: string
                   description: '<span class="point">단순변심 ex) 상품이 마음에 들지 않음, 더 저렴한 상품을 발견함</span>.'
-                  example: odio
+                  example: voluptatem
                   nullable: true
                 delivery_issue:
                   type: string
                   description: '<span class="point">배송문제 ex) 다른 상품이 배송됨, 배송된 장소에 박스가 분실됨, 다른 주소로 배송됨</span>.'
-                  example: nam
+                  example: autem
                   nullable: true
                 product_issue:
                   type: string
                   description: '<span class="point">상품문제 ex) 상품의 구성품/부속품이 들어있지 않음, 상품이 설명과 다름, 상품이 파손되어 배송됨, 상품 결함/기능에 이상이 있음</span>.'
-                  example: molestias
+                  example: deserunt
                   nullable: true
                 description:
                   type: string
                   description: '<span class="point">상세설명</span>.'
-                  example: 'Omnis fuga et unde reprehenderit in quam voluptas architecto.'
+                  example: 'Ea quo repudiandae inventore soluta accusantium corporis magnam.'
                   nullable: true
                 status:
                   type: string
                   description: '<span class="point">처리상태</span>.'
-                  example: sed
+                  example: magni
                   nullable: false
                 guest_id:
                   type: string
                   description: '<span class="point">비회원 아이디</span>.'
-                  example: nulla
+                  example: quas
                   nullable: false
               required:
                 - order_id
@@ -3197,12 +3210,12 @@ paths:
                 type:
                   type: string
                   description: '<span class="point">문의 구분</span>.'
-                  example: maiores
+                  example: amet
                   nullable: true
                 content:
                   type: string
                   description: '<span class="point">문의 내용</span>.'
-                  example: omnis
+                  example: natus
                   nullable: false
                 images:
                   type: object
@@ -3270,8 +3283,8 @@ paths:
                       merchant_uid: '주문번호 (내부)'
                       payment_pg: '결제 pg ex) html5_inicis'
                       payment_method: '결제수단 ex) card, vbank'
-                      created_at: '2024-12-27T02:05:08.000000Z'
-                      updated_at: '2024-12-27T02:05:08.000000Z'
+                      created_at: 등록일자
+                      updated_at: 수정일자
                       delivery_started_at: '배송 시작 일시'
                       purchase_confirmed_at: '구매 확정 일시'
                       delivery_tracking_number: 주문배송번호
@@ -3281,6 +3294,7 @@ paths:
                           id: 기본키
                           quantity: '상품 수량'
                           price: '상품 가격'
+                          updated_at: 수정일자
                           status: '주문 상태'
                           product:
                             id: 기본키
@@ -3308,17 +3322,19 @@ paths:
                                 id: 기본키
                                 name: 옵션명
                                 price: 가격
+                                original_price: '원래 가격'
                                 stock_quantity: '재고 수량'
                               -
                                 id: 기본키
                                 name: 옵션명
                                 price: 가격
+                                original_price: '원래 가격'
                                 stock_quantity: '재고 수량'
                             is_new: '새로운상품 여부'
                             is_best: false
                             average_rating: '평균 평점'
                             reviews_count: 30
-                            inquiries_count: 0
+                            inquiries_count: 1
                             categories: 카테고리
                             img:
                               id: 기본키
@@ -3333,16 +3349,17 @@ paths:
                             id: 기본키
                             name: 옵션명
                             price: 가격
+                            original_price: '원래 가격'
                             stock_quantity: '재고 수량'
                   links:
                     first: 'http://localhost:8000/api/orders?page=1'
-                    last: 'http://localhost:8000/api/orders?page=16'
+                    last: 'http://localhost:8000/api/orders?page=15'
                     prev: null
                     next: 'http://localhost:8000/api/orders?page=2'
                   meta:
                     current_page: 1
                     from: 1
-                    last_page: 16
+                    last_page: 15
                     links:
                       -
                         url: null
@@ -3393,12 +3410,12 @@ paths:
                         label: ...
                         active: false
                       -
-                        url: 'http://localhost:8000/api/orders?page=15'
-                        label: '15'
+                        url: 'http://localhost:8000/api/orders?page=14'
+                        label: '14'
                         active: false
                       -
-                        url: 'http://localhost:8000/api/orders?page=16'
-                        label: '16'
+                        url: 'http://localhost:8000/api/orders?page=15'
+                        label: '15'
                         active: false
                       -
                         url: 'http://localhost:8000/api/orders?page=2'
@@ -3407,7 +3424,7 @@ paths:
                     path: 'http://localhost:8000/api/orders'
                     per_page: 10
                     to: 10
-                    total: 156
+                    total: 146
                 properties:
                   data:
                     type: array
@@ -3437,8 +3454,8 @@ paths:
                         merchant_uid: '주문번호 (내부)'
                         payment_pg: '결제 pg ex) html5_inicis'
                         payment_method: '결제수단 ex) card, vbank'
-                        created_at: '2024-12-27T02:05:08.000000Z'
-                        updated_at: '2024-12-27T02:05:08.000000Z'
+                        created_at: 등록일자
+                        updated_at: 수정일자
                         delivery_started_at: '배송 시작 일시'
                         purchase_confirmed_at: '구매 확정 일시'
                         delivery_tracking_number: 주문배송번호
@@ -3448,6 +3465,7 @@ paths:
                             id: 기본키
                             quantity: '상품 수량'
                             price: '상품 가격'
+                            updated_at: 수정일자
                             status: '주문 상태'
                             product:
                               id: 기본키
@@ -3475,17 +3493,19 @@ paths:
                                   id: 기본키
                                   name: 옵션명
                                   price: 가격
+                                  original_price: '원래 가격'
                                   stock_quantity: '재고 수량'
                                 -
                                   id: 기본키
                                   name: 옵션명
                                   price: 가격
+                                  original_price: '원래 가격'
                                   stock_quantity: '재고 수량'
                               is_new: '새로운상품 여부'
                               is_best: false
                               average_rating: '평균 평점'
                               reviews_count: 30
-                              inquiries_count: 0
+                              inquiries_count: 1
                               categories: 카테고리
                               img:
                                 id: 기본키
@@ -3500,6 +3520,7 @@ paths:
                               id: 기본키
                               name: 옵션명
                               price: 가격
+                              original_price: '원래 가격'
                               stock_quantity: '재고 수량'
                     items:
                       type: object
@@ -3578,10 +3599,10 @@ paths:
                           example: '결제수단 ex) card, vbank'
                         created_at:
                           type: string
-                          example: '2024-12-27T02:05:08.000000Z'
+                          example: 등록일자
                         updated_at:
                           type: string
-                          example: '2024-12-27T02:05:08.000000Z'
+                          example: 수정일자
                         delivery_started_at:
                           type: string
                           example: '배송 시작 일시'
@@ -3601,6 +3622,7 @@ paths:
                               id: 기본키
                               quantity: '상품 수량'
                               price: '상품 가격'
+                              updated_at: 수정일자
                               status: '주문 상태'
                               product:
                                 id: 기본키
@@ -3628,17 +3650,19 @@ paths:
                                     id: 기본키
                                     name: 옵션명
                                     price: 가격
+                                    original_price: '원래 가격'
                                     stock_quantity: '재고 수량'
                                   -
                                     id: 기본키
                                     name: 옵션명
                                     price: 가격
+                                    original_price: '원래 가격'
                                     stock_quantity: '재고 수량'
                                 is_new: '새로운상품 여부'
                                 is_best: false
                                 average_rating: '평균 평점'
                                 reviews_count: 30
-                                inquiries_count: 0
+                                inquiries_count: 1
                                 categories: 카테고리
                                 img:
                                   id: 기본키
@@ -3653,6 +3677,7 @@ paths:
                                 id: 기본키
                                 name: 옵션명
                                 price: 가격
+                                original_price: '원래 가격'
                                 stock_quantity: '재고 수량'
                           items:
                             type: object
@@ -3666,6 +3691,9 @@ paths:
                               price:
                                 type: string
                                 example: '상품 가격'
+                              updated_at:
+                                type: string
+                                example: 수정일자
                               status:
                                 type: string
                                 example: '주문 상태'
@@ -3735,11 +3763,11 @@ paths:
                                   options:
                                     type: array
                                     example:
-                                      - { id: 기본키, name: 옵션명, price: 가격, stock_quantity: '재고 수량' }
-                                      - { id: 기본키, name: 옵션명, price: 가격, stock_quantity: '재고 수량' }
+                                      - { id: 기본키, name: 옵션명, price: 가격, original_price: '원래 가격', stock_quantity: '재고 수량' }
+                                      - { id: 기본키, name: 옵션명, price: 가격, original_price: '원래 가격', stock_quantity: '재고 수량' }
                                     items:
                                       type: object
-                                      properties: { id: { type: string, example: 기본키 }, name: { type: string, example: 옵션명 }, price: { type: string, example: 가격 }, stock_quantity: { type: string, example: '재고 수량' } }
+                                      properties: { id: { type: string, example: 기본키 }, name: { type: string, example: 옵션명 }, price: { type: string, example: 가격 }, original_price: { type: string, example: '원래 가격' }, stock_quantity: { type: string, example: '재고 수량' } }
                                   is_new:
                                     type: string
                                     example: '새로운상품 여부'
@@ -3754,7 +3782,7 @@ paths:
                                     example: 30
                                   inquiries_count:
                                     type: integer
-                                    example: 0
+                                    example: 1
                                   categories:
                                     type: string
                                     example: 카테고리
@@ -3783,6 +3811,9 @@ paths:
                                   price:
                                     type: string
                                     example: 가격
+                                  original_price:
+                                    type: string
+                                    example: '원래 가격'
                                   stock_quantity:
                                     type: string
                                     example: '재고 수량'
@@ -3794,7 +3825,7 @@ paths:
                         example: 'http://localhost:8000/api/orders?page=1'
                       last:
                         type: string
-                        example: 'http://localhost:8000/api/orders?page=16'
+                        example: 'http://localhost:8000/api/orders?page=15'
                       prev:
                         type: string
                         example: null
@@ -3812,7 +3843,7 @@ paths:
                         example: 1
                       last_page:
                         type: integer
-                        example: 16
+                        example: 15
                       links:
                         type: array
                         example:
@@ -3865,12 +3896,12 @@ paths:
                             label: ...
                             active: false
                           -
-                            url: 'http://localhost:8000/api/orders?page=15'
-                            label: '15'
+                            url: 'http://localhost:8000/api/orders?page=14'
+                            label: '14'
                             active: false
                           -
-                            url: 'http://localhost:8000/api/orders?page=16'
-                            label: '16'
+                            url: 'http://localhost:8000/api/orders?page=15'
+                            label: '15'
                             active: false
                           -
                             url: 'http://localhost:8000/api/orders?page=2'
@@ -3899,7 +3930,7 @@ paths:
                         example: 10
                       total:
                         type: integer
-                        example: 156
+                        example: 146
       tags:
         - Order(주문)
       security: []
@@ -3942,8 +3973,8 @@ paths:
                     merchant_uid: '주문번호 (내부)'
                     payment_pg: '결제 pg ex) html5_inicis'
                     payment_method: '결제수단 ex) card, vbank'
-                    created_at: '2024-12-27T02:04:39.000000Z'
-                    updated_at: '2024-12-27T02:04:39.000000Z'
+                    created_at: 등록일자
+                    updated_at: 수정일자
                     delivery_started_at: '배송 시작 일시'
                     purchase_confirmed_at: '구매 확정 일시'
                     delivery_tracking_number: 주문배송번호
@@ -3953,11 +3984,13 @@ paths:
                         id: 기본키
                         quantity: '상품 수량'
                         price: '상품 가격'
+                        updated_at: 수정일자
                         status: '주문 상태'
                         productOption:
                           id: 기본키
                           name: 옵션명
                           price: 가격
+                          original_price: '원래 가격'
                           stock_quantity: '재고 수량'
                   message: '성공적으로 처리되었습니다.'
                 properties:
@@ -4041,10 +4074,10 @@ paths:
                         example: '결제수단 ex) card, vbank'
                       created_at:
                         type: string
-                        example: '2024-12-27T02:04:39.000000Z'
+                        example: 등록일자
                       updated_at:
                         type: string
-                        example: '2024-12-27T02:04:39.000000Z'
+                        example: 수정일자
                       delivery_started_at:
                         type: string
                         example: '배송 시작 일시'
@@ -4064,11 +4097,13 @@ paths:
                             id: 기본키
                             quantity: '상품 수량'
                             price: '상품 가격'
+                            updated_at: 수정일자
                             status: '주문 상태'
                             productOption:
                               id: 기본키
                               name: 옵션명
                               price: 가격
+                              original_price: '원래 가격'
                               stock_quantity: '재고 수량'
                         items:
                           type: object
@@ -4082,6 +4117,9 @@ paths:
                             price:
                               type: string
                               example: '상품 가격'
+                            updated_at:
+                              type: string
+                              example: 수정일자
                             status:
                               type: string
                               example: '주문 상태'
@@ -4097,6 +4135,9 @@ paths:
                                 price:
                                   type: string
                                   example: 가격
+                                original_price:
+                                  type: string
+                                  example: '원래 가격'
                                 stock_quantity:
                                   type: string
                                   example: '재고 수량'
@@ -4115,7 +4156,7 @@ paths:
                 status:
                   type: string
                   description: '<span class="point">주문 상태</span>.'
-                  example: cancellation_complete
+                  example: order_pending
                   nullable: false
                   enum:
                     - order_pending
@@ -4135,17 +4176,17 @@ paths:
                 guest_id:
                   type: string
                   description: '<span class="point">비회원 아이디</span>.'
-                  example: dolorum
+                  example: aut
                   nullable: false
                 total_amount:
                   type: integer
                   description: '<span class="point">주문 총액</span>. value(은)는  최소 0 이상이어야 합니다.'
-                  example: 48
+                  example: 16
                   nullable: false
                 delivery_fee:
                   type: integer
                   description: '<span class="point">배송비</span>. value(은)는  최소 0 이상이어야 합니다.'
-                  example: 79
+                  example: 74
                   nullable: true
                 order_products:
                   type: array
@@ -4168,23 +4209,28 @@ paths:
                       product_id:
                         type: integer
                         description: '<span class="point">주문상품 아이디</span>.'
-                        example: 1
+                        example: 6
                         nullable: false
                       product_option_id:
                         type: integer
                         description: '<span class="point">주문상품 옵션 아이디</span>.'
-                        example: 2
+                        example: 7
                         nullable: false
                       quantity:
                         type: integer
                         description: '<span class="point">주문상품 수량</span>. value(은)는  최소 1 이상이어야 합니다.'
-                        example: 79
+                        example: 28
                         nullable: false
                       price:
                         type: integer
                         description: '<span class="point">주문상품 가격</span>. value(은)는  최소 1 이상이어야 합니다.'
-                        example: 88
+                        example: 71
                         nullable: false
+                      original_price:
+                        type: integer
+                        description: 'value(은)는  최소 1 이상이어야 합니다.'
+                        example: 70
+                        nullable: true
                     required:
                       - product_id
                       - product_option_id
@@ -4236,8 +4282,8 @@ paths:
                     merchant_uid: '주문번호 (내부)'
                     payment_pg: '결제 pg ex) html5_inicis'
                     payment_method: '결제수단 ex) card, vbank'
-                    created_at: '2024-12-27T02:04:39.000000Z'
-                    updated_at: '2024-12-27T02:04:39.000000Z'
+                    created_at: 등록일자
+                    updated_at: 수정일자
                     delivery_started_at: '배송 시작 일시'
                     purchase_confirmed_at: '구매 확정 일시'
                     delivery_tracking_number: 주문배송번호
@@ -4247,11 +4293,13 @@ paths:
                         id: 기본키
                         quantity: '상품 수량'
                         price: '상품 가격'
+                        updated_at: 수정일자
                         status: '주문 상태'
                         productOption:
                           id: 기본키
                           name: 옵션명
                           price: 가격
+                          original_price: '원래 가격'
                           stock_quantity: '재고 수량'
                   message: '성공적으로 처리되었습니다.'
                 properties:
@@ -4335,10 +4383,10 @@ paths:
                         example: '결제수단 ex) card, vbank'
                       created_at:
                         type: string
-                        example: '2024-12-27T02:04:39.000000Z'
+                        example: 등록일자
                       updated_at:
                         type: string
-                        example: '2024-12-27T02:04:39.000000Z'
+                        example: 수정일자
                       delivery_started_at:
                         type: string
                         example: '배송 시작 일시'
@@ -4358,11 +4406,13 @@ paths:
                             id: 기본키
                             quantity: '상품 수량'
                             price: '상품 가격'
+                            updated_at: 수정일자
                             status: '주문 상태'
                             productOption:
                               id: 기본키
                               name: 옵션명
                               price: 가격
+                              original_price: '원래 가격'
                               stock_quantity: '재고 수량'
                         items:
                           type: object
@@ -4376,6 +4426,9 @@ paths:
                             price:
                               type: string
                               example: '상품 가격'
+                            updated_at:
+                              type: string
+                              example: 수정일자
                             status:
                               type: string
                               example: '주문 상태'
@@ -4391,6 +4444,9 @@ paths:
                                 price:
                                   type: string
                                   example: 가격
+                                original_price:
+                                  type: string
+                                  example: '원래 가격'
                                 stock_quantity:
                                   type: string
                                   example: '재고 수량'
@@ -4461,8 +4517,8 @@ paths:
                     merchant_uid: '주문번호 (내부)'
                     payment_pg: '결제 pg ex) html5_inicis'
                     payment_method: '결제수단 ex) card, vbank'
-                    created_at: '2024-12-27T02:04:39.000000Z'
-                    updated_at: '2024-12-27T02:04:39.000000Z'
+                    created_at: 등록일자
+                    updated_at: 수정일자
                     delivery_started_at: '배송 시작 일시'
                     purchase_confirmed_at: '구매 확정 일시'
                     delivery_tracking_number: 주문배송번호
@@ -4472,11 +4528,13 @@ paths:
                         id: 기본키
                         quantity: '상품 수량'
                         price: '상품 가격'
+                        updated_at: 수정일자
                         status: '주문 상태'
                         productOption:
                           id: 기본키
                           name: 옵션명
                           price: 가격
+                          original_price: '원래 가격'
                           stock_quantity: '재고 수량'
                   message: '성공적으로 처리되었습니다.'
                 properties:
@@ -4560,10 +4618,10 @@ paths:
                         example: '결제수단 ex) card, vbank'
                       created_at:
                         type: string
-                        example: '2024-12-27T02:04:39.000000Z'
+                        example: 등록일자
                       updated_at:
                         type: string
-                        example: '2024-12-27T02:04:39.000000Z'
+                        example: 수정일자
                       delivery_started_at:
                         type: string
                         example: '배송 시작 일시'
@@ -4583,11 +4641,13 @@ paths:
                             id: 기본키
                             quantity: '상품 수량'
                             price: '상품 가격'
+                            updated_at: 수정일자
                             status: '주문 상태'
                             productOption:
                               id: 기본키
                               name: 옵션명
                               price: 가격
+                              original_price: '원래 가격'
                               stock_quantity: '재고 수량'
                         items:
                           type: object
@@ -4601,6 +4661,9 @@ paths:
                             price:
                               type: string
                               example: '상품 가격'
+                            updated_at:
+                              type: string
+                              example: 수정일자
                             status:
                               type: string
                               example: '주문 상태'
@@ -4616,6 +4679,9 @@ paths:
                                 price:
                                   type: string
                                   example: 가격
+                                original_price:
+                                  type: string
+                                  example: '원래 가격'
                                 stock_quantity:
                                   type: string
                                   example: '재고 수량'
@@ -4634,12 +4700,12 @@ paths:
                 buyer_name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: kcwgkhoncdgoccyjtyqgscdr
+                  example: sreronbijtjoyotabqbgqtaj
                   nullable: false
                 merchant_uid:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: xzllcvv
+                  example: beklagdlxtmovhf
                   nullable: false
               required:
                 - buyer_name
@@ -4685,8 +4751,8 @@ paths:
                     merchant_uid: '주문번호 (내부)'
                     payment_pg: '결제 pg ex) html5_inicis'
                     payment_method: '결제수단 ex) card, vbank'
-                    created_at: '2024-12-27T02:04:39.000000Z'
-                    updated_at: '2024-12-27T02:04:39.000000Z'
+                    created_at: 등록일자
+                    updated_at: 수정일자
                     delivery_started_at: '배송 시작 일시'
                     purchase_confirmed_at: '구매 확정 일시'
                     delivery_tracking_number: 주문배송번호
@@ -4696,11 +4762,13 @@ paths:
                         id: 기본키
                         quantity: '상품 수량'
                         price: '상품 가격'
+                        updated_at: 수정일자
                         status: '주문 상태'
                         productOption:
                           id: 기본키
                           name: 옵션명
                           price: 가격
+                          original_price: '원래 가격'
                           stock_quantity: '재고 수량'
                   message: '성공적으로 처리되었습니다.'
                 properties:
@@ -4784,10 +4852,10 @@ paths:
                         example: '결제수단 ex) card, vbank'
                       created_at:
                         type: string
-                        example: '2024-12-27T02:04:39.000000Z'
+                        example: 등록일자
                       updated_at:
                         type: string
-                        example: '2024-12-27T02:04:39.000000Z'
+                        example: 수정일자
                       delivery_started_at:
                         type: string
                         example: '배송 시작 일시'
@@ -4807,11 +4875,13 @@ paths:
                             id: 기본키
                             quantity: '상품 수량'
                             price: '상품 가격'
+                            updated_at: 수정일자
                             status: '주문 상태'
                             productOption:
                               id: 기본키
                               name: 옵션명
                               price: 가격
+                              original_price: '원래 가격'
                               stock_quantity: '재고 수량'
                         items:
                           type: object
@@ -4825,6 +4895,9 @@ paths:
                             price:
                               type: string
                               example: '상품 가격'
+                            updated_at:
+                              type: string
+                              example: 수정일자
                             status:
                               type: string
                               example: '주문 상태'
@@ -4840,6 +4913,9 @@ paths:
                                 price:
                                   type: string
                                   example: 가격
+                                original_price:
+                                  type: string
+                                  example: '원래 가격'
                                 stock_quantity:
                                   type: string
                                   example: '재고 수량'
@@ -4854,7 +4930,7 @@ paths:
         in: path
         name: order
         description: 'The order.'
-        example: aperiam
+        example: quas
         required: true
         schema:
           type: string
@@ -4898,8 +4974,8 @@ paths:
                     merchant_uid: '주문번호 (내부)'
                     payment_pg: '결제 pg ex) html5_inicis'
                     payment_method: '결제수단 ex) card, vbank'
-                    created_at: '2024-12-27T02:04:39.000000Z'
-                    updated_at: '2024-12-27T02:04:39.000000Z'
+                    created_at: 등록일자
+                    updated_at: 수정일자
                     delivery_started_at: '배송 시작 일시'
                     purchase_confirmed_at: '구매 확정 일시'
                     delivery_tracking_number: 주문배송번호
@@ -4909,11 +4985,13 @@ paths:
                         id: 기본키
                         quantity: '상품 수량'
                         price: '상품 가격'
+                        updated_at: 수정일자
                         status: '주문 상태'
                         productOption:
                           id: 기본키
                           name: 옵션명
                           price: 가격
+                          original_price: '원래 가격'
                           stock_quantity: '재고 수량'
                   message: '성공적으로 처리되었습니다.'
                 properties:
@@ -4997,10 +5075,10 @@ paths:
                         example: '결제수단 ex) card, vbank'
                       created_at:
                         type: string
-                        example: '2024-12-27T02:04:39.000000Z'
+                        example: 등록일자
                       updated_at:
                         type: string
-                        example: '2024-12-27T02:04:39.000000Z'
+                        example: 수정일자
                       delivery_started_at:
                         type: string
                         example: '배송 시작 일시'
@@ -5020,11 +5098,13 @@ paths:
                             id: 기본키
                             quantity: '상품 수량'
                             price: '상품 가격'
+                            updated_at: 수정일자
                             status: '주문 상태'
                             productOption:
                               id: 기본키
                               name: 옵션명
                               price: 가격
+                              original_price: '원래 가격'
                               stock_quantity: '재고 수량'
                         items:
                           type: object
@@ -5038,6 +5118,9 @@ paths:
                             price:
                               type: string
                               example: '상품 가격'
+                            updated_at:
+                              type: string
+                              example: 수정일자
                             status:
                               type: string
                               example: '주문 상태'
@@ -5053,6 +5136,9 @@ paths:
                                 price:
                                   type: string
                                   example: 가격
+                                original_price:
+                                  type: string
+                                  example: '원래 가격'
                                 stock_quantity:
                                   type: string
                                   example: '재고 수량'
@@ -5071,7 +5157,7 @@ paths:
                 status:
                   type: string
                   description: '<span class="point">주문 상태</span>.'
-                  example: cancellation_complete
+                  example: order_complete
                   nullable: false
                   enum:
                     - order_pending
@@ -5091,82 +5177,82 @@ paths:
                 guest_id:
                   type: string
                   description: '<span class="point">비회원 아이디</span>.'
-                  example: numquam
+                  example: aperiam
                   nullable: false
                 buyer_name:
                   type: string
                   description: '<span class="point">주문자 이름</span>. Must not be greater than 255 characters.'
-                  example: zsxrqpaqyhvzkviprqzolfciz
+                  example: zdosptlgfedplpchee
                   nullable: false
                 buyer_phone:
                   type: string
                   description: '<span class="point">주문자 연락처</span>. Must not be greater than 20 characters.'
-                  example: xpwpzy
+                  example: sgckruqdxaqdmvs
                   nullable: false
                 buyer_email:
                   type: string
                   description: '<span class="point">주문자 이메일</span>. value(은)는 이메일 형태여야 합니다. Must not be greater than 255 characters.'
-                  example: brigitte65@example.org
+                  example: domenick76@example.org
                   nullable: true
                 buyer_postal_code:
                   type: string
                   description: '<span class="point">주문자 우편번호</span>. Must not be greater than 10 characters.'
-                  example: vyqrlh
+                  example: tecvxp
                   nullable: true
                 buyer_address:
                   type: string
                   description: '<span class="point">주문자 주소</span>. Must not be greater than 255 characters.'
-                  example: r
+                  example: qggum
                   nullable: true
                 buyer_address_detail:
                   type: string
                   description: '<span class="point">주문자 상세주소</span>. Must not be greater than 255 characters.'
-                  example: grskysonzzmmf
+                  example: cmyzwdwhsbedu
                   nullable: true
                 delivery_name:
                   type: string
                   description: '<span class="point">배송지명</span>. Must not be greater than 255 characters.'
-                  example: zcjpnrcilzshxemtgh
+                  example: ev
                   nullable: false
                 delivery_phone:
                   type: string
                   description: '<span class="point">배송지 연락처</span>. Must not be greater than 20 characters.'
-                  example: hiacot
+                  example: nnbchcxyubcliermeez
                   nullable: false
                 delivery_postal_code:
                   type: string
                   description: '<span class="point">배송지 우편번호</span>. Must not be greater than 10 characters.'
-                  example: qrlitxqa
+                  example: bpps
                   nullable: false
                 delivery_address:
                   type: string
                   description: '<span class="point">배송지 주소</span>. Must not be greater than 255 characters.'
-                  example: omflyanq
+                  example: wxpvfnzmcuncyylimoxhtzqfd
                   nullable: false
                 delivery_address_detail:
                   type: string
                   description: '<span class="point">배송지 상세주소</span>. Must not be greater than 255 characters.'
-                  example: de
+                  example: oa
                   nullable: true
                 delivery_request:
                   type: string
                   description: '<span class="point">배송 요청 사항</span>.'
-                  example: voluptatem
+                  example: reiciendis
                   nullable: true
                 common_entrance_method:
                   type: string
                   description: '<span class="point">공동현관 출입방법</span>. Must not be greater than 255 characters.'
-                  example: xvcnfg
+                  example: sdhkobtnscoolhky
                   nullable: true
                 total_amount:
                   type: integer
                   description: '<span class="point">주문 총액</span>. value(은)는  최소 0 이상이어야 합니다.'
-                  example: 28
+                  example: 73
                   nullable: false
                 delivery_fee:
                   type: integer
                   description: '<span class="point">배송비</span>. value(은)는  최소 0 이상이어야 합니다.'
-                  example: 37
+                  example: 79
                   nullable: true
                 user_coupon_id:
                   type: string
@@ -5176,27 +5262,27 @@ paths:
                 coupon_discount_amount:
                   type: integer
                   description: 'value(은)는  최소 0 이상이어야 합니다.'
-                  example: 90
+                  example: 71
                   nullable: true
                 use_points:
                   type: integer
                   description: '<span class="point">적립금 사용액</span>. value(은)는  최소 0 이상이어야 합니다.'
-                  example: 18
+                  example: 70
                   nullable: true
                 payment_amount:
                   type: integer
                   description: '<span class="point">최종결제액</span>. value(은)는  최소 0 이상이어야 합니다.'
-                  example: 58
+                  example: 3
                   nullable: false
                 merchant_uid:
                   type: string
                   description: '<span class="point">주문번호 (내부)</span>.'
-                  example: repellat
+                  example: voluptatum
                   nullable: false
                 payment_pg:
                   type: string
                   description: '<span class="point">결제 pg ex) html5_inicis</span>.'
-                  example: amet
+                  example: quia
                   nullable: false
                 payment_method:
                   type: string
@@ -5226,7 +5312,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the order.'
-        example: magnam
+        example: sed
         required: true
         schema:
           type: string
@@ -5249,12 +5335,12 @@ paths:
                 imp_uid:
                   type: string
                   description: 'Must not be greater than 50000 characters.'
-                  example: nsegxbeetkikzsglcgi
+                  example: pogcjvpykt
                   nullable: false
                 merchant_uid:
                   type: string
                   description: 'Must not be greater than 50000 characters.'
-                  example: trdkftcpsdqcouiseqn
+                  example: nkgx
                   nullable: false
               required:
                 - imp_uid
@@ -5279,230 +5365,17 @@ paths:
                 imp_uid:
                   type: string
                   description: 'Must not be greater than 50000 characters.'
-                  example: guqsmcuvmiv
+                  example: gpzs
                   nullable: false
                 merchant_uid:
                   type: string
                   description: 'Must not be greater than 50000 characters.'
-                  example: yeuzifccumfvl
+                  example: eydrxrpknmhuartovzcnoxztv
                   nullable: false
               required:
                 - imp_uid
                 - merchant_uid
       security: []
-  '/api/orders/{id}/confirm':
-    put:
-      summary: 주문확정
-      operationId: ''
-      description: ''
-      parameters: []
-      responses:
-        200:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  success: true
-                  data:
-                    id: 기본키
-                    buyer_name: '주문자 이름'
-                    buyer_email: '주문자 이메일'
-                    buyer_phone: '주문자 연락처'
-                    buyer_postal_code: '주문자 우편번호'
-                    buyer_address: '주문자 주소'
-                    buyer_address_detail: '주문자 상세주소'
-                    delivery_name: 배송지명
-                    delivery_phone: '배송지 연락처'
-                    delivery_postal_code: '배송지 우편번호'
-                    delivery_address: '배송지 주소'
-                    delivery_address_detail: '배송지 상세주소'
-                    delivery_request: '배송 요청 사항'
-                    common_entrance_method: '공동현관 출입방법'
-                    total_amount: '주문 총액'
-                    user_coupon_id: '사용자 쿠폰 기본키'
-                    coupon_discount: '쿠폰 할인액'
-                    use_points: '적립금 사용액'
-                    delivery_fee: 배송비
-                    payment_amount: 최종결제액
-                    imp_uid: '주문번호 (아임포트)'
-                    merchant_uid: '주문번호 (내부)'
-                    payment_pg: '결제 pg ex) html5_inicis'
-                    payment_method: '결제수단 ex) card, vbank'
-                    created_at: '2024-12-27T02:04:39.000000Z'
-                    updated_at: '2024-12-27T02:04:39.000000Z'
-                    delivery_started_at: '배송 시작 일시'
-                    purchase_confirmed_at: '구매 확정 일시'
-                    delivery_tracking_number: 주문배송번호
-                    status: '주문 상태'
-                    orderProducts:
-                      -
-                        id: 기본키
-                        quantity: '상품 수량'
-                        price: '상품 가격'
-                        status: '주문 상태'
-                        productOption:
-                          id: 기본키
-                          name: 옵션명
-                          price: 가격
-                          stock_quantity: '재고 수량'
-                  message: '성공적으로 처리되었습니다.'
-                properties:
-                  success:
-                    type: boolean
-                    example: true
-                  data:
-                    type: object
-                    properties:
-                      id:
-                        type: string
-                        example: 기본키
-                      buyer_name:
-                        type: string
-                        example: '주문자 이름'
-                      buyer_email:
-                        type: string
-                        example: '주문자 이메일'
-                      buyer_phone:
-                        type: string
-                        example: '주문자 연락처'
-                      buyer_postal_code:
-                        type: string
-                        example: '주문자 우편번호'
-                      buyer_address:
-                        type: string
-                        example: '주문자 주소'
-                      buyer_address_detail:
-                        type: string
-                        example: '주문자 상세주소'
-                      delivery_name:
-                        type: string
-                        example: 배송지명
-                      delivery_phone:
-                        type: string
-                        example: '배송지 연락처'
-                      delivery_postal_code:
-                        type: string
-                        example: '배송지 우편번호'
-                      delivery_address:
-                        type: string
-                        example: '배송지 주소'
-                      delivery_address_detail:
-                        type: string
-                        example: '배송지 상세주소'
-                      delivery_request:
-                        type: string
-                        example: '배송 요청 사항'
-                      common_entrance_method:
-                        type: string
-                        example: '공동현관 출입방법'
-                      total_amount:
-                        type: string
-                        example: '주문 총액'
-                      user_coupon_id:
-                        type: string
-                        example: '사용자 쿠폰 기본키'
-                      coupon_discount:
-                        type: string
-                        example: '쿠폰 할인액'
-                      use_points:
-                        type: string
-                        example: '적립금 사용액'
-                      delivery_fee:
-                        type: string
-                        example: 배송비
-                      payment_amount:
-                        type: string
-                        example: 최종결제액
-                      imp_uid:
-                        type: string
-                        example: '주문번호 (아임포트)'
-                      merchant_uid:
-                        type: string
-                        example: '주문번호 (내부)'
-                      payment_pg:
-                        type: string
-                        example: '결제 pg ex) html5_inicis'
-                      payment_method:
-                        type: string
-                        example: '결제수단 ex) card, vbank'
-                      created_at:
-                        type: string
-                        example: '2024-12-27T02:04:39.000000Z'
-                      updated_at:
-                        type: string
-                        example: '2024-12-27T02:04:39.000000Z'
-                      delivery_started_at:
-                        type: string
-                        example: '배송 시작 일시'
-                      purchase_confirmed_at:
-                        type: string
-                        example: '구매 확정 일시'
-                      delivery_tracking_number:
-                        type: string
-                        example: 주문배송번호
-                      status:
-                        type: string
-                        example: '주문 상태'
-                      orderProducts:
-                        type: array
-                        example:
-                          -
-                            id: 기본키
-                            quantity: '상품 수량'
-                            price: '상품 가격'
-                            status: '주문 상태'
-                            productOption:
-                              id: 기본키
-                              name: 옵션명
-                              price: 가격
-                              stock_quantity: '재고 수량'
-                        items:
-                          type: object
-                          properties:
-                            id:
-                              type: string
-                              example: 기본키
-                            quantity:
-                              type: string
-                              example: '상품 수량'
-                            price:
-                              type: string
-                              example: '상품 가격'
-                            status:
-                              type: string
-                              example: '주문 상태'
-                            productOption:
-                              type: object
-                              properties:
-                                id:
-                                  type: string
-                                  example: 기본키
-                                name:
-                                  type: string
-                                  example: 옵션명
-                                price:
-                                  type: string
-                                  example: 가격
-                                stock_quantity:
-                                  type: string
-                                  example: '재고 수량'
-                  message:
-                    type: string
-                    example: '성공적으로 처리되었습니다.'
-      tags:
-        - Order(주문)
-      security: []
-    parameters:
-      -
-        in: path
-        name: id
-        description: 'The ID of the order.'
-        example: sed
-        required: true
-        schema:
-          type: string
   '/api/orders/{id}/cancel':
     put:
       summary: 주문취소(사용자)
@@ -5543,8 +5416,8 @@ paths:
                     merchant_uid: '주문번호 (내부)'
                     payment_pg: '결제 pg ex) html5_inicis'
                     payment_method: '결제수단 ex) card, vbank'
-                    created_at: '2024-12-27T02:04:39.000000Z'
-                    updated_at: '2024-12-27T02:04:39.000000Z'
+                    created_at: 등록일자
+                    updated_at: 수정일자
                     delivery_started_at: '배송 시작 일시'
                     purchase_confirmed_at: '구매 확정 일시'
                     delivery_tracking_number: 주문배송번호
@@ -5554,11 +5427,13 @@ paths:
                         id: 기본키
                         quantity: '상품 수량'
                         price: '상품 가격'
+                        updated_at: 수정일자
                         status: '주문 상태'
                         productOption:
                           id: 기본키
                           name: 옵션명
                           price: 가격
+                          original_price: '원래 가격'
                           stock_quantity: '재고 수량'
                   message: '성공적으로 처리되었습니다.'
                 properties:
@@ -5642,10 +5517,10 @@ paths:
                         example: '결제수단 ex) card, vbank'
                       created_at:
                         type: string
-                        example: '2024-12-27T02:04:39.000000Z'
+                        example: 등록일자
                       updated_at:
                         type: string
-                        example: '2024-12-27T02:04:39.000000Z'
+                        example: 수정일자
                       delivery_started_at:
                         type: string
                         example: '배송 시작 일시'
@@ -5665,11 +5540,13 @@ paths:
                             id: 기본키
                             quantity: '상품 수량'
                             price: '상품 가격'
+                            updated_at: 수정일자
                             status: '주문 상태'
                             productOption:
                               id: 기본키
                               name: 옵션명
                               price: 가격
+                              original_price: '원래 가격'
                               stock_quantity: '재고 수량'
                         items:
                           type: object
@@ -5683,6 +5560,9 @@ paths:
                             price:
                               type: string
                               example: '상품 가격'
+                            updated_at:
+                              type: string
+                              example: 수정일자
                             status:
                               type: string
                               example: '주문 상태'
@@ -5698,6 +5578,9 @@ paths:
                                 price:
                                   type: string
                                   example: 가격
+                                original_price:
+                                  type: string
+                                  example: '원래 가격'
                                 stock_quantity:
                                   type: string
                                   example: '재고 수량'
@@ -5711,7 +5594,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the order.'
-        example: tempore
+        example: nam
         required: true
         schema:
           type: string
@@ -5734,7 +5617,8 @@ paths:
                     id: 기본키
                     quantity: '상품 수량'
                     price: '상품 가격'
-                    status: 구매확정
+                    updated_at: 수정일자
+                    status: '주문 상태'
                     product:
                       id: 기본키
                       name: 상품명
@@ -5761,17 +5645,19 @@ paths:
                           id: 기본키
                           name: 옵션명
                           price: 가격
+                          original_price: '원래 가격'
                           stock_quantity: '재고 수량'
                         -
                           id: 기본키
                           name: 옵션명
                           price: 가격
+                          original_price: '원래 가격'
                           stock_quantity: '재고 수량'
                       is_new: '새로운상품 여부'
                       is_best: true
                       average_rating: '평균 평점'
-                      reviews_count: 61
-                      inquiries_count: 0
+                      reviews_count: 30
+                      inquiries_count: 1
                       categories: 카테고리
                       img:
                         id: 기본키
@@ -5786,6 +5672,7 @@ paths:
                       id: 기본키
                       name: 옵션명
                       price: 가격
+                      original_price: '원래 가격'
                       stock_quantity: '재고 수량'
                   message: '성공적으로 처리되었습니다.'
                 properties:
@@ -5804,9 +5691,12 @@ paths:
                       price:
                         type: string
                         example: '상품 가격'
+                      updated_at:
+                        type: string
+                        example: 수정일자
                       status:
                         type: string
-                        example: 구매확정
+                        example: '주문 상태'
                       product:
                         type: object
                         properties:
@@ -5877,11 +5767,13 @@ paths:
                                 id: 기본키
                                 name: 옵션명
                                 price: 가격
+                                original_price: '원래 가격'
                                 stock_quantity: '재고 수량'
                               -
                                 id: 기본키
                                 name: 옵션명
                                 price: 가격
+                                original_price: '원래 가격'
                                 stock_quantity: '재고 수량'
                             items:
                               type: object
@@ -5895,6 +5787,9 @@ paths:
                                 price:
                                   type: string
                                   example: 가격
+                                original_price:
+                                  type: string
+                                  example: '원래 가격'
                                 stock_quantity:
                                   type: string
                                   example: '재고 수량'
@@ -5909,10 +5804,10 @@ paths:
                             example: '평균 평점'
                           reviews_count:
                             type: integer
-                            example: 61
+                            example: 30
                           inquiries_count:
                             type: integer
-                            example: 0
+                            example: 1
                           categories:
                             type: string
                             example: 카테고리
@@ -5959,6 +5854,9 @@ paths:
                           price:
                             type: string
                             example: 가격
+                          original_price:
+                            type: string
+                            example: '원래 가격'
                           stock_quantity:
                             type: string
                             example: '재고 수량'
@@ -5973,7 +5871,284 @@ paths:
         in: path
         name: id
         description: 'The ID of the order product.'
-        example: aliquam
+        example: suscipit
+        required: true
+        schema:
+          type: string
+  '/api/order_products/{id}/confirm':
+    put:
+      summary: 구매확정
+      operationId: ''
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  data:
+                    id: 기본키
+                    quantity: '상품 수량'
+                    price: '상품 가격'
+                    updated_at: 수정일자
+                    status: '주문 상태'
+                    product:
+                      id: 기본키
+                      name: 상품명
+                      description: 상품설명
+                      view_count: 조회수
+                      price: 가격
+                      original_price: '원래 가격'
+                      delivery_fee: '배송비 (기본값: 0)'
+                      shipping_origin: 출고지
+                      fruit_size: '과일 크기'
+                      sugar_content: 당도
+                      food_type: '식품의 유형'
+                      manufacturer_and_location: '생산자 및 소재지'
+                      importer: 수입자
+                      origin: 원산지
+                      ingredients_and_composition: '원재료 및 합량'
+                      storage_and_handling: 보관/취급방법
+                      manufacture_date: 제조연원일
+                      expiration_date: 유통기한
+                      gmo_desc: '유전자변형 농산물 여부'
+                      customer_service_contact: '소비자 상담 문의'
+                      options:
+                        -
+                          id: 기본키
+                          name: 옵션명
+                          price: 가격
+                          original_price: '원래 가격'
+                          stock_quantity: '재고 수량'
+                        -
+                          id: 기본키
+                          name: 옵션명
+                          price: 가격
+                          original_price: '원래 가격'
+                          stock_quantity: '재고 수량'
+                      is_new: '새로운상품 여부'
+                      is_best: true
+                      average_rating: '평균 평점'
+                      reviews_count: 30
+                      inquiries_count: 1
+                      categories: 카테고리
+                      img:
+                        id: 기본키
+                        name: 파일이름
+                        url: '이미지 URL'
+                      imgs:
+                        -
+                          id: 기본키
+                          name: 파일이름
+                          url: '이미지 URL'
+                    productOption:
+                      id: 기본키
+                      name: 옵션명
+                      price: 가격
+                      original_price: '원래 가격'
+                      stock_quantity: '재고 수량'
+                  message: '성공적으로 처리되었습니다.'
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        example: 기본키
+                      quantity:
+                        type: string
+                        example: '상품 수량'
+                      price:
+                        type: string
+                        example: '상품 가격'
+                      updated_at:
+                        type: string
+                        example: 수정일자
+                      status:
+                        type: string
+                        example: '주문 상태'
+                      product:
+                        type: object
+                        properties:
+                          id:
+                            type: string
+                            example: 기본키
+                          name:
+                            type: string
+                            example: 상품명
+                          description:
+                            type: string
+                            example: 상품설명
+                          view_count:
+                            type: string
+                            example: 조회수
+                          price:
+                            type: string
+                            example: 가격
+                          original_price:
+                            type: string
+                            example: '원래 가격'
+                          delivery_fee:
+                            type: string
+                            example: '배송비 (기본값: 0)'
+                          shipping_origin:
+                            type: string
+                            example: 출고지
+                          fruit_size:
+                            type: string
+                            example: '과일 크기'
+                          sugar_content:
+                            type: string
+                            example: 당도
+                          food_type:
+                            type: string
+                            example: '식품의 유형'
+                          manufacturer_and_location:
+                            type: string
+                            example: '생산자 및 소재지'
+                          importer:
+                            type: string
+                            example: 수입자
+                          origin:
+                            type: string
+                            example: 원산지
+                          ingredients_and_composition:
+                            type: string
+                            example: '원재료 및 합량'
+                          storage_and_handling:
+                            type: string
+                            example: 보관/취급방법
+                          manufacture_date:
+                            type: string
+                            example: 제조연원일
+                          expiration_date:
+                            type: string
+                            example: 유통기한
+                          gmo_desc:
+                            type: string
+                            example: '유전자변형 농산물 여부'
+                          customer_service_contact:
+                            type: string
+                            example: '소비자 상담 문의'
+                          options:
+                            type: array
+                            example:
+                              -
+                                id: 기본키
+                                name: 옵션명
+                                price: 가격
+                                original_price: '원래 가격'
+                                stock_quantity: '재고 수량'
+                              -
+                                id: 기본키
+                                name: 옵션명
+                                price: 가격
+                                original_price: '원래 가격'
+                                stock_quantity: '재고 수량'
+                            items:
+                              type: object
+                              properties:
+                                id:
+                                  type: string
+                                  example: 기본키
+                                name:
+                                  type: string
+                                  example: 옵션명
+                                price:
+                                  type: string
+                                  example: 가격
+                                original_price:
+                                  type: string
+                                  example: '원래 가격'
+                                stock_quantity:
+                                  type: string
+                                  example: '재고 수량'
+                          is_new:
+                            type: string
+                            example: '새로운상품 여부'
+                          is_best:
+                            type: boolean
+                            example: true
+                          average_rating:
+                            type: string
+                            example: '평균 평점'
+                          reviews_count:
+                            type: integer
+                            example: 30
+                          inquiries_count:
+                            type: integer
+                            example: 1
+                          categories:
+                            type: string
+                            example: 카테고리
+                          img:
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                                example: 기본키
+                              name:
+                                type: string
+                                example: 파일이름
+                              url:
+                                type: string
+                                example: '이미지 URL'
+                          imgs:
+                            type: array
+                            example:
+                              -
+                                id: 기본키
+                                name: 파일이름
+                                url: '이미지 URL'
+                            items:
+                              type: object
+                              properties:
+                                id:
+                                  type: string
+                                  example: 기본키
+                                name:
+                                  type: string
+                                  example: 파일이름
+                                url:
+                                  type: string
+                                  example: '이미지 URL'
+                      productOption:
+                        type: object
+                        properties:
+                          id:
+                            type: string
+                            example: 기본키
+                          name:
+                            type: string
+                            example: 옵션명
+                          price:
+                            type: string
+                            example: 가격
+                          original_price:
+                            type: string
+                            example: '원래 가격'
+                          stock_quantity:
+                            type: string
+                            example: '재고 수량'
+                  message:
+                    type: string
+                    example: '성공적으로 처리되었습니다.'
+      tags:
+        - Order(주문)
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the order product.'
+        example: laborum
         required: true
         schema:
           type: string
@@ -7650,17 +7825,17 @@ paths:
                 product_id:
                   type: integer
                   description: '<span class="point">참조 상품 ID</span>. The <code>id</code> of an existing record in the products table.'
-                  example: 17
+                  example: 10
                   nullable: false
                 title:
                   type: string
                   description: '<span class="point">문의 제목</span>. Must not be greater than 255 characters.'
-                  example: zlzjhgtdjqhpqjivwzdnsxar
+                  example: mg
                   nullable: false
                 content:
                   type: string
                   description: '<span class="point">문의 내용</span>.'
-                  example: tempore
+                  example: quae
                   nullable: false
                 is_visible:
                   type: boolean
@@ -7670,7 +7845,7 @@ paths:
                 answer:
                   type: string
                   description: '<span class="point">관리자가 작성한 답변 내용</span>.'
-                  example: ipsam
+                  example: et
                   nullable: true
                 answered_at:
                   type: string
@@ -8941,37 +9116,37 @@ paths:
                 order_id:
                   type: string
                   description: ''
-                  example: molestias
+                  example: earum
                   nullable: false
                 order_product_id:
                   type: string
                   description: ''
-                  example: rem
+                  example: minus
                   nullable: false
                 product_id:
                   type: string
                   description: '<span class="point">참조 상품 ID</span>.'
-                  example: sunt
+                  example: dolore
                   nullable: false
                 product_option_id:
                   type: string
                   description: 'The <code>id</code> of an existing record in the product_options table.'
-                  example: debitis
+                  example: sunt
                   nullable: false
                 user_id:
                   type: string
                   description: '<span class="point">후기 작성 사용자 ID</span>.'
-                  example: voluptate
+                  example: earum
                   nullable: false
                 rating:
                   type: integer
                   description: '<span class="point">평점 (1~5)</span>. value(은)는  최소 1 이상이어야 합니다. value (은)는 5를 초과할 수 없습니다.'
-                  example: 4
+                  example: 1
                   nullable: false
                 review:
                   type: string
                   description: '<span class="point">후기 내용</span>.'
-                  example: adipisci
+                  example: dolor
                   nullable: false
                 images:
                   type: object
@@ -9094,12 +9269,12 @@ paths:
                 rating:
                   type: integer
                   description: '<span class="point">평점 (1~5)</span>. value(은)는  최소 1 이상이어야 합니다. value (은)는 5를 초과할 수 없습니다.'
-                  example: 2
+                  example: 4
                   nullable: false
                 review:
                   type: string
                   description: '<span class="point">후기 내용</span>.'
-                  example: exercitationem
+                  example: et
                   nullable: false
                 images:
                   type: object
@@ -9129,7 +9304,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the product review.'
-        example: rerum
+        example: voluptas
         required: true
         schema:
           type: string
@@ -9259,7 +9434,7 @@ paths:
                 phone:
                   type: string
                   description: "<span class='point'>연락처</span>. Must not be greater than 500 characters."
-                  example: kmylwzyesb
+                  example: pem
                   nullable: false
               required:
                 - phone
@@ -9282,12 +9457,12 @@ paths:
                 phone:
                   type: string
                   description: "<span class='point'>연락처</span>. Must not be greater than 500 characters."
-                  example: uqiabtjaxsxodyhxaheahsjsr
+                  example: bvbbdgailydioz
                   nullable: false
                 number:
                   type: string
                   description: "<span class='point'>인증번호</span>. Must not be greater than 500 characters."
-                  example: kksfyxl
+                  example: enndztyobi
                   nullable: false
               required:
                 - phone
@@ -9351,7 +9526,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the board.'
-        example: et
+        example: aut
         required: true
         schema:
           type: string
@@ -9639,7 +9814,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the board.'
-        example: facilis
+        example: error
         required: true
         schema:
           type: string
@@ -9851,22 +10026,22 @@ paths:
                 board_id:
                   type: integer
                   description: '<span class="point">board 기본키</span>. The <code>id</code> of an existing record in the boards table.'
-                  example: 1
+                  example: 14
                   nullable: false
                 category_id:
                   type: integer
                   description: '<span class="point">카테고리 기본키</span>.'
-                  example: 2
+                  example: 1
                   nullable: true
                 title:
                   type: string
                   description: '<span class="point">제목</span>.'
-                  example: eum
+                  example: voluptas
                   nullable: false
                 content:
                   type: string
                   description: '<span class="point">내용</span>.'
-                  example: assumenda
+                  example: vitae
                   nullable: false
                 files:
                   type: object
@@ -10719,12 +10894,12 @@ paths:
                 name:
                   type: string
                   description: '<span class="point">상품명</span>. Must not be greater than 255 characters.'
-                  example: zcsjzqbspocjjfogaqya
+                  example: tgdtwxpdxevmiicox
                   nullable: false
                 description:
                   type: string
                   description: '<span class="point">상품설명</span>.'
-                  example: 'Quam sequi et et consequatur eveniet.'
+                  example: 'Eveniet inventore modi aliquid distinctio ipsa dolor.'
                   nullable: true
                 options:
                   type: array
@@ -10743,12 +10918,12 @@ paths:
                       name:
                         type: string
                         description: 'Must not be greater than 255 characters.'
-                        example: gbzznqptseouney
+                        example: iezqszmifhcdrugtakhhb
                         nullable: true
                       price:
                         type: number
                         description: 'value(은)는  최소 0 이상이어야 합니다.'
-                        example: 71
+                        example: 12
                         nullable: true
                 product_images:
                   type: array
@@ -10760,22 +10935,22 @@ paths:
                 price:
                   type: number
                   description: '<span class="point">가격</span>. value(은)는  최소 0 이상이어야 합니다.'
-                  example: 17
+                  example: 12
                   nullable: false
                 original_price:
                   type: number
                   description: '<span class="point">원래가격</span>. value(은)는  최소 0 이상이어야 합니다.'
-                  example: 34
+                  example: 52
                   nullable: true
                 delivery_fee:
                   type: number
                   description: '<span class="point">배송비</span>. value(은)는  최소 0 이상이어야 합니다.'
-                  example: 52
+                  example: 89
                   nullable: false
                 stock_quantity:
                   type: integer
                   description: '<span class="point">재고수량</span>. value(은)는  최소 0 이상이어야 합니다.'
-                  example: 52
+                  example: 39
                   nullable: false
                 categories:
                   type: object
@@ -10786,7 +10961,7 @@ paths:
                 is_md_suggestion_gift:
                   type: boolean
                   description: '<span class="point">MD 추천 선물</span>.'
-                  example: true
+                  example: false
                   nullable: true
                 tags:
                   type: object
@@ -10797,67 +10972,67 @@ paths:
                 food_type:
                   type: string
                   description: '<span class="point">식품의 유형</span>. Must not be greater than 100 characters.'
-                  example: gsiu
+                  example: duqvcomcwupdi
                   nullable: true
                 fruit_size:
                   type: string
                   description: '<span class="point">과일 크기</span>. Must not be greater than 50 characters.'
-                  example: tbbflnwfoessovhmlg
+                  example: ssdjnizpmungawalfwwcbveu
                   nullable: true
                 sugar_content:
                   type: string
                   description: '<span class="point">당도</span>. Must not be greater than 50 characters.'
-                  example: geyxkoxfmxesiyexzzgbyifze
+                  example: rxnhko
                   nullable: true
                 shipping_origin:
                   type: string
                   description: '<span class="point">출고지</span>. Must not be greater than 255 characters.'
-                  example: dedsbsmdnzfojnkdboxf
+                  example: ndljyz
                   nullable: true
                 manufacturer_and_location:
                   type: string
                   description: '<span class="point">생산자 및 소재지</span>. Must not be greater than 255 characters.'
-                  example: psjvpkmsqsecpsliwinnhu
+                  example: ijbyxjqlh
                   nullable: true
                 importer:
                   type: string
                   description: '<span class="point">수입자</span>. Must not be greater than 255 characters.'
-                  example: gqqyhkghglpquov
+                  example: fwrqm
                   nullable: true
                 origin:
                   type: string
                   description: '<span class="point">원산지</span>. Must not be greater than 255 characters.'
-                  example: kowoihlcee
+                  example: e
                   nullable: true
                 ingredients_and_composition:
                   type: string
                   description: '<span class="point">원재료 및 합량</span>.'
-                  example: voluptatem
+                  example: quaerat
                   nullable: true
                 storage_and_handling:
                   type: string
                   description: '<span class="point">보관/취급방법</span>. Must not be greater than 255 characters.'
-                  example: qzzqxth
+                  example: luegxwkaddvajnpdns
                   nullable: true
                 manufacture_date:
                   type: string
                   description: '<span class="point">제조연원일</span>. Must be a valid date.'
-                  example: '2024-12-27T11:08:14'
+                  example: '2024-12-27T16:31:02'
                   nullable: true
                 expiration_date:
                   type: string
                   description: '<span class="point">유통기한</span>. Must be a valid date. value(은)는 <code>manufacture_date</code>보다 이후거나 같아야 합니다.'
-                  example: '2066-06-18'
+                  example: '2068-03-03'
                   nullable: true
                 gmo_desc:
                   type: string
                   description: '<span class="point">유전자변형 농산물여부</span>. Must not be greater than 255 characters.'
-                  example: hevlylwckk
+                  example: z
                   nullable: true
                 customer_service_contact:
                   type: string
                   description: '<span class="point">소비자상담문의</span>. Must not be greater than 255 characters.'
-                  example: cni
+                  example: anzhpndcwfhmalnhvs
                   nullable: true
               required:
                 - name
@@ -10883,12 +11058,12 @@ paths:
                 email:
                   type: string
                   description: '<span class="point">아이디</span>. value(은)는 이메일 형태여야 합니다. Must not be greater than 255 characters.'
-                  example: fkilback@example.com
+                  example: dabernathy@example.org
                   nullable: false
                 password:
                   type: string
                   description: '<span class="point">비밀번호</span>.'
-                  example: 'We[Ob_=G'
+                  example: 'n@mj"2LYFU+ZxYN=n'
                   nullable: false
               required:
                 - email
@@ -10957,32 +11132,32 @@ paths:
                 email:
                   type: string
                   description: '<span class="point">이메일</span>. value(은)는 이메일 형태여야 합니다.'
-                  example: weissnat.jackie@example.net
+                  example: fgerhold@example.com
                   nullable: false
                 password:
                   type: string
                   description: '<span class="point">비밀번호</span>.'
-                  example: soluta
+                  example: natus
                   nullable: false
                 password_confirmation:
                   type: string
                   description: '<span class="point">비밀번호확인</span>.'
-                  example: cupiditate
+                  example: libero
                   nullable: false
                 name:
                   type: string
                   description: '<span class="point">성명</span>. Must not be greater than 255 characters.'
-                  example: swmqksdycoxvnbwzta
+                  example: bbwwjslfela
                   nullable: false
                 phone:
                   type: string
                   description: '<span class="point">연락처</span>. Must be between 10 and 11 digits.'
-                  example: '3704904648'
+                  example: '5102604610'
                   nullable: false
                 nickname:
                   type: string
                   description: '<span class="point">닉네임</span>. Must not be greater than 255 characters.'
-                  example: ufhrscjgtzw
+                  example: m
                   nullable: true
                 is_agree_promotion:
                   type: boolean
@@ -11015,7 +11190,7 @@ paths:
                 phone:
                   type: string
                   description: 'Must be between 10 and 11 digits.'
-                  example: '47013633668'
+                  example: '39284427004'
                   nullable: false
               required:
                 - phone
@@ -11039,12 +11214,12 @@ paths:
                 email:
                   type: string
                   description: 'value(은)는 이메일 형태여야 합니다.'
-                  example: iyundt@example.net
+                  example: macejkovic.cecile@example.net
                   nullable: false
                 phone:
                   type: string
                   description: 'Must be between 10 and 11 digits.'
-                  example: '27667506810'
+                  example: '6741615792'
                   nullable: false
               required:
                 - email
@@ -11069,22 +11244,22 @@ paths:
                 email:
                   type: string
                   description: 'value(은)는 이메일 형태여야 합니다.'
-                  example: mohammad.dickinson@example.net
+                  example: ankunding.desmond@example.org
                   nullable: false
                 phone:
                   type: string
                   description: 'Must be between 10 and 11 digits.'
-                  example: '76041242376'
+                  example: '75096898248'
                   nullable: false
                 password:
                   type: string
                   description: ''
-                  example: occaecati
+                  example: dolorem
                   nullable: false
                 password_confirmation:
                   type: string
                   description: ''
-                  example: autem
+                  example: iure
                   nullable: false
               required:
                 - email
@@ -11236,32 +11411,32 @@ paths:
                 id:
                   type: integer
                   description: '<span class="point">기본키</span>.'
-                  example: 3
+                  example: 18
                   nullable: false
                 email:
                   type: string
                   description: '<span class="point">이메일</span>. value(은)는 이메일 형태여야 합니다.'
-                  example: alena90@example.net
+                  example: jamir.purdy@example.net
                   nullable: false
                 name:
                   type: string
                   description: '<span class="point">성명</span>. Must not be greater than 255 characters.'
-                  example: gys
+                  example: ipzvnvyhu
                   nullable: false
                 phone:
                   type: string
                   description: '<span class="point">연락처</span>. Must be between 10 and 11 digits.'
-                  example: '16928383183'
+                  example: '45403474928'
                   nullable: true
                 nickname:
                   type: string
                   description: '<span class="point">닉네임</span>. Must not be greater than 255 characters.'
-                  example: oiymgqyuaqcgzcmun
+                  example: mkhifxycnwupbtoxxafdq
                   nullable: true
                 is_agree_promotion:
                   type: boolean
                   description: '<span class="point">광고성 정보 수신 동의</span>.'
-                  example: false
+                  example: true
                   nullable: true
               required:
                 - id
@@ -11338,17 +11513,17 @@ paths:
                 current_password:
                   type: string
                   description: ''
-                  example: commodi
+                  example: accusantium
                   nullable: false
                 password:
                   type: string
                   description: ''
-                  example: esse
+                  example: voluptatem
                   nullable: false
                 password_confirmation:
                   type: string
                   description: ''
-                  example: mollitia
+                  example: saepe
                   nullable: false
               required:
                 - current_password

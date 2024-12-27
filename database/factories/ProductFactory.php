@@ -21,13 +21,13 @@ class ProductFactory extends Factory
     {
         $category = collect(Code::getItems(Code::PRODUCT_CATEGORY_ID, false))->random();
         $subcategory = (empty($category['items'])) ? null : collect($category['items'])->random();
-
+        $price = $this->faker->randomFloat(2, 1000, 50000);
         return [
             'name' => $this->faker->words(10, true),
             'description' => $this->faker->paragraph,
             'view_count' => $this->faker->numberBetween(0, 10000),
-            'price' => $this->faker->randomFloat(2, 1000, 50000),
-            'original_price' => $this->faker->randomFloat(2, 5000, 60000),
+            'price' => $price,
+            'original_price' => $price * $this->faker->randomFloat(1, 1.1, 1.9),
             'delivery_fee' => $this->faker->randomFloat(2, 0, 5000),
             'stock_quantity' => $this->faker->numberBetween(0, 1000),
             'categories' => collect(ProductCategory::cases())
@@ -70,16 +70,22 @@ class ProductFactory extends Factory
             /*$product->addMediaFromUrl($url) // 예제 이미지 URL
             ->toMediaCollection(Product::DESC_IMAGES);*/
 
+
+            $price1 = $this->faker->randomFloat(2, 1000, 50000);
+            $price2 = $this->faker->randomFloat(2, 1000, 50000);
+
             $product->options()->createMany(
                 [
                     [
                         'name' => $this->faker->words(10, true),
-                        'price' => $this->faker->randomFloat(2, 1000, 50000),
+                        'price' => $price1,
+                        'original_price' => $price1 * $this->faker->randomFloat(1, 1.1, 1.9),
                         'stock_quantity' => $this->faker->numberBetween(0, 1000),
                     ],
                     [
                         'name' => $this->faker->words(10, true),
-                        'price' => $this->faker->randomFloat(2, 1000, 50000),
+                        'price' => $price2,
+                        'original_price' => $price2 * $this->faker->randomFloat(1, 1.1, 1.9),
                         'stock_quantity' => $this->faker->numberBetween(0, 1000),
                     ]
                 ]

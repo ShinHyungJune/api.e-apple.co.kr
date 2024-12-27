@@ -5,7 +5,7 @@
         "quantity": "상품 수량",
         "price": "상품 가격",
         "updated_at": "수정일자",
-        "status": "구매확정",
+        "status": "주문 상태",
         "product": {
             "id": "기본키",
             "name": "상품명",
@@ -32,20 +32,22 @@
                     "id": "기본키",
                     "name": "옵션명",
                     "price": "가격",
+                    "original_price": "원래 가격",
                     "stock_quantity": "재고 수량"
                 },
                 {
                     "id": "기본키",
                     "name": "옵션명",
                     "price": "가격",
+                    "original_price": "원래 가격",
                     "stock_quantity": "재고 수량"
                 }
             ],
             "is_new": "새로운상품 여부",
             "is_best": true,
             "average_rating": "평균 평점",
-            "reviews_count": 61,
-            "inquiries_count": 0,
+            "reviews_count": 30,
+            "inquiries_count": 1,
             "categories": "카테고리",
             "img": {
                 "id": "기본키",
@@ -64,6 +66,7 @@
             "id": "기본키",
             "name": "옵션명",
             "price": "가격",
+            "original_price": "원래 가격",
             "stock_quantity": "재고 수량"
         }
     },

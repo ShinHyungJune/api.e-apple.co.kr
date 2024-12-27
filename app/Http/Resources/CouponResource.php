@@ -25,6 +25,7 @@ class CouponResource extends JsonResource
         //*
         if (config('scribe.response_file')) {
             $comments = [
+                'human_issued_until' => '',
                 'is_downloaded' => '다운로드 여부'
             ];
             return getScribeResponseFile($return, 'coupons', $comments);
