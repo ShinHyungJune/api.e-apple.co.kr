@@ -25,8 +25,7 @@ class OrderProductResource extends JsonResource
 
         //*
         if (config('scribe.response_file')) {
-            $comments = [
-            ];
+            $comments = [ 'created_at'=>'등록일자', 'updated_at'=>'수정일자' ];
             return getScribeResponseFile($return, 'order_products', $comments);
         }
         //*/
