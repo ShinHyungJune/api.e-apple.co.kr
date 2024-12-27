@@ -61,7 +61,13 @@ class ProductReviewController extends ApiController
     public function store(ProductReviewRequest $request)
     {
         $data = $request->validated();
-        $availableProductReview = auth()->user()->availableProductReviews()->findOrFail($data['order_product_id']);
+        $availableProductReview = auth()->user()->availableProductReviews()->find($data['order_product_id']);
+        if (empty($availableProductReview)) {
+            if (auth()->user()->productReviews()->find($data['order_product_id'])->count()) {
+                abort(409, '이미 등록된 리뷰입니다.');
+            }
+            abort(404, '등록 가능한 리뷰가 없습니다.');
+        }
         $productReview = $availableProductReview->review()->create($data);
         //$productReview = auth()->user()->productReviews()->create($data);
         if ($request->file(ProductReview::IMAGES)) {
