@@ -81,6 +81,8 @@ return new class extends Migration
         Schema::create('order_products', function (Blueprint $table) {
             $table->id()->comment('기본키');
             $table->enum('status', OrderStatus::values())->default(OrderStatus::ORDER_PENDING->value)->comment('주문 상태');
+            $table->timestamp('purchase_confirmed_at')->nullable()->comment('구매 확정 일시');
+
             $table->foreignId('order_id')->constrained()->onDelete('cascade')->comment('주문 외래키');
 
             $table->foreignId('user_id')/*->constrained()->onDelete('cascade')*/ ->nullable()->comment('사용자 외래키');

@@ -41,7 +41,7 @@ class OrderProductController extends ApiController
              * 적립금 부여
              */
             //TODO
-            $orderProduct->syncStatusOrderNDepositPoint();
+            //$orderProduct->syncStatusOrderNDepositPoint();
 
             return $orderProduct;
         });
