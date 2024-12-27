@@ -51,7 +51,8 @@ class OrderFactory extends Factory
             'delivery_fee' => $this->faker->numberBetween(0, 10000),
             'payment_amount' => $this->faker->numberBetween(1000, 100000),
             'imp_uid' => $this->faker->uuid(),
-            'merchant_uid' => $this->faker->uuid(),
+            //'merchant_uid' => $this->faker->uuid(),
+            'merchant_uid' => 'ORDER20240000-' . $this->faker->numberBetween(100000, 999999),
             'payment_fail_reason' => $this->faker->optional()->sentence(),
             'is_payment_process_success' => $this->faker->boolean(),
             'is_payment_process_record' => $this->faker->boolean(),
@@ -64,7 +65,7 @@ class OrderFactory extends Factory
             'refund_bank_owner' => $this->faker->optional()->name(),
             'refund_bank_account' => $this->faker->optional()->numerify('##############'),
             'refund_reason' => $this->faker->optional()->sentence(),
-            'delivery_tracking_number' => 'ORDER20240000-' . $this->faker->numberBetween(100000, 999999),
+            'delivery_tracking_number' => $this->faker->optional()->numerify('##############'),
             'memo' => $this->faker->optional()->text(200),
         ];
     }
