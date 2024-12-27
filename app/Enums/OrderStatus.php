@@ -26,6 +26,13 @@ enum OrderStatus: string
         //주문접수, 주문완료, 결제대기중, 결제완료, 배송준비중
     ];
 
+
+    const CAN_ORDER_CANCELS = [
+        self::PAYMENT_COMPLETE, self::DELIVERY_PREPARING
+        // 결제완료, 배송준비중
+    ];
+
+
     public function label(): string
     {
         return match ($this) {
@@ -60,5 +67,11 @@ enum OrderStatus: string
     {
         return array_map(fn($case) => $case->value, self::cases());
     }
+
+    public static function getCanOrderCancelValues(): array
+    {
+        return array_map(fn($case) => $case->label(), self::CAN_ORDER_CANCELS);
+    }
+
 
 }

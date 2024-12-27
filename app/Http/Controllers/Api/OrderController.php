@@ -69,23 +69,11 @@ class OrderController extends ApiController
         $data = $request->validated();
         $data['status'] = OrderStatus::ORDER_PENDING->value;
         $cartProductOptions = CartProductOption::with(['productOption'])->mine($request)->whereIn('cart_id', $data['cart_ids'])->get();
+        if ($cartProductOptions->count() === 0) {
+            abort(404, '장바구니에 담긴 상품이 없습니다.');
+        }
 
-        $data = [
-            ...$data,
-            'total_amount' => $cartProductOptions->sum(function ($cartProductOption) {
-                return $cartProductOption->price * $cartProductOption->quantity;
-            }),
-            'delivery_fee' => $cartProductOptions->pluck('productOption.product.delivery_fee')->filter()->max(),
-            'order_products' => $cartProductOptions->map(function ($cartProductOption) {
-                return [
-                    'product_id' => $cartProductOption->productOption->product_id,
-                    'product_option_id' => $cartProductOption->productOption->id,
-                    'quantity' => $cartProductOption->quantity,
-                    'price' => $cartProductOption->productOption->price,
-                ];
-            })->toArray(),
-        ];
-
+        $data = Order::getCartsData($data, $cartProductOptions);
         Order::checkOrderProducts($data);
 
         $order = DB::transaction(function () use ($data) {
@@ -130,7 +118,8 @@ class OrderController extends ApiController
         $coupon = (!auth()->check()) ? null : auth()->user()->availableCoupons()->wherePivot('id', $data['user_coupon_id'])->first();
         $order->checkOrderAmount($data, $coupon);
 
-        $order->complete($data, $coupon);
+        $order->update($data);
+        $order->syncStatusOrderProducts();
 
         return $this->respondSuccessfully(OrderResource::make($order));
     }
@@ -153,7 +142,7 @@ class OrderController extends ApiController
             sleep(3); // 3초 대기 (중복방지)
 
         //결제내역 확인
-        if (!Iamport::PAYMENT_INTEGRATION) { //FORTEST
+        if (!config('iamport.payment_integration')) { //FORTEST
             $impOrder = Order::selectRaw("*, payment_amount AS amount")->where("merchant_uid", $request->merchant_uid)->first()->toArray();
             $impOrder['status'] = 'paid';//paid, ready
         } else {
@@ -164,10 +153,9 @@ class OrderController extends ApiController
             abort(404, '결제 내역이 없습니다.');
         }
 
-
         //주문내역 확인
         $order = Order::with('orderProducts')->where(function ($query) {
-            if (Iamport::PAYMENT_INTEGRATION) {
+            if (config('iamport.payment_integration')) {
                 $query->where("status", OrderStatus::ORDER_COMPLETE)->orWhere("status", OrderStatus::PAYMENT_PENDING);
             }
         })->where("merchant_uid", $impOrder["merchant_uid"])->first();
@@ -198,8 +186,8 @@ class OrderController extends ApiController
                         break;
                     case "paid": // 결제완료
                         // OrderObserver 사용
-                        $order->update(["imp_uid" => $request->imp_uid, "status" => OrderStatus::PAYMENT_COMPLETE, "payment_completed_at" => now()]);
-                        $order->syncStatusOrderProducts();
+                        $impUid = $request->imp_uid;
+                        $order->complete($impUid);
                         break;
                 }
             });
@@ -218,10 +206,15 @@ class OrderController extends ApiController
      */
     public function cancel(Request $request, $id)
     {
-        $order = Order::mine($request)->deliveryBefore()->findOrFail($id);
+        //주문취소의 경우 모든 주문상품상태가 [결제완료, 배송준비중] 상태만 가능
+        $order = Order::with('orderProducts')->mine($request)->canOrderCancel()->findOrFail($id);
+        if (!$order->canOrderCancel()) {
+            abort(403, '모든 상품이 ' . implode(', ', OrderStatus::getCanOrderCancelValues()) .
+                '에만 주문 취소할 수 있습니다.');//결제완료, 배송준비중
+        }
 
         $order = DB::transaction(function () use ($order) {
-            if (Iamport::PAYMENT_INTEGRATION) {
+            if (config('iamport.payment_integration')) {
                 $accessToken = Iamport::getAccessToken();
                 $result = Iamport::cancel($accessToken, $this->imp_uid);
                 if (!$result['response']) abort(403, $result['message']);

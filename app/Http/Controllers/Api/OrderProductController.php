@@ -32,17 +32,22 @@ class OrderProductController extends ApiController
      */
     public function confirm(Request $request, $id)
     {
-        $orderProduct = OrderProduct::with('order.orderProducts')->mine($request)->delivery()->findOrFail($id);
+        $orderProduct = OrderProduct::with('order.orderProducts')->mine($request)/*->delivery()*/->findOrFail($id);
+        if ($orderProduct->status !== OrderStatus::DELIVERY) {
+            abort(403, '구매확정은 배송중에 가능합니다.');
+        }
         $orderProduct = DB::transaction(function () use ($orderProduct) {
             $orderProduct->update(['status' => OrderStatus::PURCHASE_CONFIRM->value, 'purchase_confirmed_at' => now()]);
 
-            /*//TODO CHECK
             //모든 구매상품옵션이 confirm 되었을 때 주문 상태도 업데이트
             $orderProduct->syncStatusOrder();
 
-            //TODO CHECK
-            //적립금
-            if (auth()->check()) auth()->user()->depositPoint($orderProduct);*/
+            //적립금 지급
+            if (auth()->check()) {
+                auth()->user()->depositPoint($orderProduct);
+                list($amount) = $orderProduct->getDepositPoints();
+                $orderProduct->order->increment('purchase_deposit_point', $amount);//구매확정으로 적립된 적립금
+            }
 
             return $orderProduct;
         });

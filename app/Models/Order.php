@@ -22,6 +22,39 @@ class Order extends Model
         'status' => OrderStatus::class, // Enum 캐스팅
     ];
 
+    public static function getCartsData($data, $cartProductOptions)
+    {
+        return [
+            ...$data,
+            'total_amount' => $cartProductOptions->sum(function ($cartProductOption) {
+                return $cartProductOption->price * $cartProductOption->quantity;
+            }),
+            'delivery_fee' => $cartProductOptions->pluck('productOption.product.delivery_fee')->filter()->max(),
+            'order_products' => $cartProductOptions->map(function ($cartProductOption) use ($data) {
+                return self::setOrderProducts([
+                    $data['status'],
+                    auth()->id() ?? null,
+                    $data['guest_id'] ?? null,
+                    $cartProductOption->productOption->product_id,
+                    $cartProductOption->productOption->id,
+                    $cartProductOption->quantity,
+                    $cartProductOption->productOption->price,
+                    $cartProductOption->productOption->original_price,
+                ]);
+            })->toArray(),
+        ];
+    }
+
+    public static function setOrderProducts($orderProduct)
+    {
+        return [
+            'status' => $orderProduct[0], 'user_id' => $orderProduct[1], 'guest_id' => $orderProduct[2],
+            'product_id' => $orderProduct[3], 'product_option_id' => $orderProduct[4],
+            'quantity' => $orderProduct[5], 'price' => $orderProduct[6],
+            'original_price' => $orderProduct[7],
+        ];
+    }
+
     public function product(): BelongsTo
     {
         return $this->belongsTo(Product::class);
@@ -89,7 +122,7 @@ class Order extends Model
             if ($data['user_coupon_id'] !== $coupon?->pivot->id) {
                 abort(422, '쿠폰을 확인해주세요.');
             }
-            $couponDiscountAmount = $coupon?->getDiscountAmountByType($this->total_amount) ?? 0;
+            $couponDiscountAmount = $coupon?->getDiscountAmountByType($this->total_amount + $this->delivery_fee) ?? 0;
             if ($data['coupon_discount_amount'] !== $couponDiscountAmount) {
                 abort(422, '쿠폰 할인금액을 확인해주세요.');
             }
@@ -145,54 +178,72 @@ class Order extends Model
     public function scopeDelivery(Builder $query)
     {
         //if (config('env.app' === 'local')) return; //FORTEST
-        $query->where('status', OrderStatus::DELIVERY);//배송완료인 경우
-    }
-
-    /**
-     * @deprecated
-     */
-    public function scopeDeliveryComplete(Builder $query)
-    {
-        $query->where('status', OrderStatus::DELIVERY_COMPLETE);//배송완료인 경우
+        $query->where('status', OrderStatus::DELIVERY);//배송중인 경우
     }
 
     public function scopeDeliveryBefore(Builder $query)
     {
+        //if (config('env.app' === 'local')) return; //FORTEST
         $query->whereIn('status', OrderStatus::DELIVERY_BEFORES);//배송중 이전
     }
+
+    /**
+     * 주문취소 가능한 상태
+     */
+    public function scopeCanOrderCancel(Builder $query)
+    {
+        $query->whereIn('status', OrderStatus::CAN_ORDER_CANCELS);//결제완료, 배송준비중
+    }
+
+    public function canOrderCancel()
+    {
+        return $this->orderProducts->every(fn($e) => in_array($e->status, OrderStatus::CAN_ORDER_CANCELS));
+    }
+
 
 
     public function getDepositPoints()
     {
-        if (auth()->check())
-        {
-            $order_points_rate = auth()->user()->level->purchaseRewardPointsRate();//주문 적립율
-            $amount = $order_points_rate * $this->payment_amount;//최종결제액
-            $desc = '주문적립';
-            return [$amount, $desc];
+        if (auth()->check()) {
+            //주문취소시
+            if ($this->status === OrderStatus::CANCELLATION_COMPLETE) {
+                return [$this->use_points, '주문취소 적립금 반환'];
+            }
         }
         return null;
     }
 
     public function getWithdrawalPoints()
     {
-        return [$this->use_points, '주문사용'];
+        if (auth()->check()) {
+            if ($this->status === OrderStatus::PAYMENT_COMPLETE && $this->use_points > 0) {
+                return [$this->use_points, '주문사용'];
+            }
+
+            /*if ($this->status === OrderStatus::CANCELLATION_COMPLETE) {
+                return [$this->purchase_deposit_point, '구매 적립금 차감'];
+            }*/
+        }
+        return null;
     }
 
-    public function complete($data, $coupon = null)
+    public function complete($impUid)
     {
-        return DB::transaction(function () use ($data, $coupon) {
-            $this->update($data);
+        return DB::transaction(function () use ($impUid) {
+            $this->update(["imp_uid" => $impUid, "status" => OrderStatus::PAYMENT_COMPLETE, "payment_completed_at" => now()]);
             $this->syncStatusOrderProducts();
 
             //쿠폰사용
-            if ($data['user_coupon_id'] > 0) {
+            if (auth()->check() && $this->user_coupon_id > 0) {
+                $coupon = auth()->user()->availableCoupons()->wherePivot('id', $this->user_coupon_id)->first();
                 $coupon->pivot->update(['order_id' => $this->id, 'used_at' => now()]);
             }
+
             //적립금 차감
-            if ($data['use_points'] > 0) {
+            if ($this->use_points > 0) {
                 auth()->user()->withdrawalPoint($this);
             }
+
             //재고처리 stock_quantity
             $this->orderProducts->each(function ($e) {
                 $e->productOption()->decrement('stock_quantity', $e->quantity);
@@ -209,12 +260,15 @@ class Order extends Model
 
     public function cancel()
     {
-        //쿠폰반납
+        $this->update(['status' => OrderStatus::CANCELLATION_COMPLETE, 'payment_canceled_at' => now()]);
+        $this->syncStatusOrderProducts();
+
+        //사용한 쿠폰 반환
         if ($this->user_coupon_id > 0) {
             $coupon = auth()->user()->coupons()->wherePivot('id', $this->user_coupon_id)->first();
             $coupon->pivot->update(['order_id' => null, 'used_at' => null]);
         }
-        //적립금 반환
+        //사용한 적립금 반환
         if ($this->use_points > 0) {
             auth()->user()->depositPoint($this);
         }
@@ -222,9 +276,6 @@ class Order extends Model
         $this->orderProducts->each(function ($e) {
             $e->productOption()->increment('stock_quantity', $e->quantity);
         });
-
-        $this->update(['status' => OrderStatus::CANCELLATION_COMPLETE, 'payment_canceled_at' => now()]);
-        $this->syncStatusOrderProducts();
     }
 
 }

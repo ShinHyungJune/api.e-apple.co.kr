@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use App\Enums\IamportMethod;
 use App\Enums\OrderStatus;
+use App\Models\Order;
 use App\Models\ProductOption;
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -122,27 +123,27 @@ class OrderRequest extends FormRequest
             $productOptions = ProductOption::whereIn('id', $productOptionIds)->get()->keyBy('id');
             foreach ($this->order_products as $k => $orderProduct) {
                 if (isset($productOptions[$orderProduct['product_option_id']])) {
-                    $inputs['order_products'][$k] = [
+                    /*$inputs['order_products'][$k] = [
                         ...$orderProduct,
                         'status' => $inputs['status'],
                         'user_id' => auth()->id() ?? null,
                         'guest_id' => $this->guest_id ?? null,
                         'original_price' => $productOptions[$orderProduct['product_option_id']]->original_price
-                    ];
+                    ];*/
+                    $inputs['order_products'][$k] = Order::setOrderProducts([
+                        $inputs['status'], $inputs['user_id'], $inputs['guest_id'],
+                        $orderProduct['product_id'], $orderProduct['product_option_id'],
+                        $orderProduct['quantity'], $orderProduct['price'],
+                        $productOptions[$orderProduct['product_option_id']]->original_price
+                    ]);
                 } else {
                     throw new \Illuminate\Database\Eloquent\ModelNotFoundException("ProductOption not found for ID: " . $orderProduct['product_option_id']);
                 }
             }
-            /*$inputs['order_products'] = collect($this->order_products)->map(function ($e) use ($inputs) {
-                $e['status'] = $inputs['status'];
-                $e['user_id'] = auth()->id() ?? null;
-                $e['guest_id'] = $this->guest_id ?? null;
-                return $e;
-            })->toArray();*/
         }
         if ($this->isMethod('PUT')) {
             $inputs['status'] = OrderStatus::ORDER_COMPLETE->value;
-            $inputs['merchant_uid'] = 'ORD-' . str_pad($this->id, 8, '0', STR_PAD_LEFT);
+            $inputs['merchant_uid'] = 'ORDER-' . str_pad($this->id, 8, '0', STR_PAD_LEFT);
             $inputs['payment_pg'] = IamportMethod::from($this->payment_method)->pg();
         }
 

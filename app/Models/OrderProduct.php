@@ -64,10 +64,7 @@ class OrderProduct extends Model
 
     public function syncStatusOrder()
     {
-        $isPurchaseConfirm = $this->order->orderProducts->each(function (OrderProduct $orderProduct) {
-            return $orderProduct->status === OrderStatus::PURCHASE_CONFIRM;
-        });
-        if ($isPurchaseConfirm) {
+        if ($this->order->orderProducts->every(fn($e) => $e->status === OrderStatus::PURCHASE_CONFIRM)) {
             $this->order->update(['status' => OrderStatus::PURCHASE_CONFIRM]);
         }
     }
@@ -80,17 +77,16 @@ class OrderProduct extends Model
 
     public function getDepositPoints()
     {
-        if (auth()->check())
-        {
+        if (auth()->check()) {
+            $orderProductPaymentAmount = $this->price * $this->quantity;
+            $orderProductsPaymentAmountSum = $this->order->orderProducts->sum(fn($orderProduct) => $orderProduct['price'] * $orderProduct['quantity']);
+            $orderPaymentAmount = $this->order->payment_amount;
 
-            $paymentAmount = $this->price * $this->quantity;
-            $totalOrderProducts = $this->order->orderProducts->sum(fn($orderProduct) => $orderProduct['price'] * $orderProduct['quantity']);
-            $paymentAmount = $paymentAmount * ($this->payment_amount / $totalOrderProducts);
+            $paymentAmount = ($orderProductPaymentAmount / $orderProductsPaymentAmountSum) * $orderPaymentAmount;
 
-            $order_points_rate = auth()->user()->level->purchaseRewardPointsRate();//주문 적립율
-            $amount = $order_points_rate * $paymentAmount;//최종결제액
-            $desc = '주문적립';
-            return [$amount, $desc];
+            $orderPointsRate = auth()->user()->level->purchaseRewardPointsRate();//주문 적립율
+            $amount = ($orderPointsRate / 100) * $paymentAmount;//최종결제액
+            return [$amount, '주문적립'];
         }
         return null;
     }

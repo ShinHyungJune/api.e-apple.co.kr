@@ -73,6 +73,8 @@ return new class extends Migration
 
             $table->string("delivery_tracking_number")->nullable()->comment('주문배송번호');
 
+            $table->unsignedInteger('purchase_deposit_point')->nullable()->default(0)->comment('구매확정 적립금');
+
             $table->text("memo")->nullable()->comment('메모');
             $table->timestamps();
             $table->softDeletes();
