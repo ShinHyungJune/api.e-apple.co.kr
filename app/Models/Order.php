@@ -69,7 +69,7 @@ class Order extends Model
          */
         {
             $deliveryFee = $productOptions->pluck('product.delivery_fee')->filter()->max();
-            if ($$deliveryFee > 0) {
+            if ($deliveryFee > 0) {
                 if ($data['delivery_fee'] !== $deliveryFee) abort(422, '배송비를 확인해주세요.');
             }
         }
