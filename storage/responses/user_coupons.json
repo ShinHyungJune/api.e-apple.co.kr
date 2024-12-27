@@ -11,7 +11,7 @@
             "valid_days": "발급일로부터 유효한 일수",
             "issued_until": "쿠폰 발급 종료 일시",
             "user_coupon_id": "사용자가 발급받은 쿠폰아이디",
-            "expired_days": "쿠폰만료까지 남은 일수"
+            "expiration_left_days": "쿠폰만료까지 남은 일수"
         }
     ],
     "links": {

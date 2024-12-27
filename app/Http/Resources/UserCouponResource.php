@@ -27,7 +27,7 @@ class UserCouponResource extends JsonResource
         if (config('scribe.response_file')) {
             $comments = [
                 'user_coupon_id' => '사용자가 발급받은 쿠폰아이디',
-                'expired_days' => '쿠폰만료까지 남은 일수'
+                'expiration_left_days' => '쿠폰만료까지 남은 일수'
             ];
             return getScribeResponseFile($return, 'coupons', $comments);
         }
