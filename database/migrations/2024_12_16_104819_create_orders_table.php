@@ -71,6 +71,8 @@ return new class extends Migration
             $table->string("refund_bank_account")->nullable()->comment('환불계좌 계좌번호');
             $table->text("refund_reason")->nullable()->comment('환불사유');
 
+            $table->string("delivery_tracking_number")->nullable()->comment('주문배송번호');
+
             $table->text("memo")->nullable()->comment('메모');
             $table->timestamps();
             $table->softDeletes();

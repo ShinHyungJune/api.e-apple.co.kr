@@ -23,7 +23,8 @@ class OrderResource extends JsonResource
                 'total_amount', 'user_coupon_id', 'coupon_discount', 'use_points', 'delivery_fee', 'payment_amount',
                 'imp_uid', 'merchant_uid',
                 'payment_pg', 'payment_method',
-                'created_at', 'delivery_started_at', 'purchase_confirmed_at',
+                'created_at', 'updated_at', 'delivery_started_at', 'purchase_confirmed_at',
+                'delivery_tracking_number'
             ]),
             //'status' => OrderStatus::from($this->status)->label(),
             'status' => OrderStatus::from($this->status->value)->label(),

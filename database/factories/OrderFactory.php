@@ -64,6 +64,7 @@ class OrderFactory extends Factory
             'refund_bank_owner' => $this->faker->optional()->name(),
             'refund_bank_account' => $this->faker->optional()->numerify('##############'),
             'refund_reason' => $this->faker->optional()->sentence(),
+            'delivery_tracking_number' => 'ORDER20240000-' . $this->faker->numberBetween(100000, 999999),
             'memo' => $this->faker->optional()->text(200),
         ];
     }
