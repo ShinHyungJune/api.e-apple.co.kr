@@ -40,6 +40,7 @@ class OrderProductController extends ApiController
             //모든 구매상품옵션이 confirm 되었을 때 주문 상태도 업데이트
             $orderProduct->syncStatusOrder();
 
+            //TODO
             //적립금
             if (auth()->check()) auth()->user()->depositPoint($orderProduct);
 

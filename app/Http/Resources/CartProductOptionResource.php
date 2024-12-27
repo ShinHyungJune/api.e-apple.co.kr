@@ -18,12 +18,12 @@ class CartProductOptionResource extends JsonResource
         $return = [
             ...$this->only(['id', 'price', 'quantity']),
             'name' => $this->productOption?->name ?? null,
+            'original_price' => $this->productOption?->original_price ?? null,
         ];
 
         //*
         if (config('scribe.response_file')) {
-            $comments = [
-            ];
+            $comments = [];
             return getScribeResponseFile($return, 'cart_product_options', $comments);
         }
         //*/
