@@ -75,7 +75,7 @@ class OrderController extends ApiController
             'total_amount' => $cartProductOptions->sum(function ($cartProductOption) {
                 return $cartProductOption->price * $cartProductOption->quantity;
             }),
-            'delivery_fee' => $cartProductOptions->pluck('product.delivery_fee')->filter()->max(),
+            'delivery_fee' => $cartProductOptions->pluck('productOption.product.delivery_fee')->filter()->max(),
             'order_products' => $cartProductOptions->map(function ($cartProductOption) {
                 return [
                     'product_id' => $cartProductOption->productOption->product_id,

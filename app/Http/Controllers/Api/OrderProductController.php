@@ -35,13 +35,13 @@ class OrderProductController extends ApiController
         $orderProduct = OrderProduct::mine($request)->delivery()->findOrFail($id);
         $orderProduct = DB::transaction(function () use ($orderProduct) {
             $orderProduct->update(['status' => OrderStatus::PURCHASE_CONFIRM->value, 'purchase_confirmed_at' => now()]);
-            /**
-             * 모든 구매상품옵션이 confirm 되었을 때
-             * 주문 상태도 업데이트
-             * 적립금 부여
-             */
+
             //TODO
-            //$orderProduct->syncStatusOrderNDepositPoint();
+            //모든 구매상품옵션이 confirm 되었을 때 주문 상태도 업데이트
+            $orderProduct->syncStatusOrder();
+
+            //적립금
+            if (auth()->check()) auth()->user()->depositPoint($orderProduct);
 
             return $orderProduct;
         });

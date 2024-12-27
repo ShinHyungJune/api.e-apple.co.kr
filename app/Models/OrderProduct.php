@@ -62,10 +62,20 @@ class OrderProduct extends Model
         return $this->belongsTo(Order::class);
     }
 
-    public function syncStatusOrderNDepositPoint()
+    public function syncStatusOrder()
     {
 
     }
-
+    public function getDepositPoints()
+    {
+        if (auth()->check())
+        {
+            $order_points_rate = auth()->user()->level->purchaseRewardPointsRate();//주문 적립율
+            $amount = $order_points_rate * $this->payment_amount;//최종결제액
+            $desc = '주문적립';
+            return [$amount, $desc];
+        }
+        return null;
+    }
 
 }
