@@ -64,14 +64,31 @@ class OrderProduct extends Model
 
     public function syncStatusOrder()
     {
-
+        $isPurchaseConfirm = $this->order->orderProducts->each(function (OrderProduct $orderProduct) {
+            return $orderProduct->status === OrderStatus::PURCHASE_CONFIRM;
+        });
+        if ($isPurchaseConfirm) {
+            $this->order->update(['status' => OrderStatus::PURCHASE_CONFIRM]);
+        }
     }
+
+    public function scopeDelivery(Builder $query)
+    {
+        //if (config('env.app' === 'local')) return; //FORTEST
+        $query->where('status', OrderStatus::DELIVERY);//배송완료인 경우
+    }
+
     public function getDepositPoints()
     {
         if (auth()->check())
         {
+
+            $paymentAmount = $this->price * $this->quantity;
+            $totalOrderProducts = $this->order->orderProducts->sum(fn($orderProduct) => $orderProduct['price'] * $orderProduct['quantity']);
+            $paymentAmount = $paymentAmount * ($this->payment_amount / $totalOrderProducts);
+
             $order_points_rate = auth()->user()->level->purchaseRewardPointsRate();//주문 적립율
-            $amount = $order_points_rate * $this->payment_amount;//최종결제액
+            $amount = $order_points_rate * $paymentAmount;//최종결제액
             $desc = '주문적립';
             return [$amount, $desc];
         }
