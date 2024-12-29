@@ -2,14 +2,13 @@
 
 namespace Database\Factories;
 
-use App\Models\MdProductPackage;
+use App\Models\Sweetness;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @deprecated
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\MdProductPackage>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Sweetness>
  */
-class MdProductPackageFactory extends Factory
+class SweetnessFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -19,15 +18,17 @@ class MdProductPackageFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->word(),
-            'description' => $this->faker->paragraphs(3, true),
+            'fruit_name' => $this->faker->word(),
+            'sweetness' => $this->faker->numberBetween(10, 20),
+            'standard_sweetness' => $this->faker->numberBetween(20, 30),
+            'standard_datetime' => now(),
         ];
     }
 
     public function configure()
     {
-        return $this->afterCreating(function (MdProductPackage $item) {
-            $url = 'https://picsum.photos/510/300?random';
+        return $this->afterCreating(function (Sweetness $item) {
+            //$url = 'https://picsum.photos/510/300?random';
             $imageUrls = [
                 asset('/images/samples/pexels-pixabay-161559.jpg'),
                 asset('/images/samples/pexels-mali-102104.jpg'),
@@ -36,8 +37,9 @@ class MdProductPackageFactory extends Factory
             $url = collect($imageUrls)->random();
 
             $item->addMediaFromUrl($url) // 예제 이미지 URL
-            ->toMediaCollection(MdProductPackage::IMAGES);
+            ->toMediaCollection(Sweetness::IMAGES);
+            /*$product->addMediaFromUrl($url) // 예제 이미지 URL
+            ->toMediaCollection(Product::DESC_IMAGES);*/
         });
     }
-
 }

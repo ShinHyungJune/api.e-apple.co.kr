@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\ProductPackageType;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -10,20 +11,22 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-/**
- * @deprecated
- */
-class MdProductPackage extends Model implements HasMedia
+class ProductPackage extends Model implements HasMedia
 {
     use HasFactory, InteractsWithMedia;
 
     const IMAGES = 'images';
+
     protected $guarded = ['id'];
+
+    protected $casts = [
+        'type' => ProductPackageType::class,
+    ];
 
     public function products(): BelongsToMany
     {
-        return $this->belongsToMany(Product::class, 'md_product_package_product')
-            ->withPivot('quantity')
+        return $this->belongsToMany(Product::class, 'product_package_product')
+            //->withPivot('quantity')
             ->withTimestamps();
     }
 
@@ -33,6 +36,5 @@ class MdProductPackage extends Model implements HasMedia
             ->fit(Fit::Contain, 400, 300)
             ->nonQueued();
     }
-
 
 }

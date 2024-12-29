@@ -39,18 +39,26 @@ class ProductResource extends JsonResource
                 'gmo_desc',
                 'customer_service_contact'
             ]),
-            'options' => $this->options ? ProductOptionResource::collection($this->options) : null,
-
+            /*'options' => $this->options ? ProductOptionResource::collection($this->options) : null,
             'is_new' => Carbon::parse($this->created_at)->greaterThanOrEqualTo(Carbon::now()->subDay()),
             'is_best' => $this->categories ? in_array(ProductCategory::BEST->value, $this->categories) : false,
             'average_rating' => $this->reviews->avg('rating'),
             'reviews_count' => $this->reviews->count(),
             'inquiries_count' => $this->whenLoaded('inquiries') ? $this->inquiries->count(): $this->inquiries_count,
+            'categories' => $this->categories ? ProductCategoryResource::collection($this->categories) : null,*/
 
+
+            'options' => ProductOptionResource::collection($this->whenLoaded('options')),
+            'is_new' => Carbon::parse($this->created_at)->greaterThanOrEqualTo(Carbon::now()->subDay()),
+            'is_best' => $this->categories ? in_array(ProductCategory::BEST->value, $this->categories) : false,
+            'average_rating' => $this->reviews->avg('rating'),
+            'reviews_count' => $this->reviews->count(),
+            'inquiries_count' => $this->inquiries_count ?? $this->inquiries->count(),
             'categories' => $this->categories ? ProductCategoryResource::collection($this->categories) : null,
+
+
             /*'product_images' => $this->getMedia(Product::IMAGES) ? MediaResource::collection($this->getMedia(Product::IMAGES)) : null,
             'product_desc_images' => $this->getMedia(Product::DESC_IMAGES) ? MediaResource::collection($this->getMedia(Product::DESC_IMAGES)) : null,*/
-
             'img' => $this->getMedia(Product::IMAGES) ? MediaResource::make($this->getMedia(Product::IMAGES)[0] ?? null) : null,
             'imgs' => $this->getMedia(Product::IMAGES) ? MediaResource::collection($this->getMedia(Product::IMAGES)) : null,
         ];

@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Api;
 
 use App\Enums\ProductCategory;
-use App\Http\Resources\MdProductPackageResource;
+use App\Enums\ProductPackageType;
+use App\Http\Resources\ProductPackageResource;
 use App\Http\Resources\ProductResource;
-use App\Models\MdProductPackage;
 use App\Models\Product;
+use App\Models\ProductPackage;
 use Illuminate\Http\Request;
 
 /**
@@ -61,8 +62,12 @@ class ProductController extends ApiController
      */
     public function mdPackages()
     {
-        $items = MdProductPackage::with(['products'])->has('products')->latest()->get();
-        return MdProductPackageResource::collection($items);
+        /*$items = MdProductPackage::with(['products'])->has('products')->latest()->get();
+        return MdProductPackageResource::collection($items);*/
+        $items = ProductPackage::with(['products.media', 'products.reviews', 'products.inquiries', 'media'])->has('products')
+            ->where('type', ProductPackageType::MD_SUGGESTION)
+            ->latest()->get();
+        return ProductPackageResource::collection($items);
     }
 
     /**

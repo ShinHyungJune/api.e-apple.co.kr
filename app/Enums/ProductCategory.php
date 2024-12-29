@@ -7,6 +7,9 @@ enum ProductCategory: string
     case SUGGESTION = 'suggestion';
     case BEST = 'best';
     case GIFT = 'gift';
+    case SALE = 'sale';
+    case POPULAR = 'popular';
+    case JUICY = 'juicy';
 
     /*case STORY = 4;
     case EVENT = 5;*/
@@ -17,8 +20,9 @@ enum ProductCategory: string
             self::SUGGESTION => '추천',
             self::BEST => '베스트',
             self::GIFT => '선물',
-            /*self::STORY => '스토리',
-            self::EVENT => '이벤트',*/
+            self::SALE => '특가',
+            self::POPULAR => '인기상품',
+            self::JUICY => '과즙이 많은 과일',
         };
     }
 

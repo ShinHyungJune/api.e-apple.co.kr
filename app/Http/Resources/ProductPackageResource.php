@@ -2,14 +2,11 @@
 
 namespace App\Http\Resources;
 
-use App\Models\MdProductPackage;
+use App\Models\ProductPackage;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-/**
- * @deprecated
- */
-class MdProductPackageResource extends JsonResource
+class ProductPackageResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -18,17 +15,15 @@ class MdProductPackageResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        //return parent::toArray($request);
-
         $return = [
             ...$this->only(['id', 'title', 'description']),
-            'img' => $this->getMedia(MdProductPackage::IMAGES) ? MediaResource::make($this->getMedia(MdProductPackage::IMAGES)[0] ?? null) : null,
-            'imgs' => $this->getMedia(MdProductPackage::IMAGES) ? MediaResource::collection($this->getMedia(MdProductPackage::IMAGES)) : null,
+            'img' => $this->getMedia(ProductPackage::IMAGES) ? MediaResource::make($this->getMedia(ProductPackage::IMAGES)[0] ?? null) : null,
+            'imgs' => $this->getMedia(ProductPackage::IMAGES) ? MediaResource::collection($this->getMedia(ProductPackage::IMAGES)) : null,
             'products' => ProductResource::collection($this->products),
         ];
         //*
         if (config('scribe.response_file')) {
-            return getScribeResponseFile($return, 'md_product_packages');
+            return getScribeResponseFile($return, 'product_packages');
         }
         //*/
         return $return;

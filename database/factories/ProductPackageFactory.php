@@ -2,14 +2,15 @@
 
 namespace Database\Factories;
 
-use App\Models\MdProductPackage;
+use App\Enums\ProductPackageType;
+use App\Models\Code;
+use App\Models\ProductPackage;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @deprecated
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\MdProductPackage>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\ProductPackage>
  */
-class MdProductPackageFactory extends Factory
+class ProductPackageFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,15 +19,24 @@ class MdProductPackageFactory extends Factory
      */
     public function definition(): array
     {
+        $type = $this->faker->randomElement(ProductPackageType::values());
+        $caregoryId = null;
+        if ($type === ProductPackageType::MONTHLY_SUGGESTION->value) {
+            $caregoryIds = Code::where('parent_id', Code::MONTHLY_SUGGESTION_CATEGORY_ID)->pluck('id')->toArray();
+            $caregoryId = $this->faker->randomElement($caregoryIds);
+        }
+
         return [
             'title' => $this->faker->word(),
             'description' => $this->faker->paragraphs(3, true),
+            'type' => $type,
+            'category_id' => $caregoryId,
         ];
     }
 
     public function configure()
     {
-        return $this->afterCreating(function (MdProductPackage $item) {
+        return $this->afterCreating(function (ProductPackage $item) {
             $url = 'https://picsum.photos/510/300?random';
             $imageUrls = [
                 asset('/images/samples/pexels-pixabay-161559.jpg'),
@@ -36,8 +46,7 @@ class MdProductPackageFactory extends Factory
             $url = collect($imageUrls)->random();
 
             $item->addMediaFromUrl($url) // 예제 이미지 URL
-            ->toMediaCollection(MdProductPackage::IMAGES);
+            ->toMediaCollection(ProductPackage::IMAGES);
         });
     }
-
 }

@@ -208,6 +208,7 @@ Route::group(['prefix' => 'categories', 'controller' => CodeController::class],
                 Route::get('{id}/subcategories', 'products');
             });
 
+        Route::get('packages/{type}', 'packages');
     });
 
 

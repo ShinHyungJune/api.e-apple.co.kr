@@ -27,7 +27,7 @@ class ProductReviewController extends ApiController
     public function index(Request $request)
     {
         $filters = $request->only(['type']);
-        $items = ProductReview::with(['user', 'product', 'productOption'])->search($filters)->latest()->paginate($request->take ?? 10);
+        $items = ProductReview::with(['user', 'product', 'productOption', 'media'])->search($filters)->latest()->paginate($request->take ?? 10);
         return ProductReviewResource::collection($items);
     }
 
@@ -38,7 +38,7 @@ class ProductReviewController extends ApiController
      */
     public function myProductReviews(Request $request)
     {
-        $items = ProductReview::mine()->with(['product', 'orderProduct'])->latest()->paginate($request->get('take', 10));
+        $items = ProductReview::mine()->with(['product', 'orderProduct', 'media'])->latest()->paginate($request->get('take', 10));
         return ProductReviewResource::collection($items);
     }
 

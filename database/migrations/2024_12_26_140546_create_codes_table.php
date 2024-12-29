@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('name', 100)->default('');
             $table->boolean('is_use')->default(true);
             $table->boolean('is_display')->default(true);
+            //$table->text('description')->nullable();
             $table->timestamps(); // 생성 및 업데이트 시간
             $table->softDeletes();
         });

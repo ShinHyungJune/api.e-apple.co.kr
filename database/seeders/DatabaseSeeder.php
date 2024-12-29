@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\MdProductPackage;
 use App\Models\Post\Board;
 use App\Models\Post\BoardCategory;
 use App\Models\Post\Post;
@@ -27,7 +26,7 @@ class DatabaseSeeder extends Seeder
         BoardCategory::truncate();
         Board::truncate();
         Post::truncate();
-        MdProductPackage::truncate();
+        //MdProductPackage::truncate();
         ProductInquiry::truncate();
         DB::table("media")->truncate();
         DB::statement("SET foreign_key_checks=1");
@@ -35,11 +34,15 @@ class DatabaseSeeder extends Seeder
         $this->call([
             CodeSeeder::class,
             UserSeeder::class,
+            BannerSeeder::class,
+            SweetnessSeeder::class,
+
             ProductSeeder::class,
             BoardSeeder::class,
             BoardCategorySeeder::class,
             PostSeeder::class,
-            MdProductPackageSeeder::class,
+            //MdProductPackageSeeder::class,
+            ProductPackageSeeder::class,
             ProductInquirySeeder::class,
 
             CartSeeder::class,

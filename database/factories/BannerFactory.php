@@ -2,14 +2,13 @@
 
 namespace Database\Factories;
 
-use App\Models\MdProductPackage;
+use App\Models\Banner;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @deprecated
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\MdProductPackage>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Banner>
  */
-class MdProductPackageFactory extends Factory
+class BannerFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -19,15 +18,17 @@ class MdProductPackageFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->word(),
-            'description' => $this->faker->paragraphs(3, true),
+            'title' => $this->faker->sentence(),
+            'description' => $this->faker->sentence(),
+            'url' => $this->faker->url(),
+            'is_active' => true
         ];
     }
 
     public function configure()
     {
-        return $this->afterCreating(function (MdProductPackage $item) {
-            $url = 'https://picsum.photos/510/300?random';
+        return $this->afterCreating(function (Banner $item) {
+            //$url = 'https://picsum.photos/510/300?random';
             $imageUrls = [
                 asset('/images/samples/pexels-pixabay-161559.jpg'),
                 asset('/images/samples/pexels-mali-102104.jpg'),
@@ -36,7 +37,9 @@ class MdProductPackageFactory extends Factory
             $url = collect($imageUrls)->random();
 
             $item->addMediaFromUrl($url) // 예제 이미지 URL
-            ->toMediaCollection(MdProductPackage::IMAGES);
+            ->toMediaCollection(Banner::IMAGES);
+            /*$product->addMediaFromUrl($url) // 예제 이미지 URL
+            ->toMediaCollection(Product::DESC_IMAGES);*/
         });
     }
 

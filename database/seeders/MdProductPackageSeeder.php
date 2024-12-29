@@ -6,6 +6,9 @@ use App\Models\MdProductPackage;
 use App\Models\Product;
 use Illuminate\Database\Seeder;
 
+/**
+ * @deprecated
+ */
 class MdProductPackageSeeder extends Seeder
 {
     /**

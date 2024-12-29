@@ -16,6 +16,9 @@ class Code extends Model
 
     const PRODUCT_CATEGORY_ID = 1;
 
+    const MONTHLY_SUGGESTION_CATEGORY_ID = 9;
+
+
     public static function rebuild($parentId, $leftId)
     {
         $rightId = $leftId + 1;
