@@ -246,7 +246,7 @@ class OrderController extends ApiController
 
         if (!\App\Http\Controllers\Api\auth()->user() && $order->guest_id != $request->guest_id)
             return $this->respondForbidden();*/
-        $order = Order::with(['orderProducts'])->mine($request)->findOrFail($id);
+        $order = Order::with(['orderProducts.product'])->mine($request)->findOrFail($id);
 
         return $this->respondSuccessfully(OrderResource::make($order));
     }
