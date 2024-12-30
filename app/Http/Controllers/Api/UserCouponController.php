@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\UserCouponResource;
 use App\Models\Coupon;
-use App\Models\UserCoupon;
 use Illuminate\Http\Request;
 
 /**
@@ -40,8 +39,24 @@ class UserCouponController extends Controller
 
     public function test(Request $request)
     {
-        $userCoupons = UserCoupon::all();
-        return $userCoupons;
+        /*$userCoupons = UserCoupon::all();
+        return $userCoupons;*/
+
+        $totalOrderAmount = (int)$request->input('total_order_amount');
+        $items = auth()->user()->availableCoupons()
+            /*->where(function ($query) use ($totalOrderAmount) {
+                $query->where('type', Coupon::TYPE_RATE)
+                    ->orWhere(function ($query) use ($totalOrderAmount) {
+                        $query->when('amount', function ($query) use ($totalOrderAmount) {
+                            //타입이 amount 인 경우는 최소 결제액 확인
+                            $query->where('type', Coupon::TYPE_AMOUNT)->where('minimum_purchase_amount', '<=', $totalOrderAmount);
+                        });
+                    });
+            })*/
+            ->latest()->get();
+
+        return UserCouponResource::collection($items);
+
     }
 
 }
