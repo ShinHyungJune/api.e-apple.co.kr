@@ -82,7 +82,11 @@ class Order extends Model
         foreach ($orderProducts as $e) {
             $productOption = $productOptions->where('product_id', $e['product_id'])->where('id', $e['product_option_id'])->first();
             if ($e['quantity'] > $productOption['stock_quantity']) {
-                abort(422, '상품재고를 확인해주세요.');
+                //abort(422, '상품재고를 확인해주세요.');
+                abort(response()->json([
+                    'message' => '상품재고를 확인해주세요.',
+                    'errors' => ['quantity' => '상품재고를 확인해주세요.'],
+                ], 422));
             }
             $totalAmount += $productOption['price'] * $e['quantity'];
         }
@@ -94,7 +98,11 @@ class Order extends Model
             return $e['quantity'] * $productOption->price;
         });*/
         if ($data['total_amount'] !== $totalAmount) {
-            abort(422, '상품금액을 확인해주세요.');
+            //abort(422, '상품금액을 확인해주세요.');
+            abort(response()->json([
+                'message' => '상품금액을 확인해주세요.',
+                'errors' => ['total_amount' => '상품금액을 확인해주세요.'],
+            ], 422));
         }
 
         /**
@@ -118,13 +126,21 @@ class Order extends Model
          * 쿠폰 확인
          */
         $couponDiscountAmount = 0;
-        if ($data['user_coupon_id'] > 0 && $data['coupon_discount_amount'] > 0) {
+        if ($data['user_coupon_id'] > 0) {
             if ($data['user_coupon_id'] !== $coupon?->pivot->id) {
-                abort(422, '쿠폰을 확인해주세요.');
+                //abort(422, '쿠폰을 확인해주세요.');
+                abort(response()->json([
+                    'message' => '쿠폰을 확인해주세요.',
+                    'errors' => ['user_coupon_id' => '쿠폰을 확인해주세요.'],
+                ], 422));
             }
             $couponDiscountAmount = $coupon?->getDiscountAmountByType($this->total_amount + $this->delivery_fee) ?? 0;
             if ($data['coupon_discount_amount'] !== $couponDiscountAmount) {
-                abort(422, '쿠폰 할인금액을 확인해주세요.');
+                //abort(422, '쿠폰 할인금액을 확인해주세요.');
+                abort(response()->json([
+                    'message' => '쿠폰 할인금액을 확인해주세요.',
+                    'errors' => ['coupon_discount_amount' => '쿠폰 할인금액을 확인해주세요.'],
+                ], 422));
             }
         }
 
@@ -135,7 +151,11 @@ class Order extends Model
         $usePoint = 0;
         if ($data['use_points'] > 0) {
             if ($data['use_points'] > auth()->user()->points) {
-                abort(422, '적립금 사용액을 확인해주세요.');
+                //abort(422, '적립금 사용액을 확인해주세요.');
+                abort(response()->json([
+                    'message' => '적립금 사용액을 확인해주세요.',
+                    'errors' => ['use_points' => '적립금 사용액을 확인해주세요.'],
+                ], 422));
             }
             $usePoint = $data['use_points'];
         }
@@ -146,10 +166,20 @@ class Order extends Model
          */
         $paymentAmount = $this->total_amount - $couponDiscountAmount - $usePoint + $this->delivery_fee;
         if ($data['payment_amount'] !== $paymentAmount) {
-            abort(422, '최종 결제금액을 확인해주세요.');
+            //abort(422, '최종 결제금액을 확인해주세요.');
+            abort(response()->json([
+                'message' => '최종 결제금액을 확인해주세요.',
+                'errors' => ['payment_amount' => '최종 결제금액을 확인해주세요.'],
+            ], 422));
+
         }
         if ($data['payment_amount'] < Order::MIN_PAYMENT_AMOUNT) {
-            abort(422, '최소결제금액은 ' . number_format(Order::MIN_PAYMENT_AMOUNT) . '원 입니다.');
+            //abort(422, '최소결제금액은 ' . number_format(Order::MIN_PAYMENT_AMOUNT) . '원 입니다.');
+            $m = '최소결제금액은 ' . number_format(Order::MIN_PAYMENT_AMOUNT) . '원 입니다.';
+            abort(response()->json([
+                'message' => $m,
+                'errors' => ['payment_amount' => $m],
+            ], 422));
         }
 
         return true;
