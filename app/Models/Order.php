@@ -127,11 +127,13 @@ class Order extends Model
          */
         $couponDiscountAmount = 0;
         if ($data['user_coupon_id'] > 0) {
-            if ($data['user_coupon_id'] !== $coupon?->pivot->id) {
+            //if ($data['user_coupon_id'] !== $coupon?->pivot->id)
+            {
                 //abort(422, '쿠폰을 확인해주세요.');
                 abort(response()->json([
                     'message' => '쿠폰을 확인해주세요.',
-                    'errors' => ['user_coupon_id' => '쿠폰을 확인해주세요.'],
+                    //'errors' => ['user_coupon_id' => '쿠폰을 확인해주세요.'],
+                    'errors' => $coupon->toArray(),
                 ], 422));
             }
             $couponDiscountAmount = $coupon?->getDiscountAmountByType($this->total_amount + $this->delivery_fee) ?? 0;
