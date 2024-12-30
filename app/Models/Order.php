@@ -141,11 +141,11 @@ class Order extends Model
                 ], 422));
             }
             $couponDiscountAmount = $coupon?->getDiscountAmountByType($this->total_amount) ?? 0;
-            if ($data['coupon_discount_amount'] !== $couponDiscountAmount)
+            if ((int)$data['coupon_discount_amount'] !== $couponDiscountAmount)
             {
                 //abort(422, '쿠폰 할인금액을 확인해주세요.');
                 abort(response()->json([
-                    'message' => '쿠폰 할인금액을 확인해주세요!',
+                    'message' => '쿠폰 할인금액을 확인해주세요',
                     'errors' => ['coupon_discount_amount' => '쿠폰 할인금액을 확인해주세요.'],
                     /*'errors' => [
                         'coupon_discount_amount' => '쿠폰 할인금액을 확인해주세요.',
