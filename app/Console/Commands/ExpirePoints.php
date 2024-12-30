@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Models\Point;
+use App\Models\ProductReview;
 use Illuminate\Console\Command;
 
 class ExpirePoints extends Command
@@ -12,14 +13,14 @@ class ExpirePoints extends Command
      *
      * @var string
      */
-    protected $signature = 'app:expire-points';
+    protected $signature = 'expire:points';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = '리뷰 포인트 만료';
 
     /**
      * Execute the console command.
@@ -30,8 +31,9 @@ class ExpirePoints extends Command
         //$expirationDate = Carbon::parse('2024-12-21 00:00:00')->subDays(Point::EXPIRATION_DAYS);
         $this->info($expirationDate);
 
-        $expiredPoints = Point::where('deposit', '>', 0)
-            ->whereNull('expired_at')
+        $expiredPoints = Point::whereNull('expired_at')
+            ->where('pointable_type', ProductReview::class)
+            ->where('deposit', '>', 0)
             ->where('created_at', '<', $expirationDate)
             //->get();
             ->update(['expired_at' => now()]);
