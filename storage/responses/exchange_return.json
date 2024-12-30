@@ -15,7 +15,7 @@
             "buyer_address_zipcode": "주문자 우편번호",
             "buyer_address": "주문자 주소",
             "buyer_address_detail": "주문자 상세주소",
-            "delivery_name": "배송지명",
+            "delivery_name": "받는사람 이름",
             "delivery_phone": "배송지 연락처",
             "delivery_postal_code": "배송지 우편번호",
             "delivery_address": "배송지 주소",

@@ -1,0 +1,70 @@
+{
+    "success": true,
+    "data": {
+        "order": {
+            "id": "기본키",
+            "buyer_name": "주문자 이름",
+            "buyer_email": "주문자 이메일",
+            "buyer_contact": "주문자 연락처",
+            "buyer_address_zipcode": "주문자 우편번호",
+            "buyer_address": "주문자 주소",
+            "buyer_address_detail": "주문자 상세주소",
+            "delivery_name": "받는사람 이름",
+            "delivery_phone": "배송지 연락처",
+            "delivery_postal_code": "배송지 우편번호",
+            "delivery_address": "배송지 주소",
+            "delivery_address_detail": "배송지 상세주소",
+            "delivery_request": "배송 요청 사항",
+            "common_entrance_method": "공동현관 출입방법",
+            "total_amount": "주문 총액",
+            "user_coupon_id": "사용자 쿠폰 기본키",
+            "coupon_discount": "쿠폰 할인액",
+            "use_points": "적립금 사용액",
+            "delivery_fee": "배송비",
+            "price": "최종결제액",
+            "imp_uid": "주문번호 (아임포트)",
+            "merchant_uid": "주문번호 (내부)",
+            "pay_method_pg": "결제 pg ex) html5_inicis",
+            "pay_method_method": "결제수단 ex) card, vbank",
+            "created_at": "등록일자",
+            "updated_at": "수정일자",
+            "delivery_started_at": "배송 시작 일시",
+            "purchase_confirmed_at": "구매 확정 일시",
+            "delivery_tracking_number": "주문배송번호",
+            "status": "주문 상태",
+            "orderProducts": [
+                {
+                    "id": "기본키",
+                    "quantity": "상품 수량",
+                    "price": "상품 가격",
+                    "updated_at": "수정일자",
+                    "status": "주문 상태",
+                    "productOption": {
+                        "id": "기본키",
+                        "name": "옵션명",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "stock_quantity": "재고 수량"
+                    }
+                },
+                {
+                    "id": "기본키",
+                    "quantity": "상품 수량",
+                    "price": "상품 가격",
+                    "updated_at": "수정일자",
+                    "status": "주문 상태",
+                    "productOption": {
+                        "id": "기본키",
+                        "name": "옵션명",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "stock_quantity": "재고 수량"
+                    }
+                }
+            ]
+        },
+        "m_redirect_url": "리다이렉트 URL",
+        "imp_code": "가맹점 식별코드"
+    },
+    "message": "성공적으로 처리되었습니다."
+}
