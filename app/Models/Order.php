@@ -133,7 +133,11 @@ class Order extends Model
                 abort(response()->json([
                     'message' => '쿠폰을 확인해주세요.',
                     //'errors' => ['user_coupon_id' => '쿠폰을 확인해주세요.'],
-                    'errors' => $coupon->toArray(),
+                    'errors' => [
+                        'data_user_coupon_id' => $data['user_coupon_id'],
+                        'user_coupon_id' => $coupon?->pivot->id,
+                        ...$coupon->toArray(),
+                    ]
                 ], 422));
             }
             $couponDiscountAmount = $coupon?->getDiscountAmountByType($this->total_amount + $this->delivery_fee) ?? 0;
