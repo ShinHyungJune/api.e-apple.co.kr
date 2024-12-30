@@ -17,7 +17,8 @@ class ExchangeReturnResource extends JsonResource
     {
         //return parent::toArray($request);
         $return = [
-            ...$this->only(['id', 'type', 'change_of_mind', 'delivery_issue', 'product_issue', 'description']),
+            ...$this->only(['id', 'type', 'problem', 'description'
+                /*'change_of_mind', 'delivery_issue', 'product_issue',*/]),
             'order' => OrderResource::make($this->whenLoaded('order')),
             'status' => ExchangeReturnStatus::from($this->status)->label(),
         ];
