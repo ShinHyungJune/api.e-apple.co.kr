@@ -140,7 +140,7 @@ class Order extends Model
                     ]*/
                 ], 422));
             }
-            $couponDiscountAmount = $coupon?->getDiscountAmountByType($this->total_amount + $this->delivery_fee) ?? 0;
+            $couponDiscountAmount = $coupon?->getDiscountAmountByType($this->total_amount) ?? 0;
             //if ($data['coupon_discount_amount'] !== $couponDiscountAmount)
             {
                 //abort(422, '쿠폰 할인금액을 확인해주세요.');
