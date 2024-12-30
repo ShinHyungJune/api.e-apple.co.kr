@@ -97,7 +97,7 @@ class Order extends Model
             $productOption = $productOptions->where('product_id', $e['product_id'])->findOrFail($e['product_option_id']);
             return $e['quantity'] * $productOption->price;
         });*/
-        if ($data['total_amount'] !== $totalAmount) {
+        if ((int)$data['total_amount'] !== $totalAmount) {
             //abort(422, '상품금액을 확인해주세요.');
             abort(response()->json([
                 'message' => '상품금액을 확인해주세요.',
