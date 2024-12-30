@@ -151,6 +151,7 @@ class Order extends Model
                         'coupon_discount_amount' => '쿠폰 할인금액을 확인해주세요.',
                         'debug' => $data['coupon_discount_amount'] . ':' . $couponDiscountAmount,
                         'order' => $this->toArray(),
+                        'coupon' => $coupon->toArray(),
                     ],
                 ], 422));
             }
