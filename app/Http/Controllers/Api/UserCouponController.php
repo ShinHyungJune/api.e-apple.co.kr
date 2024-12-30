@@ -23,8 +23,9 @@ class UserCouponController extends Controller
     public function index(Request $request)
     {
         $totalOrderAmount = (int)$request->input('total_order_amount');
-        $items = auth()->user()->availableCoupons()
-            ->where(function ($query) use ($totalOrderAmount) {
+        $query = auth()->user()->availableCoupons();
+        if ($totalOrderAmount > 0) {
+            $query->where(function ($query) use ($totalOrderAmount) {
                 $query->where('type', Coupon::TYPE_RATE)
                     ->orWhere(function ($query) use ($totalOrderAmount) {
                         $query->when('amount', function ($query) use ($totalOrderAmount) {
@@ -32,8 +33,9 @@ class UserCouponController extends Controller
                             $query->where('type', Coupon::TYPE_AMOUNT)->where('minimum_purchase_amount', '<=', $totalOrderAmount);
                         });
                     });
-            })
-            ->latest()->paginate($request->get('take', 10));
+            });
+        };
+        $items = $query->latest()->paginate($request->get('take', 10));
 
         return UserCouponResource::collection($items);
     }
