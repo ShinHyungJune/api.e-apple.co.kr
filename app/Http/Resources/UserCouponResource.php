@@ -20,7 +20,7 @@ class UserCouponResource extends JsonResource
             ...$this->only(['id', 'name', 'type', 'discount_amount', 'minimum_purchase_amount', 'discount_rate', 'usage_limit_amount', 'valid_days', 'issued_until']),
             'user_coupon_id' => $this->pivot->id,
             //'expired_at' => $this->pivot->expired_at,
-            'expired_days' => (int)now()->diffInDays($this->pivot->expired_at)
+            'expiration_left_days' => (int)now()->diffInDays($this->pivot->expired_at)
         ];
 
         //*
