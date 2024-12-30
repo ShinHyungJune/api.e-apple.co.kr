@@ -145,7 +145,7 @@ class Order extends Model
             {
                 //abort(422, '쿠폰 할인금액을 확인해주세요.');
                 abort(response()->json([
-                    'message' => '쿠폰 할인금액을 확인해주세요.',
+                    'message' => '쿠폰 할인금액을 확인해주세요!',
                     //'errors' => ['coupon_discount_amount' => '쿠폰 할인금액을 확인해주세요.'],
                     'errors' => [
                         'coupon_discount_amount' => '쿠폰 할인금액을 확인해주세요.',
