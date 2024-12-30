@@ -145,7 +145,7 @@ class Order extends Model
             {
                 //abort(422, '쿠폰 할인금액을 확인해주세요.');
                 abort(response()->json([
-                    'message' => '쿠폰 할인금액을 확인해주세요',
+                    'message' => '쿠폰 할인금액을 확인해주세요.',
                     'errors' => ['coupon_discount_amount' => '쿠폰 할인금액을 확인해주세요.'],
                     /*'errors' => [
                         'coupon_discount_amount' => '쿠폰 할인금액을 확인해주세요.',
@@ -178,11 +178,17 @@ class Order extends Model
          * 최종결제금액 확인
          */
         $paymentAmount = $this->total_amount - $couponDiscountAmount - $usePoint + $this->delivery_fee;
-        if ($data['payment_amount'] !== $paymentAmount) {
+        //if ((int)$data['payment_amount'] !== $paymentAmount)
+        {
             //abort(422, '최종 결제금액을 확인해주세요.');
             abort(response()->json([
                 'message' => '최종 결제금액을 확인해주세요.',
-                'errors' => ['payment_amount' => '최종 결제금액을 확인해주세요.'],
+                //'errors' => ['payment_amount' => '최종 결제금액을 확인해주세요.'],
+                'errors' => [
+                    'payment_amount' => '최종 결제금액을 확인해주세요.',
+                    'debug' => $data['payment_amount'] . ':' . $paymentAmount,
+                    'order' => $this->toArray(),
+                ],
             ], 422));
 
         }
