@@ -45,13 +45,14 @@ class UserCouponController extends Controller
         $totalOrderAmount = (int)$request->input('total_order_amount');
         $items = auth()->user()->availableCoupons()
             ->where(function ($query) use ($totalOrderAmount) {
-                $query->where('type', Coupon::TYPE_RATE)
-                    /*->orWhere(function ($query) use ($totalOrderAmount) {
+
+                /*$query->where('type', Coupon::TYPE_RATE)
+                    ->orWhere(function ($query) use ($totalOrderAmount) {
                         $query->when('amount', function ($query) use ($totalOrderAmount) {
                             //타입이 amount 인 경우는 최소 결제액 확인
                             $query->where('type', Coupon::TYPE_AMOUNT)->where('minimum_purchase_amount', '<=', $totalOrderAmount);
                         });
-                    })*/;
+                    });*/
             })
             ->latest()->get();
 
