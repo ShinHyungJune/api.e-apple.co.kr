@@ -32,6 +32,7 @@ class ProductController extends ApiController
      */
     public function show(Product $product)
     {
+        $product->load('options');
         return $this->respondSuccessfully(ProductResource::make($product));
     }
 

@@ -79,7 +79,7 @@ class ProductController extends ApiController
     public function show(Product $product)
     {
         $product->increment('view_count');
-        $product->load(['reviews','inquiries']);
+        $product->load(['options', 'reviews','inquiries']);
         return $this->respondSuccessfully(ProductResource::make($product));
     }
 
