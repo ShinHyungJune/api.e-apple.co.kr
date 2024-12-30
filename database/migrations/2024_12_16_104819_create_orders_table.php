@@ -33,7 +33,7 @@ return new class extends Migration
             $table->string("buyer_address_detail")->nullable()->comment('주문자 상세주소');
 
             //배송지 정보
-            $table->string('delivery_name')->nullable()->comment('배송지명');
+            $table->string('delivery_name')->nullable()->comment('받는사람 이름');
             $table->string('delivery_phone', 20)->nullable()->comment('배송지 연락처');
             $table->string('delivery_postal_code', 10)->nullable()->comment('배송지 우편번호');
             $table->string('delivery_address')->nullable()->comment('배송지 주소');

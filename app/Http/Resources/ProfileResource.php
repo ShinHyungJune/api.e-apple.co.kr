@@ -18,7 +18,8 @@ class ProfileResource extends JsonResource
     {
         //return parent::toArray($request);
         $return = [
-            ...$this->only(['id', 'name', 'email', 'phone', 'nickname', 'points',
+            ...$this->only(['id', 'name', 'email', 'phone', 'nickname', 'is_agree_promotion',
+                'points',
                 'available_coupons_count',//사용 가능한 쿠폰 개수
                 'available_product_reviews_count',//작성 가능한 상품 리뷰 개수
                 'product_reviews_count', //내 상품 리뷰 개수
