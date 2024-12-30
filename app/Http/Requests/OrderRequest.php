@@ -67,9 +67,9 @@ class OrderRequest extends FormRequest
             $return = [
                 ...$return,
                 'buyer_name' => ['required', 'string', 'max:255'], // 주문자명
-                'buyer_phone' => ['required', 'string', 'max:20'], // 주문자 연락처
+                'buyer_contact' => ['required', 'string', 'max:20'], // 주문자 연락처
                 'buyer_email' => ['nullable', 'email', 'max:255'],
-                'buyer_postal_code' => ['nullable', 'string', 'max:10'],
+                'buyer_address_zipcode' => ['nullable', 'string', 'max:10'],
                 'buyer_address' => ['nullable', 'string', 'max:255'],
                 'buyer_address_detail' => ['nullable', 'string', 'max:255'],
 
@@ -98,11 +98,11 @@ class OrderRequest extends FormRequest
                 ],//사용자 쿠폰 기본키
                 'coupon_discount_amount' => ['nullable', 'integer', 'min:0'],//쿠폰할인액
                 'use_points' => ['nullable', 'integer', 'min:0'],//적립금 사용액
-                'payment_amount' => ['required', 'integer', 'min:0'],//최종결제액 = total_amount - coupon_discount_amount - use_points + delivery_fee
+                'price' => ['required', 'integer', 'min:0'],//최종결제액 = total_amount - coupon_discount_amount - use_points + delivery_fee
 
                 'merchant_uid' => ['required'],
-                'payment_pg' => ['required'],
-                'payment_method' => ['required', 'in:' . implode(',', IamportMethod::values())],
+                'pay_method_pg' => ['required'],
+                'pay_method_method' => ['required', 'in:' . implode(',', IamportMethod::values())],
             ];
         }
 
@@ -144,7 +144,7 @@ class OrderRequest extends FormRequest
         if ($this->isMethod('PUT')) {
             $inputs['status'] = OrderStatus::ORDER_COMPLETE->value;
             $inputs['merchant_uid'] = 'ORDER-' . str_pad($this->id, 8, '0', STR_PAD_LEFT);
-            $inputs['payment_pg'] = IamportMethod::from($this->payment_method)->pg();
+            $inputs['pay_method_pg'] = IamportMethod::from($this->pay_method_method)->pg();
         }
 
 
@@ -162,8 +162,8 @@ class OrderRequest extends FormRequest
             'purchase_confirmed_at' => ['description' => '<span class="point">주문 확정 일시</span>'],
             'buyer_name' => ['description' => '<span class="point">주문자 이름</span>'],
             'buyer_email' => ['description' => '<span class="point">주문자 이메일</span>'],
-            'buyer_phone' => ['description' => '<span class="point">주문자 연락처</span>'],
-            'buyer_postal_code' => ['description' => '<span class="point">주문자 우편번호</span>'],
+            'buyer_contact' => ['description' => '<span class="point">주문자 연락처</span>'],
+            'buyer_address_zipcode' => ['description' => '<span class="point">주문자 우편번호</span>'],
             'buyer_address' => ['description' => '<span class="point">주문자 주소</span>'],
             'buyer_address_detail' => ['description' => '<span class="point">주문자 상세주소</span>'],
             'delivery_name' => ['description' => '<span class="point">배송지명</span>'],
@@ -178,14 +178,14 @@ class OrderRequest extends FormRequest
             'coupon_discount' => ['description' => '<span class="point">쿠폰 할인액</span>'],
             'use_points' => ['description' => '<span class="point">적립금 사용액</span>'],
             'delivery_fee' => ['description' => '<span class="point">배송비</span>'],
-            'payment_amount' => ['description' => '<span class="point">최종결제액</span>'],
+            'price' => ['description' => '<span class="point">최종결제액</span>'],
             'imp_uid' => ['description' => '<span class="point">주문번호 (아임포트)</span>'],
             'merchant_uid' => ['description' => '<span class="point">주문번호 (내부)</span>'],
             'payment_fail_reason' => ['description' => '<span class="point">결제실패사유</span>'],
             'is_payment_process_success' => ['description' => '<span class="point">결제완료처리여부</span>'],
             'is_payment_process_record' => ['description' => '<span class="point">결제 대기 또는 성공 후 관련내용 기록처리여부</span>'],
-            'payment_pg' => ['description' => '<span class="point">결제 pg ex) html5_inicis</span>'],
-            'payment_method' => ['description' => '<span class="point">결제수단 ex) card, vbank</span>'],
+            'pay_method_pg' => ['description' => '<span class="point">결제 pg ex) html5_inicis</span>'],
+            'pay_method_method' => ['description' => '<span class="point">결제수단 ex) card, vbank</span>'],
             'vbank_num' => ['description' => '<span class="point">가상계좌 계좌번호</span>'],
             'vbank_name' => ['description' => '<span class="point">가상계좌 은행명</span>'],
             'vbank_date' => ['description' => '<span class="point">가상계좌 입금기한</span>'],

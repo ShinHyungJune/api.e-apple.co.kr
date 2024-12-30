@@ -146,14 +146,14 @@ class Order extends Model
                 //abort(422, '쿠폰 할인금액을 확인해주세요.');
                 abort(response()->json([
                     'message' => '쿠폰 할인금액을 확인해주세요.',
-                    //'errors' => ['coupon_discount_amount' => '쿠폰 할인금액을 확인해주세요.'],
-                    'errors' => [
+                    'errors' => ['coupon_discount_amount' => '쿠폰 할인금액을 확인해주세요.'],
+                    /*'errors' => [
                         'coupon_discount_amount' => '쿠폰 할인금액을 확인해주세요.',
                         //TODO 추후 삭제
                         'debug' => $data['coupon_discount_amount'] . ':' . $couponDiscountAmount,
                         'order' => $this->toArray(),
                         'coupon' => $coupon->toArray(),
-                    ],
+                    ],*/
                 ], 422));
             }
         }
@@ -179,27 +179,26 @@ class Order extends Model
          * 최종결제금액 확인
          */
         $paymentAmount = $this->total_amount - $couponDiscountAmount - $usePoint + $this->delivery_fee;
-        if ((int)$data['payment_amount'] !== $paymentAmount)
+        if ((int)$data['price'] !== $paymentAmount)
         {
             //abort(422, '최종 결제금액을 확인해주세요.');
             abort(response()->json([
                 'message' => '최종 결제금액을 확인해주세요.',
-                //'errors' => ['payment_amount' => '최종 결제금액을 확인해주세요.'],
-                'errors' => [
-                    'payment_amount' => '최종 결제금액을 확인해주세요.',
+                'errors' => ['price' => '최종 결제금액을 확인해주세요.'],
+                /*'errors' => [
+                    'price' => '최종 결제금액을 확인해주세요.',
                     //TODO 추후 삭제
-                    'debug' => $data['payment_amount'] . ':' . $paymentAmount,
+                    'debug' => $data['price'] . ':' . $paymentAmount,
                     'order' => $this->toArray(),
-                ],
+                ],*/
             ], 422));
-
         }
-        if ($data['payment_amount'] < Order::MIN_PAYMENT_AMOUNT) {
+        if ($data['price'] < Order::MIN_PAYMENT_AMOUNT) {
             //abort(422, '최소결제금액은 ' . number_format(Order::MIN_PAYMENT_AMOUNT) . '원 입니다.');
             $m = '최소결제금액은 ' . number_format(Order::MIN_PAYMENT_AMOUNT) . '원 입니다.';
             abort(response()->json([
                 'message' => $m,
-                'errors' => ['payment_amount' => $m],
+                'errors' => ['price' => $m],
             ], 422));
         }
 

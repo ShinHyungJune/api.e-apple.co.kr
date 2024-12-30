@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "1380e31a-99ba-4c1c-983b-2486009c2fda",
+        "_postman_id": "42e914fb-65e7-41fc-b5bc-0849b066dcd5",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -83,7 +83,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"guest_id\":\"ducimus\",\"product_id\":\"dolores\",\"product_options\":[{\"product_option_id\":16,\"quantity\":25}]}"
+                            "raw": "{\"guest_id\":\"id\",\"product_id\":\"aut\",\"product_options\":[{\"product_option_id\":11,\"quantity\":63}]}"
                         },
                         "description": "",
                         "auth": {
@@ -111,7 +111,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "reprehenderit",
+                                    "value": "libero",
                                     "description": "The ID of the cart."
                                 }
                             ]
@@ -129,7 +129,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"guest_id\":\"quia\",\"product_id\":\"dolorem\",\"product_options\":[{\"product_option_id\":7,\"quantity\":34}]}"
+                            "raw": "{\"guest_id\":\"architecto\",\"product_id\":\"consectetur\",\"product_options\":[{\"product_option_id\":2,\"quantity\":77}]}"
                         },
                         "description": "",
                         "auth": {
@@ -237,7 +237,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "aut",
+                                    "value": "est",
                                     "description": "The ID of the cart."
                                 }
                             ]
@@ -286,13 +286,13 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "quibusdam",
+                                    "value": "et",
                                     "description": "The ID of the cart."
                                 },
                                 {
                                     "id": "option",
                                     "key": "option",
-                                    "value": "esse",
+                                    "value": "et",
                                     "description": "The option."
                                 }
                             ]
@@ -310,7 +310,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"quantity\":88}"
+                            "raw": "{\"quantity\":23}"
                         },
                         "description": "",
                         "auth": {
@@ -338,13 +338,13 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "est",
+                                    "value": "molestiae",
                                     "description": "The ID of the cart."
                                 },
                                 {
                                     "id": "option",
                                     "key": "option",
-                                    "value": "aperiam",
+                                    "value": "fugiat",
                                     "description": "The option."
                                 }
                             ]
@@ -455,17 +455,17 @@
                             "query": [
                                 {
                                     "key": "type",
-                                    "value": "quis",
+                                    "value": "nulla",
                                     "description": "String monthly_suggestion",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/categories\/packages\/:type?type=quis",
+                            "raw": "{{baseUrl}}\/api\/categories\/packages\/:type?type=nulla",
                             "variable": [
                                 {
                                     "id": "type",
                                     "key": "type",
-                                    "value": "accusantium",
+                                    "value": "harum",
                                     "description": ""
                                 }
                             ]
@@ -663,7 +663,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":\"natus\",\"name\":\"vjrzgiryosm\",\"recipient_name\":\"oyibgevytliycgdyerhwt\",\"phone\":\"xkgpogryhsrl\",\"postal_code\":\"xq\",\"address\":\"gtyeholsjslwtmfi\",\"address_detail\":\"adbzlcumhqukqudcpwd\",\"delivery_request\":\"ut\",\"is_default\":true}"
+                            "raw": "{\"user_id\":\"magni\",\"name\":\"rajcczsevjplaewcpkrj\",\"recipient_name\":\"sigqccxwgbzc\",\"phone\":\"pstaayubvifprxv\",\"postal_code\":\"wefvp\",\"address\":\"pyrtzwtslbw\",\"address_detail\":\"gc\",\"delivery_request\":\"est\",\"is_default\":true}"
                         },
                         "description": ""
                     },
@@ -746,7 +746,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":\"quisquam\",\"name\":\"aozdcjeq\",\"recipient_name\":\"fehqawdjaoltkztiaojbfcn\",\"phone\":\"gzsglytg\",\"postal_code\":\"xs\",\"address\":\"kkyfbx\",\"address_detail\":\"j\",\"delivery_request\":\"quos\",\"is_default\":false}"
+                            "raw": "{\"user_id\":\"et\",\"name\":\"dsvccames\",\"recipient_name\":\"eiofmvzcervcwtkrkoncegvl\",\"phone\":\"pgvamunzjneedrhflom\",\"postal_code\":\"lrnu\",\"address\":\"rdkx\",\"address_detail\":\"uyjkkrwmajhzyr\",\"delivery_request\":\"accusantium\",\"is_default\":true}"
                         },
                         "description": ""
                     },
@@ -828,7 +828,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\n    \"data\": [\n        {\n            \"id\": \"\uae30\ubcf8\ud0a4\",\n            \"type\": \"\uc694\uccad \uc720\ud615: exchange(\uad50\ud658) \ub610\ub294 return(\ubc18\ud488)\",\n            \"change_of_mind\": \"\ub2e8\uc21c\ubcc0\uc2ec ex) \uc0c1\ud488\uc774 \ub9c8\uc74c\uc5d0 \ub4e4\uc9c0 \uc54a\uc74c, \ub354 \uc800\ub834\ud55c \uc0c1\ud488\uc744 \ubc1c\uacac\ud568\",\n            \"delivery_issue\": \"\ubc30\uc1a1\ubb38\uc81c ex) \ub2e4\ub978 \uc0c1\ud488\uc774 \ubc30\uc1a1\ub428, \ubc30\uc1a1\ub41c \uc7a5\uc18c\uc5d0 \ubc15\uc2a4\uac00 \ubd84\uc2e4\ub428, \ub2e4\ub978 \uc8fc\uc18c\ub85c \ubc30\uc1a1\ub428\",\n            \"product_issue\": \"\uc0c1\ud488\ubb38\uc81c ex) \uc0c1\ud488\uc758 \uad6c\uc131\ud488\\\/\ubd80\uc18d\ud488\uc774 \ub4e4\uc5b4\uc788\uc9c0 \uc54a\uc74c, \uc0c1\ud488\uc774 \uc124\uba85\uacfc \ub2e4\ub984, \uc0c1\ud488\uc774 \ud30c\uc190\ub418\uc5b4 \ubc30\uc1a1\ub428, \uc0c1\ud488 \uacb0\ud568\\\/\uae30\ub2a5\uc5d0 \uc774\uc0c1\uc774 \uc788\uc74c\",\n            \"description\": \"\uc0c1\uc138\uc124\uba85\",\n            \"order\": {\n                \"id\": \"\uae30\ubcf8\ud0a4\",\n                \"buyer_name\": \"\uc8fc\ubb38\uc790 \uc774\ub984\",\n                \"buyer_email\": \"\uc8fc\ubb38\uc790 \uc774\uba54\uc77c\",\n                \"buyer_phone\": \"\uc8fc\ubb38\uc790 \uc5f0\ub77d\ucc98\",\n                \"buyer_postal_code\": \"\uc8fc\ubb38\uc790 \uc6b0\ud3b8\ubc88\ud638\",\n                \"buyer_address\": \"\uc8fc\ubb38\uc790 \uc8fc\uc18c\",\n                \"buyer_address_detail\": \"\uc8fc\ubb38\uc790 \uc0c1\uc138\uc8fc\uc18c\",\n                \"delivery_name\": \"\ubc30\uc1a1\uc9c0\uba85\",\n                \"delivery_phone\": \"\ubc30\uc1a1\uc9c0 \uc5f0\ub77d\ucc98\",\n                \"delivery_postal_code\": \"\ubc30\uc1a1\uc9c0 \uc6b0\ud3b8\ubc88\ud638\",\n                \"delivery_address\": \"\ubc30\uc1a1\uc9c0 \uc8fc\uc18c\",\n                \"delivery_address_detail\": \"\ubc30\uc1a1\uc9c0 \uc0c1\uc138\uc8fc\uc18c\",\n                \"delivery_request\": \"\ubc30\uc1a1 \uc694\uccad \uc0ac\ud56d\",\n                \"common_entrance_method\": \"\uacf5\ub3d9\ud604\uad00 \ucd9c\uc785\ubc29\ubc95\",\n                \"total_amount\": \"\uc8fc\ubb38 \ucd1d\uc561\",\n                \"user_coupon_id\": \"\uc0ac\uc6a9\uc790 \ucfe0\ud3f0 \uae30\ubcf8\ud0a4\",\n                \"coupon_discount\": \"\ucfe0\ud3f0 \ud560\uc778\uc561\",\n                \"use_points\": \"\uc801\ub9bd\uae08 \uc0ac\uc6a9\uc561\",\n                \"delivery_fee\": \"\ubc30\uc1a1\ube44\",\n                \"payment_amount\": \"\ucd5c\uc885\uacb0\uc81c\uc561\",\n                \"imp_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\uc544\uc784\ud3ec\ud2b8)\",\n                \"merchant_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\ub0b4\ubd80)\",\n                \"payment_pg\": \"\uacb0\uc81c pg ex) html5_inicis\",\n                \"payment_method\": \"\uacb0\uc81c\uc218\ub2e8 ex) card, vbank\",\n                \"created_at\": \"2024-12-18T11:58:28.000000Z\",\n                \"delivery_started_at\": \"\ubc30\uc1a1 \uc2dc\uc791 \uc77c\uc2dc\",\n                \"purchase_confirmed_at\": \"\uc8fc\ubb38 \ud655\uc815 \uc77c\uc2dc\",\n                \"status\": \"\uc8fc\ubb38 \uc0c1\ud0dc\"\n            },\n            \"status\": \"\uc811\uc218\uc644\ub8cc\"\n        }\n    ],\n    \"links\": {\n        \"first\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders\\\/1\\\/exchange_returns?page=1\",\n        \"last\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders\\\/1\\\/exchange_returns?page=1\",\n        \"prev\": null,\n        \"next\": null\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 1,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; \uc774\uc804\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders\\\/1\\\/exchange_returns?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"\ub2e4\uc74c &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"path\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders\\\/1\\\/exchange_returns\",\n        \"per_page\": 10,\n        \"to\": 2,\n        \"total\": 2\n    }\n}\n",
+                            "body": "{\n    \"data\": [\n        {\n            \"id\": \"\uae30\ubcf8\ud0a4\",\n            \"type\": \"\uc694\uccad \uc720\ud615: exchange(\uad50\ud658) \ub610\ub294 return(\ubc18\ud488)\",\n            \"change_of_mind\": \"\ub2e8\uc21c\ubcc0\uc2ec ex) \uc0c1\ud488\uc774 \ub9c8\uc74c\uc5d0 \ub4e4\uc9c0 \uc54a\uc74c, \ub354 \uc800\ub834\ud55c \uc0c1\ud488\uc744 \ubc1c\uacac\ud568\",\n            \"delivery_issue\": \"\ubc30\uc1a1\ubb38\uc81c ex) \ub2e4\ub978 \uc0c1\ud488\uc774 \ubc30\uc1a1\ub428, \ubc30\uc1a1\ub41c \uc7a5\uc18c\uc5d0 \ubc15\uc2a4\uac00 \ubd84\uc2e4\ub428, \ub2e4\ub978 \uc8fc\uc18c\ub85c \ubc30\uc1a1\ub428\",\n            \"product_issue\": \"\uc0c1\ud488\ubb38\uc81c ex) \uc0c1\ud488\uc758 \uad6c\uc131\ud488\\\/\ubd80\uc18d\ud488\uc774 \ub4e4\uc5b4\uc788\uc9c0 \uc54a\uc74c, \uc0c1\ud488\uc774 \uc124\uba85\uacfc \ub2e4\ub984, \uc0c1\ud488\uc774 \ud30c\uc190\ub418\uc5b4 \ubc30\uc1a1\ub428, \uc0c1\ud488 \uacb0\ud568\\\/\uae30\ub2a5\uc5d0 \uc774\uc0c1\uc774 \uc788\uc74c\",\n            \"description\": \"\uc0c1\uc138\uc124\uba85\",\n            \"order\": {\n                \"id\": \"\uae30\ubcf8\ud0a4\",\n                \"buyer_name\": \"\uc8fc\ubb38\uc790 \uc774\ub984\",\n                \"buyer_email\": \"\uc8fc\ubb38\uc790 \uc774\uba54\uc77c\",\n                \"buyer_phone\": \"\uc8fc\ubb38\uc790 \uc5f0\ub77d\ucc98\",\n                \"buyer_postal_code\": \"\uc8fc\ubb38\uc790 \uc6b0\ud3b8\ubc88\ud638\",\n                \"buyer_address\": \"\uc8fc\ubb38\uc790 \uc8fc\uc18c\",\n                \"buyer_address_detail\": \"\uc8fc\ubb38\uc790 \uc0c1\uc138\uc8fc\uc18c\",\n                \"delivery_name\": \"\ubc30\uc1a1\uc9c0\uba85\",\n                \"delivery_phone\": \"\ubc30\uc1a1\uc9c0 \uc5f0\ub77d\ucc98\",\n                \"delivery_postal_code\": \"\ubc30\uc1a1\uc9c0 \uc6b0\ud3b8\ubc88\ud638\",\n                \"delivery_address\": \"\ubc30\uc1a1\uc9c0 \uc8fc\uc18c\",\n                \"delivery_address_detail\": \"\ubc30\uc1a1\uc9c0 \uc0c1\uc138\uc8fc\uc18c\",\n                \"delivery_request\": \"\ubc30\uc1a1 \uc694\uccad \uc0ac\ud56d\",\n                \"common_entrance_method\": \"\uacf5\ub3d9\ud604\uad00 \ucd9c\uc785\ubc29\ubc95\",\n                \"total_amount\": \"\uc8fc\ubb38 \ucd1d\uc561\",\n                \"user_coupon_id\": \"\uc0ac\uc6a9\uc790 \ucfe0\ud3f0 \uae30\ubcf8\ud0a4\",\n                \"coupon_discount\": \"\ucfe0\ud3f0 \ud560\uc778\uc561\",\n                \"use_points\": \"\uc801\ub9bd\uae08 \uc0ac\uc6a9\uc561\",\n                \"delivery_fee\": \"\ubc30\uc1a1\ube44\",\n                \"price\": \"\ucd5c\uc885\uacb0\uc81c\uc561\",\n                \"imp_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\uc544\uc784\ud3ec\ud2b8)\",\n                \"merchant_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\ub0b4\ubd80)\",\n                \"pay_method_pg\": \"\uacb0\uc81c pg ex) html5_inicis\",\n                \"pay_method_method\": \"\uacb0\uc81c\uc218\ub2e8 ex) card, vbank\",\n                \"created_at\": \"2024-12-18T11:58:28.000000Z\",\n                \"delivery_started_at\": \"\ubc30\uc1a1 \uc2dc\uc791 \uc77c\uc2dc\",\n                \"purchase_confirmed_at\": \"\uc8fc\ubb38 \ud655\uc815 \uc77c\uc2dc\",\n                \"status\": \"\uc8fc\ubb38 \uc0c1\ud0dc\"\n            },\n            \"status\": \"\uc811\uc218\uc644\ub8cc\"\n        }\n    ],\n    \"links\": {\n        \"first\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders\\\/1\\\/exchange_returns?page=1\",\n        \"last\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders\\\/1\\\/exchange_returns?page=1\",\n        \"prev\": null,\n        \"next\": null\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 1,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; \uc774\uc804\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders\\\/1\\\/exchange_returns?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"\ub2e4\uc74c &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"path\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders\\\/1\\\/exchange_returns\",\n        \"per_page\": 10,\n        \"to\": 2,\n        \"total\": 2\n    }\n}\n",
                             "name": ""
                         }
                     ]
@@ -855,7 +855,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"order_id\":\"cumque\",\"order_product_id\":\"culpa\",\"type\":\"exchange\",\"change_of_mind\":\"amet\",\"delivery_issue\":\"adipisci\",\"product_issue\":\"velit\",\"description\":\"Et autem aut est nemo dolores aut.\",\"status\":\"perspiciatis\",\"guest_id\":\"voluptas\"}"
+                            "raw": "{\"order_id\":\"minus\",\"order_product_id\":\"numquam\",\"type\":\"return\",\"change_of_mind\":\"eos\",\"delivery_issue\":\"placeat\",\"product_issue\":\"dolorum\",\"description\":\"Sint similique veritatis officiis cupiditate aut.\",\"status\":\"quo\",\"guest_id\":\"consequatur\"}"
                         },
                         "description": "",
                         "auth": {
@@ -866,7 +866,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"\uae30\ubcf8\ud0a4\",\n        \"type\": \"\uc694\uccad \uc720\ud615: exchange(\uad50\ud658) \ub610\ub294 return(\ubc18\ud488)\",\n        \"change_of_mind\": \"\ub2e8\uc21c\ubcc0\uc2ec ex) \uc0c1\ud488\uc774 \ub9c8\uc74c\uc5d0 \ub4e4\uc9c0 \uc54a\uc74c, \ub354 \uc800\ub834\ud55c \uc0c1\ud488\uc744 \ubc1c\uacac\ud568\",\n        \"delivery_issue\": \"\ubc30\uc1a1\ubb38\uc81c ex) \ub2e4\ub978 \uc0c1\ud488\uc774 \ubc30\uc1a1\ub428, \ubc30\uc1a1\ub41c \uc7a5\uc18c\uc5d0 \ubc15\uc2a4\uac00 \ubd84\uc2e4\ub428, \ub2e4\ub978 \uc8fc\uc18c\ub85c \ubc30\uc1a1\ub428\",\n        \"product_issue\": \"\uc0c1\ud488\ubb38\uc81c ex) \uc0c1\ud488\uc758 \uad6c\uc131\ud488\\\/\ubd80\uc18d\ud488\uc774 \ub4e4\uc5b4\uc788\uc9c0 \uc54a\uc74c, \uc0c1\ud488\uc774 \uc124\uba85\uacfc \ub2e4\ub984, \uc0c1\ud488\uc774 \ud30c\uc190\ub418\uc5b4 \ubc30\uc1a1\ub428, \uc0c1\ud488 \uacb0\ud568\\\/\uae30\ub2a5\uc5d0 \uc774\uc0c1\uc774 \uc788\uc74c\",\n        \"description\": \"\uc0c1\uc138\uc124\uba85\",\n        \"order\": {\n            \"id\": \"\uae30\ubcf8\ud0a4\",\n            \"buyer_name\": \"\uc8fc\ubb38\uc790 \uc774\ub984\",\n            \"buyer_email\": \"\uc8fc\ubb38\uc790 \uc774\uba54\uc77c\",\n            \"buyer_phone\": \"\uc8fc\ubb38\uc790 \uc5f0\ub77d\ucc98\",\n            \"buyer_postal_code\": \"\uc8fc\ubb38\uc790 \uc6b0\ud3b8\ubc88\ud638\",\n            \"buyer_address\": \"\uc8fc\ubb38\uc790 \uc8fc\uc18c\",\n            \"buyer_address_detail\": \"\uc8fc\ubb38\uc790 \uc0c1\uc138\uc8fc\uc18c\",\n            \"delivery_name\": \"\ubc30\uc1a1\uc9c0\uba85\",\n            \"delivery_phone\": \"\ubc30\uc1a1\uc9c0 \uc5f0\ub77d\ucc98\",\n            \"delivery_postal_code\": \"\ubc30\uc1a1\uc9c0 \uc6b0\ud3b8\ubc88\ud638\",\n            \"delivery_address\": \"\ubc30\uc1a1\uc9c0 \uc8fc\uc18c\",\n            \"delivery_address_detail\": \"\ubc30\uc1a1\uc9c0 \uc0c1\uc138\uc8fc\uc18c\",\n            \"delivery_request\": \"\ubc30\uc1a1 \uc694\uccad \uc0ac\ud56d\",\n            \"common_entrance_method\": \"\uacf5\ub3d9\ud604\uad00 \ucd9c\uc785\ubc29\ubc95\",\n            \"total_amount\": \"\uc8fc\ubb38 \ucd1d\uc561\",\n            \"user_coupon_id\": \"\uc0ac\uc6a9\uc790 \ucfe0\ud3f0 \uae30\ubcf8\ud0a4\",\n            \"coupon_discount\": \"\ucfe0\ud3f0 \ud560\uc778\uc561\",\n            \"use_points\": \"\uc801\ub9bd\uae08 \uc0ac\uc6a9\uc561\",\n            \"delivery_fee\": \"\ubc30\uc1a1\ube44\",\n            \"payment_amount\": \"\ucd5c\uc885\uacb0\uc81c\uc561\",\n            \"imp_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\uc544\uc784\ud3ec\ud2b8)\",\n            \"merchant_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\ub0b4\ubd80)\",\n            \"payment_pg\": \"\uacb0\uc81c pg ex) html5_inicis\",\n            \"payment_method\": \"\uacb0\uc81c\uc218\ub2e8 ex) card, vbank\",\n            \"created_at\": \"2024-12-18T11:58:28.000000Z\",\n            \"delivery_started_at\": \"\ubc30\uc1a1 \uc2dc\uc791 \uc77c\uc2dc\",\n            \"purchase_confirmed_at\": \"\uc8fc\ubb38 \ud655\uc815 \uc77c\uc2dc\",\n            \"status\": \"\uc8fc\ubb38 \uc0c1\ud0dc\"\n        },\n        \"status\": \"\uc811\uc218\uc644\ub8cc\"\n    },\n    \"message\": \"\uc131\uacf5\uc801\uc73c\ub85c \ucc98\ub9ac\ub418\uc5c8\uc2b5\ub2c8\ub2e4.\"\n}\n",
+                            "body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"\uae30\ubcf8\ud0a4\",\n        \"type\": \"\uc694\uccad \uc720\ud615: exchange(\uad50\ud658) \ub610\ub294 return(\ubc18\ud488)\",\n        \"change_of_mind\": \"\ub2e8\uc21c\ubcc0\uc2ec ex) \uc0c1\ud488\uc774 \ub9c8\uc74c\uc5d0 \ub4e4\uc9c0 \uc54a\uc74c, \ub354 \uc800\ub834\ud55c \uc0c1\ud488\uc744 \ubc1c\uacac\ud568\",\n        \"delivery_issue\": \"\ubc30\uc1a1\ubb38\uc81c ex) \ub2e4\ub978 \uc0c1\ud488\uc774 \ubc30\uc1a1\ub428, \ubc30\uc1a1\ub41c \uc7a5\uc18c\uc5d0 \ubc15\uc2a4\uac00 \ubd84\uc2e4\ub428, \ub2e4\ub978 \uc8fc\uc18c\ub85c \ubc30\uc1a1\ub428\",\n        \"product_issue\": \"\uc0c1\ud488\ubb38\uc81c ex) \uc0c1\ud488\uc758 \uad6c\uc131\ud488\\\/\ubd80\uc18d\ud488\uc774 \ub4e4\uc5b4\uc788\uc9c0 \uc54a\uc74c, \uc0c1\ud488\uc774 \uc124\uba85\uacfc \ub2e4\ub984, \uc0c1\ud488\uc774 \ud30c\uc190\ub418\uc5b4 \ubc30\uc1a1\ub428, \uc0c1\ud488 \uacb0\ud568\\\/\uae30\ub2a5\uc5d0 \uc774\uc0c1\uc774 \uc788\uc74c\",\n        \"description\": \"\uc0c1\uc138\uc124\uba85\",\n        \"order\": {\n            \"id\": \"\uae30\ubcf8\ud0a4\",\n            \"buyer_name\": \"\uc8fc\ubb38\uc790 \uc774\ub984\",\n            \"buyer_email\": \"\uc8fc\ubb38\uc790 \uc774\uba54\uc77c\",\n            \"buyer_phone\": \"\uc8fc\ubb38\uc790 \uc5f0\ub77d\ucc98\",\n            \"buyer_postal_code\": \"\uc8fc\ubb38\uc790 \uc6b0\ud3b8\ubc88\ud638\",\n            \"buyer_address\": \"\uc8fc\ubb38\uc790 \uc8fc\uc18c\",\n            \"buyer_address_detail\": \"\uc8fc\ubb38\uc790 \uc0c1\uc138\uc8fc\uc18c\",\n            \"delivery_name\": \"\ubc30\uc1a1\uc9c0\uba85\",\n            \"delivery_phone\": \"\ubc30\uc1a1\uc9c0 \uc5f0\ub77d\ucc98\",\n            \"delivery_postal_code\": \"\ubc30\uc1a1\uc9c0 \uc6b0\ud3b8\ubc88\ud638\",\n            \"delivery_address\": \"\ubc30\uc1a1\uc9c0 \uc8fc\uc18c\",\n            \"delivery_address_detail\": \"\ubc30\uc1a1\uc9c0 \uc0c1\uc138\uc8fc\uc18c\",\n            \"delivery_request\": \"\ubc30\uc1a1 \uc694\uccad \uc0ac\ud56d\",\n            \"common_entrance_method\": \"\uacf5\ub3d9\ud604\uad00 \ucd9c\uc785\ubc29\ubc95\",\n            \"total_amount\": \"\uc8fc\ubb38 \ucd1d\uc561\",\n            \"user_coupon_id\": \"\uc0ac\uc6a9\uc790 \ucfe0\ud3f0 \uae30\ubcf8\ud0a4\",\n            \"coupon_discount\": \"\ucfe0\ud3f0 \ud560\uc778\uc561\",\n            \"use_points\": \"\uc801\ub9bd\uae08 \uc0ac\uc6a9\uc561\",\n            \"delivery_fee\": \"\ubc30\uc1a1\ube44\",\n            \"price\": \"\ucd5c\uc885\uacb0\uc81c\uc561\",\n            \"imp_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\uc544\uc784\ud3ec\ud2b8)\",\n            \"merchant_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\ub0b4\ubd80)\",\n            \"pay_method_pg\": \"\uacb0\uc81c pg ex) html5_inicis\",\n            \"pay_method_method\": \"\uacb0\uc81c\uc218\ub2e8 ex) card, vbank\",\n            \"created_at\": \"2024-12-18T11:58:28.000000Z\",\n            \"delivery_started_at\": \"\ubc30\uc1a1 \uc2dc\uc791 \uc77c\uc2dc\",\n            \"purchase_confirmed_at\": \"\uc8fc\ubb38 \ud655\uc815 \uc77c\uc2dc\",\n            \"status\": \"\uc8fc\ubb38 \uc0c1\ud0dc\"\n        },\n        \"status\": \"\uc811\uc218\uc644\ub8cc\"\n    },\n    \"message\": \"\uc131\uacf5\uc801\uc73c\ub85c \ucc98\ub9ac\ub418\uc5c8\uc2b5\ub2c8\ub2e4.\"\n}\n",
                             "name": ""
                         }
                     ]
@@ -938,7 +938,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"type\":\"similique\",\"content\":\"at\"}"
+                            "raw": "{\"type\":\"qui\",\"content\":\"quo\"}"
                         },
                         "description": ""
                     },
@@ -1058,7 +1058,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\n    \"data\": [\n        {\n            \"id\": \"\uae30\ubcf8\ud0a4\",\n            \"buyer_name\": \"\uc8fc\ubb38\uc790 \uc774\ub984\",\n            \"buyer_email\": \"\uc8fc\ubb38\uc790 \uc774\uba54\uc77c\",\n            \"buyer_phone\": \"\uc8fc\ubb38\uc790 \uc5f0\ub77d\ucc98\",\n            \"buyer_postal_code\": \"\uc8fc\ubb38\uc790 \uc6b0\ud3b8\ubc88\ud638\",\n            \"buyer_address\": \"\uc8fc\ubb38\uc790 \uc8fc\uc18c\",\n            \"buyer_address_detail\": \"\uc8fc\ubb38\uc790 \uc0c1\uc138\uc8fc\uc18c\",\n            \"delivery_name\": \"\ubc30\uc1a1\uc9c0\uba85\",\n            \"delivery_phone\": \"\ubc30\uc1a1\uc9c0 \uc5f0\ub77d\ucc98\",\n            \"delivery_postal_code\": \"\ubc30\uc1a1\uc9c0 \uc6b0\ud3b8\ubc88\ud638\",\n            \"delivery_address\": \"\ubc30\uc1a1\uc9c0 \uc8fc\uc18c\",\n            \"delivery_address_detail\": \"\ubc30\uc1a1\uc9c0 \uc0c1\uc138\uc8fc\uc18c\",\n            \"delivery_request\": \"\ubc30\uc1a1 \uc694\uccad \uc0ac\ud56d\",\n            \"common_entrance_method\": \"\uacf5\ub3d9\ud604\uad00 \ucd9c\uc785\ubc29\ubc95\",\n            \"total_amount\": \"\uc8fc\ubb38 \ucd1d\uc561\",\n            \"user_coupon_id\": \"\uc0ac\uc6a9\uc790 \ucfe0\ud3f0 \uae30\ubcf8\ud0a4\",\n            \"coupon_discount\": \"\ucfe0\ud3f0 \ud560\uc778\uc561\",\n            \"use_points\": \"\uc801\ub9bd\uae08 \uc0ac\uc6a9\uc561\",\n            \"delivery_fee\": \"\ubc30\uc1a1\ube44\",\n            \"payment_amount\": \"\ucd5c\uc885\uacb0\uc81c\uc561\",\n            \"imp_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\uc544\uc784\ud3ec\ud2b8)\",\n            \"merchant_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\ub0b4\ubd80)\",\n            \"payment_pg\": \"\uacb0\uc81c pg ex) html5_inicis\",\n            \"payment_method\": \"\uacb0\uc81c\uc218\ub2e8 ex) card, vbank\",\n            \"created_at\": \"\ub4f1\ub85d\uc77c\uc790\",\n            \"updated_at\": \"\uc218\uc815\uc77c\uc790\",\n            \"delivery_started_at\": \"\ubc30\uc1a1 \uc2dc\uc791 \uc77c\uc2dc\",\n            \"purchase_confirmed_at\": \"\uad6c\ub9e4 \ud655\uc815 \uc77c\uc2dc\",\n            \"delivery_tracking_number\": \"\uc8fc\ubb38\ubc30\uc1a1\ubc88\ud638\",\n            \"status\": \"\uc8fc\ubb38 \uc0c1\ud0dc\",\n            \"orderProducts\": [\n                {\n                    \"id\": \"\uae30\ubcf8\ud0a4\",\n                    \"quantity\": \"\uc0c1\ud488 \uc218\ub7c9\",\n                    \"price\": \"\uc0c1\ud488 \uac00\uaca9\",\n                    \"updated_at\": \"\uc218\uc815\uc77c\uc790\",\n                    \"status\": \"\uc8fc\ubb38 \uc0c1\ud0dc\",\n                    \"product\": {\n                        \"id\": \"\uae30\ubcf8\ud0a4\",\n                        \"name\": \"\uc0c1\ud488\uba85\",\n                        \"description\": \"\uc0c1\ud488\uc124\uba85\",\n                        \"view_count\": \"\uc870\ud68c\uc218\",\n                        \"price\": \"\uac00\uaca9\",\n                        \"original_price\": \"\uc6d0\ub798 \uac00\uaca9\",\n                        \"delivery_fee\": \"\ubc30\uc1a1\ube44 (\uae30\ubcf8\uac12: 0)\",\n                        \"shipping_origin\": \"\ucd9c\uace0\uc9c0\",\n                        \"fruit_size\": \"\uacfc\uc77c \ud06c\uae30\",\n                        \"sugar_content\": \"\ub2f9\ub3c4\",\n                        \"food_type\": \"\uc2dd\ud488\uc758 \uc720\ud615\",\n                        \"manufacturer_and_location\": \"\uc0dd\uc0b0\uc790 \ubc0f \uc18c\uc7ac\uc9c0\",\n                        \"importer\": \"\uc218\uc785\uc790\",\n                        \"origin\": \"\uc6d0\uc0b0\uc9c0\",\n                        \"ingredients_and_composition\": \"\uc6d0\uc7ac\ub8cc \ubc0f \ud569\ub7c9\",\n                        \"storage_and_handling\": \"\ubcf4\uad00\\\/\ucde8\uae09\ubc29\ubc95\",\n                        \"manufacture_date\": \"\uc81c\uc870\uc5f0\uc6d0\uc77c\",\n                        \"expiration_date\": \"\uc720\ud1b5\uae30\ud55c\",\n                        \"gmo_desc\": \"\uc720\uc804\uc790\ubcc0\ud615 \ub18d\uc0b0\ubb3c \uc5ec\ubd80\",\n                        \"customer_service_contact\": \"\uc18c\ube44\uc790 \uc0c1\ub2f4 \ubb38\uc758\",\n                        \"options\": [\n                            {\n                                \"id\": \"\uae30\ubcf8\ud0a4\",\n                                \"name\": \"\uc635\uc158\uba85\",\n                                \"price\": \"\uac00\uaca9\",\n                                \"original_price\": \"\uc6d0\ub798 \uac00\uaca9\",\n                                \"stock_quantity\": \"\uc7ac\uace0 \uc218\ub7c9\"\n                            },\n                            {\n                                \"id\": \"\uae30\ubcf8\ud0a4\",\n                                \"name\": \"\uc635\uc158\uba85\",\n                                \"price\": \"\uac00\uaca9\",\n                                \"original_price\": \"\uc6d0\ub798 \uac00\uaca9\",\n                                \"stock_quantity\": \"\uc7ac\uace0 \uc218\ub7c9\"\n                            }\n                        ],\n                        \"is_new\": \"\uc0c8\ub85c\uc6b4\uc0c1\ud488 \uc5ec\ubd80\",\n                        \"is_best\": false,\n                        \"average_rating\": \"\ud3c9\uade0 \ud3c9\uc810\",\n                        \"reviews_count\": 30,\n                        \"inquiries_count\": 1,\n                        \"categories\": \"\uce74\ud14c\uace0\ub9ac\",\n                        \"img\": {\n                            \"id\": \"\uae30\ubcf8\ud0a4\",\n                            \"name\": \"\ud30c\uc77c\uc774\ub984\",\n                            \"url\": \"\uc774\ubbf8\uc9c0 URL\"\n                        },\n                        \"imgs\": [\n                            {\n                                \"id\": \"\uae30\ubcf8\ud0a4\",\n                                \"name\": \"\ud30c\uc77c\uc774\ub984\",\n                                \"url\": \"\uc774\ubbf8\uc9c0 URL\"\n                            }\n                        ]\n                    },\n                    \"productOption\": {\n                        \"id\": \"\uae30\ubcf8\ud0a4\",\n                        \"name\": \"\uc635\uc158\uba85\",\n                        \"price\": \"\uac00\uaca9\",\n                        \"original_price\": \"\uc6d0\ub798 \uac00\uaca9\",\n                        \"stock_quantity\": \"\uc7ac\uace0 \uc218\ub7c9\"\n                    }\n                }\n            ]\n        }\n    ],\n    \"links\": {\n        \"first\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=1\",\n        \"last\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=15\",\n        \"prev\": null,\n        \"next\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=2\"\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 15,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; \uc774\uc804\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=2\",\n                \"label\": \"2\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=3\",\n                \"label\": \"3\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=4\",\n                \"label\": \"4\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=5\",\n                \"label\": \"5\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=6\",\n                \"label\": \"6\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=7\",\n                \"label\": \"7\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=8\",\n                \"label\": \"8\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=9\",\n                \"label\": \"9\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=10\",\n                \"label\": \"10\",\n                \"active\": false\n            },\n            {\n                \"url\": null,\n                \"label\": \"...\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=14\",\n                \"label\": \"14\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=15\",\n                \"label\": \"15\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=2\",\n                \"label\": \"\ub2e4\uc74c &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"path\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders\",\n        \"per_page\": 10,\n        \"to\": 10,\n        \"total\": 146\n    }\n}\n",
+                            "body": "{\n    \"data\": [\n        {\n            \"id\": \"\uae30\ubcf8\ud0a4\",\n            \"buyer_name\": \"\uc8fc\ubb38\uc790 \uc774\ub984\",\n            \"buyer_email\": \"\uc8fc\ubb38\uc790 \uc774\uba54\uc77c\",\n            \"buyer_phone\": \"\uc8fc\ubb38\uc790 \uc5f0\ub77d\ucc98\",\n            \"buyer_postal_code\": \"\uc8fc\ubb38\uc790 \uc6b0\ud3b8\ubc88\ud638\",\n            \"buyer_address\": \"\uc8fc\ubb38\uc790 \uc8fc\uc18c\",\n            \"buyer_address_detail\": \"\uc8fc\ubb38\uc790 \uc0c1\uc138\uc8fc\uc18c\",\n            \"delivery_name\": \"\ubc30\uc1a1\uc9c0\uba85\",\n            \"delivery_phone\": \"\ubc30\uc1a1\uc9c0 \uc5f0\ub77d\ucc98\",\n            \"delivery_postal_code\": \"\ubc30\uc1a1\uc9c0 \uc6b0\ud3b8\ubc88\ud638\",\n            \"delivery_address\": \"\ubc30\uc1a1\uc9c0 \uc8fc\uc18c\",\n            \"delivery_address_detail\": \"\ubc30\uc1a1\uc9c0 \uc0c1\uc138\uc8fc\uc18c\",\n            \"delivery_request\": \"\ubc30\uc1a1 \uc694\uccad \uc0ac\ud56d\",\n            \"common_entrance_method\": \"\uacf5\ub3d9\ud604\uad00 \ucd9c\uc785\ubc29\ubc95\",\n            \"total_amount\": \"\uc8fc\ubb38 \ucd1d\uc561\",\n            \"user_coupon_id\": \"\uc0ac\uc6a9\uc790 \ucfe0\ud3f0 \uae30\ubcf8\ud0a4\",\n            \"coupon_discount\": \"\ucfe0\ud3f0 \ud560\uc778\uc561\",\n            \"use_points\": \"\uc801\ub9bd\uae08 \uc0ac\uc6a9\uc561\",\n            \"delivery_fee\": \"\ubc30\uc1a1\ube44\",\n            \"price\": \"\ucd5c\uc885\uacb0\uc81c\uc561\",\n            \"imp_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\uc544\uc784\ud3ec\ud2b8)\",\n            \"merchant_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\ub0b4\ubd80)\",\n            \"pay_method_pg\": \"\uacb0\uc81c pg ex) html5_inicis\",\n            \"pay_method_method\": \"\uacb0\uc81c\uc218\ub2e8 ex) card, vbank\",\n            \"created_at\": \"\ub4f1\ub85d\uc77c\uc790\",\n            \"updated_at\": \"\uc218\uc815\uc77c\uc790\",\n            \"delivery_started_at\": \"\ubc30\uc1a1 \uc2dc\uc791 \uc77c\uc2dc\",\n            \"purchase_confirmed_at\": \"\uad6c\ub9e4 \ud655\uc815 \uc77c\uc2dc\",\n            \"delivery_tracking_number\": \"\uc8fc\ubb38\ubc30\uc1a1\ubc88\ud638\",\n            \"status\": \"\uc8fc\ubb38 \uc0c1\ud0dc\",\n            \"orderProducts\": [\n                {\n                    \"id\": \"\uae30\ubcf8\ud0a4\",\n                    \"quantity\": \"\uc0c1\ud488 \uc218\ub7c9\",\n                    \"price\": \"\uc0c1\ud488 \uac00\uaca9\",\n                    \"updated_at\": \"\uc218\uc815\uc77c\uc790\",\n                    \"status\": \"\uc8fc\ubb38 \uc0c1\ud0dc\",\n                    \"product\": {\n                        \"id\": \"\uae30\ubcf8\ud0a4\",\n                        \"name\": \"\uc0c1\ud488\uba85\",\n                        \"description\": \"\uc0c1\ud488\uc124\uba85\",\n                        \"view_count\": \"\uc870\ud68c\uc218\",\n                        \"price\": \"\uac00\uaca9\",\n                        \"original_price\": \"\uc6d0\ub798 \uac00\uaca9\",\n                        \"delivery_fee\": \"\ubc30\uc1a1\ube44 (\uae30\ubcf8\uac12: 0)\",\n                        \"shipping_origin\": \"\ucd9c\uace0\uc9c0\",\n                        \"fruit_size\": \"\uacfc\uc77c \ud06c\uae30\",\n                        \"sugar_content\": \"\ub2f9\ub3c4\",\n                        \"food_type\": \"\uc2dd\ud488\uc758 \uc720\ud615\",\n                        \"manufacturer_and_location\": \"\uc0dd\uc0b0\uc790 \ubc0f \uc18c\uc7ac\uc9c0\",\n                        \"importer\": \"\uc218\uc785\uc790\",\n                        \"origin\": \"\uc6d0\uc0b0\uc9c0\",\n                        \"ingredients_and_composition\": \"\uc6d0\uc7ac\ub8cc \ubc0f \ud569\ub7c9\",\n                        \"storage_and_handling\": \"\ubcf4\uad00\\\/\ucde8\uae09\ubc29\ubc95\",\n                        \"manufacture_date\": \"\uc81c\uc870\uc5f0\uc6d0\uc77c\",\n                        \"expiration_date\": \"\uc720\ud1b5\uae30\ud55c\",\n                        \"gmo_desc\": \"\uc720\uc804\uc790\ubcc0\ud615 \ub18d\uc0b0\ubb3c \uc5ec\ubd80\",\n                        \"customer_service_contact\": \"\uc18c\ube44\uc790 \uc0c1\ub2f4 \ubb38\uc758\",\n                        \"options\": [\n                            {\n                                \"id\": \"\uae30\ubcf8\ud0a4\",\n                                \"name\": \"\uc635\uc158\uba85\",\n                                \"price\": \"\uac00\uaca9\",\n                                \"original_price\": \"\uc6d0\ub798 \uac00\uaca9\",\n                                \"stock_quantity\": \"\uc7ac\uace0 \uc218\ub7c9\"\n                            },\n                            {\n                                \"id\": \"\uae30\ubcf8\ud0a4\",\n                                \"name\": \"\uc635\uc158\uba85\",\n                                \"price\": \"\uac00\uaca9\",\n                                \"original_price\": \"\uc6d0\ub798 \uac00\uaca9\",\n                                \"stock_quantity\": \"\uc7ac\uace0 \uc218\ub7c9\"\n                            }\n                        ],\n                        \"is_new\": \"\uc0c8\ub85c\uc6b4\uc0c1\ud488 \uc5ec\ubd80\",\n                        \"is_best\": false,\n                        \"average_rating\": \"\ud3c9\uade0 \ud3c9\uc810\",\n                        \"reviews_count\": 30,\n                        \"inquiries_count\": 1,\n                        \"categories\": \"\uce74\ud14c\uace0\ub9ac\",\n                        \"img\": {\n                            \"id\": \"\uae30\ubcf8\ud0a4\",\n                            \"name\": \"\ud30c\uc77c\uc774\ub984\",\n                            \"url\": \"\uc774\ubbf8\uc9c0 URL\"\n                        },\n                        \"imgs\": [\n                            {\n                                \"id\": \"\uae30\ubcf8\ud0a4\",\n                                \"name\": \"\ud30c\uc77c\uc774\ub984\",\n                                \"url\": \"\uc774\ubbf8\uc9c0 URL\"\n                            }\n                        ]\n                    },\n                    \"productOption\": {\n                        \"id\": \"\uae30\ubcf8\ud0a4\",\n                        \"name\": \"\uc635\uc158\uba85\",\n                        \"price\": \"\uac00\uaca9\",\n                        \"original_price\": \"\uc6d0\ub798 \uac00\uaca9\",\n                        \"stock_quantity\": \"\uc7ac\uace0 \uc218\ub7c9\"\n                    }\n                }\n            ]\n        }\n    ],\n    \"links\": {\n        \"first\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=1\",\n        \"last\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=15\",\n        \"prev\": null,\n        \"next\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=2\"\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 15,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; \uc774\uc804\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=2\",\n                \"label\": \"2\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=3\",\n                \"label\": \"3\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=4\",\n                \"label\": \"4\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=5\",\n                \"label\": \"5\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=6\",\n                \"label\": \"6\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=7\",\n                \"label\": \"7\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=8\",\n                \"label\": \"8\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=9\",\n                \"label\": \"9\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=10\",\n                \"label\": \"10\",\n                \"active\": false\n            },\n            {\n                \"url\": null,\n                \"label\": \"...\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=14\",\n                \"label\": \"14\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=15\",\n                \"label\": \"15\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders?page=2\",\n                \"label\": \"\ub2e4\uc74c &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"path\": \"http:\\\/\\\/localhost:8000\\\/api\\\/orders\",\n        \"per_page\": 10,\n        \"to\": 10,\n        \"total\": 146\n    }\n}\n",
                             "name": ""
                         }
                     ]
@@ -1085,7 +1085,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"status\":\"return_requested\",\"guest_id\":\"porro\",\"total_amount\":25,\"delivery_fee\":31,\"order_products\":[{\"product_id\":10,\"product_option_id\":10,\"quantity\":48,\"price\":13,\"original_price\":12}]}"
+                            "raw": "{\"status\":\"delivery\",\"guest_id\":\"praesentium\",\"total_amount\":36,\"delivery_fee\":51,\"order_products\":[{\"product_id\":17,\"product_option_id\":5,\"quantity\":14,\"price\":55,\"original_price\":16}]}"
                         },
                         "description": "",
                         "auth": {
@@ -1096,7 +1096,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"\uae30\ubcf8\ud0a4\",\n        \"buyer_name\": \"\uc8fc\ubb38\uc790 \uc774\ub984\",\n        \"buyer_email\": \"\uc8fc\ubb38\uc790 \uc774\uba54\uc77c\",\n        \"buyer_phone\": \"\uc8fc\ubb38\uc790 \uc5f0\ub77d\ucc98\",\n        \"buyer_postal_code\": \"\uc8fc\ubb38\uc790 \uc6b0\ud3b8\ubc88\ud638\",\n        \"buyer_address\": \"\uc8fc\ubb38\uc790 \uc8fc\uc18c\",\n        \"buyer_address_detail\": \"\uc8fc\ubb38\uc790 \uc0c1\uc138\uc8fc\uc18c\",\n        \"delivery_name\": \"\ubc30\uc1a1\uc9c0\uba85\",\n        \"delivery_phone\": \"\ubc30\uc1a1\uc9c0 \uc5f0\ub77d\ucc98\",\n        \"delivery_postal_code\": \"\ubc30\uc1a1\uc9c0 \uc6b0\ud3b8\ubc88\ud638\",\n        \"delivery_address\": \"\ubc30\uc1a1\uc9c0 \uc8fc\uc18c\",\n        \"delivery_address_detail\": \"\ubc30\uc1a1\uc9c0 \uc0c1\uc138\uc8fc\uc18c\",\n        \"delivery_request\": \"\ubc30\uc1a1 \uc694\uccad \uc0ac\ud56d\",\n        \"common_entrance_method\": \"\uacf5\ub3d9\ud604\uad00 \ucd9c\uc785\ubc29\ubc95\",\n        \"total_amount\": \"\uc8fc\ubb38 \ucd1d\uc561\",\n        \"user_coupon_id\": \"\uc0ac\uc6a9\uc790 \ucfe0\ud3f0 \uae30\ubcf8\ud0a4\",\n        \"coupon_discount\": \"\ucfe0\ud3f0 \ud560\uc778\uc561\",\n        \"use_points\": \"\uc801\ub9bd\uae08 \uc0ac\uc6a9\uc561\",\n        \"delivery_fee\": \"\ubc30\uc1a1\ube44\",\n        \"payment_amount\": \"\ucd5c\uc885\uacb0\uc81c\uc561\",\n        \"imp_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\uc544\uc784\ud3ec\ud2b8)\",\n        \"merchant_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\ub0b4\ubd80)\",\n        \"payment_pg\": \"\uacb0\uc81c pg ex) html5_inicis\",\n        \"payment_method\": \"\uacb0\uc81c\uc218\ub2e8 ex) card, vbank\",\n        \"created_at\": \"\ub4f1\ub85d\uc77c\uc790\",\n        \"updated_at\": \"\uc218\uc815\uc77c\uc790\",\n        \"delivery_started_at\": \"\ubc30\uc1a1 \uc2dc\uc791 \uc77c\uc2dc\",\n        \"purchase_confirmed_at\": \"\uad6c\ub9e4 \ud655\uc815 \uc77c\uc2dc\",\n        \"delivery_tracking_number\": \"\uc8fc\ubb38\ubc30\uc1a1\ubc88\ud638\",\n        \"status\": \"\uc8fc\ubb38 \uc0c1\ud0dc\",\n        \"orderProducts\": [\n            {\n                \"id\": \"\uae30\ubcf8\ud0a4\",\n                \"quantity\": \"\uc0c1\ud488 \uc218\ub7c9\",\n                \"price\": \"\uc0c1\ud488 \uac00\uaca9\",\n                \"updated_at\": \"\uc218\uc815\uc77c\uc790\",\n                \"status\": \"\uc8fc\ubb38 \uc0c1\ud0dc\",\n                \"productOption\": {\n                    \"id\": \"\uae30\ubcf8\ud0a4\",\n                    \"name\": \"\uc635\uc158\uba85\",\n                    \"price\": \"\uac00\uaca9\",\n                    \"original_price\": \"\uc6d0\ub798 \uac00\uaca9\",\n                    \"stock_quantity\": \"\uc7ac\uace0 \uc218\ub7c9\"\n                }\n            }\n        ]\n    },\n    \"message\": \"\uc131\uacf5\uc801\uc73c\ub85c \ucc98\ub9ac\ub418\uc5c8\uc2b5\ub2c8\ub2e4.\"\n}\n",
+                            "body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"\uae30\ubcf8\ud0a4\",\n        \"buyer_name\": \"\uc8fc\ubb38\uc790 \uc774\ub984\",\n        \"buyer_email\": \"\uc8fc\ubb38\uc790 \uc774\uba54\uc77c\",\n        \"buyer_phone\": \"\uc8fc\ubb38\uc790 \uc5f0\ub77d\ucc98\",\n        \"buyer_postal_code\": \"\uc8fc\ubb38\uc790 \uc6b0\ud3b8\ubc88\ud638\",\n        \"buyer_address\": \"\uc8fc\ubb38\uc790 \uc8fc\uc18c\",\n        \"buyer_address_detail\": \"\uc8fc\ubb38\uc790 \uc0c1\uc138\uc8fc\uc18c\",\n        \"delivery_name\": \"\ubc30\uc1a1\uc9c0\uba85\",\n        \"delivery_phone\": \"\ubc30\uc1a1\uc9c0 \uc5f0\ub77d\ucc98\",\n        \"delivery_postal_code\": \"\ubc30\uc1a1\uc9c0 \uc6b0\ud3b8\ubc88\ud638\",\n        \"delivery_address\": \"\ubc30\uc1a1\uc9c0 \uc8fc\uc18c\",\n        \"delivery_address_detail\": \"\ubc30\uc1a1\uc9c0 \uc0c1\uc138\uc8fc\uc18c\",\n        \"delivery_request\": \"\ubc30\uc1a1 \uc694\uccad \uc0ac\ud56d\",\n        \"common_entrance_method\": \"\uacf5\ub3d9\ud604\uad00 \ucd9c\uc785\ubc29\ubc95\",\n        \"total_amount\": \"\uc8fc\ubb38 \ucd1d\uc561\",\n        \"user_coupon_id\": \"\uc0ac\uc6a9\uc790 \ucfe0\ud3f0 \uae30\ubcf8\ud0a4\",\n        \"coupon_discount\": \"\ucfe0\ud3f0 \ud560\uc778\uc561\",\n        \"use_points\": \"\uc801\ub9bd\uae08 \uc0ac\uc6a9\uc561\",\n        \"delivery_fee\": \"\ubc30\uc1a1\ube44\",\n        \"price\": \"\ucd5c\uc885\uacb0\uc81c\uc561\",\n        \"imp_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\uc544\uc784\ud3ec\ud2b8)\",\n        \"merchant_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\ub0b4\ubd80)\",\n        \"pay_method_pg\": \"\uacb0\uc81c pg ex) html5_inicis\",\n        \"pay_method_method\": \"\uacb0\uc81c\uc218\ub2e8 ex) card, vbank\",\n        \"created_at\": \"\ub4f1\ub85d\uc77c\uc790\",\n        \"updated_at\": \"\uc218\uc815\uc77c\uc790\",\n        \"delivery_started_at\": \"\ubc30\uc1a1 \uc2dc\uc791 \uc77c\uc2dc\",\n        \"purchase_confirmed_at\": \"\uad6c\ub9e4 \ud655\uc815 \uc77c\uc2dc\",\n        \"delivery_tracking_number\": \"\uc8fc\ubb38\ubc30\uc1a1\ubc88\ud638\",\n        \"status\": \"\uc8fc\ubb38 \uc0c1\ud0dc\",\n        \"orderProducts\": [\n            {\n                \"id\": \"\uae30\ubcf8\ud0a4\",\n                \"quantity\": \"\uc0c1\ud488 \uc218\ub7c9\",\n                \"price\": \"\uc0c1\ud488 \uac00\uaca9\",\n                \"updated_at\": \"\uc218\uc815\uc77c\uc790\",\n                \"status\": \"\uc8fc\ubb38 \uc0c1\ud0dc\",\n                \"productOption\": {\n                    \"id\": \"\uae30\ubcf8\ud0a4\",\n                    \"name\": \"\uc635\uc158\uba85\",\n                    \"price\": \"\uac00\uaca9\",\n                    \"original_price\": \"\uc6d0\ub798 \uac00\uaca9\",\n                    \"stock_quantity\": \"\uc7ac\uace0 \uc218\ub7c9\"\n                }\n            }\n        ]\n    },\n    \"message\": \"\uc131\uacf5\uc801\uc73c\ub85c \ucc98\ub9ac\ub418\uc5c8\uc2b5\ub2c8\ub2e4.\"\n}\n",
                             "name": ""
                         }
                     ]
@@ -1123,7 +1123,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"cart_ids\":[],\"guest_id\":\"ut\"}"
+                            "raw": "{\"cart_ids\":[],\"guest_id\":\"quia\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1134,7 +1134,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"\uae30\ubcf8\ud0a4\",\n        \"buyer_name\": \"\uc8fc\ubb38\uc790 \uc774\ub984\",\n        \"buyer_email\": \"\uc8fc\ubb38\uc790 \uc774\uba54\uc77c\",\n        \"buyer_phone\": \"\uc8fc\ubb38\uc790 \uc5f0\ub77d\ucc98\",\n        \"buyer_postal_code\": \"\uc8fc\ubb38\uc790 \uc6b0\ud3b8\ubc88\ud638\",\n        \"buyer_address\": \"\uc8fc\ubb38\uc790 \uc8fc\uc18c\",\n        \"buyer_address_detail\": \"\uc8fc\ubb38\uc790 \uc0c1\uc138\uc8fc\uc18c\",\n        \"delivery_name\": \"\ubc30\uc1a1\uc9c0\uba85\",\n        \"delivery_phone\": \"\ubc30\uc1a1\uc9c0 \uc5f0\ub77d\ucc98\",\n        \"delivery_postal_code\": \"\ubc30\uc1a1\uc9c0 \uc6b0\ud3b8\ubc88\ud638\",\n        \"delivery_address\": \"\ubc30\uc1a1\uc9c0 \uc8fc\uc18c\",\n        \"delivery_address_detail\": \"\ubc30\uc1a1\uc9c0 \uc0c1\uc138\uc8fc\uc18c\",\n        \"delivery_request\": \"\ubc30\uc1a1 \uc694\uccad \uc0ac\ud56d\",\n        \"common_entrance_method\": \"\uacf5\ub3d9\ud604\uad00 \ucd9c\uc785\ubc29\ubc95\",\n        \"total_amount\": \"\uc8fc\ubb38 \ucd1d\uc561\",\n        \"user_coupon_id\": \"\uc0ac\uc6a9\uc790 \ucfe0\ud3f0 \uae30\ubcf8\ud0a4\",\n        \"coupon_discount\": \"\ucfe0\ud3f0 \ud560\uc778\uc561\",\n        \"use_points\": \"\uc801\ub9bd\uae08 \uc0ac\uc6a9\uc561\",\n        \"delivery_fee\": \"\ubc30\uc1a1\ube44\",\n        \"payment_amount\": \"\ucd5c\uc885\uacb0\uc81c\uc561\",\n        \"imp_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\uc544\uc784\ud3ec\ud2b8)\",\n        \"merchant_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\ub0b4\ubd80)\",\n        \"payment_pg\": \"\uacb0\uc81c pg ex) html5_inicis\",\n        \"payment_method\": \"\uacb0\uc81c\uc218\ub2e8 ex) card, vbank\",\n        \"created_at\": \"\ub4f1\ub85d\uc77c\uc790\",\n        \"updated_at\": \"\uc218\uc815\uc77c\uc790\",\n        \"delivery_started_at\": \"\ubc30\uc1a1 \uc2dc\uc791 \uc77c\uc2dc\",\n        \"purchase_confirmed_at\": \"\uad6c\ub9e4 \ud655\uc815 \uc77c\uc2dc\",\n        \"delivery_tracking_number\": \"\uc8fc\ubb38\ubc30\uc1a1\ubc88\ud638\",\n        \"status\": \"\uc8fc\ubb38 \uc0c1\ud0dc\",\n        \"orderProducts\": [\n            {\n                \"id\": \"\uae30\ubcf8\ud0a4\",\n                \"quantity\": \"\uc0c1\ud488 \uc218\ub7c9\",\n                \"price\": \"\uc0c1\ud488 \uac00\uaca9\",\n                \"updated_at\": \"\uc218\uc815\uc77c\uc790\",\n                \"status\": \"\uc8fc\ubb38 \uc0c1\ud0dc\",\n                \"productOption\": {\n                    \"id\": \"\uae30\ubcf8\ud0a4\",\n                    \"name\": \"\uc635\uc158\uba85\",\n                    \"price\": \"\uac00\uaca9\",\n                    \"original_price\": \"\uc6d0\ub798 \uac00\uaca9\",\n                    \"stock_quantity\": \"\uc7ac\uace0 \uc218\ub7c9\"\n                }\n            }\n        ]\n    },\n    \"message\": \"\uc131\uacf5\uc801\uc73c\ub85c \ucc98\ub9ac\ub418\uc5c8\uc2b5\ub2c8\ub2e4.\"\n}\n",
+                            "body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"\uae30\ubcf8\ud0a4\",\n        \"buyer_name\": \"\uc8fc\ubb38\uc790 \uc774\ub984\",\n        \"buyer_email\": \"\uc8fc\ubb38\uc790 \uc774\uba54\uc77c\",\n        \"buyer_phone\": \"\uc8fc\ubb38\uc790 \uc5f0\ub77d\ucc98\",\n        \"buyer_postal_code\": \"\uc8fc\ubb38\uc790 \uc6b0\ud3b8\ubc88\ud638\",\n        \"buyer_address\": \"\uc8fc\ubb38\uc790 \uc8fc\uc18c\",\n        \"buyer_address_detail\": \"\uc8fc\ubb38\uc790 \uc0c1\uc138\uc8fc\uc18c\",\n        \"delivery_name\": \"\ubc30\uc1a1\uc9c0\uba85\",\n        \"delivery_phone\": \"\ubc30\uc1a1\uc9c0 \uc5f0\ub77d\ucc98\",\n        \"delivery_postal_code\": \"\ubc30\uc1a1\uc9c0 \uc6b0\ud3b8\ubc88\ud638\",\n        \"delivery_address\": \"\ubc30\uc1a1\uc9c0 \uc8fc\uc18c\",\n        \"delivery_address_detail\": \"\ubc30\uc1a1\uc9c0 \uc0c1\uc138\uc8fc\uc18c\",\n        \"delivery_request\": \"\ubc30\uc1a1 \uc694\uccad \uc0ac\ud56d\",\n        \"common_entrance_method\": \"\uacf5\ub3d9\ud604\uad00 \ucd9c\uc785\ubc29\ubc95\",\n        \"total_amount\": \"\uc8fc\ubb38 \ucd1d\uc561\",\n        \"user_coupon_id\": \"\uc0ac\uc6a9\uc790 \ucfe0\ud3f0 \uae30\ubcf8\ud0a4\",\n        \"coupon_discount\": \"\ucfe0\ud3f0 \ud560\uc778\uc561\",\n        \"use_points\": \"\uc801\ub9bd\uae08 \uc0ac\uc6a9\uc561\",\n        \"delivery_fee\": \"\ubc30\uc1a1\ube44\",\n        \"price\": \"\ucd5c\uc885\uacb0\uc81c\uc561\",\n        \"imp_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\uc544\uc784\ud3ec\ud2b8)\",\n        \"merchant_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\ub0b4\ubd80)\",\n        \"pay_method_pg\": \"\uacb0\uc81c pg ex) html5_inicis\",\n        \"pay_method_method\": \"\uacb0\uc81c\uc218\ub2e8 ex) card, vbank\",\n        \"created_at\": \"\ub4f1\ub85d\uc77c\uc790\",\n        \"updated_at\": \"\uc218\uc815\uc77c\uc790\",\n        \"delivery_started_at\": \"\ubc30\uc1a1 \uc2dc\uc791 \uc77c\uc2dc\",\n        \"purchase_confirmed_at\": \"\uad6c\ub9e4 \ud655\uc815 \uc77c\uc2dc\",\n        \"delivery_tracking_number\": \"\uc8fc\ubb38\ubc30\uc1a1\ubc88\ud638\",\n        \"status\": \"\uc8fc\ubb38 \uc0c1\ud0dc\",\n        \"orderProducts\": [\n            {\n                \"id\": \"\uae30\ubcf8\ud0a4\",\n                \"quantity\": \"\uc0c1\ud488 \uc218\ub7c9\",\n                \"price\": \"\uc0c1\ud488 \uac00\uaca9\",\n                \"updated_at\": \"\uc218\uc815\uc77c\uc790\",\n                \"status\": \"\uc8fc\ubb38 \uc0c1\ud0dc\",\n                \"productOption\": {\n                    \"id\": \"\uae30\ubcf8\ud0a4\",\n                    \"name\": \"\uc635\uc158\uba85\",\n                    \"price\": \"\uac00\uaca9\",\n                    \"original_price\": \"\uc6d0\ub798 \uac00\uaca9\",\n                    \"stock_quantity\": \"\uc7ac\uace0 \uc218\ub7c9\"\n                }\n            }\n        ]\n    },\n    \"message\": \"\uc131\uacf5\uc801\uc73c\ub85c \ucc98\ub9ac\ub418\uc5c8\uc2b5\ub2c8\ub2e4.\"\n}\n",
                             "name": ""
                         }
                     ]
@@ -1161,7 +1161,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"buyer_name\":\"aqnxemizcqwxsdgp\",\"merchant_uid\":\"pwxj\"}"
+                            "raw": "{\"buyer_name\":\"jozckwuypuir\",\"merchant_uid\":\"xblbsigbup\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1172,7 +1172,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"\uae30\ubcf8\ud0a4\",\n        \"buyer_name\": \"\uc8fc\ubb38\uc790 \uc774\ub984\",\n        \"buyer_email\": \"\uc8fc\ubb38\uc790 \uc774\uba54\uc77c\",\n        \"buyer_phone\": \"\uc8fc\ubb38\uc790 \uc5f0\ub77d\ucc98\",\n        \"buyer_postal_code\": \"\uc8fc\ubb38\uc790 \uc6b0\ud3b8\ubc88\ud638\",\n        \"buyer_address\": \"\uc8fc\ubb38\uc790 \uc8fc\uc18c\",\n        \"buyer_address_detail\": \"\uc8fc\ubb38\uc790 \uc0c1\uc138\uc8fc\uc18c\",\n        \"delivery_name\": \"\ubc30\uc1a1\uc9c0\uba85\",\n        \"delivery_phone\": \"\ubc30\uc1a1\uc9c0 \uc5f0\ub77d\ucc98\",\n        \"delivery_postal_code\": \"\ubc30\uc1a1\uc9c0 \uc6b0\ud3b8\ubc88\ud638\",\n        \"delivery_address\": \"\ubc30\uc1a1\uc9c0 \uc8fc\uc18c\",\n        \"delivery_address_detail\": \"\ubc30\uc1a1\uc9c0 \uc0c1\uc138\uc8fc\uc18c\",\n        \"delivery_request\": \"\ubc30\uc1a1 \uc694\uccad \uc0ac\ud56d\",\n        \"common_entrance_method\": \"\uacf5\ub3d9\ud604\uad00 \ucd9c\uc785\ubc29\ubc95\",\n        \"total_amount\": \"\uc8fc\ubb38 \ucd1d\uc561\",\n        \"user_coupon_id\": \"\uc0ac\uc6a9\uc790 \ucfe0\ud3f0 \uae30\ubcf8\ud0a4\",\n        \"coupon_discount\": \"\ucfe0\ud3f0 \ud560\uc778\uc561\",\n        \"use_points\": \"\uc801\ub9bd\uae08 \uc0ac\uc6a9\uc561\",\n        \"delivery_fee\": \"\ubc30\uc1a1\ube44\",\n        \"payment_amount\": \"\ucd5c\uc885\uacb0\uc81c\uc561\",\n        \"imp_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\uc544\uc784\ud3ec\ud2b8)\",\n        \"merchant_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\ub0b4\ubd80)\",\n        \"payment_pg\": \"\uacb0\uc81c pg ex) html5_inicis\",\n        \"payment_method\": \"\uacb0\uc81c\uc218\ub2e8 ex) card, vbank\",\n        \"created_at\": \"\ub4f1\ub85d\uc77c\uc790\",\n        \"updated_at\": \"\uc218\uc815\uc77c\uc790\",\n        \"delivery_started_at\": \"\ubc30\uc1a1 \uc2dc\uc791 \uc77c\uc2dc\",\n        \"purchase_confirmed_at\": \"\uad6c\ub9e4 \ud655\uc815 \uc77c\uc2dc\",\n        \"delivery_tracking_number\": \"\uc8fc\ubb38\ubc30\uc1a1\ubc88\ud638\",\n        \"status\": \"\uc8fc\ubb38 \uc0c1\ud0dc\",\n        \"orderProducts\": [\n            {\n                \"id\": \"\uae30\ubcf8\ud0a4\",\n                \"quantity\": \"\uc0c1\ud488 \uc218\ub7c9\",\n                \"price\": \"\uc0c1\ud488 \uac00\uaca9\",\n                \"updated_at\": \"\uc218\uc815\uc77c\uc790\",\n                \"status\": \"\uc8fc\ubb38 \uc0c1\ud0dc\",\n                \"productOption\": {\n                    \"id\": \"\uae30\ubcf8\ud0a4\",\n                    \"name\": \"\uc635\uc158\uba85\",\n                    \"price\": \"\uac00\uaca9\",\n                    \"original_price\": \"\uc6d0\ub798 \uac00\uaca9\",\n                    \"stock_quantity\": \"\uc7ac\uace0 \uc218\ub7c9\"\n                }\n            }\n        ]\n    },\n    \"message\": \"\uc131\uacf5\uc801\uc73c\ub85c \ucc98\ub9ac\ub418\uc5c8\uc2b5\ub2c8\ub2e4.\"\n}\n",
+                            "body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"\uae30\ubcf8\ud0a4\",\n        \"buyer_name\": \"\uc8fc\ubb38\uc790 \uc774\ub984\",\n        \"buyer_email\": \"\uc8fc\ubb38\uc790 \uc774\uba54\uc77c\",\n        \"buyer_phone\": \"\uc8fc\ubb38\uc790 \uc5f0\ub77d\ucc98\",\n        \"buyer_postal_code\": \"\uc8fc\ubb38\uc790 \uc6b0\ud3b8\ubc88\ud638\",\n        \"buyer_address\": \"\uc8fc\ubb38\uc790 \uc8fc\uc18c\",\n        \"buyer_address_detail\": \"\uc8fc\ubb38\uc790 \uc0c1\uc138\uc8fc\uc18c\",\n        \"delivery_name\": \"\ubc30\uc1a1\uc9c0\uba85\",\n        \"delivery_phone\": \"\ubc30\uc1a1\uc9c0 \uc5f0\ub77d\ucc98\",\n        \"delivery_postal_code\": \"\ubc30\uc1a1\uc9c0 \uc6b0\ud3b8\ubc88\ud638\",\n        \"delivery_address\": \"\ubc30\uc1a1\uc9c0 \uc8fc\uc18c\",\n        \"delivery_address_detail\": \"\ubc30\uc1a1\uc9c0 \uc0c1\uc138\uc8fc\uc18c\",\n        \"delivery_request\": \"\ubc30\uc1a1 \uc694\uccad \uc0ac\ud56d\",\n        \"common_entrance_method\": \"\uacf5\ub3d9\ud604\uad00 \ucd9c\uc785\ubc29\ubc95\",\n        \"total_amount\": \"\uc8fc\ubb38 \ucd1d\uc561\",\n        \"user_coupon_id\": \"\uc0ac\uc6a9\uc790 \ucfe0\ud3f0 \uae30\ubcf8\ud0a4\",\n        \"coupon_discount\": \"\ucfe0\ud3f0 \ud560\uc778\uc561\",\n        \"use_points\": \"\uc801\ub9bd\uae08 \uc0ac\uc6a9\uc561\",\n        \"delivery_fee\": \"\ubc30\uc1a1\ube44\",\n        \"price\": \"\ucd5c\uc885\uacb0\uc81c\uc561\",\n        \"imp_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\uc544\uc784\ud3ec\ud2b8)\",\n        \"merchant_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\ub0b4\ubd80)\",\n        \"pay_method_pg\": \"\uacb0\uc81c pg ex) html5_inicis\",\n        \"pay_method_method\": \"\uacb0\uc81c\uc218\ub2e8 ex) card, vbank\",\n        \"created_at\": \"\ub4f1\ub85d\uc77c\uc790\",\n        \"updated_at\": \"\uc218\uc815\uc77c\uc790\",\n        \"delivery_started_at\": \"\ubc30\uc1a1 \uc2dc\uc791 \uc77c\uc2dc\",\n        \"purchase_confirmed_at\": \"\uad6c\ub9e4 \ud655\uc815 \uc77c\uc2dc\",\n        \"delivery_tracking_number\": \"\uc8fc\ubb38\ubc30\uc1a1\ubc88\ud638\",\n        \"status\": \"\uc8fc\ubb38 \uc0c1\ud0dc\",\n        \"orderProducts\": [\n            {\n                \"id\": \"\uae30\ubcf8\ud0a4\",\n                \"quantity\": \"\uc0c1\ud488 \uc218\ub7c9\",\n                \"price\": \"\uc0c1\ud488 \uac00\uaca9\",\n                \"updated_at\": \"\uc218\uc815\uc77c\uc790\",\n                \"status\": \"\uc8fc\ubb38 \uc0c1\ud0dc\",\n                \"productOption\": {\n                    \"id\": \"\uae30\ubcf8\ud0a4\",\n                    \"name\": \"\uc635\uc158\uba85\",\n                    \"price\": \"\uac00\uaca9\",\n                    \"original_price\": \"\uc6d0\ub798 \uac00\uaca9\",\n                    \"stock_quantity\": \"\uc7ac\uace0 \uc218\ub7c9\"\n                }\n            }\n        ]\n    },\n    \"message\": \"\uc131\uacf5\uc801\uc73c\ub85c \ucc98\ub9ac\ub418\uc5c8\uc2b5\ub2c8\ub2e4.\"\n}\n",
                             "name": ""
                         }
                     ]
@@ -1189,7 +1189,7 @@
                                 {
                                     "id": "order",
                                     "key": "order",
-                                    "value": "voluptatum",
+                                    "value": "ea",
                                     "description": "The order."
                                 }
                             ]
@@ -1215,7 +1215,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"\uae30\ubcf8\ud0a4\",\n        \"buyer_name\": \"\uc8fc\ubb38\uc790 \uc774\ub984\",\n        \"buyer_email\": \"\uc8fc\ubb38\uc790 \uc774\uba54\uc77c\",\n        \"buyer_phone\": \"\uc8fc\ubb38\uc790 \uc5f0\ub77d\ucc98\",\n        \"buyer_postal_code\": \"\uc8fc\ubb38\uc790 \uc6b0\ud3b8\ubc88\ud638\",\n        \"buyer_address\": \"\uc8fc\ubb38\uc790 \uc8fc\uc18c\",\n        \"buyer_address_detail\": \"\uc8fc\ubb38\uc790 \uc0c1\uc138\uc8fc\uc18c\",\n        \"delivery_name\": \"\ubc30\uc1a1\uc9c0\uba85\",\n        \"delivery_phone\": \"\ubc30\uc1a1\uc9c0 \uc5f0\ub77d\ucc98\",\n        \"delivery_postal_code\": \"\ubc30\uc1a1\uc9c0 \uc6b0\ud3b8\ubc88\ud638\",\n        \"delivery_address\": \"\ubc30\uc1a1\uc9c0 \uc8fc\uc18c\",\n        \"delivery_address_detail\": \"\ubc30\uc1a1\uc9c0 \uc0c1\uc138\uc8fc\uc18c\",\n        \"delivery_request\": \"\ubc30\uc1a1 \uc694\uccad \uc0ac\ud56d\",\n        \"common_entrance_method\": \"\uacf5\ub3d9\ud604\uad00 \ucd9c\uc785\ubc29\ubc95\",\n        \"total_amount\": \"\uc8fc\ubb38 \ucd1d\uc561\",\n        \"user_coupon_id\": \"\uc0ac\uc6a9\uc790 \ucfe0\ud3f0 \uae30\ubcf8\ud0a4\",\n        \"coupon_discount\": \"\ucfe0\ud3f0 \ud560\uc778\uc561\",\n        \"use_points\": \"\uc801\ub9bd\uae08 \uc0ac\uc6a9\uc561\",\n        \"delivery_fee\": \"\ubc30\uc1a1\ube44\",\n        \"payment_amount\": \"\ucd5c\uc885\uacb0\uc81c\uc561\",\n        \"imp_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\uc544\uc784\ud3ec\ud2b8)\",\n        \"merchant_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\ub0b4\ubd80)\",\n        \"payment_pg\": \"\uacb0\uc81c pg ex) html5_inicis\",\n        \"payment_method\": \"\uacb0\uc81c\uc218\ub2e8 ex) card, vbank\",\n        \"created_at\": \"\ub4f1\ub85d\uc77c\uc790\",\n        \"updated_at\": \"\uc218\uc815\uc77c\uc790\",\n        \"delivery_started_at\": \"\ubc30\uc1a1 \uc2dc\uc791 \uc77c\uc2dc\",\n        \"purchase_confirmed_at\": \"\uad6c\ub9e4 \ud655\uc815 \uc77c\uc2dc\",\n        \"delivery_tracking_number\": \"\uc8fc\ubb38\ubc30\uc1a1\ubc88\ud638\",\n        \"status\": \"\uc8fc\ubb38 \uc0c1\ud0dc\",\n        \"orderProducts\": [\n            {\n                \"id\": \"\uae30\ubcf8\ud0a4\",\n                \"quantity\": \"\uc0c1\ud488 \uc218\ub7c9\",\n                \"price\": \"\uc0c1\ud488 \uac00\uaca9\",\n                \"updated_at\": \"\uc218\uc815\uc77c\uc790\",\n                \"status\": \"\uc8fc\ubb38 \uc0c1\ud0dc\",\n                \"productOption\": {\n                    \"id\": \"\uae30\ubcf8\ud0a4\",\n                    \"name\": \"\uc635\uc158\uba85\",\n                    \"price\": \"\uac00\uaca9\",\n                    \"original_price\": \"\uc6d0\ub798 \uac00\uaca9\",\n                    \"stock_quantity\": \"\uc7ac\uace0 \uc218\ub7c9\"\n                }\n            }\n        ]\n    },\n    \"message\": \"\uc131\uacf5\uc801\uc73c\ub85c \ucc98\ub9ac\ub418\uc5c8\uc2b5\ub2c8\ub2e4.\"\n}\n",
+                            "body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"\uae30\ubcf8\ud0a4\",\n        \"buyer_name\": \"\uc8fc\ubb38\uc790 \uc774\ub984\",\n        \"buyer_email\": \"\uc8fc\ubb38\uc790 \uc774\uba54\uc77c\",\n        \"buyer_phone\": \"\uc8fc\ubb38\uc790 \uc5f0\ub77d\ucc98\",\n        \"buyer_postal_code\": \"\uc8fc\ubb38\uc790 \uc6b0\ud3b8\ubc88\ud638\",\n        \"buyer_address\": \"\uc8fc\ubb38\uc790 \uc8fc\uc18c\",\n        \"buyer_address_detail\": \"\uc8fc\ubb38\uc790 \uc0c1\uc138\uc8fc\uc18c\",\n        \"delivery_name\": \"\ubc30\uc1a1\uc9c0\uba85\",\n        \"delivery_phone\": \"\ubc30\uc1a1\uc9c0 \uc5f0\ub77d\ucc98\",\n        \"delivery_postal_code\": \"\ubc30\uc1a1\uc9c0 \uc6b0\ud3b8\ubc88\ud638\",\n        \"delivery_address\": \"\ubc30\uc1a1\uc9c0 \uc8fc\uc18c\",\n        \"delivery_address_detail\": \"\ubc30\uc1a1\uc9c0 \uc0c1\uc138\uc8fc\uc18c\",\n        \"delivery_request\": \"\ubc30\uc1a1 \uc694\uccad \uc0ac\ud56d\",\n        \"common_entrance_method\": \"\uacf5\ub3d9\ud604\uad00 \ucd9c\uc785\ubc29\ubc95\",\n        \"total_amount\": \"\uc8fc\ubb38 \ucd1d\uc561\",\n        \"user_coupon_id\": \"\uc0ac\uc6a9\uc790 \ucfe0\ud3f0 \uae30\ubcf8\ud0a4\",\n        \"coupon_discount\": \"\ucfe0\ud3f0 \ud560\uc778\uc561\",\n        \"use_points\": \"\uc801\ub9bd\uae08 \uc0ac\uc6a9\uc561\",\n        \"delivery_fee\": \"\ubc30\uc1a1\ube44\",\n        \"price\": \"\ucd5c\uc885\uacb0\uc81c\uc561\",\n        \"imp_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\uc544\uc784\ud3ec\ud2b8)\",\n        \"merchant_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\ub0b4\ubd80)\",\n        \"pay_method_pg\": \"\uacb0\uc81c pg ex) html5_inicis\",\n        \"pay_method_method\": \"\uacb0\uc81c\uc218\ub2e8 ex) card, vbank\",\n        \"created_at\": \"\ub4f1\ub85d\uc77c\uc790\",\n        \"updated_at\": \"\uc218\uc815\uc77c\uc790\",\n        \"delivery_started_at\": \"\ubc30\uc1a1 \uc2dc\uc791 \uc77c\uc2dc\",\n        \"purchase_confirmed_at\": \"\uad6c\ub9e4 \ud655\uc815 \uc77c\uc2dc\",\n        \"delivery_tracking_number\": \"\uc8fc\ubb38\ubc30\uc1a1\ubc88\ud638\",\n        \"status\": \"\uc8fc\ubb38 \uc0c1\ud0dc\",\n        \"orderProducts\": [\n            {\n                \"id\": \"\uae30\ubcf8\ud0a4\",\n                \"quantity\": \"\uc0c1\ud488 \uc218\ub7c9\",\n                \"price\": \"\uc0c1\ud488 \uac00\uaca9\",\n                \"updated_at\": \"\uc218\uc815\uc77c\uc790\",\n                \"status\": \"\uc8fc\ubb38 \uc0c1\ud0dc\",\n                \"productOption\": {\n                    \"id\": \"\uae30\ubcf8\ud0a4\",\n                    \"name\": \"\uc635\uc158\uba85\",\n                    \"price\": \"\uac00\uaca9\",\n                    \"original_price\": \"\uc6d0\ub798 \uac00\uaca9\",\n                    \"stock_quantity\": \"\uc7ac\uace0 \uc218\ub7c9\"\n                }\n            }\n        ]\n    },\n    \"message\": \"\uc131\uacf5\uc801\uc73c\ub85c \ucc98\ub9ac\ub418\uc5c8\uc2b5\ub2c8\ub2e4.\"\n}\n",
                             "name": ""
                         }
                     ]
@@ -1232,7 +1232,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "perferendis",
+                                    "value": "reprehenderit",
                                     "description": "The ID of the order."
                                 }
                             ]
@@ -1250,7 +1250,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"status\":\"exchange_requested\",\"guest_id\":\"ipsam\",\"buyer_name\":\"q\",\"buyer_phone\":\"rba\",\"buyer_email\":\"augustine84@example.org\",\"buyer_postal_code\":\"ybwywxmd\",\"buyer_address\":\"gniitahtwpaddow\",\"buyer_address_detail\":\"ibiczjzbiregld\",\"delivery_name\":\"xscqknjak\",\"delivery_phone\":\"kxdzrqgoccmgno\",\"delivery_postal_code\":\"aelzuogu\",\"delivery_address\":\"kpssgzevmlv\",\"delivery_address_detail\":\"ahyvu\",\"delivery_request\":\"consequatur\",\"common_entrance_method\":\"ruylnubswlmp\",\"total_amount\":74,\"delivery_fee\":38,\"coupon_discount_amount\":35,\"use_points\":56,\"payment_amount\":21,\"merchant_uid\":\"pariatur\",\"payment_pg\":\"ea\",\"payment_method\":\"card\"}"
+                            "raw": "{\"status\":\"cancellation_complete\",\"guest_id\":\"et\",\"buyer_name\":\"riarlonxzitoodrh\",\"buyer_phone\":\"tmpzabksaxy\",\"buyer_email\":\"narmstrong@example.org\",\"buyer_postal_code\":\"lz\",\"buyer_address\":\"ywkvhybkyttncf\",\"buyer_address_detail\":\"mpcptudhqoxf\",\"delivery_name\":\"wxw\",\"delivery_phone\":\"rorjxsnpenknastmrxc\",\"delivery_postal_code\":\"nckfa\",\"delivery_address\":\"vhfqunax\",\"delivery_address_detail\":\"nedofgc\",\"delivery_request\":\"omnis\",\"common_entrance_method\":\"aimmbmxht\",\"total_amount\":26,\"delivery_fee\":12,\"coupon_discount_amount\":39,\"use_points\":62,\"price\":22,\"merchant_uid\":\"ratione\",\"pay_method_pg\":\"officia\",\"pay_method_method\":\"vbank\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1261,7 +1261,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"\uae30\ubcf8\ud0a4\",\n        \"buyer_name\": \"\uc8fc\ubb38\uc790 \uc774\ub984\",\n        \"buyer_email\": \"\uc8fc\ubb38\uc790 \uc774\uba54\uc77c\",\n        \"buyer_phone\": \"\uc8fc\ubb38\uc790 \uc5f0\ub77d\ucc98\",\n        \"buyer_postal_code\": \"\uc8fc\ubb38\uc790 \uc6b0\ud3b8\ubc88\ud638\",\n        \"buyer_address\": \"\uc8fc\ubb38\uc790 \uc8fc\uc18c\",\n        \"buyer_address_detail\": \"\uc8fc\ubb38\uc790 \uc0c1\uc138\uc8fc\uc18c\",\n        \"delivery_name\": \"\ubc30\uc1a1\uc9c0\uba85\",\n        \"delivery_phone\": \"\ubc30\uc1a1\uc9c0 \uc5f0\ub77d\ucc98\",\n        \"delivery_postal_code\": \"\ubc30\uc1a1\uc9c0 \uc6b0\ud3b8\ubc88\ud638\",\n        \"delivery_address\": \"\ubc30\uc1a1\uc9c0 \uc8fc\uc18c\",\n        \"delivery_address_detail\": \"\ubc30\uc1a1\uc9c0 \uc0c1\uc138\uc8fc\uc18c\",\n        \"delivery_request\": \"\ubc30\uc1a1 \uc694\uccad \uc0ac\ud56d\",\n        \"common_entrance_method\": \"\uacf5\ub3d9\ud604\uad00 \ucd9c\uc785\ubc29\ubc95\",\n        \"total_amount\": \"\uc8fc\ubb38 \ucd1d\uc561\",\n        \"user_coupon_id\": \"\uc0ac\uc6a9\uc790 \ucfe0\ud3f0 \uae30\ubcf8\ud0a4\",\n        \"coupon_discount\": \"\ucfe0\ud3f0 \ud560\uc778\uc561\",\n        \"use_points\": \"\uc801\ub9bd\uae08 \uc0ac\uc6a9\uc561\",\n        \"delivery_fee\": \"\ubc30\uc1a1\ube44\",\n        \"payment_amount\": \"\ucd5c\uc885\uacb0\uc81c\uc561\",\n        \"imp_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\uc544\uc784\ud3ec\ud2b8)\",\n        \"merchant_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\ub0b4\ubd80)\",\n        \"payment_pg\": \"\uacb0\uc81c pg ex) html5_inicis\",\n        \"payment_method\": \"\uacb0\uc81c\uc218\ub2e8 ex) card, vbank\",\n        \"created_at\": \"\ub4f1\ub85d\uc77c\uc790\",\n        \"updated_at\": \"\uc218\uc815\uc77c\uc790\",\n        \"delivery_started_at\": \"\ubc30\uc1a1 \uc2dc\uc791 \uc77c\uc2dc\",\n        \"purchase_confirmed_at\": \"\uad6c\ub9e4 \ud655\uc815 \uc77c\uc2dc\",\n        \"delivery_tracking_number\": \"\uc8fc\ubb38\ubc30\uc1a1\ubc88\ud638\",\n        \"status\": \"\uc8fc\ubb38 \uc0c1\ud0dc\",\n        \"orderProducts\": [\n            {\n                \"id\": \"\uae30\ubcf8\ud0a4\",\n                \"quantity\": \"\uc0c1\ud488 \uc218\ub7c9\",\n                \"price\": \"\uc0c1\ud488 \uac00\uaca9\",\n                \"updated_at\": \"\uc218\uc815\uc77c\uc790\",\n                \"status\": \"\uc8fc\ubb38 \uc0c1\ud0dc\",\n                \"productOption\": {\n                    \"id\": \"\uae30\ubcf8\ud0a4\",\n                    \"name\": \"\uc635\uc158\uba85\",\n                    \"price\": \"\uac00\uaca9\",\n                    \"original_price\": \"\uc6d0\ub798 \uac00\uaca9\",\n                    \"stock_quantity\": \"\uc7ac\uace0 \uc218\ub7c9\"\n                }\n            }\n        ]\n    },\n    \"message\": \"\uc131\uacf5\uc801\uc73c\ub85c \ucc98\ub9ac\ub418\uc5c8\uc2b5\ub2c8\ub2e4.\"\n}\n",
+                            "body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"\uae30\ubcf8\ud0a4\",\n        \"buyer_name\": \"\uc8fc\ubb38\uc790 \uc774\ub984\",\n        \"buyer_email\": \"\uc8fc\ubb38\uc790 \uc774\uba54\uc77c\",\n        \"buyer_phone\": \"\uc8fc\ubb38\uc790 \uc5f0\ub77d\ucc98\",\n        \"buyer_postal_code\": \"\uc8fc\ubb38\uc790 \uc6b0\ud3b8\ubc88\ud638\",\n        \"buyer_address\": \"\uc8fc\ubb38\uc790 \uc8fc\uc18c\",\n        \"buyer_address_detail\": \"\uc8fc\ubb38\uc790 \uc0c1\uc138\uc8fc\uc18c\",\n        \"delivery_name\": \"\ubc30\uc1a1\uc9c0\uba85\",\n        \"delivery_phone\": \"\ubc30\uc1a1\uc9c0 \uc5f0\ub77d\ucc98\",\n        \"delivery_postal_code\": \"\ubc30\uc1a1\uc9c0 \uc6b0\ud3b8\ubc88\ud638\",\n        \"delivery_address\": \"\ubc30\uc1a1\uc9c0 \uc8fc\uc18c\",\n        \"delivery_address_detail\": \"\ubc30\uc1a1\uc9c0 \uc0c1\uc138\uc8fc\uc18c\",\n        \"delivery_request\": \"\ubc30\uc1a1 \uc694\uccad \uc0ac\ud56d\",\n        \"common_entrance_method\": \"\uacf5\ub3d9\ud604\uad00 \ucd9c\uc785\ubc29\ubc95\",\n        \"total_amount\": \"\uc8fc\ubb38 \ucd1d\uc561\",\n        \"user_coupon_id\": \"\uc0ac\uc6a9\uc790 \ucfe0\ud3f0 \uae30\ubcf8\ud0a4\",\n        \"coupon_discount\": \"\ucfe0\ud3f0 \ud560\uc778\uc561\",\n        \"use_points\": \"\uc801\ub9bd\uae08 \uc0ac\uc6a9\uc561\",\n        \"delivery_fee\": \"\ubc30\uc1a1\ube44\",\n        \"price\": \"\ucd5c\uc885\uacb0\uc81c\uc561\",\n        \"imp_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\uc544\uc784\ud3ec\ud2b8)\",\n        \"merchant_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\ub0b4\ubd80)\",\n        \"pay_method_pg\": \"\uacb0\uc81c pg ex) html5_inicis\",\n        \"pay_method_method\": \"\uacb0\uc81c\uc218\ub2e8 ex) card, vbank\",\n        \"created_at\": \"\ub4f1\ub85d\uc77c\uc790\",\n        \"updated_at\": \"\uc218\uc815\uc77c\uc790\",\n        \"delivery_started_at\": \"\ubc30\uc1a1 \uc2dc\uc791 \uc77c\uc2dc\",\n        \"purchase_confirmed_at\": \"\uad6c\ub9e4 \ud655\uc815 \uc77c\uc2dc\",\n        \"delivery_tracking_number\": \"\uc8fc\ubb38\ubc30\uc1a1\ubc88\ud638\",\n        \"status\": \"\uc8fc\ubb38 \uc0c1\ud0dc\",\n        \"orderProducts\": [\n            {\n                \"id\": \"\uae30\ubcf8\ud0a4\",\n                \"quantity\": \"\uc0c1\ud488 \uc218\ub7c9\",\n                \"price\": \"\uc0c1\ud488 \uac00\uaca9\",\n                \"updated_at\": \"\uc218\uc815\uc77c\uc790\",\n                \"status\": \"\uc8fc\ubb38 \uc0c1\ud0dc\",\n                \"productOption\": {\n                    \"id\": \"\uae30\ubcf8\ud0a4\",\n                    \"name\": \"\uc635\uc158\uba85\",\n                    \"price\": \"\uac00\uaca9\",\n                    \"original_price\": \"\uc6d0\ub798 \uac00\uaca9\",\n                    \"stock_quantity\": \"\uc7ac\uace0 \uc218\ub7c9\"\n                }\n            }\n        ]\n    },\n    \"message\": \"\uc131\uacf5\uc801\uc73c\ub85c \ucc98\ub9ac\ub418\uc5c8\uc2b5\ub2c8\ub2e4.\"\n}\n",
                             "name": ""
                         }
                     ]
@@ -1288,7 +1288,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"imp_uid\":\"leybhyikifxwh\",\"merchant_uid\":\"dfiiuvbpsfolsspi\"}"
+                            "raw": "{\"imp_uid\":\"uywviiuazivcbn\",\"merchant_uid\":\"llvjditfwigoiddtez\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1319,7 +1319,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"imp_uid\":\"vqe\",\"merchant_uid\":\"vfsmfqafvirfcfbbgzloquvpc\"}"
+                            "raw": "{\"imp_uid\":\"xvze\",\"merchant_uid\":\"bxsdtgq\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1340,7 +1340,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "pariatur",
+                                    "value": "enim",
                                     "description": "The ID of the order."
                                 }
                             ]
@@ -1363,7 +1363,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"\uae30\ubcf8\ud0a4\",\n        \"buyer_name\": \"\uc8fc\ubb38\uc790 \uc774\ub984\",\n        \"buyer_email\": \"\uc8fc\ubb38\uc790 \uc774\uba54\uc77c\",\n        \"buyer_phone\": \"\uc8fc\ubb38\uc790 \uc5f0\ub77d\ucc98\",\n        \"buyer_postal_code\": \"\uc8fc\ubb38\uc790 \uc6b0\ud3b8\ubc88\ud638\",\n        \"buyer_address\": \"\uc8fc\ubb38\uc790 \uc8fc\uc18c\",\n        \"buyer_address_detail\": \"\uc8fc\ubb38\uc790 \uc0c1\uc138\uc8fc\uc18c\",\n        \"delivery_name\": \"\ubc30\uc1a1\uc9c0\uba85\",\n        \"delivery_phone\": \"\ubc30\uc1a1\uc9c0 \uc5f0\ub77d\ucc98\",\n        \"delivery_postal_code\": \"\ubc30\uc1a1\uc9c0 \uc6b0\ud3b8\ubc88\ud638\",\n        \"delivery_address\": \"\ubc30\uc1a1\uc9c0 \uc8fc\uc18c\",\n        \"delivery_address_detail\": \"\ubc30\uc1a1\uc9c0 \uc0c1\uc138\uc8fc\uc18c\",\n        \"delivery_request\": \"\ubc30\uc1a1 \uc694\uccad \uc0ac\ud56d\",\n        \"common_entrance_method\": \"\uacf5\ub3d9\ud604\uad00 \ucd9c\uc785\ubc29\ubc95\",\n        \"total_amount\": \"\uc8fc\ubb38 \ucd1d\uc561\",\n        \"user_coupon_id\": \"\uc0ac\uc6a9\uc790 \ucfe0\ud3f0 \uae30\ubcf8\ud0a4\",\n        \"coupon_discount\": \"\ucfe0\ud3f0 \ud560\uc778\uc561\",\n        \"use_points\": \"\uc801\ub9bd\uae08 \uc0ac\uc6a9\uc561\",\n        \"delivery_fee\": \"\ubc30\uc1a1\ube44\",\n        \"payment_amount\": \"\ucd5c\uc885\uacb0\uc81c\uc561\",\n        \"imp_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\uc544\uc784\ud3ec\ud2b8)\",\n        \"merchant_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\ub0b4\ubd80)\",\n        \"payment_pg\": \"\uacb0\uc81c pg ex) html5_inicis\",\n        \"payment_method\": \"\uacb0\uc81c\uc218\ub2e8 ex) card, vbank\",\n        \"created_at\": \"\ub4f1\ub85d\uc77c\uc790\",\n        \"updated_at\": \"\uc218\uc815\uc77c\uc790\",\n        \"delivery_started_at\": \"\ubc30\uc1a1 \uc2dc\uc791 \uc77c\uc2dc\",\n        \"purchase_confirmed_at\": \"\uad6c\ub9e4 \ud655\uc815 \uc77c\uc2dc\",\n        \"delivery_tracking_number\": \"\uc8fc\ubb38\ubc30\uc1a1\ubc88\ud638\",\n        \"status\": \"\uc8fc\ubb38 \uc0c1\ud0dc\",\n        \"orderProducts\": [\n            {\n                \"id\": \"\uae30\ubcf8\ud0a4\",\n                \"quantity\": \"\uc0c1\ud488 \uc218\ub7c9\",\n                \"price\": \"\uc0c1\ud488 \uac00\uaca9\",\n                \"updated_at\": \"\uc218\uc815\uc77c\uc790\",\n                \"status\": \"\uc8fc\ubb38 \uc0c1\ud0dc\",\n                \"productOption\": {\n                    \"id\": \"\uae30\ubcf8\ud0a4\",\n                    \"name\": \"\uc635\uc158\uba85\",\n                    \"price\": \"\uac00\uaca9\",\n                    \"original_price\": \"\uc6d0\ub798 \uac00\uaca9\",\n                    \"stock_quantity\": \"\uc7ac\uace0 \uc218\ub7c9\"\n                }\n            }\n        ]\n    },\n    \"message\": \"\uc131\uacf5\uc801\uc73c\ub85c \ucc98\ub9ac\ub418\uc5c8\uc2b5\ub2c8\ub2e4.\"\n}\n",
+                            "body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"\uae30\ubcf8\ud0a4\",\n        \"buyer_name\": \"\uc8fc\ubb38\uc790 \uc774\ub984\",\n        \"buyer_email\": \"\uc8fc\ubb38\uc790 \uc774\uba54\uc77c\",\n        \"buyer_phone\": \"\uc8fc\ubb38\uc790 \uc5f0\ub77d\ucc98\",\n        \"buyer_postal_code\": \"\uc8fc\ubb38\uc790 \uc6b0\ud3b8\ubc88\ud638\",\n        \"buyer_address\": \"\uc8fc\ubb38\uc790 \uc8fc\uc18c\",\n        \"buyer_address_detail\": \"\uc8fc\ubb38\uc790 \uc0c1\uc138\uc8fc\uc18c\",\n        \"delivery_name\": \"\ubc30\uc1a1\uc9c0\uba85\",\n        \"delivery_phone\": \"\ubc30\uc1a1\uc9c0 \uc5f0\ub77d\ucc98\",\n        \"delivery_postal_code\": \"\ubc30\uc1a1\uc9c0 \uc6b0\ud3b8\ubc88\ud638\",\n        \"delivery_address\": \"\ubc30\uc1a1\uc9c0 \uc8fc\uc18c\",\n        \"delivery_address_detail\": \"\ubc30\uc1a1\uc9c0 \uc0c1\uc138\uc8fc\uc18c\",\n        \"delivery_request\": \"\ubc30\uc1a1 \uc694\uccad \uc0ac\ud56d\",\n        \"common_entrance_method\": \"\uacf5\ub3d9\ud604\uad00 \ucd9c\uc785\ubc29\ubc95\",\n        \"total_amount\": \"\uc8fc\ubb38 \ucd1d\uc561\",\n        \"user_coupon_id\": \"\uc0ac\uc6a9\uc790 \ucfe0\ud3f0 \uae30\ubcf8\ud0a4\",\n        \"coupon_discount\": \"\ucfe0\ud3f0 \ud560\uc778\uc561\",\n        \"use_points\": \"\uc801\ub9bd\uae08 \uc0ac\uc6a9\uc561\",\n        \"delivery_fee\": \"\ubc30\uc1a1\ube44\",\n        \"price\": \"\ucd5c\uc885\uacb0\uc81c\uc561\",\n        \"imp_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\uc544\uc784\ud3ec\ud2b8)\",\n        \"merchant_uid\": \"\uc8fc\ubb38\ubc88\ud638 (\ub0b4\ubd80)\",\n        \"pay_method_pg\": \"\uacb0\uc81c pg ex) html5_inicis\",\n        \"pay_method_method\": \"\uacb0\uc81c\uc218\ub2e8 ex) card, vbank\",\n        \"created_at\": \"\ub4f1\ub85d\uc77c\uc790\",\n        \"updated_at\": \"\uc218\uc815\uc77c\uc790\",\n        \"delivery_started_at\": \"\ubc30\uc1a1 \uc2dc\uc791 \uc77c\uc2dc\",\n        \"purchase_confirmed_at\": \"\uad6c\ub9e4 \ud655\uc815 \uc77c\uc2dc\",\n        \"delivery_tracking_number\": \"\uc8fc\ubb38\ubc30\uc1a1\ubc88\ud638\",\n        \"status\": \"\uc8fc\ubb38 \uc0c1\ud0dc\",\n        \"orderProducts\": [\n            {\n                \"id\": \"\uae30\ubcf8\ud0a4\",\n                \"quantity\": \"\uc0c1\ud488 \uc218\ub7c9\",\n                \"price\": \"\uc0c1\ud488 \uac00\uaca9\",\n                \"updated_at\": \"\uc218\uc815\uc77c\uc790\",\n                \"status\": \"\uc8fc\ubb38 \uc0c1\ud0dc\",\n                \"productOption\": {\n                    \"id\": \"\uae30\ubcf8\ud0a4\",\n                    \"name\": \"\uc635\uc158\uba85\",\n                    \"price\": \"\uac00\uaca9\",\n                    \"original_price\": \"\uc6d0\ub798 \uac00\uaca9\",\n                    \"stock_quantity\": \"\uc7ac\uace0 \uc218\ub7c9\"\n                }\n            }\n        ]\n    },\n    \"message\": \"\uc131\uacf5\uc801\uc73c\ub85c \ucc98\ub9ac\ub418\uc5c8\uc2b5\ub2c8\ub2e4.\"\n}\n",
                             "name": ""
                         }
                     ]
@@ -1380,7 +1380,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "ut",
+                                    "value": "quam",
                                     "description": "The ID of the order product."
                                 }
                             ]
@@ -1423,7 +1423,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "accusamus",
+                                    "value": "nesciunt",
                                     "description": "The ID of the order product."
                                 }
                             ]
@@ -1779,7 +1779,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"product_id\":5,\"title\":\"hgodz\",\"content\":\"sit\",\"is_visible\":false,\"answer\":\"et\"}"
+                            "raw": "{\"product_id\":16,\"title\":\"o\",\"content\":\"inventore\",\"is_visible\":true,\"answer\":\"et\"}"
                         },
                         "description": ""
                     },
@@ -1979,7 +1979,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"order_id\":\"aut\",\"order_product_id\":\"neque\",\"product_id\":\"ullam\",\"product_option_id\":\"quidem\",\"user_id\":\"quia\",\"rating\":5,\"review\":\"necessitatibus\"}"
+                            "raw": "{\"order_id\":\"consequatur\",\"order_product_id\":\"quisquam\",\"product_id\":\"ex\",\"product_option_id\":\"quia\",\"user_id\":\"assumenda\",\"rating\":1,\"review\":\"et\"}"
                         },
                         "description": ""
                     },
@@ -2004,7 +2004,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "assumenda",
+                                    "value": "ipsam",
                                     "description": "The ID of the product review."
                                 }
                             ]
@@ -2022,7 +2022,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"rating\":4,\"review\":\"quaerat\"}"
+                            "raw": "{\"rating\":2,\"review\":\"non\"}"
                         },
                         "description": ""
                     },
@@ -2047,7 +2047,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "vel",
+                                    "value": "eos",
                                     "description": "The ID of the product review."
                                 }
                             ]
@@ -2139,7 +2139,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"phone\":\"xqsytlzrqqefendsvkmzwlm\"}"
+                            "raw": "{\"phone\":\"tcitsdpaarwe\"}"
                         },
                         "description": "",
                         "auth": {
@@ -2170,7 +2170,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"phone\":\"hs\",\"number\":\"qvdqdzddctlni\"}"
+                            "raw": "{\"phone\":\"smstt\",\"number\":\"bbyxoxjzv\"}"
                         },
                         "description": "",
                         "auth": {
@@ -2197,7 +2197,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "nam",
+                                    "value": "doloribus",
                                     "description": "The ID of the board."
                                 }
                             ]
@@ -2240,7 +2240,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "sit",
+                                    "value": "quo",
                                     "description": "The ID of the board."
                                 }
                             ]
@@ -2293,7 +2293,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"board_id\":19,\"category_id\":14,\"title\":\"illo\",\"content\":\"est\"}"
+                            "raw": "{\"board_id\":8,\"category_id\":20,\"title\":\"quibusdam\",\"content\":\"quam\"}"
                         },
                         "description": "",
                         "auth": {
@@ -2419,37 +2419,37 @@
                                     "formdata": [
                                         {
                                             "key": "name",
-                                            "value": "psbzddmmohfqnqm",
+                                            "value": "nmydbcfoobuqwp",
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc0c1\ud488\uba85<\/span>. Must not be greater than 255 characters."
                                         },
                                         {
                                             "key": "description",
-                                            "value": "Sit voluptatem dolores eligendi.",
+                                            "value": "Beatae et consequatur eum hic ut rerum perspiciatis eius.",
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc0c1\ud488\uc124\uba85<\/span>."
                                         },
                                         {
                                             "key": "price",
-                                            "value": 78,
+                                            "value": 68,
                                             "type": "text",
                                             "description": "<span class=\"point\">\uac00\uaca9<\/span>. value(\uc740)\ub294  \ucd5c\uc18c 0 \uc774\uc0c1\uc774\uc5b4\uc57c \ud569\ub2c8\ub2e4."
                                         },
                                         {
                                             "key": "original_price",
-                                            "value": 29,
+                                            "value": 24,
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc6d0\ub798\uac00\uaca9<\/span>. value(\uc740)\ub294  \ucd5c\uc18c 0 \uc774\uc0c1\uc774\uc5b4\uc57c \ud569\ub2c8\ub2e4."
                                         },
                                         {
                                             "key": "delivery_fee",
-                                            "value": 19,
+                                            "value": 65,
                                             "type": "text",
                                             "description": "<span class=\"point\">\ubc30\uc1a1\ube44<\/span>. value(\uc740)\ub294  \ucd5c\uc18c 0 \uc774\uc0c1\uc774\uc5b4\uc57c \ud569\ub2c8\ub2e4."
                                         },
                                         {
                                             "key": "stock_quantity",
-                                            "value": 37,
+                                            "value": 8,
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc7ac\uace0\uc218\ub7c9<\/span>. value(\uc740)\ub294  \ucd5c\uc18c 0 \uc774\uc0c1\uc774\uc5b4\uc57c \ud569\ub2c8\ub2e4."
                                         },
@@ -2461,91 +2461,91 @@
                                         },
                                         {
                                             "key": "food_type",
-                                            "value": "kdik",
+                                            "value": "blgjxqgirklbqfeimrfpquilo",
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc2dd\ud488\uc758 \uc720\ud615<\/span>. Must not be greater than 100 characters."
                                         },
                                         {
                                             "key": "fruit_size",
-                                            "value": "wxhzuylafjbvfjcejlimqyyqo",
+                                            "value": "jjdjluciebtmkum",
                                             "type": "text",
                                             "description": "<span class=\"point\">\uacfc\uc77c \ud06c\uae30<\/span>. Must not be greater than 50 characters."
                                         },
                                         {
                                             "key": "sugar_content",
-                                            "value": "zucplsurrcwrcmi",
+                                            "value": "pilm",
                                             "type": "text",
                                             "description": "<span class=\"point\">\ub2f9\ub3c4<\/span>. Must not be greater than 50 characters."
                                         },
                                         {
                                             "key": "shipping_origin",
-                                            "value": "sdnrbrszle",
+                                            "value": "xe",
                                             "type": "text",
                                             "description": "<span class=\"point\">\ucd9c\uace0\uc9c0<\/span>. Must not be greater than 255 characters."
                                         },
                                         {
                                             "key": "manufacturer_and_location",
-                                            "value": "kljgseessbfe",
+                                            "value": "unvblvqvchcsdponyr",
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc0dd\uc0b0\uc790 \ubc0f \uc18c\uc7ac\uc9c0<\/span>. Must not be greater than 255 characters."
                                         },
                                         {
                                             "key": "importer",
-                                            "value": "hyolhrmozodzrptciptcnnreu",
+                                            "value": "vtvgyczysoxy",
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc218\uc785\uc790<\/span>. Must not be greater than 255 characters."
                                         },
                                         {
                                             "key": "origin",
-                                            "value": "jwc",
+                                            "value": "xblixrntyrpku",
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc6d0\uc0b0\uc9c0<\/span>. Must not be greater than 255 characters."
                                         },
                                         {
                                             "key": "ingredients_and_composition",
-                                            "value": "omnis",
+                                            "value": "ea",
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc6d0\uc7ac\ub8cc \ubc0f \ud569\ub7c9<\/span>."
                                         },
                                         {
                                             "key": "storage_and_handling",
-                                            "value": "ihl",
+                                            "value": "lliwoliu",
                                             "type": "text",
                                             "description": "<span class=\"point\">\ubcf4\uad00\/\ucde8\uae09\ubc29\ubc95<\/span>. Must not be greater than 255 characters."
                                         },
                                         {
                                             "key": "manufacture_date",
-                                            "value": "2024-12-30T08:41:20",
+                                            "value": "2024-12-30T13:50:50",
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc81c\uc870\uc5f0\uc6d0\uc77c<\/span>. Must be a valid date."
                                         },
                                         {
                                             "key": "expiration_date",
-                                            "value": "2070-04-28",
+                                            "value": "2098-11-26",
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc720\ud1b5\uae30\ud55c<\/span>. Must be a valid date. value(\uc740)\ub294 <code>manufacture_date<\/code>\ubcf4\ub2e4 \uc774\ud6c4\uac70\ub098 \uac19\uc544\uc57c \ud569\ub2c8\ub2e4."
                                         },
                                         {
                                             "key": "gmo_desc",
-                                            "value": "qufomceedxk",
+                                            "value": "xcywpcvmthahjaznbbwsxuo",
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc720\uc804\uc790\ubcc0\ud615 \ub18d\uc0b0\ubb3c\uc5ec\ubd80<\/span>. Must not be greater than 255 characters."
                                         },
                                         {
                                             "key": "customer_service_contact",
-                                            "value": "eummo",
+                                            "value": "tlcqfww",
                                             "type": "text",
                                             "description": "<span class=\"point\">\uc18c\ube44\uc790\uc0c1\ub2f4\ubb38\uc758<\/span>. Must not be greater than 255 characters."
                                         },
                                         {
                                             "key": "options[0][name]",
-                                            "value": "mmdhblcxorfc",
+                                            "value": "frnk",
                                             "type": "text",
                                             "description": ""
                                         },
                                         {
                                             "key": "options[0][price]",
-                                            "value": 85,
+                                            "value": 8,
                                             "type": "text",
                                             "description": ""
                                         },
@@ -2597,7 +2597,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"kreiger.remington@example.org\",\"password\":\"rwn>j*e&wjyyU@\\\"\\\"%J\"}"
+                            "raw": "{\"email\":\"gilbert.larson@example.com\",\"password\":\"\\\"n(dW7)\"}"
                         },
                         "description": "",
                         "auth": {
@@ -2628,7 +2628,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"khoeger@example.net\",\"password\":\"quos\",\"password_confirmation\":\"sed\",\"name\":\"lzz\",\"phone\":\"52227257079\",\"nickname\":\"bcshzhjoqiptpdqrmqanccy\",\"is_agree_promotion\":false}"
+                            "raw": "{\"email\":\"ratke.brice@example.org\",\"password\":\"iste\",\"password_confirmation\":\"unde\",\"name\":\"srn\",\"phone\":\"51367246844\",\"nickname\":\"xhtj\",\"is_agree_promotion\":true}"
                         },
                         "description": "",
                         "auth": {
@@ -2666,7 +2666,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"phone\":\"8640698960\"}"
+                            "raw": "{\"phone\":\"3147779572\"}"
                         },
                         "description": "",
                         "auth": {
@@ -2697,7 +2697,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"sylvia53@example.com\",\"phone\":\"41950733711\"}"
+                            "raw": "{\"email\":\"hdavis@example.com\",\"phone\":\"2116240413\"}"
                         },
                         "description": "",
                         "auth": {
@@ -2728,7 +2728,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"hwilliamson@example.org\",\"phone\":\"58774371542\",\"password\":\"quo\",\"password_confirmation\":\"nemo\"}"
+                            "raw": "{\"email\":\"agibson@example.net\",\"phone\":\"5878434518\",\"password\":\"inventore\",\"password_confirmation\":\"illo\"}"
                         },
                         "description": "",
                         "auth": {
@@ -2816,7 +2816,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"id\":4,\"email\":\"brooke36@example.net\",\"name\":\"iestdqihtdqmwdnnivm\",\"phone\":\"2759382008\",\"nickname\":\"fkazoxbtldnrcalebjrgb\",\"is_agree_promotion\":true}"
+                            "raw": "{\"id\":4,\"email\":\"ledner.easton@example.com\",\"name\":\"blxtnpftkxkk\",\"phone\":\"41510791122\",\"nickname\":\"fuwrvdhshcgysztdrxazoc\",\"is_agree_promotion\":true}"
                         },
                         "description": ""
                     },
@@ -2851,7 +2851,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"current_password\":\"impedit\",\"password\":\"et\",\"password_confirmation\":\"illum\"}"
+                            "raw": "{\"current_password\":\"dicta\",\"password\":\"vitae\",\"password_confirmation\":\"quibusdam\"}"
                         },
                         "description": ""
                     },

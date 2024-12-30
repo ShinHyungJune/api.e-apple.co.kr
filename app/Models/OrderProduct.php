@@ -80,7 +80,7 @@ class OrderProduct extends Model
         if (auth()->check()) {
             $orderProductPaymentAmount = $this->price * $this->quantity;
             $orderProductsPaymentAmountSum = $this->order->orderProducts->sum(fn($orderProduct) => $orderProduct['price'] * $orderProduct['quantity']);
-            $orderPaymentAmount = $this->order->payment_amount;
+            $orderPaymentAmount = $this->order->price;
 
             $paymentAmount = ($orderProductPaymentAmount / $orderProductsPaymentAmountSum) * $orderPaymentAmount;
 

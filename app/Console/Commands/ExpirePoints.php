@@ -41,6 +41,7 @@ class ExpirePoints extends Command
         $this->info($expiredPoints);
 
         $this->info("적립금 소멸 처리가 완료되었습니다.");
+
         return Command::SUCCESS;
     }
 }

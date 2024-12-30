@@ -150,7 +150,7 @@ Route::group(['prefix' => 'coupons', 'controller' => CouponController::class],
 Route::group(['prefix' => 'user_coupons', 'middleware' => ['auth:api'], 'controller' => UserCouponController::class],
     function () {
         Route::get('', 'index');
-        Route::get('test', 'test');
+        //Route::get('test', 'test');
     });
 
 //주문
@@ -163,6 +163,7 @@ Route::group(['prefix' => 'orders', 'controller' => OrderController::class],
         Route::get('{order}', 'show');
         Route::put('{id}', 'update');
         Route::post('complete', 'paymentComplete');
+        Route::get('complete/mobile', 'paymentComplete');
         Route::post('complete/webhook', 'paymentComplete');
         //Route::put('{id}/confirm', 'confirm');//orderProducts 별로 구매확정
         Route::put('{id}/cancel', 'cancel');

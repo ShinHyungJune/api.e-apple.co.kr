@@ -21,16 +21,16 @@
                     buyer_tel: "010-4242-4242",
                     buyer_addr: "서울특별시 강남구 신사동",
                     buyer_postcode: "01181",*/
-                    pg: "{{$order->payment_pg}}", // version 1.1.0부터 지원.
-                    pay_method: "{{$order->payment_method}}",
+                    pg: "{{$order->pay_method_pg}}", // version 1.1.0부터 지원.
+                    pay_method: "{{$order->pay_method_method}}",
                     merchant_uid: "{{$order->merchant_uid}}",
                     name: "{{ $order->orderProducts[0]->productOption->product->name }}",
-                    amount: {{ $order->payment_amount }},
+                    amount: {{ $order->price}},
                     buyer_email: "{{ $order->buyer_email }}",
                     buyer_name: "{{ $order->buyer_name }}",
-                    buyer_tel: "{{ $order->buyer_phone }}",
+                    buyer_tel: "{{ $order->buyer_contact }}",
                     buyer_addr: "{{ $order->buyer_address }} {{$order->buyer_address_detail}}",
-                    buyer_postcode: "{{ $order->buyer_postal_code }}",
+                    buyer_postcode: "{{ $order->buyer_address_zipcode }}",
                 },
                 function (response) {
                     //console.log(response);

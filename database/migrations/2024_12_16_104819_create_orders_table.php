@@ -27,8 +27,8 @@ return new class extends Migration
             //주문자정보
             $table->string("buyer_name")->nullable()->comment('주문자 이름');
             $table->string("buyer_email")->nullable()->comment('주문자 이메일');
-            $table->string("buyer_phone")->nullable()->comment('주문자 연락처');
-            $table->string("buyer_postal_code")->nullable()->comment('주문자 우편번호');
+            $table->string("buyer_contact")->nullable()->comment('주문자 연락처');
+            $table->string("buyer_address_zipcode")->nullable()->comment('주문자 우편번호');
             $table->string("buyer_address")->nullable()->comment('주문자 주소');
             $table->string("buyer_address_detail")->nullable()->comment('주문자 상세주소');
 
@@ -47,7 +47,7 @@ return new class extends Migration
             $table->unsignedInteger('coupon_discount')->nullable()->default(0)->comment('쿠폰 할인액');
             $table->unsignedInteger('use_points')->nullable()->default(0)->comment('적립금 사용액');
             $table->unsignedInteger('delivery_fee')->nullable()->default(0)->comment('배송비');
-            $table->unsignedInteger('payment_amount')->default(0)->comment('최종결제액');
+            $table->unsignedInteger('price')->default(0)->comment('최종결제액');
 
             //결제정보
             $table->string("imp_uid")->unique()->nullable()->comment('주문번호 (아임포트)');
@@ -57,8 +57,8 @@ return new class extends Migration
             $table->boolean('is_payment_process_record')->default(0)->comment('결제 대기 또는 성공 후 관련내용 기록처리여부');
 
             // 결제수단
-            $table->string("payment_pg")->nullable()->comment('결제 pg ex) html5_inicis');
-            $table->enum("payment_method", [IamportMethod::values()])->nullable()->comment('결제수단 ex) card, vbank');
+            $table->string("pay_method_pg")->nullable()->comment('결제 pg ex) html5_inicis');
+            $table->enum("pay_method_method", [IamportMethod::values()])->nullable()->comment('결제수단 ex) card, vbank');
 
             // 가상계좌
             $table->string("vbank_num")->nullable()->comment('가상계좌 계좌번호');

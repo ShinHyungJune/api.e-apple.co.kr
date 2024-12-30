@@ -37,13 +37,11 @@ class AuthController extends ApiController
 
         if (!$token = auth()->attempt($credentials)) {
             //return response()->json(['error' => '이메일 또는 비밀번호를 잘못 입력했습니다.'], 422);
-
+            //abort(422, '이메일 또는 비밀번호를 잘못 입력했습니다.');
             abort(response()->json([
                 'message' => '이메일 또는 비밀번호를 잘못 입력했습니다.',
-                'errors' => [
-                    'email' => '이메일 또는 비밀번호를 잘못 입력했습니다.',
-                ],
-            ], 422)); // 422는 HTTP 상태 코드로, Unprocessable Entity를 의미합니다.
+                'errors' => ['email' => '이메일 또는 비밀번호를 잘못 입력했습니다.'],
+            ], 422));
         }
 
         return $this->respondWithToken($token);

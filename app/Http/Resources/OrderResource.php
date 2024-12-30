@@ -18,11 +18,11 @@ class OrderResource extends JsonResource
         //return parent::toArray($request);
         $return = [
             ...$this->only([
-                'id', 'buyer_name', 'buyer_email', 'buyer_phone', 'buyer_postal_code', 'buyer_address', 'buyer_address_detail',
+                'id', 'buyer_name', 'buyer_email', 'buyer_contact', 'buyer_address_zipcode', 'buyer_address', 'buyer_address_detail',
                 'delivery_name', 'delivery_phone', 'delivery_postal_code', 'delivery_address', 'delivery_address_detail', 'delivery_request', 'common_entrance_method',
-                'total_amount', 'user_coupon_id', 'coupon_discount', 'use_points', 'delivery_fee', 'payment_amount',
+                'total_amount', 'user_coupon_id', 'coupon_discount', 'use_points', 'delivery_fee', 'price',
                 'imp_uid', 'merchant_uid',
-                'payment_pg', 'payment_method',
+                'pay_method_pg', 'pay_method_method',
                 'created_at', 'updated_at', 'delivery_started_at', 'purchase_confirmed_at',
                 'delivery_tracking_number'
             ]),

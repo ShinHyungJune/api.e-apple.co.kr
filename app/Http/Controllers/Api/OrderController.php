@@ -6,6 +6,7 @@ use App\Enums\OrderStatus;
 use App\Http\Requests\CartOrderRequest;
 use App\Http\Requests\OrderRequest;
 use App\Http\Resources\OrderResource;
+use App\Http\Resources\OrderUpdateResource;
 use App\Models\CartProductOption;
 use App\Models\Iamport;
 use App\Models\Order;
@@ -108,7 +109,7 @@ class OrderController extends ApiController
     /**
      * 수정(결제시도): 주문자 정보, 배송지 정보, 주문금액, 쿠폰, 적립금 사용액, 배송비, 결제수단 등
      * @unauthenticated
-     * @responseFile storage/responses/order.json
+     * @responseFile storage/responses/order_update.json
      */
     public function update(OrderRequest $request, $id)
     {
@@ -121,7 +122,8 @@ class OrderController extends ApiController
         $order->update($data);
         $order->syncStatusOrderProducts();
 
-        return $this->respondSuccessfully(OrderResource::make($order));
+        //return $this->respondSuccessfully(OrderResource::make($order));
+        return $this->respondSuccessfully(OrderUpdateResource::make($order));
     }
 
     /**
@@ -143,7 +145,7 @@ class OrderController extends ApiController
 
         //결제내역 확인
         if (!config('iamport.payment_integration')) { //FORTEST
-            $impOrder = Order::selectRaw("*, payment_amount AS amount")->where("merchant_uid", $request->merchant_uid)->first()->toArray();
+            $impOrder = Order::selectRaw("*, price AS amount")->where("merchant_uid", $request->merchant_uid)->first()->toArray();
             $impOrder['status'] = 'paid';//paid, ready
         } else {
             $accessToken = Iamport::getAccessToken(); // 권한 얻기
@@ -165,8 +167,8 @@ class OrderController extends ApiController
 
 
         //결제금액 확인
-        if ($order->payment_amount != $impOrder["amount"]) {
-            $message = '결제금액 오류 => ' . $order->payment_amount . ':' . $impOrder["amount"];
+        if ($order->price != $impOrder["amount"]) {
+            $message = '결제금액 오류 => ' . $order->price . ':' . $impOrder["amount"];
             $order->update(['payment_fail_reason' => $message, 'status' => OrderStatus::PAYMENT_FAIL]);
             $order->syncStatusOrderProducts();
             abort(403, $message);
@@ -196,6 +198,9 @@ class OrderController extends ApiController
             $order->syncStatusOrderProducts();
             abort(500, $e->getMessage());
         }
+
+        if (strpos($request->path(), "mobile"))
+            return redirect(config("app.frontend_url") . "/orders/result?buyer_contact={$order->buyer_contact}&merchant_uid={$order->merchant_uid}");
 
         return $this->respondSuccessfully(OrderResource::make($order));
     }
