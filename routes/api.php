@@ -150,6 +150,7 @@ Route::group(['prefix' => 'coupons', 'controller' => CouponController::class],
 Route::group(['prefix' => 'user_coupons', 'middleware' => ['auth:api'], 'controller' => UserCouponController::class],
     function () {
         Route::get('', 'index');
+        Route::get('test', 'test');
     });
 
 //주문

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\UserCouponResource;
 use App\Models\Coupon;
+use App\Models\UserCoupon;
 use Illuminate\Http\Request;
 
 /**
@@ -36,4 +37,11 @@ class UserCouponController extends Controller
 
         return UserCouponResource::collection($items);
     }
+
+    public function test(Request $request)
+    {
+        $userCoupons = UserCoupon::all();
+        return $userCoupons;
+    }
+
 }
