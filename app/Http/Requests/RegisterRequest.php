@@ -56,6 +56,17 @@ class RegisterRequest extends FormRequest
         return $return;
     }
 
+    public function prepareForValidation()
+    {
+        $inputs = $this->input();
+        foreach ($inputs as $key => $input) {
+            if ($input === 'null') $inputs[$key] = null;
+            if ($input === 'true') $inputs[$key] = true;
+            if ($input === 'false') $inputs[$key] = false;
+        }
+        $this->merge($inputs);
+    }
+
     public function bodyParameters()
     {
         return [
