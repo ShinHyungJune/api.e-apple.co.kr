@@ -27,11 +27,11 @@ class ExchangeReturnRequest extends FormRequest
             'order_id' => ['required'],
             'order_product_id' => ['required'],
             'type' => ['required', 'in:' . implode(',', ExchangeReturn::TYPES)],
-            'problem' => ['nullable', 'string'],
+            'problem' => ['required', 'string'],
             /*'change_of_mind' => ['nullable', 'string'],
             'delivery_issue' => ['nullable', 'string'],
             'product_issue' => ['nullable', 'string'],*/
-            'description' => ['nullable', 'string'],
+            'description' => ['required', 'string'],
             'status' => ['required']
         ];
 
