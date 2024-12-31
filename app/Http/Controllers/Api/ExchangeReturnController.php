@@ -39,7 +39,14 @@ class ExchangeReturnController extends ApiController
 
         $orderProduct = OrderProduct::mine($request)->possibleExchangeReturnStatus()->findOrFail($data['order_product_id']);
         $item = $orderProduct->exchangeReturns()->create($data);
-        $orderProduct->update(['status' => OrderStatus::EXCHANGE_REQUESTED]);
+
+        if ($data['type'] === ExchangeReturn::TYPE_EXCHANGE) {
+            $orderProduct->status = OrderStatus::EXCHANGE_REQUESTED;
+        }
+        if ($data['type'] === ExchangeReturn::TYPE_RETURN) {
+            $orderProduct->status = OrderStatus::RETURN_REQUESTED;
+        }
+        $orderProduct->save();
 
         return $this->respondSuccessfully(ExchangeReturnResource::make($item));
     }
