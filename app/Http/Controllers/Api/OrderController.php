@@ -264,7 +264,7 @@ class OrderController extends ApiController
             'merchant_uid' => ['required', 'string', 'max:255'],
         ]);
 
-        $order = Order::with(['orderProducts'])
+        $order = Order::with(['orderProducts.product'])
             ->whereNull('user_id')
             ->where('buyer_name', $request->buyer_name)->where('merchant_uid', $request->merchant_uid)
             ->first();
