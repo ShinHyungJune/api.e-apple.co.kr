@@ -31,6 +31,8 @@
             "delivery_started_at": "배송 시작 일시",
             "purchase_confirmed_at": "구매 확정 일시",
             "delivery_tracking_number": "주문배송번호",
+            "refund_amount": "환불금액(관리자입력, 사용자 취소인 경우 전액)",
+            "refund_delivery_fee": "반품배송비(관리자입력)",
             "status": "주문 상태",
             "orderProducts": [
                 {

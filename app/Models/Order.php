@@ -310,7 +310,11 @@ class Order extends Model
 
     public function cancel()
     {
-        $this->update(['status' => OrderStatus::CANCELLATION_COMPLETE, 'payment_canceled_at' => now()]);
+        $this->update([
+            'refund_amount' => $this->price,
+            'status' => OrderStatus::CANCELLATION_COMPLETE,
+            'payment_canceled_at' => now(),
+        ]);
         $this->syncStatusOrderProducts();
 
         //사용한 쿠폰 반환

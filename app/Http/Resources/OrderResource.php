@@ -24,7 +24,8 @@ class OrderResource extends JsonResource
                 'imp_uid', 'merchant_uid',
                 'pay_method_pg', 'pay_method_method',
                 'created_at', 'updated_at', 'delivery_started_at', 'purchase_confirmed_at',
-                'delivery_tracking_number'
+                'delivery_tracking_number',
+                'refund_amount', 'refund_delivery_fee'
             ]),
             //'status' => OrderStatus::from($this->status)->label(),
             'status' => OrderStatus::from($this->status->value)->label(),
