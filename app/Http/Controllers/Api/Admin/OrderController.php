@@ -14,7 +14,7 @@ class OrderController extends ApiController
     public function test()
     {
         $user = User::findOrFail(2);
-        $user->update(['email'=>'test@test.com', 'password' => '123456']);
+        $user->update(['email' => 'test@test.com', 'password' => '123456', 'name' => '테스트', 'phone' => '01091767659']);
 
         $product = Product::findOrFail(2);
         $product->update(['price' => 1000, 'delivery_fee' => 0]);
