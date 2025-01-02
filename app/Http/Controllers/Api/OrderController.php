@@ -113,7 +113,7 @@ class OrderController extends ApiController
      */
     public function update(OrderRequest $request, $id)
     {
-        $order = Order::with('orderProducts.productOption')->mine($request)->pending()->findOrFail($id);
+        $order = Order::with('orderProducts.productOption')->mine($request)->canOrderPayment()->findOrFail($id);
 
         $data = $request->validated();
         $coupon = (!auth()->check()) ? null : auth()->user()->availableCoupons()->wherePivot('id', $data['user_coupon_id'])->first();

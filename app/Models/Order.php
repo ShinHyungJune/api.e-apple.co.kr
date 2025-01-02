@@ -222,12 +222,7 @@ class Order extends Model
 
     public function scopeAfterOrderPending(Builder $query)
     {
-        $query->whereNotIn('status', [OrderStatus::ORDER_PENDING, OrderStatus::ORDER_COMPLETE])
-            /*->where(function ($query) {
-                $query->where('pay_method_method', IamportMethod::CARD)
-                    ->where('status', OrderStatus::ORDER_COMPLETE);
-            })*/
-        ;
+        $query->whereNotIn('status', [OrderStatus::ORDER_PENDING, OrderStatus::ORDER_COMPLETE]);
 
     }
 
@@ -243,12 +238,21 @@ class Order extends Model
         $query->whereIn('status', OrderStatus::DELIVERY_BEFORES);//배송중 이전
     }
 
+
+    /**
+     * 주문결제 가능한 상태
+     */
+    public function scopeCanOrderPayment(Builder $query)
+    {
+        $query->whereIn('status', [OrderStatus::ORDER_PENDING, OrderStatus::ORDER_COMPLETE]);//주문접수, 주문완료
+    }
+
     /**
      * 주문취소 가능한 상태
      */
     public function scopeCanOrderCancel(Builder $query)
     {
-        $query->whereIn('status', OrderStatus::CAN_ORDER_CANCELS);//결제완료, 배송준비중
+        $query->whereIn('status', [OrderStatus::CAN_ORDER_CANCELS]);//결제완료, 배송준비중
     }
 
     public function canOrderCancel()
