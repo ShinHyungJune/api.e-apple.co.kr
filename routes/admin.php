@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\Admin\OrderController;
 use App\Http\Controllers\Api\Admin\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,4 +16,9 @@ Route::middleware("admin")->prefix("admin")->group(function () {
             Route::delete('{product}', 'destroy');*/
         });
 
+    Route::group(['prefix' => 'orders', 'controller' => OrderController::class],
+        function () {
+            Route::post('test', 'test');
+
+        });
 });
