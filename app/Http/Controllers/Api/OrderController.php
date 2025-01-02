@@ -219,7 +219,7 @@ class OrderController extends ApiController
         $order = DB::transaction(function () use ($order) {
             if (config('iamport.payment_integration')) {
                 $accessToken = Iamport::getAccessToken();
-                $result = Iamport::cancel($accessToken, $this->imp_uid);
+                $result = Iamport::cancel($accessToken, $order->imp_uid);
                 if (!$result['response']) abort(403, $result['message']);
             }
 
