@@ -252,7 +252,7 @@ class Order extends Model
      */
     public function scopeCanOrderCancel(Builder $query)
     {
-        $query->whereIn('status', [OrderStatus::CAN_ORDER_CANCELS]);//결제완료, 배송준비중
+        $query->whereIn('status', OrderStatus::CAN_ORDER_CANCELS);//결제완료, 배송준비중
     }
 
     public function canOrderCancel()
