@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api\Admin;
 
 use App\Http\Controllers\Api\ApiController;
-use App\Models\Order;
+use App\Models\OrderProduct;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -27,12 +27,12 @@ class OrderController extends ApiController
         if (
             $request->input('id') && $request->input('status')
         ) {
-            Order::findOrFail($request->input('id'))
+            OrderProduct::findOrFail($request->input('id'))
                 ->update(['status' => $request->input('status')]);
 
         }
 
 
-        return $this->respondSuccessfully($user);
+        return $this->respondSuccessfully();
     }
 }
