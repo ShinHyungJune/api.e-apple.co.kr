@@ -18,7 +18,7 @@ class OrderController extends ApiController
 
         $product = Product::findOrFail(2);
         $product->update(['price' => 1000, 'delivery_fee' => 0]);
-        $product->options()->update(['price' => 1000, 'stock_quantity' => 1000]);
+        $product->options()->update(['price' => 500, 'stock_quantity' => 1000]);
 
         return $this->respondSuccessfully($user);
     }
