@@ -11,9 +11,169 @@
                     "name": "파일이름",
                     "url": "이미지 URL"
                 }
+            },
+            {
+                "title": "제목",
+                "description": "설명",
+                "url": "url",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                }
+            },
+            {
+                "title": "제목",
+                "description": "설명",
+                "url": "url",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                }
+            },
+            {
+                "title": "제목",
+                "description": "설명",
+                "url": "url",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                }
+            },
+            {
+                "title": "제목",
+                "description": "설명",
+                "url": "url",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                }
             }
         ],
         "saleProducts": [
+            {
+                "id": "기본키",
+                "name": "상품명",
+                "description": "상품설명",
+                "view_count": "조회수",
+                "price": "가격",
+                "original_price": "원래 가격",
+                "delivery_fee": "배송비 (기본값: 0)",
+                "shipping_origin": "출고지",
+                "fruit_size": "과일 크기",
+                "sugar_content": "당도",
+                "food_type": "식품의 유형",
+                "manufacturer_and_location": "생산자 및 소재지",
+                "importer": "수입자",
+                "origin": "원산지",
+                "ingredients_and_composition": "원재료 및 합량",
+                "storage_and_handling": "보관\/취급방법",
+                "manufacture_date": "제조연원일",
+                "expiration_date": "유통기한",
+                "gmo_desc": "유전자변형 농산물 여부",
+                "customer_service_contact": "소비자 상담 문의",
+                "is_new": "새로운상품 여부",
+                "is_best": false,
+                "average_rating": "평균 평점",
+                "reviews_count": 0,
+                "inquiries_count": 0,
+                "categories": "카테고리",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ]
+            },
+            {
+                "id": "기본키",
+                "name": "상품명",
+                "description": "상품설명",
+                "view_count": "조회수",
+                "price": "가격",
+                "original_price": "원래 가격",
+                "delivery_fee": "배송비 (기본값: 0)",
+                "shipping_origin": "출고지",
+                "fruit_size": "과일 크기",
+                "sugar_content": "당도",
+                "food_type": "식품의 유형",
+                "manufacturer_and_location": "생산자 및 소재지",
+                "importer": "수입자",
+                "origin": "원산지",
+                "ingredients_and_composition": "원재료 및 합량",
+                "storage_and_handling": "보관\/취급방법",
+                "manufacture_date": "제조연원일",
+                "expiration_date": "유통기한",
+                "gmo_desc": "유전자변형 농산물 여부",
+                "customer_service_contact": "소비자 상담 문의",
+                "is_new": "새로운상품 여부",
+                "is_best": false,
+                "average_rating": "평균 평점",
+                "reviews_count": 0,
+                "inquiries_count": 1,
+                "categories": "카테고리",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ]
+            },
+            {
+                "id": "기본키",
+                "name": "상품명",
+                "description": "상품설명",
+                "view_count": "조회수",
+                "price": "가격",
+                "original_price": "원래 가격",
+                "delivery_fee": "배송비 (기본값: 0)",
+                "shipping_origin": "출고지",
+                "fruit_size": "과일 크기",
+                "sugar_content": "당도",
+                "food_type": "식품의 유형",
+                "manufacturer_and_location": "생산자 및 소재지",
+                "importer": "수입자",
+                "origin": "원산지",
+                "ingredients_and_composition": "원재료 및 합량",
+                "storage_and_handling": "보관\/취급방법",
+                "manufacture_date": "제조연원일",
+                "expiration_date": "유통기한",
+                "gmo_desc": "유전자변형 농산물 여부",
+                "customer_service_contact": "소비자 상담 문의",
+                "is_new": "새로운상품 여부",
+                "is_best": false,
+                "average_rating": "평균 평점",
+                "reviews_count": 0,
+                "inquiries_count": 0,
+                "categories": "카테고리",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ]
+            },
             {
                 "id": "기본키",
                 "name": "상품명",
@@ -78,7 +238,127 @@
                 "gmo_desc": "유전자변형 농산물 여부",
                 "customer_service_contact": "소비자 상담 문의",
                 "is_new": "새로운상품 여부",
-                "is_best": true,
+                "is_best": false,
+                "average_rating": "평균 평점",
+                "reviews_count": 0,
+                "inquiries_count": 1,
+                "categories": "카테고리",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ]
+            },
+            {
+                "id": "기본키",
+                "name": "상품명",
+                "description": "상품설명",
+                "view_count": "조회수",
+                "price": "가격",
+                "original_price": "원래 가격",
+                "delivery_fee": "배송비 (기본값: 0)",
+                "shipping_origin": "출고지",
+                "fruit_size": "과일 크기",
+                "sugar_content": "당도",
+                "food_type": "식품의 유형",
+                "manufacturer_and_location": "생산자 및 소재지",
+                "importer": "수입자",
+                "origin": "원산지",
+                "ingredients_and_composition": "원재료 및 합량",
+                "storage_and_handling": "보관\/취급방법",
+                "manufacture_date": "제조연원일",
+                "expiration_date": "유통기한",
+                "gmo_desc": "유전자변형 농산물 여부",
+                "customer_service_contact": "소비자 상담 문의",
+                "is_new": "새로운상품 여부",
+                "is_best": false,
+                "average_rating": "평균 평점",
+                "reviews_count": 0,
+                "inquiries_count": 1,
+                "categories": "카테고리",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ]
+            },
+            {
+                "id": "기본키",
+                "name": "상품명",
+                "description": "상품설명",
+                "view_count": "조회수",
+                "price": "가격",
+                "original_price": "원래 가격",
+                "delivery_fee": "배송비 (기본값: 0)",
+                "shipping_origin": "출고지",
+                "fruit_size": "과일 크기",
+                "sugar_content": "당도",
+                "food_type": "식품의 유형",
+                "manufacturer_and_location": "생산자 및 소재지",
+                "importer": "수입자",
+                "origin": "원산지",
+                "ingredients_and_composition": "원재료 및 합량",
+                "storage_and_handling": "보관\/취급방법",
+                "manufacture_date": "제조연원일",
+                "expiration_date": "유통기한",
+                "gmo_desc": "유전자변형 농산물 여부",
+                "customer_service_contact": "소비자 상담 문의",
+                "is_new": "새로운상품 여부",
+                "is_best": false,
+                "average_rating": "평균 평점",
+                "reviews_count": 0,
+                "inquiries_count": 0,
+                "categories": "카테고리",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ]
+            },
+            {
+                "id": "기본키",
+                "name": "상품명",
+                "description": "상품설명",
+                "view_count": "조회수",
+                "price": "가격",
+                "original_price": "원래 가격",
+                "delivery_fee": "배송비 (기본값: 0)",
+                "shipping_origin": "출고지",
+                "fruit_size": "과일 크기",
+                "sugar_content": "당도",
+                "food_type": "식품의 유형",
+                "manufacturer_and_location": "생산자 및 소재지",
+                "importer": "수입자",
+                "origin": "원산지",
+                "ingredients_and_composition": "원재료 및 합량",
+                "storage_and_handling": "보관\/취급방법",
+                "manufacture_date": "제조연원일",
+                "expiration_date": "유통기한",
+                "gmo_desc": "유전자변형 농산물 여부",
+                "customer_service_contact": "소비자 상담 문의",
+                "is_new": "새로운상품 여부",
+                "is_best": false,
                 "average_rating": "평균 평점",
                 "reviews_count": 0,
                 "inquiries_count": 0,
@@ -98,6 +378,286 @@
             }
         ],
         "bestProducts": [
+            {
+                "id": "기본키",
+                "name": "상품명",
+                "description": "상품설명",
+                "view_count": "조회수",
+                "price": "가격",
+                "original_price": "원래 가격",
+                "delivery_fee": "배송비 (기본값: 0)",
+                "shipping_origin": "출고지",
+                "fruit_size": "과일 크기",
+                "sugar_content": "당도",
+                "food_type": "식품의 유형",
+                "manufacturer_and_location": "생산자 및 소재지",
+                "importer": "수입자",
+                "origin": "원산지",
+                "ingredients_and_composition": "원재료 및 합량",
+                "storage_and_handling": "보관\/취급방법",
+                "manufacture_date": "제조연원일",
+                "expiration_date": "유통기한",
+                "gmo_desc": "유전자변형 농산물 여부",
+                "customer_service_contact": "소비자 상담 문의",
+                "is_new": "새로운상품 여부",
+                "is_best": true,
+                "average_rating": "평균 평점",
+                "reviews_count": 0,
+                "inquiries_count": 0,
+                "categories": "카테고리",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ]
+            },
+            {
+                "id": "기본키",
+                "name": "상품명",
+                "description": "상품설명",
+                "view_count": "조회수",
+                "price": "가격",
+                "original_price": "원래 가격",
+                "delivery_fee": "배송비 (기본값: 0)",
+                "shipping_origin": "출고지",
+                "fruit_size": "과일 크기",
+                "sugar_content": "당도",
+                "food_type": "식품의 유형",
+                "manufacturer_and_location": "생산자 및 소재지",
+                "importer": "수입자",
+                "origin": "원산지",
+                "ingredients_and_composition": "원재료 및 합량",
+                "storage_and_handling": "보관\/취급방법",
+                "manufacture_date": "제조연원일",
+                "expiration_date": "유통기한",
+                "gmo_desc": "유전자변형 농산물 여부",
+                "customer_service_contact": "소비자 상담 문의",
+                "is_new": "새로운상품 여부",
+                "is_best": true,
+                "average_rating": "평균 평점",
+                "reviews_count": 0,
+                "inquiries_count": 0,
+                "categories": "카테고리",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ]
+            },
+            {
+                "id": "기본키",
+                "name": "상품명",
+                "description": "상품설명",
+                "view_count": "조회수",
+                "price": "가격",
+                "original_price": "원래 가격",
+                "delivery_fee": "배송비 (기본값: 0)",
+                "shipping_origin": "출고지",
+                "fruit_size": "과일 크기",
+                "sugar_content": "당도",
+                "food_type": "식품의 유형",
+                "manufacturer_and_location": "생산자 및 소재지",
+                "importer": "수입자",
+                "origin": "원산지",
+                "ingredients_and_composition": "원재료 및 합량",
+                "storage_and_handling": "보관\/취급방법",
+                "manufacture_date": "제조연원일",
+                "expiration_date": "유통기한",
+                "gmo_desc": "유전자변형 농산물 여부",
+                "customer_service_contact": "소비자 상담 문의",
+                "is_new": "새로운상품 여부",
+                "is_best": true,
+                "average_rating": "평균 평점",
+                "reviews_count": 0,
+                "inquiries_count": 0,
+                "categories": "카테고리",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ]
+            },
+            {
+                "id": "기본키",
+                "name": "상품명",
+                "description": "상품설명",
+                "view_count": "조회수",
+                "price": "가격",
+                "original_price": "원래 가격",
+                "delivery_fee": "배송비 (기본값: 0)",
+                "shipping_origin": "출고지",
+                "fruit_size": "과일 크기",
+                "sugar_content": "당도",
+                "food_type": "식품의 유형",
+                "manufacturer_and_location": "생산자 및 소재지",
+                "importer": "수입자",
+                "origin": "원산지",
+                "ingredients_and_composition": "원재료 및 합량",
+                "storage_and_handling": "보관\/취급방법",
+                "manufacture_date": "제조연원일",
+                "expiration_date": "유통기한",
+                "gmo_desc": "유전자변형 농산물 여부",
+                "customer_service_contact": "소비자 상담 문의",
+                "is_new": "새로운상품 여부",
+                "is_best": true,
+                "average_rating": "평균 평점",
+                "reviews_count": 0,
+                "inquiries_count": 0,
+                "categories": "카테고리",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ]
+            },
+            {
+                "id": "기본키",
+                "name": "상품명",
+                "description": "상품설명",
+                "view_count": "조회수",
+                "price": "가격",
+                "original_price": "원래 가격",
+                "delivery_fee": "배송비 (기본값: 0)",
+                "shipping_origin": "출고지",
+                "fruit_size": "과일 크기",
+                "sugar_content": "당도",
+                "food_type": "식품의 유형",
+                "manufacturer_and_location": "생산자 및 소재지",
+                "importer": "수입자",
+                "origin": "원산지",
+                "ingredients_and_composition": "원재료 및 합량",
+                "storage_and_handling": "보관\/취급방법",
+                "manufacture_date": "제조연원일",
+                "expiration_date": "유통기한",
+                "gmo_desc": "유전자변형 농산물 여부",
+                "customer_service_contact": "소비자 상담 문의",
+                "is_new": "새로운상품 여부",
+                "is_best": true,
+                "average_rating": "평균 평점",
+                "reviews_count": 0,
+                "inquiries_count": 0,
+                "categories": "카테고리",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ]
+            },
+            {
+                "id": "기본키",
+                "name": "상품명",
+                "description": "상품설명",
+                "view_count": "조회수",
+                "price": "가격",
+                "original_price": "원래 가격",
+                "delivery_fee": "배송비 (기본값: 0)",
+                "shipping_origin": "출고지",
+                "fruit_size": "과일 크기",
+                "sugar_content": "당도",
+                "food_type": "식품의 유형",
+                "manufacturer_and_location": "생산자 및 소재지",
+                "importer": "수입자",
+                "origin": "원산지",
+                "ingredients_and_composition": "원재료 및 합량",
+                "storage_and_handling": "보관\/취급방법",
+                "manufacture_date": "제조연원일",
+                "expiration_date": "유통기한",
+                "gmo_desc": "유전자변형 농산물 여부",
+                "customer_service_contact": "소비자 상담 문의",
+                "is_new": "새로운상품 여부",
+                "is_best": true,
+                "average_rating": "평균 평점",
+                "reviews_count": 0,
+                "inquiries_count": 0,
+                "categories": "카테고리",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ]
+            },
+            {
+                "id": "기본키",
+                "name": "상품명",
+                "description": "상품설명",
+                "view_count": "조회수",
+                "price": "가격",
+                "original_price": "원래 가격",
+                "delivery_fee": "배송비 (기본값: 0)",
+                "shipping_origin": "출고지",
+                "fruit_size": "과일 크기",
+                "sugar_content": "당도",
+                "food_type": "식품의 유형",
+                "manufacturer_and_location": "생산자 및 소재지",
+                "importer": "수입자",
+                "origin": "원산지",
+                "ingredients_and_composition": "원재료 및 합량",
+                "storage_and_handling": "보관\/취급방법",
+                "manufacture_date": "제조연원일",
+                "expiration_date": "유통기한",
+                "gmo_desc": "유전자변형 농산물 여부",
+                "customer_service_contact": "소비자 상담 문의",
+                "is_new": "새로운상품 여부",
+                "is_best": true,
+                "average_rating": "평균 평점",
+                "reviews_count": 0,
+                "inquiries_count": 0,
+                "categories": "카테고리",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ]
+            },
             {
                 "id": "기본키",
                 "name": "상품명",
@@ -165,7 +725,367 @@
                 "is_best": false,
                 "average_rating": "평균 평점",
                 "reviews_count": 0,
+                "inquiries_count": 0,
+                "categories": "카테고리",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ]
+            },
+            {
+                "id": "기본키",
+                "name": "상품명",
+                "description": "상품설명",
+                "view_count": "조회수",
+                "price": "가격",
+                "original_price": "원래 가격",
+                "delivery_fee": "배송비 (기본값: 0)",
+                "shipping_origin": "출고지",
+                "fruit_size": "과일 크기",
+                "sugar_content": "당도",
+                "food_type": "식품의 유형",
+                "manufacturer_and_location": "생산자 및 소재지",
+                "importer": "수입자",
+                "origin": "원산지",
+                "ingredients_and_composition": "원재료 및 합량",
+                "storage_and_handling": "보관\/취급방법",
+                "manufacture_date": "제조연원일",
+                "expiration_date": "유통기한",
+                "gmo_desc": "유전자변형 농산물 여부",
+                "customer_service_contact": "소비자 상담 문의",
+                "is_new": "새로운상품 여부",
+                "is_best": false,
+                "average_rating": "평균 평점",
+                "reviews_count": 0,
                 "inquiries_count": 1,
+                "categories": "카테고리",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ]
+            },
+            {
+                "id": "기본키",
+                "name": "상품명",
+                "description": "상품설명",
+                "view_count": "조회수",
+                "price": "가격",
+                "original_price": "원래 가격",
+                "delivery_fee": "배송비 (기본값: 0)",
+                "shipping_origin": "출고지",
+                "fruit_size": "과일 크기",
+                "sugar_content": "당도",
+                "food_type": "식품의 유형",
+                "manufacturer_and_location": "생산자 및 소재지",
+                "importer": "수입자",
+                "origin": "원산지",
+                "ingredients_and_composition": "원재료 및 합량",
+                "storage_and_handling": "보관\/취급방법",
+                "manufacture_date": "제조연원일",
+                "expiration_date": "유통기한",
+                "gmo_desc": "유전자변형 농산물 여부",
+                "customer_service_contact": "소비자 상담 문의",
+                "is_new": "새로운상품 여부",
+                "is_best": false,
+                "average_rating": "평균 평점",
+                "reviews_count": 0,
+                "inquiries_count": 1,
+                "categories": "카테고리",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ]
+            },
+            {
+                "id": "기본키",
+                "name": "상품명",
+                "description": "상품설명",
+                "view_count": "조회수",
+                "price": "가격",
+                "original_price": "원래 가격",
+                "delivery_fee": "배송비 (기본값: 0)",
+                "shipping_origin": "출고지",
+                "fruit_size": "과일 크기",
+                "sugar_content": "당도",
+                "food_type": "식품의 유형",
+                "manufacturer_and_location": "생산자 및 소재지",
+                "importer": "수입자",
+                "origin": "원산지",
+                "ingredients_and_composition": "원재료 및 합량",
+                "storage_and_handling": "보관\/취급방법",
+                "manufacture_date": "제조연원일",
+                "expiration_date": "유통기한",
+                "gmo_desc": "유전자변형 농산물 여부",
+                "customer_service_contact": "소비자 상담 문의",
+                "is_new": "새로운상품 여부",
+                "is_best": false,
+                "average_rating": "평균 평점",
+                "reviews_count": 0,
+                "inquiries_count": 0,
+                "categories": "카테고리",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ]
+            },
+            {
+                "id": "기본키",
+                "name": "상품명",
+                "description": "상품설명",
+                "view_count": "조회수",
+                "price": "가격",
+                "original_price": "원래 가격",
+                "delivery_fee": "배송비 (기본값: 0)",
+                "shipping_origin": "출고지",
+                "fruit_size": "과일 크기",
+                "sugar_content": "당도",
+                "food_type": "식품의 유형",
+                "manufacturer_and_location": "생산자 및 소재지",
+                "importer": "수입자",
+                "origin": "원산지",
+                "ingredients_and_composition": "원재료 및 합량",
+                "storage_and_handling": "보관\/취급방법",
+                "manufacture_date": "제조연원일",
+                "expiration_date": "유통기한",
+                "gmo_desc": "유전자변형 농산물 여부",
+                "customer_service_contact": "소비자 상담 문의",
+                "is_new": "새로운상품 여부",
+                "is_best": false,
+                "average_rating": "평균 평점",
+                "reviews_count": 0,
+                "inquiries_count": 2,
+                "categories": "카테고리",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ]
+            },
+            {
+                "id": "기본키",
+                "name": "상품명",
+                "description": "상품설명",
+                "view_count": "조회수",
+                "price": "가격",
+                "original_price": "원래 가격",
+                "delivery_fee": "배송비 (기본값: 0)",
+                "shipping_origin": "출고지",
+                "fruit_size": "과일 크기",
+                "sugar_content": "당도",
+                "food_type": "식품의 유형",
+                "manufacturer_and_location": "생산자 및 소재지",
+                "importer": "수입자",
+                "origin": "원산지",
+                "ingredients_and_composition": "원재료 및 합량",
+                "storage_and_handling": "보관\/취급방법",
+                "manufacture_date": "제조연원일",
+                "expiration_date": "유통기한",
+                "gmo_desc": "유전자변형 농산물 여부",
+                "customer_service_contact": "소비자 상담 문의",
+                "is_new": "새로운상품 여부",
+                "is_best": false,
+                "average_rating": "평균 평점",
+                "reviews_count": 0,
+                "inquiries_count": 2,
+                "categories": "카테고리",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ]
+            },
+            {
+                "id": "기본키",
+                "name": "상품명",
+                "description": "상품설명",
+                "view_count": "조회수",
+                "price": "가격",
+                "original_price": "원래 가격",
+                "delivery_fee": "배송비 (기본값: 0)",
+                "shipping_origin": "출고지",
+                "fruit_size": "과일 크기",
+                "sugar_content": "당도",
+                "food_type": "식품의 유형",
+                "manufacturer_and_location": "생산자 및 소재지",
+                "importer": "수입자",
+                "origin": "원산지",
+                "ingredients_and_composition": "원재료 및 합량",
+                "storage_and_handling": "보관\/취급방법",
+                "manufacture_date": "제조연원일",
+                "expiration_date": "유통기한",
+                "gmo_desc": "유전자변형 농산물 여부",
+                "customer_service_contact": "소비자 상담 문의",
+                "is_new": "새로운상품 여부",
+                "is_best": false,
+                "average_rating": "평균 평점",
+                "reviews_count": 0,
+                "inquiries_count": 0,
+                "categories": "카테고리",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ]
+            },
+            {
+                "id": "기본키",
+                "name": "상품명",
+                "description": "상품설명",
+                "view_count": "조회수",
+                "price": "가격",
+                "original_price": "원래 가격",
+                "delivery_fee": "배송비 (기본값: 0)",
+                "shipping_origin": "출고지",
+                "fruit_size": "과일 크기",
+                "sugar_content": "당도",
+                "food_type": "식품의 유형",
+                "manufacturer_and_location": "생산자 및 소재지",
+                "importer": "수입자",
+                "origin": "원산지",
+                "ingredients_and_composition": "원재료 및 합량",
+                "storage_and_handling": "보관\/취급방법",
+                "manufacture_date": "제조연원일",
+                "expiration_date": "유통기한",
+                "gmo_desc": "유전자변형 농산물 여부",
+                "customer_service_contact": "소비자 상담 문의",
+                "is_new": "새로운상품 여부",
+                "is_best": true,
+                "average_rating": "평균 평점",
+                "reviews_count": 0,
+                "inquiries_count": 0,
+                "categories": "카테고리",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ]
+            },
+            {
+                "id": "기본키",
+                "name": "상품명",
+                "description": "상품설명",
+                "view_count": "조회수",
+                "price": "가격",
+                "original_price": "원래 가격",
+                "delivery_fee": "배송비 (기본값: 0)",
+                "shipping_origin": "출고지",
+                "fruit_size": "과일 크기",
+                "sugar_content": "당도",
+                "food_type": "식품의 유형",
+                "manufacturer_and_location": "생산자 및 소재지",
+                "importer": "수입자",
+                "origin": "원산지",
+                "ingredients_and_composition": "원재료 및 합량",
+                "storage_and_handling": "보관\/취급방법",
+                "manufacture_date": "제조연원일",
+                "expiration_date": "유통기한",
+                "gmo_desc": "유전자변형 농산물 여부",
+                "customer_service_contact": "소비자 상담 문의",
+                "is_new": "새로운상품 여부",
+                "is_best": false,
+                "average_rating": "평균 평점",
+                "reviews_count": 0,
+                "inquiries_count": 1,
+                "categories": "카테고리",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ]
+            },
+            {
+                "id": "기본키",
+                "name": "상품명",
+                "description": "상품설명",
+                "view_count": "조회수",
+                "price": "가격",
+                "original_price": "원래 가격",
+                "delivery_fee": "배송비 (기본값: 0)",
+                "shipping_origin": "출고지",
+                "fruit_size": "과일 크기",
+                "sugar_content": "당도",
+                "food_type": "식품의 유형",
+                "manufacturer_and_location": "생산자 및 소재지",
+                "importer": "수입자",
+                "origin": "원산지",
+                "ingredients_and_composition": "원재료 및 합량",
+                "storage_and_handling": "보관\/취급방법",
+                "manufacture_date": "제조연원일",
+                "expiration_date": "유통기한",
+                "gmo_desc": "유전자변형 농산물 여부",
+                "customer_service_contact": "소비자 상담 문의",
+                "is_new": "새로운상품 여부",
+                "is_best": false,
+                "average_rating": "평균 평점",
+                "reviews_count": 0,
+                "inquiries_count": 0,
                 "categories": "카테고리",
                 "img": {
                     "id": "기본키",
@@ -181,20 +1101,148 @@
                 ]
             }
         ],
-        "sweetnesses": [
+        "sweetness": {
+            "standard_datetime": "02일(목) 11시",
+            "items": [
+                {
+                    "fruit_name": "과일 이름",
+                    "sweetness": "당도",
+                    "standard_sweetness": "기준당도",
+                    "img": {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                },
+                {
+                    "fruit_name": "과일 이름",
+                    "sweetness": "당도",
+                    "standard_sweetness": "기준당도",
+                    "img": {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                },
+                {
+                    "fruit_name": "과일 이름",
+                    "sweetness": "당도",
+                    "standard_sweetness": "기준당도",
+                    "img": {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                },
+                {
+                    "fruit_name": "과일 이름",
+                    "sweetness": "당도",
+                    "standard_sweetness": "기준당도",
+                    "img": {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                },
+                {
+                    "fruit_name": "과일 이름",
+                    "sweetness": "당도",
+                    "standard_sweetness": "기준당도",
+                    "img": {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                },
+                {
+                    "fruit_name": "과일 이름",
+                    "sweetness": "당도",
+                    "standard_sweetness": "기준당도",
+                    "img": {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                },
+                {
+                    "fruit_name": "과일 이름",
+                    "sweetness": "당도",
+                    "standard_sweetness": "기준당도",
+                    "img": {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                },
+                {
+                    "fruit_name": "과일 이름",
+                    "sweetness": "당도",
+                    "standard_sweetness": "기준당도",
+                    "img": {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                },
+                {
+                    "fruit_name": "과일 이름",
+                    "sweetness": "당도",
+                    "standard_sweetness": "기준당도",
+                    "img": {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                },
+                {
+                    "fruit_name": "과일 이름",
+                    "sweetness": "당도",
+                    "standard_sweetness": "기준당도",
+                    "img": {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                }
+            ]
+        },
+        "reviews": [
             {
-                "fruit_name": "과일 이름",
-                "sweetness": "당도",
-                "standard_sweetness": "기준당도",
-                "standard_datetime": "기준일시",
+                "id": "기본키",
+                "rating": "평점 (1~5)",
+                "review": "후기 내용",
                 "img": {
                     "id": "기본키",
                     "name": "파일이름",
                     "url": "이미지 URL"
-                }
-            }
-        ],
-        "reviews": [
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ],
+                "created_date": "생성일"
+            },
+            {
+                "id": "기본키",
+                "rating": "평점 (1~5)",
+                "review": "후기 내용",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ],
+                "created_date": "생성일"
+            },
             {
                 "id": "기본키",
                 "rating": "평점 (1~5)",
@@ -216,12 +1264,50 @@
         ],
         "monthlySuggestionProducts": [
             {
-                "package_category_id": 13,
-                "packages": [
+                "id": "기본키",
+                "title": "패키지 제목",
+                "description": "패키지 내용",
+                "category_title": "패키지 카테고리 제목",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
                     {
-                        "id": 30,
-                        "title": "perferendis",
-                        "description": "Aspernatur ab aut est sunt maxime ut. Possimus placeat quo eos quis vel. Minus aut occaecati totam quia quia quis. Illum veritatis eligendi doloribus modi dignissimos cupiditate voluptas.\n\nConsequuntur suscipit et et optio assumenda repellat. Nam quia inventore qui dolor iusto repudiandae deserunt. Est adipisci neque doloremque. Omnis tempore accusantium facilis vel ab dolores qui.\n\nNon non veritatis eum harum est. Voluptas adipisci ut ipsam voluptatum qui ullam nobis. Incidunt consequuntur voluptas molestiae vitae sapiente et sit consequatur.",
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ],
+                "products": [
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 0,
+                        "categories": "카테고리",
                         "img": {
                             "id": "기본키",
                             "name": "파일이름",
@@ -232,215 +1318,36 @@
                                 "id": "기본키",
                                 "name": "파일이름",
                                 "url": "이미지 URL"
-                            }
-                        ],
-                        "products": [
-                            {
-                                "id": "기본키",
-                                "name": "상품명",
-                                "description": "상품설명",
-                                "view_count": "조회수",
-                                "price": "가격",
-                                "original_price": "원래 가격",
-                                "delivery_fee": "배송비 (기본값: 0)",
-                                "shipping_origin": "출고지",
-                                "fruit_size": "과일 크기",
-                                "sugar_content": "당도",
-                                "food_type": "식품의 유형",
-                                "manufacturer_and_location": "생산자 및 소재지",
-                                "importer": "수입자",
-                                "origin": "원산지",
-                                "ingredients_and_composition": "원재료 및 합량",
-                                "storage_and_handling": "보관\/취급방법",
-                                "manufacture_date": "제조연원일",
-                                "expiration_date": "유통기한",
-                                "gmo_desc": "유전자변형 농산물 여부",
-                                "customer_service_contact": "소비자 상담 문의",
-                                "is_new": "새로운상품 여부",
-                                "is_best": false,
-                                "average_rating": "평균 평점",
-                                "reviews_count": 0,
-                                "inquiries_count": 0,
-                                "categories": "카테고리",
-                                "img": {
-                                    "id": "기본키",
-                                    "name": "파일이름",
-                                    "url": "이미지 URL"
-                                },
-                                "imgs": [
-                                    {
-                                        "id": "기본키",
-                                        "name": "파일이름",
-                                        "url": "이미지 URL"
-                                    }
-                                ]
-                            },
-                            {
-                                "id": "기본키",
-                                "name": "상품명",
-                                "description": "상품설명",
-                                "view_count": "조회수",
-                                "price": "가격",
-                                "original_price": "원래 가격",
-                                "delivery_fee": "배송비 (기본값: 0)",
-                                "shipping_origin": "출고지",
-                                "fruit_size": "과일 크기",
-                                "sugar_content": "당도",
-                                "food_type": "식품의 유형",
-                                "manufacturer_and_location": "생산자 및 소재지",
-                                "importer": "수입자",
-                                "origin": "원산지",
-                                "ingredients_and_composition": "원재료 및 합량",
-                                "storage_and_handling": "보관\/취급방법",
-                                "manufacture_date": "제조연원일",
-                                "expiration_date": "유통기한",
-                                "gmo_desc": "유전자변형 농산물 여부",
-                                "customer_service_contact": "소비자 상담 문의",
-                                "is_new": "새로운상품 여부",
-                                "is_best": true,
-                                "average_rating": "평균 평점",
-                                "reviews_count": 0,
-                                "inquiries_count": 1,
-                                "categories": "카테고리",
-                                "img": {
-                                    "id": "기본키",
-                                    "name": "파일이름",
-                                    "url": "이미지 URL"
-                                },
-                                "imgs": [
-                                    {
-                                        "id": "기본키",
-                                        "name": "파일이름",
-                                        "url": "이미지 URL"
-                                    }
-                                ]
-                            },
-                            {
-                                "id": "기본키",
-                                "name": "상품명",
-                                "description": "상품설명",
-                                "view_count": "조회수",
-                                "price": "가격",
-                                "original_price": "원래 가격",
-                                "delivery_fee": "배송비 (기본값: 0)",
-                                "shipping_origin": "출고지",
-                                "fruit_size": "과일 크기",
-                                "sugar_content": "당도",
-                                "food_type": "식품의 유형",
-                                "manufacturer_and_location": "생산자 및 소재지",
-                                "importer": "수입자",
-                                "origin": "원산지",
-                                "ingredients_and_composition": "원재료 및 합량",
-                                "storage_and_handling": "보관\/취급방법",
-                                "manufacture_date": "제조연원일",
-                                "expiration_date": "유통기한",
-                                "gmo_desc": "유전자변형 농산물 여부",
-                                "customer_service_contact": "소비자 상담 문의",
-                                "is_new": "새로운상품 여부",
-                                "is_best": false,
-                                "average_rating": "평균 평점",
-                                "reviews_count": 0,
-                                "inquiries_count": 0,
-                                "categories": "카테고리",
-                                "img": {
-                                    "id": "기본키",
-                                    "name": "파일이름",
-                                    "url": "이미지 URL"
-                                },
-                                "imgs": [
-                                    {
-                                        "id": "기본키",
-                                        "name": "파일이름",
-                                        "url": "이미지 URL"
-                                    }
-                                ]
-                            },
-                            {
-                                "id": "기본키",
-                                "name": "상품명",
-                                "description": "상품설명",
-                                "view_count": "조회수",
-                                "price": "가격",
-                                "original_price": "원래 가격",
-                                "delivery_fee": "배송비 (기본값: 0)",
-                                "shipping_origin": "출고지",
-                                "fruit_size": "과일 크기",
-                                "sugar_content": "당도",
-                                "food_type": "식품의 유형",
-                                "manufacturer_and_location": "생산자 및 소재지",
-                                "importer": "수입자",
-                                "origin": "원산지",
-                                "ingredients_and_composition": "원재료 및 합량",
-                                "storage_and_handling": "보관\/취급방법",
-                                "manufacture_date": "제조연원일",
-                                "expiration_date": "유통기한",
-                                "gmo_desc": "유전자변형 농산물 여부",
-                                "customer_service_contact": "소비자 상담 문의",
-                                "is_new": "새로운상품 여부",
-                                "is_best": false,
-                                "average_rating": "평균 평점",
-                                "reviews_count": 0,
-                                "inquiries_count": 0,
-                                "categories": "카테고리",
-                                "img": {
-                                    "id": "기본키",
-                                    "name": "파일이름",
-                                    "url": "이미지 URL"
-                                },
-                                "imgs": [
-                                    {
-                                        "id": "기본키",
-                                        "name": "파일이름",
-                                        "url": "이미지 URL"
-                                    }
-                                ]
-                            },
-                            {
-                                "id": "기본키",
-                                "name": "상품명",
-                                "description": "상품설명",
-                                "view_count": "조회수",
-                                "price": "가격",
-                                "original_price": "원래 가격",
-                                "delivery_fee": "배송비 (기본값: 0)",
-                                "shipping_origin": "출고지",
-                                "fruit_size": "과일 크기",
-                                "sugar_content": "당도",
-                                "food_type": "식품의 유형",
-                                "manufacturer_and_location": "생산자 및 소재지",
-                                "importer": "수입자",
-                                "origin": "원산지",
-                                "ingredients_and_composition": "원재료 및 합량",
-                                "storage_and_handling": "보관\/취급방법",
-                                "manufacture_date": "제조연원일",
-                                "expiration_date": "유통기한",
-                                "gmo_desc": "유전자변형 농산물 여부",
-                                "customer_service_contact": "소비자 상담 문의",
-                                "is_new": "새로운상품 여부",
-                                "is_best": false,
-                                "average_rating": "평균 평점",
-                                "reviews_count": 0,
-                                "inquiries_count": 0,
-                                "categories": "카테고리",
-                                "img": {
-                                    "id": "기본키",
-                                    "name": "파일이름",
-                                    "url": "이미지 URL"
-                                },
-                                "imgs": [
-                                    {
-                                        "id": "기본키",
-                                        "name": "파일이름",
-                                        "url": "이미지 URL"
-                                    }
-                                ]
                             }
                         ]
                     },
                     {
-                        "id": 27,
-                        "title": "sed",
-                        "description": "Itaque voluptatum itaque qui omnis voluptate. Nulla ea quasi eveniet rerum est itaque sed. Vel placeat dignissimos minus voluptatem quo ratione optio. Ratione nulla numquam consequatur consectetur.\n\nId est sequi consectetur accusamus. Aliquam dignissimos maxime et accusamus porro maxime. Et qui amet magnam id distinctio dolorum debitis.\n\nVero architecto optio nostrum quas. Ea neque voluptate minus error. Autem voluptatem omnis ducimus eius veritatis esse. Sit iste nihil dolore. Nulla nobis minus magni esse qui.",
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 0,
+                        "categories": "카테고리",
                         "img": {
                             "id": "기본키",
                             "name": "파일이름",
@@ -451,135 +1358,36 @@
                                 "id": "기본키",
                                 "name": "파일이름",
                                 "url": "이미지 URL"
-                            }
-                        ],
-                        "products": [
-                            {
-                                "id": "기본키",
-                                "name": "상품명",
-                                "description": "상품설명",
-                                "view_count": "조회수",
-                                "price": "가격",
-                                "original_price": "원래 가격",
-                                "delivery_fee": "배송비 (기본값: 0)",
-                                "shipping_origin": "출고지",
-                                "fruit_size": "과일 크기",
-                                "sugar_content": "당도",
-                                "food_type": "식품의 유형",
-                                "manufacturer_and_location": "생산자 및 소재지",
-                                "importer": "수입자",
-                                "origin": "원산지",
-                                "ingredients_and_composition": "원재료 및 합량",
-                                "storage_and_handling": "보관\/취급방법",
-                                "manufacture_date": "제조연원일",
-                                "expiration_date": "유통기한",
-                                "gmo_desc": "유전자변형 농산물 여부",
-                                "customer_service_contact": "소비자 상담 문의",
-                                "is_new": "새로운상품 여부",
-                                "is_best": false,
-                                "average_rating": "평균 평점",
-                                "reviews_count": 30,
-                                "inquiries_count": 0,
-                                "categories": "카테고리",
-                                "img": {
-                                    "id": "기본키",
-                                    "name": "파일이름",
-                                    "url": "이미지 URL"
-                                },
-                                "imgs": [
-                                    {
-                                        "id": "기본키",
-                                        "name": "파일이름",
-                                        "url": "이미지 URL"
-                                    }
-                                ]
-                            },
-                            {
-                                "id": "기본키",
-                                "name": "상품명",
-                                "description": "상품설명",
-                                "view_count": "조회수",
-                                "price": "가격",
-                                "original_price": "원래 가격",
-                                "delivery_fee": "배송비 (기본값: 0)",
-                                "shipping_origin": "출고지",
-                                "fruit_size": "과일 크기",
-                                "sugar_content": "당도",
-                                "food_type": "식품의 유형",
-                                "manufacturer_and_location": "생산자 및 소재지",
-                                "importer": "수입자",
-                                "origin": "원산지",
-                                "ingredients_and_composition": "원재료 및 합량",
-                                "storage_and_handling": "보관\/취급방법",
-                                "manufacture_date": "제조연원일",
-                                "expiration_date": "유통기한",
-                                "gmo_desc": "유전자변형 농산물 여부",
-                                "customer_service_contact": "소비자 상담 문의",
-                                "is_new": "새로운상품 여부",
-                                "is_best": true,
-                                "average_rating": "평균 평점",
-                                "reviews_count": 0,
-                                "inquiries_count": 0,
-                                "categories": "카테고리",
-                                "img": {
-                                    "id": "기본키",
-                                    "name": "파일이름",
-                                    "url": "이미지 URL"
-                                },
-                                "imgs": [
-                                    {
-                                        "id": "기본키",
-                                        "name": "파일이름",
-                                        "url": "이미지 URL"
-                                    }
-                                ]
-                            },
-                            {
-                                "id": "기본키",
-                                "name": "상품명",
-                                "description": "상품설명",
-                                "view_count": "조회수",
-                                "price": "가격",
-                                "original_price": "원래 가격",
-                                "delivery_fee": "배송비 (기본값: 0)",
-                                "shipping_origin": "출고지",
-                                "fruit_size": "과일 크기",
-                                "sugar_content": "당도",
-                                "food_type": "식품의 유형",
-                                "manufacturer_and_location": "생산자 및 소재지",
-                                "importer": "수입자",
-                                "origin": "원산지",
-                                "ingredients_and_composition": "원재료 및 합량",
-                                "storage_and_handling": "보관\/취급방법",
-                                "manufacture_date": "제조연원일",
-                                "expiration_date": "유통기한",
-                                "gmo_desc": "유전자변형 농산물 여부",
-                                "customer_service_contact": "소비자 상담 문의",
-                                "is_new": "새로운상품 여부",
-                                "is_best": false,
-                                "average_rating": "평균 평점",
-                                "reviews_count": 0,
-                                "inquiries_count": 1,
-                                "categories": "카테고리",
-                                "img": {
-                                    "id": "기본키",
-                                    "name": "파일이름",
-                                    "url": "이미지 URL"
-                                },
-                                "imgs": [
-                                    {
-                                        "id": "기본키",
-                                        "name": "파일이름",
-                                        "url": "이미지 URL"
-                                    }
-                                ]
                             }
                         ]
                     },
                     {
-                        "id": 7,
-                        "title": "sint",
-                        "description": "Natus non ad exercitationem commodi laborum consequuntur. Error voluptas dolorem inventore impedit eaque dolorum.\n\nExercitationem ut eos quo qui aut voluptatem numquam. Eos autem qui sed quo eos adipisci unde.\n\nQuis et non pariatur illum nam. Deserunt voluptate laborum ullam laborum culpa consequatur nisi. Culpa alias esse maxime.",
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 1,
+                        "categories": "카테고리",
                         "img": {
                             "id": "기본키",
                             "name": "파일이름",
@@ -590,175 +1398,36 @@
                                 "id": "기본키",
                                 "name": "파일이름",
                                 "url": "이미지 URL"
-                            }
-                        ],
-                        "products": [
-                            {
-                                "id": "기본키",
-                                "name": "상품명",
-                                "description": "상품설명",
-                                "view_count": "조회수",
-                                "price": "가격",
-                                "original_price": "원래 가격",
-                                "delivery_fee": "배송비 (기본값: 0)",
-                                "shipping_origin": "출고지",
-                                "fruit_size": "과일 크기",
-                                "sugar_content": "당도",
-                                "food_type": "식품의 유형",
-                                "manufacturer_and_location": "생산자 및 소재지",
-                                "importer": "수입자",
-                                "origin": "원산지",
-                                "ingredients_and_composition": "원재료 및 합량",
-                                "storage_and_handling": "보관\/취급방법",
-                                "manufacture_date": "제조연원일",
-                                "expiration_date": "유통기한",
-                                "gmo_desc": "유전자변형 농산물 여부",
-                                "customer_service_contact": "소비자 상담 문의",
-                                "is_new": "새로운상품 여부",
-                                "is_best": true,
-                                "average_rating": "평균 평점",
-                                "reviews_count": 0,
-                                "inquiries_count": 1,
-                                "categories": "카테고리",
-                                "img": {
-                                    "id": "기본키",
-                                    "name": "파일이름",
-                                    "url": "이미지 URL"
-                                },
-                                "imgs": [
-                                    {
-                                        "id": "기본키",
-                                        "name": "파일이름",
-                                        "url": "이미지 URL"
-                                    }
-                                ]
-                            },
-                            {
-                                "id": "기본키",
-                                "name": "상품명",
-                                "description": "상품설명",
-                                "view_count": "조회수",
-                                "price": "가격",
-                                "original_price": "원래 가격",
-                                "delivery_fee": "배송비 (기본값: 0)",
-                                "shipping_origin": "출고지",
-                                "fruit_size": "과일 크기",
-                                "sugar_content": "당도",
-                                "food_type": "식품의 유형",
-                                "manufacturer_and_location": "생산자 및 소재지",
-                                "importer": "수입자",
-                                "origin": "원산지",
-                                "ingredients_and_composition": "원재료 및 합량",
-                                "storage_and_handling": "보관\/취급방법",
-                                "manufacture_date": "제조연원일",
-                                "expiration_date": "유통기한",
-                                "gmo_desc": "유전자변형 농산물 여부",
-                                "customer_service_contact": "소비자 상담 문의",
-                                "is_new": "새로운상품 여부",
-                                "is_best": false,
-                                "average_rating": "평균 평점",
-                                "reviews_count": 0,
-                                "inquiries_count": 0,
-                                "categories": "카테고리",
-                                "img": {
-                                    "id": "기본키",
-                                    "name": "파일이름",
-                                    "url": "이미지 URL"
-                                },
-                                "imgs": [
-                                    {
-                                        "id": "기본키",
-                                        "name": "파일이름",
-                                        "url": "이미지 URL"
-                                    }
-                                ]
-                            },
-                            {
-                                "id": "기본키",
-                                "name": "상품명",
-                                "description": "상품설명",
-                                "view_count": "조회수",
-                                "price": "가격",
-                                "original_price": "원래 가격",
-                                "delivery_fee": "배송비 (기본값: 0)",
-                                "shipping_origin": "출고지",
-                                "fruit_size": "과일 크기",
-                                "sugar_content": "당도",
-                                "food_type": "식품의 유형",
-                                "manufacturer_and_location": "생산자 및 소재지",
-                                "importer": "수입자",
-                                "origin": "원산지",
-                                "ingredients_and_composition": "원재료 및 합량",
-                                "storage_and_handling": "보관\/취급방법",
-                                "manufacture_date": "제조연원일",
-                                "expiration_date": "유통기한",
-                                "gmo_desc": "유전자변형 농산물 여부",
-                                "customer_service_contact": "소비자 상담 문의",
-                                "is_new": "새로운상품 여부",
-                                "is_best": false,
-                                "average_rating": "평균 평점",
-                                "reviews_count": 0,
-                                "inquiries_count": 0,
-                                "categories": "카테고리",
-                                "img": {
-                                    "id": "기본키",
-                                    "name": "파일이름",
-                                    "url": "이미지 URL"
-                                },
-                                "imgs": [
-                                    {
-                                        "id": "기본키",
-                                        "name": "파일이름",
-                                        "url": "이미지 URL"
-                                    }
-                                ]
-                            },
-                            {
-                                "id": "기본키",
-                                "name": "상품명",
-                                "description": "상품설명",
-                                "view_count": "조회수",
-                                "price": "가격",
-                                "original_price": "원래 가격",
-                                "delivery_fee": "배송비 (기본값: 0)",
-                                "shipping_origin": "출고지",
-                                "fruit_size": "과일 크기",
-                                "sugar_content": "당도",
-                                "food_type": "식품의 유형",
-                                "manufacturer_and_location": "생산자 및 소재지",
-                                "importer": "수입자",
-                                "origin": "원산지",
-                                "ingredients_and_composition": "원재료 및 합량",
-                                "storage_and_handling": "보관\/취급방법",
-                                "manufacture_date": "제조연원일",
-                                "expiration_date": "유통기한",
-                                "gmo_desc": "유전자변형 농산물 여부",
-                                "customer_service_contact": "소비자 상담 문의",
-                                "is_new": "새로운상품 여부",
-                                "is_best": false,
-                                "average_rating": "평균 평점",
-                                "reviews_count": 0,
-                                "inquiries_count": 0,
-                                "categories": "카테고리",
-                                "img": {
-                                    "id": "기본키",
-                                    "name": "파일이름",
-                                    "url": "이미지 URL"
-                                },
-                                "imgs": [
-                                    {
-                                        "id": "기본키",
-                                        "name": "파일이름",
-                                        "url": "이미지 URL"
-                                    }
-                                ]
                             }
                         ]
                     },
                     {
-                        "id": 1,
-                        "title": "vel",
-                        "description": "Iste omnis ratione aperiam ut. Non est eveniet omnis vel dolor. Minus odit repellendus consequatur corrupti. Expedita sit fugit ut nostrum eum.\n\nIn enim nihil nihil dolorem a illum facilis labore. Ipsam hic iusto deleniti et nobis. Et ducimus distinctio illum dignissimos.\n\nVoluptatem et corporis sint eveniet. Est rerum deleniti dolorem odio enim ea. Qui esse et aspernatur iure magni ex ipsam.",
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 1,
+                        "categories": "카테고리",
                         "img": {
                             "id": "기본키",
                             "name": "파일이름",
@@ -770,167 +1439,2225 @@
                                 "name": "파일이름",
                                 "url": "이미지 URL"
                             }
-                        ],
-                        "products": [
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "기본키",
+                "title": "패키지 제목",
+                "description": "패키지 내용",
+                "category_title": "패키지 카테고리 제목",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ],
+                "products": [
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": true,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 0,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
                             {
                                 "id": "기본키",
-                                "name": "상품명",
-                                "description": "상품설명",
-                                "view_count": "조회수",
-                                "price": "가격",
-                                "original_price": "원래 가격",
-                                "delivery_fee": "배송비 (기본값: 0)",
-                                "shipping_origin": "출고지",
-                                "fruit_size": "과일 크기",
-                                "sugar_content": "당도",
-                                "food_type": "식품의 유형",
-                                "manufacturer_and_location": "생산자 및 소재지",
-                                "importer": "수입자",
-                                "origin": "원산지",
-                                "ingredients_and_composition": "원재료 및 합량",
-                                "storage_and_handling": "보관\/취급방법",
-                                "manufacture_date": "제조연원일",
-                                "expiration_date": "유통기한",
-                                "gmo_desc": "유전자변형 농산물 여부",
-                                "customer_service_contact": "소비자 상담 문의",
-                                "is_new": "새로운상품 여부",
-                                "is_best": true,
-                                "average_rating": "평균 평점",
-                                "reviews_count": 0,
-                                "inquiries_count": 1,
-                                "categories": "카테고리",
-                                "img": {
-                                    "id": "기본키",
-                                    "name": "파일이름",
-                                    "url": "이미지 URL"
-                                },
-                                "imgs": [
-                                    {
-                                        "id": "기본키",
-                                        "name": "파일이름",
-                                        "url": "이미지 URL"
-                                    }
-                                ]
-                            },
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 0,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
                             {
                                 "id": "기본키",
-                                "name": "상품명",
-                                "description": "상품설명",
-                                "view_count": "조회수",
-                                "price": "가격",
-                                "original_price": "원래 가격",
-                                "delivery_fee": "배송비 (기본값: 0)",
-                                "shipping_origin": "출고지",
-                                "fruit_size": "과일 크기",
-                                "sugar_content": "당도",
-                                "food_type": "식품의 유형",
-                                "manufacturer_and_location": "생산자 및 소재지",
-                                "importer": "수입자",
-                                "origin": "원산지",
-                                "ingredients_and_composition": "원재료 및 합량",
-                                "storage_and_handling": "보관\/취급방법",
-                                "manufacture_date": "제조연원일",
-                                "expiration_date": "유통기한",
-                                "gmo_desc": "유전자변형 농산물 여부",
-                                "customer_service_contact": "소비자 상담 문의",
-                                "is_new": "새로운상품 여부",
-                                "is_best": false,
-                                "average_rating": "평균 평점",
-                                "reviews_count": 0,
-                                "inquiries_count": 1,
-                                "categories": "카테고리",
-                                "img": {
-                                    "id": "기본키",
-                                    "name": "파일이름",
-                                    "url": "이미지 URL"
-                                },
-                                "imgs": [
-                                    {
-                                        "id": "기본키",
-                                        "name": "파일이름",
-                                        "url": "이미지 URL"
-                                    }
-                                ]
-                            },
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 0,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
                             {
                                 "id": "기본키",
-                                "name": "상품명",
-                                "description": "상품설명",
-                                "view_count": "조회수",
-                                "price": "가격",
-                                "original_price": "원래 가격",
-                                "delivery_fee": "배송비 (기본값: 0)",
-                                "shipping_origin": "출고지",
-                                "fruit_size": "과일 크기",
-                                "sugar_content": "당도",
-                                "food_type": "식품의 유형",
-                                "manufacturer_and_location": "생산자 및 소재지",
-                                "importer": "수입자",
-                                "origin": "원산지",
-                                "ingredients_and_composition": "원재료 및 합량",
-                                "storage_and_handling": "보관\/취급방법",
-                                "manufacture_date": "제조연원일",
-                                "expiration_date": "유통기한",
-                                "gmo_desc": "유전자변형 농산물 여부",
-                                "customer_service_contact": "소비자 상담 문의",
-                                "is_new": "새로운상품 여부",
-                                "is_best": false,
-                                "average_rating": "평균 평점",
-                                "reviews_count": 0,
-                                "inquiries_count": 0,
-                                "categories": "카테고리",
-                                "img": {
-                                    "id": "기본키",
-                                    "name": "파일이름",
-                                    "url": "이미지 URL"
-                                },
-                                "imgs": [
-                                    {
-                                        "id": "기본키",
-                                        "name": "파일이름",
-                                        "url": "이미지 URL"
-                                    }
-                                ]
-                            },
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 0,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
                             {
                                 "id": "기본키",
-                                "name": "상품명",
-                                "description": "상품설명",
-                                "view_count": "조회수",
-                                "price": "가격",
-                                "original_price": "원래 가격",
-                                "delivery_fee": "배송비 (기본값: 0)",
-                                "shipping_origin": "출고지",
-                                "fruit_size": "과일 크기",
-                                "sugar_content": "당도",
-                                "food_type": "식품의 유형",
-                                "manufacturer_and_location": "생산자 및 소재지",
-                                "importer": "수입자",
-                                "origin": "원산지",
-                                "ingredients_and_composition": "원재료 및 합량",
-                                "storage_and_handling": "보관\/취급방법",
-                                "manufacture_date": "제조연원일",
-                                "expiration_date": "유통기한",
-                                "gmo_desc": "유전자변형 농산물 여부",
-                                "customer_service_contact": "소비자 상담 문의",
-                                "is_new": "새로운상품 여부",
-                                "is_best": false,
-                                "average_rating": "평균 평점",
-                                "reviews_count": 0,
-                                "inquiries_count": 0,
-                                "categories": "카테고리",
-                                "img": {
-                                    "id": "기본키",
-                                    "name": "파일이름",
-                                    "url": "이미지 URL"
-                                },
-                                "imgs": [
-                                    {
-                                        "id": "기본키",
-                                        "name": "파일이름",
-                                        "url": "이미지 URL"
-                                    }
-                                ]
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "기본키",
+                "title": "패키지 제목",
+                "description": "패키지 내용",
+                "category_title": "패키지 카테고리 제목",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ],
+                "products": [
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 1,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 0,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 0,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "기본키",
+                "title": "패키지 제목",
+                "description": "패키지 내용",
+                "category_title": "패키지 카테고리 제목",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ],
+                "products": [
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 1,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 0,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 0,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 0,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 1,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "기본키",
+                "title": "패키지 제목",
+                "description": "패키지 내용",
+                "category_title": "패키지 카테고리 제목",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ],
+                "products": [
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 1,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": true,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 0,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": true,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 0,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "기본키",
+                "title": "패키지 제목",
+                "description": "패키지 내용",
+                "category_title": "패키지 카테고리 제목",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ],
+                "products": [
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 30,
+                        "inquiries_count": 0,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": true,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 0,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": true,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 0,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": true,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 0,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "기본키",
+                "title": "패키지 제목",
+                "description": "패키지 내용",
+                "category_title": "패키지 카테고리 제목",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ],
+                "products": [
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 1,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 0,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 1,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 0,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "기본키",
+                "title": "패키지 제목",
+                "description": "패키지 내용",
+                "category_title": "패키지 카테고리 제목",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ],
+                "products": [
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 1,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 0,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 2,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "기본키",
+                "title": "패키지 제목",
+                "description": "패키지 내용",
+                "category_title": "패키지 카테고리 제목",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ],
+                "products": [
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 30,
+                        "inquiries_count": 0,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 0,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 1,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 0,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 1,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "기본키",
+                "title": "패키지 제목",
+                "description": "패키지 내용",
+                "category_title": "패키지 카테고리 제목",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ],
+                "products": [
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 0,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 1,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 0,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 0,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "기본키",
+                "title": "패키지 제목",
+                "description": "패키지 내용",
+                "category_title": "패키지 카테고리 제목",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ],
+                "products": [
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 0,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 0,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": true,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 0,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 0,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "기본키",
+                "title": "패키지 제목",
+                "description": "패키지 내용",
+                "category_title": "패키지 카테고리 제목",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ],
+                "products": [
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 1,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 1,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 1,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "기본키",
+                "title": "패키지 제목",
+                "description": "패키지 내용",
+                "category_title": "패키지 카테고리 제목",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ],
+                "products": [
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 0,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 0,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 1,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "기본키",
+                "title": "패키지 제목",
+                "description": "패키지 내용",
+                "category_title": "패키지 카테고리 제목",
+                "img": {
+                    "id": "기본키",
+                    "name": "파일이름",
+                    "url": "이미지 URL"
+                },
+                "imgs": [
+                    {
+                        "id": "기본키",
+                        "name": "파일이름",
+                        "url": "이미지 URL"
+                    }
+                ],
+                "products": [
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 2,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 1,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 0,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "기본키",
+                        "name": "상품명",
+                        "description": "상품설명",
+                        "view_count": "조회수",
+                        "price": "가격",
+                        "original_price": "원래 가격",
+                        "delivery_fee": "배송비 (기본값: 0)",
+                        "shipping_origin": "출고지",
+                        "fruit_size": "과일 크기",
+                        "sugar_content": "당도",
+                        "food_type": "식품의 유형",
+                        "manufacturer_and_location": "생산자 및 소재지",
+                        "importer": "수입자",
+                        "origin": "원산지",
+                        "ingredients_and_composition": "원재료 및 합량",
+                        "storage_and_handling": "보관\/취급방법",
+                        "manufacture_date": "제조연원일",
+                        "expiration_date": "유통기한",
+                        "gmo_desc": "유전자변형 농산물 여부",
+                        "customer_service_contact": "소비자 상담 문의",
+                        "is_new": "새로운상품 여부",
+                        "is_best": false,
+                        "average_rating": "평균 평점",
+                        "reviews_count": 0,
+                        "inquiries_count": 1,
+                        "categories": "카테고리",
+                        "img": {
+                            "id": "기본키",
+                            "name": "파일이름",
+                            "url": "이미지 URL"
+                        },
+                        "imgs": [
+                            {
+                                "id": "기본키",
+                                "name": "파일이름",
+                                "url": "이미지 URL"
                             }
                         ]
                     }

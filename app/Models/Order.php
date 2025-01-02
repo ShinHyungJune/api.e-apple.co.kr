@@ -277,28 +277,31 @@ class Order extends Model
         return null;
     }
 
-    public function complete($impUid)
+    public function complete($data)
     {
-        return DB::transaction(function () use ($impUid) {
-            $this->update(["imp_uid" => $impUid, "status" => OrderStatus::PAYMENT_COMPLETE, "payment_completed_at" => now()]);
+        return DB::transaction(function () use ($data) {
+
+            //중복처리 방지
+            if ($this->status === OrderStatus::ORDER_COMPLETE) {
+                //쿠폰사용
+                if (auth()->check() && $this->user_coupon_id > 0) {
+                    $coupon = auth()->user()->availableCoupons()->wherePivot('id', $this->user_coupon_id)->first();
+                    $coupon->pivot->update(['order_id' => $this->id, 'used_at' => now()]);
+                }
+
+                //적립금 차감
+                if ($this->use_points > 0) {
+                    auth()->user()->withdrawalPoint($this);
+                }
+
+                //재고처리 stock_quantity
+                $this->orderProducts->each(function ($e) {
+                    $e->productOption()->decrement('stock_quantity', $e->quantity);
+                });
+            }
+
+            $this->update($data);
             $this->syncStatusOrderProducts();
-
-            //쿠폰사용
-            if (auth()->check() && $this->user_coupon_id > 0) {
-                $coupon = auth()->user()->availableCoupons()->wherePivot('id', $this->user_coupon_id)->first();
-                $coupon->pivot->update(['order_id' => $this->id, 'used_at' => now()]);
-            }
-
-            //적립금 차감
-            if ($this->use_points > 0) {
-                auth()->user()->withdrawalPoint($this);
-            }
-
-            //재고처리 stock_quantity
-            $this->orderProducts->each(function ($e) {
-                $e->productOption()->decrement('stock_quantity', $e->quantity);
-            });
-
             return $this;
         });
     }

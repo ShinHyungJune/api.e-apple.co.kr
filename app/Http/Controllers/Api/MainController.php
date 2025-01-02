@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Enums\ProductPackageType;
 use App\Http\Resources\MainResource;
+use App\Models\Banner;
 use App\Models\Product;
 use App\Models\ProductPackage;
 use App\Models\ProductReview;
@@ -24,7 +25,7 @@ class MainController extends ApiController
         $today = now()->format('Y-m-d');
 
         $items = [];
-        //$items['banners'] = Banner::where('is_active', true)->get()->load('media');
+        $items['banners'] = Banner::where('is_active', true)->get()->load('media');
 
         //오늘의 특가로 만나는 신선한 과일 product/sale
         $items['saleProducts'] = Product::with('reviews', 'media')->withCount(['reviews', 'inquiries'])->category('sale')->latest()->limit(4)->get();
@@ -46,17 +47,18 @@ class MainController extends ApiController
         //오늘의 당도 체크
         $items['sweetnesses'] = Sweetness::with('media')
             //->where('created_at', 'like', $today . '%')
+            ->where('is_display', true)
             ->latest()->limit(10)->get()
-            ->filter(function ($review) use ($today) {
-                return strpos($review->created_at, $today) === 0;
-            });
-
+            /*->filter(function (sweetness) use ($today) {
+                return strpos(sweetness->created_at, $today) === 0;
+            })*/
+        ;
 
         //이달의 추천 상품(MD 추천 선물 타입) => (국산, 수입, 제출, 가공품, 대용량, 소용량)
         $items['monthlySuggestionProducts'] = ProductPackage::with(['products.media', 'products.reviews', 'products.inquiries', 'media'])->has('products')
             ->where('type', ProductPackageType::MONTHLY_SUGGESTION)
             ->latest()->get(); //->groupBy('category_id');
-        //return ProductPackageResource::make($items['monthlySuggestionProducts']);
+        //return ProductPackageResource::collection($items['monthlySuggestionProducts']);
 
         return $this->respondSuccessfully(MainResource::make(collect($items)));
     }

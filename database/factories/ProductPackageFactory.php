@@ -3,7 +3,6 @@
 namespace Database\Factories;
 
 use App\Enums\ProductPackageType;
-use App\Models\Code;
 use App\Models\ProductPackage;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -20,17 +19,23 @@ class ProductPackageFactory extends Factory
     public function definition(): array
     {
         $type = $this->faker->randomElement(ProductPackageType::values());
-        $caregoryId = null;
+
+        $categoryTitle = null;
+        if ($type === ProductPackageType::MONTHLY_SUGGESTION->value) {
+            $categoryTitle = $this->faker->randomElement(['국산', '수입', '제철', '가공품', '대용량', '소용량']);
+        }
+        /*$caregoryId = null;
         if ($type === ProductPackageType::MONTHLY_SUGGESTION->value) {
             $caregoryIds = Code::where('parent_id', Code::MONTHLY_SUGGESTION_CATEGORY_ID)->pluck('id')->toArray();
             $caregoryId = $this->faker->randomElement($caregoryIds);
-        }
+        }*/
 
         return [
             'title' => $this->faker->word(),
             'description' => $this->faker->paragraphs(3, true),
             'type' => $type,
-            'category_id' => $caregoryId,
+            //'category_id' => $caregoryId,
+            'category_title' => $categoryTitle,
         ];
     }
 

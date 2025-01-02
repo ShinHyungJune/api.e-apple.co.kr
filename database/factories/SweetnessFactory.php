@@ -21,7 +21,7 @@ class SweetnessFactory extends Factory
             'fruit_name' => $this->faker->word(),
             'sweetness' => $this->faker->numberBetween(10, 20),
             'standard_sweetness' => $this->faker->numberBetween(20, 30),
-            'standard_datetime' => now(),
+            'is_display' => true,
         ];
     }
 

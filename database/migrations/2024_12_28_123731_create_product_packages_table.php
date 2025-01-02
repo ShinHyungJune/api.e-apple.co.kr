@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('title')->comment('패키지 제목');
             $table->text('description')->comment('패키지 내용');
             $table->enum('type', \App\Enums\ProductPackageType::values())->comment('패키지 타입');//md, monthly
-            $table->unsignedInteger('category_id')->nullable()->comment('패키지 카테고리 아이디');
+            //$table->unsignedInteger('category_id')->nullable()->comment('패키지 카테고리 아이디');
+            $table->string('category_title')->nullable()->comment('패키지 카테고리 제목');
             //$table->unsignedInteger('price')->comment('패키지 가격');
             $table->timestamps();
         });

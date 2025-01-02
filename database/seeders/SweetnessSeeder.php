@@ -14,6 +14,6 @@ class SweetnessSeeder extends Seeder
     public function run(): void
     {
         DB::table('sweetnesses')->truncate();
-        Sweetness::factory()->count(10)->create(); // 100개의 레코드를 생성
+        Sweetness::factory()->count(10)->create();
     }
 }

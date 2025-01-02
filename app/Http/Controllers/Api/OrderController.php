@@ -182,14 +182,12 @@ class OrderController extends ApiController
                     case "ready": // 가상계좌 발급
                         $vbankDate = Carbon::parse($impOrder["vbank_date"])->format("Y-m-d H:i");
                         // OrderObserver 사용
-                        $order->update(["imp_uid" => $request->imp_uid, "status" => OrderStatus::PAYMENT_PENDING,
-                            "vbank_num" => $impOrder["vbank_num"], "vbank_date" => $vbankDate, "vbank_name" => $impOrder["vbank_name"]]);
-                        $order->syncStatusOrderProducts();
+                        $order->complete(['imp_uid' => $request->imp_uid, 'status' => OrderStatus::PAYMENT_PENDING,
+                            'vbank_num' => $impOrder['vbank_num'], 'vbank_date' => $vbankDate, 'vbank_name' => $impOrder['vbank_name']]);
                         break;
                     case "paid": // 결제완료
                         // OrderObserver 사용
-                        $impUid = $request->imp_uid;
-                        $order->complete($impUid);
+                        $order->complete(['imp_uid' => $request->imp_uid, 'status' => OrderStatus::PAYMENT_COMPLETE, 'payment_completed_at' => now()]);
                         break;
                 }
             });
