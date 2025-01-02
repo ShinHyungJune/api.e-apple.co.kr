@@ -37,7 +37,7 @@ class MainController extends ApiController
         $items['juicyProducts'] = Product::with('reviews', 'media')->withCount(['reviews', 'inquiries'])->category('juicy')->latest()->limit(10)->get();
 
         //오늘의 후기
-        $items['reviews'] = ProductReview::with('media')
+        $items['reviews'] = ProductReview::with(['user','media'])
             //->where('created_at', 'like', $today . '%')
             ->latest()->limit(3)->get()
             ->filter(function ($review) use ($today) {
