@@ -220,9 +220,15 @@ class Order extends Model
         $query->where('status', OrderStatus::ORDER_PENDING);
     }
 
-    public function scopeAfterPending(Builder $query)
+    public function scopeAfterOrderPending(Builder $query)
     {
-        $query->whereNot('status', OrderStatus::ORDER_PENDING);
+        $query->whereNotIn('status', [OrderStatus::ORDER_PENDING, OrderStatus::ORDER_COMPLETE])
+            /*->where(function ($query) {
+                $query->where('pay_method_method', IamportMethod::CARD)
+                    ->where('status', OrderStatus::ORDER_COMPLETE);
+            })*/
+        ;
+
     }
 
     public function scopeDelivery(Builder $query)
