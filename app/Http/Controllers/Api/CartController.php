@@ -23,7 +23,7 @@ class CartController extends ApiController
      */
     public function index(Request $request)
     {
-        $items = Cart::mine($request)->with(['product', 'cartProductOptions.productOption'])->paginate($request->take ?? 10);
+        $items = Cart::mine($request)->with(['product.options', 'cartProductOptions.productOption'])->paginate($request->take ?? 10);
         return CartResource::collection($items);
     }
 

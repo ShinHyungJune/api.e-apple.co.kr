@@ -16,6 +16,19 @@ require __DIR__.'/auth.php';*/
     Code::rebuild(0, 0);
 });*/
 
+/**
+ * attributes
+ * SELECT
+ * -- TABLE_NAME AS 테이블명,
+ * -- COLUMN_NAME, COLUMN_COMMENT
+ * CONCAT('\'', COLUMN_NAME, '\'=>\'', COLUMN_COMMENT, '\',')
+ * FROM
+ * information_schema.COLUMNS
+ * WHERE
+ * TABLE_SCHEMA = 'fruittree'
+ * and COLUMN_COMMENT != ''
+ * GROUP BY  COLUMN_NAME;
+ */
 
 Route::get('body_parameters', function (Request $request) {
     $table = $request->input('table');
