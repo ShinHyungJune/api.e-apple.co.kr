@@ -28,16 +28,22 @@ class OrderController extends ApiController
         if (
             $request->input('order_id') && $request->input('order_status')
         ) {
+
             Order::findOrFail($request->input('order_id'))
                 ->update(['status' => $request->input('order_status')]);
+
+            if (
+                $request->input('order_product_id') && $request->input('order_product_status')
+            ) {
+                OrderProduct::findOrFail($request->input('order_product_id'))
+                    ->update(['status' => $request->input('order_product_status')]);
+            } else {
+                OrderProduct::where('order_id', $request->input('order_id'))
+                    ->update(['status' => $request->input('order_status')]);
+            }
+
         }
 
-        if (
-            $request->input('order_product_id') && $request->input('order_product_status')
-        ) {
-            OrderProduct::findOrFail($request->input('order_product_id'))
-                ->update(['status' => $request->input('order_product_status')]);
-        }
 
 
         return $this->respondSuccessfully();
