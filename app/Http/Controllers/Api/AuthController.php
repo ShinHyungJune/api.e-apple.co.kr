@@ -140,7 +140,9 @@ class AuthController extends ApiController
     {
         $data = $request->validated();
         if (!Hash::check($data['current_password'], auth()->user()->password)) {
-            abort(422, '기존 비밀번호를 확인해 주세요.');
+            //abort(422, '기존 비밀번호를 확인해 주세요.');
+            abort(response()->json(['message' => '기존 비밀번호를 확인해 주세요.', 'errors' => ['password' => '기존 비밀번호를 확인해 주세요.']],
+                422));
         }
         auth()->user()->update(['password' => Hash::make($data['password'])]);
 
@@ -185,12 +187,18 @@ class AuthController extends ApiController
 
         $user = User::where("phone", $request->phone)->first();
         if (!$user) {
-            abort(404, '해당 정보로 가입된 계정이 존재하지 않습니다.');
+            //abort(404, '해당 정보로 가입된 계정이 존재하지 않습니다.');
+            abort(response()->json(['message' => '해당 정보로 가입된 계정이 존재하지 않습니다.',
+                'errors' => ['user' => '해당 정보로 가입된 계정이 존재하지 않습니다.']],
+                404));
         }
 
         $verifyNumber = VerifyNumber::where('ids', $request->phone)->where('verified', true)->first();
         if (!$verifyNumber) {
-            abort(422, '연락처를 인증해주세요.');
+            //abort(422, '연락처를 인증해주세요.');
+            abort(response()->json(['message' => '연락처를 인증해주세요.',
+                'errors' => ['phone' => '연락처를 인증해주세요.']],
+                422));
         }
 
         $verifyNumber->delete();
@@ -208,12 +216,18 @@ class AuthController extends ApiController
 
         $user = User::where("phone", $data['phone'])->where("email", $data['email'])->first();
         if (!$user) {
-            abort(404, '가입할 때 입력했던 연락처와 아이디를 다시 확인해주세요.');
+            //abort(404, '가입할 때 입력했던 연락처와 아이디를 다시 확인해주세요.');
+            abort(response()->json(['message' => '가입할 때 입력했던 연락처와 아이디를 다시 확인해주세요.',
+                'errors' => ['user' => '가입할 때 입력했던 연락처와 아이디를 다시 확인해주세요.']],
+                404));
         }
 
         $verifyNumber = VerifyNumber::where('ids', $data['phone'])->where('verified', true)->first();
         if (!$verifyNumber) {
-            abort(422, '연락처를 인증해주세요.');
+            //abort(422, '연락처를 인증해주세요.');
+            abort(response()->json(['message' => '연락처를 인증해주세요.',
+                'errors' => ['phone' => '연락처를 인증해주세요.']],
+                422));
         }
         //$verifyNumber->delete();
 
@@ -232,12 +246,18 @@ class AuthController extends ApiController
 
         $user = User::where("phone", $data['phone'])->where("email", $data['email'])->first();
         if (!$user) {
-            abort(404, '가입할 때 입력했던 연락처와 아이디를 다시 확인해주세요.');
+            //abort(404, '가입할 때 입력했던 연락처와 아이디를 다시 확인해주세요.');
+            abort(response()->json(['message' => '가입할 때 입력했던 연락처와 아이디를 다시 확인해주세요.',
+                'errors' => ['user' => '가입할 때 입력했던 연락처와 아이디를 다시 확인해주세요.']],
+                404));
         }
 
         $verifyNumber = VerifyNumber::where('ids', $data['phone'])->where('verified', true)->first();
         if (!$verifyNumber) {
-            abort(422, '연락처를 인증해주세요.');
+            //abort(422, '연락처를 인증해주세요.');
+            abort(response()->json(['message' => '연락처를 인증해주세요.',
+                'errors' => ['user' => '연락처를 인증해주세요.']],
+                422));
         }
         $verifyNumber->delete();
         $user->update(['password' => Hash::make($data['password'])]);

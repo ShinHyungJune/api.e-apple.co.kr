@@ -155,7 +155,9 @@ class User extends Authenticatable implements JWTSubject
         list($amount, $desc) = $pointable->getWithdrawalPoints();
 
         if ($this->points < $amount) {
-            abort(403, '포인트가 부족합니다.');
+            //abort(403, '포인트가 부족합니다.');
+            abort(response()->json(['message' => '포인트가 부족합니다.', 'errors' => ['points' => '포인트가 부족합니다.']],
+                403));
         }
         $balance = $this->points - $amount;
         $this->pointTransactions()->create([

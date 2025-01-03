@@ -34,7 +34,8 @@ class OrderProductController extends ApiController
     {
         $orderProduct = OrderProduct::with('order.orderProducts')->mine($request)->delivery()->findOrFail($id);
         if ($orderProduct->status !== OrderStatus::DELIVERY) {
-            abort(403, '구매확정은 배송중에 가능합니다.');
+            //abort(403, '구매확정은 배송중에 가능합니다.');
+            abort(response()->json(['message' => '구매확정은 배송중에 가능합니다.', 'errors' => ['orders' => '구매확정은 배송중에 가능합니다.']], 403));
         }
         $orderProduct = DB::transaction(function () use ($orderProduct) {
             $orderProduct->update(['status' => OrderStatus::PURCHASE_CONFIRM->value, 'purchase_confirmed_at' => now()]);

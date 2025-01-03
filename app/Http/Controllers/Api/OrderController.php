@@ -71,7 +71,10 @@ class OrderController extends ApiController
         $data['status'] = OrderStatus::ORDER_PENDING->value;
         $cartProductOptions = CartProductOption::with(['productOption'])->mine($request)->whereIn('cart_id', $data['cart_ids'])->get();
         if ($cartProductOptions->count() === 0) {
-            abort(404, '장바구니에 담긴 상품이 없습니다.');
+            //abort(404, '장바구니에 담긴 상품이 없습니다.');
+            abort(response()->json(['message' => '장바구니에 담긴 상품이 없습니다.',
+                'errors' => ['carts' => '장바구니에 담긴 상품이 없습니다.']],
+                404));
         }
 
         $data = Order::getCartsData($data, $cartProductOptions);
@@ -152,7 +155,10 @@ class OrderController extends ApiController
             $impOrder = Iamport::getOrder($accessToken, $request->imp_uid); // 주문조회
         }
         if (empty($impOrder)) {
-            abort(404, '결제 내역이 없습니다.');
+            //abort(404, '결제 내역이 없습니다.');
+            abort(response()->json(['message' => '결제 내역이 없습니다.',
+                'errors' => ['orders' => '결제 내역이 없습니다.']],
+                404));
         }
 
         //주문내역 확인
@@ -162,7 +168,8 @@ class OrderController extends ApiController
             }
         })->where("merchant_uid", $impOrder["merchant_uid"])->first();
         if (!$order) {
-            abort(404, '주문 내역이 없습니다.');
+            //abort(404, '주문 내역이 없습니다.');
+            abort(response()->json(['message' => '주문 내역이 없습니다.', 'errors' => ['orders' => '주문 내역이 없습니다.']], 404));
         }
 
 
@@ -171,7 +178,8 @@ class OrderController extends ApiController
             $message = '결제금액 오류 => ' . $order->price . ':' . $impOrder["amount"];
             $order->update(['payment_fail_reason' => $message, 'status' => OrderStatus::PAYMENT_FAIL]);
             $order->syncStatusOrderProducts();
-            abort(403, $message);
+            //abort(403, $message);
+            abort(response()->json(['message' => $message, 'errors' => ['orders' => $message]], 403));
         }
 
         try {
@@ -212,8 +220,9 @@ class OrderController extends ApiController
         //주문취소의 경우 모든 주문상품상태가 [결제완료, 배송준비중] 상태만 가능
         $order = Order::with('orderProducts')->mine($request)->canOrderCancel()->findOrFail($id);
         if (!$order->canOrderCancel()) {
-            abort(403, '모든 상품이 ' . implode(', ', OrderStatus::getCanOrderCancelValues()) .
-                '에만 주문 취소할 수 있습니다.');//결제완료, 배송준비중
+            $m = '모든 상품이 ' . implode(', ', OrderStatus::getCanOrderCancelValues()) .'에만 주문 취소할 수 있습니다.';//결제완료, 배송준비중
+            //abort(403, $m);
+            abort(response()->json(['message' => $m, 'errors' => ['order' => $m]], 403));
         }
 
         $order = DB::transaction(function () use ($order) {
@@ -267,7 +276,8 @@ class OrderController extends ApiController
             ->where('buyer_name', $request->buyer_name)->where('merchant_uid', $request->merchant_uid)
             ->first();
         if (empty($order)) {
-            abort(404, '주문내역이 없습니다.');
+            //abort(404, '주문내역이 없습니다.');
+            abort(response()->json(['message' => '주문내역이 없습니다.', 'errors' => ['orders' => '주문내역이 없습니다.']], 404));
         }
 
         return $this->respondSuccessfully(OrderResource::make($order));
