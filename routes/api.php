@@ -18,26 +18,27 @@ use App\Http\Controllers\Api\ProductInquiryController;
 use App\Http\Controllers\Api\ProductReviewController;
 use App\Http\Controllers\Api\UserCouponController;
 use App\Http\Controllers\Api\VerifyNumberController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+/**
+ * FOR SANCTUM
+ */
 /*Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
 });*/
-
-/*Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
+/**
+ * FOR JWT
+ */
+Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
-});*/
+});
 
-/*Route::get('test', function(){
-    //dd(ProductCategory::values());
-    //dd(implode('|', ProductCategory::values()));
-    dd(ProductCategory::from('best'));
-});*/
+
 
 Route::group(['prefix' => 'main', 'controller' => MainController::class], function () {
     Route::get('', 'index');
 });
-
 
 //사용자인증
 Route::group(['controller' => AuthController::class], function () {
@@ -92,7 +93,6 @@ Route::group(['prefix' => 'products'], function () {
     });
 });
 
-
 //상품 리뷰
 Route::group(['prefix' => 'product_reviews', 'controller' => ProductReviewController::class],
     function () {
@@ -107,7 +107,6 @@ Route::group(['prefix' => 'product_reviews', 'controller' => ProductReviewContro
         //상품 리뷰 상세
         Route::get('{productReview}', 'show');
     });
-
 
 //카트
 Route::group(['prefix' => 'carts', /*'middleware' => ['auth:api']*/],
@@ -176,15 +175,12 @@ Route::group(['prefix' => 'order_products', 'controller' => OrderProductControll
         Route::put('{id}/confirm', 'confirm');
     });
 
-
-
 //주문상품 교환반품
 Route::group(['prefix' => 'exchange_returns', 'controller' => ExchangeReturnController::class],
     function () {
         Route::get('', 'index');
         Route::post('', 'store');
     });
-
 
 //1:1문의
 Route::group(['prefix' => 'inquiries', 'middleware' => ['auth:api'], 'controller' => InquiryController::class],
@@ -200,7 +196,6 @@ Route::group(['prefix' => 'points', 'middleware' => ['auth:api'], 'controller' =
         Route::get('', 'index');
     });
 
-
 //상품 카테고리
 Route::group(['prefix' => 'categories', 'controller' => CodeController::class],
     function () {
@@ -214,14 +209,7 @@ Route::group(['prefix' => 'categories', 'controller' => CodeController::class],
     });
 
 
-/*Route::group(['prefix' => 'gifts', 'controller' => GiftController::class], function () {
-});*/
 
-Route::middleware('auth:api')->group(function () {
-    /*Route::get('/protected-route', function () {
-        return response()->json(['message' => 'This is a protected route']);
-    });*/
-    require __DIR__.'/admin.php';
-});
+require __DIR__.'/admin.php';
 
 require __DIR__.'/post.php';
