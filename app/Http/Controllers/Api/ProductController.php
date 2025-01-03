@@ -43,7 +43,7 @@ class ProductController extends ApiController
 
         //DB::enableQueryLog();
         $items = Product::query()
-            //->withCount(['inquiries', 'reviews'])
+            ->withCount(['inquiries', 'reviews'])//sortBy 에서 필요함
             ->with(['media', 'options', 'inquiries', 'reviews'])
             ->category($category)
             ->search($filters)
