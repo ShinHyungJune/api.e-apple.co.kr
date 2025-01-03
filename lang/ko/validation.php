@@ -338,9 +338,6 @@ return [
 
 
 
-
-
-
         'id'=>'기본키',
         'title'=>'제목',
         'description'=>'설명',
@@ -479,6 +476,9 @@ return [
         'level'=>'등급',
         'is_agree_promotion'=>'광고성 정보 수신 동의',
         'is_admin'=>'관리자 여부 필드',
+
+        'current_password' => '기존 비밀번호',
+        'password_confirmation' => '비밀번호 재확인',
 
     ],
 
