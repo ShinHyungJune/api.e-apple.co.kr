@@ -46,7 +46,7 @@ class OrderFactory extends Factory
             'common_entrance_method' => $this->faker->randomElement(['code', 'phone', 'none']),
             'total_amount' => $this->faker->numberBetween(1000, 100000),
             'user_coupon_id' => $this->faker->optional()->randomDigitNotNull(),
-            'coupon_discount' => $this->faker->numberBetween(0, 10000),
+            'coupon_discount_amount' => $this->faker->numberBetween(0, 10000),
             'use_points' => $this->faker->numberBetween(0, 5000),
             'delivery_fee' => $this->faker->numberBetween(0, 10000),
             'price' => $this->faker->numberBetween(1000, 100000),

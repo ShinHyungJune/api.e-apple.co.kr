@@ -20,7 +20,7 @@ class OrderResource extends JsonResource
             ...$this->only([
                 'id', 'buyer_name', 'buyer_email', 'buyer_contact', 'buyer_address_zipcode', 'buyer_address', 'buyer_address_detail',
                 'delivery_name', 'delivery_phone', 'delivery_postal_code', 'delivery_address', 'delivery_address_detail', 'delivery_request', 'common_entrance_method',
-                'total_amount', 'user_coupon_id', 'coupon_discount', 'use_points', 'delivery_fee', 'price',
+                'total_amount', 'user_coupon_id', 'coupon_discount_amount', 'use_points', 'delivery_fee', 'price',
                 'imp_uid', 'merchant_uid',
                 'pay_method_pg', 'pay_method_method',
                 'created_at', 'updated_at', 'delivery_started_at', 'purchase_confirmed_at',

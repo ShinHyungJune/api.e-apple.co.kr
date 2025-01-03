@@ -44,7 +44,7 @@ return new class extends Migration
             //주문금액
             $table->unsignedInteger('total_amount')->comment('주문 총액'); // 주문 총액
             $table->unsignedBigInteger('user_coupon_id')->nullable()->comment('사용자 쿠폰 기본키');
-            $table->unsignedInteger('coupon_discount')->nullable()->default(0)->comment('쿠폰 할인액');
+            $table->unsignedInteger('coupon_discount_amount')->nullable()->default(0)->comment('쿠폰 할인액');
             $table->unsignedInteger('use_points')->nullable()->default(0)->comment('적립금 사용액');
             $table->unsignedInteger('delivery_fee')->nullable()->default(0)->comment('배송비');
             $table->unsignedInteger('price')->default(0)->comment('최종결제액');

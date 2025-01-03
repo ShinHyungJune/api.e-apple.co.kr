@@ -175,7 +175,7 @@ class OrderRequest extends FormRequest
             'common_entrance_method' => ['description' => '<span class="point">공동현관 출입방법</span>'],
             'total_amount' => ['description' => '<span class="point">주문 총액</span>'],
             'user_coupon_id' => ['description' => '<span class="point">사용자 쿠폰 기본키</span>'],
-            'coupon_discount' => ['description' => '<span class="point">쿠폰 할인액</span>'],
+            'coupon_discount_amount' => ['description' => '<span class="point">쿠폰 할인액</span>'],
             'use_points' => ['description' => '<span class="point">적립금 사용액</span>'],
             'delivery_fee' => ['description' => '<span class="point">배송비</span>'],
             'price' => ['description' => '<span class="point">최종결제액</span>'],

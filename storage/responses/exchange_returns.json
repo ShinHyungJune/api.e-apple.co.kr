@@ -24,7 +24,7 @@
                 "common_entrance_method": "공동현관 출입방법",
                 "total_amount": "주문 총액",
                 "user_coupon_id": "사용자 쿠폰 기본키",
-                "coupon_discount": "쿠폰 할인액",
+                "coupon_discount_amount": "쿠폰 할인액",
                 "use_points": "적립금 사용액",
                 "delivery_fee": "배송비",
                 "price": "최종결제액",
