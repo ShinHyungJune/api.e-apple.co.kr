@@ -147,14 +147,14 @@ class Order extends Model
                 //abort(422, '쿠폰 할인금액을 확인해주세요.');
                 abort(response()->json([
                     'message' => '쿠폰 할인금액을 확인해주세요.',
-                    //'errors' => ['coupon_discount_amount' => '쿠폰 할인금액을 확인해주세요.'],
-                    'errors' => [
+                    'errors' => ['coupon_discount_amount' => '쿠폰 할인금액을 확인해주세요.'],
+                    /*'errors' => [
                         'coupon_discount_amount' => '쿠폰 할인금액을 확인해주세요.',
                         //TODO 추후 삭제
                         'debug' => $data['coupon_discount_amount'] . ':' . $couponDiscountAmount,
                         'order' => $this->toArray(),
                         'coupon' => $coupon->toArray(),
-                    ],
+                    ],*/
                 ], 422));
             }
         }
