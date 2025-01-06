@@ -15,12 +15,14 @@ class UserSeeder extends Seeder
     {
         $user = User::where('email', 'test@naver.com')->first();
 
-        if(!$user)
+        if (!$user) {
             User::factory()->create([
                 'email' => 'test@naver.com',
                 'password' => Hash::make('test@naver.com'),
             ]);
+        }
+        User::factory()->create(['email' => 'admin@admin.com', 'password' => Hash::make('123456'), 'is_admin' => true]);
 
-        User::factory()->count(20)->create(); // 50개의 레코드를 생성
+        //User::factory()->count(20)->create(); // 50개의 레코드를 생성
     }
 }

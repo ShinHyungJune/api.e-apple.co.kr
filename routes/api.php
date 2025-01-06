@@ -18,7 +18,6 @@ use App\Http\Controllers\Api\ProductInquiryController;
 use App\Http\Controllers\Api\ProductReviewController;
 use App\Http\Controllers\Api\UserCouponController;
 use App\Http\Controllers\Api\VerifyNumberController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /**
@@ -30,9 +29,9 @@ use Illuminate\Support\Facades\Route;
 /**
  * FOR JWT
  */
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+/*Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
-});
+});*/
 
 
 

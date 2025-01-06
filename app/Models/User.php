@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Enums\OrderStatus;
 use App\Enums\UserLevel;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -69,6 +70,15 @@ class User extends Authenticatable implements JWTSubject
     {
         return [];
     }
+
+
+
+    public function scopeMember(Builder $query): Builder
+    {
+        return $query->where('is_admin', false);
+    }
+
+
 
     /**
      * 내 상품 리뷰
