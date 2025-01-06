@@ -37,7 +37,7 @@ class TestProductDataSeeder extends Seeder
             ],
             ['name' => '국내산 거창군 샤인머스켓', 'price' => 22000, 'category_ids' => [3], 'option' => '1kg, 1팩',
                 'images' => [
-                    asset('/images/samples/4/1jpg'),
+                    asset('/images/samples/4/1.jpg'),
                     asset('/images/samples/4/2.jpg'),
                     asset('/images/samples/4/3.jpg'),
                     asset('/images/samples/4/4.jpg'),
@@ -100,7 +100,7 @@ class TestProductDataSeeder extends Seeder
             ],
             ['name' => '멜론, 촉촉하고 달콤한 과일', 'price' => 10000, 'category_ids' => [7], 'option' => '1.5kg',
                 'images' => [
-                    asset('/images/samples/14/1jpg'),
+                    asset('/images/samples/14/1.jpg'),
                     asset('/images/samples/14/2.jpg'),
                 ],
             ],
