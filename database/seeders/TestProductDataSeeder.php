@@ -117,9 +117,9 @@ class TestProductDataSeeder extends Seeder
 
             $product = Product::create($product);
             foreach ($images as $image) {
-                $encodedUrl = dirname($image) . '/' . rawurlencode(basename($image));
-                $product->addMediaFromUrl($encodedUrl)->toMediaCollection(Product::IMAGES);
+                $product->addMedia($image)->preservingOriginal()->toMediaCollection(Product::IMAGES);
             }
+
             $product->options()->create([
                     'name' => $option, 'price' => $product['price'],
                     'original_price' => $original_price, 'stock_quantity' => 1000]
