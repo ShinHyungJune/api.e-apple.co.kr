@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Product;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class TestProductDataSeeder extends Seeder
 {
@@ -12,7 +13,7 @@ class TestProductDataSeeder extends Seeder
      */
     public function run(): void
     {
-        Product::truncate();
+        DB::table('products')->truncate();
         $products = [
             ['name' => '국내산 거창군 딸기, 싱그러운 향과 맛', 'price' => 12000, 'category_ids' => [3], 'option' => '1kg, 1팩',
                 'categories' => ['sale', 'popular', 'best', 'juicy'],
