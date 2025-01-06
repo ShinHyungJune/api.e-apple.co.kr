@@ -14,6 +14,7 @@ use App\Models\VerifyNumber;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Route;
 
 /**
  * @group 인증
@@ -43,6 +44,18 @@ class AuthController extends ApiController
                 'errors' => ['email' => '이메일 또는 비밀번호를 잘못 입력했습니다.'],
             ], 422));
         }
+
+
+        //관리자 확인
+        if (str_contains(Route::current()->uri(), 'admin')) {
+            if (!auth()->user()->is_admin) {
+                abort(response()->json([
+                    'message' => '이메일 또는 비밀번호를 잘못 입력했습니다.',
+                    'errors' => ['email' => '이메일 또는 비밀번호를 잘못 입력했습니다.'],
+                ], 422));
+            }
+        }
+
 
         return $this->respondWithToken($token);
     }

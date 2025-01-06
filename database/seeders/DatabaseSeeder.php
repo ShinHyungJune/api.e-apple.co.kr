@@ -32,7 +32,7 @@ class DatabaseSeeder extends Seeder
 
             BoardSeeder::class,
             BoardCategorySeeder::class,
-            PostSeeder::class,
+            //PostSeeder::class,
 
             //ProductSeeder::class,
             //MdProductPackageSeeder::class,
