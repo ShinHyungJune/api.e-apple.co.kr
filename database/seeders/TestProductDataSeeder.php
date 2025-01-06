@@ -17,7 +17,7 @@ class TestProductDataSeeder extends Seeder
             ['name' => '국내산 거창군 딸기, 싱그러운 향과 맛', 'price' => 12000, 'category_ids' => [3], 'option' => '1kg, 1팩',
                 'images' => [
                     asset('/images/samples/1/1.png'),
-                    asset('/images/samples/1/2jpg'),
+                    asset('/images/samples/1/2.jpg'),
                 ],
             ],
             ['name' => '국내산 거창군 마늘, 아삭한 신선함', 'price' => 8000, 'category_ids' => [3], 'option' => '1kg',
