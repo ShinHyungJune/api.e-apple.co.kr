@@ -16,7 +16,7 @@ class TestProductDataSeeder extends Seeder
         DB::table('products')->truncate();
         $products = [
             ['name' => '국내산 거창군 딸기, 싱그러운 향과 맛', 'price' => 12000, 'category_ids' => [3], 'option' => '1kg, 1팩',
-                'categories' => ['sale', 'popular', 'best', 'juicy'],
+                'categories' => ['suggestion', 'sale', 'popular', 'best', 'juicy'],
                 'images' => [
                     asset('/images/samples/1/1.png'),
                     asset('/images/samples/1/2.jpg'),
@@ -113,7 +113,7 @@ class TestProductDataSeeder extends Seeder
                 ],
             ],
             ['name' => '멜론, 촉촉하고 달콤한 과일', 'price' => 10000, 'category_ids' => [7], 'option' => '1.5kg',
-                'categories' => ['sale', 'popular', 'best', 'juicy'],
+                'categories' => [],
                 'images' => [
                     asset('/images/samples/14/1.jpg'),
                     asset('/images/samples/14/2.jpg'),
