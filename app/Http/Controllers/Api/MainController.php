@@ -40,9 +40,9 @@ class MainController extends ApiController
         $items['reviews'] = ProductReview::with(['user','media'])
             //->where('created_at', 'like', $today . '%')
             ->latest()->limit(3)->get()
-            ->filter(function ($review) use ($today) {
+            /*->filter(function ($review) use ($today) {
                 return strpos($review->created_at, $today) === 0;
-            });
+            })*/;
 
         //오늘의 당도 체크
         $items['sweetnesses'] = Sweetness::with('media')
