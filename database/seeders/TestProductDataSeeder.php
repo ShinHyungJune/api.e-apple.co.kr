@@ -232,7 +232,7 @@ class TestProductDataSeeder extends Seeder
                 'expiration_date' => '2025-02-19',
                 'gmo_desc' => '해당사항 없음',
                 'customer_service_contact' => '000-0000-0000',
-                'categories' => ['suggestion', 'best', 'gift', 'sale', 'popular', 'juicy'],
+                'categories' => ['suggestion', 'gift', 'sale', 'popular', 'juicy'],
                 'images' => [
                     asset('/images/samples/11/1.jpg'),
                 ],
@@ -251,7 +251,7 @@ class TestProductDataSeeder extends Seeder
                 'expiration_date' => '2025-02-19',
                 'gmo_desc' => '해당사항 없음',
                 'customer_service_contact' => '000-0000-0000',
-                'categories' => ['suggestion', 'best', 'gift', 'sale', 'popular', 'juicy'],
+                'categories' => ['suggestion', 'gift', 'sale', 'popular', 'juicy'],
                 'images' => [
                     asset('/images/samples/12/1.jpg'),
                     asset('/images/samples/12/2.jpg'),
@@ -272,7 +272,7 @@ class TestProductDataSeeder extends Seeder
                 'expiration_date' => '2025-02-19',
                 'gmo_desc' => '해당사항 없음',
                 'customer_service_contact' => '000-0000-0000',
-                'categories' => ['suggestion', 'best', 'gift', 'sale', 'popular', 'juicy'],
+                'categories' => ['suggestion', 'gift', 'sale', 'popular', 'juicy'],
                 'images' => [
                     asset('/images/samples/13/1.jpg'),
                     asset('/images/samples/13/2.jpg'),
