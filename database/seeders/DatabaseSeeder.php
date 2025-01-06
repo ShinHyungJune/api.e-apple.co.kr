@@ -43,9 +43,9 @@ class DatabaseSeeder extends Seeder
             /*CartSeeder::class,
             DeliveryAddressSeeder::class,
             CouponSeeder::class,
-            OrderSeeder::class,*/
+            OrderSeeder::class,
             ProductReviewSeeder::class,
-            /*PointSeeder::class,
+            PointSeeder::class,
             ExchangeReturnSeeder::class,
             InquirySeeder::class,
             TestUserDataSeeder::class,*/
