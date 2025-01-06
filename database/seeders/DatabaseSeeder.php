@@ -42,8 +42,9 @@ class DatabaseSeeder extends Seeder
             BoardCategorySeeder::class,
             PostSeeder::class,
 
-            ProductSeeder::class,
+            //ProductSeeder::class,
             //MdProductPackageSeeder::class,
+            TestProductDataSeeder::class,
             ProductPackageSeeder::class,
             //ProductInquirySeeder::class,
 
@@ -57,8 +58,6 @@ class DatabaseSeeder extends Seeder
             InquirySeeder::class,
             TestUserDataSeeder::class,*/
 
-
-            TestProductDataSeeder::class,
         ]);
     }
 }
