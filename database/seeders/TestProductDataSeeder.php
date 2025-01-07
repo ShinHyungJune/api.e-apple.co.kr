@@ -224,7 +224,7 @@ class TestProductDataSeeder extends Seeder
             unset($product['option']);
             unset($product['images']);
 
-            $original_price = $product['price'] * rand(1, 1.3);
+            $original_price = $product['price'] + $product['price'] * (rand(1, 3) / 100);
             $product = [...$product, 'original_price' => $original_price, 'delivery_fee' => 3000, 'stock_quantity' => 1000];
 
             $product = Product::create($product);
