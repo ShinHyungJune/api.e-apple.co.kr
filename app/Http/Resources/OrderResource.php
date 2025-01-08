@@ -16,8 +16,10 @@ class OrderResource extends JsonResource
     public function toArray(Request $request): array
     {
         //return parent::toArray($request);
+        $additionalFields = ($request->user()->is_admin) ? ['user'] : [];
         $return = [
             ...$this->only([
+                ...$additionalFields,
                 'id', 'buyer_name', 'buyer_email', 'buyer_contact', 'buyer_address_zipcode', 'buyer_address', 'buyer_address_detail',
                 'delivery_name', 'delivery_phone', 'delivery_postal_code', 'delivery_address', 'delivery_address_detail', 'delivery_request', 'common_entrance_method',
                 'total_amount', 'user_coupon_id', 'coupon_discount_amount', 'use_points', 'delivery_fee', 'price',
