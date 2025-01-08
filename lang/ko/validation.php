@@ -445,7 +445,7 @@ return [
         'review'=>'후기 내용',
         'view_count'=>'조회수',
         'categories'=>'카테고리',
-        'is_md_suggestion_gift'=>'MD 추천 선물',
+        //'is_md_suggestion_gift'=>'MD 추천 선물',
         'tags'=>'태그',
         'food_type'=>'식품의 유형',
         'fruit_size'=>'과일 크기',

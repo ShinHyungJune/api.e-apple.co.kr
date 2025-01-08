@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Image\Enums\Fit;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -12,9 +13,9 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class Product extends Model implements HasMedia
 {
-    use HasFactory, InteractsWithMedia;
+    use HasFactory, InteractsWithMedia, SoftDeletes;
 
-    const IMAGES =  'product_images';
+    const IMAGES =  'imgs';
     //const DESC_IMAGES =  'product_desc_images';
 
     protected $casts = [
@@ -96,6 +97,11 @@ class Product extends Model implements HasMedia
     public function inquiries()
     {
         return $this->hasMany(ProductInquiry::class);
+    }
+
+    public function orderProducts()
+    {
+        return $this->hasMany(OrderProduct::class, 'product_id', 'id');
     }
 
     /*public function mdPackages()

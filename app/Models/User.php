@@ -72,6 +72,14 @@ class User extends Authenticatable implements JWTSubject
     }
 
 
+    public function scopeSearch(Builder $query, $filters): Builder
+    {
+        $filters = json_decode($filters);
+        if (!empty($filters->keyword)) {
+            return $query->where('name', 'like', '%' . $filters->keyword . '%');
+        }
+        return $query;
+    }
 
     public function scopeMember(Builder $query): Builder
     {

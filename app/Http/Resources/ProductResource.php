@@ -17,10 +17,13 @@ class ProductResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
+        $additionalFields = ($request->user()->is_admin) ? ['created_at', 'category_ids', 'subcategory_ids'] : null;
+
         //return parent::toArray($request);
         $return = [
             //...parent::toArray($request);
             ...$this->only([
+                ...$additionalFields,
                 'id', 'name', 'description', 'view_count',
                 'price',
                 'original_price',
@@ -37,7 +40,7 @@ class ProductResource extends JsonResource
                 'manufacture_date',
                 'expiration_date',
                 'gmo_desc',
-                'customer_service_contact'
+                'customer_service_contact',
             ]),
             /*'options' => $this->options ? ProductOptionResource::collection($this->options) : null,
             'is_new' => Carbon::parse($this->created_at)->greaterThanOrEqualTo(Carbon::now()->subDay()),

@@ -21,10 +21,10 @@ return new class extends Migration
             $table->unsignedInteger('price')->comment('가격');
             $table->unsignedInteger('original_price')->nullable()->comment('원래 가격');
             $table->unsignedInteger('delivery_fee')->default(0)->comment('배송비 (기본값: 0)');
-            $table->unsignedInteger('stock_quantity')->comment('재고 수량');
+            $table->unsignedInteger('stock_quantity')->default(0)->comment('재고 수량');
 
             $table->json('categories')->nullable()->comment('카테고리');
-            $table->boolean('is_md_suggestion_gift')->default(false)->comment('MD 추천 선물');
+            //$table->boolean('is_md_suggestion_gift')->default(false)->comment('MD 추천 선물');
             $table->json('tags')->nullable()->comment('태그(ex: 실시간 인기, 클래식 과일, 어른을 위한 픽, 추가 증정)');
 
             $table->string('food_type')->nullable()->comment('식품의 유형');

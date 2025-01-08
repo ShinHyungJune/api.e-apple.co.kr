@@ -11,7 +11,7 @@ class ProductRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true;
+        return auth()->user()->is_admin;
     }
 
     /**
@@ -25,22 +25,24 @@ class ProductRequest extends FormRequest
             'name' => ['required', 'string', 'max:255'], // 상품명: 필수, 문자열, 최대 255자
             'description' => ['nullable', 'string'], // 상품설명: 선택적, 문자열
 
-            'options' => ['nullable', 'array'],
-            'options.*.id' => ['nullable', 'array'],
-            'options.*.name' => ['nullable', 'string', 'max:255'],
-            'options.*.price' => ['nullable', 'numeric', 'min:0'],
+            'options' => ['required', 'array', 'min:1'],
+            'options.*.id' => ['nullable'],
+            'options.*.name' => ['required', 'string', 'max:255'],
+            'options.*.price' => ['required', 'numeric', 'min:0'],
+            'options.*.original_price' => ['nullable', 'numeric', 'min:0'],
+            'options.*.stock_quantity' => ['required', 'numeric', 'min:0'],
 
-            'product_images' => ['nullable', 'array'],
-            'product_images.*' => ['nullable', 'file', 'mimes:jpg,png,pdf', 'max:2048'], // 각각의 파일에 대해 유효성 검사
+            'imgs' => ['nullable', 'array'],
+            'imgs.*' => ['nullable', 'file', 'mimes:jpg,png,pdf', 'max:2048'], // 각각의 파일에 대해 유효성 검사
             /*'product_desc_images' => ['nullable', 'array'],
             'product_desc_images.*' => ['nullable', 'file', 'mimes:jpg,png,pdf', 'max:2048'], // 각각의 파일에 대해 유효성 검사*/
 
             'price' => ['required', 'numeric', 'min:0'], // 가격: 필수, 숫자, 0 이상
             'original_price' => ['nullable', 'numeric', 'min:0'], // 원래가격: 선택적, 숫자, 0 이상
             'delivery_fee' => ['required', 'numeric', 'min:0'], // 배송비: 필수, 숫자, 0 이상
-            'stock_quantity' => ['required', 'integer', 'min:0'], // 재고수량: 필수, 정수, 0 이상
+            'stock_quantity' => ['nullable', 'integer', 'min:0'], // 재고수량: 필수, 정수, 0 이상
             'categories' => ['nullable', 'array'], // 카테고리
-            'is_md_suggestion_gift' => ['nullable', 'boolean'],
+            //'is_md_suggestion_gift' => ['nullable', 'boolean'],
             'tags' => ['nullable', 'array'],
 
             'food_type' => ['nullable', 'string', 'max:100'], // 식품의 유형: 선택적, 문자열, 최대 100자
@@ -77,7 +79,7 @@ class ProductRequest extends FormRequest
 
             'stock_quantity' => ['description' => '<span class="point">재고수량</span>'],
             'categories' => ['description' => '<span class="point">카테고리</span>'],
-            'is_md_suggestion_gift' => ['description' => '<span class="point">MD 추천 선물</span>'],
+            //'is_md_suggestion_gift' => ['description' => '<span class="point">MD 추천 선물</span>'],
             'tags' => ['description' => '<span class="point">태그(ex: 실시간 인기, 클래식 과일, 어른을 위한 픽, 추가 증정)</span>'],
 
 
@@ -106,6 +108,7 @@ class ProductRequest extends FormRequest
             if ($input === 'true') $inputs[$key] = true;
             if ($input === 'false') $inputs[$key] = false;
         }
+        $inputs['options'] = json_decode($inputs['options'], true);
         $this->merge($inputs);
     }
 

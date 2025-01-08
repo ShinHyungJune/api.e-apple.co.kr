@@ -33,7 +33,7 @@ class ProductFactory extends Factory
             'categories' => collect(ProductCategory::cases())
                     ->random(rand(1, 2)) // 1~2개의 랜덤 값 선택
                     ->pluck('value')->toArray(),
-            'is_md_suggestion_gift' => $this->faker->boolean,
+            //'is_md_suggestion_gift' => $this->faker->boolean,
             //'tags' => $this->faker->words(5), // JSON 배열로 저장
             'tags' => collect(['실시간 인기', '클래식 과일', '어른을 위한 픽', '추가 증정'])->random(2)->toArray(), // 2개의 랜덤 태그
             'food_type' => $this->faker->randomElement(['Vegetarian', 'Vegan', 'Non-Vegetarian']),

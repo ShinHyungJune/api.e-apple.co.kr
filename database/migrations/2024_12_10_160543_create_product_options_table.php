@@ -21,6 +21,7 @@ return new class extends Migration
             $table->unsignedInteger('original_price')->nullable()->comment('원래 가격');
             $table->unsignedInteger('stock_quantity')->comment('재고 수량');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

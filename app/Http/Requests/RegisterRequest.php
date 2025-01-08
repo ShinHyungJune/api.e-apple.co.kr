@@ -50,7 +50,6 @@ class RegisterRequest extends FormRequest
                 'nickname' => ['nullable', 'string', 'max:255'],
                 'is_agree_promotion' => ['nullable', 'boolean'],
             ];
-
         }
 
         return $return;

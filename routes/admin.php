@@ -27,15 +27,22 @@ Route::group(['prefix' => 'admin'], function () {
         Route::group(['prefix' => 'users', 'controller' => UserController::class],
             function () {
                 Route::get('', 'index');
+                Route::post('', 'store');
+                Route::get('{user}', 'show');
+                Route::put('{user}', 'update');
+                Route::delete('{user}', 'destroy');
             });
 
         Route::group(['prefix' => 'products', 'controller' => ProductController::class],
             function () {
+                Route::get('init', 'init');
                 Route::get('', 'index');
                 Route::post('', 'store');
-                /*Route::put('{product}', 'update');
                 Route::get('{product}', 'show');
-                Route::delete('{product}', 'destroy');*/
+                Route::put('{product}', 'update');
+                Route::delete('{product}', 'destroy');
+                Route::delete('images/{media}', 'destroyImage');
+                Route::delete('options/{productOption}', 'destroyOption');
             });
 
         Route::group(['prefix' => 'orders', 'controller' => OrderController::class],
