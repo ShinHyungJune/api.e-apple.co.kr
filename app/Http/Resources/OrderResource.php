@@ -16,7 +16,7 @@ class OrderResource extends JsonResource
     public function toArray(Request $request): array
     {
         //return parent::toArray($request);
-        $additionalFields = ($request->user()->is_admin) ? ['user'] : [];
+        $additionalFields = ($request->user()?->is_admin) ? ['user'] : [];
         $return = [
             ...$this->only([
                 ...$additionalFields,
