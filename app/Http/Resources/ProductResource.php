@@ -17,7 +17,7 @@ class ProductResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        $additionalFields = ($request->user()->is_admin) ? ['created_at', 'category_ids', 'subcategory_ids'] : null;
+        $additionalFields = ($request->user()?->is_admin) ? ['created_at', 'category_ids', 'subcategory_ids'] : [];
 
         //return parent::toArray($request);
         $return = [
