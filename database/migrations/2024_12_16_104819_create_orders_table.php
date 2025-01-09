@@ -86,9 +86,12 @@ return new class extends Migration
             $table->id()->comment('기본키');
             $table->enum('status', OrderStatus::values())->default(OrderStatus::ORDER_PENDING->value)->comment('주문 상태');
             $table->timestamp('purchase_confirmed_at')->nullable()->comment('구매 확정 일시');
+            $table->string('delivery_company')->nullable()->comment('택배사');
+            $table->string('delivery_tracking_number')->nullable()->comment('주문배송번호');
+            $table->timestamp('delivery_started_at')->nullable()->comment('배송 시작 일시');
+
 
             $table->foreignId('order_id')->constrained()->onDelete('cascade')->comment('주문 외래키');
-
             $table->foreignId('user_id')/*->constrained()->onDelete('cascade')*/ ->nullable()->comment('사용자 외래키');
             $table->string('guest_id')->nullable()->comment('비회원 아이디');
 
@@ -97,6 +100,8 @@ return new class extends Migration
             $table->unsignedInteger('quantity')->default(1)->comment('상품 수량'); // 상품 수량
             $table->unsignedInteger('price')->comment('상품 가격');
             $table->unsignedInteger('original_price')->nullable()->comment('원래 가격');
+
+
             $table->timestamps();
             $table->softDeletes();
         });

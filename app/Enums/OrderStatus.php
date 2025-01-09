@@ -33,6 +33,19 @@ enum OrderStatus: string
     ];
 
 
+    //출고관리
+    const CAN_DELVERY_MANAGES = [
+        self::DELIVERY_PREPARING,// => '배송준비중',
+        self::DELIVERY,// => '배송중',
+        self::PURCHASE_CONFIRM,// => '구매확정',
+        self::CANCELLATION_REQUESTED,// => '취소요청',
+        self::CANCELLATION_COMPLETE,// => '취소완료',
+        self::RETURN_REQUESTED,// => '반품요청',
+        self::RETURN_COMPLETE,// => '반품완료',
+        self::EXCHANGE_REQUESTED,// => '교환요청',
+        self::EXCHANGE_COMPLETE,// => '교환완료'
+    ];
+
     public function label(): string
     {
         return match ($this) {

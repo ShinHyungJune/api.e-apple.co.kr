@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Enums\IamportMethod;
 use App\Enums\OrderStatus;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -16,10 +17,15 @@ class OrderResource extends JsonResource
     public function toArray(Request $request): array
     {
         //return parent::toArray($request);
-        $additionalFields = ($request->user()?->is_admin) ? ['user'] : [];
+        $additionalFields = ($request->user()?->is_admin) ? [
+            'user' => UserResource::make($this->whenLoaded('user')),
+            'pay_method_method_label' => ($this->pay_method_method) ? IamportMethod::from($this->pay_method_method)->label() : '',
+            'can_cancel' => in_array($this->status, OrderStatus::CAN_ORDER_CANCELS),
+            'can_delivery_preparing' => $this->status === OrderStatus::PAYMENT_COMPLETE,
+        ] : [];
         $return = [
+            ...$additionalFields,
             ...$this->only([
-                ...$additionalFields,
                 'id', 'buyer_name', 'buyer_email', 'buyer_contact', 'buyer_address_zipcode', 'buyer_address', 'buyer_address_detail',
                 'delivery_name', 'delivery_phone', 'delivery_postal_code', 'delivery_address', 'delivery_address_detail', 'delivery_request', 'common_entrance_method',
                 'total_amount', 'user_coupon_id', 'coupon_discount_amount', 'use_points', 'delivery_fee', 'price',

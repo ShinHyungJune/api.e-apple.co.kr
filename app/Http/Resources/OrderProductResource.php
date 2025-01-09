@@ -16,7 +16,12 @@ class OrderProductResource extends JsonResource
     public function toArray(Request $request): array
     {
         //return parent::toArray($request);
+        $additionalFields = ($request->user()?->is_admin) ? [
+            'order_id' => $this->order_id,
+            'can_delivery' => $this->status === OrderStatus::DELIVERY_PREPARING,
+        ] : [];
         $return = [
+            ...$additionalFields,
             ...$this->only(['id', 'quantity', 'price', 'updated_at']),
             'status' => OrderStatus::from($this->status->value)->label(),
             'product' => ProductResource::make($this->whenLoaded('product')),

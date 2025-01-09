@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\Admin\OrderController;
+use App\Http\Controllers\Api\Admin\OrderProductController;
 use App\Http\Controllers\Api\Admin\ProductController;
 use App\Http\Controllers\Api\Admin\UserController;
 use App\Http\Controllers\Api\AuthController;
@@ -47,7 +48,18 @@ Route::group(['prefix' => 'admin'], function () {
 
         Route::group(['prefix' => 'orders', 'controller' => OrderController::class],
             function () {
-                Route::post('test', 'test');
+                //Route::post('test', 'test');
+                Route::get('', 'index');
+                Route::get('{order}', 'show');
+                Route::put('{order}', 'update');
+                Route::put('{order}/cancel', 'cancel');
+            });
+
+        Route::group(['prefix' => 'order_products', 'controller' => OrderProductController::class],
+            function () {
+                //Route::post('test', 'test');
+                Route::get('', 'index');
+                Route::get('{order}', 'show');
             });
     });
 

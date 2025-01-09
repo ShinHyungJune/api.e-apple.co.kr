@@ -22,6 +22,22 @@ class Order extends Model
         'status' => OrderStatus::class, // Enum 캐스팅
     ];
 
+    public function scopeSearch(Builder $query, $filters): Builder
+    {
+        $filters = json_decode($filters);
+        if (!empty($filters->keyword)) {
+            return $query->where('merchant_uid', 'like', '%' . $filters->keyword . '%')
+                ->orWhere('buyer_name', 'like', '%' . $filters->keyword . '%');
+
+        }
+        return $query;
+    }
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public static function getCartsData($data, $cartProductOptions)
     {
         return [
