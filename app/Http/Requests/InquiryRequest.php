@@ -26,7 +26,8 @@ class InquiryRequest extends FormRequest
             //'general_consultation_inquiry' => ['nullable', 'string'],
             'type' => ['nullable', 'string'],
             'content' => ['required', 'string'],
-            'images' => ['nullable', 'array'],
+            //'images' => ['nullable', 'array'],
+            'imgs' => ['nullable', 'array'],
         ];
     }
 
