@@ -21,7 +21,7 @@ class InquiryRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
+        $return = [
             //'purchase_related_inquiry' => ['nullable', 'string'],
             //'general_consultation_inquiry' => ['nullable', 'string'],
             'type' => ['nullable', 'string'],
@@ -29,6 +29,12 @@ class InquiryRequest extends FormRequest
             //'images' => ['nullable', 'array'],
             'imgs' => ['nullable', 'array'],
         ];
+
+        if (auth()->user()?->is_admin) {
+            $return = [...$return, 'answer' => ['nullable', 'string']];
+        }
+
+        return $return;
     }
 
     public function bodyParameters(): array

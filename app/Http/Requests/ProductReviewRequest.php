@@ -41,7 +41,7 @@ class ProductReviewRequest extends FormRequest
                 'review' => ['required', 'string'],
                 //'images' => ['nullable', 'array'],
                 'imgs' => ['nullable', 'array'],
-                'files_remove_ids' => ['nullable', 'array'],
+                'imgs_remove_ids' => ['nullable', 'array'],
             ];
         }
     }
