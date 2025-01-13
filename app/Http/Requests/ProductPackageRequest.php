@@ -11,7 +11,7 @@ class ProductPackageRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return auth()->user()?->is_admin;
     }
 
     /**
@@ -22,7 +22,11 @@ class ProductPackageRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title' => ['required', 'string'],
+            'description' => ['required', 'string'],
+            'type' => ['required', 'string'],
+            'category_title' => ['nullable', 'string'],
+            'products' => ['nullable', 'array'],
         ];
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia;
@@ -13,5 +14,17 @@ class Banner extends Model implements HasMedia
 
     protected $guarded = ['id'];
 
-    const IMAGES = 'images';
+    const IMAGES = 'imgs';
+
+    protected $casts = [
+        'is_active' => 'boolean',
+    ];
+
+    public function scopeSearch(Builder $query, $filters)
+    {
+        if (isset($filters['keyword'])) {
+            $query->where('title', 'like', '%' . $filters['keyword'] . '%');
+        }
+    }
+
 }

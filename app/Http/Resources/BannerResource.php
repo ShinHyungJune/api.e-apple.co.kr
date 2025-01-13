@@ -16,9 +16,15 @@ class BannerResource extends JsonResource
     public function toArray(Request $request): array
     {
         //return parent::toArray($request);
+        $additionalFields = ($request->user()?->is_admin) ? [
+            'is_active' => $this->is_active,
+            'created_at' => $this->created_at,
+        ] : [];
         $return = [
-            ...$this->only(['title', 'description', 'url']),
+            ...$additionalFields,
+            ...$this->only(['id', 'title', 'description', 'url']),
             'img' => $this->getMedia(Banner::IMAGES) ? MediaResource::make($this->getMedia(Banner::IMAGES)[0] ?? null) : null,
+            'imgs' => $this->getMedia(Banner::IMAGES) ? MediaResource::collection($this->getMedia(Banner::IMAGES) ?? null) : null,
         ];
 
         //*

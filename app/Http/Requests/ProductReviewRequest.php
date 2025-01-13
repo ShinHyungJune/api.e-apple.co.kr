@@ -31,6 +31,7 @@ class ProductReviewRequest extends FormRequest
                 'rating' => ['required', 'integer', 'min:1', 'max:5'],
                 'review' => ['required', 'string'],
                 'images' => ['nullable', 'array'],
+                'imgs' => ['nullable', 'array'],
             ];
         }
 
@@ -39,6 +40,7 @@ class ProductReviewRequest extends FormRequest
                 'rating' => ['required', 'integer', 'min:1', 'max:5'],
                 'review' => ['required', 'string'],
                 'images' => ['nullable', 'array'],
+                'imgs' => ['nullable', 'array'],
                 'files_remove_ids' => ['nullable', 'array'],
             ];
         }

@@ -33,24 +33,24 @@ class Post extends Model implements HasMedia
             $query->where('category_id', $filters['category_id']);
         }
 
-        /*if (isset($searches->keyword) && $searches->keyword) {
-            $query->where('title', 'like', '%' . $searches->keyword . '%');
-            $query->orWhereHas('user', function ($query) use ($searches) {
-                $query->where('email', 'like', '%' . $searches->keyword . '%');
-            });
-        }*/
-        /*if ($request->search) {
-            $searches = json_decode($request->search);
-            //dd($searches);
-            if (isset($searches->keyword) && $searches->keyword) {
-                $query->whereHas('member', function ($query) use ($searches) {
-                    $query->where('name', 'like', '%' . $searches->keyword . '%')->orWhere('mobile', 'like', '%' . $searches->keyword . '%');
-                });
+        if (!empty($filters['search'])) {
+            $searches = (array)json_decode($filters['search']);
+            if (!empty($searches['keyword'])) {
+                $query->where('title', 'like', '%' . $searches['keyword'] . '%');
             }
-            if ($searches->dates && $searches->dates[0] && $searches->dates[1]) {
-                $query->whereBetween(DB::raw('DATE(created_at)'), [$searches->dates]);
-            }
-        }*/
+            /*if ($request->search) {
+                $searches = json_decode($request->search);
+                //dd($searches);
+                if (isset($searches->keyword) && $searches->keyword) {
+                    $query->whereHas('member', function ($query) use ($searches) {
+                        $query->where('name', 'like', '%' . $searches->keyword . '%')->orWhere('mobile', 'like', '%' . $searches->keyword . '%');
+                    });
+                }
+                if ($searches->dates && $searches->dates[0] && $searches->dates[1]) {
+                    $query->whereBetween(DB::raw('DATE(created_at)'), [$searches->dates]);
+                }
+            }*/
+        }
     }
 
     public function registerMediaConversions(Media|null $media = null): void

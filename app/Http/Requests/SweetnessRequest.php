@@ -11,7 +11,7 @@ class SweetnessRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return auth()->user()?->is_admin;
     }
 
     /**
@@ -22,7 +22,22 @@ class SweetnessRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'fruit_name' => ['required', 'string'],
+            'sweetness' => ['required', 'numeric', 'min:0'],
+            'standard_sweetness' => ['required', 'numeric', 'min:0'],
+            'is_display' => ['required', 'boolean'],
+            'imgs' => ['nullable', 'array'],
         ];
+    }
+
+    public function prepareForValidation()
+    {
+        $inputs = $this->input();
+        foreach ($inputs as $key => $input) {
+            if ($input === 'null') $inputs[$key] = null;
+            if ($input === 'true') $inputs[$key] = true;
+            if ($input === 'false') $inputs[$key] = false;
+        }
+        $this->merge($inputs);
     }
 }

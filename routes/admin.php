@@ -1,8 +1,15 @@
 <?php
 
+use App\Http\Controllers\Api\Admin\BannerController;
+use App\Http\Controllers\Api\Admin\ExchangeReturnController;
+use App\Http\Controllers\Api\Admin\InquiryController;
 use App\Http\Controllers\Api\Admin\OrderController;
 use App\Http\Controllers\Api\Admin\OrderProductController;
 use App\Http\Controllers\Api\Admin\ProductController;
+use App\Http\Controllers\Api\Admin\ProductInquiryController;
+use App\Http\Controllers\Api\Admin\ProductPackageController;
+use App\Http\Controllers\Api\Admin\ProductReviewController;
+use App\Http\Controllers\Api\Admin\SweetnessController;
 use App\Http\Controllers\Api\Admin\UserController;
 use App\Http\Controllers\Api\AuthController;
 use Illuminate\Http\Request;
@@ -10,7 +17,6 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::group(['prefix' => 'admin'], function () {
-
 
     Route::group(['prefix' => 'auth', 'controller' => AuthController::class], function () {
         /**
@@ -46,6 +52,36 @@ Route::group(['prefix' => 'admin'], function () {
                 Route::delete('options/{productOption}', 'destroyOption');
             });
 
+        Route::group(['prefix' => 'product_inquiries', 'controller' => ProductInquiryController::class],
+            function () {
+                Route::get('', 'index');
+                Route::post('', 'store');
+                Route::get('{productInquiry}', 'show');
+                Route::put('{productInquiry}', 'update');
+                Route::delete('{productInquiry}', 'destroy');
+            });
+
+        Route::group(['prefix' => 'product_reviews', 'controller' => ProductReviewController::class],
+            function () {
+                Route::get('', 'index');
+                Route::post('', 'store');
+                Route::get('{productReview}', 'show');
+                Route::put('{productReview}', 'update');
+                Route::delete('{productReview}', 'destroy');
+                Route::delete('images/{media}', 'destroyImage');
+            });
+
+        Route::group(['prefix' => 'product_packages', 'controller' => ProductPackageController::class],
+            function () {
+                Route::get('init', 'init');
+                Route::get('', 'index');
+                Route::post('', 'store');
+                Route::get('{productPackage}', 'show');
+                Route::put('{productPackage}', 'update');
+                Route::delete('{productPackage}', 'destroy');
+                Route::delete('images/{media}', 'destroyImage');
+            });
+
         Route::group(['prefix' => 'orders', 'controller' => OrderController::class],
             function () {
                 //Route::post('test', 'test');
@@ -57,10 +93,49 @@ Route::group(['prefix' => 'admin'], function () {
 
         Route::group(['prefix' => 'order_products', 'controller' => OrderProductController::class],
             function () {
-                //Route::post('test', 'test');
                 Route::get('', 'index');
-                Route::get('{order}', 'show');
+                Route::put('{id?}', 'update');
+            });
+
+        Route::group(['prefix' => 'exchange_returns', 'controller' => ExchangeReturnController::class],
+            function () {
+                Route::get('init', 'init');
+                Route::get('', 'index');
+                Route::get('{exchangeReturn}', 'show');
+                Route::put('{exchangeReturn}', 'update');
             });
     });
 
+    Route::group(['prefix' => 'banners', 'controller' => BannerController::class],
+        function () {
+            Route::get('', 'index');
+            Route::post('', 'store');
+            Route::get('{banner}', 'show');
+            Route::put('{banner}', 'update');
+            Route::delete('{banner}', 'destroy');
+            Route::delete('images/{media}', 'destroyImage');
+        });
+
+    Route::group(['prefix' => 'sweetnesses', 'controller' => SweetnessController::class],
+        function () {
+            Route::get('', 'index');
+            Route::post('', 'store');
+            Route::get('{sweetness}', 'show');
+            Route::put('{sweetness}', 'update');
+            Route::delete('{sweetness}', 'destroy');
+            Route::delete('images/{media}', 'destroyImage');
+        });
+
+    Route::group(['prefix' => 'inquiries', 'controller' => InquiryController::class],
+        function () {
+            Route::get('', 'index');
+            Route::post('', 'store');
+            Route::get('{inquiry}', 'show');
+            Route::put('{inquiry}', 'update');
+            Route::delete('{inquiry}', 'destroy');
+            Route::delete('images/{media}', 'destroyImage');
+        });
+
+
+    require __DIR__.'/post.php';
 });

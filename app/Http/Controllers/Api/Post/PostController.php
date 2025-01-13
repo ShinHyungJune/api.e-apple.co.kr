@@ -8,11 +8,10 @@ use App\Http\Resources\Post\BoardResource;
 use App\Http\Resources\Post\PostResource;
 use App\Models\Post\Board;
 use App\Models\Post\Post;
-use App\Models\Post\PostFile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
-use Illuminate\Support\Facades\Storage;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 /**
  * @group 게시판(공지사항: 1, FAQ: 2 , 스토리: 3, 이벤트: 4)
@@ -44,7 +43,7 @@ class PostController extends ApiController
         //$boardCategories = BoardCategory::select('name as text', 'id as value')->where('board_id', $board->id)->get();
         Gate::authorize('viewAny', [Post::class, $board->type]);
 
-        $filters = $request->only(['category_id']);
+        $filters = $request->only(['category_id', 'search']);
 
         //Media Library
         $query = Post::with(['user', 'comments.user'/*, 'files'*/])->where('board_id', $board->id)->search($filters);
@@ -71,8 +70,10 @@ class PostController extends ApiController
             $post = tap(new Post($data))->save();
             //Media Library
             //if ($files) PostFile::stores($post, $files);
-            foreach ($files as $file) {
-                $post->addMedia($file['file'])->toMediaCollection(Post::MEDIA_COLLECTION);
+            if ($files) {
+                foreach ($files as $file) {
+                    $post->addMedia($file)->toMediaCollection(Post::MEDIA_COLLECTION);
+                }
             }
             return $post;
         });
@@ -93,17 +94,6 @@ class PostController extends ApiController
         return $this->respondSuccessfully(PostResource::make($post));
     }
 
-
-
-
-
-
-
-
-
-
-
-
     public function update(PostRequest $request, $id)
     {
         $query = Post::query();
@@ -117,13 +107,15 @@ class PostController extends ApiController
 
         $post = DB::transaction(function () use ($post, $data, $files) {
             $post = tap($post)->update($data);
-            /*if ($files) {
-                PostFile::stores($post, $files);
-            }*/
+            //if ($files) PostFile::stores($post, $files);
+            if ($files) {
+                foreach ($files as $file) {
+                    $post->addMedia($file)->toMediaCollection(Post::MEDIA_COLLECTION);
+                }
+            }
             return $post;
         });
-
-        return response()->success($post);
+        return $this->respondSuccessfully(PostResource::make($post));
     }
 
     public function destroy($id)
@@ -132,40 +124,35 @@ class PostController extends ApiController
         Gate::authorize('delete', $post);
 
         DB::transaction(function () use ($post, $id) {
-
-            $oFiles = PostFile::where('post_id', $id);
+            /*$oFiles = PostFile::where('post_id', $id);
             $files = $oFiles->get();
             foreach ($files as $file) {
                 Storage::disk('public')->delete($file->path);
             }
-            $oFiles->delete();
-
-            /*if (auth()->user()->isAdmin()) {
-                foreach ($post->event_users as $eventUser) {
-                    $post->destroyEventUser($eventUser);
-                }
-            }*/
-
+            $oFiles->delete();*/
+            $post->clearMediaCollection(Post::MEDIA_COLLECTION);
             $post->delete($id);
         });
-
-        return response()->success();
+        return $this->respondSuccessfully();
     }
 
-    public function showFile($id)
+    /*public function showFile($id)
     {
         $file = PostFile::findOrFail($id);
         $path = Storage::disk('local')->path($file->path);
         return response()->file($path);
+    }*/
+
+    public function destroyFile(Media $media)
+    {
+        if (!auth()->user()?->is_admin) {
+            abort(403);
+        }
+        $media->delete();
+        return $this->respondSuccessfully();
     }
 
-    public function destroyFile($id)
-    {
-        $file = PostFile::findOrFail($id);
-        Storage::disk('local')->delete($file->path);
-        $file->delete();
-        return response()->success();
-    }
+
 
     /*
     public function storeFile(Request $request)

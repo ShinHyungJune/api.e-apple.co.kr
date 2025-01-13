@@ -2,16 +2,17 @@
 
 namespace App\Http\Requests;
 
+use App\Enums\OrderStatus;
 use Illuminate\Foundation\Http\FormRequest;
 
-class BannerRequest extends FormRequest
+class OrderProductRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return auth()->user()?->is_admin;
+        return auth()->user()->is_admin;
     }
 
     /**
@@ -22,22 +23,20 @@ class BannerRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => ['required', 'string'],
-            'description' => ['required', 'string'],
-            'url' => ['required', 'string'],
-            'is_active' => ['nullable', 'boolean'],
-            'imgs' => ['nullable', 'array'],
+            'ids' => ['nullable', 'array'],
+            'delivery_company' => ['required', 'string'],
+            'delivery_tracking_number' => ['required', 'string'],
+            'delivery_started_at' => ['required', 'date'],
+            'status' => ['required'],
         ];
     }
 
     public function prepareForValidation()
     {
         $inputs = $this->input();
-        foreach ($inputs as $key => $input) {
-            if ($input === 'null') $inputs[$key] = null;
-            if ($input === 'true') $inputs[$key] = true;
-            if ($input === 'false') $inputs[$key] = false;
-        }
+        $inputs['delivery_started_at'] = $inputs['delivery_started_at'] ?? now();
+        $inputs['status'] = OrderStatus::DELIVERY->value;
         $this->merge($inputs);
     }
+
 }

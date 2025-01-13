@@ -41,18 +41,34 @@ class ExchangeReturnRequest extends FormRequest
             $return = [...$return, 'guest_id' => ['required', 'string']];
         }
 
+
+        if (auth()->user()?->is_admin) {
+            $return = [
+                'status' => ['required'],
+                'admin_notes' => ['nullable', 'string'],
+                'refund_bank_name' => ['nullable', 'string'],
+                'refund_bank_owner' => ['nullable', 'string'],
+                'refund_bank_account' => ['nullable', 'string'],
+                'refund_reason' => ['nullable', 'string'],
+                'refund_amount' => ['nullable', 'numeric', 'min:0'],
+                'refund_delivery_fee' => ['nullable', 'numeric', 'min:0'],
+            ];
+        }
+
+
         return $return;
     }
 
     public function prepareForValidation(): void
     {
-        $inputs = $this->input();
-
-        $this->merge([
-            'user_id' => auth()->id() ?? null,
-            'guest_id' => $inputs['guest_id'] ?? null,
-            'status' => ExchangeReturnStatus::RECEIVED->value
-        ]);
+        if (!auth()->user()?->is_admin) {
+            $inputs = $this->input();
+            $this->merge([
+                'user_id' => auth()->id() ?? null,
+                'guest_id' => $inputs['guest_id'] ?? null,
+                'status' => ExchangeReturnStatus::RECEIVED->value
+            ]);
+        }
     }
 
     public function bodyParameters(): array

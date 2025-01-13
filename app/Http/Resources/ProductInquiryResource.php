@@ -15,8 +15,17 @@ class ProductInquiryResource extends JsonResource
     public function toArray(Request $request): array
     {
         //return parent::toArray($request);
-
+        $additionalFields = ($request->user()?->is_admin) ? [
+            'product_id' => $this->product_id,
+            'title' => $this->title,
+            'content' => $this->content,
+            'answer' => $this->answer,
+            'user' => UserResource::make($this->whenLoaded('user')),
+            'is_answered_label' => $this->answered_at ? '답변' : '접수',
+            'is_visible_label' => $this->is_visible ? '공개글' : '비밀글',
+        ] : [];
         $return = [
+            ...$additionalFields,
             ...$this->only('id', 'is_visible', 'created_at', 'answered_at'),
             'is_answered' => $this->answered_at ? true : false,
             'product' => $this->whenLoaded('product', function () {

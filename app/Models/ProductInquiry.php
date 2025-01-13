@@ -20,6 +20,11 @@ class ProductInquiry extends Model
         return $this->belongsTo(Product::class);
     }
 
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public function scopeMine(Builder $query)
     {
         $query->where('user_id', auth()->id());
@@ -33,6 +38,13 @@ class ProductInquiry extends Model
             } else {
                 $query->whereNull('answered_at');
             }
+        }
+
+        if (isset($filters['keyword'])) {
+            $query->where('title', 'like', '%' . $filters['keyword'] . '%')
+                ->orWhereHas('user', function ($query) use ($filters) {
+                    $query->where('name', 'like', '%' . $filters['keyword'] . '%');
+                });
         }
     }
 

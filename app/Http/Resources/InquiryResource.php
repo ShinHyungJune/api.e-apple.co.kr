@@ -16,7 +16,11 @@ class InquiryResource extends JsonResource
     public function toArray(Request $request): array
     {
         //return parent::toArray($request);
+        $additionalFields = ($request->user()?->is_admin) ? [
+            'user' => UserResource::make($this->whenLoaded('user')),
+        ] : [];
         $return = [
+            ...$additionalFields,
             ...$this->only(['id',
                 /*'purchase_related_inquiry', 'general_consultation_inquiry',*/
                 'type', 'content', 'created_at',

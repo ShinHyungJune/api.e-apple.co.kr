@@ -21,7 +21,8 @@ class InquiryController extends ApiController
      */
     public function index(Request $request)
     {
-        $items = auth()->user()->inquiries()->search($request)
+        $filters = $request->only(['is_answered']);
+        $items = auth()->user()->inquiries()->search($filters)
             ->latest()->paginate($request->get('take', 10));
         return InquiryResource::collection($items);
     }

@@ -20,7 +20,8 @@ class OrderResource extends JsonResource
         $additionalFields = ($request->user()?->is_admin) ? [
             'user' => UserResource::make($this->whenLoaded('user')),
             'pay_method_method_label' => ($this->pay_method_method) ? IamportMethod::from($this->pay_method_method)->label() : '',
-            'can_cancel' => in_array($this->status, OrderStatus::CAN_ORDER_CANCELS),
+            'can_cancel' => in_array($this->status, OrderStatus::CAN_ORDER_CANCELS)
+                && $this->orderProducts->every(fn($e) => in_array($e->status, OrderStatus::CAN_ORDER_CANCELS)),
             'can_delivery_preparing' => $this->status === OrderStatus::PAYMENT_COMPLETE,
         ] : [];
         $return = [
@@ -33,7 +34,7 @@ class OrderResource extends JsonResource
                 'pay_method_pg', 'pay_method_method',
                 'created_at', 'updated_at', 'delivery_started_at', 'purchase_confirmed_at',
                 'delivery_tracking_number',
-                'refund_amount', 'refund_delivery_fee'
+                'refund_amount_sum', 'refund_delivery_fee_sum'
             ]),
             //'status' => OrderStatus::from($this->status)->label(),
             'status' => OrderStatus::from($this->status->value)->label(),

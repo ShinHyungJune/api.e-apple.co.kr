@@ -32,6 +32,13 @@ return new class extends Migration
             $table->enum('status', ExchangeReturnStatus::values())->default(ExchangeReturnStatus::RECEIVED->value)->comment("처리상태");
             $table->text('admin_notes')->nullable()->comment('관리자 메모');
 
+            $table->string("refund_bank_name")->nullable()->comment('환불계좌 은행명');
+            $table->string("refund_bank_owner")->nullable()->comment('환불계좌 예금주');
+            $table->string("refund_bank_account")->nullable()->comment('환불계좌 계좌번호');
+            $table->text("refund_reason")->nullable()->comment('환불사유');
+            $table->unsignedInteger('refund_amount')->nullable()->default(0)->comment('환불금액(관리자입력, 사용자 취소인 경우 전액)');
+            $table->unsignedInteger('refund_delivery_fee')->nullable()->default(0)->comment('반품배송비(관리자입력)');
+
             $table->timestamp('processed_at')->nullable()->comment('처리 완료 시간');
             $table->timestamps();
             $table->softDeletes();

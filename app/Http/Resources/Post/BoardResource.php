@@ -16,7 +16,8 @@ class BoardResource extends JsonResource
     {
         //return parent::toArray($request);
         $return = [
-            ...$this->only(['id', 'name_ko', 'can_create']),
+            ...$this->only(['id', 'name_ko', 'can_create', 'type', 'is_use_category',
+                'is_use_file', 'file_count', 'file_size', 'file_ext']),
             'category_items' => BoardCategoryResource::collection($this->categoryItems),
         ];
         //*

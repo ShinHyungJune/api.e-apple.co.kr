@@ -19,6 +19,8 @@ class OrderProductResource extends JsonResource
         $additionalFields = ($request->user()?->is_admin) ? [
             'order_id' => $this->order_id,
             'can_delivery' => $this->status === OrderStatus::DELIVERY_PREPARING,
+            'delivery_company' => $this->delivery_company,
+            'delivery_tracking_number' => $this->delivery_tracking_number
         ] : [];
         $return = [
             ...$additionalFields,

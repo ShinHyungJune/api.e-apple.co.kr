@@ -65,13 +65,13 @@ return new class extends Migration
             $table->string("vbank_name")->nullable()->comment('가상계좌 은행명');
             $table->string("vbank_date")->nullable()->comment('가상계좌 입금기한');
 
-            // 환불계좌
-            $table->string("refund_bank_name")->nullable()->comment('환불계좌 은행명');
+            // 환불계좌 => exchange_returns 테이블에 저장
+            /*$table->string("refund_bank_name")->nullable()->comment('환불계좌 은행명');
             $table->string("refund_bank_owner")->nullable()->comment('환불계좌 예금주');
             $table->string("refund_bank_account")->nullable()->comment('환불계좌 계좌번호');
-            $table->text("refund_reason")->nullable()->comment('환불사유');
-            $table->unsignedInteger('refund_amount')->nullable()->default(0)->comment('환불금액(관리자입력, 사용자 취소인 경우 전액)');
-            $table->unsignedInteger('refund_delivery_fee')->nullable()->default(0)->comment('반품배송비(관리자입력)');
+            $table->text("refund_reason")->nullable()->comment('환불사유');*/
+            $table->unsignedInteger('refund_amount_sum')->nullable()->default(0)->comment('환불금액(관리자입력, 사용자 취소인 경우 전액)');
+            $table->unsignedInteger('refund_delivery_fee_sum')->nullable()->default(0)->comment('반품배송비(관리자입력)');
 
             $table->string("delivery_tracking_number")->nullable()->comment('주문배송번호');
 

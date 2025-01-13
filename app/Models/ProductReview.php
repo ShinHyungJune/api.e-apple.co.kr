@@ -14,7 +14,7 @@ class ProductReview extends Model implements HasMedia
 {
     use HasFactory, InteractsWithMedia, SoftDeletes;
     //
-    const IMAGES = 'images';
+    const IMAGES = 'imgs';
 
     const TYPE_TEXT = 'text';
 
@@ -65,6 +65,13 @@ class ProductReview extends Model implements HasMedia
                     $query->where('mime_type', 'like', 'image%'); // 이미지 미디어가 아닌 경우만 필터링
                 });
             }
+        }
+        if (isset($filters['keyword'])) {
+            $query->whereHas('product', function ($query) use ($filters) {
+                $query->where('name', 'like', '%' . $filters['keyword'] . '%');
+            })->orWhereHas('user', function ($query) use ($filters) {
+                $query->where('name', 'like', '%' . $filters['keyword'] . '%');
+            });
         }
     }
 

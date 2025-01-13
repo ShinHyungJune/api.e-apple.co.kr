@@ -11,8 +11,8 @@ Route::group(['prefix' => 'boards'], function () {
 Route::group(['prefix' => 'posts'], function () {
     Route::post('', [PostController::class, 'store']);
     Route::get('{post}', [PostController::class, 'show']);
-    /*Route::put('{id}', [PostController::class, 'update']);
-    Route::delete('{id}', [PostController::class, 'destroy']);*/
+    Route::put('{id}', [PostController::class, 'update']);
+    Route::delete('{id}', [PostController::class, 'destroy']);
 
     /*Route::group(['prefix' => '{postId}/comments'], function () {
         Route::post('', [PostCommentController::class, 'store']);
@@ -23,10 +23,10 @@ Route::group(['prefix' => 'posts'], function () {
         Route::post('', [PostLikeController::class, 'store']);
     });*/
 
-    /*Route::group(['prefix' => 'files'], function () {
-        Route::get('{fileId}', [PostController::class, 'showFile'])->where(['fileId' => '[0-9]+']);
-        Route::delete('{fileId}', [PostController::class, 'destroyFile'])->where(['fileId' => '[0-9]+']);
-    });*/
+    Route::group(['prefix' => 'files'], function () {
+        //Route::get('{fileId}', [PostController::class, 'showFile'])->where(['fileId' => '[0-9]+']);
+        Route::delete('{media}', [PostController::class, 'destroyFile'])->where(['fileId' => '[0-9]+']);
+    });
 
     /*Route::get('{boardId}/create/{id?}', [PostController::class, 'create'])->where(['boardId' => '[0-9]+']);
     Route::post('{boardId}/{id}', [PostController::class, 'update']);
