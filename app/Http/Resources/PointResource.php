@@ -16,7 +16,12 @@ class PointResource extends JsonResource
     public function toArray(Request $request): array
     {
         //return parent::toArray($request);
+        $additionalFields = ($request->user()?->is_admin) ? [
+            'user' => UserResource::make($this->whenLoaded('user')),
+            'expired_at' => $this->expired_at,
+        ] : [];
         $return = [
+            ...$additionalFields,
             ...$this->only(['id', 'pointable_type', 'pointable_id', 'deposit', 'withdrawal', 'balance', 'description', 'created_at', 'expired_at']),
             'expiration_date' => $this->created_at->addDays(Point::EXPIRATION_DAYS)->format('Y-m-d'),
             'order_id' => $this->orderId,

@@ -14,8 +14,7 @@ class UserController extends ApiController
     public function index(Request $request)
     {
         $filters = $request->input('search');
-
-        $items = User::member()->search($filters)->latest()->paginate();
+        $items = User::member()->search($filters)->latest()->paginate($request->itemsPerPage ?? 30);
         return new UserCollection($items, ['points', 'level', 'created_at']);
     }
 

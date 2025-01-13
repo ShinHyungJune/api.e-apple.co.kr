@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class DeliveryAddress extends Model
@@ -31,6 +32,20 @@ class DeliveryAddress extends Model
         if ($this->is_default) {
             $deliveryAddresses->whereNotIn('id', [$this->id])->update(['is_default' => false]);
         }
+    }
+
+    public function scopeSearch(Builder $query, $filters)
+    {
+        if (isset($filters['keyword'])) {
+            $query->whereHas('user', function ($query) use ($filters) {
+                $query->where('name', 'like', '%' . $filters['keyword'] . '%');
+            })->orWhere('recipient_name', 'like', '%' . $filters['keyword'] . '%');
+        }
+    }
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
     }
 
 }

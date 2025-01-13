@@ -31,10 +31,22 @@ class InquiryRequest extends FormRequest
         ];
 
         if (auth()->user()?->is_admin) {
-            $return = [...$return, 'answer' => ['nullable', 'string']];
+            $return = [...$return,
+                'answer' => ['nullable', 'string'],
+                'answered_at' => ['nullable', 'date']
+            ];
         }
 
         return $return;
+    }
+
+    public function prepareForValidation()
+    {
+        $inputs = $this->input();
+        if (isset($inputs['answer'])) {
+            $inputs['answered_at'] = now();
+        }
+        $this->merge($inputs);
     }
 
     public function bodyParameters(): array

@@ -15,6 +15,7 @@ class ProductInquiry extends Model
 
     protected $guarded = ['id'];
 
+
     public function product(): BelongsTo
     {
         return $this->belongsTo(Product::class);

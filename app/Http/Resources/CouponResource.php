@@ -16,7 +16,14 @@ class CouponResource extends JsonResource
     public function toArray(Request $request): array
     {
         //return parent::toArray($request);
+        $additionalFields = ($request->user()?->is_admin) ? [
+            'created_at' => $this->created_at,
+            'download_count' => $this->users_count,
+            'can_edit' => $this->users_count > 0 ? true : false,
+            'type_label' => $this->type_label,
+        ] : [];
         $return = [
+            ...$additionalFields,
             ...$this->only(['id', 'name', 'type', 'discount_amount', 'minimum_purchase_amount', 'discount_rate', 'usage_limit_amount', 'valid_days', 'issued_until']),
             'human_issued_until' => Carbon::parse($this->issued_until)->diff(Carbon::now())->format('%d일 %h시간 %i분'), //Carbon::parse($this->issued_until)->diffForHumans()
             'is_downloaded' => $this->is_downloaded,

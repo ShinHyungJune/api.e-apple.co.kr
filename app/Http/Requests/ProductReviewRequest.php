@@ -48,7 +48,9 @@ class ProductReviewRequest extends FormRequest
 
     public function prepareForValidation()
     {
-        $this->merge(['user_id' => auth()->id()]);
+        $inputs = [];
+        if (!auth()->user()?->is_admin) $inputs['user_id'] = auth()->id();
+        $this->merge($inputs);
     }
 
     public function bodyParameters()

@@ -21,4 +21,25 @@ class UserCoupon extends Model
         $query->where('expired_at', '>=', now())->whereNull('used_at');
     }
 
+    public function scopeSearch(Builder $query, $filters)
+    {
+        if (isset($filters['keyword'])) {
+            $query->whereHas('user', function ($query) use ($filters) {
+                $query->where('name', 'like', '%' . $filters['keyword'] . '%');
+            })->orWhereHas('coupon', function ($query) use ($filters) {
+                $query->where('name', 'like', '%' . $filters['keyword'] . '%');
+            });
+        }
+    }
+
+    public function coupon()
+    {
+        return $this->belongsTo(Coupon::class, 'coupon_id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
 }

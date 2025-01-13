@@ -33,7 +33,7 @@ class ProductController extends ApiController
     public function index(Request $request)
     {
         $filters = (array)json_decode($request->input('search'));
-        $items = Product::search($filters)->latest()->paginate($request->itemsPerPage ?? 30);
+        $items = Product::with(['media', 'options'])->search($filters)->latest()->paginate($request->itemsPerPage ?? 30);
         return ProductResource::collection($items);
     }
 

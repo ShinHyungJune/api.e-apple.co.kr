@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -16,6 +17,7 @@ class Coupon extends Model
     const TYPES = [self::TYPE_AMOUNT, self::TYPE_RATE];
 
     protected $guarded = ['id'];
+
 
     public function users()
     {
@@ -33,7 +35,6 @@ class Coupon extends Model
             ->wherePivot('user_id', auth()->id()) //현재 로그인한 사용자와 연결된 쿠폰만 필터링
             ->wherePivot('expired_at', '>=', now()) //만료되지 않은 쿠폰
             ->wherePivot('used_at', null); //사용하지 않은 쿠폰
-
     }
 
     public function getDiscountAmountByType($totalAmount)
@@ -53,6 +54,44 @@ class Coupon extends Model
         }
 
         return (int)round($result);
+    }
+
+    public function scopeSearch(Builder $query, $filters)
+    {
+        if (isset($filters['keyword'])) {
+            $query->where('name', 'like', '%' . $filters['keyword'] . '%');
+        }
+    }
+
+    public function getTypeLabelAttribute()
+    {
+        if ($this->type === self::TYPE_RATE) {
+            return '할인율';
+        }
+        if ($this->type === self::TYPE_AMOUNT) {
+            return '할인액';
+        }
+        return '';
+    }
+
+    public function getDiscountAmountAttribute($value)
+    {
+        return ($this->type === self::TYPE_AMOUNT) ? $value : 0;
+    }
+
+    public function getMinimumPurchaseAmountAttribute($value)
+    {
+        return ($this->type === self::TYPE_AMOUNT) ? $value : 0;
+    }
+
+    public function getDiscountRateAttribute($value)
+    {
+        return ($this->type === self::TYPE_RATE) ? $value : 0;
+    }
+
+    public function getUsageLimitAmountAttribute($value)
+    {
+        return ($this->type === self::TYPE_RATE) ? $value : 0;
     }
 
 }

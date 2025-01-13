@@ -22,7 +22,7 @@ class DeliveryAddressRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'user_id' => ['required'],
+            'user_id' => ['nullable'],
             'name' => ['required', 'string', 'max:255'],
             'recipient_name' => ['required', 'string', 'max:255'],
             'phone' => ['required', 'string', 'max:20'],
@@ -43,7 +43,9 @@ class DeliveryAddressRequest extends FormRequest
             if ($input === 'false') $inputs[$key] = false;
         }
 
-        $this->merge([...$inputs, 'user_id' => auth()->id()]);
+        if (!auth()->user()?->is_admin) $inputs['user_id'] = auth()->id();
+
+        $this->merge($inputs);
     }
 
     public function bodyParameters(): array

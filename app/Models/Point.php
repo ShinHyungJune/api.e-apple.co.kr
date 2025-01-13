@@ -40,7 +40,6 @@ class Point extends Model
         return $query->where('user_id', auth()->id());
     }
 
-
     public function scopeSearch(Builder $query, $filters)
     {
         if (!empty($filters['type'])) {
@@ -58,6 +57,11 @@ class Point extends Model
                 }
             }
         }
+        if (isset($filters['keyword'])) {
+            $query->whereHas('user', function ($query) use ($filters) {
+                $query->where('name', 'like', '%' . $filters['keyword'] . '%');
+            });
+        }
     }
 
     public function getOrderIdAttribute()
@@ -70,4 +74,11 @@ class Point extends Model
             return $this->pointable?->order?->merchant_uid;
         }
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+
 }

@@ -17,13 +17,22 @@ class ProductResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        $additionalFields = ($request->user()?->is_admin) ? ['created_at', 'category_ids', 'subcategory_ids'] : [];
-
         //return parent::toArray($request);
+        $additionalFields = ($request->user()?->is_admin) ? [
+            'created_at' => $this->created_at,
+            'category_ids' => $this->category_ids,
+            'subcategory_ids' => $this->subcategory_ids,
+            'categories' => $this->categories ?? null,
+        ] : [
+            'categories' => $this->categories ? ProductCategoryResource::collection($this->categories) : null,
+            'average_rating' => $this->reviews->avg('rating'),
+            'reviews_count' => $this->reviews->count(),
+            'inquiries_count' => $this->inquiries_count ?? $this->inquiries->count(),
+        ];
         $return = [
             //...parent::toArray($request);
+            ...$additionalFields,
             ...$this->only([
-                ...$additionalFields,
                 'id', 'name', 'description', 'view_count',
                 'price',
                 'original_price',
@@ -50,15 +59,9 @@ class ProductResource extends JsonResource
             'inquiries_count' => $this->whenLoaded('inquiries') ? $this->inquiries->count(): $this->inquiries_count,
             'categories' => $this->categories ? ProductCategoryResource::collection($this->categories) : null,*/
 
-
             'options' => ProductOptionResource::collection($this->whenLoaded('options')),
             'is_new' => Carbon::parse($this->created_at)->greaterThanOrEqualTo(Carbon::now()->subDay()),
             'is_best' => $this->categories ? in_array(ProductCategory::BEST->value, $this->categories) : false,
-            'average_rating' => $this->reviews->avg('rating'),
-            'reviews_count' => $this->reviews->count(),
-            'inquiries_count' => $this->inquiries_count ?? $this->inquiries->count(),
-            'categories' => $this->categories ? ProductCategoryResource::collection($this->categories) : null,
-
 
             /*'product_images' => $this->getMedia(Product::IMAGES) ? MediaResource::collection($this->getMedia(Product::IMAGES)) : null,
             'product_desc_images' => $this->getMedia(Product::DESC_IMAGES) ? MediaResource::collection($this->getMedia(Product::DESC_IMAGES)) : null,*/

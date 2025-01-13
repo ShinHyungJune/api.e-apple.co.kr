@@ -1,16 +1,20 @@
 <?php
 
 use App\Http\Controllers\Api\Admin\BannerController;
+use App\Http\Controllers\Api\Admin\CouponController;
+use App\Http\Controllers\Api\Admin\DeliveryAddressController;
 use App\Http\Controllers\Api\Admin\ExchangeReturnController;
 use App\Http\Controllers\Api\Admin\InquiryController;
 use App\Http\Controllers\Api\Admin\OrderController;
 use App\Http\Controllers\Api\Admin\OrderProductController;
+use App\Http\Controllers\Api\Admin\PointController;
 use App\Http\Controllers\Api\Admin\ProductController;
 use App\Http\Controllers\Api\Admin\ProductInquiryController;
 use App\Http\Controllers\Api\Admin\ProductPackageController;
 use App\Http\Controllers\Api\Admin\ProductReviewController;
 use App\Http\Controllers\Api\Admin\SweetnessController;
 use App\Http\Controllers\Api\Admin\UserController;
+use App\Http\Controllers\Api\Admin\UserCouponController;
 use App\Http\Controllers\Api\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -136,6 +140,33 @@ Route::group(['prefix' => 'admin'], function () {
             Route::delete('images/{media}', 'destroyImage');
         });
 
+    Route::group(['prefix' => 'delivery_addresses', 'controller' => DeliveryAddressController::class],
+        function () {
+            Route::get('', 'index');
+            Route::post('', 'store');
+            Route::get('{deliveryAddress}', 'show');
+            Route::put('{deliveryAddress}', 'update');
+            Route::delete('{deliveryAddress}', 'destroy');
+        });
+
+    Route::group(['prefix' => 'coupons', 'controller' => CouponController::class],
+        function () {
+            Route::get('', 'index');
+            Route::post('', 'store');
+            Route::get('{coupon}', 'show');
+            Route::put('{coupon}', 'update');
+            Route::delete('{coupon}', 'destroy');
+        });
+
+    Route::group(['prefix' => 'user_coupons', 'controller' => UserCouponController::class],
+        function () {
+            Route::get('', 'index');
+        });
+
+    Route::group(['prefix' => 'points', 'controller' => PointController::class],
+        function () {
+            Route::get('', 'index');
+        });
 
     require __DIR__.'/post.php';
 });
