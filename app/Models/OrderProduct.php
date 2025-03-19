@@ -80,8 +80,19 @@ class OrderProduct extends Model
 
     public function syncStatusOrder()
     {
-        if ($this->order->orderProducts->every(fn($e) => $e->status === OrderStatus::PURCHASE_CONFIRM)) {
-            $this->order->update(['status' => OrderStatus::PURCHASE_CONFIRM]);
+        if (
+            $this->order->orderProducts->every(
+                fn($e) => in_array($e->status, [
+                    OrderStatus::PURCHASE_CONFIRM, //구매확정
+                    OrderStatus::EXCHANGE_COMPLETE, //교환완료
+                    OrderStatus::RETURN_COMPLETE, //반품완료
+                ])
+            )
+        ) {
+            $this->order->update([
+                'status' => OrderStatus::PURCHASE_CONFIRM,
+                'purchase_confirmed_at' => now()
+            ]);
         }
     }
 

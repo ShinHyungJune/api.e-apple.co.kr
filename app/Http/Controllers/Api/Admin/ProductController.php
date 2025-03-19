@@ -10,6 +10,7 @@ use App\Models\Code;
 use App\Models\Product;
 use App\Models\ProductOption;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 /**
@@ -132,4 +133,20 @@ class ProductController extends ApiController
         $productOption->delete();
         return $this->respondSuccessfully();
     }
+
+    public function storeImages(Request $request)
+    {
+        // 파일 검증
+        $request->validate(['upload' => 'required|file|mimes:jpeg,png,jpg,gif|max:5120',]);
+
+        // 파일 저장
+        $path = $request->file('upload')->store('products', 'public');
+
+        // CKEditor에 반환할 URL
+        $url = asset(Storage::url($path));
+
+        return response()->json(['uploaded' => true, 'url' => $url,]);
+    }
+
+
 }

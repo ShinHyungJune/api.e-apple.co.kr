@@ -33,7 +33,7 @@ class ProductResource extends JsonResource
             //...parent::toArray($request);
             ...$additionalFields,
             ...$this->only([
-                'id', 'name', 'description', 'view_count',
+                'id', 'name', 'view_count',
                 'price',
                 'original_price',
                 'delivery_fee',
@@ -67,6 +67,8 @@ class ProductResource extends JsonResource
             'product_desc_images' => $this->getMedia(Product::DESC_IMAGES) ? MediaResource::collection($this->getMedia(Product::DESC_IMAGES)) : null,*/
             'img' => $this->getMedia(Product::IMAGES) ? MediaResource::make($this->getMedia(Product::IMAGES)[0] ?? null) : null,
             'imgs' => $this->getMedia(Product::IMAGES) ? MediaResource::collection($this->getMedia(Product::IMAGES)) : null,
+
+            'description' => $this->description ?? '',
         ];
 
         //*

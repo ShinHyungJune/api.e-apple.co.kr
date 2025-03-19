@@ -54,6 +54,7 @@ Route::group(['prefix' => 'admin'], function () {
                 Route::delete('{product}', 'destroy');
                 Route::delete('images/{media}', 'destroyImage');
                 Route::delete('options/{productOption}', 'destroyOption');
+                Route::post('images', 'storeImages');
             });
 
         Route::group(['prefix' => 'product_inquiries', 'controller' => ProductInquiryController::class],
