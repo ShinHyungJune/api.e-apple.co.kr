@@ -143,7 +143,7 @@ class OrderRequest extends FormRequest
         }
         if ($this->isMethod('PUT')) {
             $inputs['status'] = OrderStatus::ORDER_COMPLETE->value;
-            $inputs['merchant_uid'] = 'ORDERS-' . str_pad($this->id, 8, '0', STR_PAD_LEFT);
+            $inputs['merchant_uid'] = 'ORD-' . date('YmdHis') . '-' . str_pad($this->id, 6, '0', STR_PAD_LEFT);
             $inputs['pay_method_pg'] = (IamportMethod::from($this->pay_method_method)) ? IamportMethod::from($this->pay_method_method)->pg() : null;
         }
 
