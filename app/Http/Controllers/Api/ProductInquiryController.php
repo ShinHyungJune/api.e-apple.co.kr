@@ -19,10 +19,10 @@ class ProductInquiryController extends ApiController
      * @unauthenticated
      * @responseFile storage/responses/product_inquiries.json
      */
-    public function index(Request $request)
+    public function index(Request $request, $id)
     {
         $filters = $request->only(['is_answered']);
-        $items = ProductInquiry::query()->search($filters)->latest()->paginate($request->take ?? 30);
+        $items = ProductInquiry::where('product_id', $id)->search($filters)->latest()->paginate($request->take ?? 30);
         return ProductInquiryResource::collection($items);
     }
 

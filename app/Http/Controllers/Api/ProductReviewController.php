@@ -24,10 +24,12 @@ class ProductReviewController extends ApiController
      * @unauthenticated
      * @responseFile storage/responses/product_reviews.json
      */
-    public function index(Request $request)
+    public function index(Request $request, $id)
     {
         $filters = $request->only(['type']);
-        $items = ProductReview::with(['user', 'product', 'productOption', 'media'])->search($filters)->latest()->paginate($request->take ?? 10);
+        $items = ProductReview::with(['user', 'product', 'productOption', 'media'])
+            ->where('product_id', $id)
+            ->search($filters)->latest()->paginate($request->take ?? 10);
         return ProductReviewResource::collection($items);
     }
 
