@@ -297,7 +297,7 @@ class Order extends Model
     public function getWithdrawalPoints()
     {
         if (auth()->check()) {
-            if ($this->status === OrderStatus::PAYMENT_COMPLETE && $this->use_points > 0) {
+            if ($this->status === OrderStatus::ORDER_COMPLETE && $this->use_points > 0) {
                 return [$this->use_points, '주문사용'];
             }
 
