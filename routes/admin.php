@@ -109,65 +109,65 @@ Route::group(['prefix' => 'admin'], function () {
                 Route::get('{exchangeReturn}', 'show');
                 Route::put('{exchangeReturn}', 'update');
             });
+
+        Route::group(['prefix' => 'banners', 'controller' => BannerController::class],
+            function () {
+                Route::get('', 'index');
+                Route::post('', 'store');
+                Route::get('{banner}', 'show');
+                Route::put('{banner}', 'update');
+                Route::delete('{banner}', 'destroy');
+                Route::delete('images/{media}', 'destroyImage');
+            });
+
+        Route::group(['prefix' => 'sweetnesses', 'controller' => SweetnessController::class],
+            function () {
+                Route::get('', 'index');
+                Route::post('', 'store');
+                Route::get('{sweetness}', 'show');
+                Route::put('{sweetness}', 'update');
+                Route::delete('{sweetness}', 'destroy');
+                Route::delete('images/{media}', 'destroyImage');
+            });
+
+        Route::group(['prefix' => 'inquiries', 'controller' => InquiryController::class],
+            function () {
+                Route::get('', 'index');
+                Route::post('', 'store');
+                Route::get('{inquiry}', 'show');
+                Route::put('{inquiry}', 'update');
+                Route::delete('{inquiry}', 'destroy');
+                Route::delete('images/{media}', 'destroyImage');
+            });
+
+        Route::group(['prefix' => 'delivery_addresses', 'controller' => DeliveryAddressController::class],
+            function () {
+                Route::get('', 'index');
+                Route::post('', 'store');
+                Route::get('{deliveryAddress}', 'show');
+                Route::put('{deliveryAddress}', 'update');
+                Route::delete('{deliveryAddress}', 'destroy');
+            });
+
+        Route::group(['prefix' => 'coupons', 'controller' => CouponController::class],
+            function () {
+                Route::get('', 'index');
+                Route::post('', 'store');
+                Route::get('{coupon}', 'show');
+                Route::put('{coupon}', 'update');
+                Route::delete('{coupon}', 'destroy');
+            });
+
+        Route::group(['prefix' => 'user_coupons', 'controller' => UserCouponController::class],
+            function () {
+                Route::get('', 'index');
+            });
+
+        Route::group(['prefix' => 'points', 'controller' => PointController::class],
+            function () {
+                Route::get('', 'index');
+            });
+
+        require __DIR__ . '/post.php';
     });
-
-    Route::group(['prefix' => 'banners', 'controller' => BannerController::class],
-        function () {
-            Route::get('', 'index');
-            Route::post('', 'store');
-            Route::get('{banner}', 'show');
-            Route::put('{banner}', 'update');
-            Route::delete('{banner}', 'destroy');
-            Route::delete('images/{media}', 'destroyImage');
-        });
-
-    Route::group(['prefix' => 'sweetnesses', 'controller' => SweetnessController::class],
-        function () {
-            Route::get('', 'index');
-            Route::post('', 'store');
-            Route::get('{sweetness}', 'show');
-            Route::put('{sweetness}', 'update');
-            Route::delete('{sweetness}', 'destroy');
-            Route::delete('images/{media}', 'destroyImage');
-        });
-
-    Route::group(['prefix' => 'inquiries', 'controller' => InquiryController::class],
-        function () {
-            Route::get('', 'index');
-            Route::post('', 'store');
-            Route::get('{inquiry}', 'show');
-            Route::put('{inquiry}', 'update');
-            Route::delete('{inquiry}', 'destroy');
-            Route::delete('images/{media}', 'destroyImage');
-        });
-
-    Route::group(['prefix' => 'delivery_addresses', 'controller' => DeliveryAddressController::class],
-        function () {
-            Route::get('', 'index');
-            Route::post('', 'store');
-            Route::get('{deliveryAddress}', 'show');
-            Route::put('{deliveryAddress}', 'update');
-            Route::delete('{deliveryAddress}', 'destroy');
-        });
-
-    Route::group(['prefix' => 'coupons', 'controller' => CouponController::class],
-        function () {
-            Route::get('', 'index');
-            Route::post('', 'store');
-            Route::get('{coupon}', 'show');
-            Route::put('{coupon}', 'update');
-            Route::delete('{coupon}', 'destroy');
-        });
-
-    Route::group(['prefix' => 'user_coupons', 'controller' => UserCouponController::class],
-        function () {
-            Route::get('', 'index');
-        });
-
-    Route::group(['prefix' => 'points', 'controller' => PointController::class],
-        function () {
-            Route::get('', 'index');
-        });
-
-    require __DIR__.'/post.php';
 });

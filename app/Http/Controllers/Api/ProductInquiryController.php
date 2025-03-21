@@ -51,4 +51,15 @@ class ProductInquiryController extends ApiController
         return ProductInquiryResource::collection($items);
     }
 
+    /**
+     * 삭제
+     * @priority 1
+     */
+    public function destroy(Request $request, $id)
+    {
+        ProductInquiry::mine()->delete($id);
+
+        return $this->respondSuccessfully();
+    }
+
 }

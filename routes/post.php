@@ -33,6 +33,9 @@ Route::group(['prefix' => 'posts'], function () {
     Route::get('{boardId}/files/{fileId}', [PostController::class, 'showFile'])->where(['fileId' => '[0-9]+']);
     Route::delete('{boardId}/files/{fileId}', [PostController::class, 'destroyFile'])->where(['fileId' => '[0-9]+']);
     Route::post('file', [PostController::class, 'storeFile']); */
+
+
+    Route::post('images', [PostController::class, 'storeImages']);
 });
 
 

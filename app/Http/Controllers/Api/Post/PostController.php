@@ -11,6 +11,7 @@ use App\Models\Post\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Storage;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 /**
@@ -182,5 +183,20 @@ class PostController extends ApiController
         $notices = Post::where('board_id', Board::POST_BOARD_ID)->where('notice', 'Y')->latest()->get();
         return response()->json(compact('notices'));
     }*/
+
+
+    public function storeImages(Request $request)
+    {
+        // 파일 검증
+        $request->validate(['upload' => 'required|file|mimes:jpeg,png,jpg,gif|max:5120',]);
+
+        // 파일 저장
+        $path = $request->file('upload')->store('posts', 'public');
+
+        // CKEditor에 반환할 URL
+        $url = asset(Storage::url($path));
+
+        return response()->json(['uploaded' => true, 'url' => $url,]);
+    }
 
 }
