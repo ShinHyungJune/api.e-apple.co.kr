@@ -25,7 +25,7 @@ class OrderProductResource extends JsonResource
         $return = [
             ...$additionalFields,
             ...$this->only(['id', 'quantity', 'price', 'updated_at', 'delivery_tracking_number']),
-            'status' => OrderStatus::from($this->status->value)->label(),
+            'status' => OrderStatus::from($this->status->value)->label() ?? null,
             'product' => ProductResource::make($this->whenLoaded('product')),
             'productOption' => ProductOptionResource::make($this->productOption),
             'exchangeReturns' => OrderProductResource::collection($this->whenLoaded('exchangeReturns')),
