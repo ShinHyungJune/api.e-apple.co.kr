@@ -24,6 +24,7 @@ class ProductInquiryResource extends JsonResource
             'is_answered_label' => $this->answered_at ? '답변' : '접수',
             'is_visible_label' => $this->is_visible ? '공개글' : '비밀글',
         ] : [];
+
         $return = [
             ...$additionalFields,
             ...$this->only('id', 'is_visible', 'created_at', 'answered_at'),
@@ -33,7 +34,7 @@ class ProductInquiryResource extends JsonResource
             })
         ];
 
-        if ($this->is_visible) {
+        if ($this->is_visible || $this->user_id === auth()->id()) {
             $return = [...$return, ...$this->only('title', 'content', 'answer')];
         }
 
