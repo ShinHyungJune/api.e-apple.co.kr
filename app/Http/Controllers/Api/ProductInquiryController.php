@@ -57,7 +57,7 @@ class ProductInquiryController extends ApiController
      */
     public function destroy(Request $request, $id)
     {
-        ProductInquiry::mine()->destroy($id);
+        (ProductInquiry::mine()->findOrFail($id))->delete();
 
         return $this->respondSuccessfully();
     }
