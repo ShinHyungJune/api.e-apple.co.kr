@@ -39,7 +39,7 @@ class ProductRequest extends FormRequest
 
             'price' => ['required', 'numeric', 'min:0'], // 가격: 필수, 숫자, 0 이상
             'original_price' => ['nullable', 'numeric', 'min:0'], // 원래가격: 선택적, 숫자, 0 이상
-            'delivery_fee' => ['required', 'numeric', 'min:0'], // 배송비: 필수, 숫자, 0 이상
+            'delivery_fee' => ['nullable', 'numeric', 'min:0'], // 배송비: 필수, 숫자, 0 이상
             'stock_quantity' => ['nullable', 'integer', 'min:0'], // 재고수량: 필수, 정수, 0 이상
             'categories' => ['nullable', 'array'], // 카테고리
             //'is_md_suggestion_gift' => ['nullable', 'boolean'],
