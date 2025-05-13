@@ -14,12 +14,18 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id()->comment('기본키');
+            $table->string('username')->unique()->comment('아이디');
             $table->string('name')->comment('성명');
             $table->string('email')->unique()->comment('이메일');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->comment('비밀번호');
             $table->rememberToken();
+
             $table->string('phone', 15)/*->unique()*/->comment('연락처');
+            $table->string('postal_code', 10)->nullable()->comment('우편번호');
+            $table->string('address')->nullable()->comment('주소');
+            $table->string('address_detail')->nullable()->comment('상세주소');
+
             $table->string('nickname')->nullable()->comment('닉네임');
             $table->unsignedInteger('points')->default(0)->comment('포인트 ');
             $table->enum('level', UserLevel::values())->default(UserLevel::GENERAL->value)->comment('등급');

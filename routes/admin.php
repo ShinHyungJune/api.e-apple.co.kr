@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\Admin\BannerController;
+use App\Http\Controllers\Api\Admin\CodeController;
 use App\Http\Controllers\Api\Admin\CouponController;
 use App\Http\Controllers\Api\Admin\DeliveryAddressController;
 use App\Http\Controllers\Api\Admin\ExchangeReturnController;
@@ -166,6 +167,15 @@ Route::group(['prefix' => 'admin'], function () {
         Route::group(['prefix' => 'points', 'controller' => PointController::class],
             function () {
                 Route::get('', 'index');
+            });
+
+        Route::group(['prefix' => 'categories', 'controller' => CodeController::class],
+            function () {
+                Route::get('{parentId}', 'index');
+                Route::post('', 'store');
+                Route::delete('{id}', 'destroy');
+                Route::put('{id}', 'update');
+                Route::put('update/orders', 'updateOrder');
             });
 
         require __DIR__ . '/post.php';

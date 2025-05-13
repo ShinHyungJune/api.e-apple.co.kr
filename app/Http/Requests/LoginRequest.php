@@ -22,7 +22,8 @@ class LoginRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'email' => ['required', 'string', 'email', 'max:255'],
+            //'email' => ['required', 'string', 'email', 'max:255'],
+            'username' => ['required', 'string', 'max:255'],
             'password' => ['required', 'string'],
         ];
     }
@@ -38,7 +39,8 @@ class LoginRequest extends FormRequest
             'content' => [
                 'description' => 'Contents of the post',
             ],*/
-            'email' => ['description' => '<span class="point">아이디</span>',],
+            //'email' => ['description' => '<span class="point">아이디</span>',],
+            'username' => ['description' => '<span class="point">아이디</span>',],
             'password' => ['description' => '<span class="point">비밀번호</span>',],
         ];
     }

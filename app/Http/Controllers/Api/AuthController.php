@@ -34,14 +34,15 @@ class AuthController extends ApiController
      */
     public function login(LoginRequest $request)
     {
-        $credentials = request(['email', 'password']);
+        //$credentials = request(['email', 'password']);
+        $credentials = request(['username', 'password']);
 
         if (!$token = auth()->attempt($credentials)) {
             //return response()->json(['error' => '이메일 또는 비밀번호를 잘못 입력했습니다.'], 422);
             //abort(422, '이메일 또는 비밀번호를 잘못 입력했습니다.');
             abort(response()->json([
-                'message' => '이메일 또는 비밀번호를 잘못 입력했습니다.',
-                'errors' => ['email' => '이메일 또는 비밀번호를 잘못 입력했습니다.'],
+                'message' => '아이디 또는 비밀번호를 잘못 입력했습니다.',
+                'errors' => ['username' => '아이디 또는 비밀번호를 잘못 입력했습니다.'],
             ], 422));
         }
 
@@ -50,8 +51,8 @@ class AuthController extends ApiController
         if (str_contains(Route::current()->uri(), 'admin')) {
             if (!auth()->user()->is_admin) {
                 abort(response()->json([
-                    'message' => '이메일 또는 비밀번호를 잘못 입력했습니다.',
-                    'errors' => ['email' => '이메일 또는 비밀번호를 잘못 입력했습니다.'],
+                    'message' => '아이디 또는 비밀번호를 잘못 입력했습니다.',
+                    'errors' => ['email' => '아이디 또는 비밀번호를 잘못 입력했습니다.'],
                 ], 422));
             }
         }

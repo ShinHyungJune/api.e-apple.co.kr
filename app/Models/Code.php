@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -60,8 +61,12 @@ class Code extends Model
         return $result;
     }
 
-
-
+    public function scopeSearch(Builder $query, $filters)
+    {
+        if (isset($filters['keyword'])) {
+            $query->where('name', 'like', '%' . $filters['keyword'] . '%');
+        }
+    }
 
 
 
