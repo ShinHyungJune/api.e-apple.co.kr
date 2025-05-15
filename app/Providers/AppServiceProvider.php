@@ -3,8 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Auth\Notifications\ResetPassword;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -26,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
             return config('app.frontend_url')."/password-reset/$token?email={$notifiable->getEmailForPasswordReset()}";
         });
 
-        if (app()->environment('local')) {
+        /*if (app()->environment('local')) {
             DB::listen(function ($query) {
                 Log::debug('Query Executed: ', [
                     'sql' => $query->sql,
@@ -34,6 +33,11 @@ class AppServiceProvider extends ServiceProvider
                     'time' => $query->time . ' ms',
                 ]);
             });
-        }
+        }*/
+
+        Event::listen(function (\SocialiteProviders\Manager\SocialiteWasCalled $event) {
+            $event->extendSocialite('kakao', \SocialiteProviders\Kakao\KakaoProvider::class);
+        });
+
     }
 }

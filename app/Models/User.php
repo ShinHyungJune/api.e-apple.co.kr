@@ -30,7 +30,8 @@ class User extends Authenticatable implements JWTSubject
         'password',
         'phone',
         'nickname',
-        'is_agree_promotion'
+        'is_agree_promotion',
+        'username', 'social_id', 'social_platform'
     ];
 
     /**
