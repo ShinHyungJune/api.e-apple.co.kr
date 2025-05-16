@@ -25,6 +25,7 @@ class RegisterRequest extends FormRequest
         if ($this->isMethod('POST')) {
             $return = [
                 //'user_id' => ['required', 'string', 'max:255', 'unique:users'],
+                'username' => ['required', 'string', 'max:255', 'unique:users'],
                 'email' => ['required', 'string', 'email', 'unique:users'],
                 //'password' => ['required', 'confirmed', Password::defaults()],
                 'password' => ['required', 'confirmed',
@@ -44,6 +45,7 @@ class RegisterRequest extends FormRequest
 
         if ($this->isMethod('PUT')) {
             $return = [
+                'username' => ['required', 'string', 'max:255', 'unique:users,username,' . auth()->id()],
                 'email' => ['nullable', 'string', 'email', 'unique:users,email,' . auth()->id()],
                 'name' => ['nullable', 'string', 'max:255'],
                 'phone' => ['nullable', 'digits_between:10,11', 'unique:users,phone,' . auth()->id()],
