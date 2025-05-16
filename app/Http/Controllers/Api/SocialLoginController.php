@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
@@ -69,7 +70,10 @@ class SocialLoginController extends ApiController
 
         /*$token = $user->createToken('access-token')->plainTextToken;
         return $this->respondWithToken($token);*/
+        Auth::login($user);
+
         $token = JWTAuth::fromUser($user);
+
         return redirect(config('app.frontend_url') . '/login?token=' . $token);
     }
 

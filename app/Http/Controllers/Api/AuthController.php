@@ -35,6 +35,9 @@ class AuthController extends ApiController
     public function login(LoginRequest $request)
     {
         //$credentials = request(['email', 'password']);
+        if($request->token && auth()->user())
+            return $this->respondWithToken($request->token);
+
         $credentials = request(['username', 'password']);
 
         if (!$token = auth()->attempt($credentials)) {
