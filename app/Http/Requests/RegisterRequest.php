@@ -37,6 +37,9 @@ class RegisterRequest extends FormRequest
                 'phone' => ['required', 'digits_between:10,11', 'unique:users'],
                 'nickname' => ['nullable', 'string', 'max:255'],
                 'is_agree_promotion' => ['nullable', 'boolean'],
+                'postal_code' => ['nullable', 'string', 'max:255'],
+                'address' => ['nullable', 'string', 'max:255'],
+                'address_detail' => ['nullable', 'string', 'max:255'],
                 /*'is_agree_terms' => ['accepted'],
                 'is_agree_privacy' => ['accepted'],*/
                 //'code' => 'required|digits:6',
@@ -51,6 +54,9 @@ class RegisterRequest extends FormRequest
                 'phone' => ['nullable', 'digits_between:10,11', 'unique:users,phone,' . auth()->id()],
                 'nickname' => ['nullable', 'string', 'max:255'],
                 'is_agree_promotion' => ['nullable', 'boolean'],
+                'postal_code' => ['nullable', 'string', 'max:255'],
+                'address' => ['nullable', 'string', 'max:255'],
+                'address_detail' => ['nullable', 'string', 'max:255'],
             ];
         }
 
