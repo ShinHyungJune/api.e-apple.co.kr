@@ -28,6 +28,7 @@ class UserRequest extends FormRequest
     {
         if ($this->isMethod('POST')) {
             $return = [
+                'username' => ['required', 'string', 'max:255', 'unique:users'],
                 'email' => ['required', 'string', 'email', 'unique:users'],
                 //'password' => ['required', 'confirmed', Password::defaults()],
                 'password' => ['required', 'confirmed',
@@ -44,6 +45,7 @@ class UserRequest extends FormRequest
 
         if ($this->isMethod('PUT')) {
             $return = [
+                'username' => ['required', 'string', 'max:255', 'unique:users,username,' . $this->id],
                 'email' => ['nullable', 'string', 'email', 'unique:users,email,' . $this->id],
                 'password' => ['nullable', 'confirmed',
                     //Password::min(8)->mixedCase()->letters()->numbers()->symbols()->uncompromised()

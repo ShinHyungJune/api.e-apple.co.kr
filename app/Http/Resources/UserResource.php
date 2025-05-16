@@ -27,7 +27,11 @@ class UserResource extends JsonResource
     public function toArray(Request $request): array
     {
         //return parent::toArray($request);
-        $return = $this->only(['id', 'name', 'email', 'phone', 'nickname', 'is_agree_promotion', ...$this->additionalFields]);
+        $return = $this->only(['id',
+            'name', 'email', 'phone', 'nickname', 'is_agree_promotion',
+            'username',
+            ...$this->additionalFields
+        ]);
         if ($this->isMasking) {
             $id = explode('@', $this->email)[0];
             $email = substr($id, 0, 3) . str_repeat('*', max(strlen($id) - 3, 0));
