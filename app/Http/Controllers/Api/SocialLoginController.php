@@ -70,8 +70,6 @@ class SocialLoginController extends ApiController
 
         /*$token = $user->createToken('access-token')->plainTextToken;
         return $this->respondWithToken($token);*/
-        Auth::login($user);
-
         $token = JWTAuth::fromUser($user);
 
         return redirect(config('app.frontend_url') . '/login?token=' . $token);
