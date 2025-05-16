@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id()->comment('기본키');
             $table->string('username')->unique()->comment('아이디');
             $table->string('name')->comment('성명');
-            $table->string('email')/*->unique()*/->comment('이메일');
+            $table->string('email')->nullable()/*->unique()*/->comment('이메일');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->comment('비밀번호');
             $table->rememberToken();
