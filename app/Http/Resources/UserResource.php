@@ -29,7 +29,7 @@ class UserResource extends JsonResource
         //return parent::toArray($request);
         $return = $this->only(['id',
             'name', 'email', 'phone', 'nickname', 'is_agree_promotion',
-            'username',
+            'username', 'postal_code', 'address', 'address_detail',
             ...$this->additionalFields
         ]);
         if ($this->isMasking) {
