@@ -47,7 +47,7 @@ class SocialLoginController extends ApiController
             [
                 'username' => $socialite->id . '|' . $service,
                 'name' => $socialite->name ?? $socialite->nickname,
-                'email' => /*$socialite->email ??*/ null,
+                'email' => $socialite?->email ?? null,
                 'password' => $socialite->token, 'remember_token' => null,
                 'social_id' => $socialite->id, 'social_platform' => $service,
                 'nickname' => $socialite->nickname,
