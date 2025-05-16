@@ -12,10 +12,6 @@ class UserRequest extends FormRequest
      */
     public function authorize(): bool
     {
-
-        $t = auth()->user()->is_admin;
-
-
         return auth()->user()->is_admin;
     }
 
@@ -40,6 +36,9 @@ class UserRequest extends FormRequest
                 'phone' => ['required', 'digits_between:10,11', 'unique:users'],
                 'nickname' => ['nullable', 'string', 'max:255'],
                 'is_agree_promotion' => ['nullable', 'boolean'],
+                'postal_code' => ['nullable', 'string', 'max:255'],
+                'address' => ['nullable', 'string', 'max:255'],
+                'address_detail' => ['nullable', 'string', 'max:255'],
             ];
         }
 
@@ -56,6 +55,9 @@ class UserRequest extends FormRequest
                 'phone' => ['nullable', 'digits_between:10,11', 'unique:users,phone,' . $this->id],
                 'nickname' => ['nullable', 'string', 'max:255'],
                 'is_agree_promotion' => ['nullable', 'boolean'],
+                'postal_code' => ['nullable', 'string', 'max:255'],
+                'address' => ['nullable', 'string', 'max:255'],
+                'address_detail' => ['nullable', 'string', 'max:255'],
             ];
         }
 
