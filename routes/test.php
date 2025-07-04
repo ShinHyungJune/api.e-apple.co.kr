@@ -19,7 +19,10 @@
  * GROUP BY  COLUMN_NAME;
  */
 
+use App\Enums\DeliveryCompany;
+use App\Enums\OrderStatus;
 use App\Models\Order;
+use App\Models\OrderProduct;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -55,3 +58,26 @@ Route::get('payment_test', function () {
     });*/
     return view('payment_test', compact('order'));
 });
+
+
+Route::get('test_delivery', function () {
+
+    $orderProducts = OrderProduct::where('status', OrderStatus::DELIVERY)->get();
+    foreach ($orderProducts as $orderProduct) {
+
+        if (!$orderProduct->delivery_company) continue;
+        echo($orderProduct->delivery_company . '=>');
+        if (DeliveryCompany::from($orderProduct->delivery_company)
+            ->isDelivered($orderProduct->delivery_tracking_number)) {
+
+            echo("complete");
+            //$orderProduct->status = OrderStatus::DELIVERY_COMPLETE;
+            //$orderProduct->save();
+
+        } else {
+            echo("not");
+        }
+        echo("<br/>");
+    }
+});
+

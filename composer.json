@@ -7,6 +7,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "doctrine/dbal": "^4.2",
         "knuckleswtf/scribe": "^4.38",
         "laravel/framework": "^11.31",
         "laravel/sanctum": "^4.0",
@@ -16,6 +17,8 @@
         "solapi/sdk": "^5.0",
         "spatie/laravel-medialibrary": "^11.10",
         "spatie/laravel-tail": "^4.5",
+        "symfony/css-selector": "^7.3",
+        "symfony/dom-crawler": "^7.3",
         "tymon/jwt-auth": "^2.1"
     },
     "require-dev": {

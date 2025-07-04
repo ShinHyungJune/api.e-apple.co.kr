@@ -82,6 +82,7 @@ class OrderRequest extends FormRequest
                 'delivery_address_detail' => ['nullable', 'string', 'max:255'],
                 'delivery_request' => ['nullable', 'string'],
                 'common_entrance_method' => ['nullable', 'string', 'max:255'],
+                'common_entrance_password' => ['nullable', 'string', 'max:255'],
 
                 // 주문 금액 관련
                 'total_amount' => ['required', 'integer', 'min:0'],//주문총액
@@ -173,6 +174,7 @@ class OrderRequest extends FormRequest
             'delivery_address_detail' => ['description' => '<span class="point">배송지 상세주소</span>'],
             'delivery_request' => ['description' => '<span class="point">배송 요청 사항</span>'],
             'common_entrance_method' => ['description' => '<span class="point">공동현관 출입방법</span>'],
+            'common_entrance_password' => ['description' => '<span class="point">공동현관 출입 비밀번호</span>'],
             'total_amount' => ['description' => '<span class="point">주문 총액</span>'],
             'user_coupon_id' => ['description' => '<span class="point">사용자 쿠폰 기본키</span>'],
             'coupon_discount_amount' => ['description' => '<span class="point">쿠폰 할인액</span>'],

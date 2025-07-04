@@ -57,7 +57,11 @@ class OrderController extends ApiController
     public function index(Request $request)
     {
         $filters = $request->input('search');
-        $items = Order::with(['user', 'orderProducts.productOption'])->search($filters)->latest()->paginate($request->get('itemsPerPage', 10));
+        $items = Order::with(['user', 'orderProducts.productOption'])
+            ->where('status', '!=', OrderStatus::ORDER_PENDING->value)
+            ->search($filters)
+            ->latest()
+            ->paginate($request->get('itemsPerPage', 10));
         return OrderResource::collection($items);
     }
 

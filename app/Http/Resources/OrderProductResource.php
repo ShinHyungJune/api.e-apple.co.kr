@@ -20,15 +20,17 @@ class OrderProductResource extends JsonResource
             'order_id' => $this->order_id,
             'can_delivery' => $this->status === OrderStatus::DELIVERY_PREPARING,
             'delivery_company' => $this->delivery_company,
-            'delivery_tracking_number' => $this->delivery_tracking_number
+            'delivery_tracking_number' => $this->delivery_tracking_number,
+            'delivery_tracking_url' => $this->delivery_tracking_url,
         ] : [];
         $return = [
             ...$additionalFields,
-            ...$this->only(['id', 'quantity', 'price', 'updated_at', 'delivery_tracking_number']),
+            ...$this->only(['id', 'quantity', 'price', 'updated_at', 'delivery_company', 'delivery_tracking_number']),
             'status' => OrderStatus::from($this->status->value)->label(),
             'product' => ProductResource::make($this->whenLoaded('product')),
             'productOption' => ProductOptionResource::make($this->productOption),
             'exchangeReturns' => ExchangeReturnResource::collection($this->whenLoaded('exchangeReturns')),
+            'delivery_tracking_url' => $this->delivery_tracking_url,
         ];
 
         //*

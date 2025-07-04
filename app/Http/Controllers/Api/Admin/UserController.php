@@ -33,6 +33,9 @@ class UserController extends ApiController
     public function update(UserRequest $request, User $user)
     {
         $data = $request->validated();
+        /*if (isset($data['password'])) {
+            $data['password'] = Hash::make($data['password']);
+        }*/
         $user = tap($user)->update($data);
         return $this->respondSuccessfully(new UserResource($user, false, ['points', 'level', 'created_at']));
     }

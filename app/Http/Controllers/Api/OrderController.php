@@ -148,7 +148,10 @@ class OrderController extends ApiController
 
         //결제내역 확인
         if (!config('iamport.payment_integration')) { //FORTEST
-            $impOrder = Order::selectRaw("*, price AS amount")->where("merchant_uid", $request->merchant_uid)->first()->toArray();
+            $impOrder = Order::selectRaw("*, price AS amount")
+                ->where("merchant_uid", $request->merchant_uid)
+                ->first()
+                ->toArray();
             $impOrder['status'] = 'paid';//paid, ready
         } else {
             $accessToken = Iamport::getAccessToken(); // 권한 얻기

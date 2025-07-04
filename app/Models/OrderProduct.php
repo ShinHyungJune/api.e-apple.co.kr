@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\DeliveryCompany;
 use App\Enums\OrderStatus;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -116,6 +117,11 @@ class OrderProduct extends Model
             return [$amount, '주문적립'];
         }
         return null;
+    }
+
+    public function getDeliveryTrackingUrlAttribute()
+    {
+        return DeliveryCompany::from($this->delivery_company)->trackingUrl($this->delivery_tracking_number);
     }
 
 }

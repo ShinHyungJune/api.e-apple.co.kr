@@ -51,7 +51,8 @@ class ProductReviewController extends ApiController
      */
     public function myAvailableProductReviews(Request $request)
     {
-        $items = auth()->user()->availableProductReviews()->with(['product', 'productOption'])->oldest()->paginate($request->get('take', 10));
+        $items = auth()->user()->availableProductReviews()->with(['product', 'productOption'])
+            ->oldest()->paginate($request->get('take', 10));
         return AvailableProductReviewResource::collection($items);
     }
 

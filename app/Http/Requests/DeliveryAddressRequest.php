@@ -43,7 +43,10 @@ class DeliveryAddressRequest extends FormRequest
             if ($input === 'false') $inputs[$key] = false;
         }
 
-        if (!auth()->user()?->is_admin) $inputs['user_id'] = auth()->id();
+        //if (!auth()->user()?->is_admin) $inputs['user_id'] = auth()->id();
+        if ($this->isMethod('post')) {
+            $inputs['user_id'] = auth()->id();
+        }
 
         $this->merge($inputs);
     }

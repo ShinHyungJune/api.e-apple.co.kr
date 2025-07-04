@@ -99,6 +99,7 @@ Route::group(['prefix' => 'admin'], function () {
 
         Route::group(['prefix' => 'order_products', 'controller' => OrderProductController::class],
             function () {
+                Route::get('init', 'init');
                 Route::get('', 'index');
                 Route::put('{id?}', 'update');
             });

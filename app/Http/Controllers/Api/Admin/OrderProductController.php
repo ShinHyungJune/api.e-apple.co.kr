@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api\Admin;
 
+use App\Enums\DeliveryCompany;
 use App\Enums\OrderStatus;
 use App\Http\Controllers\Api\ApiController;
 use App\Http\Requests\OrderProductRequest;
@@ -11,6 +12,12 @@ use Illuminate\Http\Request;
 
 class OrderProductController extends ApiController
 {
+    public function init()
+    {
+        $deliveryCompanyItems = DeliveryCompany::getItems();
+        return response()->json(compact('deliveryCompanyItems'));
+    }
+
     public function index(Request $request)
     {
         $filters = $request->input('search');
