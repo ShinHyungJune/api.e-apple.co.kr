@@ -121,7 +121,7 @@ class OrderProduct extends Model
 
     public function getDeliveryTrackingUrlAttribute()
     {
-        return DeliveryCompany::from($this->delivery_company)->trackingUrl($this->delivery_tracking_number);
+        return DeliveryCompany::from($this->delivery_company)->trackingUrl($this->delivery_tracking_number) ?? null;
     }
 
 }
