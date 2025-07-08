@@ -23,8 +23,7 @@ class InquiryResource extends JsonResource
             ...$additionalFields,
             ...$this->only(['id',
                 /*'purchase_related_inquiry', 'general_consultation_inquiry',*/
-                'type', 'content', 'created_at',
-                'answer', 'answered_at']),
+                'type', 'content', 'created_at', 'answer', 'answered_at', 'user_id']),
             'is_answer' => !is_null($this->answered_at),
             'img' => $this->getMedia(Inquiry::IMAGES) ? MediaResource::make($this->getMedia(Inquiry::IMAGES)[0] ?? null) : null,
             'imgs' => $this->getMedia(Inquiry::IMAGES) ? MediaResource::collection($this->getMedia(Inquiry::IMAGES)) : null,

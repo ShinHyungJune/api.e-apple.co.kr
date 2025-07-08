@@ -27,7 +27,7 @@ class ProductInquiryResource extends JsonResource
 
         $return = [
             ...$additionalFields,
-            ...$this->only('id', 'is_visible', 'created_at', 'answered_at'),
+            ...$this->only('id', 'is_visible', 'created_at', 'answered_at', 'user_id'),
             'is_answered' => $this->answered_at ? true : false,
             'product' => $this->whenLoaded('product', function () {
                 return ProductResource::make($this->product);
