@@ -56,8 +56,10 @@ class ProductRequest extends FormRequest
             'ingredients_and_composition' => ['nullable', 'string'], // 원재료 및 합량: 선택적, 문자열
             'storage_and_handling' => ['nullable', 'string', 'max:255'], // 보관/취급방법: 선택적, 문자열, 최대 255자
 
-            'manufacture_date' => ['nullable', 'date'], // 제조연원일: 선택적, 유효한 날짜
-            'expiration_date' => ['nullable', 'date', 'after_or_equal:manufacture_date'], // 유통기한: 제조연원일 이후
+            //'manufacture_date' => ['nullable', 'date'], // 제조연원일: 선택적, 유효한 날짜
+            //'expiration_date' => ['nullable', 'date', 'after_or_equal:manufacture_date'], // 유통기한: 제조연원일 이후
+            'manufacture_date' => ['nullable', 'string'], // 제조연원일
+            'expiration_date' => ['nullable', 'string'], // 유통기한
 
             'gmo_desc' => ['nullable', 'string', 'max:255'], // 유전자변형 농산물 여부: 필수, 불리언
             'customer_service_contact' => ['nullable', 'string', 'max:255'], // 소비자상담문의: 선택적, 문자열, 최대 255자
