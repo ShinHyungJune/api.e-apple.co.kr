@@ -33,7 +33,7 @@ class ProductRequest extends FormRequest
             'options.*.stock_quantity' => ['required', 'numeric', 'min:0'],
 
             'imgs' => ['nullable', 'array'],
-            'imgs.*' => ['nullable', 'file', 'mimes:jpg,png,pdf', 'max:2048'], // 각각의 파일에 대해 유효성 검사
+            'imgs.*' => ['nullable', 'file', 'mimes:jpg,png,pdf'/*, 'max:2048'*/], // 각각의 파일에 대해 유효성 검사
             /*'product_desc_images' => ['nullable', 'array'],
             'product_desc_images.*' => ['nullable', 'file', 'mimes:jpg,png,pdf', 'max:2048'], // 각각의 파일에 대해 유효성 검사*/
 
