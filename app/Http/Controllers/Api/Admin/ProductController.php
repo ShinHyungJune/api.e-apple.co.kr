@@ -137,7 +137,8 @@ class ProductController extends ApiController
     public function storeImages(Request $request)
     {
         // 파일 검증
-        $request->validate(['upload' => 'required|file|mimes:jpeg,png,jpg,gif|max:5120',]);
+        //$request->validate(['upload' => 'required|file|mimes:jpeg,png,jpg,gif|max:5120',]);
+        $request->validate(['upload' => 'required|file|mimes:jpeg,png,jpg,gif']);
 
         // 파일 저장
         $path = $request->file('upload')->store('products', 'public');
