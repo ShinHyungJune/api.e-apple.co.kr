@@ -36,6 +36,12 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::group(['middleware' => 'admin'], function () {
 
+        Route::group(['prefix' => 'auth', 'controller' => \App\Http\Controllers\Api\Admin\AuthController::class],
+            function () {
+                Route::get('profile', 'profile');
+                Route::put('profile', 'update');
+            });
+
         Route::group(['prefix' => 'users', 'controller' => UserController::class],
             function () {
                 Route::get('', 'index');
