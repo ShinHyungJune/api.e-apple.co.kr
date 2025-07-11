@@ -39,7 +39,8 @@ class OrderProduct extends Model
 
     public function productOption(): HasOne
     {
-        return $this->hasOne(ProductOption::class, 'id', 'product_option_id');
+        return $this->hasOne(ProductOption::class, 'id', 'product_option_id')
+            ->withTrashed();
     }
 
     public function review(): HasOne
