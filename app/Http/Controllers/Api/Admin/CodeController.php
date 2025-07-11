@@ -22,6 +22,9 @@ class CodeController extends ApiController
     public function store(CodeRequest $request)
     {
         $data = $request->validated();
+        if ($data['parent_id'] === -1) {
+            $data['parent_id'] = Code::PRODUCT_CATEGORY_ID;
+        }
         $code = tap(new Code($data))->save();
         Code::rebuild(0, 0);
 
