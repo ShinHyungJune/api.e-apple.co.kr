@@ -23,6 +23,7 @@ class ProductResource extends JsonResource
             'category_ids' => $this->category_ids,
             'subcategory_ids' => $this->subcategory_ids,
             'categories' => $this->categories ?? null,
+            'is_display' => $this->is_display,
         ] : [
             'categories' => $this->categories ? ProductCategoryResource::collection($this->categories) : null,
             'average_rating' => $this->reviews->avg('rating'),

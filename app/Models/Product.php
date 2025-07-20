@@ -23,6 +23,7 @@ class Product extends Model implements HasMedia
         'tags' => 'array',
         'category_ids' => 'array',
         'subcategory_ids' => 'array',
+        'is_display' => 'boolean',
     ];
 
     protected $guarded = ['id'];
@@ -76,6 +77,12 @@ class Product extends Model implements HasMedia
             $query->latest();
         }
     }
+
+    public function scopeDisplay(Builder $query)
+    {
+        $query->where('is_display', true);
+    }
+
 
     public function registerMediaConversions(Media|null $media = null): void
     {

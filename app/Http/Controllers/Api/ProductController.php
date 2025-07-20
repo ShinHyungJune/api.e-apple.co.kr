@@ -45,6 +45,7 @@ class ProductController extends ApiController
         $items = Product::query()
             ->withCount(['inquiries', 'reviews'])//sortBy 에서 필요함
             ->with(['media', 'options', 'inquiries', 'reviews'])
+            ->display()
             ->category($category)
             ->search($filters)
             ->sortBy($orders)
