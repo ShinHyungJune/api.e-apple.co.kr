@@ -28,13 +28,21 @@ class MainController extends ApiController
         $items['banners'] = Banner::where('is_active', true)->get()->load('media');
 
         //오늘의 특가로 만나는 신선한 과일 product/sale
-        $items['saleProducts'] = Product::with('options', 'reviews', 'media')->withCount(['reviews', 'inquiries'])->category('sale')->latest()->limit(4)->get();
+        $items['saleProducts'] = Product::with('options', 'reviews', 'media')
+            ->display()
+            ->withCount(['reviews', 'inquiries'])->category('sale')->latest()->limit(4)->get();
         //열매나무 인기상품 product/popular
-        $items['popularProducts'] = Product::with('options', 'reviews', 'media')->withCount(['reviews', 'inquiries'])->category('popular')->latest()->limit(4)->get();
+        $items['popularProducts'] = Product::with('options', 'reviews', 'media')
+            ->display()
+            ->withCount(['reviews', 'inquiries'])->category('popular')->latest()->limit(4)->get();
         //베스트 상품 모음 product/best
-        $items['bestProducts'] = Product::with('options', 'reviews', 'media')->withCount(['reviews', 'inquiries'])->category('best')->latest()->limit(10)->get();
+        $items['bestProducts'] = Product::with('options', 'reviews', 'media')
+            ->display()
+            ->withCount(['reviews', 'inquiries'])->category('best')->latest()->limit(10)->get();
         // 과즙이 많은 과일 모음 product/juicy
-        $items['juicyProducts'] = Product::with('options', 'reviews', 'media')->withCount(['reviews', 'inquiries'])->category('juicy')->latest()->limit(10)->get();
+        $items['juicyProducts'] = Product::with('options', 'reviews', 'media')
+            ->display()
+            ->withCount(['reviews', 'inquiries'])->category('juicy')->latest()->limit(10)->get();
 
         //오늘의 후기
         $items['reviews'] = ProductReview::with(['user','media'])
