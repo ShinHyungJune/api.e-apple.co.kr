@@ -8,7 +8,7 @@ enum IamportMethod: string
 
     //case VBANK = 'vbank';
 
-    case TRANSFER = 'transfer';
+    case TRANSFER = 'trans';
 
     public function label(): string
     {
