@@ -58,7 +58,11 @@ class OrderController extends ApiController
     {
         $filters = $request->input('search');
         $items = Order::with(['user', 'orderProducts.productOption'])
-            ->where('status', '!=', OrderStatus::ORDER_PENDING->value)
+            //->where('status', '!=', OrderStatus::ORDER_PENDING->value)
+            ->whereNotIn('status', [
+                OrderStatus::ORDER_PENDING->value,
+                OrderStatus::ORDER_COMPLETE->value
+            ])
             ->search($filters)
             ->latest()
             ->paginate($request->get('itemsPerPage', 10));
