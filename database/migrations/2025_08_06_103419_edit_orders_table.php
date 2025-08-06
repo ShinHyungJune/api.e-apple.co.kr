@@ -12,7 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('orders', function (Blueprint $table) {
-            $table->string("pay_method_method")->nullable()->comment('결제수단 ex) card, vbank, transfer');
+            $table->string("pay_method_method")->nullable()
+                ->comment('결제수단 ex) card, vbank, transfer')
+                ->change();
         });
     }
 
