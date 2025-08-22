@@ -100,13 +100,8 @@ class OrderController extends ApiController
     public function update(Request $request, Order $order)
     {
         $data = $request->validate(['status' => ['required', 'in:' . implode(',', OrderStatus::values())]]);
-        //'배송준비중'이면 주문상태는 업데이트하지 않음
-        if ($data['status'] === OrderStatus::DELIVERY_PREPARING->value) {
-            $order->orderProducts()->update($data);
-        } else {
-            $order->update($data);
-            $order->syncStatusOrderProducts();
-        }
+        $order->update($data);
+        $order->syncStatusOrderProducts();
         return $this->respondSuccessfully();
     }
 }
