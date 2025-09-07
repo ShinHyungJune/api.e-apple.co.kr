@@ -27,6 +27,12 @@ class CouponController extends ApiController
     public function store(CouponRequest $request)
     {
         $data = $request->validated();
+        
+        // issued_until 날짜 형식 처리 (T 제거 및 :00 초 추가)
+        if (isset($data['issued_until'])) {
+            $data['issued_until'] = str_replace('T', ' ', $data['issued_until']) . ':00';
+        }
+        
         $coupon = tap(new Coupon($data))->save();
         return $this->respondSuccessfully(new CouponResource($coupon));
     }
@@ -43,7 +49,15 @@ class CouponController extends ApiController
         if ($coupon->users_count > 0) {
             abort(403, '다운로드된 쿠폰은 수정할 수 없습니다.');
         }
-        $coupon->update($request->validated());
+        
+        $data = $request->validated();
+        
+        // issued_until 날짜 형식 처리 (T 제거 및 :00 초 추가)
+        if (isset($data['issued_until'])) {
+            $data['issued_until'] = str_replace('T', ' ', $data['issued_until']) . ':00';
+        }
+        
+        $coupon->update($data);
         return $this->respondSuccessfully(new CouponResource($coupon));
     }
 

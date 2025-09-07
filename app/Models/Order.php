@@ -337,19 +337,24 @@ class Order extends Model
         });
     }
 
-    public function syncStatusOrderProducts()
+    public function syncStatusOrderProducts($cancelReason = null)
     {
-        $this->orderProducts()->update(['status' => $this->status]);
+        $updateData = ['status' => $this->status];
+        if ($cancelReason && $this->status === OrderStatus::CANCELLATION_COMPLETE) {
+            $updateData['cancel_reason'] = $cancelReason;
+        }
+        $this->orderProducts()->update($updateData);
     }
 
-    public function cancel()
+    public function cancel($cancelReason = null)
     {
         $this->update([
             'refund_amount' => $this->price,
             'status' => OrderStatus::CANCELLATION_COMPLETE,
             'payment_canceled_at' => now(),
+            'cancel_reason' => $cancelReason,
         ]);
-        $this->syncStatusOrderProducts();
+        $this->syncStatusOrderProducts($cancelReason);
 
         //사용한 쿠폰 반환
         if ($this->user_coupon_id > 0) {

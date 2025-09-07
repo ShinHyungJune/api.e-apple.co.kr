@@ -11,6 +11,7 @@ use App\Http\Resources\OrderProductResource;
 use App\Models\OrderProduct;
 use App\Models\SMS;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
 
 class OrderProductController extends ApiController
@@ -122,6 +123,89 @@ class OrderProductController extends ApiController
         } catch (\Exception $e) {
             // SMS 발송 실패 시 로그 기록 (비즈니스 로직은 계속 진행)
             \Log::error('배송 알림 SMS 발송 실패', [
+                'order_product_id' => $orderProduct->id,
+                'error' => $e->getMessage()
+            ]);
+        }
+    }
+
+    /**
+     * 개별 상품 취소
+     */
+    public function cancel(Request $request, $id)
+    {
+        // 취소사유 검증
+        $request->validate([
+            'cancel_reason' => 'required|string|max:500'
+        ]);
+        
+        $orderProduct = OrderProduct::with(['order', 'product', 'productOption'])
+            ->whereIn('status', OrderStatus::CAN_ORDER_CANCELS)
+            ->findOrFail($id);
+
+        if (!in_array($orderProduct->status, OrderStatus::CAN_ORDER_CANCELS)) {
+            $m = '상품이 ' . implode(', ', OrderStatus::getCanOrderCancelValues()) . ' 상태일 때만 취소할 수 있습니다.';
+            abort(response()->json(['message' => $m, 'errors' => ['order_product' => $m]], 403));
+        }
+
+        DB::transaction(function () use ($orderProduct, $request) {
+            // 개별 상품 취소 처리
+            $orderProduct->update([
+                'status' => OrderStatus::CANCELLATION_COMPLETE,
+                'cancel_reason' => $request->cancel_reason
+            ]);
+            
+            // 재고 복원
+            $orderProduct->productOption()->increment('stock_quantity', $orderProduct->quantity);
+            
+            // SMS 발송
+            $this->sendOrderProductCancellationNotification($orderProduct, $request->cancel_reason);
+        });
+
+        return $this->respondSuccessfully(OrderProductResource::make($orderProduct));
+    }
+
+    /**
+     * 개별 상품 취소 알림 SMS 발송
+     */
+    private function sendOrderProductCancellationNotification(OrderProduct $orderProduct, $cancelReason)
+    {
+        try {
+            $order = $orderProduct->order;
+            
+            // 수신자 전화번호 확인
+            $phone = $order->buyer_contact ?? $order->user?->phone;
+            if (!$phone) {
+                return;
+            }
+            
+            // 상품명 구성
+            $productName = $orderProduct->product->name;
+            if ($orderProduct->productOption) {
+                $productName .= ' (' . $orderProduct->productOption->name . ')';
+            }
+            
+            // 메시지 구성
+            $message = "[열매나무] 주문 취소 안내\n";
+            $message .= "주문번호: {$order->merchant_uid}\n";
+            $message .= "취소상품: {$productName}\n";
+            $message .= "취소사유: {$cancelReason}\n";
+            $message .= "문의: 010-xxxx-xxxx";
+            
+            // SMS 발송
+            $sms = new SMS();
+            $result = $sms->send($phone, '열매나무 주문취소 안내', $message);
+            
+            // 디버깅을 위한 로그
+            \Log::info('개별 상품 취소 SMS 발송 결과', [
+                'order_product_id' => $orderProduct->id,
+                'phone' => $phone,
+                'result' => $result instanceof \Illuminate\Http\JsonResponse ? $result->getData() : $result
+            ]);
+            
+        } catch (\Exception $e) {
+            // SMS 발송 실패 시 로그 기록 (비즈니스 로직은 계속 진행)
+            \Log::error('개별 상품 취소 SMS 발송 실패', [
                 'order_product_id' => $orderProduct->id,
                 'error' => $e->getMessage()
             ]);
