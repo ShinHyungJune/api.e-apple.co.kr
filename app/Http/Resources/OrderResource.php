@@ -34,7 +34,8 @@ class OrderResource extends JsonResource
                 'pay_method_pg', 'pay_method_method',
                 'created_at', 'updated_at', 'delivery_started_at', 'purchase_confirmed_at',
                 'delivery_tracking_number',
-                'refund_amount_sum', 'refund_delivery_fee_sum'
+                'refund_amount_sum', 'refund_delivery_fee_sum',
+                'cancel_reason'
             ]),
             //'status' => OrderStatus::from($this->status)->label(),
             'status' => OrderStatus::from($this->status->value)->label('order'),
