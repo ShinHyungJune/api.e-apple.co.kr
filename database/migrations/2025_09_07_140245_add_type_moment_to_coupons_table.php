@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('coupons', function (Blueprint $table) {
-            $table->string('type_moment')->nullable()->after('is_use');
+            $table->string('type_moment')->nullable()->after('issued_until');
             $table->index('type_moment');
         });
     }
