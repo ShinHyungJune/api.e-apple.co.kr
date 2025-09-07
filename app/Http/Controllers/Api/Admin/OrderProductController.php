@@ -25,7 +25,7 @@ class OrderProductController extends ApiController
     public function index(Request $request)
     {
         $filters = $request->input('search');
-        $items = OrderProduct::with(['order', 'product', 'productOption'])
+        $items = OrderProduct::with(['order.user', 'product', 'productOption'])
             ->whereIn('status', OrderStatus::CAN_DELVERY_MANAGES)
             ->search($filters)
             ->latest()->paginate($request->get('itemsPerPage', 10));

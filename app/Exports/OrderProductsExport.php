@@ -3,7 +3,7 @@
 namespace App\Exports;
 
 use App\Enums\DeliveryCompany;
-use App\Enums\OrderProductStatus;
+use App\Enums\OrderStatus;
 use App\Models\OrderProduct;
 use Maatwebsite\Excel\Concerns\FromQuery;
 use Maatwebsite\Excel\Concerns\Exportable;
@@ -26,7 +26,7 @@ class OrderProductsExport implements FromQuery, WithHeadings, WithMapping, WithT
     public function query()
     {
         $query = OrderProduct::query()
-            ->with(['order', 'product', 'product_option'])
+            ->with(['order.user', 'product', 'productOption'])
             ->join('orders', 'order_products.order_id', '=', 'orders.id')
             ->select('order_products.*');
 
@@ -38,8 +38,8 @@ class OrderProductsExport implements FromQuery, WithHeadings, WithMapping, WithT
                 $query->where(function ($q) use ($search) {
                     $q->where('orders.merchant_uid', 'like', '%' . $search['keyword'] . '%')
                       ->orWhere('orders.buyer_name', 'like', '%' . $search['keyword'] . '%')
-                      ->orWhere('orders.buyer_tel', 'like', '%' . $search['keyword'] . '%')
-                      ->orWhere('order_products.invoice_number', 'like', '%' . $search['keyword'] . '%');
+                      ->orWhere('orders.buyer_phone', 'like', '%' . $search['keyword'] . '%')
+                      ->orWhere('order_products.delivery_tracking_number', 'like', '%' . $search['keyword'] . '%');
                 });
             }
 
@@ -95,21 +95,21 @@ class OrderProductsExport implements FromQuery, WithHeadings, WithMapping, WithT
             $order->merchant_uid,
             $order->created_at ? $order->created_at->format('Y-m-d H:i:s') : '',
             $order->buyer_name,
-            $order->buyer_tel,
+            $order->buyer_phone ?? $order->user?->phone,
             $orderProduct->product ? $orderProduct->product->name : '',
-            $orderProduct->product_option ? $orderProduct->product_option->name : '',
+            $orderProduct->productOption ? $orderProduct->productOption->name : '',
             $orderProduct->quantity,
             number_format($orderProduct->price),
             number_format($orderProduct->price * $orderProduct->quantity),
-            OrderProductStatus::LABEL[$orderProduct->status] ?? $orderProduct->status,
-            $orderProduct->delivery_company ? (DeliveryCompany::LABEL[$orderProduct->delivery_company] ?? '') : '',
-            $orderProduct->invoice_number,
+            OrderStatus::from($orderProduct->status)->label(),
+            $orderProduct->delivery_company ? DeliveryCompany::tryFrom($orderProduct->delivery_company)?->label() : '',
+            $orderProduct->delivery_tracking_number,
             number_format($orderProduct->delivery_fee),
             $order->buyer_name,
-            $order->buyer_tel,
+            $order->buyer_phone ?? $order->user?->phone,
             $order->buyer_addr . ' ' . $order->buyer_addr_detail,
             $order->memo,
-            $orderProduct->shipped_at ? $orderProduct->shipped_at->format('Y-m-d H:i:s') : ''
+            $orderProduct->updated_at && $orderProduct->status === OrderStatus::DELIVERY ? $orderProduct->updated_at->format('Y-m-d H:i:s') : ''
         ];
     }
 

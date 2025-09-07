@@ -27,7 +27,9 @@ class Order extends Model
         $filters = json_decode($filters);
         if (!empty($filters->keyword)) {
             return $query->where('merchant_uid', 'like', '%' . $filters->keyword . '%')
-                ->orWhere('buyer_name', 'like', '%' . $filters->keyword . '%');
+                ->orWhere('buyer_name', 'like', '%' . $filters->keyword . '%')
+                ->orWhere('buyer_phone', 'like', '%' . $filters->keyword . '%')
+                ->orWhere('buyer_email', 'like', '%' . $filters->keyword . '%');
         }
         return $query;
     }
