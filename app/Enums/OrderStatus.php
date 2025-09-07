@@ -53,7 +53,7 @@ enum OrderStatus: string
         self::EXCHANGE_COMPLETE,// => '교환완료'
     ];
 
-    public function label(): string
+    public function label($type = 'order'): string
     {
         return match ($this) {
             self::ORDER_PENDING => '주문접수',
@@ -61,7 +61,7 @@ enum OrderStatus: string
             self::PAYMENT_PENDING => '결제대기중',
             self::PAYMENT_COMPLETE => '결제완료',
             self::PAYMENT_FAIL => '결제실패',
-            self::DELIVERY_PREPARING => '배송준비중',
+            self::DELIVERY_PREPARING => $type === 'order' ? '주문성공(출고처리완료)' : '배송준비중',
             self::DELIVERY => '배송중',
             self::DELIVERY_COMPLETE => '배송완료',
             self::PURCHASE_CONFIRM => '구매확정',

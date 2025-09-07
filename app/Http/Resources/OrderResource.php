@@ -37,7 +37,7 @@ class OrderResource extends JsonResource
                 'refund_amount_sum', 'refund_delivery_fee_sum'
             ]),
             //'status' => OrderStatus::from($this->status)->label(),
-            'status' => OrderStatus::from($this->status->value)->label(),
+            'status' => OrderStatus::from($this->status->value)->label('order'),
             'orderProducts' => OrderProductResource::collection($this->whenLoaded('orderProducts')),
         ];
 

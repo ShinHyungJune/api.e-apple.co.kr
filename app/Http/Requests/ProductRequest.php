@@ -42,6 +42,8 @@ class ProductRequest extends FormRequest
             'delivery_fee' => ['nullable', 'numeric', 'min:0'], // 배송비: 필수, 숫자, 0 이상
             'stock_quantity' => ['nullable', 'integer', 'min:0'], // 재고수량: 필수, 정수, 0 이상
             'categories' => ['nullable', 'array'], // 카테고리
+            'category_ids' => ['nullable', 'array'], // 카테고리 ID 배열
+            'subcategory_ids' => ['nullable', 'array'], // 서브카테고리 ID 배열
             //'is_md_suggestion_gift' => ['nullable', 'boolean'],
             'tags' => ['nullable', 'array'],
 
@@ -87,6 +89,8 @@ class ProductRequest extends FormRequest
 
             'stock_quantity' => ['description' => '<span class="point">재고수량</span>'],
             'categories' => ['description' => '<span class="point">카테고리</span>'],
+            'category_ids' => ['description' => '<span class="point">카테고리 ID 배열</span>'],
+            'subcategory_ids' => ['description' => '<span class="point">서브카테고리 ID 배열</span>'],
             //'is_md_suggestion_gift' => ['description' => '<span class="point">MD 추천 선물</span>'],
             'tags' => ['description' => '<span class="point">태그(ex: 실시간 인기, 클래식 과일, 어른을 위한 픽, 추가 증정)</span>'],
 
@@ -117,6 +121,15 @@ class ProductRequest extends FormRequest
             if ($input === 'false') $inputs[$key] = false;
         }
         $inputs['options'] = json_decode($inputs['options'], true);
+        
+        // category_ids와 subcategory_ids가 JSON 문자열로 온 경우 배열로 변환
+        if (isset($inputs['category_ids']) && is_string($inputs['category_ids'])) {
+            $inputs['category_ids'] = json_decode($inputs['category_ids'], true);
+        }
+        if (isset($inputs['subcategory_ids']) && is_string($inputs['subcategory_ids'])) {
+            $inputs['subcategory_ids'] = json_decode($inputs['subcategory_ids'], true);
+        }
+        
         $this->merge($inputs);
     }
 
