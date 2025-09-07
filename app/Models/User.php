@@ -95,6 +95,14 @@ class User extends Authenticatable implements JWTSubject
 
 
     /**
+     * 내 주문들
+     */
+    public function orders(): HasMany
+    {
+        return $this->hasMany(Order::class);
+    }
+
+    /**
      * 내 상품 리뷰
      */
     public function productReviews(): HasMany

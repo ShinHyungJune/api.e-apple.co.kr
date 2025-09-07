@@ -23,7 +23,7 @@ class OrderProductResource extends JsonResource
             'delivery_tracking_number' => $this->delivery_tracking_number,
             'delivery_tracking_url' => $this->delivery_tracking_url,
             'buyer_name' => $this->order->buyer_name ?? $this->order->user?->name,
-            'buyer_phone' => $this->order->buyer_phone ?? $this->order->user?->phone,
+            'buyer_phone' => $this->order->buyer_contact ?? $this->order->user?->phone,
             'buyer_email' => $this->order->buyer_email ?? $this->order->user?->email,
         ] : [];
         $return = [

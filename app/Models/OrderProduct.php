@@ -28,7 +28,7 @@ class OrderProduct extends Model
             return $query->whereHas('order', function ($query) use ($filters) {
                 $query->where('merchant_uid', 'like', '%' . $filters->keyword . '%')
                       ->orWhere('buyer_name', 'like', '%' . $filters->keyword . '%')
-                      ->orWhere('buyer_tel', 'like', '%' . $filters->keyword . '%')
+                      ->orWhere('buyer_contact', 'like', '%' . $filters->keyword . '%')
                       ->orWhere('buyer_email', 'like', '%' . $filters->keyword . '%');
             });
         }
