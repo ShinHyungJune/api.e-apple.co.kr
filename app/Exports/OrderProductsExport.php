@@ -57,8 +57,12 @@ class OrderProductsExport implements FromQuery, WithHeadings, WithMapping, WithT
 
         // 정렬
         $sortBy = $this->request->get('sortBy', 'created_at');
+        // sortBy가 빈 문자열인 경우 기본값 설정
+        if (empty($sortBy)) {
+            $sortBy = 'created_at';
+        }
         $sortDesc = $this->request->get('sortDesc', 'true') === 'true';
-        $query->orderBy($sortBy, $sortDesc ? 'desc' : 'asc');
+        $query->orderBy('order_products.' . $sortBy, $sortDesc ? 'desc' : 'asc');
 
         return $query;
     }
