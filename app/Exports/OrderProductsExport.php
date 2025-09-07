@@ -105,7 +105,7 @@ class OrderProductsExport implements FromQuery, WithHeadings, WithMapping, WithT
             $orderProduct->quantity,
             number_format($orderProduct->price),
             number_format($orderProduct->price * $orderProduct->quantity),
-            OrderStatus::from($orderProduct->status)->label(),
+            $orderProduct->status instanceof OrderStatus ? $orderProduct->status->label() : OrderStatus::from($orderProduct->status)->label(),
             $orderProduct->delivery_company ? DeliveryCompany::tryFrom($orderProduct->delivery_company)?->label() : '',
             $orderProduct->delivery_tracking_number,
             number_format($orderProduct->delivery_fee),
