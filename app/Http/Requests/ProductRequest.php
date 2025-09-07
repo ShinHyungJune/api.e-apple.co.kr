@@ -64,6 +64,11 @@ class ProductRequest extends FormRequest
             'gmo_desc' => ['nullable', 'string', 'max:255'], // 유전자변형 농산물 여부: 필수, 불리언
             'customer_service_contact' => ['nullable', 'string', 'max:255'], // 소비자상담문의: 선택적, 문자열, 최대 255자
             'is_display' => ['nullable', 'boolean'],
+            
+            // 반품배송지 정보
+            'return_postal_code' => ['nullable', 'string', 'max:10'],
+            'return_address' => ['nullable', 'string', 'max:255'],
+            'return_address_detail' => ['nullable', 'string', 'max:255'],
         ];
     }
 

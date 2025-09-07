@@ -78,7 +78,11 @@ class User extends Authenticatable implements JWTSubject
     {
         $filters = json_decode($filters);
         if (!empty($filters->keyword)) {
-            return $query->where('name', 'like', '%' . $filters->keyword . '%');
+            return $query->where(function($q) use ($filters) {
+                $q->where('name', 'like', '%' . $filters->keyword . '%')
+                  ->orWhere('phone', 'like', '%' . $filters->keyword . '%')
+                  ->orWhere('email', 'like', '%' . $filters->keyword . '%');
+            });
         }
         return $query;
     }

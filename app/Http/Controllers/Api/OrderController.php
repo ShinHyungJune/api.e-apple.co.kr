@@ -10,6 +10,7 @@ use App\Http\Resources\OrderUpdateResource;
 use App\Models\CartProductOption;
 use App\Models\Iamport;
 use App\Models\Order;
+use App\Services\CouponAutoIssueService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -199,6 +200,12 @@ class OrderController extends ApiController
                     case "paid": // 결제완료
                         // OrderObserver 사용
                         $order->complete(['imp_uid' => $request->imp_uid, 'status' => OrderStatus::PAYMENT_COMPLETE, 'payment_completed_at' => now()]);
+                        
+                        // 첫 주문 쿠폰 자동 발급
+                        if ($order->user_id) {
+                            $couponService = new CouponAutoIssueService();
+                            $couponService->issueForFirstOrder($order->user);
+                        }
                         break;
                 }
             });

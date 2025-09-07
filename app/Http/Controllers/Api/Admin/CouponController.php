@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api\Admin;
 
+use App\Enums\CouponTypeMoment;
 use App\Http\Controllers\Api\ApiController;
 use App\Http\Requests\CouponRequest;
 use App\Http\Resources\CouponResource;
@@ -10,6 +11,11 @@ use Illuminate\Http\Request;
 
 class CouponController extends ApiController
 {
+    public function init()
+    {
+        $typeMomentItems = CouponTypeMoment::getItems();
+        return response()->json(compact('typeMomentItems'));
+    }
 
     public function index(Request $request)
     {

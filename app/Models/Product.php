@@ -27,6 +27,12 @@ class Product extends Model implements HasMedia
     ];
 
     protected $guarded = ['id'];
+    
+    protected $attributes = [
+        'return_postal_code' => '50147',
+        'return_address' => '경남 거창군 거창읍 거함대로 3372',
+        'return_address_detail' => '서북부경남거점산지유통센터(APC)',
+    ];
 
 
     public function scopeCategory(Builder $query, $category)

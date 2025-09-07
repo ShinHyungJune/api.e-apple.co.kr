@@ -11,6 +11,7 @@ use App\Http\Resources\ProfileResource;
 use App\Http\Resources\UserResource;
 use App\Models\User;
 use App\Models\VerifyNumber;
+use App\Services\CouponAutoIssueService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -134,6 +135,11 @@ class AuthController extends ApiController
         VerifyNumber::check($data['phone']);
 
         $user = tap(new User($data))->save();
+        
+        // 회원가입 쿠폰 자동 발급
+        $couponService = new CouponAutoIssueService();
+        $couponService->issueForUserCreate($user);
+        
         return $this->respondSuccessfully(UserResource::make($user));
     }
 

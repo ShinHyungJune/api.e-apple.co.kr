@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api\Admin;
 
+use App\Enums\DeliveryCompany;
 use App\Enums\OrderStatus;
 use App\Http\Controllers\Api\ApiController;
 use App\Http\Resources\OrderResource;
@@ -9,6 +10,7 @@ use App\Models\Iamport;
 use App\Models\Order;
 use App\Models\OrderProduct;
 use App\Models\Product;
+use App\Models\ProductOption;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -49,9 +51,53 @@ class OrderController extends ApiController
 
         }
 
-
+        // SMS 발송 테스트
+        if ($request->input('test_sms')) {
+            $this->testSmsDeliveryNotification();
+            return $this->respondSuccessfully(['message' => 'SMS 테스트 발송 완료']);
+        }
 
         return $this->respondSuccessfully();
+    }
+    
+    /**
+     * SMS 배송알림 테스트
+     */
+    private function testSmsDeliveryNotification()
+    {
+        // 테스트용 더미 데이터 생성 (DB 접속 없이)
+        $orderProduct = new OrderProduct();
+        $orderProduct->id = 999;
+        $orderProduct->delivery_company = DeliveryCompany::CJ->value;
+        $orderProduct->delivery_number = 'TEST123456789';
+        $orderProduct->status = OrderStatus::DELIVERY_PREPARING->value;
+        
+        // 테스트용 주문 데이터
+        $order = new Order();
+        $order->id = 999;
+        $order->buyer_phone = '01030217486';
+        $order->buyer_name = '테스트고객';
+        
+        // 테스트용 상품 데이터
+        $product = new Product();
+        $product->name = '테스트 사과';
+        
+        $productOption = new ProductOption();
+        $productOption->name = '10kg';
+        
+        // 관계 설정 (테스트용)
+        $orderProduct->setRelation('order', $order);
+        $orderProduct->setRelation('product', $product);
+        $orderProduct->setRelation('productOption', $productOption);
+        
+        // OrderProductController의 sendShippingNotification 호출
+        $orderProductController = new \App\Http\Controllers\Api\Admin\OrderProductController();
+        
+        // 리플렉션을 사용하여 private 메서드 호출
+        $reflection = new \ReflectionClass($orderProductController);
+        $method = $reflection->getMethod('sendShippingNotification');
+        $method->setAccessible(true);
+        $method->invoke($orderProductController, $orderProduct);
     }
 
     public function index(Request $request)

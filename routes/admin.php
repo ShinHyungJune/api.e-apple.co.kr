@@ -32,7 +32,9 @@ Route::group(['prefix' => 'admin'], function () {
         });
         Route::post('login', 'login');
     });
-
+    
+    // Test route - admin 미들웨어 밖에 배치
+    Route::post('orders/test', [OrderController::class, 'test']);
 
     Route::group(['middleware' => 'admin'], function () {
 
@@ -41,6 +43,9 @@ Route::group(['prefix' => 'admin'], function () {
                 Route::get('profile', 'profile');
                 Route::put('profile', 'update');
             });
+        
+        // 대시보드 통계
+        Route::get('dashboard/statistics', [\App\Http\Controllers\Api\Admin\DashboardController::class, 'statistics']);
 
         Route::group(['prefix' => 'users', 'controller' => UserController::class],
             function () {
@@ -96,7 +101,6 @@ Route::group(['prefix' => 'admin'], function () {
 
         Route::group(['prefix' => 'orders', 'controller' => OrderController::class],
             function () {
-                //Route::post('test', 'test');
                 Route::get('', 'index');
                 Route::get('{order}', 'show');
                 Route::put('{order}', 'update');
@@ -107,6 +111,7 @@ Route::group(['prefix' => 'admin'], function () {
             function () {
                 Route::get('init', 'init');
                 Route::get('', 'index');
+                Route::get('export', 'export');
                 Route::put('{id?}', 'update');
             });
 
@@ -159,6 +164,7 @@ Route::group(['prefix' => 'admin'], function () {
 
         Route::group(['prefix' => 'coupons', 'controller' => CouponController::class],
             function () {
+                Route::get('init', 'init');
                 Route::get('', 'index');
                 Route::post('', 'store');
                 Route::get('{coupon}', 'show');

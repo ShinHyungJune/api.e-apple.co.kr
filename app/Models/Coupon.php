@@ -17,6 +17,10 @@ class Coupon extends Model
     const TYPES = [self::TYPE_AMOUNT, self::TYPE_RATE];
 
     protected $guarded = ['id'];
+    
+    protected $casts = [
+        'type_moment' => \App\Enums\CouponTypeMoment::class,
+    ];
 
 
     public function users()
