@@ -66,13 +66,15 @@ class Point extends Model
 
     public function getOrderIdAttribute()
     {
-        if ($this->pointable_type === Order::class) {
+        if ($this->pointable_type === Order::class && $this->pointable) {
             return $this->pointable->merchant_uid;
         }
 
-        if ($this->pointable_type === ProductReview::class) {
+        if ($this->pointable_type === ProductReview::class && $this->pointable) {
             return $this->pointable?->order?->merchant_uid;
         }
+
+        return null;
     }
 
     public function user()
