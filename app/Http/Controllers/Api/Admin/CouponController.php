@@ -56,10 +56,7 @@ class CouponController extends ApiController
 
     public function update(CouponRequest $request, Coupon $coupon)
     {
-        $coupon->loadCount(['users']);
-        if ($coupon->users_count > 0) {
-            abort(403, '다운로드된 쿠폰은 수정할 수 없습니다.');
-        }
+        // 수정 권한 체크 제거 - 모든 쿠폰 수정 가능
         
         $data = $request->validated();
         
