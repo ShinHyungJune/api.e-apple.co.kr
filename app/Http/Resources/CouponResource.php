@@ -19,7 +19,7 @@ class CouponResource extends JsonResource
         $additionalFields = ($request->user()?->is_admin) ? [
             'created_at' => $this->created_at,
             'download_count' => $this->users_count,
-            'can_edit' => false,
+            'can_edit' => true,
             'type_label' => $this->type_label,
         ] : [];
         $return = [
