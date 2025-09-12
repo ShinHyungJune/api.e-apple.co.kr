@@ -20,6 +20,7 @@ class CouponResource extends JsonResource
             'created_at' => $this->created_at,
             'download_count' => $this->users_count,
             'can_edit' => true,
+            'can_delete' => $this->users_count === 0,
             'type_label' => $this->type_label,
         ] : [];
         $return = [
