@@ -33,7 +33,7 @@ class OrderProductsExport implements FromQuery, WithHeadings, WithMapping, WithT
         // 검색 조건 적용
         if ($search = $this->request->get('search')) {
             $search = json_decode($search, true);
-            
+
             if (!empty($search['keyword'])) {
                 $query->where(function ($q) use ($search) {
                     $q->where('orders.merchant_uid', 'like', '%' . $search['keyword'] . '%')
@@ -53,6 +53,15 @@ class OrderProductsExport implements FromQuery, WithHeadings, WithMapping, WithT
                     $search['dates'][1] . ' 23:59:59'
                 ]);
             }
+        }
+
+        // 선택된 ID들이 있으면 해당 항목만 필터링
+        if ($selectedIds = $this->request->get('selectedIds')) {
+            // 콤마로 구분된 문자열을 배열로 변환
+            if (is_string($selectedIds)) {
+                $selectedIds = explode(',', $selectedIds);
+            }
+            $query->whereIn('order_products.id', $selectedIds);
         }
 
         // 정렬
