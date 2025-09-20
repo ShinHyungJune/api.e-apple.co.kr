@@ -38,7 +38,7 @@ class OrderProductsExport implements FromQuery, WithHeadings, WithMapping, WithT
                 $query->where(function ($q) use ($search) {
                     $q->where('orders.merchant_uid', 'like', '%' . $search['keyword'] . '%')
                       ->orWhere('orders.buyer_name', 'like', '%' . $search['keyword'] . '%')
-                      ->orWhere('orders.buyer_phone', 'like', '%' . $search['keyword'] . '%')
+                      ->orWhere('orders.buyer_contact', 'like', '%' . $search['keyword'] . '%')
                       ->orWhere('order_products.delivery_tracking_number', 'like', '%' . $search['keyword'] . '%');
                 });
             }
@@ -79,55 +79,49 @@ class OrderProductsExport implements FromQuery, WithHeadings, WithMapping, WithT
     public function headings(): array
     {
         return [
-            '주문번호',
-            '주문일시',
-            '구매자명',
-            '구매자연락처',
-            '상품명',
-            '옵션',
+            '보내시는 분',
+            '보내시는 분 전화',
+            '보내는분총주소',
+            '받으시는 분',
+            '받으시는 분 전화',
+            '받는분우편번호',
+            '받는분총주소',
+            '내품명1',
             '수량',
-            '단가',
-            '금액',
-            '상태',
-            '택배사',
-            '송장번호',
-            '배송비',
-            '수령인',
-            '수령인연락처',
-            '배송주소',
-            '배송메모',
-            '출고일시'
+            '메모1',
+            '내품주문번호1',
+            '순번',
+            '운임Type',
+            '지불조건'
         ];
     }
 
     public function map($orderProduct): array
     {
         $order = $orderProduct->order;
-        
+        static $sequence = 0;
+        $sequence++;
+
         return [
-            $order->merchant_uid,
-            $order->created_at ? $order->created_at->format('Y-m-d H:i:s') : '',
-            $order->buyer_name,
-            $order->buyer_phone ?? $order->user?->phone,
-            $orderProduct->product ? $orderProduct->product->name : '',
-            $orderProduct->productOption ? $orderProduct->productOption->name : '',
-            $orderProduct->quantity,
-            number_format($orderProduct->price),
-            number_format($orderProduct->price * $orderProduct->quantity),
-            $orderProduct->status instanceof OrderStatus ? $orderProduct->status->label() : OrderStatus::from($orderProduct->status)->label(),
-            $orderProduct->delivery_company ? DeliveryCompany::tryFrom($orderProduct->delivery_company)?->label() : '',
-            $orderProduct->delivery_tracking_number,
-            number_format($orderProduct->delivery_fee),
-            $order->buyer_name,
-            $order->buyer_phone ?? $order->user?->phone,
-            $order->buyer_addr . ' ' . $order->buyer_addr_detail,
-            $order->memo,
-            $orderProduct->updated_at && $orderProduct->status === OrderStatus::DELIVERY ? $orderProduct->updated_at->format('Y-m-d H:i:s') : ''
+            '농업회사법인열매나무',  // 보내시는 분
+            '055-945-3204',  // 보내시는 분 전화
+            '경남 거창군 거창읍 거함대로 3372 서북부경남거점산지유통센터(APC)',  // 보내는분총주소
+            $order->delivery_name ?? $order->buyer_name,  // 받으시는 분
+            $order->delivery_phone ?? $order->buyer_contact ?? $order->user?->phone,  // 받으시는 분 전화
+            $order->delivery_postal_code ?? $order->buyer_address_zipcode,  // 받는분우편번호
+            ($order->delivery_address ?? $order->buyer_address) . ' ' . ($order->delivery_address_detail ?? $order->buyer_address_detail),  // 받는분총주소
+            $orderProduct->product ? $orderProduct->product->name . ($orderProduct->productOption ? ' ' . $orderProduct->productOption->name : '') : '',  // 내품명1
+            $orderProduct->quantity,  // 수량
+            $order->delivery_request ?? $order->memo ?? '',  // 메모1
+            $order->merchant_uid,  // 내품주문번호1
+            $sequence,  // 순번
+            '',  // 운임Type
+            ''  // 지불조건
         ];
     }
 
     public function title(): string
     {
-        return '출고관리_' . date('Y-m-d');
+        return '한진택배_대량발송_' . date('Y-m-d');
     }
 }

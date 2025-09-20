@@ -13,6 +13,7 @@ use App\Http\Controllers\Api\MainController;
 use App\Http\Controllers\Api\OrderController;
 use App\Http\Controllers\Api\OrderProductController;
 use App\Http\Controllers\Api\PointController;
+use App\Http\Controllers\Api\PopBannerController;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\ProductInquiryController;
 use App\Http\Controllers\Api\ProductReviewController;
@@ -37,6 +38,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'main', 'controller' => MainController::class], function () {
     Route::get('', 'index');
+});
+
+// 팝업 배너
+Route::group(['prefix' => 'pop-banners', 'controller' => PopBannerController::class], function () {
+    Route::get('', 'index');
+    Route::get('{popBanner}', 'show');
 });
 
 //사용자인증

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\Admin\BannerController;
+use App\Http\Controllers\Api\Admin\PopBannerController;
 use App\Http\Controllers\Api\Admin\CodeController;
 use App\Http\Controllers\Api\Admin\CouponController;
 use App\Http\Controllers\Api\Admin\DeliveryAddressController;
@@ -131,6 +132,16 @@ Route::group(['prefix' => 'admin'], function () {
                 Route::get('{banner}', 'show');
                 Route::put('{banner}', 'update');
                 Route::delete('{banner}', 'destroy');
+                Route::delete('images/{media}', 'destroyImage');
+            });
+
+        Route::group(['prefix' => 'pop-banners', 'controller' => PopBannerController::class],
+            function () {
+                Route::get('', 'index');
+                Route::post('', 'store');
+                Route::get('{popBanner}', 'show');
+                Route::put('{popBanner}', 'update');
+                Route::delete('{popBanner}', 'destroy');
                 Route::delete('images/{media}', 'destroyImage');
             });
 
