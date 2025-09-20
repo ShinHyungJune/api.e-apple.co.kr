@@ -27,23 +27,12 @@ class CouponController extends ApiController
     public function store(CouponRequest $request)
     {
         $data = $request->validated();
-        
+
         // issued_until 날짜 형식 처리 및 유효성 검증
         if (isset($data['issued_until'])) {
-            // T 제거 및 :00 초 추가
-            $dateStr = str_replace('T', ' ', $data['issued_until']) . ':00';
-            
-            // 날짜가 너무 미래인 경우 (2038년 이후) 처리
-            $maxDate = new \DateTime('2038-01-01 00:00:00');
-            $inputDate = new \DateTime($dateStr);
-            
-            if ($inputDate > $maxDate) {
-                $data['issued_until'] = $maxDate->format('Y-m-d H:i:s');
-            } else {
-                $data['issued_until'] = $dateStr;
-            }
+            $data['issued_until'] = $this->formatIssuedUntil($data['issued_until']);
         }
-        
+
         $coupon = tap(new Coupon($data))->save();
         return $this->respondSuccessfully(new CouponResource($coupon));
     }
@@ -57,25 +46,14 @@ class CouponController extends ApiController
     public function update(CouponRequest $request, Coupon $coupon)
     {
         // 수정 권한 체크 제거 - 모든 쿠폰 수정 가능
-        
+
         $data = $request->validated();
-        
+
         // issued_until 날짜 형식 처리 및 유효성 검증
         if (isset($data['issued_until'])) {
-            // T 제거 및 :00 초 추가
-            $dateStr = str_replace('T', ' ', $data['issued_until']) . ':00';
-            
-            // 날짜가 너무 미래인 경우 (2038년 이후) 처리
-            $maxDate = new \DateTime('2038-01-01 00:00:00');
-            $inputDate = new \DateTime($dateStr);
-            
-            if ($inputDate > $maxDate) {
-                $data['issued_until'] = $maxDate->format('Y-m-d H:i:s');
-            } else {
-                $data['issued_until'] = $dateStr;
-            }
+            $data['issued_until'] = $this->formatIssuedUntil($data['issued_until']);
         }
-        
+
         $coupon->update($data);
         return $this->respondSuccessfully(new CouponResource($coupon));
     }
@@ -88,5 +66,38 @@ class CouponController extends ApiController
         }
         $coupon->delete();
         return $this->respondSuccessfully();
+    }
+
+    private function formatIssuedUntil($issuedUntil)
+    {
+        // datetime-local input 형식 처리
+        if (strpos($issuedUntil, 'T') !== false) {
+            // T가 있으면 datetime-local 형식 (YYYY-MM-DDTHH:mm)
+            $dateStr = str_replace('T', ' ', $issuedUntil) . ':00';
+        } else if (strlen($issuedUntil) === 19) {
+            // 이미 Y-m-d H:i:s 형식
+            $dateStr = $issuedUntil;
+        } else if (strlen($issuedUntil) === 16) {
+            // Y-m-d H:i 형식인 경우 초 추가
+            $dateStr = $issuedUntil . ':00';
+        } else {
+            // 그 외의 경우 그대로 사용
+            $dateStr = $issuedUntil;
+        }
+
+        // 날짜가 너무 미래인 경우 (2038년 이후) 처리
+        try {
+            $maxDate = new \DateTime('2038-01-01 00:00:00');
+            $inputDate = new \DateTime($dateStr);
+
+            if ($inputDate > $maxDate) {
+                return $maxDate->format('Y-m-d H:i:s');
+            } else {
+                return $inputDate->format('Y-m-d H:i:s');
+            }
+        } catch (\Exception $e) {
+            // 날짜 파싱 에러시 원본 반환
+            return $issuedUntil;
+        }
     }
 }

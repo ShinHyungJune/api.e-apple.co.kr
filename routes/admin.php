@@ -135,7 +135,7 @@ Route::group(['prefix' => 'admin'], function () {
                 Route::delete('images/{media}', 'destroyImage');
             });
 
-        Route::group(['prefix' => 'pop-banners', 'controller' => PopBannerController::class],
+        Route::group(['prefix' => 'popBanners', 'controller' => PopBannerController::class],
             function () {
                 Route::get('', 'index');
                 Route::post('', 'store');
