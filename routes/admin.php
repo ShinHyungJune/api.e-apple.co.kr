@@ -106,6 +106,7 @@ Route::group(['prefix' => 'admin'], function () {
                 Route::get('{order}', 'show');
                 Route::put('{order}', 'update');
                 Route::put('{order}/cancel', 'cancel');
+                Route::post('bulk-prepare-delivery', 'bulkPrepareDelivery');
             });
 
         Route::group(['prefix' => 'order_products', 'controller' => OrderProductController::class],

@@ -200,4 +200,67 @@ class OrderController extends ApiController
         $order->syncStatusOrderProducts();
         return $this->respondSuccessfully();
     }
+
+    /**
+     * 일괄 배송준비 처리
+     * 선택된 주문들의 주문상품을 배송준비 상태로 변경
+     */
+    public function bulkPrepareDelivery(Request $request)
+    {
+        $request->validate([
+            'ids' => 'required|array|min:1',
+            'ids.*' => 'required|integer|exists:orders,id'
+        ]);
+
+        $orderIds = $request->input('ids');
+
+        // 배송준비 가능한 주문만 필터링
+        $orders = Order::with('orderProducts')
+            ->whereIn('id', $orderIds)
+            ->get();
+
+        $successCount = 0;
+        $failedOrders = [];
+
+        DB::transaction(function () use ($orders, &$successCount, &$failedOrders) {
+            foreach ($orders as $order) {
+                // 주문의 모든 상품이 배송준비 가능한 상태인지 확인
+                $canPrepare = $order->orderProducts->every(function ($orderProduct) {
+                    return in_array($orderProduct->status, [
+                        OrderStatus::PAYMENT_COMPLETE,
+                    ]);
+                });
+
+                if ($canPrepare) {
+                    // 주문상품들을 배송준비 상태로 변경
+                    $order->orderProducts->each(function ($orderProduct) {
+                        if ($orderProduct->status === OrderStatus::PAYMENT_COMPLETE) {
+                            $orderProduct->update([
+                                'status' => OrderStatus::DELIVERY_PREPARING
+                            ]);
+                        }
+                    });
+
+                    // 주문 상태도 배송준비로 변경
+                    $order->update([
+                        'status' => OrderStatus::DELIVERY_PREPARING
+                    ]);
+
+                    $successCount++;
+                } else {
+                    $failedOrders[] = [
+                        'id' => $order->id,
+                        'merchant_uid' => $order->merchant_uid,
+                        'reason' => '결제완료 상태가 아닌 상품이 포함되어 있습니다.'
+                    ];
+                }
+            }
+        });
+
+        return $this->respondSuccessfully([
+            'success_count' => $successCount,
+            'failed_orders' => $failedOrders,
+            'message' => "{$successCount}건의 주문이 배송준비 상태로 변경되었습니다."
+        ]);
+    }
 }
