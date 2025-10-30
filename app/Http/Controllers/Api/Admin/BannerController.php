@@ -17,7 +17,7 @@ class BannerController extends ApiController
         $filters = (array)json_decode($request->input('search'));
         $items = Banner::search($filters)
             ->orderBy('sort_order', 'asc')
-            ->latest()
+            ->orderBy('created_at', 'desc')
             ->paginate($request->itemsPerPage ?? 30);
         return BannerResource::collection($items);
     }

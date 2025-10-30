@@ -18,6 +18,7 @@ class BannerResource extends JsonResource
         //return parent::toArray($request);
         $additionalFields = ($request->user()?->is_admin) ? [
             'is_active' => $this->is_active,
+            'sort_order' => $this->sort_order,
             'created_at' => $this->created_at,
         ] : [];
         $return = [
