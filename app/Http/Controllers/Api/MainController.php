@@ -25,7 +25,10 @@ class MainController extends ApiController
         $today = now()->format('Y-m-d');
 
         $items = [];
-        $items['banners'] = Banner::where('is_active', true)->get()->load('media');
+        $items['banners'] = Banner::where('is_active', true)
+            ->orderBy('sort_order', 'asc')
+            ->get()
+            ->load('media');
 
         //오늘의 특가로 만나는 신선한 과일 product/sale
         $items['saleProducts'] = Product::with('options', 'reviews', 'media')

@@ -26,6 +26,7 @@ class BannerRequest extends FormRequest
             'description' => ['required', 'string'],
             'url' => ['required', 'string'],
             'is_active' => ['nullable', 'boolean'],
+            'sort_order' => ['nullable', 'integer'],
             'imgs' => ['nullable', 'array'],
         ];
     }
