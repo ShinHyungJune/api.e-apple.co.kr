@@ -149,20 +149,162 @@ class OrderProductController extends ApiController
         }
 
         DB::transaction(function () use ($orderProduct, $request) {
+            $order = $orderProduct->order;
+
+            // 부분환불 금액 및 상세 내역 계산
+            $refundData = $this->calculatePartialRefundAmount($order, $orderProduct);
+
             // 개별 상품 취소 처리
             $orderProduct->update([
                 'status' => OrderStatus::CANCELLATION_COMPLETE,
-                'cancel_reason' => $request->cancel_reason
+                'cancel_reason' => $request->cancel_reason,
+                'refund_amount' => $refundData['refund_amount'],
+                'cancel_detail' => $refundData['cancel_detail']
             ]);
-            
+
             // 재고 복원
             $orderProduct->productOption()->increment('stock_quantity', $orderProduct->quantity);
-            
+
+            // 주문 상태 및 환불 금액 업데이트
+            $this->updateOrderStatus($order);
+
+            // 아임포트 부분환불 처리
+            $this->processPartialRefund($order, $refundData['refund_amount']);
+
             // SMS 발송
             $this->sendOrderProductCancellationNotification($orderProduct, $request->cancel_reason);
         });
 
         return $this->respondSuccessfully(OrderProductResource::make($orderProduct));
+    }
+
+    /**
+     * 부분환불 금액 계산
+     */
+    private function calculatePartialRefundAmount(Order $order, OrderProduct $orderProduct): array
+    {
+        // 전체 상품 가격 계산 (취소되지 않은 상품들)
+        $totalProductPrice = $order->orderProducts
+            ->where('status', '!=', OrderStatus::CANCELLATION_COMPLETE->value)
+            ->sum('price');
+
+        // 취소할 상품의 가격 비율 계산
+        $cancelRatio = $totalProductPrice > 0 ? $orderProduct->price / $totalProductPrice : 0;
+
+        // 할인 금액 배분 계산
+        $couponDiscount = $order->coupon_discount_amount ?? 0;
+        $pointsUsed = $order->use_points ?? 0;
+        $totalDiscount = $couponDiscount + $pointsUsed;
+
+        $allocatedCouponDiscount = round($couponDiscount * $cancelRatio);
+        $allocatedPointsDiscount = round($pointsUsed * $cancelRatio);
+        $allocatedTotalDiscount = $allocatedCouponDiscount + $allocatedPointsDiscount;
+
+        // 부분 환불 금액 = 상품가격 - 할당된 할인금액
+        $refundAmount = max(0, $orderProduct->price - $allocatedTotalDiscount);
+
+        // 상세 내역 생성
+        $cancelDetail = $this->generateCancelDetail($order, $orderProduct, [
+            'product_price' => $orderProduct->price,
+            'cancel_ratio' => $cancelRatio,
+            'coupon_discount' => $allocatedCouponDiscount,
+            'points_discount' => $allocatedPointsDiscount,
+            'total_discount' => $allocatedTotalDiscount,
+            'refund_amount' => $refundAmount
+        ]);
+
+        return [
+            'refund_amount' => $refundAmount,
+            'cancel_detail' => $cancelDetail
+        ];
+    }
+
+    /**
+     * 취소 상세 내역 생성 (고객 안내용)
+     */
+    private function generateCancelDetail(Order $order, OrderProduct $orderProduct, array $calculation): string
+    {
+        $productName = $orderProduct->product->name ?? '상품';
+        $optionName = $orderProduct->productOption->name ?? '';
+        $fullProductName = $optionName ? "{$productName} ({$optionName})" : $productName;
+
+        $detail = "■ 부분취소 환불 상세내역\n\n";
+        $detail .= "▶ 취소 상품: {$fullProductName}\n";
+        $detail .= "▶ 취소 수량: {$orderProduct->quantity}개\n";
+        $detail .= "▶ 상품 가격: " . number_format($calculation['product_price']) . "원\n\n";
+
+        if ($calculation['coupon_discount'] > 0 || $calculation['points_discount'] > 0) {
+            $detail .= "▶ 할인 배분 (전체 주문 대비 " . number_format($calculation['cancel_ratio'] * 100, 1) . "% 비율)\n";
+
+            if ($calculation['coupon_discount'] > 0) {
+                $detail .= "  • 쿠폰 할인: -" . number_format($calculation['coupon_discount']) . "원\n";
+            }
+
+            if ($calculation['points_discount'] > 0) {
+                $detail .= "  • 적립금 사용: -" . number_format($calculation['points_discount']) . "원\n";
+            }
+
+            $detail .= "  • 총 할인: -" . number_format($calculation['total_discount']) . "원\n\n";
+        }
+
+        $detail .= "▶ 실제 환불금액: " . number_format($calculation['refund_amount']) . "원\n\n";
+        $detail .= "※ 본 환불은 비례 계산에 의해 산정되었습니다.\n";
+        $detail .= "※ 환불은 원결제 수단으로 처리됩니다.\n";
+        $detail .= "※ 환불 처리까지 영업일 기준 3-5일 소요될 수 있습니다.";
+
+        return $detail;
+    }
+
+    /**
+     * 주문 상태 및 환불 금액 업데이트
+     */
+    private function updateOrderStatus(Order $order): void
+    {
+        // 현재 주문의 모든 상품 상태 확인
+        $order->refresh();
+        $orderProducts = $order->orderProducts;
+
+        $canceledProducts = $orderProducts->where('status', OrderStatus::CANCELLATION_COMPLETE->value);
+        $totalProducts = $orderProducts->count();
+
+        // 환불 총액 계산
+        $totalRefundAmount = $canceledProducts->sum('refund_amount');
+
+        if ($canceledProducts->count() === $totalProducts) {
+            // 모든 상품이 취소된 경우
+            $order->update([
+                'status' => OrderStatus::CANCELLATION_COMPLETE,
+                'refund_amount' => $totalRefundAmount
+            ]);
+        } else {
+            // 일부 상품만 취소된 경우
+            $order->update([
+                'refund_amount' => $totalRefundAmount
+            ]);
+        }
+    }
+
+    /**
+     * 아임포트 부분환불 처리
+     */
+    private function processPartialRefund(Order $order, int $refundAmount): void
+    {
+        // 아임포트 결제 연동이 활성화되어 있고, 환불할 금액이 있는 경우에만 처리
+        if (!config('iamport.payment_integration') || $refundAmount <= 0) {
+            return;
+        }
+
+        try {
+            $accessToken = \App\Helpers\Iamport::getAccessToken();
+            $result = \App\Helpers\Iamport::cancelPartial($accessToken, $order->imp_uid, $refundAmount);
+
+            if (!$result['response']) {
+                // 부분환불 실패시 로그 기록 (실제 환불은 수동 처리)
+                \Log::warning("부분환불 실패 - 주문: {$order->id}, 금액: {$refundAmount}원, 사유: " . $result['message']);
+            }
+        } catch (\Exception $e) {
+            \Log::error("부분환불 API 오류 - 주문: {$order->id}, 오류: " . $e->getMessage());
+        }
     }
 
     /**

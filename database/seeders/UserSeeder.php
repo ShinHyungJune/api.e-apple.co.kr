@@ -21,6 +21,7 @@ class UserSeeder extends Seeder
         if (!$user) {
             User::factory()->create([
                 'email' => 'test@naver.com',
+                'username' => 'test@naver.com',
                 'password' => Hash::make('test@naver.com'),
             ]);
         }
