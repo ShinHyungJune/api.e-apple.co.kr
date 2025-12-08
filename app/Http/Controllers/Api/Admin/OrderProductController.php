@@ -200,8 +200,8 @@ class OrderProductController extends ApiController
         $allocatedPointsDiscount = round($pointsUsed * $cancelRatio);
         $allocatedTotalDiscount = $allocatedCouponDiscount + $allocatedPointsDiscount;
 
-        // 부분 환불 금액 = 상품가격 - 할당된 할인금액
-        $refundAmount = max(0, $orderProduct->price - $allocatedTotalDiscount);
+        // 부분 환불 금액 = 상품가격 - 할당된 할인금액 (정수 변환)
+        $refundAmount = (int) max(0, $orderProduct->price - $allocatedTotalDiscount);
 
         // 상세 내역 생성
         $cancelDetail = $this->generateCancelDetail($order, $orderProduct, [
