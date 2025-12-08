@@ -296,12 +296,12 @@ class OrderProductController extends ApiController
         }
 
         try {
-            $accessToken = \App\Helpers\Iamport::getAccessToken();
-            $result = \App\Helpers\Iamport::cancelPartial($accessToken, $order->imp_uid, $refundAmount);
+            $accessToken = \App\Models\Iamport::getAccessToken();
+            $result = \App\Models\Iamport::cancel($accessToken, $order->imp_uid, $refundAmount, "부분취소 환불");
 
             if (!$result['response']) {
                 // 부분환불 실패시 로그 기록 (실제 환불은 수동 처리)
-                \Log::warning("부분환불 실패 - 주문: {$order->id}, 금액: {$refundAmount}원, 사유: " . $result['message']);
+                \Log::warning("부분환불 실패 - 주문: {$order->id}, 금액: {$refundAmount}원, 사유: " . ($result['message'] ?? '알 수 없음'));
             }
         } catch (\Exception $e) {
             \Log::error("부분환불 API 오류 - 주문: {$order->id}, 오류: " . $e->getMessage());
