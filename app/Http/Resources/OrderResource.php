@@ -20,8 +20,7 @@ class OrderResource extends JsonResource
         $additionalFields = ($request->user()?->is_admin) ? [
             'user' => UserResource::make($this->whenLoaded('user')),
             'pay_method_method_label' => ($this->pay_method_method) ? IamportMethod::tryFrom($this->pay_method_method)?->label() : '',
-            'can_cancel' => in_array($this->status, OrderStatus::CAN_ORDER_CANCELS)
-                && $this->orderProducts->every(fn($e) => in_array($e->status, OrderStatus::CAN_ORDER_CANCELS)),
+            'can_cancel' => $this->canOrderCancel(),
             'can_delivery_preparing' => $this->status === OrderStatus::PAYMENT_COMPLETE,
         ] : [];
         $return = [
