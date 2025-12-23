@@ -66,7 +66,7 @@ class ProductReviewController extends ApiController
         $data = $request->validated();
         $availableProductReview = auth()->user()->availableProductReviews()->find($data['order_product_id']);
         if (empty($availableProductReview)) {
-            if (auth()->user()->productReviews()->find($data['order_product_id'])->count()) {
+            if (auth()->user()->productReviews()->where('order_product_id', $data['order_product_id'])->exists()) {
                 //abort(409, '이미 등록된 리뷰입니다.');
                 abort(response()->json(['message' => '이미 등록된 리뷰입니다.',
                     'errors' => ['reviews' => '이미 등록된 리뷰입니다.']],

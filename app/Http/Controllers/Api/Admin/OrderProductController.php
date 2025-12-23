@@ -53,17 +53,14 @@ class OrderProductController extends ApiController
         if (!empty($data['ids']) && count($data['ids']) > 0) {
             $ids = $data['ids'];
             unset($data['ids']);
-            
-            $orderProducts = OrderProduct::where('status', OrderStatus::DELIVERY_PREPARING)
-                ->whereIn('id', $ids)
-                ->get();
-            
+
             OrderProduct::where('status', OrderStatus::DELIVERY_PREPARING)
                 ->whereIn('id', $ids)
                 ->update($data);
-            
-            // 배송 시작 SMS 발송 (일괄처리)
+
+            // 배송 시작 SMS 발송 (일괄처리) - 업데이트 후 다시 조회하여 최신 데이터로 발송
             if ($isShippingStart) {
+                $orderProducts = OrderProduct::whereIn('id', $ids)->get();
                 foreach ($orderProducts as $orderProduct) {
                     $this->sendShippingNotification($orderProduct);
                 }
