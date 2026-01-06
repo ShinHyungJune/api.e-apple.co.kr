@@ -21,7 +21,11 @@ return [
     'allowed_methods' => ['*'],
 
     //'allowed_origins' => [env('FRONTEND_URL', 'http://localhost:3000')],
-    'allowed_origins' => ['*'],
+    'allowed_origins' => [
+        'https://e-apple.co.kr',
+        'https://www.e-apple.co.kr',
+        'https://admin.e-apple.co.kr',
+    ],
 
     'allowed_origins_patterns' => [],
 
