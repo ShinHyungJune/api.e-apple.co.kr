@@ -116,6 +116,7 @@ Route::group(['prefix' => 'admin'], function () {
                 Route::get('export', 'export');
                 Route::put('{id?}', 'update');
                 Route::put('{id}/cancel', 'cancel');
+                Route::put('{id}/delivery-info', 'updateDeliveryInfo');
             });
 
         Route::group(['prefix' => 'exchange_returns', 'controller' => ExchangeReturnController::class],

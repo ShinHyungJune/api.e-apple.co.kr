@@ -357,4 +357,28 @@ class OrderProductController extends ApiController
         return Excel::download(new OrderProductsExport($request), 'order_products_' . date('Y-m-d_His') . '.xlsx');
     }
 
+    /**
+     * 배송정보(택배사, 송장번호) 수정 - 배송중 상태에서도 수정 가능
+     */
+    public function updateDeliveryInfo(Request $request, $id)
+    {
+        $request->validate([
+            'delivery_company' => 'required|string',
+            'delivery_tracking_number' => 'required|string',
+        ]);
+
+        // 출고준비 또는 배송중 상태에서만 수정 가능
+        $orderProduct = OrderProduct::whereIn('status', [
+            OrderStatus::DELIVERY_PREPARING,
+            OrderStatus::DELIVERY
+        ])->findOrFail($id);
+
+        $orderProduct->update([
+            'delivery_company' => $request->delivery_company,
+            'delivery_tracking_number' => $request->delivery_tracking_number,
+        ]);
+
+        return $this->respondSuccessfully(OrderProductResource::make($orderProduct));
+    }
+
 }
