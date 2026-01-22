@@ -31,22 +31,11 @@ class CompleteOrderPayment extends Command
         $this->info("- 현재상태: {$order->status->value}");
 
         if ($order->status !== OrderStatus::ORDER_COMPLETE) {
-            $this->error("ORDER_COMPLETE 상태가 아닙니다. 현재 상태: {$order->status->value}");
-            if (!$this->confirm('그래도 진행하시겠습니까?')) {
-                return 1;
-            }
+            $this->warn("ORDER_COMPLETE 상태가 아닙니다. 현재 상태: {$order->status->value}");
         }
 
         if ($order->imp_uid) {
-            $this->error("이미 imp_uid가 있습니다: {$order->imp_uid}");
-            if (!$this->confirm('덮어쓰시겠습니까?')) {
-                return 1;
-            }
-        }
-
-        if (!$this->confirm("결제완료 처리하시겠습니까?")) {
-            $this->info("취소되었습니다.");
-            return 0;
+            $this->warn("이미 imp_uid가 있습니다: {$order->imp_uid} → 덮어씁니다.");
         }
 
         try {

@@ -298,7 +298,7 @@ class Order extends Model
 
     public function getWithdrawalPoints()
     {
-        if (auth()->check()) {
+        if ($this->user_id || auth()->check()) {
             if ($this->status === OrderStatus::ORDER_COMPLETE && $this->use_points > 0) {
                 return [$this->use_points, '주문사용'];
             }
@@ -316,15 +316,17 @@ class Order extends Model
 
             //중복처리 방지
             if ($this->status === OrderStatus::ORDER_COMPLETE) {
+                $user = $this->user ?? auth()->user();
+
                 //쿠폰사용
-                if (auth()->check() && $this->user_coupon_id > 0) {
-                    $coupon = auth()->user()->availableCoupons()->wherePivot('id', $this->user_coupon_id)->first();
-                    $coupon->pivot->update(['order_id' => $this->id, 'used_at' => now()]);
+                if ($user && $this->user_coupon_id > 0) {
+                    $coupon = $user->availableCoupons()->wherePivot('id', $this->user_coupon_id)->first();
+                    $coupon?->pivot->update(['order_id' => $this->id, 'used_at' => now()]);
                 }
 
                 //적립금 차감
-                if ($this->use_points > 0) {
-                    auth()->user()->withdrawalPoint($this);
+                if ($user && $this->use_points > 0) {
+                    $user->withdrawalPoint($this);
                 }
 
                 //재고처리 stock_quantity
