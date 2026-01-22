@@ -171,6 +171,7 @@ Route::group(['prefix' => 'orders', 'controller' => OrderController::class],
         Route::post('complete', 'paymentComplete');
         Route::get('complete/mobile', 'paymentComplete');
         Route::post('complete/webhook', 'paymentComplete');
+        Route::get('complete/webhook', 'paymentComplete');
         //Route::put('{id}/confirm', 'confirm');//orderProducts 별로 구매확정
         Route::put('{id}/cancel', 'cancel');
     });
