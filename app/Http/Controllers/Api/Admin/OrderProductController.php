@@ -105,7 +105,7 @@ class OrderProductController extends ApiController
             $message = "안녕하세요 고객님, 열매나무를 이용해주셔서 감사합니다. 고객님의 상품이 아래와 같이 출고될 예정이니 참고 부탁드립니다.\n\n";
             $message .= "# 출고정보\n";
             $message .= "- 택배사 : {$deliveryCompanyName}\n";
-            $message .= "- 운송장번호 : {$orderProduct->delivery_number}\n";
+            $message .= "- 운송장번호 : {$orderProduct->delivery_tracking_number}\n";
             $message .= "- 출고상품 : {$productName}";
             
             // SMS 발송
