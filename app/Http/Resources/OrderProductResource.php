@@ -27,6 +27,7 @@ class OrderProductResource extends JsonResource
             'buyer_name' => $this->order->buyer_name ?? $this->order->user?->name,
             'buyer_phone' => $this->order->buyer_contact ?? $this->order->user?->phone,
             'buyer_email' => $this->order->buyer_email ?? $this->order->user?->email,
+            'delivery_name' => $this->order->delivery_name,
         ] : [];
         $return = [
             ...$additionalFields,
