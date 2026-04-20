@@ -129,11 +129,10 @@ class OrderController extends ApiController
             'cancel_reason' => 'required|string|max:500'
         ]);
         
-        //주문취소의 경우 모든 주문상품상태가 [결제완료, 배송준비중] 상태만 가능
-        $order = Order::with('orderProducts')->canOrderCancel()->findOrFail($id);
-        if (!$order->canOrderCancel()) {
-            $m = '모든 상품이 ' . implode(', ', OrderStatus::getCanOrderCancelValues()) . '에만 주문 취소할 수 있습니다.';//결제완료, 배송준비중
-            //abort(403, $m);
+        //관리자 주문취소: 모든 주문상품상태가 [결제완료, 배송준비중, 배송중] 일 때 가능
+        $order = Order::with('orderProducts')->adminCanOrderCancel()->findOrFail($id);
+        if (!$order->adminCanOrderCancel()) {
+            $m = '모든 상품이 ' . implode(', ', OrderStatus::getAdminCanOrderCancelValues()) . '에만 주문 취소할 수 있습니다.';
             abort(response()->json(['message' => $m, 'errors' => ['order' => $m]], 403));
         }
 

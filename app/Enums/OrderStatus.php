@@ -38,6 +38,15 @@ enum OrderStatus: string
         // 결제완료, 배송준비중
     ];
 
+    /**
+     * 관리자 주문취소 가능한 상태
+     * 배송중 단계까지 관리자가 직접 회수/환불 판단할 수 있도록 허용
+     */
+    const ADMIN_CAN_ORDER_CANCELS = [
+        self::PAYMENT_COMPLETE, self::DELIVERY_PREPARING, self::DELIVERY
+        // 결제완료, 배송준비중, 배송중
+    ];
+
 
     //출고관리
     const CAN_DELVERY_MANAGES = [
@@ -91,6 +100,11 @@ enum OrderStatus: string
     public static function getCanOrderCancelValues(): array
     {
         return array_map(fn($case) => $case->label(), self::CAN_ORDER_CANCELS);
+    }
+
+    public static function getAdminCanOrderCancelValues(): array
+    {
+        return array_map(fn($case) => $case->label(), self::ADMIN_CAN_ORDER_CANCELS);
     }
 
 

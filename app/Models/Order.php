@@ -283,6 +283,19 @@ class Order extends Model
         return $this->orderProducts->every(fn($e) => in_array($e->status, OrderStatus::CAN_ORDER_CANCELS));
     }
 
+    /**
+     * 관리자 주문취소 가능한 상태 (배송중까지 허용)
+     */
+    public function scopeAdminCanOrderCancel(Builder $query)
+    {
+        $query->whereIn('status', OrderStatus::ADMIN_CAN_ORDER_CANCELS);
+    }
+
+    public function adminCanOrderCancel()
+    {
+        return $this->orderProducts->every(fn($e) => in_array($e->status, OrderStatus::ADMIN_CAN_ORDER_CANCELS));
+    }
+
 
 
     public function getDepositPoints()

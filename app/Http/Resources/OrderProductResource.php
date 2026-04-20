@@ -20,7 +20,7 @@ class OrderProductResource extends JsonResource
             'order_id' => $this->order_id,
             'can_delivery' => $this->status === OrderStatus::DELIVERY_PREPARING,
             'can_edit_delivery' => $this->status === OrderStatus::DELIVERY,
-            'can_cancel' => in_array($this->status, OrderStatus::CAN_ORDER_CANCELS),
+            'can_cancel' => in_array($this->status, OrderStatus::ADMIN_CAN_ORDER_CANCELS),
             'delivery_company' => $this->delivery_company,
             'delivery_tracking_number' => $this->delivery_tracking_number,
             'delivery_tracking_url' => $this->delivery_tracking_url,

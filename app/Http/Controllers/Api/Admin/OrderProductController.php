@@ -138,11 +138,11 @@ class OrderProductController extends ApiController
         ]);
         
         $orderProduct = OrderProduct::with(['order', 'product', 'productOption'])
-            ->whereIn('status', OrderStatus::CAN_ORDER_CANCELS)
+            ->whereIn('status', OrderStatus::ADMIN_CAN_ORDER_CANCELS)
             ->findOrFail($id);
 
-        if (!in_array($orderProduct->status, OrderStatus::CAN_ORDER_CANCELS)) {
-            $m = '상품이 ' . implode(', ', OrderStatus::getCanOrderCancelValues()) . ' 상태일 때만 취소할 수 있습니다.';
+        if (!in_array($orderProduct->status, OrderStatus::ADMIN_CAN_ORDER_CANCELS)) {
+            $m = '상품이 ' . implode(', ', OrderStatus::getAdminCanOrderCancelValues()) . ' 상태일 때만 취소할 수 있습니다.';
             abort(response()->json(['message' => $m, 'errors' => ['order_product' => $m]], 403));
         }
 
