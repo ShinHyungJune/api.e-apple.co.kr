@@ -26,7 +26,9 @@ class ExchangeReturnResource extends JsonResource
             'refund_bank_account' => $this->refund_bank_account,
             'refund_reason' => $this->refund_reason,
             'refund_amount' => $this->refund_amount,
-            'refund_delivery_fee' => $this->refund_delivery_fee
+            'refund_delivery_fee' => $this->refund_delivery_fee,
+            'auto_refund_succeeded_at' => $this->auto_refund_succeeded_at,
+            'auto_refund_error' => $this->auto_refund_error,
         ] : [
             'status' => ExchangeReturnStatus::from($this->status)->label(),
         ];
